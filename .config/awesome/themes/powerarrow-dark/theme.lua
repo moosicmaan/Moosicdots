@@ -104,7 +104,7 @@ end)
 theme.cal = lain.widget.cal({
 	attach_to = { clock },
 	notification_preset = {
-		font = "Noto Sans Regular 11",
+		font = "Noto Sans Regular 16",
 		fg = theme.fg_normal,
 		bg = theme.bg_normal,
 	},
