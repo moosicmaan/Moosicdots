@@ -30,13 +30,13 @@ return {
           icon = "",
           key = "n",
         },
-        {
-          action = 'lua LazyVim.pick("oldfiles")()',
-          group = "@property",
-          desc = "Recent",
-          icon = "",
-          key = "r",
-        },
+        -- {
+        --   action = 'lua LazyVim.pick("oldfiles")()',
+        --   group = "@property",
+        --   desc = "Recent",
+        --   icon = "",
+        --   key = "r",
+        -- },
         {
           group = "@property",
           action = 'lua LazyVim.pick("live_grep")()',
