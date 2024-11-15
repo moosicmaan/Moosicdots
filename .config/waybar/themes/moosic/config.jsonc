@@ -1,0 +1,48 @@
+// =====================================================
+// -----------------------------------------------------
+// MOOSIC WAYBAR CONFIG
+// Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
+// -----------------------------------------------------
+// =====================================================
+
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "position": "top",
+    //"height": 10,
+    //"width": 700,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
+
+    "modules-left": ["group/appo", "hyprland/window"],
+
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-right": [
+      "group/currents",
+      "tray",
+      "group/hardware",
+      "custom/exit",
+    ],
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "position": "bottom",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
+
+    "modules-left": ["group/appo", "hyprland/window"],
+
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-right": ["mpris", "pulseaudio", "custom/exit"],
+  },
+]

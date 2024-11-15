@@ -1,0 +1,347 @@
+/*
+// =====================================================
+// -----------------------------------------------------
+// MOOSIC WAYBAR STYLE
+// Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
+// -----------------------------------------------------
+// =====================================================
+*/
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+* {
+  /* 
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
+  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-family: DejaVuSansM Nerd Font Propo;
+  font-family: SpaceMono Nerd Font Propo;
+  font-family: Roboto Condensed;
+  font-family: MonaspiceRn Nerd Font Propo;
+  background-color: #ffffff;
+  */
+  font-family: Iosevka Nerd font Propo;
+  background-color: @backgroundlight;
+  border: none;
+  border-radius: 15px;
+  margin: 0px 1px 0px 1px;
+  padding: 0px 1px 0px 1px;
+  font-size: 14px;
+}
+
+window#waybar {
+  border-radius: 0px;
+  background-color: @barbackground;
+  /* 
+  border-bottom: 9px solid #ffffff;
+  color: #FFFFFF; 
+  background: transparent;
+  */
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* -----------------------------------------------------
+ * Active Windows
+ * ----------------------------------------------------- */
+#window {
+  background: @backgroundlight;
+  padding: 0px 6px 0px 6px;
+  color: @textcolor3;
+  font-weight: normal;
+  opacity: 0.8;
+}
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- 
+#workspaces button.empty {}
+#workspaces button.visible {}
+#workspaces button.special {}
+#workspaces button.persistent {}
+#workspaces button.urgent {}
+*/
+#workspaces {
+  /* 
+  background: @workspacesbackground1;
+  background-color: @workspacesbackground2;
+  text-shadow: 2px 2px 5px rgba(100, 100, 100, 0);
+  padding: 0px 0px 0px 0px;
+  */
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.7;
+  color: @textcolor1;
+}
+#workspaces button {
+  /* 
+  background: @workspacesbackground1;
+  background-color: @workspacesbackground2;
+  */
+  color: @textcolor1;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
+#workspaces button.empty {
+  color: @textcolor1;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
+#workspaces button.active {
+  color: @textcolor1;
+  /* 
+  background: @workspacesbackground1;
+  background-color: @workspacesbackground2;
+  */
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+#workspaces button:hover {
+  color: @textcolor1;
+  /* 
+  background: @workspacesbackground1;
+  background-color: @workspacesbackground2;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
+  */
+  background-color: @workspacesbackground1;
+  opacity: 1;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+tooltip {
+  background-color: @backgroundlight;
+  opacity: 0.8;
+}
+tooltip label {
+  color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+#taskbar {
+  padding: 0px 9px 0px 9px;
+  margin: 0px 0px;
+}
+#taskbar button {
+}
+#custom-left {
+  margin-right: 0px;
+}
+#custom-right {
+  margin-left: 0px;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+#custom-browser,
+#custom-keybindings,
+#custom-filemanager,
+#custom-teams,
+#custom-chatgpt,
+#custom-calculator,
+#custom-cliphist,
+#custom-wallpaper,
+#custom-wallpaper,
+#custom-system,
+#custom-waybarthemes {
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
+}
+#custom-chatgpt {
+  /*
+ */
+  background-image: url("../assets/ai-icon-14.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0px 20px 0px 1px;
+  margin-right: 8px;
+}
+#custom-browser,
+#custom-filemanager,
+#custom-calculator {
+  margin-left: 6px;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+#custom-appmenu {
+  /*
+  border: 3px solid @bordercolor;
+  background-color: @backgrounddark;
+*/
+  color: @textcolor1;
+  opacity: 0.8;
+}
+
+#mpris {
+  padding: 0px 9px 0px 9px;
+  background-color: @backgrounddark;
+  color: @textcolor1;
+  opacity: 1;
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+#custom-updates {
+  background-color: @backgroundlight;
+  color: @textcolor2;
+  padding: 0px 9px 0px 9px;
+  opacity: 0.8;
+}
+#custom-updates.green {
+  background-color: @backgroundlight;
+}
+#custom-updates.yellow {
+  background-color: #ff9a3c;
+  color: #ffffff;
+}
+#custom-updates.red {
+  background-color: #dc2f2f;
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * CURRENTS GROUP
+ * ----------------------------------------------------- */
+#custom-weatherD,
+#custom-weatherC,
+#clock {
+  /* 
+  font-family: Roboto bold;
+  padding: 0px 9px 0px 9px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+*/
+  font-size: 16;
+  color: @textcolor1;
+  background-color: @backgrounddark;
+}
+#currents {
+  padding: 0px 9px 0px 9px;
+  opacity: 0.9;
+  background-color: @backgrounddark;
+  border: 1px solid @bordercolor;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+#hardware {
+  font-size: 10;
+  padding: 2px 6px 0px 6px;
+}
+#disk,
+#memory,
+#cpu,
+#language {
+  color: @iconcolor;
+}
+/* network */
+#network {
+  color: @textcolor2;
+  opacity: 0.8;
+}
+#network.ethernet {
+  color: @textcolor2;
+}
+#network.wifi {
+  color: @textcolor2;
+}
+/* Bluetooth */
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
+  /*background-color: @backgroundlight;*/
+  color: @textcolor2;
+  opacity: 0.8;
+}
+#bluetooth.off {
+  background-color: transparent;
+}
+/* Battery */
+#battery {
+  color: @textcolor2;
+  opacity: 0.8;
+}
+#battery.charging,
+#battery.plugged {
+  color: @textcolor2;
+}
+@keyframes blink {
+  to {
+    color: @textcolor2;
+  }
+}
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: @textcolor3;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+/* Idle Inhibator */
+#idle_inhibitor {
+  font-weight: bold;
+  opacity: 0.8;
+  color: @iconcolor;
+}
+#idle_inhibitor.activated {
+  font-weight: bold;
+  opacity: 0.8;
+  color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+#tray {
+}
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+#pulseaudio {
+  background-color: @backgroundlight;
+  padding: 0px 9px 0px 9px;
+  color: @textcolor3;
+  opacity: 0.8;
+}
+#pulseaudio.muted {
+  background-color: @backgrounddark;
+  color: @textcolor1;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+#custom-exit {
+  color: @iconcolor;
+}

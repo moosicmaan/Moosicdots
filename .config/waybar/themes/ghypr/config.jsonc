@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "position": "top",
+    //"height": 10,
+    //"width": 700,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/ghypr/modules.jsonc"],
+
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces",
+      "hyprland/window",
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "custom/network_traffic",
+      "custom/updates",
+      "backlight",
+      "custom/keyboard-layout",
+      "temperature",
+      "cpu",
+      "memory",
+      "battery",
+      "pulseaudio",
+      "tray",
+      "idle_inhibitor",
+
+      "custom/power",
+    ],
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "position": "bottom",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/ghypr/modules.jsonc"],
+
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces",
+      "hyprland/window",
+    ],
+    "modules-center": ["mpris"],
+    "modules-right": ["pulseaudio", "custom/power"],
+  },
+]

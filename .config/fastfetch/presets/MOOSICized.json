@@ -1,0 +1,21 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "/home/moosicmaan/Pictures/LovePurposely/Artwork/Logo/Logo/Logo/LogoFull.png",
+    "width": 24
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    "uptime",
+    "shell",
+    {
+      "type": "gpu",
+      "key": "GPU"
+    },
+    "memory"
+  ]
+}

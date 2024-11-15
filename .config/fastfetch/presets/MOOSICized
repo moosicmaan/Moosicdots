@@ -1,0 +1,6 @@
+--kitty /home/moosicmaan/Pictures/LovePurposely/Artwork/Logo/Logo/Logo/LogoFull.png
+--logo-width 12
+--structure OS:Kernel:Uptime:Shell:Terminal:Memory
+--host-format "{/2}{-}{/}{2}{?3} {3}{?}"
+--battery-format "{/4}{-}{/}{4}%{?5} [{5}]{?}"
+--gpu-key "GPU"

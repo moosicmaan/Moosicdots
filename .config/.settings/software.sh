@@ -1,0 +1,2 @@
+kitty -e pacseek
+

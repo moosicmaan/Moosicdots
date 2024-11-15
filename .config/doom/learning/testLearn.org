@@ -1,0 +1,58 @@
+#+title: ORG ScratchPad
+#+author: Jason Bradberry
+#+start: showall
+
+This is my scratchpad to help me remember how to do some things in org mode.
+Org is simple, or so they say. 
+It is just text! Just start typing.
+
+* THIS IS A HEADING - LIKE (H1)
+- It starts with one or more stars
+- A heading has one star, a sub-heading two, etc.
+* LEVEL 1
+** Level 2
+*** Level 3
+**** Level 4
+***** Level 5
+****** Level 6
+******* Level 7
+******** Level 8
+* MOVING AROUND IN OUR OUTLINE
+- use ALT + <arrows>
+* SAMPLE - LORD OF THE RINGS
+** *Important* actors in this film are:
+- Elijah Wood : He plays Frodo
+- Sean Austin : He plays Sam, Frodo's friend.  I still remember him well from his role as Mikey Walsh in /The Goonies/.
+- others
+** My favorite scenes are (in this order)
+1. Eowyn's fight with the witch king
+   - I really like Miranda Otto.
+   - this was already my favorite scene in the book
+2. The attack of the Rohirrim
+3. Peter Jackson being shot by Legolas
+   - on DVD only
+   - He makes a really funny face when it happens.
+/In the end, no individual scenes matter but the film as a whole./
+* TEXT FORMATTING
+- You can make words *bold*, /italic/, _underlined_, =code= and ~verbatim~, and, if you must, +strike-through+.
+- Put these characters before and after the text you want influenced.
+' * ' = *bold*
+' // ' = /italic/
+' _ ' = _underline_
+' = =' = =code=
+' ~ ~' = ~verbatim~
+' + ' = +strike through+
+* TODO [#B] LINKS
+SCHEDULED: <2024-05-22 Wed>
+* TODO [#A] WORKING WITH LISTS
+SCHEDULED: <2024-05-18 Sat>
+* TODO [#C] TABLES
+SCHEDULED: <2024-05-24 Fri>
+* TODO [#A] CODING/TANGLE
+SCHEDULED: <2024-06-08 Sat>
+* TODO [#A] AGENDA
+SCHEDULED: <2024-05-23 Thu>
+- Not really sure what is possibe.  So far, I've found out:
+  -
+* TODO [#C] EMAIL
+SCHEDULED: <2024-06-12 Wed>

@@ -1,0 +1,463 @@
+// =====================================================
+// -----------------------------------------------------
+// MODULES FOR MOOSIC WAYBAR CONFIGS
+// -----------------------------------------------------
+// =====================================================
+
+{
+  // WORKSPACES
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "special-visible-only": true,
+    "format": "{icon}",
+    // "format": "{name}{icon}",
+    "format-icons": {
+      // "1": "😺",
+      // "2": "😿",
+      // "3": "😽",
+      // "4": "🙀",
+      // "5": "😾",
+      // "6": "😼",
+      // "7": "😸",
+      // "8": "😻",
+      // "9": "😺",
+      // "10": "😚",
+      "1": "🌕",
+      "2": "🌖",
+      "3": "🌗",
+      "4": "🌘",
+      "5": "🌑",
+      "6": "🌑",
+      "7": "🌒",
+      "8": "🌓",
+      "9": "🌔",
+      "10": "🌕",
+      // "1": "𐒡",
+      // "2": "𐒢",
+      // "3": "𐒣",
+      // "4": "𐒤",
+      // "5": "𐒥",
+      // "6": "𐒦",
+      // "7": "𐒧",
+      // "8": "𐒨",
+      // "9": "𐒩",
+      // "10": "𐒠",
+      // "default": "Ｄ",
+      "active": "🌏",
+      "special": "😍",
+      // "empty": "Ｕ",
+      // "visible": "Ｕ",
+      // "persistent": "😍",
+    },
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+
+  // APPLICATION LAUNCHER
+  "custom/appmenu": {
+    "format": "🌐",
+    // "on-click": "rofi -show drun -replace",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+    // "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "on-click-right": "rofi -show drun -replace",
+    "tooltip": false,
+  },
+
+  // POWER MENU
+  "custom/exit": {
+    // "format": "",
+    "format": "👽",
+    "on-click": "wlogout",
+    "tooltip": false,
+  },
+
+  // TASKBAR
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 12,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition",
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal",
+    },
+  },
+
+  // HYPRLAND WINDOW
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) - Brave": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1",
+    },
+    "separate-outputs": true,
+    "icon": true,
+    "spacing": 5,
+    "icon-size": 14,
+  },
+
+  // CLIPHIST
+  "custom/cliphist": {
+    "format": "",
+    "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
+    "tooltip": false,
+  },
+
+  // WALLPAPER
+  "custom/wallpaper": {
+    "format": "",
+    "on-click": "~/.config/.scripts/wallpaper.sh select",
+    "on-click-right": "~/.config/.scripts/wallpaper.sh",
+    "tooltip": false,
+  },
+
+  // WAYBAR THEMES
+  "custom/waybarthemes": {
+    "format": "",
+    "on-click": "~/.config/.scripts/themeswitcher.sh",
+    "tooltip": false,
+  },
+
+  // SETTINGS
+  "custom/settings": {
+    "format": "",
+    "on-click": "kitty --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
+    "tooltip": false,
+  },
+
+  // KEYBINDINGS
+  "custom/keybindings": {
+    "format": "",
+    "on-click": "~/.config/.scripts/keybindings.sh",
+    "tooltip": false,
+  },
+
+  // FILEMANAGER LAUNCHER
+  "custom/filemanager": {
+    "format": "",
+    "on-click": "~/.config/.settings/filemanager.sh",
+    "tooltip": false,
+  },
+
+  // BROWSER LAUNCHER
+  "custom/browser": {
+    "format": "",
+    "on-click": "~/.config/.settings/browser.sh",
+    "tooltip": false,
+  },
+
+  // CHATGPT LAUNCHER
+  "custom/chatgpt": {
+    "format": " ",
+    "on-click": "brave --app=https://chat.openai.com",
+    "tooltip": false,
+    "icon-size": 14,
+  },
+
+  // CALCULATOR
+  "custom/calculator": {
+    "format": "",
+    "on-click": "galculator",
+    "tooltip": false,
+  },
+
+  // ROFI APPLICATION LAUNCHER
+  "custom/appmenuicon": {
+    "format": "",
+    "icon-size": 14,
+    "on-click": "rofi -show drun -replace",
+    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "tooltip": false,
+  },
+
+  // SYSTEM TRAY
+  "tray": {
+    "icon-size": 14,
+    "spacing": 5,
+  },
+
+  // SYSTEM
+  "custom/system": {
+    "format": "/  ",
+    // "format": "/  🖳 ",
+    "tooltip": false,
+  },
+
+  // CPU
+  "cpu": {
+    "format": "/ C {usage}% ",
+    "on-click": "kitty -e btop",
+  },
+
+  // MEMORY
+  "memory": {
+    "format": "/ M {}% ",
+    "on-click": "kitty -e btop",
+  },
+
+  // HARDDISC SPACE USED
+  "disk": {
+    "interval": 30,
+    "format": "/ D {percentage_used}% ",
+    "path": "/",
+    "on-click": "kitty -e btop",
+  },
+
+  // NETWORK
+  "network": {
+    "format": "/ {ifname}",
+    "format-wifi": "/    {signalStrength}%",
+    "format-ethernet": "/  {ifname}",
+    "format-disconnected": "/ Disconnected",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "~/.config/.settings/networkmanager.sh",
+  },
+
+  // BATTERY
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "/ {icon}  {capacity}% ",
+    "format-charging": "/   {capacity}%",
+    "format-plugged": "/   {capacity}%",
+    "format-alt": "/ {icon}  {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [" ", " ", " ", " ", " "],
+  },
+
+  // KEYBOARD STATE
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "/ {name} {icon}",
+    "format-icons": {
+      "locked": "/ ",
+      "unlocked": "/ ",
+    },
+    "icon-size": 14,
+  },
+
+  // PULSEAUDIO
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", " ", " "],
+    },
+    "on-click": "pavucontrol-qt",
+  },
+
+  // BLUETOOTH
+  "bluetooth": {
+    "format": "/  {status}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": "",
+  },
+
+  // OTHER
+  "user": {
+    "format": "{user}",
+    "interval": 60,
+    "icon": false,
+  },
+
+  // IDLE INHIBATOR
+  "idle_inhibitor": {
+    "format": "/   {icon}     ",
+    "tooltip": true,
+    "format-icons": {
+      "activated": "  ",
+      "deactivated": "  ",
+    },
+    "on-click-right": "swaylock",
+  },
+
+  // UPDATES COUNT
+  "custom/updates": {
+    "format": "  {}",
+    "tooltip-format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/.scripts/updates.sh",
+    "restart-interval": 60,
+    "on-click": "kitty --class dotfiles-floating -e garuda-update",
+    "on-click-right": "~/.config/.settings/software.sh",
+    "tooltip": false,
+  },
+
+  // GROUP HARDWARE
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/system",
+      "custom/updates",
+      "disk",
+      "memory",
+      "cpu",
+      "network",
+      "bluetooth",
+      "battery",
+      "idle_inhibitor",
+    ],
+  },
+
+  // RIGHT PAREN..
+  "custom/right": {
+    "format": "⎞",
+  },
+
+  // LEFT PAREN..
+  "custom/left": {
+    "format": "⎝",
+  },
+
+  // MPRIS
+  "mpris": {
+    "format": "{player_icon}{dynamic}",
+    "format-paused": "{status_icon}<i>{dynamic}</i>",
+    "max-length": 200,
+    "player-icons": {
+      "default": "▶ ",
+      "mpv": "🎵",
+      "spotube": "👠 ",
+    },
+    "status-icons": {
+      "paused": "⏸",
+    },
+    // "ignored-players": ["firefox"]
+  },
+
+  // WEATHER APP DAVAO
+  "custom/weatherD": {
+    "format": " - Davao:{}°",
+    // "format": "{ICON}{temp_C}({FeelsLikeC})",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --date-format %m/%d --fahrenheit --mph --location 'Davao+City' --hide-conditions ",
+    "return-type": "json",
+  },
+
+  // WEATHER APP LOCAL
+  "custom/weatherC": {
+    "format": "{}°",
+    // "format": "{ICON}{temp_C}({FeelsLikeC})",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
+    "return-type": "json",
+  },
+
+  // CLOCK
+  "clock": {
+    "format-alt": "{:%H:%M}  ",
+    "format": "{:%a, %b %d, %Y - ( %R  ) }",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "timezones": ["America/Denver", "Europe/London", "Asia/Manila"],
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+
+  // CLOCK, DAVAO
+  "clock#2": {
+    "timezone": "Asia/Manila",
+    "format": "{:%a-( %R  )}",
+    "format-alt": "{:%H:%M}  ",
+    "actions": {
+      "on-click-right": "mode",
+    },
+  },
+
+  // GROUP APPLICATION
+  "group/appo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true,
+    },
+    "modules": [
+      "custom/appmenu",
+      "custom/chatgpt",
+      "custom/left",
+      "wlr/taskbar",
+      "custom/right",
+      "custom/browser",
+      "custom/filemanager",
+      "custom/calculator",
+    ],
+  },
+
+  // GROUP SETTINGS
+  "group/settings": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/chatgpt",
+      "custom/settings",
+      "custom/waybarthemes",
+      "custom/wallpaper",
+    ],
+  },
+
+  // CLOCK GROUP
+  "group/currents": {
+    "orientation": "horizontal",
+    "modules": ["clock", "custom/weatherC", "custom/weatherD", "clock#2"],
+  },
+}

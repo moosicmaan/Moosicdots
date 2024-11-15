@@ -1,0 +1,21 @@
+#!/bin/bash
+
+rm -r ~/.config/river/waybar/*.css
+cp -r ~/.config/river/waybar-alt-8/style/style-21.css ~/.config/river/waybar/style.css
+
+# kill first
+if [[ $(pidof waybar) ]]; then
+	killall -q waybar
+fi
+
+while pgrep -u $UID -x waybar > /dev/null;do sleep 1;done
+ 
+
+# start up again
+CONFIG="$HOME/.config/river/waybar/config.ini"
+STYLE="$HOME/.config/river/waybar/style.css"
+
+if [[ ! $(pidof waybar) ]]; then
+	waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE} &
+fi
+

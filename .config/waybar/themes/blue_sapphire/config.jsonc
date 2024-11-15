@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "position": "top",
+    //"height": 10,
+    //"width": 700,
+    "height": 40,
+    "margin": "3, 5, 0, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/blue_sapphire/modules.jsonc"],
+
+    // Choose the order of the modules
+    "modules-left": [
+      "custom/launcher",
+      "idle_inhibitor",
+      "custom/updater",
+      "pulseaudio",
+      "backlight",
+      "custom/keyboard-layout",
+      "custom/network_traffic",
+      "network",
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "temperature",
+      "battery",
+      "tray",
+      "clock",
+      "custom/power",
+    ],
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "position": "bottom",
+    "height": 40,
+    "margin": "0, 5, 3, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": ["~/.config/waybar/themes/blue_sapphire/modules.jsonc"],
+
+    // Choose the order of the modules
+    "modules-left": [
+      "custom/launcher",
+      "idle_inhibitor",
+      "custom/updater",
+      "backlight",
+      "custom/keyboard-layout",
+      "custom/network_traffic",
+      "network",
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["mpris", "pulseaudio", "custom/power"],
+  },
+]

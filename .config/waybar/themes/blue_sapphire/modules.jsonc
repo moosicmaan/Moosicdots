@@ -1,0 +1,184 @@
+// Modules configuration
+{
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "focused": "",
+      "default": "",
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
+  "custom/keyboard-layout": {
+    "format": " Cheat", // Icon: keyboard
+    "on-click": "~/.local/bin/keyhint.sh",
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "tooltip": true,
+  },
+  "custom/keyboard-layout": {
+    "format": " Cheat", // Icon: keyboard
+    "on-click": "~/.local/bin/keyhint.sh",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+    "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh",
+  },
+  "custom/network_traffic": {
+    "exec": "~/.config/waybar/scripts/network_traffic.sh",
+    "return-type": "json",
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}", // optional
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
+    //"format": " {:%a %d %b  %I:%M %p}",	//12 hour format
+    "format": " {:%a %d %b  %H:%M}", //24 hour format
+    "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
+    //"max-length": 200
+    "interval": 1,
+    "on-click": "~/.config/waybar/scripts/OCV",
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "on-click": "footclient -e htop",
+  },
+  "memory": {
+    "format": "{}% ",
+    "on-click": "foot -e htop",
+  },
+  "temperature": {
+    "thermal-zone": 7, // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
+    "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C ",
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "on-scroll-down": "brightnessctl -c backlight set 1%-",
+    "on-scroll-up": "brightnessctl -c backlight set +1%",
+    "on-click": "~/.config/waybar/scripts/backlight-hint.sh",
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "battery#bat0": {
+    "bat": "BAT0",
+  },
+  "network": {
+    //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
+    "format": "⚠Disabled",
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "⚠Disabled",
+    "family": "ipv4",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    //"min-length": 2,
+    //"max-length": 2,
+    "on-click": "nm-connection-editor",
+  },
+  "pulseaudio": {
+    "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": "{icon} {format_source}",
+    "format-muted": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "format-icons": {
+      "spotify": " ",
+      "default": " ",
+    },
+    "escape": false,
+
+    "exec": "python $HOME/.config/system_scripts/mediaplayer.py" /*2> /dev/null"*/,
+    "on-click": "playerctl play-pause",
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+  },
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "nwgbar",
+    "tooltip": false,
+  },
+  "custom/updater": {
+    "format": " {} {icon}Updates",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "󰂪",
+      "interval": 7200,
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates",
+    "on-click": "footclient -e garuda-update -a",
+  },
+  // MPRIS
+  "mpris": {
+    "format": "{player_icon}{dynamic}",
+    "format-paused": "{status_icon}<i>{dynamic}</i>",
+    "max-length": 200,
+    "player-icons": {
+      "default": "▶ ",
+      "mpv": "🎵",
+      "spotube": "👠 ",
+    },
+    "status-icons": {
+      "paused": "⏸",
+    },
+    // "ignored-players": ["firefox"]
+  },
+}

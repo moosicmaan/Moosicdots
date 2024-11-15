@@ -1,0 +1,286 @@
+#!/usr/bin/env python3
+import sys
+import os
+# Uncomment for gconf settings
+#from gi.repository import Gio
+from pywayland.client import Display
+from pywayland.protocol.wayland import WlOutput
+from pywayland.protocol.wayland import WlSeat
+try:
+    from pywayland.protocol.river_control_unstable_v1 import ZriverControlV1
+    from pywayland.protocol.river_status_unstable_v1 import ZriverStatusManagerV1
+except ModuleNotFoundError:
+    ERROR_TEXT = ('''
+  Your pywayland package does not have bindings for river-control-unstable-v1
+  and/or river-status-unstable-v1.
+  These bindings can be generated with the following command:
+  python3 -m pywayland.scanner -i /usr/share/wayland/wayland.xml '''
+                  '/usr/share/river-protocols/river-control-unstable-v1.xml '
+                  '''/usr/share/river-protocols/river-status-unstable-v1.xml
+  Adjust the path of /usr/share/river-protocols/ as approriate for your '''
+                  'installation.')
+
+    print(ERROR_TEXT)
+    sys.exit()
+
+STATUS_MANAGER = None
+CONTROL = None
+
+OUTPUTS = []
+SEAT = None
+
+class Output(object):
+    def __init__(self):
+        self.wl_output = None
+        self.focused_tags = None
+        self.status = None
+
+    def destroy(self):
+        if self.wl_output is not None:
+            self.wl_output.destroy()
+        if self.status is not None:
+            self.status.destroy()
+
+    def configure(self):
+        self.status = STATUS_MANAGER.get_river_output_status(self.wl_output)
+        self.status.user_data = self
+        self.status.dispatcher["focused_tags"] = self.handle_focused_tags
+
+    def handle_focused_tags(self, output_status, tags):
+        self.focused_tags = tags
+
+
+class Seat(object):
+    def __init__(self):
+        self.wl_seat = None
+        self.status = None
+        self.focused_output = None
+
+    def destroy(self):
+        if self.wl_seat is not None:
+            self.wl_seat.destroy()
+
+        if self.status is not None:
+            self.status.destroy()
+
+    def configure(self):
+        self.status = STATUS_MANAGER.get_river_seat_status(self.wl_seat)
+        self.status.user_data = self
+        self.status.dispatcher["focused_output"] = self.handle_focused_output
+
+    def handle_focused_output(self, _, wl_output):
+        for output in OUTPUTS:
+            if output.wl_output == wl_output:
+                self.focused_output = output
+
+
+def registry_handle_global(registry, id, interface, version):
+    global STATUS_MANAGER
+    global CONTROL
+    global SEAT
+
+    if interface == 'zriver_status_manager_v1':
+        STATUS_MANAGER = registry.bind(id, ZriverStatusManagerV1, version)
+    elif interface == 'zriver_control_v1':
+        CONTROL = registry.bind(id, ZriverControlV1, version)
+    elif interface == 'wl_output':
+        output = Output()
+        output.wl_output = registry.bind(id, WlOutput, version)
+        OUTPUTS.append(output)
+    elif interface == 'wl_seat':
+        # We only care about the first seat
+        if SEAT is None:
+            SEAT = Seat()
+            SEAT.wl_seat = registry.bind(id, WlSeat, version)
+
+
+
+class RiverConfig:
+    def __init__(self):
+        self.layout = 'rivertile'
+        self.display = Display()
+        self.display.connect()
+
+        self.registry = self.display.get_registry()
+        self.registry.dispatcher["global"] = registry_handle_global
+
+        self.display.dispatch(block=True)
+        self.display.roundtrip()
+
+        if STATUS_MANAGER is None:
+            print("Failed to bind river status manager")
+            return
+
+        if CONTROL is None:
+            print("Failed to bind river control")
+            return
+
+        # Configuring all outputs, even the ones we do not care about,
+        # should be faster than first waiting for river to advertise the
+        # focused output of the SEAT.
+        for output in OUTPUTS:
+            output.configure()
+
+        SEAT.configure()
+
+        self.display.dispatch(block=True)
+        self.display.roundtrip()
+
+    def clean_up(self):
+        self.display.dispatch(block=True)
+        self.display.roundtrip()
+
+        SEAT.destroy()
+        for output in OUTPUTS:
+            output.destroy()
+
+        if STATUS_MANAGER is not None:
+            STATUS_MANAGER.destroy()
+
+        if CONTROL is not None:
+            CONTROL.destroy()
+
+        self.display.disconnect()
+
+    def river_ctl(self,*args):
+        for arg in args:
+            CONTROL.add_argument(arg)
+
+        CONTROL.run_command(SEAT.wl_seat)
+
+    def layout_cmd(self, *args, map_arg=None, mode='normal'):
+        # map_arg: one of -release, -repeat
+        modifiers=args[0]
+        key = args[1]
+
+        CONTROL.add_argument('unmap')
+        CONTROL.add_argument(mode)
+        CONTROL.add_argument(modifiers)
+        CONTROL.add_argument(key)
+        CONTROL.run_command(SEAT.wl_seat)
+
+        CONTROL.add_argument('map')
+        if map_arg:
+            CONTROL.add_argument(map_arg)
+
+        CONTROL.add_argument(mode)
+        CONTROL.add_argument(modifiers)
+        CONTROL.add_argument(key)
+        CONTROL.add_argument('send-layout-cmd')
+        CONTROL.add_argument(self.layout)
+
+        for arg in args[2:]:
+            CONTROL.add_argument(arg)
+
+        CONTROL.run_command(SEAT.wl_seat)
+
+
+    def river_map(self, *args, map_arg=None, mode='normal'):
+        # map_arg: one of -release, -repeat
+        modifiers=args[0]
+        key = args[1]
+
+        CONTROL.add_argument('unmap')
+        CONTROL.add_argument(mode)
+        CONTROL.add_argument(modifiers)
+        CONTROL.add_argument(key)
+        CONTROL.run_command(SEAT.wl_seat)
+
+        CONTROL.add_argument('map')
+        if map_arg:
+            CONTROL.add_argument(map_arg)
+
+        CONTROL.add_argument(mode)
+        CONTROL.add_argument(modifiers)
+        CONTROL.add_argument(key)
+        for arg in args[2:]:
+            CONTROL.add_argument(arg)
+
+        CONTROL.run_command(SEAT.wl_seat)
+
+    def init(self):
+
+        # Gnome stuff first
+        # Instead of shelling out to "gsettings set org.gnome.desktop.interface foo bar"
+        #gnome_settings = Gio.Settings(schema='org.gnome.desktop.interface')
+        #gnome_settings.set_string('gtk-theme','Adwita')
+        #gnome_settings.set_string('cursor-theme','whiteglass')
+
+        # Now river stuff
+        self.river_ctl('xcursor-theme', 'whiteglass')
+
+        # Sloppy focus
+        self.river_ctl( 'focus-follows-cursor', 'normal')
+
+        # Cursor moves to focused display
+        self.river_ctl( 'set-cursor-warp', 'on-output-change')
+
+        # New from 2022-04-20
+        self.river_ctl( 'hide-cursor', 'timeout', '5000')
+
+        self.river_map( 'Super', 'C', 'spawn', 'makoctl dismiss', map_arg='-repeat' )
+        self.river_map( 'Super', 'Return', 'spawn', 'footclient')
+        self.river_map( 'Super+Shift', 'Return', 'spawn', 'foot')
+
+        # Run a program with fuzzel
+        self.river_map( 'Super', 'u', 'spawn', 'fuzzel --log-level=error' )
+
+
+        # Close the focused view
+        self.river_map('Super+Shift', 'C', 'close' )
+
+        # Exit river
+        self.river_map('Super+Shift', 'E',  'exit')
+
+        ntags=9
+        for i in range(ntags):
+            tags=f'{1<<i}'
+            tag=f'{i+1}'
+
+            # View tag
+            self.river_map( 'Super', tag, 'set-focused-tags', tags )
+
+            # Send client (aka view) to tag
+            self.river_map( 'Super+Shift', tag, 'set-view-tags', tags )
+
+            # Toggle visiblity of tag
+            self.river_map( 'Super+Control', tag, 'toggle-focused-tags', tags )
+
+            # Toggle tag of focussed view
+            self.river_map( 'Super+Shift+Control', tag, 'toggle-view-tags', tags )
+
+        all_tags=f'{(1<<32)-1}'
+        # View all tags
+        self.river_map('Super', '0', 'set-focused-tags', all_tags)
+
+        # Put client on every tag
+        self.river_map('Super+Shift', '0', 'set-view-tags', all_tags)
+
+        # Toggle float
+        self.river_map('Super+Control', 'Space', 'toggle-float')
+
+        # Toggle fullscreen
+        self.river_map('Super', 'F', 'toggle-fullsreen')
+
+        # Declare a passthrough mode. This mode has only a single mapping to return to
+        # normal mode. This makes it useful for testing a nested wayland compositor
+        self.river_ctl( 'declare-mode', 'passthrough')
+
+        # Toggle between modes
+        self.river_map('Super', 'F11', 'enter-mode', 'passthrough', mode='normal')
+        self.river_map('Super', 'F11', 'enter-mode', 'normal', mode='passthrough')
+
+        # Lockscreen
+        self.river_map('Super+Control', 't', 'spawn', 'swaylock')
+
+        # Layout generator
+        self.river_ctl('default-layout', self.layout)
+        self.layout_cmd('Super', 'H', 'main-ratio +0.01', map_arg='-repeat')
+        self.layout_cmd('Super', 'L', 'main-ratio -0.01', map_arg='-repeat')
+
+
+if __name__ == '__main__':
+    rc = RiverConfig()
+    rc.init()
+    rc.clean_up()
+    os.system(rc.layout)

@@ -1,0 +1,174 @@
+#!/bin/sh
+
+# This is the example configuration file for river.
+#
+# If you wish to edit this, you will probably want to copy it to
+# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
+#
+# See the river(1), riverctl(1), and rivertile(1) man pages for complete
+# documentation.
+
+# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
+mod="Mod4"
+
+# Autostart
+riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
+riverctl spawn "dbus-update-activation-environment SEATD_SOCK DISPLAY WAYLAND _DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn 'waybar -c ~/.config/river/waybar/config.ini -s ~/.config/river/waybar/style.css'
+riverctl spawn "dunst"
+riverctl spawn "thunar"
+riverctl spawn "alacritty"
+
+alias rmn="riverctl map normal"
+
+# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+rmn Super+Shift Return spawn thunar
+rmn Super Return spawn alacritty
+
+# Super+Q to close the focused view
+rmn Super Q close
+
+# Super+Shift+E to exit river
+rmn Super+Shift E exit
+
+# Super+J and Super+K to focus the next/previous view in the layout stack
+rmn Super J focus-view next
+rmn Super K focus-view previous
+
+# Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
+# view in the layout stack
+rmn Super+Shift J swap next
+rmn Super+Shift K swap previous
+
+# Super+Period and Super+Comma to focus the next/previous output
+rmn Super Period focus-output next
+rmn Super Comma focus-output previous
+
+# Super+Shift+{Period,Comma} to send the focused view to the next/previous output
+rmn Super+Shift Period send-to-output next
+rmn Super+Shift Comma send-to-output previous
+
+# Super+Return to bump the focused view to the top of the layout stack
+# rmn Super Return zoom
+
+# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
+rmn Super H send-layout-cmd rivertile "main-ratio -0.05"
+rmn Super L send-layout-cmd rivertile "main-ratio +0.05"
+
+# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
+rmn Super+Shift H send-layout-cmd rivertile "main-count +1"
+rmn Super+Shift L send-layout-cmd rivertile "main-count -1"
+
+# Super+Alt+{H,J,K,L} to move views
+rmn Super+Alt H move left 100
+rmn Super+Alt J move down 100
+rmn Super+Alt K move up 100
+rmn Super+Alt L move right 100
+
+# Super+Alt+Control+{H,J,K,L} to snap views to screen edges
+rmn Super+Alt+Control H snap left
+rmn Super+Alt+Control J snap down
+rmn Super+Alt+Control K snap up
+rmn Super+Alt+Control L snap right
+
+# Super+Alt+Shift+{H,J,K,L} to resize views
+rmn Super+Alt+Shift H resize horizontal -100
+rmn Super+Alt+Shift J resize vertical 100
+rmn Super+Alt+Shift K resize vertical -100
+rmn Super+Alt+Shift L resize horizontal 100
+
+# Super + Left Mouse Button to move views
+riverctl map-pointer normal Super BTN_LEFT move-view
+
+# Super + Right Mouse Button to resize views
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+# Super + Middle Mouse Button to toggle float
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # Super+[1-9] to focus tag [0-8]
+    rmn Super $i set-focused-tags $tags
+
+    # Super+Shift+[1-9] to tag focused view with tag [0-8]
+    rmn Super+Shift $i set-view-tags $tags
+
+    # Super+Control+[1-9] to toggle focus of tag [0-8]
+    rmn Super+Control $i toggle-focused-tags $tags
+
+    # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
+    rmn Super+Shift+Control $i toggle-view-tags $tags
+done
+
+# Super+0 to focus all tags
+# Super+Shift+0 to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+rmn Super 0 set-focused-tags $all_tags
+rmn Super+Shift 0 set-view-tags $all_tags
+
+# Super+Space to toggle float
+rmn Super Space toggle-float
+
+# Super+F to toggle fullscreen
+rmn Super F toggle-fullscreen
+
+# Super+{Up,Right,Down,Left} to change layout orientation
+rmn Super Up    send-layout-cmd rivertile "main-location top"
+rmn Super Right send-layout-cmd rivertile "main-location right"
+rmn Super Down  send-layout-cmd rivertile "main-location bottom"
+rmn Super Left  send-layout-cmd rivertile "main-location left"
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+
+# Super+F11 to enter passthrough mode
+rmn Super F11 enter-mode passthrough
+
+# Super+F11 to return to normal mode
+riverctl map passthrough Super F11 enter-mode normal
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    # Eject the optical drive (well if you still have one that is)
+    riverctl map $mode None XF86Eject spawn 'eject -T'
+
+    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+
+    # Control screen backlight brightness with light (https://github.com/haikarainen/light)
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+done
+
+# Set background and border color
+riverctl background-color 0x002b36
+riverctl border-color-focused 0x93a1a1
+riverctl border-color-unfocused 0x586e75
+
+# Set keyboard repeat rate
+riverctl set-repeat 50 300
+
+# Make all views with an app-id that starts with "float" and title "foo" start floating.
+riverctl rule-add -app-id 'float*' -title 'foo' float
+
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add -app-id "bar" csd
+
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout rivertile
+rivertile -view-padding 6 -outer-padding 6 &

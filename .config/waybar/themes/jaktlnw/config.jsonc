@@ -1,0 +1,98 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### TOP and LEFT PANEL ## //
+
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "include": "~/.config/waybar/themes/jaktlnw/modules.jsonc",
+    "layer": "top",
+    //"mode": "dock",
+    "width": 1200,
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "margin-top": 3,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left": [
+      "custom/menu",
+      "custom/separator#blank_2",
+      "group/motherboard",
+    ],
+
+    "modules-center": [
+      //"hyprland/window",
+      "hyprland/workspaces#roman",
+    ],
+
+    "modules-right": [
+      "network",
+      "bluetooth",
+      "custom/weather",
+      "custom/separator#blank_2",
+      "group/audio",
+      "custom/separator#blank_2",
+      "keyboard-state",
+      "custom/power",
+    ],
+  },
+
+  {
+    "id": 2,
+    "output": "eDP-1",
+    "include": "~/.config/waybar/themes/jaktlnw/modules.jsonc",
+    "layer": "top",
+    "position": "left",
+    "height": 650,
+    "margin-top": 8,
+    "margin-bottom": 8,
+    "margin-left": 3,
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    //"gtk-layer-shell": true,
+
+    "modules-left": ["custom/lock"],
+
+    "modules-center": ["clock#vertical"],
+
+    "modules-right": ["mpris", "custom/swaync", "tray"],
+  },
+
+  {
+    "id": 3,
+    "output": "HDMI-A-1",
+    "include": "~/.config/waybar/themes/jaktlnw/modules.jsonc",
+    "layer": "top",
+    //"mode": "dock",
+    "width": 1200,
+    "exclusive": true,
+    "passthrough": false,
+    "position": "bottom",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "margin-bottom": 3,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left": ["custom/menu", "custom/separator#blank_2", "mpris#moosic"],
+
+    "modules-center": [
+      //"hyprland/window",
+      "hyprland/workspaces#roman",
+    ],
+
+    "modules-right": [
+      "group/audio",
+      "custom/separator#blank_2",
+      "custom/power",
+    ],
+  },
+]
