@@ -116,6 +116,7 @@
        tty               ; improve the terminal Emacs experience
 
        :lang
+       hyprlang            ;just a guess than this might work
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;(cc +lsp)         ; C > C++ == 1

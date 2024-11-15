@@ -1,0 +1,26 @@
+// -*- mode: json -*-
+
+{
+    "output":"HDMI-A-1",
+    "layer": "top",
+    "position": "bottom",
+    //"height":18,                    // Waybar height (to be removed for auto height)
+    "width":1910,
+    "margin": "0 0 6 0",
+
+    "modules-left": [
+					"group/appo",
+					"hyprland/workspaces",
+					"hyprland/window"
+					],
+    "modules-center": [
+					"mpris"
+					],
+    "modules-right": [ 
+					"pulseaudio"
+					],
+
+    // Load Modules
+    "include": ["/mnt/data/moosicmaan/1A_SHARE/waybar/themes/moosic/modules.jsonc"],
+
+}

@@ -1,0 +1,151 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+ 
+/* Reset all styles */
+* {
+    color: #eceff4;
+    border: 0;
+    border-radius: 0;
+    padding: 0 0 0 0;
+    font-family:Symbols Nerd Font Mono;
+    font-size: 15px;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom:0px;
+    margin-top:0px;
+    padding-bottom:1px;
+  }
+
+window#waybar {
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    transition property: background-color;
+    transition duration: .5s;
+}
+
+#workspaces button {
+    font-size: 11px;
+    border-bottom: 1px;
+    border-top: 1px;
+    color: #eceff4;
+    border-color: #d8dee9;
+    border-style: solid;
+}
+
+#workspaces button.active {
+    border-color: #ffff00;
+}
+
+#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window, #custom-launcher, #custom-power, #custom-pacman, #custom-network_traffic, #custom-weather {
+    border-bottom: 1px;
+    border-style: solid;
+}
+ 
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#custom-launcher {
+    margin-left: 10px;
+}
+ 
+#clock {
+ color:#eceff4;
+}
+
+#backlight {
+    color: #eceff4;
+}
+
+#battery {
+    color: #eceff4;
+}
+
+#battery.charging {
+    color: #eceff4;
+}
+
+@keyframes blink {
+    to {
+        color: #eceff4;
+        background-color: #eceff4;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #bf616a;
+    color: #eceff4;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color:#eceff4;
+}
+
+#memory {
+    color: #eceff4;
+}
+
+#network.disabled {
+    color:#eceff4;
+}
+
+#network{
+    color:#eceff4;
+}
+
+#network.disconnected {
+    color: #bf616a;
+}
+
+#pulseaudio {
+    color:#eceff4;
+}
+
+#pulseaudio.muted {
+    color: #eceff4;
+}
+
+#temperature {
+    color: #eceff4;
+}
+
+#temperature.critical {
+    color: #bf616a;
+}
+
+#idle_inhibitor {
+   color: #eceff4;
+}
+
+#tray {
+    color: #eceff4;
+}
+
+#custom-launcher,#custom-power{
+    border-style: hidden;
+    margin-right: 10px;
+}
+
+#window{
+    border-style: hidden;
+}    
+#custom-keyboard-layout{
+   color:#eceff4;
+}   
+#custom-network_traffic{
+   color:#eceff4;
+}
+

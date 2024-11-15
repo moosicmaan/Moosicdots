@@ -6,6 +6,12 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: false
+  bindings.commands:
+    global:
+      normal:
+        x: tab-close
   colors.webpage.darkmode.enabled:
     global: true
   colors.webpage.preferred_color_scheme:
@@ -14,6 +20,16 @@ settings:
     global: 14pt
   fonts.messages.info:
     global: default_size default_family
+  fonts.statusbar:
+    global: 6 default_family
+  fonts.tabs.selected:
+    global: 6 default_family
+  fonts.tabs.unselected:
+    global: 6 default_family
+  fonts.web.size.default_fixed:
+    global: 14
+  fonts.web.size.minimum:
+    global: 0
   statusbar.show:
     global: in-mode
   tabs.favicons.show:

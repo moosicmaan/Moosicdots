@@ -1,0 +1,218 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+ 
+/* Reset all styles */
+* {
+    border: 0;
+    border-radius: 0;
+    padding: 0 0 0 0;
+    font-family:Symbols Nerd Font Mono;
+    font-size: 13px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+window#waybar {
+    border-radius: 15px;
+    background: linear-gradient(0.45turn, @color1, transparent 50%, @color6, @color10 90%);
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    margin: 0px 5px 0px 5px;
+    padding:0px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+#taskbar button:hover {
+    background: @color4;
+    border-radius: 15px;
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+#workspaces {
+    margin: 0px 6px 0px 6px;
+}
+
+#workspaces button {
+    background: @color10;
+    color: #fcfcfc;
+    border-radius: 15px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-color: @color5;
+    border-style: solid;
+    margin: 0px 3px 0px 3px;
+    padding: 1px 4px 1px 4px;
+    opacity: 0.8;
+}
+
+#workspaces button:hover {
+    color: #000000;
+    background: @workspacesbackground2;
+    border-radius: 15px;
+    opacity:0.8;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: @color3;
+    border-radius: 15px;
+    min-width: 35px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+#battery, 
+#cpu, 
+#memory,
+#idle_inhibitor, 
+#temperature,
+#custom-keyboard-layout, 
+#backlight, 
+#network, 
+#pulseaudio, 
+#custom-power,
+#custom-pacman, 
+#custom-network_traffic,
+#custom-launcher,
+#bluetooth,
+#custom-wallpaper, 
+#custom-settings,
+#custom-cliphist,
+#custom-waybarthemes,
+#custom-weather {
+    background: rgba(255, 255, 255, 0);
+    color: @fffafa;
+    padding: 0px 0px 0px 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+}
+ 
+#custom-launcher {
+    color: #ffffff;
+    margin-left: 0px;
+    background: @color4;
+    border-radius: 15px;
+    border: 2px;
+    border-color: #ffffff;
+    border-style: solid;
+    font-size: 16px;
+    padding: 2px 4px 0px 3px;
+}
+
+#custom-power {
+    color: #ffffff;
+    margin-right: 0px;
+    background: @color4;
+    border: 2px;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 2px 4px 0px 3px;
+}
+
+#mpris {
+    color: #ffffff;
+    background: linear-gradient(0.25turn, @color2, transparent 25%, #333333 55%, transparent 85%);
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+#custom-chatgpt {
+    background-image: url("../assets/ai-icon-20.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 0px;
+    padding-left: 15px;
+    margin: 0px 3px 0px 15px;
+}
+
+#pulseaudio {
+    background: @color4;
+    border: 2px;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 15px;
+	padding: 0px 5px 0px 12px;
+}
+
+#wlr-taskbar {
+    padding: 0px 0px 0px 0px;
+}
+
+#clock {
+    padding: 0px 0px 4px 0px;
+    color:#ffffff;
+    font-size:18px;
+}
+
+#bluetooth {
+    margin-right: 0px;
+}
+
+#battery.charging {
+    color: #eceff4;
+}
+
+@keyframes blink {
+    to {
+        color: #ffff00;
+        background-color: #eceff4;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #bf616a;
+    color: #eceff4;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    color: #bf616a;
+}
+
+#temperature.critical {
+    color: #bf616a;
+}
+
+#tray {
+    color: #ffffff;
+    padding: 0px 8px 0px 8px;
+}
+
+#custom-righty, 
+#custom-lefty {
+    font-size: 13px;
+    padding: 0px 4px 0px 4px;
+}

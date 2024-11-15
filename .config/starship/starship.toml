@@ -73,7 +73,7 @@ time_format = "%T"
 # error_symbol = " [×](bold red)"
 error_symbol = " [×](white)"
 # success_symbol = " [╰─λ](bold red)"
-success_symbol = " [╚═](white)⮚"
+success_symbol = " (white)[╚═](white)⮚"
 
 # SYMBOLS
 [status]
