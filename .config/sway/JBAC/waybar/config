@@ -1,0 +1,42 @@
+// ----------------------------------------------------------------
+//
+//  m     m               #
+//  #  #  #  mmm   m   m  #mmm    mmm    m mm
+//  " #"# # "   #  "m m"  #" "#  "   #   #"  "
+//   ## ##" m"""#   #m#   #   #  m"""#   #
+//   #   #  "mm"#   "#    ##m#"  "mm"#   #
+//                  m"
+//                 ""
+// ----------------------------------------------------------------
+
+
+{
+    "output":"eDP-1",
+    //"output":"HDMI-A-3",
+    "layer": "top",		  // Waybar at top layer
+    "position": "top",	  // Waybar position (top|bottom|left|right)
+    //"width":1910,
+    "margin": "0 0 0 0",
+
+    // Choose the order of the modules
+    "modules-left": [
+					"group/appo",
+          "sway/workspaces",
+          "sway/mode",
+          "sway/window"
+					],
+	"modules-center": [
+					"group/cclock"
+					],
+    "modules-right": [ 
+					"custom/leftyD",
+					"custom/weather",
+					"group/tech",
+					"custom/rightyD",
+					"tray", 
+					"custom/power"
+					],
+
+	// Load Modules
+    "include": ["~/.config/sway/waybar/modules.jsonc"],
+}

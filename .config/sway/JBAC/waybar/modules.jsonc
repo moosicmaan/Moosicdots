@@ -1,0 +1,404 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+// -----------------------------------------------------
+{
+  // Workspaces
+  "sway/workspaces": {
+    // "format": "{icon}",
+    "format": "{icon}  {name}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      // "1": "➊",
+      // "2": "➋",
+      // "3": "➌",
+      // "4": "➍",
+      // "5": "➎",
+      // "6": "➏",
+      // "7": "➐",
+      // "8": "➑",
+      // "9": "➒",
+      // "10": "󰿬",
+      //"10": "",
+      //"10": "",
+      // "1": "1",
+      // "2": "2",
+      // "3": "3",
+      // "4": "4",
+      // "5": "5",
+      // "6": "6",
+      // "7": "7",
+      // "8": "8",
+      // "9": "9",
+      // "10": "10",
+      "active": "",
+      "empty": "",
+      "default": "",
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+  "sway/window": {
+    "icon": true,
+    "icon-size": 15,
+    "format": "{}"
+  },
+  "sway/mode": {
+    "justify": "center",
+    "tooltip": "What mode you are in - esc to remove"
+  },
+  // Open Applications - taskbar
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "on-click-right": "close",
+    "ignore-list": [
+      "kitty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition",
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal",
+    },
+  },
+  // Cliphist
+  "custom/cliphist": {
+    "format": "|  ",
+    "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
+    "tooltip": false,
+  },
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "|  ",
+    "on-click": "~/.config/.scripts/wallpaper.sh select",
+    "on-click-right": "~/.config/.scripts/wallpaper.sh",
+    "tooltip": false,
+  },
+  // Waybar Themes
+  "custom/waybarthemes": {
+    "format": "|   ",
+    "on-click": "~/.config/.scripts/themeswitcher.sh",
+    "tooltip": false,
+  },
+  // Settings
+  "custom/settings": {
+    "format": " |   ",
+    "on-click": "kitty --class dotfiles-floating -e ~/.config/hypr/start-settings.sh",
+    "tooltip": false,
+  },
+  // Right par
+  "custom/righty": {
+    "format": "⦆",
+  },
+  // left par
+  "custom/lefty": {
+    "format": "⦅",
+  },
+  // Right par - dark version
+  "custom/rightyD": {
+    "format": "⦆",
+  },
+  // left par - dark version
+  "custom/leftyD": {
+    "format": "⦅",
+  },
+  // Space
+  "custom/spacer": {
+    "format": "  ",
+  },
+  // Keybindings
+  "custom/keybindings": {
+    "format": "  ",
+    "on-click": "~/.config/.scripts/keybindings.sh",
+    "tooltip": false,
+  },
+  // Filemanager Launcher
+  "custom/filemanager": {
+    "format": "  ",
+    "on-click": "pcmanfm-qt",
+    "tooltip": false,
+  },
+  // Browser Launcher
+  "custom/browser": {
+    "format": "  ",
+    "on-click": "brave",
+    "tooltip": false,
+  },
+  // ChatGPT Launcher
+  "custom/chatgpt": {
+    "format": "   ",
+    "on-click": "brave --app=https://chat.openai.com",
+    "tooltip": false,
+  },
+  // Network Traffic
+  "custom/network_traffic": {
+    "exec": "~/.config/.scripts/network_traffic.sh",
+    "return-type": "json",
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    // optional
+  },
+  // Custom Launcher
+  "custom/launcher": {
+    //"format": "",
+    //"format": "",
+    "format": "",
+    //"format":"",
+    //"format": "&#xf359",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23 ",
+    //"on-click": "jgmenu",
+    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "tooltip": false,
+  },
+  // Power Menu
+  "custom/power": {
+    //"format": "",
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false,
+  },
+  // System tray
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+  // Clock
+  "clock": {
+    "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "    {:%a %d %b  ~      %I:%M:%S %p}", //12 hour format
+    //"format": "   {:%a %d %b    %H:%M}",	//24 hour format
+    "format-alt": "  {:%d/%m/%Y -   %H:%M:%S} ",
+    "timezones": [
+      "America/Denver"
+    ],
+    "max-length": 200,
+    "interval": 1,
+    "on-click": "~/.config/.scripts/waybar/OCV",
+  },
+  // CPU
+  "cpu": {
+    "format": "|    {usage}% ",
+    "on-click": "kitty -e btop",
+  },
+  // Memory
+  "memory": {
+    "format": "| 🖴 {:>3}% ",
+    "on-click": "kitty -e btop",
+  },
+  // Network
+  "network": {
+    //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
+    "format": "| ⚠Disabled ",
+    "format-wifi": "|  ",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "⚠Disabled",
+    "format-alt": "| {ifname}: {ipaddr}/{cidr}",
+    "family": "ipv4",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    //"min-length": 2,
+    //"max-length": 2,
+    "on-click": "nm-connection-editor",
+  },
+  // Battery
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity: >3}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
+    //"format": "&#x202b;{icon}&#x202c; {capacity}%",
+    //"format-icons": ["ﱉ","ﱊ","ﱌ","ﱍ","ﱋ"]
+  },
+  // Pulseaudio
+  "pulseaudio": {
+    "scroll-step": 3, // %, can be a float
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    //"format-source": "{volume}% ",
+    //"format-source-muted": "",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "  ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        " ",
+        " ",
+        " "
+      ],
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  },
+  // MPRIS - music display
+  "mpris": {
+    "interval": 0,
+    "max-length": 150,
+    "title-len": 75,
+    "format": " {player_icon} {title} ~by~ {artist} - {album}",
+    "format-paused": " {status_icon} {title}  {artist} {album}",
+    "player-icons": {
+      "default": " ▶ ",
+      "Spotube": "   ",
+      "firefox": "   ",
+      "firedragon": "  ",
+      "youtube": "   ",
+    },
+    "status-icons": {
+      "paused": "   ",
+    },
+  },
+  // Weather
+  // github.com/chubin/wttr.in
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/Walsenburg?format=3' ",
+    "interval": 900,
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right",
+  },
+  // Bluetooth
+  "bluetooth": {
+    "format": "|  {status} ",
+    "format-disabled": "|  {status} ",
+    "format-off": "|  {status} ",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": "",
+  },
+  // Idle Inhibator
+  "idle_inhibitor": {
+    "format": "| {icon} ",
+    "tooltip": true,
+    "format-icons": {
+      "activated": "  ",
+      "deactivated": " ",
+    },
+    "on-click-right": "hyprlock",
+  },
+  // GPU Temperature
+  "temperature": {
+    "thermal-zone": 7, // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
+    "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "| {temperatureC}°C  ",
+    "format": "| {temperatureC}°C  ",
+  },
+  // Dimmer
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "| {icon}{percent: >3}% ",
+    "format-icons": [
+      "⏾ ",
+      " "
+    ],
+    "on-scroll-down": "brightnessctl -c backlight set 1%-",
+    "on-scroll-up": "brightnessctl -c backlight set +1%",
+    "on-click": "~/.config/.scripts/backlight-hint.sh",
+  },
+  // Available Updates
+  "custom/pacman": {
+    "format": "|   {} ",
+    "interval": 7200, // every two hours
+    "exec": "checkupdates | wc -l", // # of updates
+    //"exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
+    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "on-click": "kitty -e garuda-update", // update system
+    "signal": 8,
+  },
+  // Keyboard Cheetsheet
+  "custom/keyboard-layout": {
+    "format": " Cheat ", // Icon: keyboard
+    "on-click": "~/.config/.scripts/keyhint.sh",
+  },
+  // ----------------------------------------------------------------------------
+  // G R O U P S
+  // ----------------------------------------------------------------------------
+  // Group Apps
+  "group/appo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true,
+    },
+    "modules": [
+      "custom/launcher",
+      "custom/chatgpt",
+      "custom/browser",
+      "custom/filemanager",
+      "custom/lefty",
+      "wlr/taskbar",
+      "custom/righty",
+    ],
+  },
+  // Group Hardware
+  "group/tech": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/settings",
+      "backlight",
+      //"network",
+      "bluetooth",
+      "cpu",
+      "memory",
+      "temperature",
+      "custom/waybarthemes",
+      "custom/wallpaper",
+      //"custom/pacman",
+      //"idle_inhibitor",
+      "custom/cliphist",
+    ],
+  },
+  // Center Clock
+  "group/cclock": {
+    "orientation": "inherit",
+    //"drawer": {
+    //    "transition-duration": 300,
+    //    "children-class": "not-memory",
+    //    "transition-left-to-right": false
+    //},
+    "modules": [
+      "custom/lefty",
+      "clock",
+      //"idle_inhibitor",
+      "custom/righty",
+    ],
+  },
+}

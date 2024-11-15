@@ -1,0 +1,14 @@
+Optional dependencies for swayfx
+    alacritty: Terminal emulator used by the default config [installed]
+    dmenu: Application launcher [installed]
+    grim: Screenshot utility [installed]
+    i3status: Status line
+    mako: Lightweight notification daemon
+    slurp: Select a region [installed]
+    swayidle: Idle management daemon
+    swaylock: Screen locker [installed]
+    wallutils: Timed wallpapers
+    waybar: Highly customizable bar [installed]
+    xdg-desktop-portal-gtk: Default xdg-desktop-portal for file picking [installed]
+    xdg-desktop-portal-wlr: xdg-desktop-portal backend
+    chaotic-interfere

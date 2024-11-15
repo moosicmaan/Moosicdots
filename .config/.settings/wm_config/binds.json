@@ -1,0 +1,1332 @@
+[
+  {
+    "name": "my_tmux",
+    "modmask": "C-A",
+    "key": "T",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "kitty sh -c 'kitty @ set-spacing padding=0; tmux'",
+    "description": "Open tmux in kitty with no padding"
+  },
+  {
+    "name": "chatgpt",
+    "modmask": "M",
+    "key": "a",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brave --app=https://chat.openai.com",
+    "description": "Open ChatGPT"
+  },
+  {
+    "name": "menu_run",
+    "modmask": "M",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run",
+    "description": "RUN Menu"
+  },
+  {
+    "name": "menu_drun",
+    "modmask": "M-S",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun",
+    "description": "DRUN Menu"
+  },
+  {
+    "name": "menu_win",
+    "modmask": "M-C",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window",
+    "description": "WINDOW Menu"
+  },
+  {
+    "name": "my_term",
+    "modmask": "M",
+    "key": "RETURN",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "kitty",
+    "description": "Open the default terminal"
+  },
+  {
+    "name": "my_email",
+    "modmask": "M-C",
+    "key": "RETURN",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "thunderbird",
+    "description": "Open the default email"
+  },
+  {
+    "name": "my_brows",
+    "modmask": "M",
+    "key": "b",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brave",
+    "description": "Open the default browser"
+  },
+  {
+    "name": "emojis",
+    "modmask": "M",
+    "key": "i",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "emote",
+    "description": "Open the emoticon browser"
+  },
+  {
+    "name": "emacsc",
+    "modmask": "M",
+    "key": "e",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "emacsclient -c -a 'emacs'",
+    "description": "Start the emacs client"
+  },
+  {
+    "name": "emacsd",
+    "modmask": "M-S",
+    "key": "e",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "emacs --daemon=serve",
+    "description": "Start the emacs server/daemon"
+  },
+  {
+    "name": "my_filesg",
+    "modmask": "M-S",
+    "key": "RETURN",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pcmanfm-qt",
+    "description": "Open the GUI file browser"
+  },
+  {
+    "name": "my_browsv",
+    "modmask": "M",
+    "key": "o",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "qutebrowser",
+    "description": "Open the vim-based browser"
+  },
+  {
+    "name": "my_term2",
+    "modmask": "M",
+    "key": "t",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "alacritty",
+    "description": "Open the alternate terminal"
+  },
+  {
+    "name": "my_music",
+    "modmask": "M",
+    "key": "m",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "spotube",
+    "description": "Open the music player"
+  },
+  {
+    "name": "my_media",
+    "modmask": "M-S",
+    "key": "m",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "vlc",
+    "description": "Open the media player"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "vlc",
+    "description": "Open the media player"
+  },
+  {
+    "name": "my_editc",
+    "modmask": "M",
+    "key": "n",
+    "submap": "",
+    "dispatcher": "submap",
+    "arg": "neosubs",
+    "description": "Neovide<submap-neosubs>"
+  },
+  {
+    "modmask": ",",
+    "key": "m",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide",
+    "description": "Open Neovide"
+  },
+  {
+    "modmask": ",",
+    "key": "m",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "c",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config",
+    "description": "Open .config folder"
+  },
+  {
+    "modmask": ",",
+    "key": "c",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "h",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config/hypr/",
+    "description": "Open hypr configs"
+  },
+  {
+    "modmask": ",",
+    "key": "h",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "w",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config/waybar/",
+    "description": "Open waybar configs"
+  },
+  {
+    "modmask": ",",
+    "key": "w",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "s",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config/.scripts/",
+    "description": "Open scripts folder"
+  },
+  {
+    "modmask": ",",
+    "key": "s",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "q",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config/qtile/",
+    "description": "Open qtile configs"
+  },
+  {
+    "modmask": ",",
+    "key": "q",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "k",
+    "submap": "neosubs",
+    "dispatcher": "exec",
+    "arg": "neovide ~/.config/hypr/conf/keybinding.conf",
+    "description": "Open hypr keybindings"
+  },
+  {
+    "modmask": ",",
+    "key": "k",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "escape",
+    "submap": "neosubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "name": "my_brows2",
+    "modmask": "M",
+    "key": "F1",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "firefox",
+    "description": "Open alternate browser"
+  },
+  {
+    "name": "my_brows3",
+    "modmask": "C-A",
+    "key": "b",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "firedragon",
+    "desc": "Launch 2nd alternate browser"
+  },
+  {
+    "name": "my_email2",
+    "modmask": "M",
+    "key": "F2",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "bluemail",
+    "description": "Open alternate email"
+  },
+  {
+    "name": "my_filesc",
+    "modmask": "M",
+    "key": "F3",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "kitty -e ranger",
+    "description": "Open terminal file browser"
+  },
+  {
+    "name": "my_editg",
+    "modmask": "M",
+    "key": "F4",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "kate",
+    "description": "Open graphical text editor"
+  },
+  {
+    "name": "my_image",
+    "modmask": "M",
+    "key": "F5",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "gimp",
+    "description": "Open image editor"
+  },
+  {
+    "name": "my_office",
+    "modmask": "M",
+    "key": "F6",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "libreoffice",
+    "description": "Open office suite"
+  },
+  {
+    "modmask": "M",
+    "key": "F7",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "spotube",
+    "description": "Open music player"
+  },
+  {
+    "modmask": "M",
+    "key": "F8",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "vlc",
+    "description": "Open media playger"
+  },
+  {
+    "name": "my_stream",
+    "modmask": "M",
+    "key": "F9",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "obs",
+    "description": "Open streaming software"
+  },
+  {
+    "modmask": "M",
+    "key": "F10",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run",
+    "description": "RUN Menu"
+  },
+  {
+    "modmask": "M",
+    "key": "F11",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun",
+    "description": "DRUN Menu"
+  },
+  {
+    "modmask": "M",
+    "key": "F12",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window",
+    "description": "WINDOW Menu"
+  },
+  {
+    "modmask": "M-S",
+    "key": "z",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr zoom",
+    "description": "ZOOM"
+  },
+  {
+    "modmask": "M-S",
+    "key": "q",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "wlogout",
+    "description": "Logout Menu"
+  },
+  {
+    "modmask": "C-A",
+    "key": "DELETE",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "wlogout",
+    "description": "Logout Menu"
+  },
+  {
+    "modmask": "M-S",
+    "key": "r",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "hyprctl reload",
+    "description": "Reload hypr configuration"
+  },
+  {
+    "modmask": "M",
+    "key": "PRINT",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/screenshot.sh",
+    "description": "Screenshot"
+  },
+  {
+    "modmask": "M",
+    "key": "rmet",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/screenshot.sh",
+    "description": "Screenshot"
+  },
+  {
+    "modmask": "M-S",
+    "key": "w",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/wallpaper.sh random",
+    "description": "Select random wallpapter"
+  },
+  {
+    "modmask": "M-C",
+    "key": "w",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/wallpaper.sh select",
+    "description": "Select wallpaper"
+  },
+  {
+    "modmask": "M-C",
+    "key": "h",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/keybindings.sh",
+    "description": "Show Keybindings"
+  },
+  {
+    "modmask": "M-S",
+    "key": "r",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/loadconfig.sh",
+    "description": "Load Config"
+  },
+  {
+    "modmask": "M-C",
+    "key": "c",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/cliphist.sh",
+    "description": "Show clipboard history"
+  },
+  {
+    "modmask": "M-C",
+    "key": "v",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/cliphist.sh",
+    "description": "Show clipboard history"
+  },
+  {
+    "modmask": "M-S",
+    "key": "o",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/bravebookmarks.sh",
+    "description": "Select brave bookmarks"
+  },
+  {
+    "modmask": "M-C",
+    "key": "t",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/themeswitcher.sh",
+    "description": "Switch waybar"
+  },
+  {
+    "modmask": "C-A",
+    "key": "k",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/toggle_kbd.sh",
+    "description": "Toggle kmonad"
+  },
+  {
+    "modmask": "C-A",
+    "key": "j",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/toggle_kbd_dell.sh",
+    "description": "Toggle kmonad"
+  },
+  {
+    "modmask": "M",
+    "key": "q",
+    "submap": "",
+    "dispatcher": "killactive",
+    "arg": "",
+    "description": "Kill the active window"
+  },
+  {
+    "modmask": "M-C",
+    "key": "x",
+    "submap": "",
+    "dispatcher": "killactive",
+    "arg": "",
+    "description": "Kill the active window"
+  },
+  {
+    "modmask": "M",
+    "key": "f",
+    "submap": "",
+    "dispatcher": "togglefloating",
+    "arg": "",
+    "description": "Toggle floating window"
+  },
+  {
+    "modmask": "M-S",
+    "key": "f",
+    "submap": "",
+    "dispatcher": "fullscreen",
+    "arg": "",
+    "description": "Toggle fullscreen"
+  },
+  {
+    "modmask": "M-S",
+    "key": "t",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/home/moosicmaan/.config/.scripts/toggleallfloat.sh",
+    "description": "Toggle float all windows"
+  },
+  {
+    "modmask": "M",
+    "key": "c",
+    "submap": "",
+    "dispatcher": "centerwindow",
+    "arg": "",
+    "description": "Centers the active (floating) window"
+  },
+  {
+    "modmask": "M",
+    "key": "s",
+    "submap": "",
+    "dispatcher": "swapnext",
+    "arg": "",
+    "description": "Swaps the focused window with the next window"
+  },
+  {
+    "modmask": "M-S",
+    "key": "s",
+    "submap": "",
+    "dispatcher": "swapsplit",
+    "arg": "",
+    "description": "Swaps the R and L side of the workspace"
+  },
+  {
+    "modmask": "M",
+    "key": "w",
+    "submap": "",
+    "dispatcher": "togglesplit",
+    "arg": "",
+    "description": "Toggle direction of split window"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "TAB",
+    "submap": "",
+    "dispatcher": "focuscurrentorlast",
+    "arg": "",
+    "description": "Switch focus from current to previous window"
+  },
+  {
+    "modmask": "M",
+    "key": "h",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "l",
+    "description": "Focus window (left)"
+  },
+  {
+    "modmask": "M",
+    "key": "j",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "d",
+    "description": "Focus window (down)"
+  },
+  {
+    "modmask": "M",
+    "key": "k",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "u",
+    "description": "Focus window (up)"
+  },
+  {
+    "modmask": "M",
+    "key": "l",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "r",
+    "description": "Focus window (right)"
+  },
+  {
+    "modmask": "M",
+    "key": "left",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "l",
+    "description": "Focus window (left)"
+  },
+  {
+    "modmask": "M",
+    "key": "down",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "d",
+    "description": "Focus window (down)"
+  },
+  {
+    "modmask": "M",
+    "key": "up",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "u",
+    "description": "Focus window (up)"
+  },
+  {
+    "modmask": "M",
+    "key": "right",
+    "submap": "",
+    "dispatcher": "movefocus",
+    "arg": "r",
+    "description": "Focus window (right)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "h",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "-50 0",
+    "description": "Resize window (left)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "j",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "0 50",
+    "description": "Resize window (down)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "k",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "0 -50",
+    "description": "Resize window (up)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "l",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "50 0",
+    "description": "Resize window (right)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "left",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "-100 0",
+    "description": "Resize window (left)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "down",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "0 100",
+    "description": "Resize window (down)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "up",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "0 -100",
+    "description": "Resize window (up)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "right",
+    "submap": "",
+    "dispatcher": "resizeactive",
+    "arg": "100 0",
+    "description": "Resize window (right)"
+  },
+  {
+    "modmask": "M",
+    "key": "mouse:272",
+    "submap": "",
+    "dispatcher": "mouse",
+    "arg": "movewindow",
+    "description": "Move window with mouse"
+  },
+  {
+    "modmask": "M",
+    "key": "mouse:273",
+    "submap": "",
+    "dispatcher": "mouse",
+    "arg": "resizewindow",
+    "description": "Resize window with mouse"
+  },
+  {
+    "modmask": "M",
+    "key": "g",
+    "submap": "",
+    "dispatcher": "submap",
+    "arg": "gsubs",
+    "description": "Groups<submap-gsubs>"
+  },
+  {
+    "modmask": ",",
+    "key": "g",
+    "submap": "gsubs",
+    "dispatcher": "togglegroup",
+    "arg": "",
+    "description": "Toggles the current window into a group"
+  },
+  {
+    "modmask": ",",
+    "key": "g",
+    "submap": "gsubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "x",
+    "submap": "gsubs",
+    "dispatcher": "lockactivegroup",
+    "arg": "",
+    "description": "Lock toggle for the group"
+  },
+  {
+    "modmask": ",",
+    "key": "x",
+    "submap": "gsubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "h",
+    "submap": "gsubs",
+    "dispatcher": "movewindoworgroup",
+    "arg": "l",
+    "description": "Moves window into/out of group (l)"
+  },
+  {
+    "modmask": ",",
+    "key": "h",
+    "submap": "gsubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "l",
+    "submap": "gsubs",
+    "dispatcher": "movewindoworgroup",
+    "arg": "r",
+    "description": "Moves window into/out of group (r)"
+  },
+  {
+    "modmask": ",",
+    "key": "l",
+    "submap": "gsubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": ",",
+    "key": "escape",
+    "submap": "gsubs",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
+  },
+  {
+    "modmask": "M",
+    "key": "TAB",
+    "submap": "",
+    "dispatcher": "changegroupactive",
+    "arg": "f",
+    "description": "Change the active window in a group +"
+  },
+  {
+    "modmask": "M-S",
+    "key": "TAB",
+    "submap": "",
+    "dispatcher": "changegroupactive",
+    "arg": "b",
+    "description": "Change the active window in a group -"
+  },
+  {
+    "modmask": "M",
+    "key": "1",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "1",
+    "description": "Go to workspace 1"
+  },
+  {
+    "modmask": "M",
+    "key": "2",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "2",
+    "description": "Go to workspace 2"
+  },
+  {
+    "modmask": "M",
+    "key": "3",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "3",
+    "description": "Go to workspace 3"
+  },
+  {
+    "modmask": "M",
+    "key": "4",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "4",
+    "description": "Go to workspace 4"
+  },
+  {
+    "modmask": "M",
+    "key": "5",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "5",
+    "description": "Go to workspace 5"
+  },
+  {
+    "modmask": "M",
+    "key": "6",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "6",
+    "description": "Go to workspace 6"
+  },
+  {
+    "modmask": "M",
+    "key": "7",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "7",
+    "description": "Go to workspace 7"
+  },
+  {
+    "modmask": "M",
+    "key": "8",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "8",
+    "description": "Go to workspace 8"
+  },
+  {
+    "modmask": "M",
+    "key": "9",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "9",
+    "description": "Go to workspace 9"
+  },
+  {
+    "modmask": "M",
+    "key": "0",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "10",
+    "description": "Go to workspace 10"
+  },
+  {
+    "modmask": "M-C",
+    "key": "1",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "1",
+    "description": "Force workspace 1 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "2",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "2",
+    "description": "Force workspace 2 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "3",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "3",
+    "description": "Force workspace 3 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "4",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "4",
+    "description": "Force workspace 4 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "5",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "5",
+    "description": "Force workspace 5 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "6",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "6",
+    "description": "Force workspace 6 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "7",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "7",
+    "description": "Force workspace 7 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "8",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "8",
+    "description": "Force workspace 8 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "9",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "9",
+    "description": "Force workspace 9 to current monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "0",
+    "submap": "",
+    "dispatcher": "focusworkspaceoncurrentmonitor",
+    "arg": "10",
+    "description": "Force workspace 10 to current monitor"
+  },
+  {
+    "modmask": "M-S",
+    "key": "1",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "1",
+    "description": "Move window to workspace 1"
+  },
+  {
+    "modmask": "M-S",
+    "key": "2",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "2",
+    "description": "Move window to workspace 2"
+  },
+  {
+    "modmask": "M-S",
+    "key": "3",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "3",
+    "description": "Move window to workspace 3"
+  },
+  {
+    "modmask": "M-S",
+    "key": "4",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "4",
+    "description": "Move window to workspace 4"
+  },
+  {
+    "modmask": "M-S",
+    "key": "5",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "5",
+    "description": "Move window to workspace 5"
+  },
+  {
+    "modmask": "M-S",
+    "key": "6",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "6",
+    "description": "Move window to workspace 6"
+  },
+  {
+    "modmask": "M-S",
+    "key": "7",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "7",
+    "description": "Move window to workspace 7"
+  },
+  {
+    "modmask": "M-S",
+    "key": "8",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "8",
+    "description": "Move window to workspace 8"
+  },
+  {
+    "modmask": "M-S",
+    "key": "9",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "9",
+    "description": "Move window to workspace 9"
+  },
+  {
+    "modmask": "M-S",
+    "key": "0",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "10",
+    "description": "Move window to workspace 10"
+  },
+  {
+    "modmask": "M",
+    "key": "mouse_down",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "e+1",
+    "description": "Scroll workspaces with mouse wheel +"
+  },
+  {
+    "modmask": "M",
+    "key": "mouse_up",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "e-1",
+    "description": "Scroll workspaces with mouse wheel -"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "TAB",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "e+1",
+    "description": "Advance one workspace"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "TAB",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "e-1",
+    "description": "Go back one workspace"
+  },
+  {
+    "modmask": "M-C",
+    "key": "down",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "empty",
+    "description": "Go to first empty workspace"
+  },
+  {
+    "modmask": "M-A",
+    "key": "u",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle yazi",
+    "description": "Scratchpad (yaai)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "i",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle term",
+    "description": "Scratchpad (terminal)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "o",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle btop",
+    "description": "Scratchpad (btop)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle moosic",
+    "description": "Scratchpad (musicCube)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "v",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle audio",
+    "description": "Scratchpad (Pulse Audio Control)"
+  },
+  {
+    "modmask": "M-S",
+    "key": "Minus",
+    "submap": "",
+    "dispatcher": "movetoworkspace",
+    "arg": "special",
+    "description": "Move window to special workspace"
+  },
+  {
+    "modmask": "M",
+    "key": "Minus",
+    "submap": "",
+    "dispatcher": "togglespecialworkspace",
+    "arg": "",
+    "description": "Scratchpad (Special) full"
+  },
+  {
+    "modmask": "M",
+    "key": "comma",
+    "submap": "",
+    "dispatcher": "focusmonitor",
+    "arg": "-1",
+    "description": "Go to previous monitor"
+  },
+  {
+    "modmask": "M",
+    "key": "period",
+    "submap": "",
+    "dispatcher": "focusmonitor",
+    "arg": "+1",
+    "description": "Go to next monitor"
+  },
+  {
+    "modmask": "M-C",
+    "key": "LEFT",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr shift_monitors +1",
+    "description": "Flip windows between monitors"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioRaiseVolume",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "description": "KBD raise volume"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioLowerVolume",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "description": "KBD lower volume"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioMute",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "description": "KBD mute volume"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioPlay",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "playerctl play-pause",
+    "description": "KBD toggle toggle play music"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioStop",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "playerctl pause",
+    "description": "KBD toggle stop music"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioNext",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "playerctl next",
+    "description": "KBD go to next song"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioPrev",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "playerctl previous",
+    "description": "KBD go to previous song"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86AudioMicMute",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "description": "KBD toggle mute"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86Calculator",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "qalculate-gtk",
+    "description": "KBD toggle calculator"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86Lock",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "swaylock",
+    "description": "KBD toggle lock computer"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86MonBrightnessUp",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brightnessctl -q s +10%",
+    "description": "KBD brightness up"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86MonBrightnessDown",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brightnessctl -q s 10%-",
+    "description": "KBD brightness down"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86ZoomIn",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brightnessctl -q s +10%",
+    "description": "KBD brightness up"
+  },
+  {
+    "modmask": ",",
+    "key": "xF86ZoomOut",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "brightnessctl -q s 10%-",
+    "description": "KBD brightness down"
+  },
+  {
+    "modmask": ",",
+    "key": "0x10081244",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "e+1",
+    "description": "KBD go to next workspace"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86Tools",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "vlc",
+    "description": "KBD open the media player"
+  }
+]
+
