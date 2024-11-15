@@ -32,14 +32,19 @@ source = $HOME/.config/hypr/conf/workspace.conf
 source = $HOME/.config/hypr/conf/winBorders.conf
 
 # -----------------------------------------------------
-# WINDOWS - CORNERS/TRANSPARENCY/BLUR
+# WINDOW CORNERS/TRANSPARENCY/BLUR
 # -----------------------------------------------------
 source = $HOME/.config/hypr/conf/winDecorations.conf
 
 # -----------------------------------------------------
-# WINDOWRULES
+# WINDOW RULES
 # -----------------------------------------------------
 source = $HOME/.config/hypr/conf/winRules.conf
+
+# -----------------------------------------------------
+# WINDOW GROUPS
+# -----------------------------------------------------
+source = $HOME/.config/hypr/conf/winGroups.conf
 
 # -----------------------------------------------------
 # ANIMATIONS
@@ -52,7 +57,7 @@ source = $HOME/.config/hypr/conf/animation.conf
 source = $HOME/.config/hypr/conf/cursor.conf
 
 # -----------------------------------------------------
-# INPUT DEVISES - KEYBOARD/MOUSE/TOUCHPAD OPTIONS
+# INPUTS - KEYBOARD/MOUSE/TOUCHPAD OPTIONS
 # -----------------------------------------------------
 source = $HOME/.config/hypr/conf/inputs.conf
 
