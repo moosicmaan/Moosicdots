@@ -31,15 +31,22 @@
 }
 
 window#waybar {
-  border-radius: 0px;
-  background-color: @barbackground;
   /* 
   border-bottom: 9px solid #ffffff;
   color: #FFFFFF; 
   background: transparent;
-  */
   transition-property: background-color;
   transition-duration: 0.5s;
+  background: linear-gradient(
+    0.45turn,
+    @color1,
+    transparent 50%,
+    @color6,
+    @color10 90%
+  );
+  */
+  background-color: @barbackground;
+  border-radius: 0px;
 }
 
 /* -----------------------------------------------------
@@ -168,7 +175,7 @@ tooltip label {
 }
 #custom-chatgpt {
   /*
- */
+*/
   background-image: url("../assets/ai-icon-14.png");
   background-repeat: no-repeat;
   background-position: center;

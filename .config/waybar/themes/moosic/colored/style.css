@@ -1,6 +1,8 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
- * ----------------------------------------------------- */
+ * ----------------------------------------------------- 
+@define-color barbackground linear-gradient(0.45turn, @color1, transparent 50%, @color6, @color10 90%);
+*/
 @import "../../../../../.cache/wal/colors-waybar.css";
 
 @define-color barbackground @color1;

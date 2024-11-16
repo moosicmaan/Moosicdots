@@ -1,17 +1,3 @@
-fish
-tmux kill-session
-tmux ls
-tmux kill-session
-tmux
-cd "keyboards"
-adfdsacd ..
-cd ..
-cd ..
-cd "eDEX-UI"
-cd "fonts"
-cd ..
-cd "themes"
-cd "themes"
 cd "themes"
 cd "themes"
 cd "themes"
@@ -498,3 +484,17 @@ exit
 exit
 fish
 fish
+fish
+ls
+ll
+..
+ls
+cd moosicmaan
+ls
+sudo garudo-update
+sudo garuda-update
+cd /mnt/data/moosicmaan/CONFIG
+ls
+git config --global color.ui true
+git config --config core.editor nvim
+git config --global core.editor nvim
