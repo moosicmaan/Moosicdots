@@ -392,7 +392,11 @@ keys = [
     EzKey("M-f", lazy.window.toggle_floating(), desc="Toggle floating"),
     EzKey("M-C-r", lazy.reload_config(), desc="Reload the config"),
     EzKey("M-S-r", lazy.reload_config(), desc="Reload the config"),
-    EzKey("M-S-q", lazy.spawn("wlogout"), desc="Logout menu"),
+    EzKey(
+        "M-S-q",
+        lazy.spawn("/home/moosicmaan/.config/.scripts/dm-exit.sh"),
+        desc="Logout menu",
+    ),
     EzKey("C-A-<delete>", lazy.spawn("wlogout"), desc="Logout menu"),
     EzKey(
         "C-A-<delete>",

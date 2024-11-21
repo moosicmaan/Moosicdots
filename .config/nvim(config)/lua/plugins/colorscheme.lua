@@ -6,8 +6,8 @@ return {
       -- colorscheme = "murphy",
       -- colorscheme = "default",
       -- colorscheme = "catppuccin-mocha",
-      -- colorscheme = "wildcharm",
-      colorscheme = "koehler",
+      colorscheme = "wildcharm",
+      -- colorscheme = "koehler",
       -- colorscheme = "industry",
       -- transparent = true,
       -- styles = {

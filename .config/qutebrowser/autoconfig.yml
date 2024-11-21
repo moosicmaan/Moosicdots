@@ -16,6 +16,19 @@ settings:
     global: true
   colors.webpage.preferred_color_scheme:
     global: dark
+  editor.command:
+    global:
+    - neovide
+    - -f
+    - '{file}'
+    - -c
+    - normal {line}G{column0}l
+  fileselect.folder.command:
+    global:
+    - kitty
+    - -e
+    - yazi
+    - --choosedir={}
   fonts.default_size:
     global: 14pt
   fonts.messages.info:
@@ -30,6 +43,8 @@ settings:
     global: 14
   fonts.web.size.minimum:
     global: 0
+  hints.uppercase:
+    global: true
   statusbar.show:
     global: in-mode
   tabs.favicons.show:
@@ -40,3 +55,6 @@ settings:
     global: bottom
   tabs.show:
     global: switching
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}

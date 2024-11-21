@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "$HOME/.config/.scripts/exit.sh",
+    "action" : "pkill -KILL -u $USER",
     "text" : "Exit",
     "keybind" : "e"
 }

@@ -10,9 +10,20 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "special-visible-only": true,
-    "format": "{icon}",
-    // "format": "{name}{icon}",
+    "show-special": true,
+    "special-visible-only": false,
+    // "format": "{icon}",
+    // "format": "<sub>{icon}</sub>\n{windows}",
+    // "format-window-separator": "\n",
+    // "window-rewrite-default": "",
+    // "window-rewrite": {
+    //   "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+    //   "class<firefox>": "", // Windows whose classes are "firefox"
+    //   "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+    //   "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+    //   "code": "󰨞",
+    // },
+    "format": "{name}{icon}",
     "format-icons": {
       // "1": "😺",
       // "2": "😿",
@@ -24,16 +35,16 @@
       // "8": "😻",
       // "9": "😺",
       // "10": "😚",
-      "1": "🌕",
-      "2": "🌖",
-      "3": "🌗",
-      "4": "🌘",
-      "5": "🌑",
-      "6": "🌑",
-      "7": "🌒",
-      "8": "🌓",
-      "9": "🌔",
-      "10": "🌕",
+      // "1": "🌕",
+      // "2": "🌖",
+      // "3": "🌗",
+      // "4": "🌘",
+      // "5": "🌑",
+      // "6": "🌑",
+      // "7": "🌒",
+      // "8": "🌓",
+      // "9": "🌔",
+      // "10": "🌕",
       // "1": "𐒡",
       // "2": "𐒢",
       // "3": "𐒣",
@@ -43,22 +54,42 @@
       // "7": "𐒧",
       // "8": "𐒨",
       // "9": "𐒩",
-      // "10": "𐒠",
+      // active	Will be shown when workspace is active
+      // default	Will be shown when no string matches is found.
+      // empty	Will be shown on active empty workspaces
+      // persistent	Will be shown on non-active persistent workspaces
+      // special	Will be shown on non-active special workspaces
+      // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
+      "active": "",
+      // "active": "🌏",
+      "default": "",
       // "default": "Ｄ",
-      "active": "🌏",
-      "special": "😍",
+      "empty": "",
       // "empty": "Ｕ",
-      // "visible": "Ｕ",
-      // "persistent": "😍",
+      "persistent": "",
+      // "persistent": "X",
+      "visible": "",
+      // "visible": "",
+      "special": "😍",
+      // "special": "😍",
+      "urgent": "",
     },
     "persistent-workspaces": {
       "*": 5,
     },
   },
 
+  // HYPRLAND SUBMAP
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 18,
+    "tooltip": false,
+  },
+
   // APPLICATION LAUNCHER
   "custom/appmenu": {
     "format": "🌐",
+    "format": "",
     // "on-click": "rofi -show drun -replace",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     // "on-click-right": "~/.config/.scripts/keybindings.sh",
@@ -69,7 +100,8 @@
   // POWER MENU
   "custom/exit": {
     // "format": "",
-    "format": "👽",
+    // "format": "👽",
+    "format": "",
     "on-click": "wlogout",
     "tooltip": false,
   },
@@ -95,10 +127,8 @@
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
-      "(.*) - Chromium": "$1",
       "(.*) - Brave Search": "$1",
-      "(.*) - Outlook": "$1",
-      "(.*) Microsoft Teams": "$1",
+      "(.*) - Kitty": "$1",
     },
     "separate-outputs": true,
     "icon": true,
@@ -113,6 +143,32 @@
     "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
     "tooltip": false,
+  },
+
+  // CAVA
+  "cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "framerate": 30,
+    "autosens": 1,
+    // "sensitivity": 100,
+    "bars": 12,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pipewire",
+    "source": "auto",
+    "stereo": false,
+    "reverse": false,
+    "sleep_timer": 7,
+    "hide_on_silence": true,
+    "bar_delimiter": 0,
+    "monstercat": true,
+    "waves": true,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "actions": {
+      "on-click-right": "mode",
+    },
   },
 
   // WALLPAPER
@@ -185,6 +241,7 @@
   // SYSTEM TRAY
   "tray": {
     "icon-size": 14,
+    "show-passive-items": true,
     "spacing": 5,
   },
 
@@ -193,6 +250,15 @@
     "format": "/  ",
     // "format": "/  🖳 ",
     "tooltip": false,
+  },
+
+  // USER
+  "user": {
+    "format": "{user} (up {work_d} days ↑)",
+    "interval": 60,
+    "height": 16,
+    "width": 16,
+    "icon": true,
   },
 
   // CPU
@@ -236,12 +302,12 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "/ {icon}  {capacity}% ",
-    "format-charging": "/   {capacity}%",
+    "format": "/ {icon}  {capacity}% {time}",
+    "format-charging": "/   {capacity}% {time}",
     "format-plugged": "/   {capacity}%",
-    "format-alt": "/ {icon}  {time}",
+    // "format-alt": "/ {icon}  {time}",
     // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+    "format-full": "",
     "format-icons": [" ", " ", " ", " ", " "],
   },
 
@@ -278,30 +344,38 @@
     "on-click": "pavucontrol-qt",
   },
 
+  // WIREPLUMBER
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "on-click": "helvum",
+    "format-icons": ["", "", ""],
+  },
+
   // BLUETOOTH
   "bluetooth": {
     "format": "/  {status}",
+    "format-connected": "/  {device_alias}",
     "format-disabled": "",
     "format-off": "",
+    "format-connected-battery": "/  {device_alias} {device_battery_percentage}%",
     "interval": 30,
     "on-click": "blueman-manager",
     "format-no-controller": "",
-  },
-
-  // OTHER
-  "user": {
-    "format": "{user}",
-    "interval": 60,
-    "icon": false,
+    "tooltip": true,
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
   },
 
   // IDLE INHIBATOR
   "idle_inhibitor": {
-    "format": "/   {icon}     ",
+    "format": "/ {icon}",
     "tooltip": true,
     "format-icons": {
-      "activated": "  ",
-      "deactivated": "  ",
+      "activated": "         ",
+      "deactivated": "     ",
     },
     "on-click-right": "swaylock",
   },
@@ -372,7 +446,8 @@
     // "format": "{ICON}{temp_C}({FeelsLikeC})",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar --date-format %m/%d --fahrenheit --mph --location 'Davao+City' --hide-conditions ",
+    // "exec": "wttrbar --date-format %m/%d --fahrenheit --mph --location 'Davao+City' --hide-conditions ",
+    "exec": "wttrbar --date-format %m/%d --mph --location 'Davao+City'",
     "return-type": "json",
   },
 
@@ -419,6 +494,8 @@
     "timezone": "Asia/Manila",
     "format": "{:%a-( %R  )}",
     "format-alt": "{:%H:%M}  ",
+    "tooltip": false,
+    // "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "actions": {
       "on-click-right": "mode",
     },
@@ -459,5 +536,11 @@
   "group/currents": {
     "orientation": "horizontal",
     "modules": ["clock", "custom/weatherC", "custom/weatherD", "clock#2"],
+  },
+
+  // AUDIO GROUP
+  "group/audios": {
+    "orientation": "horizontal",
+    "modules": ["cava", "pulseaudio"],
   },
 }

@@ -7,19 +7,19 @@
   layer to start your own keyboard configuration. Copy out the `deflayer`
   template to easily start a new layer with matching `transparent` buttons.
 
-(defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  ssrq ins  del  pgup pgdn home end
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc           nlck kp/  kp*  kp-
-  tab   q    w    e    r    t    y    u    i    o    p    [    ]    \             kp7  kp8  kp9  kp+
-  caps   a    s    d    f    g    h    j    k    l    ;    '    ret               kp4  kp5  kp6
-  lsft    z    x    c    v    b    n    m    ,    .    /    rsft       up         kp1  kp2  kp3  kprt
-  lctl   rmet lmet lalt          spc           ralt   cmp   rctl  left down rght  kp0       kp.
+(deflayer layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _    _   
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _             _    _    _    _   
+  _      _    _    _    _    _    _    _    _    _    _    _    _                 _    _    _   
+  _       _    _    _    _    _    _    _    _    _    _    _          _          _    _    _    _   
+  _      _    _    _             _             _      _     _     _    _    _     _         _   
 )
 
   -------------------------------------------------------------------------- |#
 (defcfg
-  input (device-file "/dev/input/by-id/usb-Logitech_USB_Receiver-if02-event-kbd")
-  output (uinput-sink "My KMonad output"
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")    
+  output (uinput-sink "My KMonad laptop output"
     ;; To understand the importance of the following line, see the section on
     ;; Compose-key sequences at the near-bottom of this file.
     "sleep 1 && setxkbmap -option compose:ralt")
@@ -67,19 +67,19 @@
 )
 
 (deflayer symbols
-  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _       
-  _    _    _    _    _    _    _    _    /    *    -    _    _    _     _    _          _    _    _    _  
-  _     _    _    \(   \)   &    \_   7    8    9    +    _    _    _    _    _    _     _    _    _    _  
-  _      !    #    [    ]    @    =    4    5    6    _    _    _                  _     _    _    _   
-  _       _    _    {    }    _    _    1    2    3    _    _                 _          _    _    _    _   
-  _      _       _              bspc           0      _     _           _     _    _     _         _  
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _    _    _    _    _    _    /    *    _    _    _    _              _    _    _    _   
+  _     $    !    \(   \)   &    \_   7    8    9    +    _    _    _             _    _    _    _   
+  _      -    #    [    ]    @    =    4    5    6    _    _    _                 _    _    _   
+  _       ^    %    {    }    _    _    1    2    3    _    _          _          _    _    _    _   
+  _      _    _    _           bspc            0      _     _     _    _    _     _         _   
 )
 
 (deflayer directt
-  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _    
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _  
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _  
-  _      _    _    _    _    _    left down up   rght _    _    _                  _     _    _    _   
-  _       _    _    _    _    _    _    _    _    _    _    _                 _          _    _    _    _   
-  _      _       _              bspc           _      _     _           _     _    _     _         _  
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _   
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _    _   
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _             _    _    _    _   
+  _      _    _    _    _    _    left down up   rght _    _    _                 _    _    _   
+  _       _    _    _    _    _    _    _    _    _    _    _          _          _    _    _    _   
+  _      _    _    _           bspc            _      _     _     _    _    _     _         _   
 )

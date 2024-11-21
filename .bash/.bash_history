@@ -1,31 +1,3 @@
-cd "themes"
-cd "themes"
-cd "themes"
-cd "themes"
-cd "themes"
-cd "themes"
-fish
-cd "themes"
-cd "themes"
-cd "themes"
-killall edex-ui
-cd "themes"
-cd "themes"
-tldr sway
-tldr --update
-tldr sway
-tldr --update
-tldr fzf
-tldr wayland
-tldr tmux
-tmux ls
-tmux
-nvim
-man tmux
-nvim .config/kmonad/log350/config.kbd
-fish
-hyprland
-Hyprland
 sudo pacman -Ss libaquamarine.so.2
 nvim
 man tmux
@@ -498,3 +470,31 @@ ls
 git config --global color.ui true
 git config --config core.editor nvim
 git config --global core.editor nvim
+tmux
+killall -9 tmux
+nvim
+ls
+ff
+nf
+ff
+nf
+nf
+nvim .config/foot/foot.ini
+exit
+nf
+bind -P
+exit
+exit
+nf
+exit
+fish
+exit
+Hyprland
+exit
+nvim .config/leftwm
+vim
+fish
+exit
+fish
+tmux
+fish

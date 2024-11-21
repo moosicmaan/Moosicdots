@@ -25,7 +25,7 @@ theme.fg_urgent = "#CC9393"
 theme.bg_normal = "#1A1A1A"
 theme.bg_focus = "#313131"
 theme.bg_urgent = "#1A1A1A"
-theme.border_width = dpi(3)
+theme.border_width = dpi(2)
 theme.border_normal = "#3F3F3F"
 theme.border_focus = "#7F7F7F"
 theme.border_marked = "#CC9393"
@@ -69,7 +69,7 @@ theme.widget_mail = theme.dir .. "/icons/mail.png"
 theme.widget_mail_on = theme.dir .. "/icons/mail_on.png"
 theme.tasklist_plain_task_name = true
 theme.tasklist_disable_icon = true
-theme.useless_gap = dpi(2)
+theme.useless_gap = dpi(3)
 theme.titlebar_close_button_focus = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -104,7 +104,7 @@ end)
 theme.cal = lain.widget.cal({
 	attach_to = { clock },
 	notification_preset = {
-		font = "Noto Sans Regular 16",
+		font = "Noto Sans Regular 11",
 		fg = theme.fg_normal,
 		bg = theme.bg_normal,
 	},
@@ -336,10 +336,8 @@ function theme.at_screen_connect(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
+			keyboardlayout,
 			spr,
-			arrl_ld,
-			-- keyboardlayout,
-			-- spr,
 			-- arrl_ld,
 			-- wibox.container.background(mpdicon, theme.bg_focus),
 			-- wibox.container.background(theme.mpd.widget, theme.bg_focus),
@@ -349,16 +347,16 @@ function theme.at_screen_connect(s)
 			-- arrl_ld,
 			-- wibox.container.background(mailicon, theme.bg_focus),
 			--wibox.container.background(theme.mail.widget, theme.bg_focus),
-			arrl_dl,
-			memicon,
-			mem.widget,
+			-- arrl_dl,
+			-- memicon,
+			-- mem.widget,
 			arrl_ld,
 			wibox.container.background(cpuicon, theme.bg_focus),
 			wibox.container.background(cpu.widget, theme.bg_focus),
-			arrl_dl,
-			tempicon,
-			temp.widget,
-			arrl_ld,
+			-- arrl_dl,
+			-- tempicon,
+			-- temp.widget,
+			-- arrl_ld,
 			wibox.container.background(fsicon, theme.bg_focus),
 			--wibox.container.background(theme.fs.widget, theme.bg_focus),
 			arrl_dl,

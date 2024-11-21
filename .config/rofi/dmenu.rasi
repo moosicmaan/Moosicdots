@@ -2,7 +2,7 @@
 configuration {
     font:                       "Ubuntu";
     show-icons:                 true;
-    icon-theme:                 "candy-icons";
+    icon-theme:                 "Colloid-Catppuccin-Dark";
     display-run:                "RUN: ";
     hover-select:               true;
     me-select-entry:            "";

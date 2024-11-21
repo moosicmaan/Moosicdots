@@ -3,12 +3,15 @@
  * ----------------------------------------------------- */
 @import "../../../../../.cache/wal/colors-waybar.css";
 
-@define-color barbackground rgba(255,255,255,0.8);
+@define-color barbackground rgba(255,255,255,0.9);
 @define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;
 @define-color workspacesbackground1 #FFFFFF;
 @define-color workspacesbackground2 #CCCCCC;
 @define-color bordercolor #FFFFFF;
+@define-color bordercolorb #FFFFFF;
+@define-color tooltipbackground rgba(0,0,0,1.0);
+@define-color tooltiptext rgba(255,255,255,1.0);
 @define-color textcolor1 #000000;
 @define-color textcolor2 #000000;
 @define-color textcolor3 #000000;

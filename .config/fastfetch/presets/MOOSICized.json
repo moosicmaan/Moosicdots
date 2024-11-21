@@ -3,7 +3,7 @@
   "logo": {
     "type": "kitty",
     "source": "/home/moosicmaan/Pictures/LovePurposely/Artwork/Logo/Logo/Logo/LogoFull.png",
-    "width": 24
+    "width": 28
   },
   "modules": [
     "title",
@@ -11,11 +11,18 @@
     "os",
     "kernel",
     "uptime",
-    "shell",
     {
       "type": "gpu",
       "key": "GPU"
     },
-    "memory"
+    "separator",
+    "shell",
+    "terminal",
+    "memory",
+    {
+      "key": "Colors",
+      "type": "colors",
+      "symbol": "circle"
+    }
   ]
 }

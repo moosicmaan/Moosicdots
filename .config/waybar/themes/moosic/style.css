@@ -19,10 +19,10 @@
   font-family: SpaceMono Nerd Font Propo;
   font-family: Roboto Condensed;
   font-family: MonaspiceRn Nerd Font Propo;
+  background-color: @backgroundlight;
   background-color: #ffffff;
   */
   font-family: Iosevka Nerd font Propo;
-  background-color: @backgroundlight;
   border: none;
   border-radius: 15px;
   margin: 0px 1px 0px 1px;
@@ -32,7 +32,7 @@
 
 window#waybar {
   /* 
-  border-bottom: 9px solid #ffffff;
+  border-bottom: 2px solid @bordercolorb;
   color: #FFFFFF; 
   background: transparent;
   transition-property: background-color;
@@ -49,38 +49,57 @@ window#waybar {
   border-radius: 0px;
 }
 
+window#waybar.spotube {
+  background: linear-gradient(
+    0.45turn,
+    #ff00ff,
+    transparent 50%,
+    #0000ff,
+    #00ff00 99%
+  );
+  color: #ffffff;
+}
+
 /* -----------------------------------------------------
  * Active Windows
- * ----------------------------------------------------- */
+ * ----------------------------------------------------- 
 #window {
   background: @backgroundlight;
   padding: 0px 6px 0px 6px;
   color: @textcolor3;
   font-weight: normal;
   opacity: 0.8;
+  border: 1px solid @bordercolor;
 }
 window#waybar.empty #window {
   background-color: transparent;
+  border: 0px solid;
 }
+*/
 
 /* -----------------------------------------------------
  * Modules
- * ----------------------------------------------------- */
+ * ----------------------------------------------------- 
 .modules-left > widget:first-child > #workspaces {
   margin-left: 0;
 }
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
 }
+*/
 
 /* -----------------------------------------------------
  * Workspaces 
  * ----------------------------------------------------- 
-#workspaces button.empty {}
-#workspaces button.visible {}
-#workspaces button.special {}
-#workspaces button.persistent {}
-#workspaces button.urgent {}
+#workspaces
+#workspaces button
+#workspaces button.active
+#workspaces button.empty
+#workspaces button.persistent
+#workspaces button.special
+#workspaces button.visible
+#workspaces button.urgent
+#workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
 */
 #workspaces {
   /* 
@@ -92,6 +111,9 @@ window#waybar.empty #window {
   font-weight: bold;
   font-style: normal;
   opacity: 0.7;
+  border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
+  background-color: @workspacesbackground1;
   color: @textcolor1;
 }
 #workspaces button {
@@ -100,6 +122,7 @@ window#waybar.empty #window {
   background-color: @workspacesbackground2;
   */
   color: @textcolor1;
+  background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
 }
@@ -130,13 +153,14 @@ window#waybar.empty #window {
 
 /* -----------------------------------------------------
  * Tooltips
- * ----------------------------------------------------- */
+ * ----------------------------------------------------- 
+ */
 tooltip {
-  background-color: @backgroundlight;
+  background-color: @tooltipbackground;
   opacity: 0.8;
 }
 tooltip label {
-  color: @textcolor2;
+  color: @tooltiptext;
 }
 
 /* -----------------------------------------------------
@@ -185,11 +209,11 @@ tooltip label {
 #custom-browser,
 #custom-filemanager,
 #custom-calculator {
-  margin-left: 6px;
+  margin-left: 16px;
 }
 
 /* -----------------------------------------------------
- * Custom Modules
+ * APP MENU
  * ----------------------------------------------------- */
 #custom-appmenu {
   /*
@@ -199,12 +223,10 @@ tooltip label {
   color: @textcolor1;
   opacity: 0.8;
 }
-
-#mpris {
-  padding: 0px 9px 0px 9px;
-  background-color: @backgrounddark;
-  color: @textcolor1;
-  opacity: 1;
+#appo {
+  border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
+  padding: 0px 2px 0px 2px;
 }
 
 /* -----------------------------------------------------
@@ -237,17 +259,21 @@ tooltip label {
   /* 
   font-family: Roboto bold;
   padding: 0px 9px 0px 9px;
+  color: @textcolor1;
+  background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 */
   font-size: 16;
-  color: @textcolor1;
-  background-color: @backgrounddark;
 }
+#mpris,
+#submap,
 #currents {
   padding: 0px 9px 0px 9px;
-  opacity: 0.9;
+  opacity: 1;
   background-color: @backgrounddark;
+  color: @textcolor1;
   border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
 }
 
 /* -----------------------------------------------------
@@ -332,23 +358,40 @@ tooltip label {
   -gtk-icon-effect: highlight;
 }
 
+#user {
+  color: @textcolor2;
+  font-size: 30px;
+}
+
 /* -----------------------------------------------------
  * Pulseaudio
  * ----------------------------------------------------- */
+#cava,
 #pulseaudio {
-  background-color: @backgroundlight;
   padding: 0px 9px 0px 9px;
-  color: @textcolor3;
-  opacity: 0.8;
 }
 #pulseaudio.muted {
   background-color: @backgrounddark;
   color: @textcolor1;
 }
 
+#wireplumber,
+#audios {
+  /*
+  border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
+  background-color: @backgroundlight;
+*/
+  color: @textcolor3;
+  opacity: 0.8;
+}
+
 /* -----------------------------------------------------
  * Custom Exit
  * ----------------------------------------------------- */
 #custom-exit {
-  color: @iconcolor;
+  color: @textcolor1;
+  border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
+  padding: 0px 3px 0px 3px;
 }

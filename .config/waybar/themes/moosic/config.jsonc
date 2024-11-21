@@ -9,7 +9,11 @@
   {
     "id": 1,
     "output": "eDP-1",
+    // "output": "!",
+    "type": "dock",
     "position": "top",
+    "start_hidden": false,
+    "exclusive": true,
     //"height": 10,
     //"width": 700,
     "margin-top": 0,
@@ -18,7 +22,13 @@
     "reload_style_on_change": true,
     "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
 
-    "modules-left": ["group/appo", "hyprland/window"],
+    "modules-left": [
+      "group/appo",
+      // "user",
+      // "wireplumber",
+      "hyprland/window",
+      "hyprland/submap",
+    ],
 
     "modules-center": ["hyprland/workspaces"],
 
@@ -31,18 +41,29 @@
   },
   {
     "id": 2,
-    "output": "HDMI-A-1",
+    // "output": "HDMI-A-1",
+    "output": "!",
+    "type": "dock",
     "position": "bottom",
+    "start_hidden": false,
+    "exclusive": true,
+    //"height": 10,
+    //"width": 700,
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
 
-    "modules-left": ["group/appo", "hyprland/window"],
+    "modules-left": [
+      "group/appo",
+      // "user",
+      "hyprland/window",
+      "hyprland/submap",
+    ],
 
     "modules-center": ["hyprland/workspaces"],
 
-    "modules-right": ["mpris", "pulseaudio", "custom/exit"],
+    "modules-right": ["mpris", "group/audios", "custom/exit"],
   },
 ]

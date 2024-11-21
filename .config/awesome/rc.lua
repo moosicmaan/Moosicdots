@@ -114,7 +114,7 @@ local themes = {
 	"powerarrow-dark", -- 6
 }
 -- choose your theme here
-local chosen_theme = themes[6]
+local chosen_theme = themes[3]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -538,6 +538,9 @@ globalkeys = my_table.join(
 	awful.key({ modkey1, altkey }, "o", function()
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/picom-toggle.sh")
 	end, { description = "Picom toggle", group = "actions" }),
+	awful.key({ modkey1, altkey }, "Delete", function()
+		awful.spawn.with_shell("$HOME/.config/.scripts/dm-exit.sh")
+	end, { description = "Logout DMenu", group = "actions" }),
 	-- Hotkeys Awesome
 	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "actions" }),
 	-- Tag browsing with modkey

@@ -13,7 +13,7 @@ configuration {
     modi:                       "drun,run,window";
     font:                       "Fira Sans Bold 12";
     show-icons:                 true;
-    icon-theme:                 "sweet";
+    icon-theme:                 "Colloid-Catppuccin-Dark";
     display-drun:               "APPS";
     display-run:                "RUN";
     display-window:             "WINDOW";

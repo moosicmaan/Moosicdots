@@ -179,8 +179,8 @@ alias ec "emacsclient -c -a 'emacs' &"
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
 # set collortheme to current wallpaper
-# set cwp (cat ~/.cache/current_wallpaper)
-# wal -i $cwp >/dev/null
+set cwp (cat ~/.cache/current_wallpaper)
+wal -i $cwp >/dev/null
 # set vi mode
 ###set -o vi
 fish_vi_key_bindings
@@ -202,5 +202,13 @@ end
 # \e represents the Alt key (also known as the Meta key).
 # This command binds Ctrl + Alt + y to call the yy function, that changes the working directory on exit through yazi.
 bind \e\cy yy
+bind \e\cf ff
+bind \e\cn nf
 
+alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+
+#alias ft 'fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+
+alias nf='nvim $(ff)'
+# alias np='nvim $(ft)'
 # <--- JDB
