@@ -1,5 +1,4 @@
-/*
-// =====================================================
+/* =====================================================
 // -----------------------------------------------------
 // MOOSIC WAYBAR STYLE
 // Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
@@ -59,34 +58,6 @@ window#waybar.spotube {
   );
   color: #ffffff;
 }
-
-/* -----------------------------------------------------
- * Active Windows
- * ----------------------------------------------------- 
-#window {
-  background: @backgroundlight;
-  padding: 0px 6px 0px 6px;
-  color: @textcolor3;
-  font-weight: normal;
-  opacity: 0.8;
-  border: 1px solid @bordercolor;
-}
-window#waybar.empty #window {
-  background-color: transparent;
-  border: 0px solid;
-}
-*/
-
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- 
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-*/
 
 /* -----------------------------------------------------
  * Workspaces 
@@ -164,22 +135,6 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * Taskbar
- * ----------------------------------------------------- */
-#taskbar {
-  padding: 0px 9px 0px 9px;
-  margin: 0px 0px;
-}
-#taskbar button {
-}
-#custom-left {
-  margin-right: 0px;
-}
-#custom-right {
-  margin-left: 0px;
-}
-
-/* -----------------------------------------------------
  * Custom Quicklinks
  * ----------------------------------------------------- */
 #custom-browser,
@@ -197,49 +152,65 @@ tooltip label {
   opacity: 0.8;
   color: @iconcolor;
 }
-#custom-chatgpt {
-  /*
-*/
-  background-image: url("../assets/ai-icon-14.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 0px 20px 0px 1px;
-  margin-right: 8px;
-}
-#custom-browser,
-#custom-filemanager,
-#custom-calculator {
-  margin-left: 16px;
-}
 
 /* -----------------------------------------------------
  * APP MENU
  * ----------------------------------------------------- */
-#custom-appmenu {
-  /*
-  border: 3px solid @bordercolor;
-  background-color: @backgrounddark;
-*/
-  color: @textcolor1;
-  opacity: 0.8;
-}
 #appo {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   padding: 0px 2px 0px 2px;
+}
+#appo :hover {
+  background-color: @tooltipbackground;
+}
+/* APP MENU */
+#custom-appmenu {
+  color: @textcolor1;
+  opacity: 0.8;
+}
+#custom-left:hover {
+  background-color: transparent;
+}
+/* Taskbar */
+#taskbar {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px;
+}
+#taskbar:hover {
+  background-color: transparent;
+}
+#taskbar button:hover {
+  background-color: @tooltipbackground;
+}
+#custom-right:hover {
+  background-color: transparent;
+}
+/* CHATGPT */
+#custom-chatgpt {
+  background-image: url("../assets/ai-icon-14.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0px 8px 0px 8px;
+  margin: 0px 5px;
+}
+#custom-browser,
+#custom-filemanager,
+#custom-calculator {
+  padding: 0px 8px 0px 8px;
+  margin: 0px 2px;
 }
 
 /* -----------------------------------------------------
  * Custom Updates
  * ----------------------------------------------------- */
 #custom-updates {
-  background-color: @backgroundlight;
-  color: @textcolor2;
   padding: 0px 9px 0px 9px;
   opacity: 0.8;
 }
 #custom-updates.green {
-  background-color: @backgroundlight;
+  background-color: #1cfa2f;
+  color: #000000;
 }
 #custom-updates.yellow {
   background-color: #ff9a3c;
@@ -281,7 +252,7 @@ tooltip label {
  * ----------------------------------------------------- */
 #hardware {
   font-size: 10;
-  padding: 2px 6px 0px 6px;
+  padding: 2px 6px 0px 0px;
 }
 #disk,
 #memory,
@@ -309,7 +280,6 @@ tooltip label {
   opacity: 0.8;
 }
 #bluetooth.off {
-  background-color: transparent;
 }
 /* Battery */
 #battery {
@@ -322,7 +292,7 @@ tooltip label {
 }
 @keyframes blink {
   to {
-    color: @textcolor2;
+    color: #f53c3c;
   }
 }
 #battery.critical:not(.charging) {
@@ -334,6 +304,9 @@ tooltip label {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+/* -----------------------------------------------------
+ * IDLE INHIBATOR
+ * ----------------------------------------------------- */
 /* Idle Inhibator */
 #idle_inhibitor {
   font-weight: bold;
@@ -347,24 +320,39 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * Tray
+ * TRAY
  * ----------------------------------------------------- */
 #tray {
+  padding: 0px 9px 0px 9px;
+}
+#tray > :hover {
+  background-color: @tooltipbackground;
+}
+#tray > .active {
+  padding: 0px 9px;
 }
 #tray > .passive {
+  padding: 0px 19px;
   -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
+  padding: 0px 9px;
   -gtk-icon-effect: highlight;
 }
+#tray button {
+  padding: 0px 19px;
+}
 
+/* -----------------------------------------------------
+ * USER
+ * ----------------------------------------------------- */
 #user {
   color: @textcolor2;
   font-size: 30px;
 }
 
 /* -----------------------------------------------------
- * Pulseaudio
+ * AUDIO
  * ----------------------------------------------------- */
 #cava,
 #pulseaudio {
@@ -374,7 +362,6 @@ tooltip label {
   background-color: @backgrounddark;
   color: @textcolor1;
 }
-
 #wireplumber,
 #audios {
   /*
@@ -387,7 +374,7 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * Custom Exit
+ * CUSTOM EXIT
  * ----------------------------------------------------- */
 #custom-exit {
   color: @textcolor1;

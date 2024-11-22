@@ -7,3 +7,4 @@
 /.bash/.bash_pofile
 .bash/.bash_history*
 .config/qtile/__pycache__/
+.zsh/.zhistory

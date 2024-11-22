@@ -511,10 +511,10 @@
     },
     "modules": [
       "custom/appmenu",
-      "custom/chatgpt",
       "custom/left",
       "wlr/taskbar",
       "custom/right",
+      "custom/chatgpt",
       "custom/browser",
       "custom/filemanager",
       "custom/calculator",
