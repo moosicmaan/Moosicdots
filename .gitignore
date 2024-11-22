@@ -3,7 +3,7 @@
 /.config/fish/completions/
 /.config/fish/conf.d/
 /.config/fish/fish_variables
-/.bash/.bash_history
 /.bash/.bash_logout
 /.bash/.bash_pofile
-/.config/qtile/__pycache__/
+.bash/.bash_history*
+.config/qtile/__pycache__/
