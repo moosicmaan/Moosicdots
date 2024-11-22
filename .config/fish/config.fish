@@ -174,6 +174,7 @@ end
 # JDB --->
 # my aliases
 alias vim 'kitty @ set-spacing padding=0 && nvim'
+alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
 alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
 # add emacs to the path
@@ -212,3 +213,7 @@ alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ F
 alias nf='nvim $(ff)'
 # alias np='nvim $(ft)'
 # <--- JDB
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

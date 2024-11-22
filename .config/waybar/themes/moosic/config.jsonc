@@ -41,8 +41,8 @@
   },
   {
     "id": 2,
-    // "output": "HDMI-A-1",
-    "output": "!",
+    "output": "HDMI-A-1",
+    // "output": "!",
     "type": "dock",
     "position": "bottom",
     "start_hidden": false,
