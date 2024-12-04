@@ -315,6 +315,8 @@
     "interval": 10,
     "format": "{player_icon} ",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "tooltip": true,
+    "tooltip-format": "{source_desc} | {source_volume}%",
     "on-click-middle": "playerctl play-pause",
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
@@ -353,6 +355,7 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 50,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "nm-connection-editor",
   },
 
   "network#speed": {
@@ -368,6 +371,7 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 50,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "nm-connection-editor",
   },
 
   "pulseaudio": {
@@ -484,7 +488,7 @@
     "exec": "echo ; echo 󰷛  screen lock",
     "interval": 86400, // once every day
     "tooltip": true,
-    "on-click": "~/.config/wayfire/scripts/LockScreen.sh",
+    "on-click": "swaylock -f",
   },
 
   "custom/menu": {
@@ -493,12 +497,11 @@
     "interval": 86400, // once every day
     "tooltip": true,
     "on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
-    "on-click-right": "~/.config/wayfire/scripts/wallpaper",
   },
 
   // This is a custom cava visualizer
   "custom/cava_mviz": {
-    "exec": "~/.config/wayfire/scripts/WaybarCava.sh",
+    "exec": "~/.config/.scripts/WaybarCava.sh",
     "format": "{}",
   },
 
@@ -511,8 +514,8 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "scroll-step": 5.0,
-    "on-scroll-up": "~/.config/wayfire/scripts/Volume.sh --inc",
-    "on-scroll-down": "~/.config/wayfire/scripts/Volume.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/Volume.sh --inc",
+    "on-scroll-down": "~/.config/.scripts/Volume.sh --dec",
     "smooth-scrolling-threshold": 1,
   },
 
@@ -619,8 +622,8 @@
     "on-click-middle": "",
     "on-click-right": "",
     "on-update": "",
-    "on-scroll-up": "~/.config/wayfire/scripts/Brightness.sh --inc",
-    "on-scroll-down": "~/.config/wayfire/scripts/Brightness.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/Brightness.sh --inc",
+    "on-scroll-down": "~/.config/.scripts/Brightness.sh --dec",
     "smooth-scrolling-threshold": 1,
     "tooltip-format": "{percent}%",
   },
@@ -672,10 +675,10 @@
       "ignored-sinks": ["Easy Effects Sink"],
     },
     "scroll-step": 5.0,
-    "on-click": "~/.config/wayfire/scripts/Volume.sh --toggle",
+    "on-click": "~/.config/.scripts/Volume.sh --toggle",
     "on-click-right": "pavucontrol-qt -t 3",
-    "on-scroll-up": "~/.config/river/scripts/volume --inc",
-    "on-scroll-down": "~/.config/river/scripts/volume --dec",
+    "on-scroll-up": "~/.config/.scripts/volume --inc",
+    "on-scroll-down": "~/.config/.scripts/volume --dec",
     "tooltip-format": "{icon} {desc} | {volume}%",
     "smooth-scrolling-threshold": 1,
   },
@@ -685,9 +688,9 @@
     "format-source": "󰍬",
     "format-source-muted": "󰍭",
     "on-click-right": "pavucontrol",
-    "on-click": "~/.config/wayfire/scripts/Volume.sh --toggle-mic",
-    "on-scroll-up": "~/.config/wayfire/scripts/Volume.sh --mic-inc",
-    "on-scroll-down": "~/.config/wayfire/scripts/Volume.sh --mic-dec",
+    "on-click": "~/.config/.scripts/Volume.sh --toggle-mic",
+    "on-scroll-up": "~/.config/.scripts/Volume.sh --mic-inc",
+    "on-scroll-down": "~/.config/.scripts/Volume.sh --mic-dec",
     "max-volume": 100,
     "tooltip": true,
     "tooltip-format": "{source_desc} | {source_volume}%",
@@ -711,8 +714,8 @@
   "custom/power_vertical": {
     "format": "⏻",
     "exec": "echo ; echo 󰟡 power // blur",
-    "on-click": "~/.config/wayfire/scripts/Wlogout.sh",
-    "on-click-right": "~/.config/wayfire/scripts/ChangeBlur.sh",
+    "on-click": "~/.config/.scripts/Wlogout.sh",
+    "on-click-right": "~/.config/.scripts/ChangeBlur.sh",
     "interval": 86400, // once every day
     "tooltip": true,
   },
@@ -841,6 +844,7 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 50,
     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "on-click": "nm-connection-editor",
   },
 
   "wlr/taskbar#cam": {

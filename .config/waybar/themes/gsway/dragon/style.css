@@ -106,8 +106,12 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #custom-launcher {
+  font-size: 16px;
+  background-image: url("/home/moosicmaan/.config/waybar/assets/launcher.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border-style: hidden;
-  margin-top: 2px;
 }
 
 #mode {
@@ -204,5 +208,6 @@ window#waybar {
 
 #custom-power {
   border-style: hidden;
-  margin-top: 2px;
+  font-size: 16px;
+  margin-top: 0px;
 }

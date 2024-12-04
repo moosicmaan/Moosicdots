@@ -4,7 +4,7 @@
 */
 @import "../../../../../.cache/wal/colors-waybar.css";
 
-@define-color barbackground rgba(110,114,141,0.5);
+@define-color barbackground rgba(110,114,141,1);
 @define-color backgroundlight rgba(69,73,100,0.5);
 @define-color backgrounddark rgba(30,32,48,0.5);
 @define-color workspacesbackground1 rgba(24,25,48,0.8);

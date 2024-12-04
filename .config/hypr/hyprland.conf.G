@@ -10,9 +10,9 @@
 $mainMod = SUPER
 # open G-Hyprland script
 # windowrulev2=float,title:^(G-Hyprland)
-bind = $mainMod, S, exec, footclient -w 750x600 -T G-Hyprland -e ~/.config/hypr/brain/brain.sh
+bind = $mainMod SHIFT, S, exec, footclient -w 750x600 -T G-Hyprland -e ~/.config/hypr/brain/brain.sh
 # disable G-hyprland
-bind = $mainMod SHIFT, G, exec, footclient -e ~/.local/bin/bear/implement_gum.sh disable
+bind = $mainMod ALT, G, exec, footclient -e ~/.local/bin/bear/implement_gum.sh disable
 # ##############################################
 # ##                           _              ##
 # ##  ___  ___  _   _ _ __ ___(_)_ __   __ _  ##

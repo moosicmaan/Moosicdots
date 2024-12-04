@@ -8,29 +8,28 @@
 
 /* -----------------------------------------------------
  * General 
- * ----------------------------------------------------- */
+ * ------------------------------------------------------
+font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+  sans-serif;
+font-family: DejaVuSansM Nerd Font Propo;
+font-family: SpaceMono Nerd Font Propo;
+font-family: Roboto Condensed;
+font-family: MonaspiceRn Nerd Font Propo;
+background-color: @backgroundlight;
+background-color: #ffffff;
+*/
 * {
-  /* 
-  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
-  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
-    sans-serif;
-  font-family: DejaVuSansM Nerd Font Propo;
-  font-family: SpaceMono Nerd Font Propo;
-  font-family: Roboto Condensed;
-  font-family: MonaspiceRn Nerd Font Propo;
-  background-color: @backgroundlight;
-  background-color: #ffffff;
-  */
   font-family: Iosevka Nerd font Propo;
   border: none;
   border-radius: 15px;
   margin: 0px 1px 0px 1px;
-  padding: 0px 1px 0px 1px;
-  font-size: 14px;
+  padding: 0px 2px 0px 2px;
+  font-size: 12px;
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
 
 window#waybar {
-  /* 
+  /*
   border-bottom: 2px solid @bordercolorb;
   color: #FFFFFF; 
   background: transparent;
@@ -43,8 +42,9 @@ window#waybar {
     @color6,
     @color10 90%
   );
+  background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
   */
-  background-color: @barbackground;
+  background-color: alpha (@barbackground, 0.5);
   border-radius: 0px;
 }
 
@@ -57,6 +57,13 @@ window#waybar.spotube {
     #00ff00 99%
   );
   color: #ffffff;
+}
+
+#window {
+  background-color: transparent;
+}
+window#waybar.empty #window {
+  background-color: transparent;
 }
 
 /* -----------------------------------------------------
@@ -92,6 +99,7 @@ window#waybar.spotube {
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */
+  padding: 0px 0px 0px 0px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
@@ -140,7 +148,6 @@ tooltip label {
 #custom-browser,
 #custom-keybindings,
 #custom-filemanager,
-#custom-teams,
 #custom-chatgpt,
 #custom-calculator,
 #custom-cliphist,
@@ -159,7 +166,7 @@ tooltip label {
 #appo {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 1px 2px 2px;
 }
 #appo :hover {
   background-color: @tooltipbackground;
@@ -168,11 +175,12 @@ tooltip label {
 #custom-appmenu {
   color: @textcolor1;
   opacity: 0.8;
+  padding: 0px 8px 0px 2px;
 }
 #custom-left:hover {
   background-color: transparent;
 }
-/* Taskbar */
+/* TASKBAR */
 #taskbar {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px;
@@ -188,7 +196,7 @@ tooltip label {
 }
 /* CHATGPT */
 #custom-chatgpt {
-  background-image: url("../assets/ai-icon-14.png");
+  background-image: url("../../assets/ai-icon-14.png");
   background-repeat: no-repeat;
   background-position: center;
   padding: 0px 8px 0px 8px;
@@ -199,26 +207,6 @@ tooltip label {
 #custom-calculator {
   padding: 0px 8px 0px 8px;
   margin: 0px 2px;
-}
-
-/* -----------------------------------------------------
- * Custom Updates
- * ----------------------------------------------------- */
-#custom-updates {
-  padding: 0px 9px 0px 9px;
-  opacity: 0.8;
-}
-#custom-updates.green {
-  background-color: #1cfa2f;
-  color: #000000;
-}
-#custom-updates.yellow {
-  background-color: #ff9a3c;
-  color: #ffffff;
-}
-#custom-updates.red {
-  background-color: #dc2f2f;
-  color: #ffffff;
 }
 
 /* -----------------------------------------------------
@@ -234,7 +222,7 @@ tooltip label {
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 */
-  font-size: 16;
+  font-size: 13;
 }
 #mpris,
 #submap,
@@ -252,11 +240,18 @@ tooltip label {
  * ----------------------------------------------------- */
 #hardware {
   font-size: 10;
-  padding: 2px 6px 0px 0px;
+  padding: 0px 6px 0px 0px;
+}
+#hardware :hover {
+  background-color: @tooltipbackground;
 }
 #disk,
 #memory,
 #cpu,
+#custom-separator,
+#temperature,
+#custom-updates,
+#backlight,
 #language {
   color: @iconcolor;
 }
@@ -271,7 +266,7 @@ tooltip label {
 #network.wifi {
   color: @textcolor2;
 }
-/* Bluetooth */
+/* BLUETOOTH */
 #bluetooth,
 #bluetooth.on,
 #bluetooth.connected {
@@ -281,7 +276,7 @@ tooltip label {
 }
 #bluetooth.off {
 }
-/* Battery */
+/* BATTERY */
 #battery {
   color: @textcolor2;
   opacity: 0.8;
@@ -304,10 +299,7 @@ tooltip label {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-/* -----------------------------------------------------
- * IDLE INHIBATOR
- * ----------------------------------------------------- */
-/* Idle Inhibator */
+/* IDLE INHIBATOR */
 #idle_inhibitor {
   font-weight: bold;
   opacity: 0.8;
@@ -318,29 +310,40 @@ tooltip label {
   opacity: 0.8;
   color: #dc2f2f;
 }
+/* CUSTOR UPDATES */
+#custom-updates {
+  padding: 0px 9px 0px 9px;
+  opacity: 0.8;
+}
+#custom-updates.green {
+  background-color: #1cfa2f;
+  color: #000000;
+}
+#custom-updates.yellow {
+  background-color: #ff9a3c;
+  color: #ffffff;
+}
+#custom-updates.red {
+  background-color: #dc2f2f;
+  color: #ffffff;
+}
 
 /* -----------------------------------------------------
  * TRAY
  * ----------------------------------------------------- */
 #tray {
-  padding: 0px 9px 0px 9px;
+  padding: 0px 9px 0px 2px;
 }
 #tray > :hover {
   background-color: @tooltipbackground;
 }
 #tray > .active {
-  padding: 0px 9px;
 }
 #tray > .passive {
-  padding: 0px 19px;
   -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
-  padding: 0px 9px;
   -gtk-icon-effect: highlight;
-}
-#tray button {
-  padding: 0px 19px;
 }
 
 /* -----------------------------------------------------
@@ -348,13 +351,16 @@ tooltip label {
  * ----------------------------------------------------- */
 #user {
   color: @textcolor2;
-  font-size: 30px;
+  font-size: 3px;
 }
 
 /* -----------------------------------------------------
  * AUDIO
  * ----------------------------------------------------- */
-#cava,
+#cava {
+  font-size: 4px;
+  padding: 5px 0px 0px 2px;
+}
 #pulseaudio {
   padding: 0px 9px 0px 9px;
 }
@@ -372,6 +378,29 @@ tooltip label {
   color: @textcolor3;
   opacity: 0.8;
 }
+#pulseaudio-slider {
+}
+#pulseaudio-slider slider {
+  min-height: 9px;
+  min-width: 9px;
+  opacity: 1;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #ffffff;
+}
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: #00ff00;
+}
+#pulseaudio-slider highlight {
+  min-width: 9px;
+  min-height: 10px;
+  border-radius: 5px;
+  background-color: #ff00ff;
+}
 
 /* -----------------------------------------------------
  * CUSTOM EXIT
@@ -380,5 +409,5 @@ tooltip label {
   color: @textcolor1;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
-  padding: 0px 3px 0px 3px;
+  padding: 0px 3px 0px 6px;
 }

@@ -14,14 +14,14 @@ cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
 
 # Create cache file if not exists
-if [ ! -f $cache_file ]; then
-  touch $cache_file
+if [ ! -f "$cache_file" ]; then
+  touch "$cache_file"
   echo "$HOME/Pictures/Backgrounds/1.jpg" >"$cache_file"
 fi
 
 # Create rasi file if not exists
-if [ ! -f $rasi_file ]; then
-  touch $rasi_file
+if [ ! -f "$rasi_file" ]; then
+  touch "$rasi_file"
   echo "* { current-image: url(\"$HOME/Pictures/Backgrounds/1.jpg\", height); }" >"$rasi_file"
 fi
 
@@ -31,8 +31,8 @@ case $1 in
 
 # Load wallpaper from .cache of last session
 "init")
-  if [ -f $cache_file ]; then
-    wal -q -i $current_wallpaper
+  if [ -f "$cache_file" ]; then
+    wal -q -i "$current_wallpaper"
   else
     wal -q -i ~/wallpaper/
   fi
@@ -48,7 +48,7 @@ case $1 in
     echo "No wallpaper selected"
     exit
   fi
-  wal -q -i ~/Pictures/Backgrounds/$selected
+  wal -q -i ~/Pictures/Backgrounds/"$selected"
   ;;
 
 # Randomly select wallpaper
@@ -73,7 +73,7 @@ echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
 # -----------------------------------------------------
 # get wallpaper image name
 # -----------------------------------------------------
-newwall=$(echo $wallpaper | sed "s|$HOME/Pictures/Backgrounds/||g")
+newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
 
 # -----------------------------------------------------
 # Reload waybar with new colors
@@ -87,7 +87,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/Pictures/Backgrounds/||g")
 # transition_type="outer"
 transition_type="random"
 
-swww img $wallpaper \
+swww img "$wallpaper" \
   --transition-bezier .43,1.19,1,.4 \
   --transition-fps=60 \
   --transition-type=$transition_type \

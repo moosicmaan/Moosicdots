@@ -1,16 +1,23 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        jsonls = {
-          on_attach = function(client, bufnr)
-            if vim.bo[bufnr].filetype == "json" or vim.bo[bufnr].filetype == "jsonc" then
-              client.server_capabilities.documentFormattingProvider = false -- Disable formatting for JSON/JSONC
-            end
-          end,
-        },
-      },
-    },
-  },
+	-- "neovim/nvim-lspconfig",
+	-- opts = {
+	-- 	-- make sure mason installs the server
+	-- 	servers = {
+	-- 		jsonls = {
+	-- 			-- lazy-load schemastore when needed
+	-- 			on_new_config = function(new_config)
+	-- 				new_config.settings.jsonc.schemas = new_config.settings.jsonc.schemas or {}
+	-- 				vim.list_extend(new_config.settings.jsonc.schemas, require("schemastore").jsonc.schemas())
+	-- 			end,
+	-- 			settings = {
+	-- 				jsonc = {
+	-- 					format = {
+	-- 						enable = false,
+	-- 					},
+	-- 					validate = { enable = true },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 }

@@ -52,7 +52,7 @@
   // Waybar Themes
   "custom/waybarthemes": {
     "format": "Themes",
-    "on-click": "~/dotfiles/waybar/themeswitcher.sh",
+    "on-click": "~/.config/.scripts/themeswitcher.sh",
     "tooltip": false,
   },
   "sway/mode": {

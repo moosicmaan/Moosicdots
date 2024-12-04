@@ -39,13 +39,14 @@
     height = (0,300)
 
     # Position the notification in the top right corner
+    # origin = top-right
     origin = top-right
 
     # Offset from the origin
-    offset = 0x30
+    offset = 13x13
 
-    # Scale factor. It is auto-detected if value is 0.
-    scale = 0
+    # Scale factor. It is auto-detected if value is 0. X11 only
+    scale = 1
 
     # Maximum number of notification (0 means no limit)
     notification_limit = 20
@@ -70,7 +71,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 10
+    progress_bar_corner_radius = 5
 
     # Corner radius for the icon image.
     icon_corner_radius = 0
@@ -259,7 +260,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 5
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

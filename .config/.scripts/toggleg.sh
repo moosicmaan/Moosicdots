@@ -8,7 +8,7 @@ if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
   pkill -f "wlsunset" &
   cat ~/.config/hypr/hyprland.conf.X >~/.config/hypr/hyprland.conf &
   echo "/moosic;/moosic/black" >~/.cache/.themestyle.sh &
-  echo "/home/moosicmaan/Pictures/Backgrounds/wal103.png" >~/.cache/current_wallpaper &
+  echo "/home/moosicmaan/Pictures/Backgrounds/wal16.jpg" >~/.cache/current_wallpaper &
   ~/.config/.scripts/wallpaper.sh init &
   notify-send "...dead..." || notify-send "Failed to stop garuda visuals"
 else

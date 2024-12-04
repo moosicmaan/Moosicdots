@@ -1,5 +1,6 @@
+-- ===============================================
+-- -----------------------------------------------
 --[[
-
      Awesome WM configuration template
      https://github.com/awesomeWM
 
@@ -8,8 +9,9 @@
      Copycats themes : https://github.com/lcpz/awesome-copycats
 
      lain : https://github.com/lcpz/lain
-
 --]]
+-- -----------------------------------------------
+-- ===============================================
 
 -- {{{ Required libraries
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
@@ -81,10 +83,6 @@ local function run_once(cmd_arr)
 end
 
 run_once({ "unclutter -root" }) -- entries must be comma-separated
-
--- KEYBOARD Specifications
-os.execute("xset r rate 300 90")
-
 -- }}}
 
 -- This function implements the XDG autostart specification
@@ -99,11 +97,8 @@ awful.spawn.with_shell(
 
 -- }}}
 
--- ===============================================
--- -----------------------------------------------
 -- {{{ Variable definitions
--- -----------------------------------------------
--- ===============================================
+
 -- keep themes in alfabetical order for ATT
 local themes = {
 	"blackburn", -- 1
@@ -113,8 +108,10 @@ local themes = {
 	"powerarrow-blue", -- 5
 	"powerarrow-dark", -- 6
 }
+
 -- choose your theme here
-local chosen_theme = themes[3]
+local chosen_theme = themes[6]
+
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -126,28 +123,16 @@ local modkey1 = "Control"
 -- -----------------------------------------------
 -- Default Applications
 -- -----------------------------------------------
---change these variables if you want: original
-local browser1 = "brave"
-local browser2 = "firefox"
-local browser3 = "qutebrowser"
-local editor = os.getenv("EDITOR") or "nvim"
-local editorgui = "geany"
-local filemanager = "pcmanfm"
-local mailclient = "thunderbird"
-local mediaplayer = "spotube"
-local terminal = "kitty"
-local virtualmachine = "virtualbox"
 -- moosic variables
 local my_term = "kitty" -- (M-return) Launch default terminal
-local my_term2 = "alacritty" --# (M-t) Launch alternate terminal
+local my_term2 = "wezterm" --# (M-t) Launch alternate terminal
 local my_brows = "brave" --# (M-b) Launch default browser
 local my_brows2 = "firefox" --# (M-f1) Launch alternate browser
-local my_brows3 = "firedragon" --# (C-A-b) Launch 2nd alternate browser
 local my_browsv = "qutebrowser" --# (M-o) Launch VIM-based browser
 local my_email = "thunderbird" --# (M-A-return) Launch default email client
 local my_email2 = "bluemail" --# (M-f2) Launch alternate email client
 local my_editg = "geany" --# (M-f3) Launch GUI text editor
-local my_editc = "nvim" --# (M-n) Launch console text editor
+local my_editc = "neovide" --# (M-n) Launch console text editor
 local my_filesg = "pcmanfm-qt" --# (M-S-return) Launch GUI file browser
 local my_filesc = "kitty -e ranger" --# (M-A-o) Launch console file browser
 local menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run" --# (M-p) Launch RUN menu
@@ -165,7 +150,7 @@ local my_stream = "obs" --# (M-f5) Launch streaming software
 -- -----------------------------------------------
 -- awesome variables
 -- -----------------------------------------------
-awful.util.terminal = terminal
+awful.util.terminal = my_term
 awful.util.tagnames = { "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒" }
 --awful.util.tagnames = { "⠐", "⠡", "⠲", "⠵", "⠻", "⠿" }
 --awful.util.tagnames = { "⌘", "♐", "⌥", "ℵ" }
@@ -271,11 +256,7 @@ lain.layout.cascade.tile.ncol = 2
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- }}}
 
--- ===============================================
--- -----------------------------------------------
 -- {{{ Menu
--- -----------------------------------------------
--- ===============================================
 local myawesomemenu = {
 	{
 		"hotkeys",
@@ -293,7 +274,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
 		-- other triads can be put here
 	},
 	after = {
-		{ "Terminal", terminal },
+		{ "Terminal", my_term },
 		{
 			"Log out",
 			function()
@@ -307,18 +288,12 @@ awful.util.mymainmenu = freedesktop.menu.build({
 	},
 })
 -- hide menu when mouse leaves it
-awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function()
-	awful.util.mymainmenu:hide()
-end)
+--awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
 
 --menubar.utils.terminal = terminal -- Set the Menubar terminal for applications that require it
 -- }}}
 
--- ===============================================
--- -----------------------------------------------
 -- {{{ Screen
--- -----------------------------------------------
--- ===============================================
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", function(s)
 	-- Wallpaper
@@ -351,11 +326,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
--- ===============================================
--- -----------------------------------------------
 -- {{{ Mouse bindings
--- -----------------------------------------------
--- ===============================================
 root.buttons(my_table.join(
 	awful.button({}, 3, function()
 		awful.util.mymainmenu:toggle()
@@ -370,7 +341,7 @@ root.buttons(my_table.join(
 -- {{{ Key bindings
 -- -----------------------------------------------
 -- ===============================================
-globalkeys = my_table.join(
+Globalkeys = my_table.join(
 
 	-- {{{ Personal keybindings
 	awful.key({ modkey }, "t", function()
@@ -451,6 +422,9 @@ globalkeys = my_table.join(
 	awful.key({ modkey1, altkey }, "t", function()
 		awful.util.spawn("kitty sh -c 'kitty @ set-spacing padding=0; tmux'")
 	end, { description = "Open TMUX in kitty with no padding", group = "apps" }),
+	awful.key({ modkey }, "t", function()
+		awful.util.spawn(my_term2)
+	end, { description = "Open 2nd terminal", group = "apps" }),
 	awful.key({ modkey }, "a", function()
 		awful.util.spawn("brave --app=https://chat.openai.com")
 	end, { description = "Open ChatGPT", group = "apps" }),
@@ -490,6 +464,7 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "n", function()
 		awful.util.spawn("neovide ~/.config/awesome/")
 	end, { description = "Open Neovim to awesome folder", group = "apps" }),
+	--NEOVIDE KEYCHORD
 
 	--VARIETY
 	awful.key({ altkey, "Shift" }, "t", function()
@@ -855,7 +830,7 @@ globalkeys = my_table.join(
 	--]]
 )
 
-clientkeys = my_table.join(
+Clientkeys = my_table.join(
 	awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client, { description = "magnify client", group = "client" }),
 	awful.key({ modkey }, "f", function(c)
 		c.fullscreen = not c.fullscreen
@@ -907,8 +882,8 @@ for i = 1, 9 do
 		descr_move = { description = "move focused client to tag #", group = "tag" }
 		descr_toggle_focus = { description = "toggle focused client on tag #", group = "tag" }
 	end
-	globalkeys = my_table.join(
-		globalkeys,
+	Globalkeys = my_table.join(
+		Globalkeys,
 		-- View tag only.
 		awful.key({ modkey }, "#" .. i + 9, function()
 			local screen = awful.screen.focused()
@@ -947,7 +922,7 @@ for i = 1, 9 do
 	)
 end
 
-clientbuttons = gears.table.join(
+Clientbuttons = gears.table.join(
 	awful.button({}, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
 	end),
@@ -962,7 +937,7 @@ clientbuttons = gears.table.join(
 )
 
 -- Set keys
-root.keys(globalkeys)
+root.keys(Globalkeys)
 -- }}}
 
 -- {{{ Rules
@@ -976,8 +951,8 @@ awful.rules.rules = {
 			border_color = beautiful.border_normal,
 			focus = awful.client.focus.filter,
 			raise = true,
-			keys = clientkeys,
-			buttons = clientbuttons,
+			keys = Clientkeys,
+			buttons = Clientbuttons,
 			screen = awful.screen.preferred,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 			size_hints_honor = false,
@@ -1011,7 +986,7 @@ awful.rules.rules = {
 	--{ rule = { class = "Subl" },
 	--properties = { screen = 1, tag = awful.util.tagnames[2],switchtotag = true  } },
 
-	--{ rule = { class = editorgui },
+	--{ rule = { class = my_editg },
 	--properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
 
 	--{ rule = { class = "Brackets" },
@@ -1038,7 +1013,7 @@ awful.rules.rules = {
 	-- Set applications to be maximized at startup.
 	-- find class or role via xprop command
 
-	{ rule = { class = editorgui }, properties = { maximized = true } },
+	{ rule = { class = my_editg }, properties = { maximized = true } },
 
 	{ rule = { class = "Geany" }, properties = { maximized = false, floating = false } },
 
@@ -1051,7 +1026,7 @@ awful.rules.rules = {
 
 	{ rule = { class = "inkscape" }, properties = { maximized = true } },
 
-	{ rule = { class = mediaplayer }, properties = { maximized = true } },
+	{ rule = { class = my_music }, properties = { maximized = true } },
 
 	{ rule = { class = "Vlc" }, properties = { maximized = true } },
 
@@ -1083,7 +1058,6 @@ awful.rules.rules = {
 			},
 			class = {
 				"Arandr",
-				"Arcolinux-welcome-app.py",
 				"Blueberry",
 				"Galculator",
 				"Gnome-font-viewer",
@@ -1211,4 +1185,4 @@ end)
 -- Autostart applications
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
 -- awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")
--- awful.spawn.with_shell("picom -b")
+awful.spawn.with_shell("picom -b")

@@ -18,7 +18,7 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/modules.jsonc"],
+    "include": ["~/.config/waybar/themes/ml4w/modules.jsonc"],
 
     // Modules Left
     "modules-left": [
@@ -48,13 +48,14 @@
   },
   {
     "id": 2,
-    "output": "HDMI-A-1",
+    // "output": "HDMI-A-1",
+    "output": "!",
     "position": "bottom",
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/modules.jsonc"],
+    "include": ["~/.config/waybar/themes/ml4w/modules.jsonc"],
 
     // Modules Left
     "modules-left": ["custom/appmenuicon", "hyprland/workspaces"],

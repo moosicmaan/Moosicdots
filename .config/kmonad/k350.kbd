@@ -29,20 +29,23 @@
   def   (layer-toggle default) ;; Bind num to a button that toggles a layer - hold to activate layer
   dir   (layer-toggle directt) ;; Bind num to a button that toggles a layer - hold to activate layer
   kil  C-A-del                 ;; Bind kil to a button that Ctrl-Alt-deletes
-  
-  lsh (tap-hold-next-release 200 a lsft)
-  lct (tap-hold-next-release 200 s lctl)
-  lmt (tap-hold-next-release 200 d lmet)
-  lat (tap-hold-next-release 200 f lalt)
 
-  rat (tap-hold-next-release 200 m ralt)
-  rmt (tap-hold-next-release 200 , lmet)
-  rct (tap-hold-next-release 200 . rctl)
-  rsh (tap-hold-next-release 200 ; rsft)
-  
-  tsm (tap-hold-next-release 200 ' @sym)
-  wsm (tap-hold-next-release 200 w @sym)
-  tdr (tap-hold-next-release 200 q @dir)
+  lsh (tap-hold-next-release 200 a lsft) ;; SHIFT(hold) and a(tap) key
+  lct (tap-hold-next-release 200 s lctl) ;; CTRL and s key
+  lmt (tap-hold-next-release 200 d lmet) ;; SUPER and d key
+  lat (tap-hold-next-release 200 f lalt) ;; ALT and F key
+
+  rat (tap-hold-next-release 200 m ralt) ;; ALT and m key
+  rmt (tap-hold-next-release 200 , lmet) ;; SUPER and , key
+  rct (tap-hold-next-release 200 . rctl) ;; CTRL and . key
+  rsh (tap-hold-next-release 200 ; rsft) ;; SHIFT and ; key
+
+  tsm (tap-hold-next-release 200 ' @sym) ;; Hold to go to the symbols layer
+  wsm (tap-hold-next-release 200 w @sym) ;; Hold to go to the symbols layer
+  tdr (tap-hold-next-release 200 q @dir) ;; Hold to go to the direction layer
+
+  big C-=       ;; CTRL and plus
+  sml C--       ;; CTRL SHIFT and minus
 )
 
 (defsrc
@@ -58,7 +61,7 @@
 (deflayer default
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
-  tab   @tdr @wsm e    r    t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+ 
+  tab   @tdr @wsm e    r    t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+
   caps   @lsh @lct @lmt @lat g    h    j    k    l    @rsh @tsm ret                pgdn  4    5    6
   lsft    z    x    c    v    b    n    @rat @rmt @rct /    rsft              up         1    2    3   kprt
   lctl   lmet    lalt            spc           ralt   cmp   rctl         left down rght  kp0       kp.
@@ -76,7 +79,7 @@
 (deflayer directt
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _    _         _     _    _    _    _
+  _     _    _    _    _    _    _    @sml @big _    del  _    _    _    _         _     _    _    _    _
   _      _    _    _    _    _    left down up   rght _    _    _                  _     _    _    _
   _       _    _    _    _    _    _    _    _    _    _    _                 _          _    _    _    _
   _      _       _              bspc           _      _     _           _     _    _     _         _

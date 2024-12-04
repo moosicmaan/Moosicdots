@@ -129,6 +129,11 @@ window#waybar.empty #window {
   border: 3px solid @backgroundlight;
 }
 
+window#waybar.empty #taskbar {
+  background: transparent;
+  border: none;
+}
+
 #taskbar button {
   margin: 0;
   border-radius: 15px;
@@ -188,7 +193,7 @@ window#waybar.empty #window {
 
 #custom-chatgpt {
   margin-right: 15px;
-  background-image: url("../assets/ai-icon.png");
+  background-image: url("../../assets/ai-icon.png");
   background-repeat: no-repeat;
   background-position: center;
   padding-right: 24px;

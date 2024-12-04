@@ -2,12 +2,13 @@
 # Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -xU MANROFFOPT -c
 set -x SHELL /usr/bin/fish
 
 ## Export variable need for qt-theme
 if type qtile >>/dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME qt6ct
+    set -x QT_QPA_PLATFORMTHEME qt5ct
 end
 
 # Set settings for https://github.com/franciscolourenco/done
@@ -167,9 +168,10 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
 ## Run fastfetch if session is interactive
 if status --is-interactive && type -q fastfetch
-    # fastfetch --load-config dr460nized
+    # fastfetch --config neofetch.jsonc
     fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
 end
+
 
 # JDB --->
 # my aliases
@@ -177,11 +179,14 @@ alias vim 'kitty @ set-spacing padding=0 && nvim'
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
 alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
+
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
-# set collortheme to current wallpaper
-set cwp (cat ~/.cache/current_wallpaper)
-wal -i $cwp >/dev/null
+
+# set colortheme to current wallpaper
+# set cwp (cat ~/.cache/current_wallpaper)
+# wal -i $cwp >/dev/null
+
 # set vi mode
 ###set -o vi
 fish_vi_key_bindings
@@ -206,12 +211,74 @@ bind \e\cy yy
 bind \e\cf ff
 bind \e\cn nf
 
-alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
-#alias ft 'fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-alias nf='nvim $(ff)'
+alias nf='kitty @ set-spacing padding=0 && nvim $(ff)'
 # alias np='nvim $(ft)'
+
+# insert fzf keybinding
+fzf --fish | source
+
+export FZF_CTRL_T_OPTS="-m \
+--height 75% \
+--margin 10%,5% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF Find ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--header '<TAB> for MULTI' \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_CTRL_R_OPTS="--height 75% \
+--margin 10%,5% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF History ╟' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_ALT_C_OPTS="--height 75% \
+--margin 10%,5% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF CD ╟' \
+--walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview 'tree -C {}' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_DEFAULT_OPTS="-m \
+--height 75% \
+--tmux center,75%,75% \
+--margin 10%,5% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--header '<TAB> for MULTI' \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
 # <--- JDB
 
 # bun

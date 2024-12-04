@@ -61,7 +61,7 @@
     "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
     //"max-length": 200
     "interval": 1,
-    "on-click": "~/.config/waybar/themes/garuda/dragon/OCV",
+    "on-click": "~/.config/waybar/scripts/OCV",
   },
   "cpu": {
     "format": "🖳{usage}%",
@@ -84,7 +84,7 @@
     "format-icons": ["", ""],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/themes/garuda/dragon/backlight-hint.sh",
+    "on-click": "~/.config/waybar/scripts/backlight-hint.sh",
   },
   "battery": {
     "states": {
@@ -134,7 +134,7 @@
   },
   "custom/keyboard-layout": {
     "format": " Cheat", // Icon: keyboard
-    "on-click": "~/.config/waybar/themes/garuda/dragon/keyhint.sh",
+    "on-click": "~/.config/waybar/scripts/keyhint.sh",
   },
   "custom/launcher": {
     "format": "    ",
@@ -142,7 +142,7 @@
     "tooltip": false,
   },
   "custom/network_traffic": {
-    "exec": "~/.config/waybar/themes/garuda/dragon/network_traffic.sh",
+    "exec": "~/.config/waybar/scripts/network_traffic.sh",
     "return-type": "json",
     "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}", // optional
   },

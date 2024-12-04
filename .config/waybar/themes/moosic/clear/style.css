@@ -11,8 +11,8 @@
 @define-color workspacesbackground2 rgba(0,0,0,0);
 @define-color bordercolor rgba(0,0,0,0);
 @define-color bordercolorb rgba(0,0,0,0);
-@define-color tooltipbackground rgba(30,32,48,1.0);
-@define-color tooltiptext rgba(245,169,127,1.0);
+@define-color tooltipbackground @color1;
+@define-color tooltiptext #000000;
 @define-color textcolor1 #FFFFFF;
 @define-color textcolor2 #FFFFFF;
 @define-color textcolor3 #FFFFFF;

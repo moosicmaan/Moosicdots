@@ -29,16 +29,17 @@
     "modules-center": [
       //"hyprland/window",
       "hyprland/workspaces#roman",
+      "hyprland/submap",
     ],
 
     "modules-right": [
-      "network",
-      "bluetooth",
+      // "network",
+      // "bluetooth",
       "custom/weather",
       "custom/separator#blank_2",
       "group/audio",
       "custom/separator#blank_2",
-      "keyboard-state",
+      // "keyboard-state",
       "custom/power",
     ],
   },
@@ -58,7 +59,7 @@
     "ipc": true,
     //"gtk-layer-shell": true,
 
-    "modules-left": ["custom/lock"],
+    "modules-left": ["custom/lock", "backlight#vertical"],
 
     "modules-center": ["clock#vertical"],
 
@@ -87,6 +88,7 @@
     "modules-center": [
       //"hyprland/window",
       "hyprland/workspaces#roman",
+      "hyprland/submap",
     ],
 
     "modules-right": [

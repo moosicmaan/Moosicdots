@@ -28,7 +28,6 @@
     "modules-left": [
       "hyprland/workspaces#roman",
       "custom/separator#line",
-      "mpris",
       "custom/swaync",
       "tray#cam",
       "wlr/taskbar#cam",
@@ -40,6 +39,7 @@
       "custom/backlight",
       "backlight/slider",
       "custom/speaker",
+      "mpris",
       "pulseaudio/slider",
       "battery#cam",
       "clock#cam",
@@ -57,7 +57,7 @@
     "position": "bottom",
     "spacing": 3,
     "margin-top": 0,
-    "margin-bottom": 3,
+    "margin-bottom": 0,
     "margin-left": 3,
     "margin-right": 3,
     "fixed-center": true,
@@ -75,6 +75,11 @@
 
     "modules-center": ["hyprland/window#cam", "mpris#moosic"],
 
-    "modules-right": ["custom/speaker", "pulseaudio/slider", "clock#cam"],
+    "modules-right": [
+      "custom/cava_mviz",
+      "custom/speaker",
+      "pulseaudio/slider",
+      "clock#cam",
+    ],
   },
 ]

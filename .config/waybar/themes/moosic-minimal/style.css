@@ -1,0 +1,192 @@
+/* =====================================================
+// -----------------------------------------------------
+// MOOSIC WAYBAR STYLE
+// Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
+// -----------------------------------------------------
+// =====================================================
+*/
+
+/* -----------------------------------------------------
+ * GENERAL 
+ * ----------------------------------------------------- */
+* {
+  /* 
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9);
+  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
+  */
+  font-family: Iosevka Nerd font Propo;
+  border-radius: 0px;
+  margin: 0px 1px 0px 1px;
+  padding: 0px 2px 0px 2px;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+window#waybar {
+  /* 
+  background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
+  */
+  background-color: alpha (@barbackground, 0.5);
+}
+
+window#waybar.spotube {
+  background: linear-gradient(
+    0.45turn,
+    #ff00ff,
+    transparent 50%,
+    #0000ff,
+    #00ff00 99%
+  );
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * ACTIVE WINDOW ON THE CURRENT MONITOR
+ * ----------------------------------------------------- 
+*/
+#window {
+  background-color: alpha (@barbackground, 0.3);
+}
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * WORKSPACES 
+ * ----------------------------------------------------- 
+#workspaces
+#workspaces button
+#workspaces button.active
+#workspaces button.empty
+#workspaces button.persistent
+#workspaces button.special
+#workspaces button.visible
+#workspaces button.urgent
+#workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
+*/
+#workspaces {
+  /* 
+  padding: 0px 0px 0px 0px;
+  */
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.7;
+  color: @textcolor1;
+}
+#workspaces button {
+  /* 
+  background-color: @workspacesbackground2;
+  */
+  padding: 0px 80px 0px 0px;
+  margin: 0px 3px 0px 0px;
+  color: @textcolor1;
+  transition: all 0.3s ease-in-out;
+  background-color: alpha (@barbackground, 1);
+  opacity: 0.7;
+  border-top: 2px solid @bordercolorb;
+  border-right: 1px solid @bordercolorb;
+  border-left: 3px solid @bordercolorb;
+}
+#workspaces button.empty {
+  transition: all 0.3s ease-in-out;
+  color: @textcolor1;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+  border-top: 2px solid #888888;
+  border-right: 1px solid #aaaaaa;
+  border-left: 3px solid #aaaaaa;
+}
+#workspaces button.visible {
+  color: @textcolor2;
+  transition: all 0.3s ease-in-out;
+  background-color: @tooltipbackground;
+  opacity: 0.7;
+}
+#workspaces button.active {
+  transition: all 0.3s ease-in-out;
+  color: @textcolor2;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+  border-top: 2px solid @bordercolor;
+  border-right: 1px solid @bordercolorb;
+  border-left: 3px solid @bordercolorb;
+}
+#workspaces button:hover {
+  transition: all 0.3s ease-in-out;
+  color: @textcolor2;
+  /* 
+  text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.9);
+  */
+  opacity: 1;
+}
+
+/* -----------------------------------------------------
+ * TOOLTIPS
+ * ----------------------------------------------------- 
+ */
+tooltip {
+  background-color: @tooltipbackground;
+  opacity: 0.8;
+}
+tooltip label {
+  color: @tooltiptext;
+}
+
+/* -----------------------------------------------------
+ * APP MENU
+ * ----------------------------------------------------- */
+/* APP MENU */
+#custom-appmenu {
+  color: @textcolor1;
+  opacity: 0.8;
+  padding: 0px 8px 0px 2px;
+}
+/* TASKBAR */
+#taskbar {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px;
+}
+#taskbar:hover {
+  background-color: transparent;
+}
+#taskbar button:hover {
+  background-color: @tooltipbackground;
+}
+#custom-right:hover {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * CURRENTS GROUP
+ * ----------------------------------------------------- */
+#clock {
+  font-size: 16;
+}
+
+/* -----------------------------------------------------
+ * TRAY
+ * ----------------------------------------------------- */
+#tray {
+  padding: 0px 9px 0px 2px;
+}
+#tray > :hover {
+  background-color: @tooltipbackground;
+}
+#tray > .active {
+}
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* -----------------------------------------------------
+ * CUSTOM EXIT
+ * ----------------------------------------------------- */
+#custom-exit {
+  color: @textcolor1;
+  padding: 0px 3px 0px 3px;
+}

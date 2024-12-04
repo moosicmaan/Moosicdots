@@ -5,30 +5,26 @@
 # |   <  __/ |_| | |_) | | | | | (_| | | | | | (_| \__ \
 # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
 #           |___/                             |___/
-# by Stephan Raabe (2023)
 # -----------------------------------------------------
-
-# -----------------------------------------------------
-# Get keybindings location based on variation
-# -----------------------------------------------------
-config_file=$(cat ~/.config/hypr/conf/keybinding.conf)
-config_file=${config_file/source = ~/}
-config_file=${config_file/source=~/}
 
 # -----------------------------------------------------
 # Path to keybindings config file
 # -----------------------------------------------------
-config_file="/home/$USER$config_file"
+# config_file="/home/$USER$config_file"
+config_file="$HOME/.config/hypr/conf/keybinding.conf"
 echo "Reading from: $config_file"
 
 # -----------------------------------------------------
 # Parse keybindings
 # -----------------------------------------------------
-keybinds=$(grep -oP '(?<=bind = ).*' $config_file)
+keybinds=$(grep -oP '(?<=bindd = ).*' $config_file)
 keybinds=$(echo "$keybinds" | sed 's/$mainMod/SUPER/g' | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
+# keybinds=$(echo "$keybinds" | sed 's/$mainMod/SUPER/g')
+# debug
+echo "KEYBINDS"
+echo $keybinds
 
 # -----------------------------------------------------
 # Show keybindings in rofi
 # -----------------------------------------------------
 rofi -dmenu -i -replace -p "Keybinds" -config ~/.config/rofi/config-compact.rasi <<<"$keybinds"
-

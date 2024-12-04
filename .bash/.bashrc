@@ -102,7 +102,7 @@ fi
 alias vim="nvim"
 export PATH=$PATH:$HOME/.config/emacs/bin
 source ~/.bash_prompt.sh
-RPROMPT="%(?.%F{#008000}√.%F{#ff0000}?%?)%f%F{#c0c0c0}%T%f"
+# RPROMPT="%(?.%F{#008000}√.%F{#ff0000}?%?)%f%F{#c0c0c0}%T%f"
 alias ec="emacsclient -c -a 'emacs' &"
 
 function yy() {
@@ -114,9 +114,9 @@ function yy() {
   rm -f -- "$tmp"
 }
 
-alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
-#alias ft 'fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --preview "cat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+#alias ft 'fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
 alias nf='nvim $(ff)'
 # alias np='nvim $(ft)'

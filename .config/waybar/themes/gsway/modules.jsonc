@@ -6,7 +6,7 @@
     "max-length": 200,
     "player-icons": {
       "default": "▶ ",
-      "mpv": "🎵",
+      "mpv": "🎵 ",
       "spotube": "👠 ",
     },
     "status-icons": {
@@ -15,8 +15,12 @@
     // "ignored-players": ["firefox"]
   },
   "custom/launcher": {
-    "format": "󰀻 ",
-    "on-click": "exec nwg-drawer",
+    // "format": "󰀻 ",
+    // "icon-size": "16px",
+    // "on-click": "exec nwg-drawer",
+    // "tooltip": false,
+    "format": "    ",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false,
   },
   "sway/workspaces": {
@@ -171,7 +175,7 @@
     "icon-size": 16,
   },
   "custom/power": {
-    "format": "⏻",
+    "format": " ⏻ ",
     "on-click": "nwgbar",
     "tooltip": false,
   },

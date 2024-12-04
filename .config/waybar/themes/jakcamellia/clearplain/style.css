@@ -23,9 +23,9 @@ window#waybar.hidden {
   opacity: 0.1;
 }
 
-window#waybar.empty {
-  background-color: transparent;
-}
+/*window#waybar.empty {*/
+/*  background-color: transparent;*/
+/*}*/
 
 window#waybar.empty #window {
   padding: 0px;

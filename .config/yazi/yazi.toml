@@ -38,7 +38,7 @@ open = [
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 setwall = [
-  { run = 'swww img "$@"', desc = "Setwall", for = "linux" },
+  { run = '/home/moosicmaan/.config/.scripts/setwall.sh "$@"', desc = "Setwall", for = "linux" },
   { run = 'swww img "$@"', desc = "Setwall", for = "macos" },
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
