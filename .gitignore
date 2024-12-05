@@ -8,3 +8,5 @@
 .bash/.bash_history*
 .config/qtile/__pycache__/
 .zsh/.zhistory
+.config/dwl/
+.config/dwm/
