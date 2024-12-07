@@ -43,6 +43,10 @@
   tsm (tap-hold-next-release 200 ' @sym)
   wsm (tap-hold-next-release 200 w @sym)
   tdr (tap-hold-next-release 200 q @dir)
+
+
+  big C-=       ;; CTRL and plus
+  sml C--       ;; CTRL SHIFT and minus
 )
 
 (defsrc
@@ -76,7 +80,7 @@
 (deflayer directt
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _    _
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _             _    _    _    _
+  _     _    _    _    _    _    _    @sml @big _    del  _    _    _             _    _    _    _
   _      _    _    _    _    _    left down up   rght _    _    _                 _    _    _
   _       _    _    _    _    _    _    _    _    _    _    _          _          _    _    _    _
   _      _    _    _           bspc            _      _     _     _    _    _     _         _

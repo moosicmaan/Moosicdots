@@ -32,7 +32,11 @@
       "hyprland/submap",
     ],
 
-    "modules-center": ["hyprland/workspaces#roman"],
+    "modules-center": [
+      "hyprland/workspaces#roman",
+      "sway/workspaces",
+      "dwl/tags",
+    ],
 
     "modules-right": ["tray", "clock#simple", "custom/exit"],
   },
@@ -62,7 +66,11 @@
       "hyprland/submap",
     ],
 
-    "modules-center": ["hyprland/workspaces#roman"],
+    "modules-center": [
+      "hyprland/workspaces#roman",
+      "sway/workspaces",
+      "dwl/tags",
+    ],
 
     "modules-right": ["mpris#comp"],
   },

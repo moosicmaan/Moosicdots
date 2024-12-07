@@ -14,7 +14,7 @@
 @define-color tooltiptext rgba(255,255,255,1.0);
 @define-color textcolor1 #000000;
 @define-color textcolor2 #000000;
-@define-color textcolor3 #000000;
+@define-color textcolor3 #FFFFFF;
 @define-color iconcolor #000000;
 
 @import "../style.css";

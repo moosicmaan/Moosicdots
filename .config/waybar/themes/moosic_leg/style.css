@@ -160,7 +160,7 @@ window#waybar {
 }
 
 #custom-chatgpt {
-  background-image: url("../assets/ai-icon-20.png");
+  background-image: url("../../assets/ai-icon-20.png");
   background-repeat: no-repeat;
   background-position: center;
   padding-right: 0px;

@@ -23,7 +23,7 @@ background-color: #ffffff;
   border: none;
   border-radius: 15px;
   margin: 0px 1px 0px 1px;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 0px 0px 0px;
   font-size: 12px;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
@@ -56,7 +56,6 @@ window#waybar.spotube {
     #0000ff,
     #00ff00 99%
   );
-  color: #ffffff;
 }
 
 #window {
@@ -67,7 +66,7 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
- * Workspaces 
+ * Workspaces and Tags
  * ----------------------------------------------------- 
 #workspaces
 #workspaces button
@@ -94,12 +93,13 @@ window#waybar.empty #window {
   background-color: @workspacesbackground1;
   color: @textcolor1;
 }
+/*#tags button,*/
 #workspaces button {
   /* 
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */
-  padding: 0px 0px 0px 0px;
+  padding: 0px 3px 0px 3px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
@@ -110,6 +110,7 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
+/*#tags button.occupied,*/
 #workspaces button.active {
   color: @textcolor1;
   /* 
@@ -119,14 +120,15 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
+/*#tags button:hover,*/
 #workspaces button:hover {
-  color: @textcolor1;
   /* 
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
   */
-  background-color: @workspacesbackground1;
+  color: @tooltiptext;
+  background-color: @tooltipbackground;
   opacity: 1;
 }
 
@@ -136,9 +138,10 @@ window#waybar.empty #window {
  */
 tooltip {
   background-color: @tooltipbackground;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 tooltip label {
+  font-size: 16px;
   color: @tooltiptext;
 }
 
@@ -169,6 +172,7 @@ tooltip label {
   padding: 0px 1px 2px 2px;
 }
 #appo :hover {
+  color: @tooltiptext;
   background-color: @tooltipbackground;
 }
 /* APP MENU */
@@ -177,22 +181,19 @@ tooltip label {
   opacity: 0.8;
   padding: 0px 8px 0px 2px;
 }
-#custom-left:hover {
-  background-color: transparent;
-}
 /* TASKBAR */
 #taskbar {
-  padding: 0px 0px 0px 0px;
   margin: 0px 0px;
+}
+#taskbar button {
+  padding: 3px 0px 0px 0px;
 }
 #taskbar:hover {
   background-color: transparent;
 }
 #taskbar button:hover {
+  color: @tooltiptext;
   background-color: @tooltipbackground;
-}
-#custom-right:hover {
-  background-color: transparent;
 }
 /* CHATGPT */
 #custom-chatgpt {
@@ -200,7 +201,7 @@ tooltip label {
   background-repeat: no-repeat;
   background-position: center;
   padding: 0px 8px 0px 8px;
-  margin: 0px 5px;
+  margin: 4px 0px 0px 5px;
 }
 #custom-browser,
 #custom-filemanager,
@@ -222,40 +223,35 @@ tooltip label {
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 */
-  font-size: 13;
+  font-size: 13px;
+  padding: 0px 4px 0px 4px;
 }
 #mpris,
 #submap,
 #currents {
-  padding: 0px 9px 0px 9px;
   opacity: 1;
   background-color: @backgrounddark;
   color: @textcolor1;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
 }
+#submap,
+#mpris {
+  padding: 0px 9px 0px 9px;
+}
+#currents :hover {
+  color: @tooltiptext;
+  background-color: @tooltipbackground;
+}
 
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 #hardware {
-  font-size: 10;
+  color: @iconcolor;
+  font-size: 11px;
   padding: 0px 6px 0px 0px;
 }
-#hardware :hover {
-  background-color: @tooltipbackground;
-}
-#disk,
-#memory,
-#cpu,
-#custom-separator,
-#temperature,
-#custom-updates,
-#backlight,
-#language {
-  color: @iconcolor;
-}
-/* network */
 #network {
   color: @textcolor2;
   opacity: 0.8;
@@ -327,14 +323,19 @@ tooltip label {
   background-color: #dc2f2f;
   color: #ffffff;
 }
+#hardware :hover {
+  color: @tooltiptext;
+  background-color: @tooltipbackground;
+}
 
 /* -----------------------------------------------------
  * TRAY
  * ----------------------------------------------------- */
 #tray {
-  padding: 0px 9px 0px 2px;
+  padding: 0px 4px 0px 4px;
 }
 #tray > :hover {
+  color: @tooltiptext;
   background-color: @tooltipbackground;
 }
 #tray > .active {
@@ -357,18 +358,6 @@ tooltip label {
 /* -----------------------------------------------------
  * AUDIO
  * ----------------------------------------------------- */
-#cava {
-  font-size: 4px;
-  padding: 5px 0px 0px 2px;
-}
-#pulseaudio {
-  padding: 0px 9px 0px 9px;
-}
-#pulseaudio.muted {
-  background-color: @backgrounddark;
-  color: @textcolor1;
-}
-#wireplumber,
 #audios {
   /*
   border: 1px solid @bordercolor;
@@ -378,6 +367,22 @@ tooltip label {
   color: @textcolor3;
   opacity: 0.8;
 }
+#audios :hover {
+  color: @tooltiptext;
+  background-color: @tooltipbackground;
+}
+#cava {
+  font-size: 12px;
+  padding: 1px 0px 0px 2px;
+}
+#pulseaudio {
+  padding: 0px 9px 0px 9px;
+}
+#pulseaudio.muted {
+  background-color: @backgrounddark;
+  color: @textcolor1;
+}
+#wireplumber,
 #pulseaudio-slider {
 }
 #pulseaudio-slider slider {
@@ -410,4 +415,24 @@ tooltip label {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   padding: 0px 3px 0px 6px;
+}
+#custom-exit:hover {
+  color: @tooltiptext;
+  background-color: @tooltipbackground;
+}
+
+/* -----------------------------------------------------
+ * SPECIAL MARKS
+ * ----------------------------------------------------- */
+#custom-separator,
+#custom-right,
+#custom-left {
+  color: @textcolor3;
+  background-color: transparent;
+}
+#custom-separator:hover,
+#custom-right:hover,
+#custom-left:hover {
+  color: @textcolor3;
+  background-color: transparent;
 }

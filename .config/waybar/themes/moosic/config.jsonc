@@ -28,11 +28,13 @@
       // "wireplumber",
       "hyprland/window",
       "sway/window",
-      "dwl/tags",
-      "hyprland/submap",
+      // "dwl/window",
       "sway/mode",
+      "hyprland/submap",
     ],
+
     "modules-center": ["hyprland/workspaces", "dwl/tags", "sway/workspaces"],
+    // "modules-center": ["hyprland/workspaces"],
 
     "modules-right": [
       "group/currents",
@@ -61,11 +63,15 @@
       "group/appo",
       // "user",
       "hyprland/window",
+      // "sway/window",
+      // "dwl/window",
+      // "sway/mode",
       "hyprland/submap",
     ],
 
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/workspaces", "dwl/tags", "sway/workspaces"],
+    // "modules-center": ["hyprland/workspaces"],
 
-    "modules-right": ["mpris", "group/audios", "custom/exit"],
+    "modules-right": ["group/audios", "custom/exit"],
   },
 ]

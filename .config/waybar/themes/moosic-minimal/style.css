@@ -65,7 +65,12 @@ window#waybar.empty #window {
 #workspaces button.visible
 #workspaces button.urgent
 #workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
+#tags button
+#tags button.occupied
+#tags button.focused
+#tags button.urgent
 */
+#tags,
 #workspaces {
   /* 
   padding: 0px 0px 0px 0px;
@@ -75,6 +80,7 @@ window#waybar.empty #window {
   opacity: 0.7;
   color: @textcolor1;
 }
+#tags button,
 #workspaces button {
   /* 
   background-color: @workspacesbackground2;
@@ -84,11 +90,12 @@ window#waybar.empty #window {
   color: @textcolor1;
   transition: all 0.3s ease-in-out;
   background-color: alpha (@barbackground, 1);
-  opacity: 0.7;
+  opacity: 0.5;
   border-top: 2px solid @bordercolorb;
   border-right: 1px solid @bordercolorb;
   border-left: 3px solid @bordercolorb;
 }
+#tags button.empty,
 #workspaces button.empty {
   transition: all 0.3s ease-in-out;
   color: @textcolor1;
@@ -98,12 +105,14 @@ window#waybar.empty #window {
   border-right: 1px solid #aaaaaa;
   border-left: 3px solid #aaaaaa;
 }
+#tags button.occupied,
 #workspaces button.visible {
   color: @textcolor2;
   transition: all 0.3s ease-in-out;
   background-color: @tooltipbackground;
   opacity: 0.7;
 }
+#tags button.focused,
 #workspaces button.active {
   transition: all 0.3s ease-in-out;
   color: @textcolor2;
@@ -113,6 +122,7 @@ window#waybar.empty #window {
   border-right: 1px solid @bordercolorb;
   border-left: 3px solid @bordercolorb;
 }
+#tags button:hover,
 #workspaces button:hover {
   transition: all 0.3s ease-in-out;
   color: @textcolor2;

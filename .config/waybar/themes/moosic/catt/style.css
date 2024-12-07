@@ -8,14 +8,14 @@
 @define-color backgroundlight rgba(69,73,100,0.5);
 @define-color backgrounddark rgba(30,32,48,0.5);
 @define-color workspacesbackground1 rgba(24,25,48,0.8);
-@define-color workspacesbackground2 rgba(255,255,255,0.0);
+@define-color workspacesbackground2 rgba(24,25,48,0.8);
 @define-color bordercolor rgba(166,218,149,1.0);
 @define-color bordercolorb rgba(183,189,248,0.8);
-@define-color tooltipbackground rgba(30,32,48,1.0);
-@define-color tooltiptext rgba(245,169,127,1.0);
+@define-color tooltipbackground rgba(30,102,245,1.0);
+@define-color tooltiptext rgba(239,241,245,1.0);
 @define-color textcolor1 rgba(183,189,248,1.0);
 @define-color textcolor2 rgba(245,169,127,1.0);
-@define-color textcolor3 rgba(237,135,150,1.0);
+@define-color textcolor3 rgba(239,241,245,1.0);
 @define-color iconcolor rgba(245,169,127,1.0);
 
 @import "../style.css";

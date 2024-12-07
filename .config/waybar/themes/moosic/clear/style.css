@@ -12,7 +12,7 @@
 @define-color bordercolor rgba(0,0,0,0);
 @define-color bordercolorb rgba(0,0,0,0);
 @define-color tooltipbackground @color1;
-@define-color tooltiptext #000000;
+@define-color tooltiptext #FFFFFF;
 @define-color textcolor1 #FFFFFF;
 @define-color textcolor2 #FFFFFF;
 @define-color textcolor3 #FFFFFF;

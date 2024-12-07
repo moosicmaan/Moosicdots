@@ -7,21 +7,12 @@
   // ---------------------------------------------------
   // WORKSPACES
   // ---------------------------------------------------
-  // "dwl/tags": {
-  //   "num-tags": 9,
-  //   // "tag-labels": {
-  //   //   "1": "🌕",
-  //   //   "2": "🌖",
-  //   //   "3": "🌗",
-  //   //   "4": "🌘",
-  //   //   "5": "🌑",
-  //   //   "6": "🌑",
-  //   //   "7": "🌒",
-  //   //   "8": "🌓",
-  //   //   "9": "🌔",
-  //   // },
-  //   "disable-click": false,
-  // },
+  "dwl/tags": {
+    "num-tags": 9,
+    // "tag-labels": ["🌕", "🌖", "🌗", "🌘", "🌑", "🌒", "🌓", "🌔", "🌕"],
+    "tag-labels": ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+    "disable-click": false,
+  },
 
   "sway/workspaces": {
     "on-click": "activate",
@@ -295,7 +286,7 @@
     "separate-outputs": true,
     "icon": true,
     "spacing": 5,
-    "icon-size": 12,
+    "icon-size": 14,
   },
   // HYPRLAND WINDOW
   "hyprland/window": {
@@ -307,18 +298,20 @@
     "separate-outputs": true,
     "icon": true,
     "spacing": 5,
-    "icon-size": 12,
+    "icon-size": 14,
   },
   // DWL WINDOW
-  // "dwl/window": {
-  //   "format": "{title}",
-  //   "max-length": 50,
-  //   "rewrite": {
-  //     "(.*) - Mozilla Firefox": "🌎 $1",
-  //     "(.*) - vim": " $1",
-  //     "(.*) - zsh": " [$1]",
-  //   },
-  // },
+  "dwl/window": {
+    "format": "{}",
+    "icon": true,
+    "icon-size": 14,
+    "max-length": 50,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - vim": " $1",
+      "(.*) - zsh": " [$1]",
+    },
+  },
 
   // ---------------------------------------------------
   // CUSTOM SCRIPTS AND ICONS
@@ -410,7 +403,7 @@
   "custom/chatgpt": {
     "format": " ",
     "on-click": "brave --app=https://chat.openai.com",
-    "icon-size": 12,
+    "icon-size": 14,
     "tooltip": true,
     "tooltip-format": "ChatGPT Web App",
   },
@@ -424,7 +417,7 @@
   // ROFI APPLICATION LAUNCHER
   "custom/appmenuicon": {
     "format": "",
-    "icon-size": 12,
+    "icon-size": 14,
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/.config/.scripts/keybindings.sh",
     "tooltip": false,
@@ -470,7 +463,7 @@
     "framerate": 30,
     "autosens": 1,
     // "sensitivity": 100,
-    "bars": 24,
+    "bars": 12,
     "lower_cutoff_freq": 10,
     "higher_cutoff_freq": 10000,
     "method": "pipewire",
@@ -578,14 +571,14 @@
   // ---------------------------------------------------
   // SYSTEM TRAY
   "tray": {
-    "icon-size": 12,
+    "icon-size": 14,
     "show-passive-items": true,
     "spacing": 5,
   },
   // TASKBAR
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 12,
+    "icon-size": 14,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
@@ -613,16 +606,16 @@
   // HARDDISC SPACE USED
   "disk": {
     "interval": 30,
-    "format": "| D {percentage_used}% ",
+    "format": " D {percentage_used}% ",
     "path": "/",
     "on-click": "kitty -e btop",
   },
   // NETWORK
   "network": {
-    "format": "| {ifname}",
-    "format-wifi": "|    {signalStrength}%",
-    "format-ethernet": "|  {ifname}",
-    "format-disconnected": "| Disconnected",
+    "format": " {ifname}",
+    "format-wifi": "    {signalStrength}%",
+    "format-ethernet": "  {ifname}",
+    "format-disconnected": " Disconnected",
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
@@ -639,11 +632,10 @@
   },
   // IDLE INHIBATOR
   "idle_inhibitor": {
-    "format": "| {icon}",
-    "tooltip": true,
+    "format": "{icon}",
     "format-icons": {
-      "activated": "        ",
-      "deactivated": "       ",
+      "activated": " ",
+      "deactivated": " ",
     },
     "on-click-right": "swaylock",
   },
@@ -655,10 +647,10 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "| {icon}  {capacity}% {time}",
-    "format-charging": "|   {capacity}% {time}",
-    "format-plugged": "|   {capacity}%",
-    // "format-alt": "| {icon}  {time}",
+    "format": " {icon}  {capacity}% {time}",
+    "format-charging": "   {capacity}% {time}",
+    "format-plugged": "   {capacity}%",
+    // "format-alt": " {icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     "format-full": "",
     "format-icons": [" ", " ", " ", " ", " "],
@@ -667,20 +659,20 @@
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
-    "format": "| {name} {icon}",
+    "format": " {name} {icon}",
     "format-icons": {
-      "locked": "| ",
-      "unlocked": "| ",
+      "locked": " ",
+      "unlocked": " ",
     },
-    "icon-size": 12,
+    "icon-size": 14,
   },
   // BLUETOOTH
   "bluetooth": {
-    "format": "|  {status}",
-    "format-connected": "|  {device_alias}",
+    "format": "  {status}",
+    "format-connected": "  {device_alias}",
     "format-disabled": "",
     "format-off": "",
-    "format-connected-battery": "|  {device_alias} {device_battery_percentage}%",
+    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
     "interval": 30,
     "on-click": "blueman-manager",
     "format-no-controller": "",
@@ -692,12 +684,12 @@
   },
   // CPU
   "cpu": {
-    "format": "|    {usage}% ",
+    "format": "    {usage}% ",
     "on-click": "kitty -e btop",
   },
   // MEMORY
   "memory": {
-    "format": "| 🖴 {:>3}% ",
+    "format": " 🖴 {:>3}% ",
     "on-click": "kitty -e btop",
   },
   // TEMPERATURE
@@ -705,13 +697,13 @@
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    "format-critical": "|  {temperatureC}°C",
-    "format": "|  {temperatureC}°C",
+    "format-critical": "  {temperatureC}°C",
+    "format": "  {temperatureC}°C",
   },
   // BACKLIGHT
   "backlight": {
     // "device": "acpi_video1",
-    "format": "| {icon}{percent}%",
+    "format": " {icon} {percent}% ",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
@@ -723,7 +715,7 @@
   // ---------------------------------------------------
   // WEATHER APP DAVAO
   "custom/weatherD": {
-    "format": " - Davao:{}°",
+    "format": "Davao:{}°",
     // "format": "{ICON}{temp_C}({FeelsLikeC})",
     "tooltip": true,
     "interval": 3600,
@@ -733,7 +725,7 @@
   },
   // WEATHER APP LOCAL
   "custom/weatherC": {
-    "format": "{}°",
+    "format": "Local {}°",
     // "format": "{ICON}{temp_C}({FeelsLikeC})",
     "tooltip": true,
     "interval": 3600,
@@ -750,7 +742,7 @@
   // CLOCK
   "clock": {
     "format-alt": "{:%H:%M}  ",
-    "format": "{:%a, %b %d, %Y - ( %R  ) }",
+    "format": "{:%a, %b %d, %Y -  %R  }",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -777,10 +769,10 @@
   // CLOCK, DAVAO
   "clock#2": {
     "timezone": "Asia/Manila",
-    "format": "{:%a-( %R  )}",
+    "format": "{:%a- %R  }",
     "format-alt": "{:%H:%M}  ",
-    "tooltip": false,
-    // "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "actions": {
       "on-click-right": "mode",
     },
@@ -876,15 +868,24 @@
     "modules": [
       "custom/system",
       "custom/updates",
-      "disk",
+      "custom/separator",
+      // "disk",
+      // "custom/separator",
       "memory",
+      "custom/separator",
       "cpu",
-      "temperature",
-      "network",
+      "custom/separator",
+      // "temperature",
+      // "custom/separator",
+      // "network",
+      // "custom/separator",
       "bluetooth",
-      "battery",
+      "custom/separator",
       "backlight",
+      "custom/separator",
       "idle_inhibitor",
+      "custom/separator",
+      "battery",
     ],
   },
   // Group Hardware
@@ -898,15 +899,24 @@
     "modules": [
       "custom/settings",
       "custom/updates",
+      "custom/separator",
       "disk",
+      "custom/separator",
       "memory",
+      "custom/separator",
       "cpu",
-      "temperature",
-      "network",
-      "bluetooth",
-      "battery",
+      "custom/separator",
+      // "temperature",
+      // "custom/separator",
+      // "network",
+      // "custom/separator",
+      // "bluetooth",
+      // "custom/separator",
       "backlight",
+      "custom/separator",
       "idle_inhibitor",
+      "battery",
+      "custom/separator",
     ],
   },
   // GROUP APPLICATION
@@ -941,11 +951,11 @@
   // CLOCK GROUP
   "group/currents": {
     "orientation": "inherit",
-    "modules": ["clock", "custom/weatherC", "custom/weatherD", "clock#2"],
+    "modules": ["custom/weatherC", "clock", "custom/weatherD", "clock#2"],
   },
   // AUDIO GROUP
   "group/audios": {
     "orientation": "horizontal",
-    "modules": ["cava", "pulseaudio"],
+    "modules": ["mpris", "pulseaudio"],
   },
 }
