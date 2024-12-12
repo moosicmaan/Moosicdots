@@ -10,7 +10,7 @@
 $mainMod = SUPER
 # open G-Hyprland script
 # windowrulev2=float,title:^(G-Hyprland)
-bind = $mainMod SHIFT, S, exec, footclient -w 750x600 -T G-Hyprland -e ~/.config/hypr/brain/brain.sh
+bind = $mainMod SHIFT, S, exec, footclient -w 750x600 -T G-Hyprland -e ~/.config/hypr/settings/brain/brain.sh
 # disable G-hyprland
 bind = $mainMod ALT, G, exec, footclient -e ~/.local/bin/bear/implement_gum.sh disable
 # ##############################################
@@ -31,3 +31,4 @@ source = ~/.config/hypr/settings/corners.conf
 source = ~/.config/hypr/settings/blur_system.conf
 source = ~/.config/hypr/settings/manual_settings.conf
 source = ~/.config/hypr/settings/animations.conf/
+source = ~/.config/hypr/conf/cursor.conf

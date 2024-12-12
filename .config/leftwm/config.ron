@@ -59,7 +59,21 @@
     layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Kitty", args: None, value: "kitty", x: 319, y: 90, height: 900, width: 1300),
+        (name: "Kitty", args: None, value: "kitty", x: 119, y: 90, height: 900, width: 1700),
+        ( name: "Yazi", // This is the name which is referenced when calling (case-sensitive)
+          value: "kitty", // The command to load the application if it isn't started (first application to start)
+          args: ["-e", "yazi"], // Any arguments to pass to the command
+          // x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
+          // These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
+          x: 119, y: 90, height: 900, width: 1700,
+        ),
+        ( name: "BTOP", // This is the name which is referenced when calling (case-sensitive)
+          value: "kitty", // The command to load the application if it isn't started (first application to start)
+          args: ["-e", "btop"], // Any arguments to pass to the command
+          // x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
+          // These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
+          x: 119, y: 90, height: 900, width: 1700,
+        ),
     ],
     window_rules: [],
     disable_current_tag_swap: false,
@@ -74,7 +88,9 @@
     disable_cursor_reposition_on_resize: false,
     window_hiding_strategy: MoveOnly,
     keybind: [
-        (command: ToggleScratchPad, value: "Kitty", modifier: ["modkey"], key: "u"),
+        (command: ToggleScratchPad, value: "Kitty", modifier: ["modkey", "Alt"], key: "i"),
+        (command: ToggleScratchPad, value: "Yazi", modifier: ["modkey", "Alt"], key: "j"),
+        (command: ToggleScratchPad, value: "BTOP", modifier: ["modkey", "Alt"], key: "l"),
         (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "kitty", modifier: ["modkey"], key: "Return"),
         (command: Execute, value: "wezterm", modifier: ["modkey"], key: "t"),
@@ -113,6 +129,8 @@
         (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "Down"),
         (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "Right"),
         (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "Left"),
+        (command: ToggleFloating, modifier: ["modkey"], key: "f"),
+        (command: ToggleFullScreen, modifier: ["modkey", "Shift"], key: "f"),
         (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
         (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
         (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
