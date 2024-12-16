@@ -207,14 +207,30 @@ end
 # \c represents the Ctrl key.
 # \e represents the Alt key (also known as the Meta key).
 # This command binds Ctrl + Alt + y to call the yy function, that changes the working directory on exit through yazi.
-bind \e\cy yy
-bind \e\cf ff
-bind \e\cn nf
+# bind \e\cy yy
+# bind \e\cf ff
+# bind \e\cn nf
+bind \cy yy
+bind \cf ff
+bind \cn nf
 
 alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
 alias nf='kitty @ set-spacing padding=0 && nvim $(ff)'
 # alias np='nvim $(ft)'
+
+# search man pages with fzf
+function man_fzf
+    if set -q argv[1]
+        man -k $argv | sed 's/ .*//' | fzf --query="$argv" --preview="man {}"
+    else
+        man -k "" | sed 's/ .*//' | fzf --preview="man {}"
+    end
+end
+
+function manf
+    man_fzf $argv | xargs man
+end
 
 # insert fzf keybinding
 fzf --fish | source
@@ -239,6 +255,8 @@ export FZF_CTRL_T_OPTS="-m \
 export FZF_CTRL_R_OPTS="--height 75% \
 --margin 10%,5% \
 --scroll-off 3 \
+--preview 'echo {}' \
+--preview-window 'right,40%,wrap' \
 --border rounded \
 --layout reverse \
 --border-label '╢ FZF History ╟' \

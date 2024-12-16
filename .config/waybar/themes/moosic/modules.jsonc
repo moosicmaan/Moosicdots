@@ -10,10 +10,19 @@
   "dwl/tags": {
     "num-tags": 9,
     // "tag-labels": ["🌕", "🌖", "🌗", "🌘", "🌑", "🌒", "🌓", "🌔", "🌕"],
-    "tag-labels": ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
-    "disable-click": false,
+    "tag-labels": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "V",
+      "VI",
+      "VII",
+      "VIII",
+      "IX"
+    ],
+    "disable-click": false
   },
-
   "sway/workspaces": {
     "on-click": "activate",
     "active-only": false,
@@ -53,13 +62,12 @@
       // "visible": "",
       "special": "😍",
       // "special": "😍",
-      "urgent": "",
+      "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5,
-    },
+      "*": 5
+    }
   },
-
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
@@ -100,13 +108,12 @@
       // "visible": "",
       "special": "😍",
       // "special": "😍",
-      "urgent": "",
+      "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5,
-    },
+      "*": 5
+    }
   },
-
   // KITTY
   "hyprland/workspaces#kitty": {
     "on-click": "activate",
@@ -137,13 +144,12 @@
       // special	Will be shown on non-active special workspaces
       // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
       "special": "😍",
-      "urgent": "",
+      "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5,
-    },
+      "*": 5
+    }
   },
-
   // MOONY
   "hyprland/workspaces#moony": {
     "on-click": "activate",
@@ -179,14 +185,13 @@
       // "empty": "Ｕ",
       // "persistent": "X",
       // "visible": "",
-      "special": "😍",
+      "special": "😍"
       // "special": "😍",
     },
     "persistent-workspaces": {
-      "*": 5,
-    },
+      "*": 5
+    }
   },
-
   // ROMAN NUMERALS STYLE
   "hyprland/workspaces#roman": {
     "on-click": "activate",
@@ -197,7 +202,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5,
+      "*": 5
     },
     "format": "{icon}",
     "format-icons": {
@@ -210,10 +215,9 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "10": "X",
-    },
+      "10": "X"
+    }
   },
-
   // PACMAN STYLE
   "hyprland/workspaces#pacman": {
     "active-only": false,
@@ -224,17 +228,16 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5,
+      "*": 5
     },
     "format-icons": {
       "active": " 󰮯 ",
       "visible": "󰮯 ",
       "default": "󰊠",
       "persistent": "󰊠",
-      "special": "😍",
-    },
+      "special": "😍"
+    }
   },
-
   //  NUMBERS AND ICONS STYLE
   "hyprland/workspaces#4": {
     "active-only": false,
@@ -245,7 +248,7 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "show-special": false,
     "persistent-workspaces": {
-      "*": 5,
+      "*": 5
     },
     "format-icons": {
       "1": " ",
@@ -257,10 +260,9 @@
       "7": "",
       "8": " ",
       "9": "",
-      "10": "",
-    },
+      "10": ""
+    }
   },
-
   // ---------------------------------------------------
   // WM-SPECIFIC MODULES
   // ---------------------------------------------------
@@ -268,11 +270,11 @@
   "hyprland/submap": {
     "format": "✌️ {}",
     "max-length": 18,
-    "tooltip": false,
+    "tooltip": false
   },
   // SWAY MODE
   "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>",
+    "format": "<span style=\"italic\">{}</span>"
   },
   // SWAY WINDOW
   "sway/window": {
@@ -281,24 +283,24 @@
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
-      "(.*) - Kitty": "$1",
+      "(.*) - Kitty": "$1"
     },
     "separate-outputs": true,
     "icon": true,
     "spacing": 5,
-    "icon-size": 14,
+    "icon-size": 14
   },
   // HYPRLAND WINDOW
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
-      "(.*) - Kitty": "$1",
+      "(.*) - Kitty": "$1"
     },
     "separate-outputs": true,
     "icon": true,
     "spacing": 5,
-    "icon-size": 14,
+    "icon-size": 14
   },
   // DWL WINDOW
   "dwl/window": {
@@ -309,10 +311,9 @@
     "rewrite": {
       "(.*) - Mozilla Firefox": "🌎 $1",
       "(.*) - vim": " $1",
-      "(.*) - zsh": " [$1]",
-    },
+      "(.*) - zsh": " [$1]"
+    }
   },
-
   // ---------------------------------------------------
   // CUSTOM SCRIPTS AND ICONS
   // ---------------------------------------------------
@@ -322,7 +323,7 @@
     "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
-    "tooltip": false,
+    "tooltip": false
   },
   // APPLICATION LAUNCHER
   "custom/appmenu": {
@@ -333,7 +334,7 @@
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     // "on-click-right": "~/.config/.scripts/keybindings.sh",
     "on-click-right": "rofi -show drun -replace",
-    "tooltip": false,
+    "tooltip": false
   },
   // CUSTOM LAUNCHER
   "custom/launcher": {
@@ -342,7 +343,7 @@
     //"format":"",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "on-click-right": "~/.config/.scripts/keybindings.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // POWER MENU
   "custom/exit": {
@@ -352,52 +353,52 @@
     // "format": "",
     "on-click": "wlogout",
     "tooltip": true,
-    "tooltip-format": "Power Menu",
+    "tooltip-format": "Power Menu"
   },
   // POWER MENU
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
-    "tooltip": false,
+    "tooltip": false
   },
   // WALLPAPER
   "custom/wallpaper": {
     "format": "",
     "on-click": "~/.config/.scripts/wallpaper.sh select",
     "on-click-right": "~/.config/.scripts/wallpaper.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // WAYBAR THEMES
   "custom/waybarthemes": {
     "format": "",
     "on-click": "~/.config/.scripts/themeswitcher.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // SETTINGS
   "custom/settings": {
     "format": "",
     "on-click": "kitty --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // KEYBINDINGS
   "custom/keybindings": {
     "format": "",
     "on-click": "~/.config/.scripts/keybindings.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // FILEMANAGER LAUNCHER
   "custom/filemanager": {
     "format": "",
     "on-click": "~/.config/.settings/filemanager.sh",
     "tooltip": true,
-    "tooltip-format": "File Manager",
+    "tooltip-format": "File Manager"
   },
   // BROWSER LAUNCHER
   "custom/browser": {
     "format": "",
     "on-click": "~/.config/.settings/browser.sh",
     "tooltip": true,
-    "tooltip-format": "Internet Browser",
+    "tooltip-format": "Internet Browser"
   },
   // CHATGPT LAUNCHER
   "custom/chatgpt": {
@@ -405,14 +406,14 @@
     "on-click": "brave --app=https://chat.openai.com",
     "icon-size": 14,
     "tooltip": true,
-    "tooltip-format": "ChatGPT Web App",
+    "tooltip-format": "ChatGPT Web App"
   },
   // CALCULATOR
   "custom/calculator": {
     "format": "",
     "on-click": "galculator",
     "tooltip": true,
-    "tooltip-format": "Calculator",
+    "tooltip-format": "Calculator"
   },
   // ROFI APPLICATION LAUNCHER
   "custom/appmenuicon": {
@@ -420,14 +421,14 @@
     "icon-size": 14,
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/.config/.scripts/keybindings.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   // SYSTEM
   "custom/system": {
     "format": "~ ",
     // "format": "/   ",
     "tooltip": true,
-    "tooltip-format": "System Status",
+    "tooltip-format": "System Status"
   },
   // UPDATES COUNT
   "custom/updates": {
@@ -439,7 +440,7 @@
     // "exec": "~/.config/.scripts/updates.sh",
     "restart-interval": 60,
     "on-click": "kitty --class dotfiles-floating -e garuda-update",
-    "on-click-right": "~/.config/.settings/software.sh",
+    "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
     "format": "{} {icon}",
@@ -447,13 +448,12 @@
     "format-icons": {
       "has-updates": "󱍷",
       "updated": "󰂪",
-      "interval": 7200,
+      "interval": 7200
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "kitty --class dotfiles-floating -e garuda-update",
+    "on-click": "kitty --class dotfiles-floating -e garuda-update"
   },
-
   // ---------------------------------------------------
   // AUDIO MODULES
   // ---------------------------------------------------
@@ -478,10 +478,19 @@
     "waves": true,
     "noise_reduction": 0.57,
     "input_delay": 2,
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
     "actions": {
-      "on-click-right": "mode",
-    },
+      "on-click-right": "mode"
+    }
   },
   // PULSEAUDIO
   "pulseaudio": {
@@ -499,16 +508,24 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", " ", " "],
+      "default": [
+        "",
+        " ",
+        " "
+      ]
     },
-    "on-click": "pavucontrol-qt",
+    "on-click": "pavucontrol-qt"
   },
   // WIREPLUMBER
   "wireplumber": {
     "format": "{volume}% {icon}",
     "format-muted": "",
     "on-click": "helvum",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   // MPRIS
   "mpris": {
@@ -526,13 +543,13 @@
       "firedragon": " ",
       "vlc": "󰕼 ",
       "kdeconnect": " ",
-      "youtube": " ",
+      "youtube": " "
     },
     "status-icons": {
       "paused": "󰐎 ",
       "playing": " ",
-      "stopped": " ",
-    },
+      "stopped": " "
+    }
     // "ignored-players": ["firefox"]
   },
   //MPRIS COMPACT
@@ -556,16 +573,15 @@
       "spotify": "",
       // "spotube": "👠 ",
       "spotube": "󰎆 ",
-      "vlc": "󰕼",
+      "vlc": "󰕼"
     },
     "status-icons": {
       "paused": "󰐎 ",
       "playing": " ",
-      "stopped": " ",
-    },
+      "stopped": " "
+    }
     // "ignored-players": ["firefox"]
   },
-
   // ---------------------------------------------------
   // PROGRAMS
   // ---------------------------------------------------
@@ -573,7 +589,7 @@
   "tray": {
     "icon-size": 14,
     "show-passive-items": true,
-    "spacing": 5,
+    "spacing": 5
   },
   // TASKBAR
   "wlr/taskbar": {
@@ -582,16 +598,17 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["Alacritty"],
+    "ignore-list": [
+      "Alacritty"
+    ],
     "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition",
+      "firefoxdeveloperedition": "firefox-developer-edition"
     },
     "rewrite": {
       "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
-    },
+      "Foot Server": "Terminal"
+    }
   },
-
   // ---------------------------------------------------
   // HARDWARE/SYSTEM MODULES
   // ---------------------------------------------------
@@ -601,14 +618,14 @@
     "interval": 60,
     "height": 16,
     "width": 16,
-    "icon": true,
+    "icon": true
   },
   // HARDDISC SPACE USED
   "disk": {
     "interval": 30,
     "format": " D {percentage_used}% ",
     "path": "/",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty -e btop"
   },
   // NETWORK
   "network": {
@@ -621,13 +638,13 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/.settings/networkmanager.sh",
+    "on-click": "~/.config/.settings/networkmanager.sh"
   },
   // Network Traffic
   "custom/network_traffic": {
     "exec": "~/.config/waybar/scripts/network_traffic.sh",
     "return-type": "json",
-    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
     // optional
   },
   // IDLE INHIBATOR
@@ -635,9 +652,9 @@
     "format": "{icon}",
     "format-icons": {
       "activated": " ",
-      "deactivated": " ",
+      "deactivated": " "
     },
-    "on-click-right": "swaylock",
+    "on-click-right": "swaylock"
   },
   // BATTERY
   "battery": {
@@ -645,7 +662,7 @@
       // "good": 95,
       "good": 95,
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
     "format": " {icon}  {capacity}% {time}",
     "format-charging": "   {capacity}% {time}",
@@ -653,7 +670,13 @@
     // "format-alt": " {icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "],
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
   },
   // KEYBOARD STATE
   "keyboard-state": {
@@ -662,9 +685,9 @@
     "format": " {name} {icon}",
     "format-icons": {
       "locked": " ",
-      "unlocked": " ",
+      "unlocked": " "
     },
-    "icon-size": 14,
+    "icon-size": 14
   },
   // BLUETOOTH
   "bluetooth": {
@@ -680,17 +703,17 @@
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   },
   // CPU
   "cpu": {
     "format": "    {usage}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty -e btop"
   },
   // MEMORY
   "memory": {
     "format": " 🖴 {:>3}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty -e btop"
   },
   // TEMPERATURE
   "temperature": {
@@ -698,18 +721,27 @@
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     "format-critical": "  {temperatureC}°C",
-    "format": "  {temperatureC}°C",
+    "format": "  {temperatureC}°C"
   },
   // BACKLIGHT
   "backlight": {
     // "device": "acpi_video1",
     "format": " {icon} {percent}% ",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/scripts/backlight-hint.sh",
+    "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
   },
-
   // ---------------------------------------------------
   // LOCATION INFORMATION
   // ---------------------------------------------------
@@ -721,7 +753,7 @@
     "interval": 3600,
     // "exec": "wttrbar --date-format %m/%d --fahrenheit --mph --location 'Davao+City' --hide-conditions ",
     "exec": "wttrbar --date-format %m/%d  --fahrenheit --mph --location 'Davao+City'",
-    "return-type": "json",
+    "return-type": "json"
   },
   // WEATHER APP LOCAL
   "custom/weatherC": {
@@ -730,14 +762,14 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
-    "return-type": "json",
+    "return-type": "json"
   },
   // Weather
   // github.com/chubin/wttr.in
   "custom/weather#leg": {
     "exec": "curl 'https://wttr.in/Walsenburg?format=3'",
     "interval": 900,
-    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right",
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
   },
   // CLOCK
   "clock": {
@@ -756,17 +788,21 @@
         // "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weeks": "<span color='#9999dd'><b>W{}</b></span>",
         // "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-      },
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
-    "timezones": ["America/Denver", "Europe/London", "Asia/Manila"],
+    "timezones": [
+      "America/Denver",
+      "Europe/London",
+      "Asia/Manila"
+    ],
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
-    },
+      "on-scroll-down": "shift_down"
+    }
   },
   // CLOCK, DAVAO
   "clock#2": {
@@ -776,8 +812,8 @@
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "actions": {
-      "on-click-right": "mode",
-    },
+      "on-click-right": "mode"
+    }
   },
   // Clock
   "clock#leg": {
@@ -785,10 +821,12 @@
     "format": "|    {:%a %d %b -   %I:%M %p} |", //12 hour format
     //"format": " {:%a %d %b  %H:%M} ",	//24 hour format
     "format-alt": "  {:%d/%m/%Y -   %H:%M:%S} ",
-    "timezones": ["America/Denver"],
+    "timezones": [
+      "America/Denver"
+    ],
     "max-length": 200,
     "interval": 1,
-    "on-click": "~/.config/waybar/scripts/OCV",
+    "on-click": "~/.config/waybar/scripts/OCV"
   },
   // Clock
   "clock#simple": {
@@ -797,47 +835,45 @@
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "actions": {
-      "on-click-right": "mode",
-    },
+      "on-click-right": "mode"
+    }
   },
-
   // ---------------------------------------------------
   // FORMATTING SYMBOLS
   // ---------------------------------------------------
   // Space
   "custom/spacer": {
     "format": "  ",
-    "tooltip": false,
+    "tooltip": false
   },
   // Right par
   "custom/righty": {
     "format": "⦆",
-    "tooltip": false,
+    "tooltip": false
   },
   // left par
   "custom/lefty": {
     "format": "⦅",
-    "tooltip": false,
+    "tooltip": false
   },
   // RIGHT PAREN..
   "custom/right": {
     // "format": "⎞",
     "format": "",
-    "tooltip": false,
+    "tooltip": false
   },
   // LEFT PAREN..
   "custom/left": {
     // "format": "⎝",
     "format": "",
-    "tooltip": false,
+    "tooltip": false
   },
   // SEPARATER
   "custom/separator": {
     // "format": "⎝",
     "format": "|",
-    "tooltip": false,
+    "tooltip": false
   },
-
   // ----------------------------------------------------------------------------
   // G R O U P S
   // ----------------------------------------------------------------------------
@@ -847,7 +883,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/launcher",
@@ -856,8 +892,8 @@
       "custom/filemanager",
       "custom/lefty",
       "wlr/taskbar",
-      "custom/righty",
-    ],
+      "custom/righty"
+    ]
   },
   // GROUP HARDWARE
   "group/hardware": {
@@ -865,7 +901,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/system",
@@ -887,8 +923,8 @@
       "custom/separator",
       "idle_inhibitor",
       "custom/separator",
-      "battery",
-    ],
+      "battery"
+    ]
   },
   // Group Hardware
   "group/tech#leg": {
@@ -896,7 +932,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/settings",
@@ -918,8 +954,8 @@
       "custom/separator",
       "idle_inhibitor",
       "battery",
-      "custom/separator",
-    ],
+      "custom/separator"
+    ]
   },
   // GROUP APPLICATION
   "group/appo": {
@@ -927,7 +963,7 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/appmenu",
@@ -937,8 +973,8 @@
       "custom/chatgpt",
       "custom/browser",
       "custom/filemanager",
-      "custom/calculator",
-    ],
+      "custom/calculator"
+    ]
   },
   // GROUP SETTINGS
   "group/settings": {
@@ -947,17 +983,25 @@
       "custom/chatgpt",
       "custom/settings",
       "custom/waybarthemes",
-      "custom/wallpaper",
-    ],
+      "custom/wallpaper"
+    ]
   },
   // CLOCK GROUP
   "group/currents": {
     "orientation": "inherit",
-    "modules": ["custom/weatherC", "clock", "custom/weatherD", "clock#2"],
+    "modules": [
+      "custom/weatherC",
+      "clock",
+      "custom/weatherD",
+      "clock#2"
+    ]
   },
   // AUDIO GROUP
   "group/audios": {
     "orientation": "horizontal",
-    "modules": ["mpris", "pulseaudio"],
-  },
+    "modules": [
+      "mpris",
+      "pulseaudio"
+    ]
+  }
 }

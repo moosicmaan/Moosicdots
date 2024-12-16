@@ -127,6 +127,18 @@ bind '"/C-f":ff'
 bind '"/C-j":nf'
 #bind -x '"/C-p":np'
 
+man_fzf() {
+  if [ -z "$*" ]; then
+    man -k "" | sed 's/ .*//' | fzf --preview="man -P cat {}"
+  else
+    man -k "$@" | sed 's/ .*//' | fzf --query="$*" --preview="man -P cat {}"
+  fi
+}
+
+manf() {
+  man_fzf "$@" | xargs man
+}
+
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 # <--- JDB
 # -----------------------------------------------

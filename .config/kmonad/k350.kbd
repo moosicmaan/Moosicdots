@@ -7,6 +7,17 @@
   layer to start your own keyboard configuration. Copy out the `deflayer`
   template to easily start a new layer with matching `transparent` buttons.
 
+  vup (cmd-button "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+  vdn (cmd-button "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+  nxt (cmd-button "playerctl next")
+  prv (cmd-button "playerctl previous")
+  mte (cmd-button "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+  stp (cmd-button "playerctl pause")
+  ply (cmd-button "playerctl play-pause")
+                      @prv @vup @nxt
+                      @stp @vdn @ply
+                           @mte
+
 (deflayer layer
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
@@ -46,9 +57,22 @@
 
   big C-=       ;; CTRL and plus
   sml C--       ;; CTRL SHIFT and minus
+
+  vup (cmd-button "while true; do /home/moosicmaan/.config/.scripts/Volume.sh --inc && sleep 1; done"
+                  "ps ax | grep \'Volume.sh' | head -1 | awk \'{print $1}\' | xargs kill && notify-send --urgency=normal --icon=audio-headset \"VOLUME SET TO:\" \"$(/home/moosicmaan/.config/.scripts/Volume.sh --get)\"")
+  vdn (cmd-button "while true; do /home/moosicmaan/.config/.scripts/Volume.sh --dec && sleep 1; done"
+                  "ps ax | grep \'Volume.sh' | head -1 | awk \'{print $1}\' | xargs kill && notify-send --urgency=normal --icon=audio-headset \"VOLUME SET TO:\" \"$(/home/moosicmaan/.config/.scripts/Volume.sh --get)\"")
+  nxt (cmd-button "playerctl next")
+  prv (cmd-button "playerctl previous")
+  mte (cmd-button "/home/moosicmaan/.config/.scripts/Volume.sh --toggle")
+  stp (cmd-button "playerctl pause")
+  ply (cmd-button "playerctl play-pause")
 )
 
 (defsrc
+                      prev volu next
+                      stop vold pp  
+                           mute
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/  kp*  kp-
   tab   q    w    e    r    t    y    u    i    o    p    [    ]    \    del       pgup  kp7  kp8  kp9  kp+
@@ -59,6 +83,9 @@
 
 
 (deflayer default
+                      @prv @vup @nxt
+                      @stp @vdn @ply
+                           @mte
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
   tab   @tdr @wsm e    r    t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+
@@ -68,6 +95,9 @@
 )
 
 (deflayer symbols
+                      next volu prev
+                      stop vold pp  
+                           mute
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    <    >    _    _    _    *    |    -    _    _    _     _    _          _    _    _    _
   _     $    !    \(   \)  \_     ~   7    8    9    +    _    _    _    _         _     _    _    _    _
@@ -77,6 +107,9 @@
 )
 
 (deflayer directt
+                      next volu prev
+                      stop vold pp  
+                           mute
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
   _     _    _    _    _    _    _    @sml @big _    del  _    _    _    _         _     _    _    _    _

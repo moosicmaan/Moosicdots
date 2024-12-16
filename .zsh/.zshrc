@@ -343,13 +343,25 @@ alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ F
 
 alias nf='nvim $(ff)'
 
+# search man pages with fzf
+man_fzf() {
+  if [ -z "$*" ]; then
+    man -k "" | sed 's/ .*//' | fzf --preview="man -P cat {}"
+  else
+    man -k "$@" | sed 's/ .*//' | fzf --query="$*" --preview="man -P cat {}"
+  fi
+}
+
+manf() {
+  man_fzf "$@" | xargs man
+}
 
 # --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
-
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+# fg="#CBE0F0"
+# bg="#011628"
+# bg_highlight="#143652"
+# purple="#B388FF"
+# blue="#06BCE4"
+# cyan="#2CF9ED"
+#
+# export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"

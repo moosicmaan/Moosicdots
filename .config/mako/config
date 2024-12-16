@@ -1,12 +1,12 @@
 anchor=top-right
 font=monospace 10
-background-color=#0D100E89
-text-color=#dcd0cf
+background-color=#04060B89
+text-color=#b3bac7
 width=350
 margin=0,20,20
 padding=10
 border-size=1
-border-color=#799FC5
+border-color=#596986
 border-radius=5
 default-timeout=10000
 group-by=summary

@@ -4,7 +4,6 @@
 // Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
 // -----------------------------------------------------
 // =====================================================
-
 [
   {
     "id": 1,
@@ -20,8 +19,9 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
-
+    "include": [
+      "~/.config/waybar/themes/moosic/modules.jsonc"
+    ],
     "modules-left": [
       "group/appo",
       // "user",
@@ -30,18 +30,20 @@
       "sway/window",
       // "dwl/window",
       "sway/mode",
-      "hyprland/submap",
+      "hyprland/submap"
     ],
-
-    "modules-center": ["hyprland/workspaces", "dwl/tags", "sway/workspaces"],
+    "modules-center": [
+      "hyprland/workspaces",
+      "dwl/tags",
+      "sway/workspaces"
+    ],
     // "modules-center": ["hyprland/workspaces"],
-
     "modules-right": [
       "group/currents",
       "tray",
       "group/hardware",
-      "custom/exit",
-    ],
+      "custom/exit"
+    ]
   },
   {
     "id": 2,
@@ -57,8 +59,9 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
-
+    "include": [
+      "~/.config/waybar/themes/moosic/modules.jsonc"
+    ],
     "modules-left": [
       "group/appo",
       // "user",
@@ -66,12 +69,17 @@
       // "sway/window",
       // "dwl/window",
       // "sway/mode",
-      "hyprland/submap",
+      "hyprland/submap"
     ],
-
-    "modules-center": ["hyprland/workspaces", "dwl/tags", "sway/workspaces"],
+    "modules-center": [
+      "hyprland/workspaces",
+      "dwl/tags",
+      "sway/workspaces"
+    ],
     // "modules-center": ["hyprland/workspaces"],
-
-    "modules-right": ["group/audios", "custom/exit"],
-  },
+    "modules-right": [
+      "group/audios",
+      "custom/exit"
+    ]
+  }
 ]

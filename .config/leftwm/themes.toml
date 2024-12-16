@@ -26,10 +26,11 @@ repository = "https://gitlab.com/mWalrus/ascent"
 commit = "*"
 version = "1.0.0"
 leftwm_versions = ">0.2.7"
-current = true
+current = false
 
 [[repos.themes]]
 name = "Blue Coffee"
+directory = "/home/moosicmaan/.config/leftwm/themes/Blue Coffee"
 repository = "https://github.com/Qwart376/Blue-Coffee/"
 commit = "*"
 version = "0.0.1"
@@ -38,6 +39,7 @@ current = false
 
 [[repos.themes]]
 name = "Bumblebee"
+directory = "/home/moosicmaan/.config/leftwm/themes/Bumblebee"
 repository = "https://github.com/mfdorst/leftwm-bumblebee/"
 commit = "*"
 version = "0.0.1"
@@ -103,6 +105,7 @@ current = false
 
 [[repos.themes]]
 name = "Flamingo"
+directory = "/home/moosicmaan/.config/leftwm/themes/Flamingo"
 repository = "https://github.com/necaris/leftwm-theme-flamingo"
 commit = "*"
 version = "0.0.1"
@@ -128,6 +131,7 @@ current = false
 
 [[repos.themes]]
 name = "Ground Zero"
+directory = "/home/moosicmaan/.config/leftwm/themes/Ground Zero"
 repository = "https://github.com/Qwart376/Ground-Zero/"
 commit = "*"
 version = "0.0.1"
@@ -144,6 +148,7 @@ current = false
 
 [[repos.themes]]
 name = "Molese"
+directory = "/home/moosicmaan/.config/leftwm/themes/Molese"
 repository = "https://github.com/m0lese/leftwm-config"
 commit = "*"
 version = "2.1.0"
@@ -177,6 +182,7 @@ current = false
 
 [[repos.themes]]
 name = "Red Moon"
+directory = "/home/moosicmaan/.config/leftwm/themes/Red Moon"
 repository = "https://github.com/Qwart376/Red-Moon"
 commit = "*"
 version = "0.0.1"
@@ -219,6 +225,7 @@ current = false
 
 [[repos.themes]]
 name = "Sunset"
+directory = "/home/moosicmaan/.config/leftwm/themes/Sunset"
 repository = "https://github.com/Syudagye/leftwm-sunset"
 commit = "*"
 version = "0.0.1"
@@ -243,7 +250,7 @@ current = false
 
 [[repos.themes]]
 name = "Zexanima"
-repository = "https://github.com/calebgasser/zexanima-leftwm-theme/tree/develop"
+repository = "https://github.com/calebgasser/zexanima-leftwm-theme/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = ">0.3.0"
@@ -438,7 +445,7 @@ name = "arise"
 directory = "/home/moosicmaan/.config/leftwm/themes/arise"
 version = "0.0.0"
 leftwm_versions = "*"
-current = false
+current = true
 
 [[repos.themes]]
 name = "Changed Sunset"
@@ -464,6 +471,118 @@ current = false
 [[repos.themes]]
 name = "greyblocks"
 directory = "/home/moosicmaan/.config/leftwm/themes/greyblocks"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "catppuccin"
+directory = "/home/moosicmaan/.config/leftwm/themes/catppuccin"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "coffee"
+directory = "/home/moosicmaan/.config/leftwm/themes/coffee"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "dementive"
+directory = "/home/moosicmaan/.config/leftwm/themes/dementive"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "dracula-rounded"
+directory = "/home/moosicmaan/.config/leftwm/themes/dracula-rounded"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "leftwm-arch-one-dark"
+directory = "/home/moosicmaan/.config/leftwm/themes/leftwm-arch-one-dark"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "leftwm-sunflower"
+directory = "/home/moosicmaan/.config/leftwm/themes/leftwm-sunflower"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "leftwm-theme-garden"
+directory = "/home/moosicmaan/.config/leftwm/themes/leftwm-theme-garden"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "leftwm-theme-plan9"
+directory = "/home/moosicmaan/.config/leftwm/themes/leftwm-theme-plan9"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "leftwm-theme-serika"
+directory = "/home/moosicmaan/.config/leftwm/themes/leftwm-theme-serika"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "minimal_solarized"
+directory = "/home/moosicmaan/.config/leftwm/themes/minimal_solarized"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "orangeforest"
+directory = "/home/moosicmaan/.config/leftwm/themes/orangeforest"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "soothe"
+directory = "/home/moosicmaan/.config/leftwm/themes/soothe"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "space_jelly"
+directory = "/home/moosicmaan/.config/leftwm/themes/space_jelly"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "tng"
+directory = "/home/moosicmaan/.config/leftwm/themes/tng"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "windowsxp"
+directory = "/home/moosicmaan/.config/leftwm/themes/windowsxp"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "zexanima-leftwm-theme"
+directory = "/home/moosicmaan/.config/leftwm/themes/zexanima-leftwm-theme"
 version = "0.0.0"
 leftwm_versions = "*"
 current = false

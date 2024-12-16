@@ -1,0 +1,10 @@
+{
+    "diagnostics.globals": [
+        "screen",
+        "tag",
+        "mouse",
+        "client",
+        "awesome",
+        "root"
+    ]
+}
