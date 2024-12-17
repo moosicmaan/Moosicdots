@@ -3,18 +3,40 @@ return {
 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	enabled = true,
 	opts = {
-		theme = "hyper",
+		theme = "moosictheme",
+		-- theme = "hyper",
 		preview = {},
 		hide = {
 			statusline = false,
 			tabline = true,
 		},
 		config = {
-			project = {
-				action = "Fzf files cwd=",
-			},
 			week_header = {
 				enable = true,
+			},
+			no_git = {
+				enable = vim.fn.isdirectory(".git") == 0,
+			},
+			-- action can be a function type
+			-- limit how many projects list, action when you press key or enter it will run this action.
+			-- action can be a functino type, e.g.
+			-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
+			project = {
+				limit = 5,
+				enable = true,
+				-- action = "fzf files cwd=",
+				action = "require('fzf-lua').files({})",
+			},
+			mru = {
+				enable = true,
+				limit = 6,
+				icon = " ",
+				label = " Recent Files",
+				cwd_only = false,
+			},
+			footer = {
+				"",
+				" 🚀 Sharp tools make good work.",
 			},
 			shortcut = {
 				{

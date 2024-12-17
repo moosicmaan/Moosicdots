@@ -8,13 +8,11 @@ return {
 				-- your dashboard configuration comes here
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
-				width = 100,
+				width = 80,
 				preset = {
 					-- header = {
 					-- 	{
 					-- 		section = "terminal",
-					-- 		cmd = "figlet -f ~/.config/nvim/lua/assets/ansi_shadow.flf 'MoosicVIM' | lolcat",
-					-- 		height = 6,
 					-- 		padding = 1,
 					-- 		random = 10,
 					-- 	},
@@ -43,7 +41,8 @@ return {
 				},
 				sections = {
 					{ section = "header", padding = 0 },
-					-- { section = "keys", padding = 2 },
+					{ section = "keys", padding = 0 },
+					{ section = "startup" },
 					{ section = "recent_files", icon = " ", title = "Recent Files", indent = 3, padding = 0 },
 					{ section = "projects", icon = " ", title = "Projects", indent = 3, padding = 0 },
 					{
@@ -56,7 +55,6 @@ return {
 						padding = 0,
 						indent = 0,
 					},
-					{ section = "startup" },
 				},
 			},
 		},
