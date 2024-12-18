@@ -151,7 +151,7 @@ local function mru_list(config)
 		icon = " ",
 		limit = 10,
 		icon_hl = "DashboardMruIcon",
-		label = "  Purple Files:",
+		label = "  Recent Files:",
 		cwd_only = false,
 		enable = true,
 	}, config.mru or {})
@@ -467,7 +467,16 @@ local function project_delete()
 	})
 end
 
+local function theme_defaults(config)
+	config.week_header = vim.tbl_extend("force", {
+		enable = false,
+		font = "~/.config/nvim/lua/assets/fonts/ansi_shadow.flf",
+		-- font = "slant",
+	}, config.week_header or {})
+end
+
 local function theme_instance(config)
+	theme_defaults(config)
 	project_list(config, function(plist)
 		if not api.nvim_buf_is_valid(config.bufnr) then
 			return
@@ -482,6 +491,7 @@ local function theme_instance(config)
 		load_packages(config)
 		gen_center(plist, config)
 		require("dashboard.theme.moosicgit").generate_gitdiff(config)
+		print("Hello World!")
 		gen_footer(config)
 		map_key(config, config.confirm_key or "<CR>")
 		require("dashboard.events").register_lsp_root(config.path)

@@ -5,40 +5,60 @@ return {
 	opts = {
 		theme = "moosictheme",
 		-- theme = "hyper",
-		preview = {},
+		-- theme = "doom",
+		disable_move = false, --  default is false disable move keymap for hyper
+		shortcut_type = "letter", --  shorcut type 'letter' or 'number'
+		shuffle_letter = false, --  default is true, shortcut 'letter' will be randomize, set to false to have ordered letter.
+		change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
+		preview = {
+			-- command = "figlet -f slant",
+			-- file_path = "YourTextHere",
+			-- file_height = 30, -- preview file height
+			-- file_width = 100, -- preview file width
+		},
 		hide = {
 			statusline = false,
 			tabline = true,
 		},
+		-- for moosictheme/hyper?
 		config = {
+			-- Theme Highlight groups:
+			--    DashboardHeader DashboardFooter
+			--    DashboardProjectTitle DashboardProjectTitleIcon DashboardProjectIcon
+			--    DashboardMruTitle DashboardMruIcon DashboardFiles DashboardShortCutIcon
+
+			-- header -- type is table def
 			week_header = {
-				font = "~/.config/nvim/lua/assets/ansi_shadow.flf",
-				enable = false,
+				enable = true, --boolean use a week header
+				-- concat  --concat string after time string line
+				-- append  --table append after time string line
+				-- font = "~/.config/nvim/lua/assets/fonts/doh.flf",
+				-- font = "slant",
 			},
 			no_git = {
 				-- enable = true,
 				enable = vim.fn.isdirectory(".git") == 0,
 			},
-			-- 		-- action can be a function type
-			-- 		-- limit how many projects list, action when you press key or enter it will run this action.
-			-- 		-- action can be a functino type, e.g.
-			-- 		-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
+			packages = { enable = false }, -- show how many plugins neovim loaded
 			project = {
-				limit = 5, --will display +1
 				enable = true,
-				-- action = "fzf files cwd=",
+				limit = 5, --will display +1
+				icon = "󰏓 ",
+				-- action can be a functino type, e.g.
+				-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
 				action = "require('fzf-lua').files({})",
+				label = " Recent Projects:",
 			},
 			mru = {
 				enable = true,
 				limit = 6,
 				icon = " ",
-				label = " Recent Files",
+				label = " Recent Files:",
 				cwd_only = false,
 			},
 			footer = {
 				"",
-				" 🚀 Sharp tools make good work.",
+				"~🚀 Sharp tools make good work.~",
 			},
 			shortcut = {
 				{
@@ -49,7 +69,7 @@ return {
 					key = "u",
 				},
 				{
-					group = "@property",
+					group = "@Constant",
 					action = "lua LazyVim.pick()()",
 					desc = "Find",
 					icon = "",
@@ -63,8 +83,8 @@ return {
 					key = "n",
 				},
 				{
+					group = "@Constant",
 					action = 'lua LazyVim.pick("oldfiles")()',
-					group = "@property",
 					desc = "Recent",
 					icon = "",
 					key = "r",
@@ -77,7 +97,7 @@ return {
 					key = "g",
 				},
 				{
-					group = "@property",
+					group = "@Constant",
 					action = "lua LazyVim.pick.config_files()()",
 					desc = "Conf",
 					icon = "",
@@ -91,7 +111,7 @@ return {
 					key = "s",
 				},
 				{
-					group = "@property",
+					group = "@Constant",
 					action = "LazyExtras",
 					desc = "Extras",
 					icon = "",
@@ -105,7 +125,7 @@ return {
 					key = "l",
 				},
 				{
-					group = "@property",
+					group = "@Function",
 					action = function()
 						vim.api.nvim_input("<cmd>qa<cr>")
 					end,
