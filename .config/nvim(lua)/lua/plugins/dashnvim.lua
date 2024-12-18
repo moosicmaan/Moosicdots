@@ -12,17 +12,19 @@ return {
 		},
 		config = {
 			week_header = {
-				enable = true,
+				font = "~/.config/nvim/lua/assets/ansi_shadow.flf",
+				enable = false,
 			},
 			no_git = {
+				-- enable = true,
 				enable = vim.fn.isdirectory(".git") == 0,
 			},
-			-- action can be a function type
-			-- limit how many projects list, action when you press key or enter it will run this action.
-			-- action can be a functino type, e.g.
-			-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
+			-- 		-- action can be a function type
+			-- 		-- limit how many projects list, action when you press key or enter it will run this action.
+			-- 		-- action can be a functino type, e.g.
+			-- 		-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
 			project = {
-				limit = 5,
+				limit = 5, --will display +1
 				enable = true,
 				-- action = "fzf files cwd=",
 				action = "require('fzf-lua').files({})",

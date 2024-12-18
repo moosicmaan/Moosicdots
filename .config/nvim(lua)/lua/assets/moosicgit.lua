@@ -1,58 +1,6 @@
 local api = vim.api
 local utils = require("dashboard.utils")
 
---------------------------------------
--- JDB->generate git report
--- local function get_git_list()
--- 	local command = "hub diff --stat -B -M -C"
--- 	local handle = io.popen(command)
--- 	if not handle then
--- 		return { "Error: Failed to execute hub command." }
--- 	end
---
--- 	local result = handle:read("*a") -- Read the entire output
--- 	handle:close()
---
--- 	-- Split the result into lines and store them in a table
--- 	local header = {}
--- 	table.insert(header, "")
--- 	for line in result:gmatch("[^\r\n]+") do
--- 		table.insert(header, line)
--- 	end
---
--- 	return header
--- end
---
--- local function git_list(config)
--- 	config.git = vim.tbl_extend("force", {
--- 		icon = " ",
--- 		limit = 0,
--- 		icon_hl = "DashboardGitIcon",
--- 		label = " Git Status:",
--- 		enable = vim.fn.isdirectory(".git") == 1,
--- 	}, config.git or {})
---
--- 	-- {
--- 	-- 	enabled = vim.fn.isdirectory(".git") == 1,
--- 	-- 	cmd = "hub diff --stat -B -M -C",
--- 	-- },
---
--- 	if not config.git.enable then
--- 		return {}, {}
--- 	end
---
--- 	local list = {
--- 		config.git.icon .. config.git.label,
--- 	}
---
--- 	local glist = get_git_list()
---
--- 	if #list == 1 then
--- 		table.insert(list, (" "):rep(3) .. " mpty files")
--- 	end
--- 	return list, groups
--- end
---------------------------------------
 local function default_gitdiff()
 	local command = "hub diff --stat -B -M -C"
 	local handle = io.popen(command)
@@ -89,8 +37,7 @@ local function generate_gitdiff(config)
 		vim.bo[config.bufnr].modifiable = true
 	end
 	if not config.command then
-		local gitdiff = config.no_git and config.no_git.enable and no_git(config.no_git.concat, config.no_git.append)
-			or (config.gitdiff or default_gitdiff())
+		local gitdiff = config.no_git and config.no_git.enable and no_git() or (config.gitdiff or default_gitdiff())
 		-- local function insert_lines(buffer, lines)
 		-- 	-- Get the total number of lines in the buffer
 		-- 	local line_count = vim.api.nvim_buf_line_count(buffer)

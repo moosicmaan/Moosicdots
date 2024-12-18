@@ -1,120 +1,42 @@
 local api = vim.api
 local utils = require("dashboard.utils")
 
-local function week_ascii_text()
-	return {
-		["Monday"] = {
-			"",
-			"███╗   ███╗ ██████╗ ███╗   ██╗██████╗  █████╗ ██╗   ██╗",
-			"████╗ ████║██╔═══██╗████╗  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"██╔████╔██║██║   ██║██╔██╗ ██║██║  ██║███████║ ╚████╔╝ ",
-			"██║╚██╔╝██║██║   ██║██║╚██╗██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██████╔╝██║  ██║   ██║   ",
-			"╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Tuesday"] = {
-			"",
-			"████████╗██╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗",
-			"╚══██╔══╝██║   ██║██╔════╝██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"   ██║   ██║   ██║█████╗  ███████╗██║  ██║███████║ ╚████╔╝ ",
-			"   ██║   ██║   ██║██╔══╝  ╚════██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"   ██║   ╚██████╔╝███████╗███████║██████╔╝██║  ██║   ██║   ",
-			"   ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Wednesday"] = {
-			"",
-			"██╗    ██╗███████╗██████╗ ███╗   ██╗███████╗███████╗██████╗  █████╗ ██╗   ██╗",
-			"██║    ██║██╔════╝██╔══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"██║ █╗ ██║█████╗  ██║  ██║██╔██╗ ██║█████╗  ███████╗██║  ██║███████║ ╚████╔╝ ",
-			"██║███╗██║██╔══╝  ██║  ██║██║╚██╗██║██╔══╝  ╚════██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"╚███╔███╔╝███████╗██████╔╝██║ ╚████║███████╗███████║██████╔╝██║  ██║   ██║   ",
-			" ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Thursday"] = {
-			"",
-			"████████╗██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗  █████╗ ██╗   ██╗",
-			"╚══██╔══╝██║  ██║██║   ██║██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"   ██║   ███████║██║   ██║██████╔╝███████╗██║  ██║███████║ ╚████╔╝ ",
-			"   ██║   ██╔══██║██║   ██║██╔══██╗╚════██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"   ██║   ██║  ██║╚██████╔╝██║  ██║███████║██████╔╝██║  ██║   ██║   ",
-			"   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Friday"] = {
-			"",
-			"███████╗██████╗ ██╗██████╗  █████╗ ██╗   ██╗",
-			"██╔════╝██╔══██╗██║██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"█████╗  ██████╔╝██║██║  ██║███████║ ╚████╔╝ ",
-			"██╔══╝  ██╔══██╗██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"██║     ██║  ██║██║██████╔╝██║  ██║   ██║   ",
-			"╚═╝     ╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Saturday"] = {
-			"",
-			"███████╗ █████╗ ████████╗██╗   ██╗██████╗ ██████╗  █████╗ ██╗   ██╗",
-			"██╔════╝██╔══██╗╚══██╔══╝██║   ██║██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"███████╗███████║   ██║   ██║   ██║██████╔╝██║  ██║███████║ ╚████╔╝ ",
-			"╚════██║██╔══██║   ██║   ██║   ██║██╔══██╗██║  ██║██╔══██║  ╚██╔╝  ",
-			"███████║██║  ██║   ██║   ╚██████╔╝██║  ██║██████╔╝██║  ██║   ██║   ",
-			"╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-		["Sunday"] = {
-			"",
-			"███████╗██╗   ██╗███╗   ██╗██████╗  █████╗ ██╗   ██╗",
-			"██╔════╝██║   ██║████╗  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝",
-			"███████╗██║   ██║██╔██╗ ██║██║  ██║███████║ ╚████╔╝ ",
-			"╚════██║██║   ██║██║╚██╗██║██║  ██║██╔══██║  ╚██╔╝  ",
-			"███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║   ██║   ",
-			"╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ",
-			"",
-		},
-	}
-end
+local function format_header(version, font)
+	-- Set the font dynamically using the font parameter
+	local command
+	if version == "day" then
+		command = string.format("figlet -f %s $(date '+%%A')", font)
+	else
+		command = string.format("figlet -f %s 'MoosicVIM'", font)
+	end
 
--- local function default_header()
--- 	return {
--- 		"",
--- 		"███╗   ███╗ ██████╗  ██████╗ ███████╗██╗ ██████╗██╗   ██╗██╗███╗   ███╗ ",
--- 		"████╗ ████║██╔═══██╗██╔═══██╗██╔════╝██║██╔════╝██║   ██║██║████╗ ████║ ",
--- 		"██╔████╔██║██║   ██║██║   ██║███████╗██║██║     ██║   ██║██║██╔████╔██║ ",
--- 		"██║╚██╔╝██║██║   ██║██║   ██║╚════██║██║██║     ╚██╗ ██╔╝██║██║╚██╔╝██║ ",
--- 		"██║ ╚═╝ ██║╚██████╔╝╚██████╔╝███████║██║╚██████╗ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
--- 		"╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝ ╚═════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
--- 		"",
--- 	}
--- end
-local function default_header()
-	-- local command = "hub diff --stat -B -M -C"
-	local command = "figlet -f ~/.config/nvim/lua/assets/ansi_shadow.flf 'MoosicVIM'"
-	-- local command = "figlet -f slant 'MoosicVIM'"
 	local handle = io.popen(command)
 	if not handle then
 		return { "Error: Failed to execute figlet command." }
 	end
 
-	local result = handle:read("*a") -- Read the entire output
+	local result = handle:read("*a")
 	handle:close()
 
 	-- Split the result into lines and store them in a table
-	local header = {}
-	table.insert(header, "")
+	local formatted_header = {}
+	table.insert(formatted_header, "")
 	for line in result:gmatch("[^\r\n]+") do
-		table.insert(header, line)
+		table.insert(formatted_header, line)
 	end
+	return formatted_header
+end
+
+local function default_header(config)
+	local font = config.week_header.font -- Retrieve the font path from the config
+	local header = format_header("default", font)
 
 	return header
 end
 
-local function week_header(concat, append)
-	local week = week_ascii_text()
-	local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
-	local day = daysoftheweek[os.date("*t").wday]
-	local tbl = week[day]
+local function week_header(concat, append, config)
+	local font = config.week_header.font -- Retrieve the font path from the config
+	local tbl = format_header("day", font)
 	table.insert(tbl, os.date("%Y-%m-%d %H:%M:%S ") .. (concat or ""))
 	if append then
 		vim.list_extend(tbl, append)
@@ -130,8 +52,8 @@ local function generate_header(config)
 	if not config.command then
 		local header = config.week_header
 				and config.week_header.enable
-				and week_header(config.week_header.concat, config.week_header.append)
-			or (config.header or default_header())
+				and week_header(config.week_header.concat, config.week_header.append, config)
+			or (config.header or default_header(config))
 		api.nvim_buf_set_lines(config.bufnr, 0, -1, false, utils.center_align(header))
 
 		for i, _ in ipairs(header) do
