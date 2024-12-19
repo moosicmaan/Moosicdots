@@ -20,12 +20,12 @@ return {
 			statusline = false,
 			tabline = true,
 		},
+
 		config = {
 			-- Theme Highlight groups:
 			--    DashboardHeader DashboardFooter
 			--    DashboardProjectTitle DashboardProjectTitleIcon DashboardProjectIcon
 			--    DashboardMruTitle DashboardMruIcon DashboardFiles DashboardShortCutIcon
-
 			-- header -- type is table def
 			week_header = {
 				enable = true, --boolean use a week header
@@ -43,7 +43,7 @@ return {
 				enable = true,
 				limit = 5, --will display +1
 				icon = "󰏓 ",
-				-- action can be a functino type, e.g.
+				-- action can be a function type, e.g.
 				-- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
 				action = "require('fzf-lua').files({})",
 				label = " Recent Projects:",
