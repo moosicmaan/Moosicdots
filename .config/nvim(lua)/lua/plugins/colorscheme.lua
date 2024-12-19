@@ -2,22 +2,22 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "retrobox",
+			colorscheme = "retrobox",
 			-- colorscheme = "pywal",
 			-- colorscheme = "pablo",
 			-- colorscheme = "murphy",
 			-- colorscheme = "elflord",
 			-- colorscheme = "slate",
-			colorscheme = "default",
+			-- colorscheme = "default",
 			-- colorscheme = "catppuccin-mocha",
 			-- colorscheme = "wildcharm",
 			-- colorscheme = "koehler",
 			-- colorscheme = "industry",
 			-- transparent = true,
-			-- styles = {
-			--   sidebars = "transparent",
-			--   floats = "transparent",
-			-- },
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
 		},
 	},
 }

@@ -7,7 +7,7 @@ return {
 		-- theme = "hyper",
 		-- theme = "doom",
 		disable_move = false, --  default is false disable move keymap for hyper
-		shortcut_type = "letter", --  shorcut type 'letter' or 'number'
+		shortcut_type = "number", --  shorcut type 'letter' or 'number'
 		shuffle_letter = false, --  default is true, shortcut 'letter' will be randomize, set to false to have ordered letter.
 		change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
 		preview = {
@@ -20,7 +20,6 @@ return {
 			statusline = false,
 			tabline = true,
 		},
-		-- for moosictheme/hyper?
 		config = {
 			-- Theme Highlight groups:
 			--    DashboardHeader DashboardFooter
@@ -39,7 +38,7 @@ return {
 				-- enable = true,
 				enable = vim.fn.isdirectory(".git") == 0,
 			},
-			packages = { enable = false }, -- show how many plugins neovim loaded
+			packages = { enable = true }, -- show how many plugins neovim loaded
 			project = {
 				enable = true,
 				limit = 5, --will display +1
