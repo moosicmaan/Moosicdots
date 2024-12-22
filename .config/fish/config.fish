@@ -297,6 +297,13 @@ export FZF_DEFAULT_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
+# add zixide, a better cd
+zoxide init fish | source
+abbr --erase cd &>/dev/null
+alias cd=__zoxide_z
+abbr --erase cdi &>/dev/null
+alias cdi=__zoxide_zi
+
 # <--- JDB
 
 # bun
