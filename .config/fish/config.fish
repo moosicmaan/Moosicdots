@@ -236,8 +236,9 @@ end
 fzf --fish | source
 
 export FZF_CTRL_T_OPTS="-m \
---height 75% \
---margin 10%,5% \
+--height 85% \
+--tmux center,75%,75% \
+--margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
 --layout reverse \
@@ -252,8 +253,9 @@ export FZF_CTRL_T_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-export FZF_CTRL_R_OPTS="--height 75% \
---margin 10%,5% \
+export FZF_CTRL_R_OPTS="--height 85% \
+--tmux center,75%,75% \
+--margin 2%,2% \
 --scroll-off 3 \
 --preview 'echo {}' \
 --preview-window 'right,40%,wrap' \
@@ -266,8 +268,9 @@ export FZF_CTRL_R_OPTS="--height 75% \
 --pointer '→' \
 --marker '*'"
 
-export FZF_ALT_C_OPTS="--height 75% \
---margin 10%,5% \
+export FZF_ALT_C_OPTS="--height 85% \
+--tmux center,75%,75% \
+--margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
 --layout reverse \
@@ -281,9 +284,9 @@ export FZF_ALT_C_OPTS="--height 75% \
 --marker '*'"
 
 export FZF_DEFAULT_OPTS="-m \
---height 75% \
+--height 85% \
 --tmux center,75%,75% \
---margin 10%,5% \
+--margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
 --layout reverse \
@@ -297,7 +300,7 @@ export FZF_DEFAULT_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-# add zixide, a better cd
+# replace cd with zoxide, a better cd with an interactive feature
 zoxide init fish | source
 abbr --erase cd &>/dev/null
 alias cd=__zoxide_z
