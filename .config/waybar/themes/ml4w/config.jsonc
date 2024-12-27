@@ -1,62 +1,38 @@
-// __        __          _;
-// \ \      / /_ _ _   _| |__   __ _ _ __
-//  \ \ /\ / / _` | | | | '_ \ / _` | '__|
-//   \ V  V / (_| | |_| | |_) | (_| | |
-//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|
-//                 |___/
-//
-// by Stephan Raabe (2023)
-// -----------------------------------------------------
-//
 [
   {
     "id": 1,
     "output": "eDP-1",
     "position": "top",
-    //"height": 10,
-    //"width": 700,
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/ml4w/modules.jsonc"],
-
-    // Modules Left
+    "include": [
+      "~/.config/waybar/themes/ml4w/modules.jsonc"
+    ],
     "modules-left": [
       "custom/appmenu",
       "group/settings",
-      // START TASK TOOGLE
       "wlr/taskbar",
-      // END TASK TOOGLE
       "group/quicklinks",
-      "hyprland/window",
+      "hyprland/window"
     ],
-
-    // Modules Center
-    "modules-center": ["hyprland/workspaces"],
-
-    // Modules Right
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
     "modules-right": [
       "custom/updates",
       "pulseaudio",
-      // START BT TOOGLE
       "bluetooth",
-      // END BT TOOGLE
       "battery",
-      // START NETWORK TOOGLE
       "network",
-      // END NETWORK TOOGLE
       "group/hardware",
       "custom/cliphist",
-      // START IDLE TOOGLE
       "idle_inhibitor",
-      // END IDLE TOOGLE
-      // START TRAY TOOGLE
       "tray",
-      // END TRAY TOOGLE
       "clock",
-      "custom/exit",
-    ],
+      "custom/exit"
+    ]
   },
   {
     "id": 2,
@@ -66,15 +42,21 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/ml4w/modules.jsonc"],
-
-    // Modules Left
-    "modules-left": ["custom/appmenu", "wlr/taskbar", "hyprland/window"],
-
-    // Modules Center
-    "modules-center": ["hyprland/workspaces"],
-
-    // Modules Right
-    "modules-right": ["mpris", "pulseaudio", "custom/exit"],
-  },
+    "include": [
+      "~/.config/waybar/themes/ml4w/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/appmenu",
+      "wlr/taskbar",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "mpris",
+      "pulseaudio",
+      "custom/exit"
+    ]
+  }
 ]

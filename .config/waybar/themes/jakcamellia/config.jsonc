@@ -1,15 +1,9 @@
-//* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-//* ............................................*/
-//* .............CAMELLIA.......................*/
-//* ............................................*/
-//* --- 👍 designed by https://github.com/Krautt  👍 --- */
 [
   {
     "id": 1,
     "output": "eDP-1",
     "include": "/mnt/data/moosicmaan/CONFIG/.config/waybar/themes/jakcamellia/modules.jsonc",
     "layer": "top",
-    //"mode": "dock",
     "exclusive": true,
     "passthrough": false,
     "position": "top",
@@ -20,21 +14,16 @@
     "spacing": 3,
     "fixed-center": true,
     "ipc": true,
-    //"margin-top": 0,
-    //"margin-bottom": 0,
-    //"margin-left": 0,
-    //"margin-right": 0,
-
     "modules-left": [
       "hyprland/workspaces#roman",
       "custom/separator#line",
       "custom/swaync",
       "tray#cam",
-      "wlr/taskbar#cam",
+      "wlr/taskbar#cam"
     ],
-
-    "modules-center": ["hyprland/window#cam"],
-
+    "modules-center": [
+      "hyprland/window#cam"
+    ],
     "modules-right": [
       "custom/backlight",
       "backlight/slider",
@@ -43,15 +32,14 @@
       "pulseaudio/slider",
       "battery#cam",
       "clock#cam",
-      "network#cam",
-    ],
+      "network#cam"
+    ]
   },
   {
     "id": 2,
     "output": "HDMI-A-1",
     "include": "/mnt/data/moosicmaan/CONFIG/.config/waybar/themes/jakcamellia/modules.jsonc",
     "layer": "top",
-    //"mode": "dock",
     "exclusive": true,
     "passthrough": false,
     "position": "bottom",
@@ -62,24 +50,20 @@
     "margin-right": 3,
     "fixed-center": true,
     "ipc": true,
-    //"margin-top": 0,
-    //"margin-bottom": 0,
-    //"margin-left": 0,
-    //"margin-right": 0,
-
     "modules-left": [
       "hyprland/workspaces#roman",
       "custom/separator#line",
-      "wlr/taskbar#cam",
+      "wlr/taskbar#cam"
     ],
-
-    "modules-center": ["hyprland/window#cam", "mpris#moosic"],
-
+    "modules-center": [
+      "hyprland/window#cam",
+      "mpris#moosic"
+    ],
     "modules-right": [
       "custom/cava_mviz",
       "custom/speaker",
       "pulseaudio/slider",
-      "clock#cam",
-    ],
-  },
+      "clock#cam"
+    ]
+  }
 ]

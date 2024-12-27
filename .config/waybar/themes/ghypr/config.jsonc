@@ -3,35 +3,33 @@
     "id": 1,
     "output": "eDP-1",
     "position": "top",
-    //"height": 10,
-    //"width": 700,
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/ghypr/modules.jsonc"],
-
+    "include": [
+      "~/.config/waybar/themes/ghypr/modules.jsonc"
+    ],
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window",
+      "hyprland/window"
     ],
-    "modules-center": ["clock"],
+    "modules-center": [
+      "clock"
+    ],
     "modules-right": [
       "custom/network_traffic",
       "custom/updates",
       "backlight",
-      // "custom/keyboard-layout",
-      // "temperature",
-      // "cpu",
       "memory",
       "battery",
       "pulseaudio",
       "tray",
       "idle_inhibitor",
       "custom/weather",
-      "custom/power",
-    ],
+      "custom/power"
+    ]
   },
   {
     "id": 2,
@@ -41,14 +39,20 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/ghypr/modules.jsonc"],
-
+    "include": [
+      "~/.config/waybar/themes/ghypr/modules.jsonc"
+    ],
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window",
+      "hyprland/window"
     ],
-    "modules-center": ["mpris"],
-    "modules-right": ["pulseaudio", "custom/power"],
-  },
+    "modules-center": [
+      "mpris"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "custom/power"
+    ]
+  }
 ]

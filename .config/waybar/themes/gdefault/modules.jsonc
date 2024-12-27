@@ -1,4 +1,3 @@
-// Modules configuration
 {
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -17,76 +16,75 @@
       "9": "9",
       "10": "10",
       "focused": "",
-      "default": "",
+      "default": ""
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "hyprland/window": {
     "format": "{}",
     "icon": true,
-    "icon-size": 20,
+    "icon-size": 20
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
-      "deactivated": "",
+      "deactivated": ""
     },
-    "on-click": "exec ~/.config/waybar/scripts/idle_inhibitor.sh",
+    "on-click": "exec ~/.config/waybar/scripts/idle_inhibitor.sh"
   },
   "tray": {
     "icon-size": 20,
-    "spacing": 5,
+    "spacing": 5
   },
   "clock": {
     "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%a %d %b  %I:%M %p}", //12 hour format
-    //"format": " {:%a %d %b  %H:%M}",	//24 hour format
+    "format": " {:%a %d %b  %I:%M %p}",
     "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
-    //"max-length": 200
     "interval": 1,
-    "on-click": "~/.config/waybar/scripts/OCV",
+    "on-click": "~/.config/waybar/scripts/OCV"
   },
   "cpu": {
     "format": "🖳{usage}%",
-    "on-click": "foot -e htop",
+    "on-click": "foot -e htop"
   },
   "memory": {
     "format": "🖴 {: >3}%",
-    "on-click": "foot -e htop",
+    "on-click": "foot -e htop"
   },
   "temperature": {
-    "thermal-zone": 7, // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
+    "thermal-zone": 7,
     "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C ",
+    "format": "{temperatureC}°C "
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{icon} {percent: >3}%",
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/scripts/backlight-hint.sh",
+    "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
   },
   "battery": {
     "states": {
-      // "good": 95,
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
     "format": "{icon} {capacity: >3}%",
-    "format-icons": ["", "", "", "", ""],
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
-    //"format": "&#x202b;{icon}&#x202c; {capacity}%",
-    //"format-icons": ["ﱉ","ﱊ","ﱌ","ﱍ","ﱋ"]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "network": {
-    //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
     "format": "⚠Disabled",
     "format-wifi": "",
     "format-ethernet": "",
@@ -96,9 +94,7 @@
     "family": "ipv4",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-    //"min-length": 2,
-    //"max-length": 2,
-    "on-click": "nm-connection-editor",
+    "on-click": "nm-connection-editor"
   },
   "custom/updates": {
     "format": "{} {icon}",
@@ -106,39 +102,37 @@
     "format-icons": {
       "has-updates": "󱍷",
       "updated": "󰂪",
-      "interval": 7200,
+      "interval": 7200
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "foot -e update",
+    "on-click": "foot -e update"
   },
   "custom/power": {
     "format": "⏻",
     "on-click": "nwgbar",
-    "tooltip": false,
+    "tooltip": false
   },
   "custom/keyboard-layout": {
-    "format": " Cheat", // Icon: keyboard
-    "on-click": "~/.config/waybar/scripts/keyhint.sh",
+    "format": " Cheat",
+    "on-click": "~/.config/waybar/scripts/keyhint.sh"
   },
   "custom/launcher": {
     "format": "    ",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    "tooltip": false,
+    "tooltip": false
   },
   "custom/network_traffic": {
     "exec": "~/.config/waybar/scripts/network_traffic.sh",
     "return-type": "json",
-    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}", // optional
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
   },
   "pulseaudio": {
-    "scroll-step": 3, // %, can be a float
+    "scroll-step": 3,
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    //"format-source": "{volume}% ",
-    //"format-source-muted": "",
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
@@ -148,20 +142,20 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
-  // https://github.com/chubin/wttr.in
   "custom/weather": {
     "exec": "curl 'https://wttr.in/?format=1'",
     "interval": 900,
-    "on-click": "yad --html --uri='https://wttr.in/' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right",
-    // Please don't change it to any special location, let the user do it by themselves
+    "on-click": "yad --html --uri='https://wttr.in/' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
   },
-
-  // MPRIS
   "mpris": {
     "format": "{player_icon}{dynamic}",
     "format-paused": "{status_icon}<i>{dynamic}</i>",
@@ -169,11 +163,10 @@
     "player-icons": {
       "default": "▶ ",
       "mpv": "🎵",
-      "spotube": "👠 ",
+      "spotube": "👠 "
     },
     "status-icons": {
-      "paused": "⏸",
-    },
-    // "ignored-players": ["firefox"]
-  },
+      "paused": "⏸"
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {
   "custom/launcher": {
     "format": "  ",
-    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23"
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -11,78 +11,91 @@
     "format-icons": {
       "urgent": "",
       "active": "",
-      "default": "",
+      "default": ""
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "custom/separator": {
     "format": "|",
     "interval": "once",
-    "tooltip": false,
+    "tooltip": false
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
-      "deactivated": "",
+      "deactivated": ""
     },
-    "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh",
+    "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh"
   },
   "tray": {
     "icon-size": 20,
-    "spacing": 6,
+    "spacing": 6
   },
   "clock": {
     "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%a %d %b  %I:%M %p}", //12 hour format
-    //"format": " {:%a %d %b  %H:%M}",	//24 hour format
+    "format": " {:%a %d %b  %I:%M %p}",
     "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
-    //"max-length": 200
     "interval": 1,
-    "on-click": "~/.config/waybar/scripts/OCV",
+    "on-click": "~/.config/waybar/scripts/OCV"
   },
   "cpu": {
     "format": "; {usage}%",
-    "on-click": "footclient -e 'htop'",
+    "on-click": "footclient -e 'htop'"
   },
   "memory": {
     "interval": 30,
     "format": " {used:0.2f}GB",
     "on-click": "footclient -e 'htop'",
     "max-length": 10,
-    "critical": 80,
+    "critical": 80
   },
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
     "format": "{icon}&#8239;{temperatureC}°C",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{icon}{percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/scripts/backlight-hint.sh",
+    "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
   },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
     "format": "{icon} {capacity}%",
     "format-charging": ";{capacity}%",
     "format-plugged": ";{capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "network": {
-    //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
     "format": "⚠Disabled",
     "format-wifi": ";({signalStrength}%)",
     "format-ethernet": "({signalStrength}%)",
@@ -93,7 +106,7 @@
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "on-click": "nm-connection-editor",
-    "tooltip-format": "{essid}: {ipaddr}",
+    "tooltip-format": "{essid}: {ipaddr}"
   },
   "custom/updates": {
     "format": "{} {icon}",
@@ -101,28 +114,27 @@
     "format-icons": {
       "has-updates": "󱍷",
       "updated": "󰂪",
-      "interval": 7200,
+      "interval": 7200
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "foot -e update",
+    "on-click": "foot -e update"
   },
   "custom/power": {
     "format": "⏻",
     "on-click": "nwgbar",
-    "tooltip": false,
+    "tooltip": false
   },
   "custom/network_traffic": {
     "exec": "~/.config/waybar/scripts/network_traffic.sh",
     "return-type": "json",
-    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}", // optional
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
   },
   "custom/keyboard-layout": {
-    "format": " Cheat", // Icon: keyboard
-    "on-click": "~/.local/bin/keyhint.sh",
+    "format": " Cheat",
+    "on-click": "~/.local/bin/keyhint.sh"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon} {volume}% {format_source}",
     "format-bluetooth-muted": " {format_source}",
@@ -136,26 +148,29 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
     "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-      "on": " ",
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
     },
     "repeat-icons": {
-      "on": " ",
+      "on": " "
     },
     "single-icons": {
-      "on": "1 ",
+      "on": "1 "
     },
     "state-icons": {
       "paused": "",
-      "playing": "",
+      "playing": ""
     },
-    "max-length": 45,
+    "max-length": 45
   },
-  // MPRIS
   "mpris": {
     "format": "{player_icon}{dynamic}",
     "format-paused": "{status_icon}<i>{dynamic}</i>",
@@ -163,11 +178,10 @@
     "player-icons": {
       "default": "▶ ",
       "mpv": "🎵",
-      "spotube": "👠 ",
+      "spotube": "👠 "
     },
     "status-icons": {
-      "paused": "⏸",
-    },
-    // "ignored-players": ["firefox"]
-  },
+      "paused": "⏸"
+    }
+  }
 }

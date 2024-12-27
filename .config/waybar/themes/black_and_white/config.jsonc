@@ -3,14 +3,13 @@
     "id": 1,
     "output": "eDP-1",
     "position": "top",
-    //"height": 10,
-    //"width": 700,
     "height": 33,
     "margin": "3, 5, 0, 5",
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/black_and_white/modules.jsonc"],
-
+    "include": [
+      "~/.config/waybar/themes/black_and_white/modules.jsonc"
+    ],
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
@@ -18,9 +17,11 @@
       "memory",
       "custom/updates",
       "custom/keyboard-layout",
-      "custom/network_traffic",
+      "custom/network_traffic"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+      "hyprland/window"
+    ],
     "modules-right": [
       "tray",
       "backlight",
@@ -29,8 +30,8 @@
       "network",
       "battery",
       "clock",
-      "custom/power",
-    ],
+      "custom/power"
+    ]
   },
   {
     "id": 2,
@@ -40,10 +41,20 @@
     "margin": "0, 5, 3, 5",
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/black_and_white/modules.jsonc"],
-
-    "modules-left": ["custom/launcher", "hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["mpris", "pulseaudio", "custom/power"],
-  },
+    "include": [
+      "~/.config/waybar/themes/black_and_white/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "mpris",
+      "pulseaudio",
+      "custom/power"
+    ]
+  }
 ]
