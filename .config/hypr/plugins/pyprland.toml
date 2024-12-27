@@ -1,7 +1,7 @@
 [pyprland]
 plugins = [
   "scratchpads",
-  # "layout_center", 
+  "layout_center",
   # "toggle_dpms",
   "magnify",
   "expose",
