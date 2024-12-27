@@ -1,15 +1,6 @@
-// =====================================================
-// -----------------------------------------------------
-// MODULES FOR MOOSIC WAYBAR CONFIGS
-// -----------------------------------------------------
-// =====================================================
 {
-  // ---------------------------------------------------
-  // WORKSPACES
-  // ---------------------------------------------------
   "dwl/tags": {
     "num-tags": 9,
-    // "tag-labels": ["🌕", "🌖", "🌗", "🌘", "🌑", "🌒", "🌓", "🌔", "🌕"],
     "tag-labels": [
       "I",
       "II",
@@ -31,37 +22,14 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    // "format": "{icon}",
-    // "format": "<sub>{icon}</sub>\n{windows}",
-    // "format-window-separator": "\n",
-    // "window-rewrite-default": "",
-    // "window-rewrite": {
-    //   "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-    //   "class<firefox>": "", // Windows whose classes are "firefox"
-    //   "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-    //   "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-    //   "code": "󰨞",
-    // },
     "format": "{name}{icon}",
     "format-icons": {
-      // active	Will be shown when workspace is active
-      // default	Will be shown when no string matches is found.
-      // empty	Will be shown on active empty workspaces
-      // persistent	Will be shown on non-active persistent workspaces
-      // special	Will be shown on non-active special workspaces
-      // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
       "active": "",
-      // "active": "🌏",
       "default": "",
-      // "default": "Ｄ",
       "empty": "",
-      // "empty": "Ｕ",
       "persistent": "",
-      // "persistent": "X",
       "visible": "",
-      // "visible": "",
       "special": "😍",
-      // "special": "😍",
       "urgent": ""
     },
     "persistent-workspaces": {
@@ -76,45 +44,18 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    // "format": "{icon}",
-    // "format": "<sub>{icon}</sub>\n{windows}",
-    // "format-window-separator": "\n",
-    // "window-rewrite-default": "",
-    // "window-rewrite": {
-    //   "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-    //   "class<firefox>": "", // Windows whose classes are "firefox"
-    //   "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-    //   "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-    //   "code": "󰨞",
-    // },
     "format": "{name}{icon}",
     "format-icons": {
-      // active	Will be shown when workspace is active
-      // default	Will be shown when no string matches is found.
-      // empty	Will be shown on active empty workspaces
-      // persistent	Will be shown on non-active persistent workspaces
-      // special	Will be shown on non-active special workspaces
-      // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
-      // "active": "",
-      // "active": "🌏",
       "default": "",
-      // "default": "",
-      // "default": "Ｄ",
       "empty": "",
-      // "empty": "Ｕ",
-      // "persistent": "",
-      // "persistent": "X",
       "visible": "",
-      // "visible": "",
       "special": "😍",
-      // "special": "😍",
       "urgent": ""
     },
     "persistent-workspaces": {
       "*": 5
     }
   },
-  // KITTY
   "hyprland/workspaces#kitty": {
     "on-click": "activate",
     "active-only": false,
@@ -124,9 +65,6 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
-    // "format": "<sub>{icon}</sub>\n{windows}",
-    // "format": "{name}{icon}",
-    // "format-window-separator": "\n",
     "format-icons": {
       "1": "😺",
       "2": "😿",
@@ -137,12 +75,6 @@
       "7": "😸",
       "8": "😻",
       "9": "😺",
-      // active	Will be shown when workspace is active
-      // default	Will be shown when no string matches is found.
-      // empty	Will be shown on active empty workspaces
-      // persistent	Will be shown on non-active persistent workspaces
-      // special	Will be shown on non-active special workspaces
-      // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
       "special": "😍",
       "urgent": ""
     },
@@ -150,7 +82,6 @@
       "*": 5
     }
   },
-  // MOONY
   "hyprland/workspaces#moony": {
     "on-click": "activate",
     "active-only": false,
@@ -160,9 +91,6 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
-    // "format": "<sub>{icon}</sub>\n{windows}",
-    // "format": "{name}{icon}",
-    // "format-window-separator": "\n",
     "format-icons": {
       "1": "🌕",
       "2": "🌖",
@@ -174,25 +102,13 @@
       "8": "🌓",
       "9": "🌔",
       "10": "🌕",
-      // active	Will be shown when workspace is active
-      // default	Will be shown when no string matches is found.
-      // empty	Will be shown on active empty workspaces
-      // persistent	Will be shown on non-active persistent workspaces
-      // special	Will be shown on non-active special workspaces
-      // urgent	Will be shown on non-active urgent workspaces // "10": "𐒠",
       "active": "🌏",
-      // "default": "Ｄ",
-      // "empty": "Ｕ",
-      // "persistent": "X",
-      // "visible": "",
       "special": "😍"
-      // "special": "😍",
     },
     "persistent-workspaces": {
       "*": 5
     }
   },
-  // ROMAN NUMERALS STYLE
   "hyprland/workspaces#roman": {
     "on-click": "activate",
     "active-only": false,
@@ -218,7 +134,6 @@
       "10": "X"
     }
   },
-  // PACMAN STYLE
   "hyprland/workspaces#pacman": {
     "active-only": false,
     "all-outputs": true,
@@ -238,7 +153,6 @@
       "special": "😍"
     }
   },
-  //  NUMBERS AND ICONS STYLE
   "hyprland/workspaces#4": {
     "active-only": false,
     "all-outputs": true,
@@ -263,22 +177,15 @@
       "10": ""
     }
   },
-  // ---------------------------------------------------
-  // WM-SPECIFIC MODULES
-  // ---------------------------------------------------
-  // HYPRLAND SUBMAP
   "hyprland/submap": {
     "format": "✌️ {}",
     "max-length": 18,
     "tooltip": false
   },
-  // SWAY MODE
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
-  // SWAY WINDOW
   "sway/window": {
-    //"all-outputs": true, // Uncomment for active window on all outputs
     "format": "{}",
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -290,7 +197,6 @@
     "spacing": 5,
     "icon-size": 14
   },
-  // HYPRLAND WINDOW
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -302,7 +208,6 @@
     "spacing": 5,
     "icon-size": 14
   },
-  // DWL WINDOW
   "dwl/window": {
     "format": "{}",
     "icon": true,
@@ -314,10 +219,6 @@
       "(.*) - zsh": " [$1]"
     }
   },
-  // ---------------------------------------------------
-  // CUSTOM SCRIPTS AND ICONS
-  // ---------------------------------------------------
-  // CLIPHIST
   "custom/cliphist": {
     "format": "",
     "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
@@ -325,82 +226,62 @@
     "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
     "tooltip": false
   },
-  // APPLICATION LAUNCHER
   "custom/appmenu": {
-    // "format": "🌐",
-    // "format": " ",
     "format": "",
-    // "on-click": "rofi -show drun -replace",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    // "on-click-right": "~/.config/.scripts/keybindings.sh",
     "on-click-right": "rofi -show drun -replace",
     "tooltip": false
   },
-  // CUSTOM LAUNCHER
   "custom/launcher": {
     "format": "",
-    //"format":"",
-    //"format":"",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "on-click-right": "~/.config/.scripts/keybindings.sh",
     "tooltip": false
   },
-  // POWER MENU
   "custom/exit": {
-    // "format": "",
     "format": " ",
-    // "format": "👽",
-    // "format": "",
     "on-click": "wlogout",
     "tooltip": true,
     "tooltip-format": "Power Menu"
   },
-  // POWER MENU
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
     "tooltip": false
   },
-  // WALLPAPER
   "custom/wallpaper": {
     "format": "",
     "on-click": "~/.config/.scripts/wallpaper.sh select",
     "on-click-right": "~/.config/.scripts/wallpaper.sh",
     "tooltip": false
   },
-  // WAYBAR THEMES
   "custom/waybarthemes": {
     "format": "",
     "on-click": "~/.config/.scripts/themeswitcher.sh",
     "tooltip": false
   },
-  // SETTINGS
   "custom/settings": {
     "format": "",
     "on-click": "kitty --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
     "tooltip": false
   },
-  // KEYBINDINGS
   "custom/keybindings": {
     "format": "",
     "on-click": "~/.config/.scripts/keybindings.sh",
     "tooltip": false
   },
-  // FILEMANAGER LAUNCHER
   "custom/filemanager": {
     "format": "",
     "on-click": "~/.config/.settings/filemanager.sh",
     "tooltip": true,
     "tooltip-format": "File Manager"
   },
-  // BROWSER LAUNCHER
   "custom/browser": {
     "format": "",
     "on-click": "~/.config/.settings/browser.sh",
     "tooltip": true,
     "tooltip-format": "Internet Browser"
   },
-  // CHATGPT LAUNCHER
   "custom/chatgpt": {
     "format": " ",
     "on-click": "brave --app=https://chat.openai.com",
@@ -408,14 +289,12 @@
     "tooltip": true,
     "tooltip-format": "ChatGPT Web App"
   },
-  // CALCULATOR
   "custom/calculator": {
     "format": "",
     "on-click": "galculator",
     "tooltip": true,
     "tooltip-format": "Calculator"
   },
-  // ROFI APPLICATION LAUNCHER
   "custom/appmenuicon": {
     "format": "",
     "icon-size": 14,
@@ -423,21 +302,17 @@
     "on-click-right": "~/.config/.scripts/keybindings.sh",
     "tooltip": false
   },
-  // SYSTEM
   "custom/system": {
     "format": "~ ",
-    // "format": "/   ",
     "tooltip": true,
     "tooltip-format": "System Status"
   },
-  // UPDATES COUNT
   "custom/updates": {
     "format": "  {}",
     "escape": true,
     "return-type": "json",
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    // "exec": "~/.config/.scripts/updates.sh",
     "restart-interval": 60,
     "on-click": "kitty --class dotfiles-floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh"
@@ -454,15 +329,9 @@
     "exec": "waybar-module-pacman-updates",
     "on-click": "kitty --class dotfiles-floating -e garuda-update"
   },
-  // ---------------------------------------------------
-  // AUDIO MODULES
-  // ---------------------------------------------------
-  // CAVA
   "cava": {
-    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
     "framerate": 30,
     "autosens": 1,
-    // "sensitivity": 100,
     "bars": 12,
     "lower_cutoff_freq": 10,
     "higher_cutoff_freq": 10000,
@@ -472,7 +341,6 @@
     "reverse": false,
     "sleep_timer": 7,
     "hide_on_silence": true,
-    // "bar_delimiter": "`",
     "bar_delimiter": 0,
     "monstercat": true,
     "waves": true,
@@ -492,9 +360,7 @@
       "on-click-right": "mode"
     }
   },
-  // PULSEAUDIO
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
     "format": "{icon}  {volume}%",
     "format-bluetooth": " {volume}% {icon}   {format_source}",
     "format-bluetooth-muted": "  {icon}   {format_source}",
@@ -516,7 +382,6 @@
     },
     "on-click": "pavucontrol-qt"
   },
-  // WIREPLUMBER
   "wireplumber": {
     "format": "{volume}% {icon}",
     "format-muted": "",
@@ -527,7 +392,6 @@
       ""
     ]
   },
-  // MPRIS
   "mpris": {
     "format": "{player_icon}{dynamic}",
     "format-paused": "{status_icon}<i>{dynamic}</i>",
@@ -535,12 +399,12 @@
     "player-icons": {
       "default": "▶ ",
       "mpv": "󰐹 ",
-      // "spotube": "👠 ",
       "spotube": "󰎆 ",
       "spotify": " ",
       "chromium": " ",
       "firefox": " ",
-      "firedragon": " ",
+      "brave": "",
+      "qutebrowser": "",
       "vlc": "󰕼 ",
       "kdeconnect": " ",
       "youtube": " "
@@ -550,17 +414,14 @@
       "playing": " ",
       "stopped": " "
     }
-    // "ignored-players": ["firefox"]
   },
-  //MPRIS COMPACT
   "mpris#comp": {
     "format": "{player_icon} ",
     "format-paused": "{status_icon} ",
     "max-length": 30,
     "tooltip": true,
-    // "tooltip-format": "{source_desc}",
     "tooltip-format": "{status_icon} {dynamic}",
-    "scroll-step": 5.0,
+    "scroll-step": 5,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
     "smooth-scrolling-threshold": 1,
@@ -568,10 +429,10 @@
       "default": "▶ ",
       "chromium": "",
       "firefox": "",
-      "firedragon": " ",
+      "brave": "",
+      "qutebrowser": "",
       "mpv": "󰐹",
       "spotify": "",
-      // "spotube": "👠 ",
       "spotube": "󰎆 ",
       "vlc": "󰕼"
     },
@@ -580,18 +441,12 @@
       "playing": " ",
       "stopped": " "
     }
-    // "ignored-players": ["firefox"]
   },
-  // ---------------------------------------------------
-  // PROGRAMS
-  // ---------------------------------------------------
-  // SYSTEM TRAY
   "tray": {
     "icon-size": 14,
     "show-passive-items": true,
     "spacing": 5
   },
-  // TASKBAR
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 14,
@@ -609,10 +464,6 @@
       "Foot Server": "Terminal"
     }
   },
-  // ---------------------------------------------------
-  // HARDWARE/SYSTEM MODULES
-  // ---------------------------------------------------
-  // USER
   "user": {
     "format": "{user} (up {work_d} days ↑)",
     "interval": 60,
@@ -620,14 +471,12 @@
     "width": 16,
     "icon": true
   },
-  // HARDDISC SPACE USED
   "disk": {
     "interval": 30,
     "format": " D {percentage_used}% ",
     "path": "/",
     "on-click": "kitty -e btop"
   },
-  // NETWORK
   "network": {
     "format": " {ifname}",
     "format-wifi": "    {signalStrength}%",
@@ -640,14 +489,11 @@
     "max-length": 50,
     "on-click": "~/.config/.settings/networkmanager.sh"
   },
-  // Network Traffic
   "custom/network_traffic": {
     "exec": "~/.config/waybar/scripts/network_traffic.sh",
     "return-type": "json",
     "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
-    // optional
   },
-  // IDLE INHIBATOR
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -656,10 +502,8 @@
     },
     "on-click-right": "swaylock"
   },
-  // BATTERY
   "battery": {
     "states": {
-      // "good": 95,
       "good": 95,
       "warning": 30,
       "critical": 15
@@ -667,8 +511,6 @@
     "format": " {icon}  {capacity}% {time}",
     "format-charging": "   {capacity}% {time}",
     "format-plugged": "   {capacity}%",
-    // "format-alt": " {icon}  {time}",
-    // "format-good": "", // An empty format will hide the module
     "format-full": "",
     "format-icons": [
       " ",
@@ -678,7 +520,6 @@
       " "
     ]
   },
-  // KEYBOARD STATE
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -689,7 +530,6 @@
     },
     "icon-size": 14
   },
-  // BLUETOOTH
   "bluetooth": {
     "format": "  {status}",
     "format-connected": "  {device_alias}",
@@ -705,17 +545,14 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   },
-  // CPU
   "cpu": {
     "format": "    {usage}% ",
     "on-click": "kitty -e btop"
   },
-  // MEMORY
   "memory": {
     "format": " 🖴 {:>3}% ",
     "on-click": "kitty -e btop"
   },
-  // TEMPERATURE
   "temperature": {
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -723,9 +560,7 @@
     "format-critical": "  {temperatureC}°C",
     "format": "  {temperatureC}°C"
   },
-  // BACKLIGHT
   "backlight": {
-    // "device": "acpi_video1",
     "format": " {icon} {percent}% ",
     "format-icons": [
       "",
@@ -742,36 +577,25 @@
     "on-scroll-up": "brightnessctl -c backlight set +1%",
     "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
   },
-  // ---------------------------------------------------
-  // LOCATION INFORMATION
-  // ---------------------------------------------------
-  // WEATHER APP DAVAO
   "custom/weatherD": {
     "format": "Davao:{}°",
-    // "format": "{ICON}{temp_C}({FeelsLikeC})",
     "tooltip": true,
     "interval": 3600,
-    // "exec": "wttrbar --date-format %m/%d --fahrenheit --mph --location 'Davao+City' --hide-conditions ",
     "exec": "wttrbar --date-format %m/%d  --fahrenheit --mph --location 'Davao+City'",
     "return-type": "json"
   },
-  // WEATHER APP LOCAL
   "custom/weatherC": {
     "format": "Local {}°",
-    // "format": "{ICON}{temp_C}({FeelsLikeC})",
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
     "return-type": "json"
   },
-  // Weather
-  // github.com/chubin/wttr.in
   "custom/weather#leg": {
     "exec": "curl 'https://wttr.in/Walsenburg?format=3'",
     "interval": 900,
     "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
   },
-  // CLOCK
   "clock": {
     "format-alt": "{:%H:%M}  ",
     "format": "{:%a, %b %d, %Y -  %R  }",
@@ -782,12 +606,8 @@
       "weeks-pos": "right",
       "on-scroll": 1,
       "format": {
-        // "months": "<span color='#ffead3'><b>{}</b></span>",
         "months": "<span color='#333333'><b>{}</b></span>",
-        // "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        // "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weeks": "<span color='#9999dd'><b>W{}</b></span>",
-        // "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
     },
@@ -804,7 +624,6 @@
       "on-scroll-down": "shift_down"
     }
   },
-  // CLOCK, DAVAO
   "clock#2": {
     "timezone": "Asia/Manila",
     "format": "{:%a- %R  }",
@@ -815,11 +634,9 @@
       "on-click-right": "mode"
     }
   },
-  // Clock
   "clock#leg": {
     "tooltip-format": "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "|    {:%a %d %b -   %I:%M %p} |", //12 hour format
-    //"format": " {:%a %d %b  %H:%M} ",	//24 hour format
+    "format": "|    {:%a %d %b -   %I:%M %p} |",
     "format-alt": "  {:%d/%m/%Y -   %H:%M:%S} ",
     "timezones": [
       "America/Denver"
@@ -828,7 +645,6 @@
     "interval": 1,
     "on-click": "~/.config/waybar/scripts/OCV"
   },
-  // Clock
   "clock#simple": {
     "timezone": "America/Denver",
     "format": "{:%H:%M}  ",
@@ -838,46 +654,30 @@
       "on-click-right": "mode"
     }
   },
-  // ---------------------------------------------------
-  // FORMATTING SYMBOLS
-  // ---------------------------------------------------
-  // Space
   "custom/spacer": {
     "format": "  ",
     "tooltip": false
   },
-  // Right par
   "custom/righty": {
     "format": "⦆",
     "tooltip": false
   },
-  // left par
   "custom/lefty": {
     "format": "⦅",
     "tooltip": false
   },
-  // RIGHT PAREN..
   "custom/right": {
-    // "format": "⎞",
     "format": "",
     "tooltip": false
   },
-  // LEFT PAREN..
   "custom/left": {
-    // "format": "⎝",
     "format": "",
     "tooltip": false
   },
-  // SEPARATER
   "custom/separator": {
-    // "format": "⎝",
     "format": "|",
     "tooltip": false
   },
-  // ----------------------------------------------------------------------------
-  // G R O U P S
-  // ----------------------------------------------------------------------------
-  // Group Apps
   "group/appo#leg": {
     "orientation": "inherit",
     "drawer": {
@@ -895,7 +695,6 @@
       "custom/righty"
     ]
   },
-  // GROUP HARDWARE
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
@@ -907,16 +706,10 @@
       "custom/system",
       "custom/updates",
       "custom/separator",
-      // "disk",
-      // "custom/separator",
       "memory",
       "custom/separator",
       "cpu",
       "custom/separator",
-      // "temperature",
-      // "custom/separator",
-      // "network",
-      // "custom/separator",
       "bluetooth",
       "custom/separator",
       "backlight",
@@ -926,7 +719,6 @@
       "battery"
     ]
   },
-  // Group Hardware
   "group/tech#leg": {
     "orientation": "inherit",
     "drawer": {
@@ -944,12 +736,6 @@
       "custom/separator",
       "cpu",
       "custom/separator",
-      // "temperature",
-      // "custom/separator",
-      // "network",
-      // "custom/separator",
-      // "bluetooth",
-      // "custom/separator",
       "backlight",
       "custom/separator",
       "idle_inhibitor",
@@ -957,7 +743,6 @@
       "custom/separator"
     ]
   },
-  // GROUP APPLICATION
   "group/appo": {
     "orientation": "inherit",
     "drawer": {
@@ -976,7 +761,6 @@
       "custom/calculator"
     ]
   },
-  // GROUP SETTINGS
   "group/settings": {
     "orientation": "horizontal",
     "modules": [
@@ -986,7 +770,6 @@
       "custom/wallpaper"
     ]
   },
-  // CLOCK GROUP
   "group/currents": {
     "orientation": "inherit",
     "modules": [
@@ -996,7 +779,6 @@
       "clock#2"
     ]
   },
-  // AUDIO GROUP
   "group/audios": {
     "orientation": "horizontal",
     "modules": [
