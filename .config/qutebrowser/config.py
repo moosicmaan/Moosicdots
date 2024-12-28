@@ -255,3 +255,17 @@ c.fonts.web.size.default_fixed = 14
 # Hard minimum font size (in pixels).
 # Type: Int
 c.fonts.web.size.minimum = 0
+
+# JDB - My additions:
+c.session.lazy_restore = True
+c.session.default_name = "default"
+c.auto_save.session = True
+c.tabs.tabs_are_windows = False
+
+
+def restore_history_idx(window, tab, idx):
+    for _ in range(idx):
+        window.tabbed_browser.tabs[tab].go_back()
+
+
+c.content.autoplay = False  # Example config option; replace or keep as is.
