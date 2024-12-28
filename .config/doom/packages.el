@@ -99,3 +99,4 @@
   :recipe (:host github :repo "tree-sitter-grammars/tree-sitter-hyprlang"))
 (package! hyprlang-ts-mode
   :recipe (:host github :repo "Nathan-Melaku/hyprlang-ts-mode"))
+(package! catppuccin-theme)

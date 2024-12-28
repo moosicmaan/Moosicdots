@@ -136,7 +136,8 @@
 ;;(setq doom-theme 'doom-challenger-deep)
 ;;(setq doom-theme 'ewal-doom-vibrant)
 ;;(setq doom-theme 'ewal-doom-one)
-(setq doom-theme 'doom-outrun-electric)
+;; (setq doom-theme 'doom-outrun-electric)
+(setq doom-theme 'catppuccin)
 
 (setq inhibit-splash-screen t)
 (transient-mark-mode 1)

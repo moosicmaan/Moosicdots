@@ -173,7 +173,9 @@ if status --is-interactive && type -q fastfetch
 end
 
 
+# ===============================================================================
 # JDB --->
+# -------------------------------------------------------------------------------
 # my aliases
 alias vim 'kitty @ set-spacing padding=0 && nvim'
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
@@ -184,8 +186,8 @@ alias ec "emacsclient -c -a 'emacs' &"
 fish_add_path /home/moosicmaan/.config/emacs/bin
 
 # set colortheme to current wallpaper
-# set cwp (cat ~/.cache/current_wallpaper)
-# wal -i $cwp >/dev/null
+#set cwp (cat ~/.cache/current_wallpaper)
+#wal -i $cwp >/dev/null
 
 # set vi mode
 ###set -o vi
@@ -307,7 +309,9 @@ alias cd=__zoxide_z
 abbr --erase cdi &>/dev/null
 alias cdi=__zoxide_zi
 
+# -------------------------------------------------------------------------------
 # <--- JDB
+# ===============================================================================
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

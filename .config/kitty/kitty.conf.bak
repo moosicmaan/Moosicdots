@@ -2564,6 +2564,6 @@ shell /usr/bin/fish
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-include current-theme.conf
+# Liquid Carbon Transparent
+# include current-theme.conf
 # END_KITTY_THEME
