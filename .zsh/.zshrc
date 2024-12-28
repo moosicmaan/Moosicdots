@@ -343,6 +343,9 @@ alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ F
 
 alias nf='nvim $(ff)'
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # search man pages with fzf
 man_fzf() {
   if [ -z "$*" ]; then
@@ -368,3 +371,5 @@ manf() {
 
 # add support for zoxide, a better cw
 eval "$(zoxide init zsh)"
+alias cd='__zoxide_z'
+alias cdi='__zoxide_zi'
