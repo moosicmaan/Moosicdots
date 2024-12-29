@@ -19,6 +19,11 @@ configuration {
 	window-format:              "{w} · {c} · {t}";
 }
 
+/* ---- Load pywal colors (custom wal template) ---- */
+/*
+*/
+@import "~/.cache/wal/colors-rofi-pywal"
+
 /*****----- Global Properties -----*****/
 @import                          "shared/colors.rasi"
 @import                          "shared/fonts.rasi"
@@ -76,7 +81,7 @@ mainbox {
     enabled:                     true;
     spacing:                     5px;
     margin:                      0px;
-    padding:                     5px;
+    padding:                     1px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -101,12 +106,12 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     5px 10px;
+    padding:                     1px 6px;
     border:                      0px;
     border-radius:               100%;
     border-color:                @border-colour;
-    background-color:            @border-colour;
-    text-color:                  @background-colour;
+    background-color:            @color15;
+    text-color:                  @color0;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -118,10 +123,10 @@ textbox-prompt-colon {
 entry {
     enabled:                     true;
     expand:                      false;
-    padding:                     5px 10px;
+    padding:                     1px 6px;
     width:                       200px;
     border-radius:               100%;
-    background-color:            @alternate-background;
+    background-color:            @color9;
     text-color:                  @foreground-colour;
     cursor:                      text;
     placeholder:                 "Search...";
@@ -164,7 +169,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px 10px;
+    padding:                     1px 6px;
     border:                      0px solid;
     border-radius:               100%;
     border-color:                @border-colour;
@@ -185,8 +190,8 @@ element normal.active {
     text-color:                  var(active-foreground);
 }
 element selected.normal {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            @color15;
+    text-color:                  @color0;
 }
 element selected.urgent {
     background-color:            var(selected-urgent-background);
@@ -236,7 +241,7 @@ mode-switcher{
     text-color:                  @foreground-colour;
 }
 button {
-    padding:                     10px;
+    padding:                     1px 6px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -261,7 +266,7 @@ message {
     text-color:                  @foreground-colour;
 }
 textbox {
-    padding:                     5px;
+    padding:                     1px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
