@@ -10,21 +10,27 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
+    "include": [
+      "~/.config/waybar/themes/moosic/modules.jsonc"
+    ],
     "modules-left": [
       "group/appo",
       "hyprland/window",
       "sway/window",
       "sway/mode",
-      "hyprland/submap",
+      "hyprland/submap"
     ],
-    "modules-center": ["hyprland/workspaces#4", "dwl/tags", "sway/workspaces"],
+    "modules-center": [
+      "hyprland/workspaces#4",
+      "dwl/tags",
+      "sway/workspaces"
+    ],
     "modules-right": [
       "group/currents",
       "tray",
       "group/hardware",
-      "custom/exit",
-    ],
+      "custom/exit"
+    ]
   },
   {
     "id": 2,
@@ -37,9 +43,22 @@
     "margin-bottom": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
-    "include": ["~/.config/waybar/themes/moosic/modules.jsonc"],
-    "modules-left": ["group/appo", "hyprland/window", "hyprland/submap"],
-    "modules-center": ["hyprland/workspaces#4", "dwl/tags", "sway/workspaces"],
-    "modules-right": ["group/audios", "custom/exit"],
-  },
+    "include": [
+      "~/.config/waybar/themes/moosic/modules.jsonc"
+    ],
+    "modules-left": [
+      "group/appo",
+      "hyprland/window",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "hyprland/workspaces#4",
+      "dwl/tags",
+      "sway/workspaces"
+    ],
+    "modules-right": [
+      "group/audios",
+      "custom/exit"
+    ]
+  }
 ]

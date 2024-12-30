@@ -17,6 +17,7 @@ configuration {
     display-window:             "";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w}   {c}   {t}";
+  layer:                      "overlay";
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
@@ -38,10 +39,10 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-image:             @current-image;
+    background-image:            @current-image;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -55,7 +56,7 @@ window {
 mainbox {
     enabled:                     true;
     spacing:                     25px;
-    padding:                     50px;
+    padding:                     40px;
     background-color:            transparent;
     children:                    [ "inputbar", "message","listview", "mode-switcher" ];
 }
@@ -65,7 +66,7 @@ inputbar {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px 200px;
-    padding:                     5px;
+    padding:                     0px;
     border:                      1px;
     border-radius:               6px;
     border-color:                gray/25%;
@@ -76,7 +77,7 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    padding:                     8px 11px;
+    padding:                     3px 6px;
     border-radius:               6px;
     background-color:            white;
     text-color:                  black;
@@ -84,7 +85,7 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    padding:                     8px 12px;
+    padding:                     3px 6px;
     border:                      0px;
     background-color:            transparent;
     text-color:                  white;
@@ -107,9 +108,9 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    border:           0px solid 0px 0px ;
+    border:                      0px solid 0px 0px ;
     
-    spacing:                     10px;
+    spacing:                     8px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -140,8 +141,9 @@ element selected.active {
     background-image:            linear-gradient(to right, #4C4F52, #2E343B);
     text-color:                  #EA5553;
 }
-element alternate.normal {
-    background-image:            linear-gradient(to right, #000000, #101010);
+element alternate.normal, 
+element normal.normal {
+    background-image:            linear-gradient(to right, #000000, #0B0402);
     text-color:                  @color15;
 }
 element-icon {
@@ -162,8 +164,8 @@ mode-switcher{
     enabled:                     true;
     expand:                      false;
     spacing:                     0px;
-    margin:                      0px 200px;
-    padding:                     12px;
+    margin:                      0px 300px;
+    padding:                     6px;
     border-radius:               6px;
     background-color:            @color1;
 }

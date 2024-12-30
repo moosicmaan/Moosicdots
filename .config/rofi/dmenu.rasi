@@ -73,7 +73,7 @@ window {
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
-    background-color:            @background-colour;
+    background-color:            @color0;
 }
 
 /*****----- Main Box -----*****/
@@ -124,7 +124,7 @@ entry {
     enabled:                     true;
     expand:                      false;
     padding:                     1px 6px;
-    width:                       200px;
+    width:                       350px;
     border-radius:               100%;
     background-color:            @color9;
     text-color:                  @foreground-colour;
