@@ -7,18 +7,11 @@
   layer to start your own keyboard configuration. Copy out the `deflayer`
   template to easily start a new layer with matching `transparent` buttons.
 
-  vup (cmd-button "pactl set-sink-volume @DEFAULT_SINK@ +5%")
-  vdn (cmd-button "pactl set-sink-volume @DEFAULT_SINK@ -5%")
-  nxt (cmd-button "playerctl next")
-  prv (cmd-button "playerctl previous")
-  mte (cmd-button "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
-  stp (cmd-button "playerctl pause")
-  ply (cmd-button "playerctl play-pause")
-                      @prv @vup @nxt
-                      @stp @vdn @ply
-                           @mte
 
 (deflayer layer
+                      _    _    _
+                      _    _    _
+                           _
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
   _     _    _    _    _    _    _    _    _    _    _    _    _    _    _         _     _    _    _    _
@@ -39,24 +32,30 @@
   sym   (layer-toggle symbols) ;; Bind num to a button that toggles a layer - hold to activate layer
   def   (layer-toggle default) ;; Bind num to a button that toggles a layer - hold to activate layer
   dir   (layer-toggle directt) ;; Bind num to a button that toggles a layer - hold to activate layer
-  kil  C-A-del                 ;; Bind kil to a button that Ctrl-Alt-deletes
+  kil   C-A-del                ;; Bind kil to a button that Ctrl-Alt-deletes
+  big   C-=                    ;; CTRL and plus
+  sml   C--                    ;; CTRL SHIFT and minus
+  hypr  C-A-M-S                ;; HYPER key
+  meh   C-A-S                  ;; MEH key
 
   lsh (tap-hold-next-release 200 a lsft) ;; SHIFT(hold) and a(tap) key
   lct (tap-hold-next-release 200 s lctl) ;; CTRL and s key
   lmt (tap-hold-next-release 200 d lmet) ;; SUPER and d key
   lat (tap-hold-next-release 200 f lalt) ;; ALT and F key
+  lhr (tap-hold-next-release 200 g @hypr) ;; HYPR and g key
+  lmh (tap-hold-next-release 200 r @meh) ;; MEH and r key
 
   rat (tap-hold-next-release 200 m ralt) ;; ALT and m key
   rmt (tap-hold-next-release 200 , lmet) ;; SUPER and , key
   rct (tap-hold-next-release 200 . rctl) ;; CTRL and . key
   rsh (tap-hold-next-release 200 ; rsft) ;; SHIFT and ; key
+  rhr (tap-hold-next-release 200 n @hypr) ;; HYPR and n key
+  rmh (tap-hold-next-release 200 h @meh) ;; MEH and h key
 
   tsm (tap-hold-next-release 200 ' @sym) ;; Hold to go to the symbols layer
   wsm (tap-hold-next-release 200 w @sym) ;; Hold to go to the symbols layer
   tdr (tap-hold-next-release 200 q @dir) ;; Hold to go to the direction layer
 
-  big C-=       ;; CTRL and plus
-  sml C--       ;; CTRL SHIFT and minus
 )
 
 (defsrc
@@ -78,9 +77,9 @@
                            mute
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
-  tab   @tdr @wsm e    r    t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+
-  caps   @lsh @lct @lmt @lat g    h    j    k    l    @rsh @tsm ret                pgdn  4    5    6
-  lsft    z    x    c    v    b    n    @rat @rmt @rct /    rsft              up         1    2    3   kprt
+  tab   @tdr @wsm e    @lmh t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+
+  caps   @lsh @lct @lmt @lat @lhr @rmh j    k    l    @rsh @tsm ret                pgdn  4    5    6
+  lsft    z    x    c    v    b    @rhr @rat @rmt @rct /    rsft              up         1    2    3   kprt
   lctl   lmet    lalt            spc           ralt   cmp   rctl         left down rght  kp0       kp.
 )
 
