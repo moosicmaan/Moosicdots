@@ -50,7 +50,7 @@
   rct (tap-hold-next-release 200 . rctl) ;; CTRL and . key
   rsh (tap-hold-next-release 200 ; rsft) ;; SHIFT and ; key
   rhr (tap-hold-next-release 200 n @hypr) ;; HYPR and n key
-  rmh (tap-hold-next-release 200 h @meh) ;; MEH and h key
+  rmh (tap-hold-next-release 200 u @meh) ;; MEH and u key
 
   tsm (tap-hold-next-release 200 ' @sym) ;; Hold to go to the symbols layer
   wsm (tap-hold-next-release 200 w @sym) ;; Hold to go to the symbols layer
@@ -77,8 +77,8 @@
                            mute
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
-  tab   @tdr @wsm e    @lmh t    y    u    i    o    p    [    ]    \    del       pgup  7    8    9   kp+
-  caps   @lsh @lct @lmt @lat @lhr @rmh j    k    l    @rsh @tsm ret                pgdn  4    5    6
+  tab   @tdr @wsm e    @lmh t    y    @rmh i    o    p    [    ]    \    del       pgup  7    8    9   kp+
+  caps   @lsh @lct @lmt @lat @lhr h    j    k    l    @rsh @tsm ret                pgdn  4    5    6
   lsft    z    x    c    v    b    @rhr @rat @rmt @rct /    rsft              up         1    2    3   kprt
   lctl   lmet    lalt            spc           ralt   cmp   rctl         left down rght  kp0       kp.
 )

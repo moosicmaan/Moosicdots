@@ -34,7 +34,9 @@ configuration {
 
 /*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
+/* properties for window widget 
+    background-image:            @current-image;
+*/
     transparency:                "real";
     location:                    center;
     anchor:                      center;
@@ -42,7 +44,7 @@ window {
     width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-image:            @current-image;
+    background-color:            transparent;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -110,7 +112,7 @@ listview {
     fixed-columns:               true;
     border:                      0px solid 0px 0px ;
     
-    spacing:                     8px;
+    spacing:                     10px;
     background-color:            transparent;
     cursor:                      "default";
 }

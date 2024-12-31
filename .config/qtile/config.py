@@ -394,18 +394,20 @@ keys = [
     EzKey("M-S-r", lazy.reload_config(), desc="Reload the config"),
     EzKey(
         "M-S-q",
-        lazy.spawn("/home/moosicmaan/.config/.scripts/dm-exit.sh"),
+        lazy.spawn(
+            "rofi -show powermenu -config ~/.config/rofi/config-compact.rasi -modi powermenu:~/.config/.scripts/jb-rofi-power.sh"
+        ),
         desc="Logout menu",
     ),
     EzKey("C-A-<delete>", lazy.spawn("wlogout"), desc="Logout menu"),
     EzKey(
-        "C-A-<delete>",
-        lazy.spawn("/home/moosicmaan/.config/.scripts/toggle_kmonad.sh"),
+        "C-A-k",
+        lazy.spawn("/home/moosicmaan/.config/.scripts/toggle_kbd.sh"),
         desc="Toggle kmonad",
     ),
     EzKey(
-        "C-A-k",
-        lazy.spawn("/home/moosicmaan/.config/.scripts/toggle_kmonad.sh"),
+        "C-A-j",
+        lazy.spawn("/home/moosicmaan/.config/.scripts/toggle_lap_kbd.sh"),
         desc="toggle keyboard layout",
     ),
     EzKey(
