@@ -137,7 +137,7 @@ my_email2 = "bluemail"  # (M-f2) Launch alternate email client
 my_editg = "kate"  # (M-f3) Launch GUI text editor
 my_editc = "nvim"  # (M-n) Launch console text editor
 my_filesg = "pcmanfm-qt"  # (M-S-return) Launch GUI file browser
-my_filesc = "kitty -e ranger"
+my_filesc = "kitty -e yazi"
 menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run"
 menu_drun = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun"
 menu_win = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window"
@@ -313,8 +313,8 @@ keys = [
     ),
     EzKey(
         "M-A-u",
-        lazy.group["scratchpad"].dropdown_toggle("ranger"),
-        desc="Ranger Scratchpad",
+        lazy.group["scratchpad"].dropdown_toggle("yazi"),
+        desc="Yazi Scratchpad",
     ),
     EzKey(
         "M-A-p",
@@ -695,8 +695,8 @@ groups.append(
                 on_focus_lost_hide=False,
             ),
             DropDown(
-                "ranger",
-                "kitty -e ranger",
+                "yazi",
+                "kitty -e yazi",
                 x=0.05,
                 y=0.02,
                 width=0.9,
