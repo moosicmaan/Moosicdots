@@ -307,12 +307,12 @@ keys = [
         desc="Terminal Scratchpad",
     ),
     EzKey(
-        "M-A-o",
+        "M-A-l",
         lazy.group["scratchpad"].dropdown_toggle("btop"),
         desc="BTOP Scratchpad",
     ),
     EzKey(
-        "M-A-u",
+        "M-A-j",
         lazy.group["scratchpad"].dropdown_toggle("yazi"),
         desc="Yazi Scratchpad",
     ),
