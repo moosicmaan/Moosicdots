@@ -25,8 +25,8 @@
 )
 
 (defalias
-  sym   (layer-toggle symbols)            ;; Bind to a button that toggles a layer - hold to activate layer
   def   (layer-toggle default)            ;; Bind to a button that toggles a layer - hold to activate layer
+  sym   (layer-toggle symbols)            ;; Bind to a button that toggles a layer - hold to activate layer
   dir   (layer-toggle direction)          ;; Bind to a button that toggles a layer - hold to activate layer
   fuc   (layer-toggle function)           ;; Bind to a button that toggles a layer - hold to activate layer
 
