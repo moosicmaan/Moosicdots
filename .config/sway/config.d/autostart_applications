@@ -21,7 +21,7 @@ exec python3 ~/.config/sway/scripts/swayfader.py
 exec autotiling
 
 # Wlsunset
-# exec ~/.config/sway/scripts/light.sh
+exec ~/.config/sway/scripts/light.sh
 
 # nm-applet
 exec nm-applet --indicator
@@ -31,7 +31,7 @@ exec nm-applet --indicator
 
 # Clipman
 # exec clipman restore
-# exec wl-paste -t text --watch clipman store
+exec wl-paste -t text --watch clipman store
 
 # Gnome Keyring
 exec gnome-keyring-daemon --daemonize --start --components=gpg,pkcs11,secrets,ssh

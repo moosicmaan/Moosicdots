@@ -2,7 +2,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "retrobox",
+			colorscheme = "retrobox",
 			-- colorscheme = "pywal",
 			-- colorscheme = "pablo",
 			-- colorscheme = "murphy",
@@ -10,7 +10,7 @@ return {
 			-- colorscheme = "slate",
 			-- colorscheme = "default",
 			-- colorscheme = "catppuccin-mocha",
-			colorscheme = "wildcharm",
+			-- colorscheme = "wildcharm",
 			-- colorscheme = "koehler",
 			-- colorscheme = "industry",
 			-- transparent = true,

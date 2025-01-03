@@ -185,7 +185,6 @@ floating_modifier $mod normal
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+q exec wlogout
 bindsym Ctrl+Alt+delete exec wlogout
-bindsym $mod+x exec arcolinux-powermenu
 bindsym $mod+Alt+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
