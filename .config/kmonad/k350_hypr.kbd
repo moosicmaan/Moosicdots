@@ -29,38 +29,52 @@
 )
 
 (defalias
-  sym   (layer-toggle symbols) ;; Bind num to a button that toggles a layer - hold to activate layer
-  def   (layer-toggle default) ;; Bind num to a button that toggles a layer - hold to activate layer
-  dir   (layer-toggle directt) ;; Bind num to a button that toggles a layer - hold to activate layer
-  kil   C-A-del                ;; Bind kil to a button that Ctrl-Alt-deletes
-  big   C-=                    ;; CTRL and plus
-  sml   C--                    ;; CTRL SHIFT and minus
-  hypr  C-A-M-S                ;; HYPER key
-  meh   C-A-S                  ;; MEH key
+  sym   (layer-toggle symbols)            ;; Bind to a button that toggles a layer - hold to activate layer
+  def   (layer-toggle default)            ;; Bind to a button that toggles a layer - hold to activate layer
+  dir   (layer-toggle direction)          ;; Bind to a button that toggles a layer - hold to activate layer
+  fuc   (layer-toggle function)           ;; Bind to a button that toggles a layer - hold to activate layer
 
-  lsh (tap-hold-next-release 200 a lsft) ;; SHIFT(hold) and a(tap) key
-  lct (tap-hold-next-release 200 s lctl) ;; CTRL and s key
-  lmt (tap-hold-next-release 200 d lmet) ;; SUPER and d key
-  lat (tap-hold-next-release 200 f lalt) ;; ALT and F key
+  kil   C-A-del                           ;; Bind kil to a button that Ctrl-Alt-deletes
+  big   C-=                               ;; CTRL and equals
+  sml   C--                               ;; CTRL and minus
+  udo   C-z                               ;; CTRL and z - undo
+  rdo   C-y                               ;; CTRL and y - redo
+  cut   C-x                               ;; CTRL and x - cut
+  cpy   C-c                               ;; CTRL and c - copy
+  put   C-v                               ;; CTRL and v - paste
+  all   C-a                               ;; CTRL and a - select all
+
+  hypr  C-A-M-S                           ;; HYPER key
+  meh   C-A-S                             ;; MEH key
+
+  lsh (tap-hold-next-release 200 a lsft)  ;; SHIFT(hold) and a(tap) key
+  lct (tap-hold-next-release 200 s lctl)  ;; CTRL and s key
+  lmt (tap-hold-next-release 200 d lmet)  ;; SUPER and d key
+  lat (tap-hold-next-release 200 f lalt)  ;; ALT and F key
   lhr (tap-hold-next-release 200 g @hypr) ;; HYPR and g key
-  lmh (tap-hold-next-release 200 r @meh) ;; MEH and r key
+  lmh (tap-hold-next-release 200 r @meh)  ;; MEH and r key
 
-  rat (tap-hold-next-release 200 m ralt) ;; ALT and m key
-  rmt (tap-hold-next-release 200 , lmet) ;; SUPER and , key
-  rct (tap-hold-next-release 200 . rctl) ;; CTRL and . key
-  rsh (tap-hold-next-release 200 ; rsft) ;; SHIFT and ; key
+  sat (tap-hold-next-release 200 @ lsft)  ;; SHIFT and @ key
+
+  rat (tap-hold-next-release 200 m ralt)  ;; ALT and m key
+  rmt (tap-hold-next-release 200 , lmet)  ;; SUPER and , key
+  rct (tap-hold-next-release 200 . rctl)  ;; CTRL and . key
+  rsh (tap-hold-next-release 200 ; rsft)  ;; SHIFT and ; key
   rhr (tap-hold-next-release 200 n @hypr) ;; HYPR and n key
-  rmh (tap-hold-next-release 200 u @meh) ;; MEH and u key
+  rmh (tap-hold-next-release 200 u @meh)  ;; MEH and u key
 
-  tsm (tap-hold-next-release 200 ' @sym) ;; Hold to go to the symbols layer
-  wsm (tap-hold-next-release 200 w @sym) ;; Hold to go to the symbols layer
-  tdr (tap-hold-next-release 200 q @dir) ;; Hold to go to the direction layer
-
+  ifc (tap-hold-next-release 200 i @fuc)  ;; Hold to go to the function layer
+  efc (tap-hold-next-release 200 e @fuc)  ;; Hold to go to the function layer
+  tsm (tap-hold-next-release 200 ' @sym)  ;; Hold to go to the symbols layer
+  wsm (tap-hold-next-release 200 w @sym)  ;; Hold to go to the symbols layer
+  osm (tap-hold-next-release 200 o @sym)  ;; Hold to go to the symbols layer
+  qdr (tap-hold-next-release 200 q @dir)  ;; Hold to go to the direction layer
+  pdr (tap-hold-next-release 200 p @dir)  ;; Hold to go to the direction layer
 )
 
 (defsrc
                       prev volu next
-                      stop vold pp  
+                      stop vold pp
                            mute
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/  kp*  kp-
@@ -70,14 +84,13 @@
   lctl   lmet    lalt           spc            ralt   cmp   rctl         left down rght  kp0       kp.
 )
 
-
 (deflayer default
                       prev volu next
-                      stop vold pp  
+                      stop vold pp
                            mute
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ins  ssrq pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
-  tab   @tdr @wsm e    @lmh t    y    @rmh i    o    p    [    ]    \    del       pgup  7    8    9   kp+
+  tab   @qdr @wsm @efc @lmh t    y    @rmh @ifc @osm @pdr [    ]    \    del       pgup  7    8    9   kp+
   caps   @lsh @lct @lmt @lat @lhr h    j    k    l    @rsh @tsm ret                pgdn  4    5    6
   lsft    z    x    c    v    b    @rhr @rat @rmt @rct /    rsft              up         1    2    3   kprt
   lctl   lmet    lalt            spc           ralt   cmp   rctl         left down rght  kp0       kp.
@@ -85,24 +98,36 @@
 
 (deflayer symbols
                       next volu prev
-                      stop vold pp  
+                      stop vold pp
                            mute
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
-  _    _    _    <    >    _    _    _    *    |    -    _    _    _     _    _          _    _    _    _
-  _     $    !    \(   \)  \_     ~   7    8    9    +    _    _    _    _         _     _    _    _    _
-  _      @    #    [    ]    -    &    4    5    6    =    _    _                  _     _    _    _
-  _       ^    %    {    }    /    0    1    2    3    _    _                 _          _    _    _    _
-  _      _       _              bspc           0      _     _           _     _    _     _         _
+  _    ^    v    <    >    ~    `    \    /    *    -    _    _    _     _    _          _    _    _    _
+  _     $    !    \(   \)   *    |    7    8    9    +    _    _    _    _         _     _    _    _    _
+  _      @sat #    [    ]    -    &    4    5    6    =    _    _                  _     _    _    _
+  _       ^    %    {    }    \_   0    1    2    3    .    _                 _          _    _    _    _
+  _      _       _              bspc           0      .     _           _     _    _     _         _
 )
 
-(deflayer directt
+(deflayer direction
                       next volu prev
-                      stop vold pp  
+                      stop vold pp
+                           mute
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    ins  ssrq pause _   _    _    _    _    _    _    _     _    _          _    _    _    _
+  _     _    _    home end  _    _    @sml @big _    del  _    _    _    _         _     _    _    _    _
+  _      _    _    del  pgup _    left down up   rght _    _    _                  _     _    _    _
+  _       _    _    _    pgdn _    _    _    _    _    _    _                 _          _    _    _    _
+  _      _       _              bspc           _      _     _           _     _    _     _         _
+)
+
+(deflayer function
+                      next volu prev
+                      stop vold pp
                            mute
   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
-  _     _    _    _    _    _    _    @sml @big _    del  _    _    _    _         _     _    _    _    _
-  _      _    _    _    _    _    left down up   rght _    _    _                  _     _    _    _
-  _       _    _    _    _    _    _    _    _    _    _    _                 _          _    _    _    _
+  _     _    _    _    @rdo _    @rdo @udo _    _    del  _    _    _    _         _     _    _    _    _
+  _      @all _    del  _    _    _    _    @kil _    _    _     _                 _     _    _    _
+  _       @udo @cut @cpy @put _    _    _    _    _    _    _                 _          _    _    _    _
   _      _       _              bspc           _      _     _           _     _    _     _         _
 )
