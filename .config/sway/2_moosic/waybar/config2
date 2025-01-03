@@ -1,0 +1,27 @@
+// -*- mode: json -*-
+
+{
+    "output":"HDMI-A-3",
+    //"output":"eDP-1",
+    "layer": "top",
+    "position": "bottom",
+    //"width":1910,
+    "margin": "0 0 0 0",
+
+    "modules-left": [
+					"group/appo",
+					"sway/workspaces",
+          "sway/mode",
+					"sway/window"
+					],
+    "modules-center": [
+					"mpris"
+					],
+    "modules-right": [ 
+					"pulseaudio"
+					],
+
+    // Load Modules
+    "include": ["~/.config/sway/waybar/modules.jsonc"],
+
+}

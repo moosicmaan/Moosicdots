@@ -14,8 +14,8 @@ if pgrep -fl "kmonad" | grep -v "grep" >/dev/null; then
   pkill -f "kmonad" && echo "kmonad stopped." || echo "Failed to stop kmonad."
 else
   echo "kmonad is not running. Starting it..."
-  notify-send --icon=keyboard "...kmonad is NOT running..." "Starting it for hyprland and extermal keyboard..."
+  notify-send --icon=keyboard "...kmonad is NOT running..." "Starting it for logitec k350 extermal keyboard..."
   # kmonad is not running, so start it
-  kmonad /home/moosicmaan/.config/kmonad/k350_hypr.kbd
+  kmonad /home/moosicmaan/.config/kmonad/k350.kbd
   echo "kmonad started."
 fi

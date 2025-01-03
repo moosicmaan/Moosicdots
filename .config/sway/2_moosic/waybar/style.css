@@ -1,0 +1,222 @@
+/* ============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * ============================================================================ */
+
+/* Reset all styles */
+* {
+  border: 0;
+  border-radius: 0;
+  border-color: #ff00ff;
+  color: @textcolor1;
+  padding: 0;
+  /*
+  font-family: DejaVuSans Nerd Font;
+  font-family: FontAwesome;
+  font-family: "Font Awesome & Free";
+* */
+  font-family: DejaVuSans Nerd Font;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+window#waybar {
+  /*
+  border-radius: 15px;
+  background: transparent;
+  border-top: 2px;
+  border-bottom: 1px;
+  border-color: @color5;
+  border-style: solid;
+  background: linear-gradient(0.45turn, @color1, @color4, transparent 50%, @color7 75%, @color10);
+  */
+  background: @backgrounddark;
+}
+
+/* ----------------------------------------------------------------------------
+ * Taskbar
+ * ---------------------------------------------------------------------------- */
+
+#taskbar {
+  padding: 0px;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 1;
+}
+
+#taskbar button {
+  margin: 0;
+  padding: 0px 5px 0px 5px;
+}
+
+#taskbar button:hover {
+  background: @workspacesbackground2;
+}
+
+/* ----------------------------------------------------------------------------
+ * Workspaces
+ * ---------------------------------------------------------------------------- */
+#workspaces {
+  background: transparent;
+  margin: 1px -5px 1px 5px;
+  padding: 0px 5px 0px 5px;
+  border: solid 0px #ffffff;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+}
+
+#workspaces button.persistent {
+  color: @textcolor1;
+  text-shadow: 0px 0px 3px @background2;
+  border-radius: 16px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px @background2;
+}
+
+#workspaces button {
+  padding: 0px 5px 0px 5px;
+  border-radius: 16px;
+  color: @background3;
+  background-color: transparent;
+  text-shadow: 0px 0px 3px #ffaf40;
+}
+
+#workspaces button.active {
+  color: @textcolor2;
+  border-radius: 16px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px @workspacesbackground1;
+}
+
+#workspaces button:hover {
+  color: @textcolor3;
+  text-shadow: 0px 0px 3px @wordspacesbackground2;
+}
+
+/* ----------------------------------------------------------------------------
+ * Module styles
+ * ---------------------------------------------------------------------------- */
+#custom-rightyD,
+#custom-leftyD,
+#tech,
+#custom-weather {
+  background-color: transparent;
+  color: @textcolor1;
+  text-shadow: 0px 0px 3px @background2;
+  padding: 0px 1px 1px 1px;
+}
+
+#custom-righty,
+#custom-rightyD {
+  padding: 0px 9px 0px 4px;
+}
+
+#custom-lefty,
+#custom-leftyD {
+  padding: 0px 4px 0px 9px;
+}
+
+#custom-righty,
+#custom-lefty {
+  background-color: transparent;
+}
+
+#custom-power,
+#cclock,
+#appo,
+#pulseaudio {
+  background-color: transparent;
+  color: @textcolor1;
+  text-shadow: 0px 0px 3px @background2;
+}
+
+#clock {
+  font-size: 14px;
+  padding: 0px 5px 1px 5px;
+}
+
+#custom-launcher {
+  font-size: 15px;
+  padding: 0px 11px 0px 5px;
+  margin: 0px 0px 0px 10px;
+}
+
+#custom-power {
+  font-size: 13px;
+  padding: 0px 10px 0px 6px;
+  margin: 0px 8px 0px 0px;
+}
+
+#pulseaudio {
+  padding: 0px 8px 1px 10px;
+  margin: 0px 8px 0px 0px;
+  font-size: 14px;
+}
+
+#window,
+#mpris {
+  color: @textcolor1;
+  text-shadow: 0px 0px 3px @background2;
+  /*background: linear-gradient(
+    0.35turn,
+    @background2,
+    @background1 35%,
+    transparent 90%
+  );
+  border-radius: 15px;
+  */
+  font-size: 12px;
+}
+
+#window {
+  padding: 0px 10px 0px 20px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+#custom-chatgpt {
+  background-image: url("../../../assets/ai-icon-20.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 10px;
+  margin: 0px 3px 0px 15px;
+}
+
+#battery.charging {
+  color: #eceff4;
+}
+
+@keyframes blink {
+  to {
+    color: #ffff00;
+    background-color: #eceff4;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: #bf616a;
+  color: #eceff4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network.disconnected {
+  color: #bf616a;
+}
+
+#temperature.critical {
+  color: #bf616a;
+}
+
+#tray {
+  padding: 0px 8px 1px 8px;
+}
