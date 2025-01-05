@@ -1,25 +1,26 @@
 # MY CONFIG:
 
+font_family      monospace
 # font_family      SpaceMono Nerd Font Mono
 # font_family      Hack Nerd Font Mono
 # font_family      FiraCode Nerd Font
 # font_family      Font Awesome 6 Free
-# font_family       Nimbus Mono PS
+# font_family      Nimbus Mono PS
 # font_family      RobotoMono Nerd Font Mono
 # font_family      MesloLGM Nerd Font Mono
 # font_family      Ubuntu
-font_family       Iosevka Nerd Font Mono
-# font_family       ProggyClean Nerd Font Mono
+# font_family      Iosevka Nerd Font Mono
+# font_family      ProggyClean Nerd Font Mono
 # bold_font        RobotoMono Nerd Font Mono Bold
 # italic_font      Iosevka Nerd Font Mono Light Italic
 # bold_italic_font Iosevka Nerd Font Mono Bold Italic
 
-font_size 16.0
+font_size 14.0
 
 scrollback_lines 5000
 enable_audio_bell no
 
-window_padding_width 12
+window_padding_width 16
 
 # kitty_listen_on unix:kitty.sock
 allow_remote_control yes
@@ -2564,6 +2565,6 @@ shell /usr/bin/fish
 
 
 # BEGIN_KITTY_THEME
-# Liquid Carbon Transparent
+# Catppuccin-Mocha
 # include current-theme.conf
 # END_KITTY_THEME

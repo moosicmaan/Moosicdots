@@ -186,8 +186,8 @@ alias ec "emacsclient -c -a 'emacs' &"
 fish_add_path /home/moosicmaan/.config/emacs/bin
 
 # set colortheme to current wallpaper
-#set cwp (cat ~/.cache/current_wallpaper)
-#wal -i $cwp >/dev/null
+set cwp (cat ~/.cache/current_wallpaper)
+wal -i $cwp >/dev/null
 
 # set vi mode
 ###set -o vi

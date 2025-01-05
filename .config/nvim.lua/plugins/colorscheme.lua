@@ -2,8 +2,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "retrobox",
-			-- colorscheme = "pywal",
+			-- colorscheme = "retrobox",
+			colorscheme = "pywal",
 			-- colorscheme = "pablo",
 			-- colorscheme = "murphy",
 			-- colorscheme = "elflord",

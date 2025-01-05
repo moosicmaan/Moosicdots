@@ -5,7 +5,7 @@
 rules = [
   { name = "*", is = "block", fg = "#5f87d7" },
   { name = "*", is = "char", fg = "#87d75f", bold = true },
-  { name = "*.config/", fg = "#ffffff", bold = true },
+  { name = "*.config/", fg = "#ffffff", bold = true },                                    # make .config stand out
   { mime = "inode/directory", is = "hidden", fg = "#aaaaaa" },                            # hide hidden folders
   { name = "*/", fg = "#5ff787" },
   { name = "*", is = "exec", fg = "#ff8700", bold = true },
