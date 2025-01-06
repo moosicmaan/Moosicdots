@@ -1,0 +1,47 @@
+return {
+	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		{ "nvim-treesitter/playground" },
+	},
+	playground = {
+		enable = true,
+	},
+	opts = {
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = { "org" },
+		},
+		indent = { enable = true },
+		ensure_installed = {
+			"bash",
+			"c",
+			"commonlisp",
+			"diff",
+			"html",
+			"json",
+			"jsonc",
+			"lua",
+			"luadoc",
+			"luap",
+			"markdown",
+			"markdown_inline",
+			"printf",
+			"python",
+			"regex",
+			"toml",
+			"tsx",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"xml",
+			"yaml",
+			"toml",
+			"rust",
+			"hyprlang",
+			"org",
+		},
+		-- ignore_installed = {
+		--   "org",
+		-- },
+	},
+}
