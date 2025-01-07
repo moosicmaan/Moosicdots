@@ -119,7 +119,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "kitty", NULL };
+static const char *termcmd[] = { "wezterm", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *browscmd[]  = { "brave", NULL };
 static const char *my_term2[] = { "wezterm", NULL };
@@ -128,7 +128,7 @@ static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
+static const char *my_filesc[] = { "wezterm", "-e", "yazi", NULL };
 static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config-raa.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };

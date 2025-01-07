@@ -190,7 +190,8 @@
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
-      "(.*) - Kitty": "$1"
+      "(.*) - Kitty": "$1",
+      "(.*) - Wezterm": "$1"
     },
     "separate-outputs": true,
     "icon": true,
@@ -201,7 +202,8 @@
     "rewrite": {
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
-      "(.*) - Kitty": "$1"
+      "(.*) - Kitty": "$1",
+      "(.*) - Wezterm": "$1"
     },
     "separate-outputs": true,
     "icon": true,
@@ -262,7 +264,7 @@
   },
   "custom/settings": {
     "format": "",
-    "on-click": "kitty --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
+    "on-click": "wezterm --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
     "tooltip": false
   },
   "custom/keybindings": {
@@ -314,7 +316,7 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
     "restart-interval": 60,
-    "on-click": "kitty --class dotfiles-floating -e garuda-update",
+    "on-click": "wezterm --class dotfiles-floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
@@ -327,7 +329,7 @@
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "kitty --class dotfiles-floating -e garuda-update"
+    "on-click": "wezterm --class dotfiles-floating -e garuda-update"
   },
   "cava": {
     "framerate": 30,
@@ -475,7 +477,7 @@
     "interval": 30,
     "format": " D {percentage_used}% ",
     "path": "/",
-    "on-click": "kitty -e btop"
+    "on-click": "wezterm -e btop"
   },
   "network": {
     "format": " {ifname}",
@@ -547,11 +549,11 @@
   },
   "cpu": {
     "format": "    {usage}% ",
-    "on-click": "kitty -e btop"
+    "on-click": "wezterm -e btop"
   },
   "memory": {
     "format": " 🖴 {:>3}% ",
-    "on-click": "kitty -e btop"
+    "on-click": "wezterm -e btop"
   },
   "temperature": {
     "thermal-zone": 2,

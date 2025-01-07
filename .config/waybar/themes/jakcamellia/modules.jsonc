@@ -277,7 +277,7 @@
       "(.*) — Mozilla Firefox": " $1",
       "(.*) - fish": "> [$1]",
       "(.*) - zsh": "> [$1]",
-      "(.*) - kitty": "> [$1]"
+      "(.*) - wezterm": "> [$1]"
     }
   },
   "idle_inhibitor": {
@@ -556,7 +556,7 @@
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
     "interval": 15,
-    "on-click": "kitty -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'"
+    "on-click": "wezterm -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'"
   },
   "custom/separator#dot": {
     "format": "",
@@ -700,7 +700,7 @@
     "format-icons": [
       "󰈸"
     ],
-    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+    "on-click-right": "wezterm --title nvtop sh -c 'nvtop'"
   },
   "custom/power_vertical": {
     "format": "⏻",
@@ -838,7 +838,7 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "kitty"
+      "wezterm"
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"

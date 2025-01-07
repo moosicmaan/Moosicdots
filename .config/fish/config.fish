@@ -177,9 +177,10 @@ end
 # JDB --->
 # -------------------------------------------------------------------------------
 # my aliases
-alias vim 'kitty @ set-spacing padding=0 && nvim'
-alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
-alias mux 'kitty @ set-spacing padding=0 && tmux'
+# alias vim 'kitty @ set-spacing padding=0 && nvim'
+# alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
+alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
+# alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
 
 # add emacs to the path
@@ -218,7 +219,11 @@ bind \cn nf
 
 alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
-alias nf='kitty @ set-spacing padding=0 && nvim $(ff)'
+# alias nf='kitty @ set-spacing padding=0 && nvim $(ff)'
+# alias nf "fish -c 'nvim $(fzf)'"
+function nf
+    nvim (ff)
+end
 # alias np='nvim $(ft)'
 
 # search man pages with fzf

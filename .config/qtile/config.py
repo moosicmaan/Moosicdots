@@ -126,7 +126,7 @@ modifier_keys = {
 # -----------------------------------------------
 # Default Applications - copied from /include/vars.py
 # -----------------------------------------------
-my_term = "kitty"  # (M-return) Launch default terminal
+my_term = "wezterm"  # (M-return) Launch default terminal
 my_term2 = "alacritty"  # (M-t) Launch alternate terminal
 my_brows = "brave"  # (M-b) Launch default browser
 my_brows2 = "firefox"  # (M-f1) Launch alternate browser
@@ -137,7 +137,7 @@ my_email2 = "bluemail"  # (M-f2) Launch alternate email client
 my_editg = "kate"  # (M-f3) Launch GUI text editor
 my_editc = "nvim"  # (M-n) Launch console text editor
 my_filesg = "pcmanfm-qt"  # (M-S-return) Launch GUI file browser
-my_filesc = "kitty -e yazi"
+my_filesc = "wezterm -e yazi"
 menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run"
 menu_drun = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun"
 menu_win = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window"
@@ -675,7 +675,7 @@ groups.append(
         [
             DropDown(
                 "term",
-                "kitty",
+                "wezterm",
                 x=0.05,
                 y=0.02,
                 height=0.8,
@@ -686,7 +686,7 @@ groups.append(
             ),
             DropDown(
                 "btop",
-                "kitty -e btop",
+                "wezterm -e btop",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -696,7 +696,7 @@ groups.append(
             ),
             DropDown(
                 "yazi",
-                "kitty -e yazi",
+                "wezterm -e yazi",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -706,7 +706,7 @@ groups.append(
             ),
             DropDown(
                 "moosic",
-                "kitty -e musikcube",
+                "wezterm -e musikcube",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -716,7 +716,7 @@ groups.append(
             ),
             DropDown(
                 "qtileshell",
-                "kitty -e qtile shell",
+                "wezterm -e qtile shell",
                 x=0.05,
                 y=0.02,
                 width=0.9,

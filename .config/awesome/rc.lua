@@ -124,7 +124,7 @@ local modkey1 = "Control"
 -- Default Applications
 -- -----------------------------------------------
 -- moosic variables
-local my_term = "kitty" -- (M-return) Launch default terminal
+local my_term = "wezterm" -- (M-return) Launch default terminal
 local my_term2 = "wezterm" --# (M-t) Launch alternate terminal
 local my_brows = "brave" --# (M-b) Launch default browser
 local my_brows2 = "firefox" --# (M-f1) Launch alternate browser
@@ -134,7 +134,7 @@ local my_email2 = "bluemail" --# (M-f2) Launch alternate email client
 local my_editg = "geany" --# (M-f3) Launch GUI text editor
 local my_editc = "neovide" --# (M-n) Launch console text editor
 local my_filesg = "pcmanfm-qt" --# (M-S-return) Launch GUI file browser
-local my_filesc = "kitty -e ranger" --# (M-A-o) Launch console file browser
+local my_filesc = "wezterm -e yazi" --# (M-A-o) Launch console file browser
 local menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run" --# (M-p) Launch RUN menu
 local menu_drun = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun" --# (M-S-p) Launch DRUN menu
 local menu_win = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window" --# (M-A-p) Launch WINmenu
@@ -420,8 +420,9 @@ Globalkeys = my_table.join(
 	-- APPLICATIONS
 	-- -----------------------------------------------
 	awful.key({ modkey1, altkey }, "t", function()
-		awful.util.spawn("kitty sh -c 'kitty @ set-spacing padding=0; tmux'")
-	end, { description = "Open TMUX in kitty with no padding", group = "apps" }),
+		-- awful.util.spawn("kitty sh -c 'kitty @ set-spacing padding=0; tmux'")
+		awful.util.spawn("wezterm tmux'")
+	end, { description = "Open TMUX in terminal with no padding", group = "apps" }),
 	awful.key({ modkey }, "t", function()
 		awful.util.spawn(my_term2)
 	end, { description = "Open 2nd terminal", group = "apps" }),

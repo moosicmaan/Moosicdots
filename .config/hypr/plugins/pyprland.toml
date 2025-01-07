@@ -18,22 +18,25 @@ include_special = false
 [scratchpads.yazi]
 animation = "fromRight"
 ## command = "kitty --class kitty-stb sstb"
-command = "kitty --class kitty-yazi yazi"
-class = "kitty-yazi"
+# command = "kitty --class kitty-yazi yazi"
+command = "wezterm --class tyazi yazi"
+class = "tyazi"
 lazy = true
 size = "94% 92%"
 
 [scratchpads.btop]
 animation = "fromBottom"
-command = "kitty --class kitty-btop btop"
-class = "kitty-btop"
+# command = "kitty --class kitty-btop btop"
+command = "wezterm --class tbtop btop"
+class = "tbtop"
 lazy = true
 size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromLeft"
-command = "kitty --class kitty-moosic musikcube"
-class = "kitty-moosic"
+# command = "kitty --class kitty-moosic musikcube"
+command = "wezterm --class tmoosic moosikcube"
+class = "tmoosic"
 lazy = true
 size = "94% 50%"
 
@@ -46,7 +49,8 @@ size = "94% 50%"
 
 [scratchpads.term]
 animation = "fromTop"
-command = "kitty --class kitty-dropterm"
-class = "kitty-dropterm"
+# command = "kitty --class kitty-dropterm"
+command = "wezterm --class dropterm"
+class = "dropterm"
 lazy = true
 size = "75% 90%"
