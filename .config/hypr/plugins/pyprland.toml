@@ -15,28 +15,27 @@ max_workspaces = 10
 [expose]
 include_special = false
 
-[scratchpads.yazi]
+[scratchpads.files]
 animation = "fromRight"
-## command = "kitty --class kitty-stb sstb"
-# command = "kitty --class kitty-yazi yazi"
-command = "wezterm --class tyazi yazi"
-class = "tyazi"
+# command = "kitty --class Syazi yazi"
+command = "wezterm start --class Sfiles yazi"
+class = "Sfiles"
 lazy = true
 size = "94% 92%"
 
-[scratchpads.btop]
+[scratchpads.monitor]
 animation = "fromBottom"
-# command = "kitty --class kitty-btop btop"
-command = "wezterm --class tbtop btop"
-class = "tbtop"
+# command = "kitty --class Sbtop btop"
+command = "wezterm start --class=Smonitor btop"
+class = "Smonitor"
 lazy = true
 size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromLeft"
-# command = "kitty --class kitty-moosic musikcube"
-command = "wezterm --class tmoosic moosikcube"
-class = "tmoosic"
+# command = "kitty --class moosic musikcube"
+command = "wezterm start --class=moosic musikcube"
+class = "moosic"
 lazy = true
 size = "94% 50%"
 
@@ -49,8 +48,8 @@ size = "94% 50%"
 
 [scratchpads.term]
 animation = "fromTop"
-# command = "kitty --class kitty-dropterm"
-command = "wezterm --class dropterm"
-class = "dropterm"
+# command = "kitty --class Dropterm"
+command = "wezterm start --class=Dropterm"
+class = "Dropterm"
 lazy = true
 size = "75% 90%"
