@@ -159,10 +159,13 @@ local mouse_bindings = {
 }
 
 return {
-	disable_default_key_bindings = false,
+	disable_default_key_bindings = true,
+	-- cmdline = {
+	-- 	enable = false,
+	-- },
 	-- disable_default_key_bindings = true,
 	-- leader = { key = "Space", mods = "CTRL" },
 	-- keys = keys,
 	-- key_tables = key_tables,
-	-- mouse_bindings = mouse_bindings,
+	-- mouse_bindings = mouse_bindin.gs,
 }

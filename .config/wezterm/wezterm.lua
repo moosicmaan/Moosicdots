@@ -25,4 +25,6 @@ return Config
 	:append(require("config.fonts"))
 	:append(require("config.general"))
 	:append(require("config.launch"))
+	-- :append(require("tests.fonts"))
+	-- :append(require("tests.reload"))
 	.options

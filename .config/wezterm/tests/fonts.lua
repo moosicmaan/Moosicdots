@@ -11,7 +11,7 @@ return {
 
 	keys = {
 		{
-			key = "G",
+			key = "f",
 			mods = "CTRL",
 			action = wezterm.action_callback(function(window, pane)
 				window:toast_notification("Debug Glyphs", "Test glyph: 𝒜 🌟 🚀", nil, 5000)

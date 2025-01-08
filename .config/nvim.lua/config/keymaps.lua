@@ -15,7 +15,7 @@ vim.keymap.set("n", "<C-->", function()
 end)
 
 -- open up the Dashboard
-vim.keymap.set("n", "<leader>ab", ":Dashboard<CR>", {
+vim.keymap.set("n", "<leader>a", ":Dashboard<CR>", {
 	desc = "Open Dashboard", -- This description will appear in WhichKey
 })
 
