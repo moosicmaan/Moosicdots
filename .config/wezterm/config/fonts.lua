@@ -1,18 +1,12 @@
 local wezterm = require("wezterm")
 local platform = require("utils.platform")
 
--- font = wezterm.font_with_fallback({
---     "MesloLGM Nerd Font Mono", -- Your primary font
---     "Noto Sans Symbols", -- Fallback fonts for specific glyphs
---     "Symbola", -- Another common fallback for glyphs
---     "Noto Color Emoji", -- For emojis
--- }),
-local font = "MesloLGM Nerd Font Mono"
--- local font = "JetBrainsMono Nerd Font"
+-- local font = "MesloLGM Nerd Font Mono"
+local font = "JetBrainsMono Nerd Font"
 -- local font = "SpaceMono Nerd Font Mono"
 -- local font = "MesloLGS Nerd Font Mono"
 -- local font = "Hack Nerd Font"
-local fontsize = platform().is_mac and 14 or 14
+local fontsize = platform().is_mac and 14.0 or 14.0
 
 return {
 	font = wezterm.font_with_fallback({
