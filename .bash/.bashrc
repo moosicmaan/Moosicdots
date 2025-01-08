@@ -89,9 +89,6 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 my_font=ter-v28n.psf.gz
 font_directory=/usr/share/kbd/consolefonts/
 
-# Setting VIM mode for the commandline
-set -o vi
-
 # Changing the font if in TTY session
 if [[ $DISPLAY == "" ]]; then
   setfont $font_directory$my_font
@@ -99,10 +96,12 @@ if [[ $DISPLAY == "" ]]; then
 fi
 
 # My aliases and prompts - not using starship in bash.
+# Setting VIM mode for the commandline
+set -o vi
+source ~/.bash_prompt.sh
+
 alias vim="nvim"
 export PATH=$PATH:$HOME/.config/emacs/bin
-source ~/.bash_prompt.sh
-# RPROMPT="%(?.%F{#008000}√.%F{#ff0000}?%?)%f%F{#c0c0c0}%T%f"
 alias ec="emacsclient -c -a 'emacs' &"
 
 function yy() {

@@ -6,6 +6,8 @@ return {
 	exit_behavior_messaging = "Verbose",
 	status_update_interval = 1000,
 
+	warn_about_missing_glyphs = false,
+
 	scrollback_lines = 5000,
 
 	audible_bell = "Disabled",
