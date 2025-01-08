@@ -686,7 +686,7 @@
     "format-icons": [
       "󰈸"
     ],
-    "on-click-right": "wezterm --title nvtop sh -c 'nvtop'"
+    "on-click-right": "wezterm start --title nvtop sh -c 'nvtop'"
   },
   "custom/power_vertical": {
     "format": "⏻",

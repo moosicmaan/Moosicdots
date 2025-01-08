@@ -264,7 +264,7 @@
   },
   "custom/settings": {
     "format": "",
-    "on-click": "wezterm --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
+    "on-click": "wezterm start --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
     "tooltip": false
   },
   "custom/keybindings": {
@@ -316,7 +316,7 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
     "restart-interval": 60,
-    "on-click": "wezterm --class dotfiles-floating -e garuda-update",
+    "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
@@ -329,7 +329,7 @@
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "wezterm --class dotfiles-floating -e garuda-update"
+    "on-click": "wezterm start --class dotfiles-floating -e garuda-update"
   },
   "cava": {
     "framerate": 30,
@@ -477,7 +477,7 @@
     "interval": 30,
     "format": " D {percentage_used}% ",
     "path": "/",
-    "on-click": "wezterm -e btop"
+    "on-click": "wezterm start -e btop"
   },
   "network": {
     "format": " {ifname}",
@@ -549,11 +549,11 @@
   },
   "cpu": {
     "format": "    {usage}% ",
-    "on-click": "wezterm -e btop"
+    "on-click": "wezterm start -e btop"
   },
   "memory": {
     "format": " 🖴 {:>3}% ",
-    "on-click": "wezterm -e btop"
+    "on-click": "wezterm start -e btop"
   },
   "temperature": {
     "thermal-zone": 2,

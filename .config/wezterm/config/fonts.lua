@@ -6,7 +6,7 @@ local font = "JetBrainsMono Nerd Font"
 -- local font = "SpaceMono Nerd Font Mono"
 -- local font = "MesloLGS Nerd Font Mono"
 -- local font = "Hack Nerd Font"
-local fontsize = platform().is_mac and 14.0 or 14.0
+local fontsize = platform().is_mac and 14.5 or 14.5
 
 return {
 	font = wezterm.font_with_fallback({

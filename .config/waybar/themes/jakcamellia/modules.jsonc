@@ -556,7 +556,7 @@
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
     "interval": 15,
-    "on-click": "wezterm -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'"
+    "on-click": "wezterm start -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'"
   },
   "custom/separator#dot": {
     "format": "",
@@ -700,7 +700,7 @@
     "format-icons": [
       "󰈸"
     ],
-    "on-click-right": "wezterm --title nvtop sh -c 'nvtop'"
+    "on-click-right": "wezterm start --title nvtop sh -c 'nvtop'"
   },
   "custom/power_vertical": {
     "format": "⏻",

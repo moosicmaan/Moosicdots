@@ -127,7 +127,7 @@ modifier_keys = {
 # Default Applications - copied from /include/vars.py
 # -----------------------------------------------
 my_term = "wezterm"  # (M-return) Launch default terminal
-my_term2 = "alacritty"  # (M-t) Launch alternate terminal
+my_term2 = "ghostty"  # (M-t) Launch alternate terminal
 my_brows = "brave"  # (M-b) Launch default browser
 my_brows2 = "firefox"  # (M-f1) Launch alternate browser
 my_brows3 = "firedragon"  # (C-A-b) Launch 2nd alternate browser

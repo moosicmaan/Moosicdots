@@ -69,7 +69,7 @@
     "return-type": "json",
     "exec": "~/.config/.scripts/updates.sh",
     "restart-interval": 60,
-    "on-click": "wezterm --class dotfiles-floating -e garuda-update",
+    "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh",
     "tooltip": false
   },
@@ -86,7 +86,7 @@
   },
   "custom/settings": {
     "format": "",
-    "on-click": "wezterm --class dotfiles-floating -e ~/.config/.settings/start-settings.sh",
+    "on-click": "wezterm start --class dotfiles-floating -e ~/.config/.settings/start-settings.sh",
     "tooltip": false
   },
   "custom/keybindings": {
@@ -154,17 +154,17 @@
   },
   "cpu": {
     "format": "/ C {usage}% ",
-    "on-click": "wezterm -e htop"
+    "on-click": "wezterm start -e htop"
   },
   "memory": {
     "format": "/ M {}% ",
-    "on-click": "wezterm -e htop"
+    "on-click": "wezterm start -e htop"
   },
   "disk": {
     "interval": 30,
     "format": "D {percentage_used}% ",
     "path": "/",
-    "on-click": "wezterm -e htop"
+    "on-click": "wezterm start -e htop"
   },
   "hyprland/language": {
     "format": "/ K {short}"
