@@ -30,11 +30,21 @@ disabled = false
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
 disabled = false
+format = '([\[$all_status$ahead_behind\]]($style) )'
 ahead = "⇡${count}"
 behind = "⇣${count}"
 deleted = "x"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "white"
+conflicted = "="
+stashed = '\$'
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+typechanged = ""
+up_to_date = ""
+ignore_submodules = false
+style = "red bold"
 
 # Last param in the first line/row
 [cmd_duration]
@@ -87,7 +97,8 @@ disabled = false
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
 pipestatus = true
-symbol = "🔴"
+# symbol = "🔴"
+symbol = "‼️"
 
 [aws]
 symbol = " "
