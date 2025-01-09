@@ -25,20 +25,25 @@ truncation_symbol = "repo: "
 
 # Fourth param
 [sudo]
+format = "[as $symbol]($style)"
+# symbol = "🧙 "
+symbol = "🛠️ "
+style = "bold blue"
+allow_windows = false
 disabled = false
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
 disabled = false
 format = '([\[$all_status$ahead_behind\]]($style) )'
-ahead = "⇡${count}"
-behind = "⇣${count}"
-deleted = "x"
+modified = "!${count}"
+# ahead = "⇡${count}"
+# behind = "⇣${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+deleted = "x"
 conflicted = "="
 stashed = '\$'
 renamed = "»"
-modified = "!"
 staged = "+"
 untracked = "?"
 typechanged = ""
@@ -87,9 +92,6 @@ error_symbol = "[×═](white)⮚"
 # success_symbol = " [╰─λ](bold red)"
 success_symbol = "(white)[ ╚═](white)⮚"
 vimcmd_symbol = "[ ╚═❮](white)"
-# vimcmd_visual_symbol = "[ ╚═❮](white)"
-# vimcmd_replace_symbol = "[ ╚═❮](white)"
-# vimcmd_replace_one_symbol = "[ ╚═❮](white)"
 
 # SYMBOLS
 [status]
