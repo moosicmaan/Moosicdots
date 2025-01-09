@@ -51,21 +51,21 @@ disabled = false
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
 disabled = false
-format = '([\[$all_status$ahead_behind\]](red bold) )'
-modified = "[!${count}](white) "
-ahead = "⇡${count}"
-behind = "⇣${count}"
-# diverged = "[⇕⇡${ahead_count}⇣${behind_count}](white)"
-deleted = "[✘](red)"
-conflicted = "[=](purple)"
-stashed = '[\$](blue)'
-renamed = "[»](yellow)"
-staged = "[+](orange)"
-untracked = "[?](magenta)"
-typechanged = "[](yellow)"
-up_to_date = "[](green)"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+modified = "!${count}"
+# ahead = "⇡${count}"
+# behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+deleted = "x"
+conflicted = "="
+stashed = '\$'
+renamed = "»"
+staged = "+"
+untracked = "?"
+typechanged = ""
+up_to_date = ""
 ignore_submodules = false
-# style = "red bold"
+style = "red bold"
 
 # Last param in the first line/row
 [cmd_duration]
@@ -94,6 +94,14 @@ threshold = 50
 style = "bold green"
 threshold = 80
 
+# Prompt: optional param 1
+[time]
+disabled = false
+# format = " 🕙 $time($style)"
+format = " $time($style) "
+style = "bright-white"
+time_format = "%T"
+
 # Prompt: param 2
 [character]
 # error_symbol = " [× ](bold red)"
@@ -107,14 +115,6 @@ vimcmd_symbol = "[ ╚═](white)[](#78b892)"
 [fill]
 symbol = ' '
 style = 'bold green'
-
-# Time
-[time]
-disabled = false
-# format = " 🕙 $time($style)"
-format = " $time($style) "
-style = "bright-white"
-time_format = "%T"
 
 # SYMBOLS
 [status]
