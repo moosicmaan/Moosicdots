@@ -6,6 +6,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
 
+HISTSIZE=5000
+# export HISTIGNORE="ls:pwd:exit:cd:clear"
+# export HISTCONTROL=ignoredups:erasedups
+
 # JDB --->
 Yellow='\033[0;33m'                 # Yellow
 Red='\033[0;31m'                    # Red

@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+HISTSIZE=5000
+export HISTIGNORE="ls:pwd:exit:clear"
+export HISTCONTROL=ignoredups:erasedups
+
 # # Load starship prompt if starship is installed
 # if  [ -x /usr/bin/starship ]; then
 #     __main() {
@@ -16,6 +20,11 @@
 #     __main
 #     unset -f __main
 # fi
+
+# My prompt - not using starship in bash - bash_prompt and ~/.initrc.
+# Setting VIM mode for the commandline
+set -o vi
+source ~/.bash_prompt.sh
 
 # Advanced command-not-found hook
 source /usr/share/doc/find-the-command/ftc.bash
@@ -96,13 +105,10 @@ if [[ $DISPLAY == "" ]]; then
 fi
 
 # My aliases and prompts - not using starship in bash.
-# Setting VIM mode for the commandline
-set -o vi
-source ~/.bash_prompt.sh
-
 alias vim="nvim"
 export PATH=$PATH:$HOME/.config/emacs/bin
 alias ec="emacsclient -c -a 'emacs' &"
+alias config="cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

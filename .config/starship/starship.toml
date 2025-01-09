@@ -2,10 +2,11 @@
 # First param ─┌
 [username]
 # format = " [╭─$user]($style)@"
-format = " (bold red)╔═ (bold red)[$user]($style) in "
+format = " ╔══ [$user]($style) in "
 show_always = true
 style_root = "bold red"
-style_user = "bold white"
+# style_user = "bold white"
+style_user = "purple"
 
 # Second param
 [hostname]
@@ -28,6 +29,7 @@ disabled = false
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
+disabled = false
 ahead = "⇡${count}"
 behind = "⇣${count}"
 deleted = "x"
@@ -70,10 +72,14 @@ time_format = "%T"
 
 # Prompt: param 2
 [character]
-# error_symbol = " [×](bold red)"
-error_symbol = " [×](white)"
+# error_symbol = " [× ](bold red)"
+error_symbol = "[×═](white)⮚"
 # success_symbol = " [╰─λ](bold red)"
-success_symbol = " (white)[╚═](white)⮚"
+success_symbol = "(white)[ ╚═](white)⮚"
+vimcmd_symbol = "[ ╚═❮](white)"
+# vimcmd_visual_symbol = "[ ╚═❮](white)"
+# vimcmd_replace_symbol = "[ ╚═❮](white)"
+# vimcmd_replace_one_symbol = "[ ╚═❮](white)"
 
 # SYMBOLS
 [status]
