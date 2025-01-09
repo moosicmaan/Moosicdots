@@ -1,27 +1,19 @@
-format = '$username$hostname$jobs$directory$sudo$git_status$time$all'
-
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
 # format = " [╭─$user]($style)@"
-format = " ╔══ [$user]($style)"
+format = " ╔══ [$user]($style) in "
 show_always = true
 style_root = "bold red"
 # style_user = "bold white"
 style_user = "purple"
-# style_user = "underline bg:#bf5700"
-
-[hostname]
-ssh_only = true
-format = "[@$hostname](bold blue) "
-disabled = false
 
 # Second param
 [jobs]
 threshold = 1
 symbol_threshold = 1
-number_threshold = 1
-format = "[$symbol$number]($style)"
+number_threshold = 2
+format = "[$symbol$number]($style) "
 symbol = "✦"
 style = "bold blue"
 disabled = false
@@ -29,7 +21,6 @@ disabled = false
 # Third param
 [directory]
 style = "purple"
-format = ' in [$path]($style) [$read_only]($read_only_style)'
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
@@ -43,7 +34,6 @@ style = "bold blue"
 allow_windows = false
 disabled = false
 
-# Fifth param
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
 disabled = false
@@ -93,14 +83,14 @@ threshold = 80
 # Prompt: optional param 1
 [time]
 disabled = true
-format = " 🕙 $time($style)"
+format = " 🕙 $time($style)\n"
 style = "bright-white"
 time_format = "%T"
 
 # Prompt: param 2
 [character]
 # error_symbol = " [× ](bold red)"
-error_symbol = "[═](white)⮚"
+error_symbol = "[×═](white)⮚"
 # success_symbol = " [╰─λ](bold red)"
 success_symbol = "(white)[ ╚═](white)⮚"
 vimcmd_symbol = "[ ╚═❮](white)"
