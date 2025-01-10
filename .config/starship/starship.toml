@@ -17,7 +17,11 @@ style_user = "purple"
 
 [hostname]
 ssh_only = true
-format = "[@$hostname](bold blue) "
+ssh_symbol = "🌐 "
+trim_at = "."
+detect_env_vars = []
+format = "[$ssh_symbol$hostname]($style) in "
+style = "green dimmed bold"
 disabled = false
 
 # Second param
@@ -52,7 +56,7 @@ disabled = false
 [git_status]
 disabled = false
 format = '([\[$all_status$ahead_behind\]](red bold) )'
-modified = "[!${count}](white) "
+modified = "[!${count}](white)"
 ahead = "⇡${count}"
 behind = "⇣${count}"
 # diverged = "[⇕⇡${ahead_count}⇣${behind_count}](white)"
@@ -63,7 +67,7 @@ renamed = "[»](yellow)"
 staged = "[+](orange)"
 untracked = "[?](magenta)"
 typechanged = "[](yellow)"
-up_to_date = "[](green)"
+# up_to_date = "[](green)"
 ignore_submodules = false
 # style = "red bold"
 
@@ -73,18 +77,20 @@ disabled = false
 format = "took [$duration]($style) "
 min_time = 1
 
-
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
 [battery]
-charging_symbol = ""
-disabled = true
-discharging_symbol = ""
-full_symbol = ""
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+disabled = false
+format = "[$symbol$percentage]($style) "
 
 [[battery.display]] # "bold red" style when capacity is between 0% and 10%
-style = "bold red"
 threshold = 15
+style = "bold red"
 
 [[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
 style = "bold yellow"
@@ -119,17 +125,36 @@ time_format = "%T"
 # SYMBOLS
 [status]
 disabled = false
-format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+# format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+format = '[$symbol$status_common_meaning$status_signal_name$status_maybe_int]($style)'
 map_symbol = true
 pipestatus = true
+pipestatus_separator = "|"
+pipestatus_format = '\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int]($style)'
 # symbol = "🔴"
-symbol = "‼️"
+# symbol = "‼️"
+# symbol = "❌"
+symbol = " []($style)"
+success_symbol = ""
+# not_executable_symbol = "🚫"
+not_executable_symbol = " []($style)"
+# not_found_symbol = "🔍"
+not_found_symbol = " []($style)"
+# sigint_symbol = "🧱"
+sigint_symbol = " [󱨑]($style)"
+# signal_symbol = "⚡"
+signal_symbol = " [󱐋]($style)"
+style = "bold red"
+recognize_signal_code = true
 
 [aws]
 symbol = " "
 
 [conda]
 symbol = " "
+
+[c]
+symbol = " "
 
 [dart]
 symbol = " "
@@ -166,8 +191,11 @@ symbol = " "
 [julia]
 symbol = " "
 
+[lua]
+symbol = " "
+
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
@@ -176,7 +204,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏖 "
 
 [perl]
 symbol = " "
@@ -191,7 +219,7 @@ symbol = " "
 symbol = " "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [swift]
-symbol = "ﯣ "
+symbol = "󰛥 "
