@@ -57,7 +57,7 @@ return {
 			},
 			footer = {
 				"",
-				"~🚀 Sharp tools make good work.~",
+				"~🌊 Create That Which You Want to Join 🔥~",
 			},
 			shortcut = {
 				{

@@ -28,7 +28,7 @@
       "default": "",
       "empty": "",
       "persistent": "",
-      "visible": "",
+      "visible": "󰹑",
       "special": "😍",
       "urgent": ""
     },
@@ -48,7 +48,7 @@
     "format-icons": {
       "default": "",
       "empty": "",
-      "visible": "",
+      "visible": "󰹑",
       "special": "😍",
       "urgent": ""
     },
@@ -305,7 +305,7 @@
     "tooltip": false
   },
   "custom/system": {
-    "format": "~ ",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "System Status"
   },
@@ -365,7 +365,7 @@
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-bluetooth": " {volume}% {icon}   {format_source}",
-    "format-bluetooth-muted": "  {icon}   {format_source}",
+    "format-bluetooth-muted": " 󰂲 {icon}   {format_source}",
     "format-muted": " {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",

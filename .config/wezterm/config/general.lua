@@ -6,7 +6,7 @@ return {
 	exit_behavior_messaging = "Verbose",
 	status_update_interval = 1000,
 
-	warn_about_missing_glyphs = false,
+	warn_about_missing_glyphs = true,
 
 	scrollback_lines = 5000,
 
