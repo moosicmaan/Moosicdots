@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 local platform = require("utils.platform")
 
--- local font = "MesloLGM Nerd Font Mono"
-local font = "JetBrainsMono Nerd Font"
+local font = "MesloLGM Nerd Font Mono"
+-- local font = "JetBrainsMono Nerd Font"
 -- local font = "SpaceMono Nerd Font Mono"
 -- local font = "MesloLGS Nerd Font Mono"
 -- local font = "Hack Nerd Font"
@@ -14,6 +14,9 @@ return {
 		"Noto Sans Symbols", -- Fallback for symbols
 		"Symbola", -- Fallback for extended Unicode symbols
 		"Noto Color Emoji", -- Fallback for emoji
+		"Pomodoro", --
+		"Symbols Nerd Font", --
+		"Font Awesome 6 Free", --
 	}),
 	-- font = wezterm.font(font),
 	font_size = fontsize,

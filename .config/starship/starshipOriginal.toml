@@ -48,17 +48,14 @@ discharging_symbol = ""
 full_symbol = ""
 
 [[battery.display]] # "bold red" style when capacity is between 0% and 15%
-disabled = false
 style = "bold red"
 threshold = 15
 
 [[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
-disabled = true
 style = "bold yellow"
 threshold = 50
 
 [[battery.display]] # "bold green" style when capacity is between 50% and 80%
-disabled = true
 style = "bold green"
 threshold = 80
 
@@ -70,9 +67,16 @@ style = "bright-white"
 time_format = "%T"
 
 # Prompt: param 2
+# [character]
+# error_symbol = " [×](bold red)"
+# success_symbol = " [╰─λ](bold red)"
 [character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─λ](bold red)"
+# error_symbol = " [× ](bold red)"
+error_symbol = "[═](white)[⮚](bold red)"
+# success_symbol = " [╰─λ](bold red)"
+success_symbol = "[ ╚═](white)[⮚](#78b892)"
+# vimcmd_symbol = "[ ╚═❮](white)"
+vimcmd_symbol = "[ ╚═](white)[](#78b892)"
 
 # SYMBOLS
 [status]

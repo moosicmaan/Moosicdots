@@ -305,7 +305,7 @@
     "tooltip": false
   },
   "custom/system": {
-    "format": "",
+    "format": " ",
     "tooltip": true,
     "tooltip-format": "System Status"
   },
@@ -365,14 +365,14 @@
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-bluetooth": " {volume}% {icon}   {format_source}",
-    "format-bluetooth-muted": " 󰂲 {icon}   {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth-muted": " 󰂲H {icon}   {format_source}",
+    "format-muted": "󰝟 {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "󰥎",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -405,10 +405,10 @@
       "spotify": " ",
       "chromium": " ",
       "firefox": " ",
-      "brave": "",
+      "brave": "󰯰",
       "qutebrowser": "",
       "vlc": "󰕼 ",
-      "kdeconnect": " ",
+      "kdeconnect": " ",
       "youtube": " "
     },
     "status-icons": {
@@ -482,11 +482,11 @@
   "network": {
     "format": " {ifname}",
     "format-wifi": "    {signalStrength}%",
-    "format-ethernet": "  {ifname}",
+    "format-ethernet": " 󰈀 {ifname}",
     "format-disconnected": " Disconnected",
-    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format": "󰈀  {ifname} via {gwaddri}",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": "󰈀  {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/.config/.settings/networkmanager.sh"
@@ -511,7 +511,7 @@
       "critical": 15
     },
     "format": " {icon}  {capacity}% {time}",
-    "format-charging": "   {capacity}% {time}",
+    "format-charging": "   {capacity}% {time}",
     "format-plugged": "   {capacity}%",
     "format-full": "",
     "format-icons": [

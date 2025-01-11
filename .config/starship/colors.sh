@@ -1,0 +1,1 @@
+/home/moosicmaan/.cache/wal/colors.sh
