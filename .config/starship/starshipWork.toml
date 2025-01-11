@@ -1,0 +1,332 @@
+format = '$username$os$hostname$jobs$directory$sudo$git_status$fill$cmd_duration$all'
+# format = '$username$hostname$jobs$directory$sudo$git_status$all'
+right_format = "$time"
+add_newline = false
+
+## FIRST LINE/ROW: Info & Status
+# First param ─┌
+[username]
+# format = " [╭─$user]($style)@"
+format = " ╔══ [$user]($style)"
+show_always = true
+style_root = "underline bg:#bf5700"
+# style_user = "white"
+style_user = "underline bold blue"
+# style_user = "underline bg:#bf5700"
+# aliases = { "moosicmaan" = "me" }
+disabled = false
+
+[os]
+format = "[$symbol]($style)"
+style = "bold white"
+disabled = false
+
+[hostname]
+ssh_only = true
+# ssh_symbol = "🌐 "
+ssh_symbol = " "
+trim_at = "."
+detect_env_vars = []
+format = "[$ssh_symbol$hostname]($style) in "
+style = "green dimmed bold"
+disabled = false
+
+# Second param
+[jobs]
+threshold = 1
+symbol_threshold = 1
+number_threshold = 1
+format = "[$symbol$number]($style)"
+symbol = "✦"
+style = "bold blue"
+disabled = false
+
+# Third param
+[directory]
+style = "underline bold blue"
+format = ' in [$path]($style) [$read_only]($read_only_style)'
+truncate_to_repo = true
+read_only = " 󰌾"
+truncation_length = 0
+truncation_symbol = "repo: "
+
+# Fourth param
+[sudo]
+format = "[as](white) [$symbol]($style)"
+# symbol = "🧙 "
+symbol = " "
+style = "bold blue"
+allow_windows = false
+disabled = false
+
+# Fifth param
+# Before all the version info (python, nodejs, php, etc.)
+[git_status]
+disabled = false
+format = '([\[$all_status$ahead_behind\]](red) )'
+modified = "[!${count}](white)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "[⇕⇡${ahead_count}⇣${behind_count}](white)"
+deleted = "[✘](#ff3950)"
+conflicted = "[=](magenta)"
+stashed = '[\$](blue)'
+renamed = "[»](yellow)"
+staged = "[+](cyan)"
+untracked = "[?](green)"
+typechanged = "[](yellow)"
+# up_to_date = "[](green)"
+ignore_submodules = false
+# style = "red bold"
+
+# Last param in the first line/row
+[cmd_duration]
+disabled = false
+format = "took [$duration]($style) "
+min_time = 1
+
+## SECOND LINE/ROW: Prompt
+# Somethere at the beginning
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+disabled = false
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]] # "bold red" style when capacity is between 0% and 10%
+threshold = 15
+style = "bold red"
+
+[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
+style = "bold yellow"
+threshold = 50
+
+[[battery.display]] # "bold green" style when capacity is between 10% and 30%
+style = "bold green"
+threshold = 80
+
+# Prompt: param 2
+[character]
+# error_symbol = " [× ](bold red)"
+error_symbol = "[═](white)[⮚](bold red)"
+# success_symbol = " [╰─λ](bold red)"
+success_symbol = "[ ╚═](white)[⮚](#78b892)"
+# vimcmd_symbol = "[ ╚═❮](white)"
+vimcmd_symbol = "[ ╚═](white)[](#78b892)"
+
+# Filler
+[fill]
+symbol = ' '
+style = 'bold green'
+
+# Time
+[time]
+disabled = false
+# format = " 🕙 $time($style)"
+format = " $time($style) "
+style = "bright-white"
+time_format = "%T"
+
+# SYMBOLS
+# Return Status
+[status]
+disabled = false
+# format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+format = '[$symbol$status_common_meaning$status_signal_name$status_maybe_int]($style)'
+map_symbol = true
+pipestatus = true
+pipestatus_separator = "󰟥"
+pipestatus_format = ' $pipestatus-[$common_meaning$signal_name$maybe_int]($style)'
+# symbol = "🔴"
+# symbol = "‼️"
+# symbol = "❌"
+symbol = " []($style)"
+success_symbol = ""
+# not_executable_symbol = "🚫"
+not_executable_symbol = " []($style)"
+# not_found_symbol = "🔍"
+not_found_symbol = " []($style)"
+# sigint_symbol = "🧱"
+sigint_symbol = " [󱨑]($style)"
+# signal_symbol = "⚡"
+signal_symbol = " [󱐋]($style)"
+style = "bold red"
+recognize_signal_code = true
+
+[git_branch]
+format = "on [$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
+style = "bold yellow"
+truncation_length = 9223372036854775807
+truncation_symbol = "…"
+only_attached = false
+always_show_remote = false
+ignore_branches = []
+disabled = false
+
+# ------
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+# Garuda = "󰛓"
+Garuda = '\(󰛓\)'
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

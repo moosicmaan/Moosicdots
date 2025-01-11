@@ -1,325 +1,136 @@
-format = '$username$hostname$jobs$directory$sudo$git_status$fill$cmd_duration$all'
-# format = '$username$hostname$jobs$directory$sudo$git_status$all'
-right_format = "$time"
-add_newline = false
+format = """
+[╭](fg:current_line)\
+$os\
+$directory\
+$git_branch\
+$fill\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+$cmd_duration\
+$shell\
+$time\
+$username\
+$line_break\
+$character\
+"""
 
-## FIRST LINE/ROW: Info & Status
-# First param ─┌
-[username]
-# format = " [╭─$user]($style)@"
-format = " ╔══ [$user]($style)"
-show_always = true
-style_root = "underline bg:#bf5700"
-# style_user = "white"
-style_user = "underline bold blue"
-# style_user = "underline bg:#bf5700"
-# aliases = { "moosicmaan" = "me" }
+palette = 'dracula'
+add_newline = true
+
+[palettes.dracula]
+foreground = '#F8F8F2'
+background = '#282A36'
+current_line = '#44475A'
+primary = '#1E1F29'
+box = '#44475A'
+blue = '#6272A4'
+cyan = '#8BE9FD'
+green = '#50FA7B'
+orange = '#FFB86C'
+pink = '#FF79C6'
+purple = '#BD93F9'
+red = '#FF5555'
+yellow = '#F1FA8C'
+
+[os]
+format = '(fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red)'
 disabled = false
-
-[hostname]
-ssh_only = true
-# ssh_symbol = "🌐 "
-ssh_symbol = " "
-trim_at = "."
-detect_env_vars = []
-format = "[$ssh_symbol$hostname]($style) in "
-style = "green dimmed bold"
-disabled = false
-
-# Second param
-[jobs]
-threshold = 1
-symbol_threshold = 1
-number_threshold = 1
-format = "[$symbol$number]($style)"
-symbol = "✦"
-style = "bold blue"
-disabled = false
-
-# Third param
-[directory]
-style = "underline bold blue"
-format = ' in [$path]($style) [$read_only]($read_only_style)'
-truncate_to_repo = true
-read_only = " 󰌾"
-truncation_length = 0
-truncation_symbol = "repo: "
-
-# Fourth param
-[sudo]
-format = "[as $symbol]($style)"
-# symbol = "🧙 "
-symbol = " "
-style = "bold blue"
-allow_windows = false
-disabled = false
-
-# Fifth param
-# Before all the version info (python, nodejs, php, etc.)
-[git_status]
-disabled = false
-format = '([\[$all_status$ahead_behind\]](red) )'
-modified = "[!${count}](white)"
-ahead = "⇡${count}"
-behind = "⇣${count}"
-diverged = "[⇕⇡${ahead_count}⇣${behind_count}](white)"
-deleted = "[✘](#ff3950)"
-conflicted = "[=](magenta)"
-stashed = '[\$](blue)'
-renamed = "[»](yellow)"
-staged = "[+](cyan)"
-untracked = "[?](green)"
-typechanged = "[](yellow)"
-# up_to_date = "[](green)"
-ignore_submodules = false
-# style = "red bold"
-
-# Last param in the first line/row
-[cmd_duration]
-disabled = false
-format = "took [$duration]($style) "
-min_time = 1
-
-## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
-[battery]
-full_symbol = "󰁹 "
-charging_symbol = "󰂄 "
-discharging_symbol = "󰂃 "
-unknown_symbol = "󰁽 "
-empty_symbol = "󰂎 "
-disabled = false
-format = "[$symbol$percentage]($style) "
-
-[[battery.display]] # "bold red" style when capacity is between 0% and 10%
-threshold = 15
-style = "bold red"
-
-[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
-style = "bold yellow"
-threshold = 50
-
-[[battery.display]] # "bold green" style when capacity is between 10% and 30%
-style = "bold green"
-threshold = 80
-
-# Prompt: param 2
-[character]
-# error_symbol = " [× ](bold red)"
-error_symbol = "[═](white)[⮚](bold red)"
-# success_symbol = " [╰─λ](bold red)"
-success_symbol = "[ ╚═](white)[⮚](#78b892)"
-# vimcmd_symbol = "[ ╚═❮](white)"
-vimcmd_symbol = "[ ╚═](white)[](#78b892)"
-
-# Filler
-[fill]
-symbol = ' '
-style = 'bold green'
-
-# Time
-[time]
-disabled = false
-# format = " 🕙 $time($style)"
-format = " $time($style) "
-style = "bright-white"
-time_format = "%T"
-
-# SYMBOLS
-[status]
-disabled = false
-# format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
-format = '[$symbol$status_common_meaning$status_signal_name$status_maybe_int]($style)'
-map_symbol = true
-pipestatus = true
-pipestatus_separator = "󰟥"
-pipestatus_format = ' $pipestatus-[$common_meaning$signal_name$maybe_int]($style)'
-# symbol = "🔴"
-# symbol = "‼️"
-# symbol = "❌"
-symbol = " []($style)"
-success_symbol = ""
-# not_executable_symbol = "🚫"
-not_executable_symbol = " []($style)"
-# not_found_symbol = "🔍"
-not_found_symbol = " []($style)"
-# sigint_symbol = "🧱"
-sigint_symbol = " [󱨑]($style)"
-# signal_symbol = "⚡"
-signal_symbol = " [󱐋]($style)"
-style = "bold red"
-recognize_signal_code = true
-
-[git_branch]
-format = "on [$symbol$branch(:$remote_branch)]($style) "
-symbol = " "
-style = "bold yellow"
-truncation_length = 9223372036854775807
-truncation_symbol = "…"
-only_attached = false
-always_show_remote = false
-ignore_branches = []
-disabled = false
-
-# ------
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
-
-[golang]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
 
 [os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
 
-[package]
-symbol = "󰏗 "
+[directory]
+format = '[─](fg:current_line)[](fg:pink)[󰷏](fg:primary bg:pink)[](fg:pink bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+home_symbol = " ~/"
+truncation_symbol = ' '
+truncation_length = 2
+read_only = '󱧵 '
+read_only_style = ''
 
-[perl]
-symbol = " "
+[git_branch]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)'
+symbol = ' '
 
-[php]
-symbol = " "
+[nodejs]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '󰎙 Node.js'
 
-[pijul_channel]
-symbol = " "
+[dotnet]
+format = '[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)'
+symbol = ' .NET'
 
 [python]
-symbol = " "
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' python'
 
-[rlang]
-symbol = "󰟔 "
+[java]
+format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Java'
 
-[ruby]
-symbol = " "
+[c]
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' C'
 
-[rust]
-symbol = "󱘗 "
+[fill]
+symbol = '─'
+style = 'fg:current_line'
 
-[scala]
-symbol = " "
+[cmd_duration]
+min_time = 500
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
 
-[swift]
-symbol = " "
+[shell]
+format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
+disabled = false
 
-[zig]
-symbol = " "
+[time]
+format = '[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)'
+time_format = '%H:%M'
+disabled = false
 
-[gradle]
-symbol = " "
+[username]
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+show_always = true
+
+[character]
+format = """
+[╰─$symbol](fg:current_line) """
+success_symbol = '[λ](fg:bold white)'
+error_symbol = '[×](fg:bold red)'
