@@ -8,3 +8,4 @@ font-size = 14.4
 theme = "FunForrest"
 # theme = "ForestBlue"
 confirm-close-surface = false
+font-family = "Hack Nerd Font"

@@ -60,11 +60,11 @@
 
   sat (tap-hold-next-release 200 @ lsft)  ;; SHIFT and @ key
 
-  ifc (tap-hold-next-release 200 i @fuc)  ;; Hold to go to the function layer, i tap
+  ifc (tap-hold-next-release 400 i @fuc)  ;; Hold to go to the function layer, i tap
   efc (tap-hold-next-release 200 e @fuc)  ;; Hold to go to the function layer, e tap
   tsm (tap-hold-next-release 200 ' @sym)  ;; Hold to go to the symbols layer, quote tap
   wsm (tap-hold-next-release 200 w @sym)  ;; Hold to go to the symbols layer, w tap
-  osm (tap-hold-next-release 200 o @sym)  ;; Hold to go to the symbols layer, o tap
+  osm (tap-hold-next-release 400 o @sym)  ;; Hold to go to the symbols layer, o tap
   qdr (tap-hold-next-release 200 q @dir)  ;; Hold to go to the direction layer, q tap
   pdr (tap-hold-next-release 200 p @dir)  ;; Hold to go to the direction layer, p tap
 )

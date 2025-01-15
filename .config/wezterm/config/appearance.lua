@@ -16,7 +16,7 @@ return {
 	-- ------------------------------------------------
 	-- The color scheme:
 	-- color_scheme = "Campbell '(Gogh)",
-	color_scheme = "CGA",
+	-- color_scheme = "CGA",
 	-- colors = {
 	-- 	foreground = "white",
 	-- 	background = "black",
