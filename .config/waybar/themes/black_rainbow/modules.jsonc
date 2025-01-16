@@ -16,6 +16,11 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 18,
+    "tooltip": false
+  },
   "custom/separator": {
     "format": "|",
     "interval": "once",

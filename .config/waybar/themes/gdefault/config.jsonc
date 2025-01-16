@@ -12,7 +12,8 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "custom/network_traffic"
@@ -43,7 +44,8 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "mpris"

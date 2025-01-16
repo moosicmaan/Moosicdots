@@ -16,7 +16,8 @@
       "hyprland/workspaces",
       "sway/mode",
       "sway/window",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "clock"
@@ -53,7 +54,8 @@
       "hyprland/workspaces",
       "sway/mode",
       "sway/window",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "mpris"

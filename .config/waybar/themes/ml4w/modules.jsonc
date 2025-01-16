@@ -26,6 +26,11 @@
       "*": 5
     }
   },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 18,
+    "tooltip": false
+  },
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 18,

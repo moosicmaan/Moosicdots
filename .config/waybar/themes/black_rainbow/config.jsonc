@@ -28,7 +28,8 @@
       "idle_inhibitor"
     ],
     "modules-center": [
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "hyprland/submap"
     ],
     "modules-right": [
       "tray",
@@ -61,7 +62,8 @@
       "mpris"
     ],
     "modules-center": [
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "hyprland/submap"
     ],
     "modules-right": [
       "pulseaudio",

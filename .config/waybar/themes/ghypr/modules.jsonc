@@ -39,6 +39,11 @@
     "icon": true,
     "icon-size": 15
   },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 18,
+    "tooltip": false
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {

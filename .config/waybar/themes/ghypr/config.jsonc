@@ -13,7 +13,8 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "clock"
@@ -45,7 +46,8 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "mpris"

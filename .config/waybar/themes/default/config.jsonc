@@ -6,7 +6,8 @@
     "custom/waybarthemes"
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/window",
+    "hyprland/submap"
   ],
   "modules-right": [
     "mpd",

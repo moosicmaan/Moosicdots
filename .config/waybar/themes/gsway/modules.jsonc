@@ -56,6 +56,11 @@
   "hyprland/window": {
     "format": "{}"
   },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 18,
+    "tooltip": false
+  },
   "network": {
     "format": " Disabled",
     "format-wifi": "{bandwidthDownBits:>}{bandwidthUpBits:>}",

@@ -22,7 +22,8 @@
       "wlr/taskbar#cam"
     ],
     "modules-center": [
-      "hyprland/window#cam"
+      "hyprland/window#cam",
+      "hyprland/submap"
     ],
     "modules-right": [
       "custom/backlight",
@@ -57,6 +58,7 @@
     ],
     "modules-center": [
       "hyprland/window#cam",
+      "hyprland/submap",
       "mpris#moosic"
     ],
     "modules-right": [

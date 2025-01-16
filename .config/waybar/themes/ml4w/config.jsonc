@@ -15,7 +15,8 @@
       "group/settings",
       "wlr/taskbar",
       "group/quicklinks",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/workspaces"
@@ -48,7 +49,8 @@
     "modules-left": [
       "custom/appmenu",
       "wlr/taskbar",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/workspaces"

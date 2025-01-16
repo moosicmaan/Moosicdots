@@ -9,7 +9,8 @@
     "modules-left": [
       "group/appo#leg",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "clock#leg"
@@ -36,7 +37,8 @@
     "modules-left": [
       "group/appo#leg",
       "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-center": [
       "mpris"

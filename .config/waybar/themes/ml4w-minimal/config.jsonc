@@ -14,7 +14,8 @@
       "custom/appmenuicon",
       "hyprland/workspaces",
       "group/settings",
-      "group/quicklinks"
+      "group/quicklinks",
+      "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/window"
@@ -46,7 +47,8 @@
     ],
     "modules-left": [
       "custom/appmenuicon",
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/window"
