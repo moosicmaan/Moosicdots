@@ -1,16 +1,21 @@
-window {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #eeeeee
+ window {
+	border-radius: 10px;
+    background-color: rgba (0, 0, 0, 0.5);
+    color: #1d1f21 
 }
 
 /* search entry */
 entry {
+    box-shadow: 0 0 6px 5px #2e3440;
     background-color: rgba (0, 0, 0, 0.5)
 }
 
 button, image {
+    background-color: #FF2222;
     background: none;
-    border: none
+    border: none;
+    margin: 4px;
+
 }
 
 button:hover {
@@ -33,12 +38,6 @@ button:focus {
 
 #files-box {
     padding: 5px;
-    border: 1px dotted gray;
+    border: 0px dotted gray;
     border-radius: 15px
-}
-
-/* math operation result label */
-#math-label {
-    font-weight: bold;
-    font-size: 16px
 }

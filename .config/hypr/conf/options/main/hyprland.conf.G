@@ -22,6 +22,11 @@ bind = $mainMod ALT, G, exec, footclient -e ~/.local/bin/bear/implement_gum.sh d
 # ##                                   |___/  ##
 # ##############################################
 
+# -----------------------------------------------------
+# LOAD PYWAL COLOR FILE
+# -----------------------------------------------------
+source = $HOME/.cache/wal/colors-hyprland.conf
+
 source = ~/.config/hypr/settings/monitor.conf
 source = ~/.config/hypr/settings/background.conf
 source = ~/.config/hypr/settings/eye_protection.conf
