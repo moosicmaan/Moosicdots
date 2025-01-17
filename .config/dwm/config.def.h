@@ -53,7 +53,7 @@ static const Rule rules[] = {
 	  class      instance    title          tags mask  isfloating  monitor Scratchkey float x,y,w,h   floatborderpx*/
 /*{ "Gimp",     NULL,       NULL,           0,         1,          -1,     0,       50,50,500,500,     9 },*/
 	{ "Firefox",  NULL,       NULL,           1 << 8,    0,          -1,     0,       50,50,500,500,     9 },
-	{ NULL,       NULL,   "termdrop",        0,         1,          -1,    's',      150,50,1620,900,   9 },
+	{ NULL,       NULL,   "termdrop",         0,         1,          -1,    's',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "yazidrop",         0,         1,          -1,    'j',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "btopdrop",         0,         1,          -1,    'l',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,900,   9 },
@@ -96,16 +96,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "wezterm", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *browscmd[]  = { "brave", NULL };
-static const char *my_term2[] = { "wezterm", NULL };
+static const char *my_term2[] = { "kitty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *my_filesc[] = { "wezterm", "-e", "yazi", NULL };
-static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config-raa.rasi", "-show", "drun", NULL };
+static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
+static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
 static const char *my_media[] = { "vlc", NULL };
@@ -117,11 +117,12 @@ static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
 static const char *varip[] = { "variety", "-p", NULL };
 static const char *rofi_power[] = { "rofi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/jb-rofi-power.sh", NULL };
+
 /*First arg only serves to match against key in rules*/
-static const char *ter_scratch[] = {"s", "wezterm", "-T", "termdrop", NULL};
-static const char *yazi_scratch[] = {"j", "wezterm", "-T", "yazidrop", "-e", "yazi", NULL};
-static const char *btop_scratch[] = {"l", "wezterm", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *moosic_scratch[] = {"p", "wezterm", "-T", "moosCube", "-e", "musikcube", NULL};
+static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
+static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
+static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
+static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
 
 static Keychord *keychords[] = {
@@ -155,17 +156,16 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
 	&((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
 	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
+
   /*-V-NVIM EDITING-V-*/
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn,                     {.v = my_editc } }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide $HOME/.config/") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide /mnt/data/moosicmaan/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_d}}, spawn, SHCMD("neovide $HOME/.config/dwm/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_h}}, spawn, SHCMD("neovide $HOME/.config/hypr/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_q}}, spawn, SHCMD("neovide $HOME/.config/qtile/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_a}}, spawn, SHCMD("neovide $HOME/.config/awesome/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_w}}, spawn, SHCMD("neovide $HOME/.config/waybar/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/scripts/") }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/scripts/") }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_l}}, spawn, SHCMD("neovide $HOME/.config/scripts/") }),
 
   /****VANITY GAPS****/
   &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
@@ -241,4 +241,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
