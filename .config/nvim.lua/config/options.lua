@@ -15,8 +15,9 @@ opt.ttyfast = true -- speeds up scrolling in vim
 opt.conceallevel = 2
 opt.concealcursor = "nc"
 vim.g.tutor_is_loaded = 0
--- for hyprlang
+-- for hyprlang and other files/types not natively recognized
 vim.filetype.add({
+	extension = { rasi = "rasi" },
 	pattern = {
 		[".*/.config/hypr/.*%.conf"] = "hyprlang",
 		[".*/.config/.settings/.*%.conf"] = "hyprlang",
@@ -36,7 +37,7 @@ if vim.g.neovide then
 	vim.g.neovide_window_blurred = true
 	vim.g.neovide_floating_blur_amount_x = 2.0
 	vim.g.neovide_floating_blur_amount_y = 2.0
-	-- vim.g.neovide_transparency = 0.8
+	-- vim.g.neovide_transparency = 0.2
 	vim.g.neovide_position_animation_length = 0.15
 	vim.g.neovide_scroll_animation_length = 0.3
 	vim.g.neovide_hide_mouse_when_typing = true

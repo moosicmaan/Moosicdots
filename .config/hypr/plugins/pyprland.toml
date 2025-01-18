@@ -33,7 +33,7 @@ size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromLeft"
-# command = "kitty --class moosic musikcube"
+# command = "kitty --class moosic cmus"
 command = "wezterm start --class=moosic musikcube"
 class = "moosic"
 lazy = true

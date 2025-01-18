@@ -40,7 +40,7 @@ local function default_gitdiff()
 	-- Use vim.split to process the output into lines
 	local lines = vim.split(result, "\n", { trimempty = true }) -- Split by newlines
 	for _, line in ipairs(lines) do
-		table.insert(gitdiff, "    " .. line) -- Prepend 3 spaces
+		table.insert(gitdiff, "   " .. line) -- Prepend 3 spaces
 		-- table.insert(gitdiff, "   " .. line) -- Prepend 3 spaces
 	end
 
@@ -50,7 +50,7 @@ end
 local function no_git()
 	local tbl = {}
 	table.insert(tbl, "")
-	table.insert(tbl, "  GIT status:")
+	table.insert(tbl, " GIT status:")
 	-- table.insert(tbl, "     Not in a git project ")
 	table.insert(tbl, "     Not in a git project ")
 	return tbl

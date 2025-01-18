@@ -1,0 +1,2 @@
+set replaygain=1
+set output_plugin=pulse
