@@ -24,10 +24,10 @@ export HISTCONTROL=ignoredups:erasedups
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
 set -o vi
-source ~/.bash_prompt.sh
+source "$HOME/.bash_prompt.sh"
 
 # Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.bash
+source /usr/share/doc/find-the-command/ftc.bash noupdate info
 
 ## Useful aliases
 

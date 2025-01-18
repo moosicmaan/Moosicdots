@@ -1,10 +1,10 @@
 ## Set values
-# Hide welcome message & ensure we are reporting fish as shell
+# Hide welcome message & ensure we are still reporting bash as shell
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
 set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -xU MANROFFOPT -c
-set -x SHELL /usr/bin/fish
+set -x SHELL /usr/bin/bash
 
 ## Export variable need for qt-theme
 if type qtile >>/dev/null 2>&1
@@ -44,7 +44,7 @@ end
 
 
 ## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
+source /usr/share/doc/find-the-command/ftc.fish noupdate info
 
 
 ## Functions

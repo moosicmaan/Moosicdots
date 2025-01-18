@@ -136,8 +136,8 @@
 ;;(setq doom-theme 'doom-challenger-deep)
 ;;(setq doom-theme 'ewal-doom-vibrant)
 ;;(setq doom-theme 'ewal-doom-one)
-;; (setq doom-theme 'doom-outrun-electric)
-(setq doom-theme 'catppuccin)
+(setq doom-theme 'doom-outrun-electric)
+;; (setq doom-theme 'catppuccin)
 
 (setq inhibit-splash-screen t)
 (transient-mark-mode 1)
@@ -153,6 +153,8 @@
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 2)
 (add-hook 'before-save-hook #'whitespace-cleanup)
+(setq-default fill-column 120)
+(global-display-fill-column-indicator-mode t)
 
 ;; ----------------------------------------------------------------------------
 ;; DASHBOARD
@@ -471,7 +473,7 @@
 ;; ============================================================================
 ;; ----------------------------------------------------------------------------
 ;; JDB ---> fish issues
-(setq shell-file-name (executable-find "zsh"))
+(setq shell-file-name (executable-find "bash"))
 
 ;; Repressing warnings
 (setq byte-compile-warnings '(cl-functions))
