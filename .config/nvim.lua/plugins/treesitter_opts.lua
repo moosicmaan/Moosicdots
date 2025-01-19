@@ -39,6 +39,7 @@ return {
 			"rust",
 			"hyprlang",
 			"org",
+			"rasi",
 		},
 		-- ignore_installed = {
 		--   "org",
