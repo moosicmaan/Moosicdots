@@ -29,8 +29,6 @@ return {
 			"python",
 			"regex",
 			"toml",
-			"tsx",
-			"typescript",
 			"vim",
 			"vimdoc",
 			"xml",

@@ -1,11 +1,13 @@
 return {
+	{ "ellisonleao/gruvbox.nvim" },
 	{
 		"LazyVim/LazyVim",
 		opts = {
 			-- colorscheme = "retrobox",
 			-- colorscheme = "pywal",
 			-- colorscheme = "pablo",
-			colorscheme = "murphy",
+			colorscheme = "gruvbox",
+			-- colorscheme = "murphy",
 			-- colorscheme = "elflord",
 			-- colorscheme = "slate",
 			-- colorscheme = "default",

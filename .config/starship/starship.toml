@@ -1,6 +1,6 @@
 format = '$username$os$hostname$jobs$directory$sudo$git_status$fill$cmd_duration$all'
 # format = '$username$hostname$jobs$directory$sudo$git_status$all'
-right_format = "$time"
+right_format = "$battery$time"
 add_newline = false
 
 ## FIRST LINE/ROW: Info & Status
