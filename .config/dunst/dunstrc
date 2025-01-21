@@ -59,7 +59,7 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 10
+    progress_bar_height = 20
 
     # Set the frame width of the progress bar
     progress_bar_frame_width = 1
@@ -323,8 +323,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#00666670"
-    background = "#003000"
+    background = "#00500070"
     foreground = "#aaaaaa"
     timeout = 6
     # Icon for notifications with low urgency, uncomment to enable
