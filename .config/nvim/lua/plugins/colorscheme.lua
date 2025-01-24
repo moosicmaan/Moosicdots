@@ -4,9 +4,9 @@ return {
 		"LazyVim/LazyVim",
 		opts = {
 			-- colorscheme = "retrobox",
-			-- colorscheme = "pywal",
+			colorscheme = "pywal",
 			-- colorscheme = "pablo",
-			colorscheme = "gruvbox",
+			-- colorscheme = "gruvbox",
 			-- colorscheme = "murphy",
 			-- colorscheme = "elflord",
 			-- colorscheme = "slate",
