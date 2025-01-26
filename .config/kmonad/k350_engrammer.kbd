@@ -45,30 +45,30 @@
   hypr  C-A-M-S                           ;; HYPER key
   meh   C-A-S                             ;; MEH key
 
-  lsh (tap-hold-next-release 200 a lsft)  ;; SHIFT(hold) and a(tap) key
-  lct (tap-hold-next-release 200 s lctl)  ;; CTRL and s key
-  lmt (tap-hold-next-release 200 d lmet)  ;; SUPER and d key
-  lat (tap-hold-next-release 200 f lalt)  ;; ALT and F key
-  lhr (tap-hold-next-release 200 g @hypr) ;; HYPR and g key
-  lmh (tap-hold-next-release 200 r @meh)  ;; MEH and r key
+  lsh (tap-hold-next-release 200 c lsft)  ;; SHIFT(hold) and a(tap) key
+  lct (tap-hold-next-release 200 i lctl)  ;; CTRL and s key
+  lmt (tap-hold-next-release 200 e lmet)  ;; SUPER and d key
+  lat (tap-hold-next-release 200 a lalt)  ;; ALT and F key
+  lhr (tap-hold-next-release 200 , @hypr) ;; HYPR and g key
+  lmh (tap-hold-next-release 200 u @meh)  ;; MEH and r key
 
-  rat (tap-hold-next-release 200 m ralt)  ;; ALT and m key
-  rmt (tap-hold-next-release 200 , lmet)  ;; SUPER and , key
-  rct (tap-hold-next-release 200 . rctl)  ;; CTRL and . key
-  rsh (tap-hold-next-release 200 ; rsft)  ;; SHIFT and ; key
-  rss (tap-hold-next-release 200 / rsft)  ;; SHIFT and ; key
-  rhr (tap-hold-next-release 200 n @hypr) ;; HYPR and n key
-  rmh (tap-hold-next-release 200 u @meh)  ;; MEH and u key
+  rat (tap-hold-next-release 200 r ralt)  ;; ALT and m key
+  rmt (tap-hold-next-release 200 m lmet)  ;; SUPER and , key
+  rct (tap-hold-next-release 200 f rctl)  ;; CTRL and . key
+  rsh (tap-hold-next-release 200 n rsft)  ;; SHIFT and ; key
+  rss (tap-hold-next-release 200 p rsft)  ;; SHIFT and ; key
+  rhr (tap-hold-next-release 200 / @hypr) ;; HYPR and n key
+  rmh (tap-hold-next-release 200 l @meh)  ;; MEH and u key
 
   sat (tap-hold-next-release 200 @ lsft)  ;; SHIFT and @ key
 
-  ifc (tap-hold-next-release 400 i @fuc)  ;; Hold to go to the function layer, i tap
-  efc (tap-hold-next-release 200 e @fuc)  ;; Hold to go to the function layer, e tap
-  tsm (tap-hold-next-release 200 ' @sym)  ;; Hold to go to the symbols layer, quote tap
-  wsm (tap-hold-next-release 200 w @sym)  ;; Hold to go to the symbols layer, w tap
-  osm (tap-hold-next-release 400 o @sym)  ;; Hold to go to the symbols layer, o tap
-  qdr (tap-hold-next-release 200 q @dir)  ;; Hold to go to the direction layer, q tap
-  pdr (tap-hold-next-release 200 p @dir)  ;; Hold to go to the direction layer, p tap
+  qdr (tap-hold-next-release 200 b @dir)  ;; Hold to go to the direction layer, q tap
+  pdr (tap-hold-next-release 200 v @dir)  ;; Hold to go to the direction layer, p tap
+  tsm (tap-hold-next-release 200 n @sym)  ;; Hold to go to the symbols layer, quote tap
+  wsm (tap-hold-next-release 200 y @sym)  ;; Hold to go to the symbols layer, w tap
+  osm (tap-hold-next-release 400 w @sym)  ;; Hold to go to the symbols layer, o tap
+  ifc (tap-hold-next-release 400 d @fuc)  ;; Hold to go to the function layer, i tap
+  efc (tap-hold-next-release 200 o @fuc)  ;; Hold to go to the function layer, e tap
   xmd (tap-hold-next-release 200 x @med)  ;; Hold to go to the media layer, v tap
 )
 
@@ -77,10 +77,10 @@
                       stop vold pp
                            mute
   esc   f1   f2   f3    f4   f5   f6    f7   f8   f9    f10  f11  f12    ins  ssrq pause
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/  kp*  kp-
-  tab   q    w    e    r    t    y    u    i    o    p    [    ]    \    del  pgup       kp7  kp8  kp9  kp+
-  caps   a    s    d    f    g    h    j    k    l    ;    '    ret           pgdn       kp4  kp5  kp6
-  lsft    z    x    c    v    b    n    m    ,    .    /    rsft              up         kp1  kp2  kp3  kprt
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc  home end        nlck kp/  kp*  kp-
+  tab   b    y    o    u    '    ;    l    d    w    v    z    =    \    del  pgup       kp7  kp8  kp9  kp+
+  caps   c    i    e    a    ,    .    h    t    s    n    q    ret           pgdn       kp4  kp5  kp6
+  lsft    g    x    j    k    -    /    r    m    f    p    rsft              up         kp1  kp2  kp3  kprt
   lctl   lmet    lalt           spc            ralt   cmp   rctl         left down rght  kp0       kp.
 )
 
@@ -89,10 +89,10 @@
                       stop vold pp
                            mute
   esc   f1   f2   f3    f4   f5   f6    f7   f8   f9    f10  f11  f12    ins  ssrq pause
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home end        nlck kp/ kp*  kp-
-  tab   @qdr @wsm @efc @lmh t    y    @rmh @ifc @osm @pdr [    ]    \    del  pgup       7    8    9   kp+
-  caps   @lsh @lct @lmt @lat @lhr h    j    k    l    @rsh @tsm ret           pgdn       4    5    6
-  lsft    z    @xmd c    v    b    @rhr @rat @rmt @rct @rss rsft              up         1    2    3   kprt
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc  home end        nlck kp/ kp*  kp-
+  tab   @qdr @wsm @efc @lmh '    "    @rmh @ifc @osm @pdr z    =    \    del  pgup       7    8    9   kp+
+  caps   @lsh @lct @lmt @lat @lhr .    h    t    s    @rsh @tsm ret           pgdn       4    5    6
+  lsft    g    @xmd j    k    -    @rhr @rat @rmt @rct @rss rsft              up         1    2    3   kprt
   lctl   lmet    lalt            spc           ralt   cmp   rctl         left down rght  kp0       kp.
 )
 
