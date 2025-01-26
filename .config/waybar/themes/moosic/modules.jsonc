@@ -97,11 +97,11 @@
       "3": "🌗",
       "4": "🌘",
       "5": "🌑",
-      "6": "🌑",
-      "7": "🌒",
-      "8": "🌓",
-      "9": "🌔",
-      "10": "🌕",
+      // "6": "🌑",
+      "6": "🌒",
+      "7": "🌓",
+      "8": "🌔",
+      "9": "🌕",
       "active": "🌏",
       "special": "😍"
     },
@@ -131,14 +131,14 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "10": "X"
+      // "10": "X"
     }
   },
   "hyprland/workspaces#pacman": {
     "active-only": false,
     "all-outputs": true,
     "format": "{icon}{name}",
-    "show-special": false,
+    "show-special": true,
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -148,8 +148,8 @@
     "format-icons": {
       "active": " 󰮯 ",
       "visible": "󰮯 ",
-      "default": "󰊠",
       "persistent": "󰊠",
+      "default": "󱎓",
       "special": "😍"
     }
   },
@@ -162,9 +162,10 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 3
     },
     "format-icons": {
+      // "10": "",
       "1": "",
       "2": "",
       "3": "",
@@ -173,8 +174,31 @@
       "6": "",
       "7": "",
       "8": "",
-      "9": "",
-      "10": ""
+      "9": ""
+    }
+  },
+  "hyprland/workspaces#num": {
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "format-icons": {
+      "1": "󰎤",
+      "2": "󰎧",
+      "3": "󰎪",
+      "4": "󰎭",
+      "5": "󰎱",
+      "6": "󰎳",
+      "7": "󰎶",
+      "8": "󰎹",
+      "9": "󰎼",
+      // "10": "󰽽"
     }
   },
   "hyprland/submap": {
@@ -264,7 +288,7 @@
   },
   "custom/settings": {
     "format": "",
-    "on-click": "wezterm start --class dotfiles-floating -e ~/.config/.scripts/start-settings.sh",
+    "on-click": "wezterm start --class floating -e ~/.config/.scripts/start-settings.sh",
     "tooltip": false
   },
   "custom/keybindings": {
@@ -316,7 +340,7 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
     "restart-interval": 60,
-    "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
+    "on-click": "wezterm start --class floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
@@ -329,7 +353,7 @@
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "wezterm start --class dotfiles-floating -e garuda-update"
+    "on-click": "wezterm start --class floating -e garuda-update"
   },
   "cava": {
     "framerate": 30,
