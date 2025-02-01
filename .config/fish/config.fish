@@ -37,9 +37,57 @@ if test -d ~/Applications/depot_tools
 end
 
 
+### Starship prompt
+#if status --is-interactive
+#    source ("/usr/bin/starship" init fish --print-full-init | psub)
+#end
+
 ## Starship prompt
 if status --is-interactive
-    source ("/usr/bin/starship" init fish --print-full-init | psub)
+    if string match -q "/dev/tty*" (tty)
+        #function fish_prompt
+        #    echo -n "generic> "
+        function fish_prompt
+            set_color red
+            echo -n "─"
+            set_color yellow
+            echo -n " in "
+            set_color magenta
+            #echo -n (prompt_pwd)
+            echo -n (pwd)
+            echo
+            set_color red
+            echo -n " └─"
+            set_color yellow
+            echo -n "►"
+            set_color white
+            echo -n "> "
+            set_color normal
+        end
+
+        function fish_right_prompt
+            if test $status -eq 0
+                set_color green
+                echo -n "√"
+            else
+                set_color red
+                echo -n "?$status"
+            end
+            set_color white
+            echo -n " "(date +"%H:%M")
+            set_color normal
+        end
+        #echo "Fish in tty..."
+    else
+        # set colortheme to current wallpaper
+        set cwp (cat ~/.cache/current_wallpaper)
+        wal -i $cwp >/dev/null
+        ## Run fastfetch if session is interactive
+        # fastfetch --config neofetch.jsonc
+        fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
+        # start starship prompt
+        source ("/usr/bin/starship" init fish --print-full-init | psub)
+    end
 end
 
 
@@ -166,11 +214,11 @@ alias jctl 'journalctl -p 3 -xb'
 # Recent installed packages
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
-## Run fastfetch if session is interactive
-if status --is-interactive && type -q fastfetch
-    # fastfetch --config neofetch.jsonc
-    fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
-end
+### Run fastfetch if session is interactive
+#if status --is-interactive && type -q fastfetch
+#    # fastfetch --config neofetch.jsonc
+#    fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
+#end
 
 
 # ===============================================================================
@@ -186,9 +234,10 @@ alias ec "emacsclient -c -a 'emacs' &"
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
 
-# set colortheme to current wallpaper
-set cwp (cat ~/.cache/current_wallpaper)
-wal -i $cwp >/dev/null
+# moved to tty check above
+## set colortheme to current wallpaper
+#set cwp (cat ~/.cache/current_wallpaper)
+#wal -i $cwp >/dev/null
 
 # set vi mode
 ###set -o vi

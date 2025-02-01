@@ -105,4 +105,4 @@ else
   notify-send --icon=configuration_section "Colors and Wallpaper updated" "with image $newwall"
 fi
 
-echo "DONE!"
+echo "DONE"

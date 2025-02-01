@@ -90,7 +90,8 @@ min_time = 1
 # Somethere at the beginning
 [battery]
 full_symbol = "󰁹 "
-charging_symbol = "󰂄 "
+# charging_symbol = "󰂄 "
+charging_symbol = '⚡️ '
 discharging_symbol = "󰂃 "
 unknown_symbol = "󰁽 "
 empty_symbol = "󰂎 "
@@ -117,6 +118,9 @@ error_symbol = "[═](white)[⮚](bold red)"
 success_symbol = "[ ╚═](white)[⮚](#78b892)"
 # vimcmd_symbol = "[ ╚═❮](white)"
 vimcmd_symbol = "[ ╚═](white)[](#78b892)"
+vimcmd_replace_symbol = "[ ╚═](white)[](#78b892)[ RA](bold red)"
+vimcmd_replace_one_symbol = "[ ╚═](white)[](#78b892)[ R](bold red)"
+vimcmd_visual_symbol = "[ ╚═](white)[](#78b892)[ V](bold red)"
 
 # Filler
 [fill]
