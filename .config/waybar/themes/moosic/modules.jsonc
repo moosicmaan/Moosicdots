@@ -177,6 +177,30 @@
       "9": ""
     }
   },
+  "hyprland/workspaces#music": {
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 3
+    },
+    "format-icons": {
+      // "10": "",
+      "1": "󱡬",
+      "2": "󰽭",
+      "3": "󰘉",
+      "4": "󰽰",
+      "5": "󰽮",
+      "6": "󰽯",
+      "7": "󰝱",
+      "8": "󰽩",
+      "9": "󰝚"
+    }
+  },
   "hyprland/workspaces#num": {
     "active-only": false,
     "all-outputs": true,
@@ -534,16 +558,16 @@
       "warning": 30,
       "critical": 15
     },
-    "format": " {icon}  {capacity}% {time}",
-    "format-charging": "   {capacity}% {time}",
-    "format-plugged": "   {capacity}%",
-    "format-full": "",
+    "format": " {icon}  {capacity}% {time} ",
+    "format-charging": "   {capacity}% {time} ",
+    "format-plugged": "   {capacity}% ",
+    "format-full": " 󱟢 ",
     "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
+      "  ",
+      "  ",
+      "  ",
+      "  ",
+      "  "
     ]
   },
   "keyboard-state": {

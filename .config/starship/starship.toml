@@ -7,7 +7,8 @@ add_newline = false
 # First param ─┌
 [username]
 # format = " [╭─$user]($style)@"
-format = " ╔══ [$user]($style)"
+format = " [╭─](white)[$user]($style)"
+# format = " ╔══ [$user]($style)"
 show_always = true
 style_root = "underline bg:#bf5700"
 # style_user = "white"
@@ -113,14 +114,16 @@ threshold = 80
 # Prompt: param 2
 [character]
 # error_symbol = " [× ](bold red)"
-error_symbol = "[═](white)[⮚](bold red)"
+# error_symbol = "[═](white)[⮚](bold red)"
+error_symbol = "[╺─](white)[](bold red)"
 # success_symbol = " [╰─λ](bold red)"
-success_symbol = "[ ╚═](white)[⮚](#78b892)"
+# success_symbol = "[ ╚═](white)[⮚](#78b892)"
+success_symbol = "[ ╰──](white)[](#6791c9)"
 # vimcmd_symbol = "[ ╚═❮](white)"
-vimcmd_symbol = "[ ╚═](white)[](#78b892)"
-vimcmd_replace_symbol = "[ ╚═](white)[](#78b892)[ RA](bold red)"
-vimcmd_replace_one_symbol = "[ ╚═](white)[](#78b892)[ R](bold red)"
-vimcmd_visual_symbol = "[ ╚═](white)[](#78b892)[ V](bold red)"
+vimcmd_symbol = "[ ╰──](white)[](#78b892)"
+vimcmd_replace_symbol = "[ ╰──](white)[](#78b892)[ RA](bold red)"
+vimcmd_replace_one_symbol = "[ ╰──](white)[](#78b892)[ R](bold red)"
+vimcmd_visual_symbol = "[ ╰──](white)[](#78b892)[ V](bold red)"
 
 # Filler
 [fill]
