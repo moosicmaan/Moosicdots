@@ -159,7 +159,7 @@ static Keychord *keychords[] = {
 
   /*-V-NVIM EDITING-V-*/
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn,                     {.v = my_editc } }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide /mnt/data/moosicmaan/") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide /mnt/data/moosicmaan/CONFIG/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_d}}, spawn, SHCMD("neovide $HOME/.config/dwm/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_h}}, spawn, SHCMD("neovide $HOME/.config/hypr/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_q}}, spawn, SHCMD("neovide $HOME/.config/qtile/") }),
