@@ -1,4 +1,4 @@
-format = '$username$os$hostname$jobs$directory$sudo$git_status$git_state$fill$cmd_duration$all'
+format = '$username$os$hostname$jobs$directory$sudo$git_status$git_state$git_metrics$fill$cmd_duration$all'
 # format = '$username$hostname$jobs$directory$sudo$git_status$all'
 right_format = "$battery$time"
 add_newline = true
@@ -39,7 +39,7 @@ threshold = 1
 symbol_threshold = 1
 number_threshold = 1
 format = "[$symbol$number]($style)"
-symbol = "✦"
+symbol = " ✦"
 style = "bold blue"
 disabled = false
 
@@ -80,6 +80,7 @@ typechanged = "[](yellow)"
 # up_to_date = "[](green)"
 ignore_submodules = false
 # style = "red bold"
+
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 rebase = "REBASING"
@@ -92,6 +93,11 @@ am_or_rebase = "AM/REBASE"
 style = "bold yellow"
 disabled = false
 
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+
 # Last param in the first line/row
 [cmd_duration]
 disabled = false
@@ -99,29 +105,6 @@ format = "took [$duration]($style) "
 min_time = 1
 
 ## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
-[battery]
-full_symbol = "󰁹 "
-# charging_symbol = "󰂄 "
-charging_symbol = '⚡️ '
-discharging_symbol = "󰂃 "
-unknown_symbol = "󰁽 "
-empty_symbol = "󰂎 "
-disabled = false
-format = "[$symbol$percentage]($style) "
-
-[[battery.display]] # "bold red" style when capacity is between 0% and 10%
-threshold = 15
-style = "bold red"
-
-[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
-style = "bold yellow"
-threshold = 50
-
-[[battery.display]] # "bold green" style when capacity is between 10% and 30%
-style = "bold green"
-threshold = 80
-
 # Prompt: param 2
 [character]
 # error_symbol = " [× ](bold red)"
@@ -135,6 +118,29 @@ vimcmd_symbol = "[ ╰──](white)[](#78b892)"
 vimcmd_replace_symbol = "[ ╰──](white)[](#78b892)[ RA](bold red)"
 vimcmd_replace_one_symbol = "[ ╰──](white)[](#78b892)[ R](bold red)"
 vimcmd_visual_symbol = "[ ╰──](white)[](#78b892)[ V](bold red)"
+
+# Somethere at the beginning
+[battery]
+full_symbol = "󰁹 "
+# charging_symbol = "󰂄 "
+charging_symbol = '⚡️ '
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+disabled = false
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]] # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
+style = "bold yellow"
+threshold = 30
+
+[[battery.display]] # "bold green" style when capacity is between 10% and 30%
+style = "bold green"
+threshold = 80
 
 # Filler
 [fill]
