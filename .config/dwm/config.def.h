@@ -96,15 +96,15 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browscmd[]  = { "brave", NULL };
-static const char *my_term2[] = { "kitty", NULL };
+static const char *my_term2[] = { "alacritty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
+static const char *my_filesc[] = { "alacritty", "-e", "yazi", NULL };
 static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
@@ -117,12 +117,14 @@ static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
 static const char *varip[] = { "variety", "-p", NULL };
 static const char *rofi_power[] = { "rofi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/jb-rofi-power.sh", NULL };
+static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/toggle_lap_kbd.sh", NULL };
+static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/toggle_kbd.sh", NULL };
 
 /*First arg only serves to match against key in rules*/
-static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
-static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
-static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
+static const char *ter_scratch[] = {"s", "alacritty", "-T", "termdrop", NULL};
+static const char *yazi_scratch[] = {"j", "alacritty", "-T", "yazidrop", "-e", "yazi", NULL};
+static const char *btop_scratch[] = {"l", "alacritty", "-T", "btopdrop", "-e", "btop", NULL};
+static const char *moosic_scratch[] = {"p", "alacritty", "-T", "moosCube", "-e", "musikcube", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
 
 static Keychord *keychords[] = {
@@ -136,6 +138,8 @@ static Keychord *keychords[] = {
  
   /****APPLICATIONS****/
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
+	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
+	&((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
 	&((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
 	&((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
@@ -158,8 +162,9 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
 
   /*-V-NVIM EDITING-V-*/
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn,                     {.v = my_editc } }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide /mnt/data/moosicmaan/CONFIG/") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_editc } }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn, SHCMD("cd /mnt/data/moosicmaan/CONFIG/ && neovide") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide $HOME/.config/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_d}}, spawn, SHCMD("neovide $HOME/.config/dwm/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_h}}, spawn, SHCMD("neovide $HOME/.config/hypr/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_q}}, spawn, SHCMD("neovide $HOME/.config/qtile/") }),

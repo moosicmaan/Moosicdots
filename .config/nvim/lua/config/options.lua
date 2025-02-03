@@ -11,6 +11,7 @@ opt.lisp = true -- automatic indenting for Lisp
 opt.mousehide = true -- hide mouse pointer while typing
 opt.softtabstop = 2 -- see multiple spaces as tabstops so <BS> does the right thing
 opt.ttyfast = true -- speeds up scrolling in vim
+-- opt.guicursor = "n-v-c:block,o:hor50,i-ci:ver25,r-cr:hor50,n-v:r-v:blinkon0,i:ver25"
 -- for orgmode
 opt.conceallevel = 2
 opt.concealcursor = "nc"

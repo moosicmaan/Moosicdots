@@ -98,13 +98,13 @@ history = 10000
 multiplier = 3
 
 [terminal.shell]
-program = "/usr/bin/fish"
+program = "/usr/bin/zsh"
 
 [window]
 decorations = "full"
 decorations_theme_variant = "Dark"
 dynamic_padding = true
-opacity = 0.6
+opacity = 0.99
 title = "Alacritty"
 
 [window.class]
