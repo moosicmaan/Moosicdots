@@ -96,15 +96,15 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *browscmd[]  = { "brave", NULL };
-static const char *my_term2[] = { "alacritty", NULL };
+static const char *my_term2[] = { "kitty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *my_filesc[] = { "alacritty", "-e", "yazi", NULL };
+static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
 static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
@@ -121,10 +121,10 @@ static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/toggle_lap_k
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/toggle_kbd.sh", NULL };
 
 /*First arg only serves to match against key in rules*/
-static const char *ter_scratch[] = {"s", "alacritty", "-T", "termdrop", NULL};
-static const char *yazi_scratch[] = {"j", "alacritty", "-T", "yazidrop", "-e", "yazi", NULL};
-static const char *btop_scratch[] = {"l", "alacritty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *moosic_scratch[] = {"p", "alacritty", "-T", "moosCube", "-e", "musikcube", NULL};
+static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
+static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
+static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
+static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
 
 static Keychord *keychords[] = {
