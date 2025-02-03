@@ -1,7 +1,7 @@
-format = '$username$os$hostname$jobs$directory$sudo$git_status$fill$cmd_duration$all'
+format = '$username$os$hostname$jobs$directory$sudo$git_status$git_state$fill$cmd_duration$all'
 # format = '$username$hostname$jobs$directory$sudo$git_status$all'
 right_format = "$battery$time"
-add_newline = false
+add_newline = true
 
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
@@ -80,6 +80,17 @@ typechanged = "[](yellow)"
 # up_to_date = "[](green)"
 ignore_submodules = false
 # style = "red bold"
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+am = "AM"
+bisect = "BISECTING"
+am_or_rebase = "AM/REBASE"
+style = "bold yellow"
+disabled = false
 
 # Last param in the first line/row
 [cmd_duration]
