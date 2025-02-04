@@ -262,6 +262,10 @@ c.session.default_name = "default"
 c.auto_save.session = True
 c.tabs.tabs_are_windows = False
 
+# Custom keybindings
+config.bind("<Ctrl+=>", "zoom-in")
+config.bind("<Ctrl+->", "zoom-out")
+
 
 def restore_history_idx(window, tab, idx):
     for _ in range(idx):

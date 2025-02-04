@@ -70,10 +70,9 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 static const Layout layouts[] = {
 /* symbol     arrange function */
   { "[]=",      tile },                       /* first entry is default */
- 	{ "[@]",      spiral },
- 	{ "[\\]",     dwindle },
-  { "><>",      NULL },                       /* no layout function means floating behavior */
+  { "[@]",      spiral },
   { "[M]",      monocle },
+  { "[\\]",     dwindle },
 };
 
 /* key definitions */
@@ -85,10 +84,10 @@ static const Layout layouts[] = {
 /*{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \*/
 /*{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },*/
 #define TAGKEYS(KEY,TAG)                                                                                               \
-       &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
-       &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
-       &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
-       &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},                  toggletag,      {.ui = 1 << TAG} }),
+  &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},                  toggletag,      {.ui = 1 << TAG} }),
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -155,11 +154,13 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
 	&((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_y}}, spawn,          {.v = my_filesc } }),
 	&((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
 	&((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
 	&((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
 	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
+
+  /****EXPERIMENTAL****/
+  &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
 
   /*-V-NVIM EDITING-V-*/
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_editc } }),
@@ -181,14 +182,14 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_g}}, incrigaps,      {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_0}}, togglegaps,     {0} }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_0}}, defaultgaps,    {0} }),
-  &((Keychord){1, {{MODKEY,                       XK_y}}, incrihgaps,     {.i = +1 } }),
-  &((Keychord){1, {{MODKEY,                       XK_h}}, incrihgaps,     {.i = -1 } }),
-  &((Keychord){1, {{MODKEY|ControlMask,           XK_y}}, incrivgaps,     {.i = +1 } }),
-  &((Keychord){1, {{MODKEY|ControlMask,           XK_o}}, incrivgaps,     {.i = -1 } }),
-  &((Keychord){1, {{MODKEY|Mod1Mask,              XK_y}}, incrohgaps,     {.i = +1 } }),
-  &((Keychord){1, {{MODKEY|Mod1Mask,              XK_o}}, incrohgaps,     {.i = -1 } }),
-  &((Keychord){1, {{MODKEY|ShiftMask,             XK_y}}, incrovgaps,     {.i = +1 } }),
-  &((Keychord){1, {{MODKEY|ShiftMask,             XK_o}}, incrovgaps,     {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_y}}, incrihgaps,     {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_u}}, incrihgaps,     {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_y}}, incrivgaps,     {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_u}}, incrivgaps,     {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ControlMask|ShiftMask,      XK_y}}, incrohgaps,     {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ControlMask|ShiftMask,      XK_u}}, incrohgaps,     {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_y}}, incrovgaps,     {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
   /****WINDOWS LAYOUTS MONITORS****/
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_b}}, togglebar,      {0} }),

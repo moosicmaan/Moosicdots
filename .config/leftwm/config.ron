@@ -59,16 +59,16 @@
     layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Wezterm", args: None, value: "wezterm", x: 119, y: 90, height: 900, width: 1700),
+        (name: "Kitty", args: None, value: "kitty", x: 119, y: 90, height: 900, width: 1700),
         ( name: "Yazi", // This is the name which is referenced when calling (case-sensitive)
-          value: "wezterm", // The command to load the application if it isn't started (first application to start)
+          value: "kitty", // The command to load the application if it isn't started (first application to start)
           args: ["-e", "yazi"], // Any arguments to pass to the command
           // x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
           // These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
           x: 119, y: 90, height: 900, width: 1700,
         ),
         ( name: "BTOP", // This is the name which is referenced when calling (case-sensitive)
-          value: "wezterm", // The command to load the application if it isn't started (first application to start)
+          value: "kitty", // The command to load the application if it isn't started (first application to start)
           args: ["-e", "btop"], // Any arguments to pass to the command
           // x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
           // These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
@@ -88,12 +88,12 @@
     disable_cursor_reposition_on_resize: false,
     window_hiding_strategy: MoveOnly,
     keybind: [
-        (command: ToggleScratchPad, value: "Wezterm", modifier: ["modkey", "Alt"], key: "i"),
+        (command: ToggleScratchPad, value: "Kitty", modifier: ["modkey", "Alt"], key: "i"),
         (command: ToggleScratchPad, value: "Yazi", modifier: ["modkey", "Alt"], key: "j"),
         (command: ToggleScratchPad, value: "BTOP", modifier: ["modkey", "Alt"], key: "l"),
         (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "weztern", modifier: ["modkey"], key: "Return"),
-        (command: Execute, value: "wezterm", modifier: ["modkey"], key: "t"),
+        (command: Execute, value: "ghostty", modifier: ["modkey"], key: "Return"),
+        (command: Execute, value: "kitty", modifier: ["modkey"], key: "t"),
         (command: Execute, value: "brave", modifier: ["modkey"], key: "b"),
         (command: Execute, value: "qutebrowser", modifier: ["modkey"], key: "o"),
         (command: Execute, value: "thunderbird", modifier: ["modkey", "Control"], key: "Return"),
