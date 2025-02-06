@@ -1,0 +1,45 @@
+#!/bin/sh
+# Display volume levels.
+
+wpctl() {
+  arg="$2"
+
+  set -- "$1"
+  if [ "$1" = set-volume ]; then
+    set -- "$@" --limit=1.0
+  fi
+
+  set -- "$@" @DEFAULT_AUDIO_SINK@ "$arg"
+
+  command wpctl "$@"
+}
+
+case "$BLOCK_BUTTON" in
+3) /home/moosicmaan/.config/.scripts/Volume.sh --inc ;;
+1) /home/moosicmaan/.config/.scripts/Volume.sh --dec ;;
+2) /home/moosicmaan/.config/.scripts/Volume.sh --toggle ;;
+6) terminal -e "$EDITOR" "$0" ;;
+esac
+
+. sb-theme
+if wpctl get-volume | grep -q "[MUTED]"; then
+  display "🔇M" 9
+  exit
+fi
+
+volume_frac="$(wpctl get-volume | cut -d' ' -f2)"
+volume="$(echo "$volume_frac * 100 / 1" | bc)"
+
+if [ -z "$volume" ]; then
+  exit 1
+fi
+
+if [ "$volume" -gt 40 ]; then
+  icon="🔊 "
+elif [ "$volume" -gt 15 ]; then
+  icon="🔉 "
+else
+  icon="🔈️ "
+fi
+
+display "$icon$volume%"
