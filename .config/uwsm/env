@@ -8,8 +8,6 @@ env = QT_QPA_PLATFORM,wayland
 
 # Session
 env = XDG_SESSION_TYPE,wayland
-env = XDG_SESSION_DESKTOP,hyprland
-env = XDG_CURRENT_DESKTOP,Hyprland
 
 # GTK
 env = MOZ_ENABLE_WAYLAND,1             # only start firefox in wayland mode and no other GTK apps
