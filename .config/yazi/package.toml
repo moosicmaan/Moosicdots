@@ -1,9 +1,32 @@
-[plugin]
-deps = [
-  { use = "dedukun/relative-motions", rev = "df97039" },
-  { use = "TD-Sky/sudo", rev = "a8287ea" },
-  { use = "yazi-rs/plugins:full-border", rev = "71c4fc2" },
-  { use = "imsi32/yatline", rev = "600ed1f" },
-  { use = "lpanebr/yazi-plugins:yatline-symlink", rev = "7af4fed" },
-  { use = "Lil-Dank/lazygit", rev = "c82794f" },
-]
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "df97039"
+hash = "395940d2b22941e0acb1232579c9d4cf"
+
+[[plugin.deps]]
+use = "TD-Sky/sudo"
+rev = "a8287ea"
+hash = "17e712ced895143bab875643c8913de"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "71c4fc2"
+hash = "a61bb2d21a08bf1d18f0a549e5eb1475"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "600ed1f"
+hash = "99fc27c62b8efe3840bd237f9cbf8684"
+
+[[plugin.deps]]
+use = "lpanebr/yazi-plugins:yatline-symlink"
+rev = "7af4fed"
+hash = "32939ad5b4738c2595a904997fd30ea6"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "c82794f"
+hash = "2b0c33928986f126d5c5a4cac31a6b46"
+
+[flavor]
+deps = []

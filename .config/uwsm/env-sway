@@ -5,11 +5,10 @@
 # =====================================================
 
 # Session
-export XDG_SESSION_DESKTOP=hyprland
-export XDG_CURRENT_DESKTOP=Hyprland
-export HYPRLAND_INSTANCE_SIGNATURE=882f7ad7d2bbfc7440d0ccaef93b1cdd78e8e3ff_1739199858_moosicmaan
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=Sway
 
-export TESTING3=FromEnvHyprland
+export TESTING3=FromEnvSway
 # Not sure if this is where it should go -- testing
 
 # # =====================================================
