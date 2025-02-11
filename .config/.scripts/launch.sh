@@ -16,6 +16,8 @@
 #     exit 1
 # fi
 
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+
 # -----------------------------------------------------
 # Quit all running waybar instances
 # -----------------------------------------------------
@@ -59,4 +61,4 @@ if [ -f ~/.config/waybar/themes${arrThemes[1]}/style-custom.css ]; then
   style_file="style-custom.css"
 fi
 
-waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
+${PREFIX}waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &

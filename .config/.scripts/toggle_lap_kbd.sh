@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+
 # Debugging output
 echo "Checking if kmonad is running..."
 
@@ -16,6 +18,6 @@ else
   echo "kmonad is not running. Starting it..."
   notify-send --icon=keyboard "...kmonad was NOT running..." "Starting it for the laptop..."
   # kmonad is not running, so start it
-  kmonad /home/moosicmaan/.config/kmonad/dellg7.kbd
+  ${PREFIX}kmonad /home/moosicmaan/.config/kmonad/dellg7.kbd
   echo "kmonad started for the laptop."
 fi
