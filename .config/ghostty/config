@@ -12,9 +12,9 @@ window-padding-balance = true
 confirm-close-surface = false
 
 # font-family = "Ubuntu Mono"
-# font-family = "Hack Nerd Font"
+font-family = "Hack Nerd Font"
 # font-family = "Space Mono Nerd Font"
-font-family = "MesloLGM Nerd Font Mono"
+# font-family = "MesloLGM Nerd Font Mono"
 # font-family = "SpaceMono Nerd Font Mono"
 # font-family = "Iosevka Nerd Font Mono"
 font-size = 14.4

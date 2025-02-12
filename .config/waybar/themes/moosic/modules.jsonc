@@ -382,12 +382,12 @@
   "cava": {
     "framerate": 30,
     "autosens": 1,
-    "bars": 12,
+    "bars": 16,
     "lower_cutoff_freq": 10,
     "higher_cutoff_freq": 10000,
     "method": "pipewire",
     "source": "auto",
-    "stereo": false,
+    "stereo": true,
     "reverse": false,
     "sleep_timer": 7,
     "hide_on_silence": true,
@@ -833,6 +833,7 @@
     "orientation": "horizontal",
     "modules": [
       "mpris",
+      "cava",
       "pulseaudio"
     ]
   }

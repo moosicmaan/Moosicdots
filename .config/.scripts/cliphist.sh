@@ -11,7 +11,7 @@
 
 case $1 in
 d)
-  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-cliphist.rasi | cliphist delete
+  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi | cliphist delete
   ;;
 
 w)
@@ -21,6 +21,6 @@ w)
   ;;
 
 *)
-  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy
+  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi | cliphist decode | wl-copy
   ;;
 esac

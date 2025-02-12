@@ -13,6 +13,9 @@
 cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
 
+# Prefix to run commands in wayland using uwsm.
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+
 # Create cache file if not exists
 if [ ! -f "$cache_file" ]; then
   touch "$cache_file"
@@ -78,7 +81,7 @@ newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
 # -----------------------------------------------------
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/.config/.scripts/launch.sh
+~/.config/.scripts/BarLaunch.sh
 
 # -----------------------------------------------------
 # Set the new wallpaper
@@ -87,7 +90,7 @@ newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
 # transition_type="outer"
 transition_type="random"
 
-swww img "$wallpaper" \
+${PREFIX}swww img "$wallpaper" \
   --transition-bezier .43,1.19,1,.4 \
   --transition-fps=60 \
   --transition-type=$transition_type \
@@ -102,7 +105,7 @@ if [ "$1" == "init" ]; then
   echo ":: Init"
 else
   sleep 1
-  notify-send --icon=configuration_section "Colors and Wallpaper updated" "with image $newwall"
+  notify-send --icon=monitor "Colors and Wallpaper updated" "with image $newwall"
 fi
 
 echo "DONE"

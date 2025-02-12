@@ -1,0 +1,1 @@
+/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh

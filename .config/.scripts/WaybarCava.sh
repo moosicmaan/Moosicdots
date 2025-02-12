@@ -2,6 +2,9 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Not my own work. This was added through Github PR. Credit to original author
 
+# Prefix to run commands in wayland using uwsm.
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+
 #----- Optimized bars animation without much CPU usage increase --------
 bar="▁▂▃▄▅▆▇█"
 dict="s/;//g"
@@ -35,5 +38,5 @@ EOF
 pkill -f "cava -p $config_file"
 
 # Read stdout from cava and perform substitution in a single sed command
-cava -p "$config_file" | sed -u "$dict"
+${PREFIX}cava -p "$config_file" | sed -u "$dict"
 # cavalier | sed -u "$dict"

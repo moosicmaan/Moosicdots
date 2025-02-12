@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "pkill -KILL -u $USER",
+    "action" : "loginctl terminate-user $USER",
     "text" : "Exit",
     "keybind" : "e"
 }
