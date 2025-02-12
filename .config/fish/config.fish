@@ -231,6 +231,7 @@ alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
 
+alias jam 'RofiBeats.sh'
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
 

@@ -49,6 +49,7 @@ play_local_music() {
 
   # Prompt the user to select a song
   choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Local Music")
+  # choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Local Music")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -79,6 +80,7 @@ shuffle_local_music() {
 # Main function for playing online music
 play_online_music() {
   choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Online Music")
+  # choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Online Music")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -97,6 +99,7 @@ pkill mpv && notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music sto
 
   # Prompt the user to choose between local and online music
   user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/config-wide.rasi -p "Select music source")
+  # user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Select music source")
 
   case "$user_choice" in
   "Play from Music Folder")

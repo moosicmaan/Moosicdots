@@ -30,7 +30,7 @@
   def   (layer-toggle default)            ;; Bind to a button that toggles a layer - hold to activate layer
   dir   (layer-toggle direction)          ;; Bind to a button that toggles a layer - hold to activate layer
   fuc   (layer-toggle function)           ;; Bind to a button that toggles a layer - hold to activate layer
-  med   (layer-toggle media)           ;; Bind to a button that toggles a layer - hold to activate layer
+  med   (layer-toggle media)              ;; Bind to a button that toggles a layer - hold to activate layer
 
   kil   C-A-del                           ;; Bind kil to a button that Ctrl-Alt-deletes
   big   C-=                               ;; CTRL and equals
@@ -126,9 +126,9 @@
                            mute
   _     _    _    _     _    _    _     _    _    _     _    _    _      _    _    _
   _    _    _    _    _    _    _    f10  f11  f12  _    _    _    _     _    _          _    _    _    _
-  _     @kil esc  _    @rdo _    _    f7   f8   f9   del  _    _    _    _    _          _    _    _    _
+  _     tab  esc  _    @rdo _    _    f7   f8   f9   del  _    _    _    _    _          _    _    _    _
   _      @all ssrq del  _    _    _    f4   f5   f6   ret  _     _            _          _    _    _
-  _       @udo @cut @cpy @put _    _    f1   f2   f3   _    _                 _          _    _    _    _
+  _       @udo @cut @cpy @put _    _    f1   f2   f3   @kil _                 _          _    _    _    _
   _      _       _              bspc           _      _     _            _    _    _     _         _
 )
 

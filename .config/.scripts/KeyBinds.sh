@@ -9,7 +9,7 @@ pkill yad || true
 KEYBINDS_CONF="$HOME/.config/hypr/conf/keybinding.conf"
 
 # Combine the contents of the keybinds files and filter for keybinds
-KEYBINDS=$(cat "$KEYBINDS_CONF" | grep -E '^(bind|bindl|binde|bindm)')
+KEYBINDS=$(cat "$KEYBINDS_CONF" | grep -E '^(bindd|binddl|binddle|bindde|binddm)')
 
 # Check if Laptop.conf exists and add its keybinds if present
 # if [[ -f "$LAPTOP_CONF" ]]; then
