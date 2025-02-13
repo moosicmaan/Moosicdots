@@ -16,7 +16,6 @@ PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
 declare -A online_music=(
   ["Radio - Lofi Girl 🎧🎶"]="https://play.streamafrica.net/lofiradio"
   ["Radio - Chillhop 🎧🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
-  ["Radio - Crossover 🎧🎶"]="http://fluoz.zeno.fm/2zpzh8sp168uv/source"
   ["Radio - Alternative Crossover 🎧🎶"]="http://streams.deltaradio.de/delta-alternative/mp3-192/play.m3u"
   ["Radio - Classical Oasis 🎧🎶"]="http://66.42.114.24:8000/live"
   ["Radio - Radio Art Broadway 🎧🎶"]="http://air-tunein.radioart.com/fBroadway.mp3"
@@ -26,6 +25,10 @@ declare -A online_music=(
   ["Radio - DooWop Music 🎧🎶"]="http://66.59.109.208:8000/stream/2/;"
   ["Radio - Mel's Old Time Radio Shows 🎧🎶"]="http://ec1.yesstreaming.net:1790"
   ["Radio - Greek New Age 🎧🎶"]="https://stream-152.zeno.fm/9yu82xwmdc9uv"
+  ["Radio - Colorado Classical 🎧🎶"]="https://stream1.cprnetwork.org/cpr2_lo"
+  ["Radio - Vocal Jazz 181 🎧🎶"]="http://listen.181fm.com/181-vocals_128k.mp3"
+  ["Radio - Swing Street 🎧🎶"]="https://s1.voscast.com:10413/stream"
+  ["Radio - Cleansing 50s 🎧🎶"]="http://hemnos.cdnstream.com/1464_128"
 )
 
 # Populate local_music array with files from music directory and subdirectories
@@ -92,6 +95,7 @@ play_online_music() {
 
   # Play the selected online music using mpv
   ${PREFIX}mpv --shuffle --vid=no "$link"
+  # ${PREFIX}mpg123 "$link"
 }
 
 # Check if an online music process is running and send a notification, otherwise run the main function

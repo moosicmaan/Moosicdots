@@ -122,6 +122,16 @@ static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/toggle_lap_k
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/toggle_kbd.sh", NULL };
 static const char *jammpd[] = { "/home/moosicmaan/.config/.scripts/RofiBeats.sh", NULL };
 
+/*MEDIA KEYS*/
+#include <X11/XF86keysym.h>
+static const char *volu[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--inc", NULL };
+static const char *vold[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--dec", NULL };
+static const char *volt[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--toggle", NULL };
+static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--pause", NULL };
+static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--pause", NULL };
+static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--nxt", NULL };
+static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--prv", NULL };
+
 /*First arg only serves to match against key in rules*/
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
@@ -162,6 +172,15 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
 	&((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
 	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
+
+  /****MEDIA KEYS****/
+	&((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
+	&((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
+	&((Keychord){1, {{0,                XF86XK_AudioMute}}, spawn,          {.v = volt } }),
+	&((Keychord){1, {{0,                XF86XK_AudioPlay}}, spawn,          {.v = mpp } }),
+	&((Keychord){1, {{0,                XF86XK_AudioStop}}, spawn,          {.v = mstop } }),
+	&((Keychord){1, {{0,                XF86XK_AudioNext}}, spawn,          {.v = mnxt } }),
+	&((Keychord){1, {{0,                XF86XK_AudioPrev}}, spawn,          {.v = mprv } }),
 
   /****EXPERIMENTAL****/
   &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
