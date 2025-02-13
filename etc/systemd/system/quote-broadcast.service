@@ -1,0 +1,7 @@
+[Unit]
+Description=Broadcast a random quote to all users
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/broadcast-quote.sh

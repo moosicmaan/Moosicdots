@@ -59,7 +59,7 @@ if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "pixiedust"
   -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
   -- vim.g.neovide_cursor_vfx_mode = "ripple"
-  -- vim.g.neovide_cursor_vfx_mode = "wireframe"
+  vim.g.neovide_cursor_vfx_mode = "wireframe"
   vim.g.neovide_cursor_vfx_opacity = 200.0
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
   vim.g.neovide_cursor_vfx_particle_density = 7.0

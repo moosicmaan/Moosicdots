@@ -5,15 +5,7 @@ xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --out
 setxkbmap -option 'caps:escape_shifted_capslock'
 xset r rate 300 120
 
-# picom -b &
-# pkill kmonad
-# kmonad -c /home/moosicmaan/.config/kmonad/k350.kbd &
-# # variety
-# nm-applet &
-# pasystray &
-# firewall-applet &
-# garuda-system-maintenance &
-# dunst &
-# flameshot &
-# blueman-applet &
-# /home/moosicmaan/.config/dwm/include/dwmblocks/dwmblocks &
+export JBSTARTSCRIPT="~/.xprofile"
+
+# Start the window manager (dwm in this case)
+# exec dwm

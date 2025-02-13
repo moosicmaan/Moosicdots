@@ -16,7 +16,7 @@ static const int showsystray        = 1;      /* 0 means no systray */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font Mono:size=8" };
-static const char dmenufont[]       = "Hack Nerd Font Mono:size=10";
+static const char dmenufont[]       = "Hack Nerd Font Mono:size=8";
 static const char col_gray1[]       = "#010101";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";
@@ -120,6 +120,7 @@ static const char *varip[] = { "variety", "-p", NULL };
 static const char *rofi_power[] = { "rofi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/jb-rofi-power.sh", NULL };
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/toggle_lap_kbd.sh", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/toggle_kbd.sh", NULL };
+static const char *jammpd[] = { "/home/moosicmaan/.config/.scripts/RofiBeats.sh", NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
@@ -141,6 +142,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
+	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jammpd } }),
 	&((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
 	&((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),

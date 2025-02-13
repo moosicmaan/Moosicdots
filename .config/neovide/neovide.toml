@@ -1,22 +1,22 @@
 # ---------------------------------
-#
-# N E O V I D E 
+# N E O V I D E
 #   config
-# 
 # ---------------------------------
-
-
-wsl = false
-no-multigrid = false
-vsync = true
-maximized = false
-srgb = false
-idle = true
-# neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+backtraces_path = "/path/to/neovide_backtraces.log" # see below for the default platform specific location
+fork = false
 frame = "full"
-title-hidden = true
+idle = true
+maximized = false
+mouse-cursor-icon = "arrow"
+# neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+no-multigrid = false
+srgb = false
 tabs = true
+theme = "auto"
+title-hidden = true
+vsync = true
+wsl = false
 
 [font]
-normal = ["FiraCode Nerd Font"]
-size = 18
+normal = [] # Will use the bundled Fira Code Nerd Font by default
+size = 14.0

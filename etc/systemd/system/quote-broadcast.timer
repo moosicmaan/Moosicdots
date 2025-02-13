@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the quote broadcast service every 15 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

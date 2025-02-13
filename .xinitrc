@@ -5,5 +5,7 @@ xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --out
 setxkbmap -option 'caps:escape_shifted_capslock'
 xset r rate 300 120
 
+export JBSTARTSCRIPT="~/.xinitrc"
+
 # Start the window manager (dwm in this case)
 # exec dwm
