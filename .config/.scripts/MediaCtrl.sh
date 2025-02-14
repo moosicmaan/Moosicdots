@@ -37,7 +37,12 @@ stop_playback() {
 # Display notification with song information
 show_music_notification() {
   status=$(playerctl status)
+  player=$(playerctl -l | head -n 1)
   if [[ "$status" == "Playing" ]]; then
+    if [[ "$player" == "mpv" ]]; then
+      # notify-send -e -u low -i "$music_icon" "MPV PLAYER"
+      exit 1
+    fi
     song_title=$(playerctl metadata title)
     song_artist=$(playerctl metadata artist)
     music_icon="/usr/share/icons/candy-icons/status/scalable/media-playback-playing.svg"

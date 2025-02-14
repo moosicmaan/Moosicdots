@@ -43,7 +43,8 @@ populate_local_music() {
 
 # Function for displaying notifications
 notification() {
-  notify-send -u normal -i "$iDIR/media-playback-playing.svg" "Playing: $@"
+  # notify-send -u normal -i "$iDIR/media-playback-playing.svg" "Playing: $@"
+  echo "$iDIR/media-playback-playing.svg" "Playing: $@"
 }
 
 # Main function for playing local music

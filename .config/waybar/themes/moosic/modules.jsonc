@@ -833,7 +833,7 @@
     "orientation": "horizontal",
     "modules": [
       "mpris",
-      "cava",
+      // "cava",
       "pulseaudio"
     ]
   }

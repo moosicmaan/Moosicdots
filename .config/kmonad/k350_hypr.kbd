@@ -1,6 +1,7 @@
 #| --------------------------------------------------------------------------
 
                          KMonad: Logitec k350
+
   This file contains the `defsrc` configuration for a sandard US-ansi 100% logitec k350 keyboard.
   Copy out the `deflayer` template to easily start a new layer with matching `transparent` buttons.
 
@@ -102,7 +103,7 @@
                            mute
   _     _    _    _     _    _    _     _    _    _     _    _    _      _    _    _
   _    _    _    ins  _    pause _   _    _    _    _    _    _    _     _    _          _    _    _    _
-  _     _    esc  home end  _    _    @sml @big _    del  _    _    _    _    _          _    _    _    _
+  _     tab  esc  home end  _    _    @sml @big _    del  _    _    _    _    _          _    _    _    _
   _      _    _    del  pgup _    left down up   rght ret  _    _             _          _    _    _
   _       _    _    _    pgdn _    _    _    _    _    _    _                 _          _    _    _    _
   _      _       _              bspc           _      _     _            _    _    _     _         _
