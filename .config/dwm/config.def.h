@@ -58,6 +58,7 @@ static const Rule rules[] = {
 	{ NULL,       NULL,   "btopdrop",         0,         1,          -1,    'l',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "Volume Control",   0,         1,          -1,    'v',      150,50,1620,900,   9 },
+	{ NULL,       NULL,   "weatherreport",    0,         1,          -1,    'v',      150,50,1620,900,   9 },
 };
 
 /* layout(s) */

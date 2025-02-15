@@ -9,10 +9,12 @@ weatherreport="${XDG_CACHE_HOME:-$HOME/.cache}/weatherreport"
 
 # Get a weather report from 'wttr.in' and save it locally.
 # getforecast() { timeout --signal=1 2s curl -sf "$url/$LOCATION" > "$weatherreport" || exit 1; }
-getforecast() { timeout --signal=1 2s curl -sf "$url/Walsenburg" >"$weatherreport" || exit 1; }
+getforecast() { timeout --signal=1 2s curl -m 10 -sf "$url/Walsenburg" >"$weatherreport" || exit 1; }
 
 # Forecast should be updated only once a day.
 checkforecast() {
+  # removing to ensure this always runs
+  rm "$weatherreport"
   [ -s "$weatherreport" ] && [ "$(stat -c %y "$weatherreport" 2>/dev/null |
     cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ]
 }
@@ -36,12 +38,22 @@ readfile() { weatherdata="$(cat "$weatherreport")"; }
 
 showweather() {
   readfile
-  printf "☔%s 🥶%s° 🌞%s°\n" "$(getprecipchance)" $(getdailyhighlow)
+  printf "☔%s 🥶%s° 🌞%s°\n" $(getprecipchance) $(getdailyhighlow)
+  # corrected ?
+  # printf "☔%s 🥶%s° 🌞%s°\n" "$(getprecipchance)" "$(getdailyhighlow)" "$(checkforecast)"
 }
 
 case $BLOCK_BUTTON in
-1) setsid -f "$TERMINAL" -e less -Sf "$weatherreport" ;;
-2) getforecast && showweather ;;
+# 1) setsid -f "$TERMINAL" -e sh less -Sf "$weatherreport" ;;
+1)
+  cat /home/moosicmaan/.cache/weatherreport >/tmp/debug_weather
+  setsid -f kitty -T weatherreport sh -c "cat /tmp/debug_weather; echo 'ENTER to exit'; read"
+  ;;
+# 1)
+#   cat /home/moosicmaan/.cache/weatherreport >/tmp/debug_weather
+#   setsid -f kitty -T weatherreport sh -c "less -R /tmp/debug_weather"
+#   ;;
+2) checkforecast || getforecast && showweather ;;
 3) notify-send "🌈 Weather module" "\- Left click for full forecast.
 - Middle click to update forecast.
 ☔: Chance of rain/snow

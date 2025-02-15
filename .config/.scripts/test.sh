@@ -1,12 +1,4 @@
-#!/bin/sh
-
-# Show a Doppler RADAR of a user's preferred location.
-
-# secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
-secs=6 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
 radarloc="${XDG_CACHE_HOME:-$HOME/.cache}/radar"
-doppler="${XDG_CACHE_HOME:-$HOME/.cache}/doppler.gif"
-
 pickloc() {
   chosen="$(echo "US: KFTG: Denver/Boulder, CO
 US: Northeast
@@ -241,11 +233,11 @@ DE: SAC: Saxony
 DE: SAA: Saxony-Anhalt
 DE: SHH: Schleswig-Holstein
 DE: SHH: Hamburg
-DE: THU: Thuringia" | dmenu -p "Select a radar to use as default:" | tr "[:lower:]" "[:upper:]")"
+DE: THU: Thuringia" | dmenu -p "Select a radar to use as default:" | tr "[:lower:]" "[:upper:]")"H
 
   # Ensure user did not escape.
   [ -z "$chosen" ] && exit 1
-  # chosen="EU: GB: Great Brittain"
+  chosen="EU: GB: Great Brittain"
   # Set continent code and radar code.
   continentcode=${chosen%%:*}
   radarcode=${chosen#* } radarcode=${radarcode%:*}
@@ -253,35 +245,4 @@ DE: THU: Thuringia" | dmenu -p "Select a radar to use as default:" | tr "[:lower
   # Print codes to $radarloc file.
   printf "%s,%s\\n" "$continentcode" "$radarcode" >"$radarloc"
 }
-
-getdoppler() {
-  cont=$(cut -c -2 "$radarloc")
-  loc=$(cut -c 4- "$radarloc")
-  notify-send "🌦️ Doppler RADAR" "Pulling most recent Doppler RADAR for $loc."
-  case "$cont" in
-  "US") curl -sL "https://radar.weather.gov/ridge/standard/${loc}_loop.gif" >"$doppler" ;;
-  "EU") curl -sL "https://api.sat24.com/animated/${loc}/rainTMC/2/" >"$doppler" ;;
-  "AF") curl -sL "https://api.sat24.com/animated/${loc}/rain/2/" >"$doppler" ;;
-  "DE")
-    loc="$(echo "$loc" | tr "[:upper:]" "[:lower:]")"
-    curl -sL "https://www.dwd.de/DWD/wetter/radar/radfilm_${loc}_akt.gif" >"$doppler"
-    ;;
-  esac
-}
-
-showdoppler() { setsid -f mpv --no-osc --loop=inf --no-terminal "$doppler"; }
-
-case $BLOCK_BUTTON in
-1)
-  [ ! -f "$radarloc" ] && pickloc && getdoppler
-  [ $(($(date '+%s') - $(stat -c %Y "$doppler"))) -gt "$secs" ] && getdoppler
-  showdoppler
-  ;;
-2) pickloc && getdoppler && showdoppler ;;
-3) notify-send "🗺️ Doppler RADAR module" "\- Left click for local Doppler RADAR.
-- Middle click to update RADAR location.
-After $secs seconds, new clicks will also automatically update the doppler RADAR." ;;
-6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac
-
-echo 🌅
+pickloc

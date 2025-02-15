@@ -17,6 +17,5 @@ dunst &
 flameshot &
 blueman-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/home/moosicmaan/.config/dwm/include/dwmblocks &
-# /usr/local/bin/dwmblocks &
+/usr/local/bin/dwmblocks >/tmp/dwmblocks.log 2>&1 &
 # dwmblocks &

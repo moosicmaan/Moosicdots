@@ -9,63 +9,7 @@ export XDG_SESSION_DESKTOP=hyprland
 export XDG_CURRENT_DESKTOP=Hyprland
 export HYPRLAND_INSTANCE_SIGNATURE=882f7ad7d2bbfc7440d0ccaef93b1cdd78e8e3ff_1739199858_moosicmaan
 
-export TESTING3=FromEnvHyprland
-# Not sure if this is where it should go -- testing
+# Acquamarine
+# export AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1 # use the integrated card first, and then use nvidia card if needed
 
-# # =====================================================
-# # -----------------------------------------------------
-# # Autostart
-# # -----------------------------------------------------
-# # =====================================================
-#
-# # Start Polkit
-# exec-once = uwsm app -- /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#
-# # Setup XDG for screen sharing
-# exec-once = uwsm app -- $HOME/.config/.scripts/xdg.sh
-#
-# # Load GTK settings
-# exec-once = uwsm app -- $HOME/.config/.scripts/gtk.sh
-#
-# # -----------------------------------------------------
-# # PLUGINS
-# # -----------------------------------------------------
-# # Start Pyprland for scratchpads and the like
-# exec-once = uwsm app -- /usr/bin/pypr --config $HOME/.config/hypr/plugins/pyprland.toml
-# # exec-once = hyprctl plugin load $HOME/.config/hypr/plugins/hyprspace/Hyprspace.so
-#
-# # Load Dunst Notification Manager
-# exec-once = uwsm app -- dunst
-#
-# # Using swayidle to start swaylock
-# exec-once = uwsm app -- swayidle -w
-#
-# # Load cliphist history
-# exec-once = uwsm app -- wl-paste --watch cliphist store
-#
-# # Emacs
-# # exec-once = /usr/bin/emacs --daemon=serve
-#
-# # Initialize swww
-# exec-once = uwsm app -- swww query || uwsm app -- swww-daemon
-#
-# # Load last wallpaper and waybar with pywal colors
-# exec-once = $HOME/.config/.scripts/wallpaper.sh init
-#
-# # Startup the system tray applets:
-# exec-once = uwsm app -- nm-applet
-# exec-once = uwsm app -- pasystray
-# exec-once = uwsm app -- garuda-system-maintenance
-# exec-once = uwsm app -- blueman-applet
-# exec-once = uwsm app -- firewall-applet
-#
-# # -----------------------------------------------------
-# # toggle_kmonad
-# # -----------------------------------------------------
-# #exec-once = $HOME/.config/.scripts/toggle_kmonad.sh
-# exec-once = uwsm app -- kmonad $HOME/.config/kmonad/k350_hypr.kbd
-#
-# # BORROWING FROM garuda
-# # exec-once = $HOME/.config/.scripts/light.sh
-# # exec-once = wlsunset -t 2000 -T 2300
-# # exec-once = wlsunset -t 3000 -T 4000
+export TESTING3=FromEnvHyprland
