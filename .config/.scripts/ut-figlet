@@ -1,0 +1,31 @@
+#!/bin/bash
+cat <<"EOF"
+
+# =====================================================
+# -----------------------------------------------------
+#                     UT-FIGLET
+# Script to create ascii font based header on user input
+#         and copy the result to the clipboard
+# -----------------------------------------------------
+# =====================================================
+EOF
+
+figfile="$HOME/.cache/figlet.txt"
+
+read -r -p "Enter the text for ascii encoding: " mytext
+read -r -p "Enter a font banner|block|slant|script|/PATH/|: " myfont
+myfont=${myfont:-standard}
+echo "Using $myfont"
+
+# echo "cat <<\"EOF\"" >~/figlet.txt
+figlet -f "$myfont" "$mytext" >"$figfile"
+# echo "" >>"$figfile"
+# echo "EOF" >>"$figfile"
+
+lines=$(cat "$figfile")
+wl-copy "$lines"
+xclip -sel clip "$figfile"
+
+echo "Text copied to clipboard!"
+echo ""
+cat "$figfile"

@@ -1,407 +1,286 @@
 [
   {
-    "name": "my_tmux",
-    "modmask": "C-A",
-    "key": "T",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "kitty sh -c 'kitty @ set-spacing padding=0; tmux'",
-    "description": "Open tmux in kitty with no padding"
-  },
-  {
-    "name": "chatgpt",
-    "modmask": "M",
-    "key": "a",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "brave --app=https://chat.openai.com",
-    "description": "Open ChatGPT"
-  },
-  {
-    "name": "menu_run",
-    "modmask": "M",
-    "key": "p",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run",
-    "description": "RUN Menu"
-  },
-  {
-    "name": "menu_drun",
-    "modmask": "M-S",
-    "key": "p",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun",
-    "description": "DRUN Menu"
-  },
-  {
-    "name": "menu_win",
-    "modmask": "M-C",
-    "key": "p",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window",
-    "description": "WINDOW Menu"
-  },
-  {
-    "name": "my_term",
     "modmask": "M",
     "key": "RETURN",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "kitty",
+    "arg": "uwsm app -- ghostty",
     "description": "Open the default terminal"
   },
   {
-    "name": "my_email",
-    "modmask": "M-C",
-    "key": "RETURN",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "thunderbird",
-    "description": "Open the default email"
-  },
-  {
-    "name": "my_brows",
-    "modmask": "M",
-    "key": "b",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "brave",
-    "description": "Open the default browser"
-  },
-  {
-    "name": "emojis",
-    "modmask": "M",
-    "key": "i",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "emote",
-    "description": "Open the emoticon browser"
-  },
-  {
-    "name": "emacsc",
-    "modmask": "M",
-    "key": "e",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "emacsclient -c -a 'emacs'",
-    "description": "Start the emacs client"
-  },
-  {
-    "name": "emacsd",
-    "modmask": "M-S",
-    "key": "e",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "emacs --daemon=serve",
-    "description": "Start the emacs server/daemon"
-  },
-  {
-    "name": "my_filesg",
-    "modmask": "M-S",
-    "key": "RETURN",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pcmanfm-qt",
-    "description": "Open the GUI file browser"
-  },
-  {
-    "name": "my_browsv",
-    "modmask": "M",
-    "key": "o",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "qutebrowser",
-    "description": "Open the vim-based browser"
-  },
-  {
-    "name": "my_term2",
     "modmask": "M",
     "key": "t",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "alacritty",
+    "arg": "uwsm app -- wezterm;",
     "description": "Open the alternate terminal"
   },
   {
-    "name": "my_music",
+    "modmask": "M-S",
+    "key": "RETURN",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- pcmanfm-qt",
+    "description": "Open the graphical file browser"
+  },
+  {
+    "modmask": "M-C",
+    "key": "RETURN",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- thunderbird",
+    "description": "Open the default email"
+  },
+  {
+    "modmask": "M",
+    "key": "b",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- brave",
+    "description": "Open the default browser"
+  },
+  {
+    "modmask": "M",
+    "key": "o",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- qutebrowser",
+    "description": "Open the vim-based browser"
+  },
+  {
+    "modmask": "M",
+    "key": "a",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- brave --app=https://chat.openai.com",
+    "description": "Open ChatGPT"
+  },
+  {
+    "modmask": "M",
+    "key": "i",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- emote",
+    "description": "Open the emoticon browser"
+  },
+  {
+    "modmask": "M",
+    "key": "e",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- emacsclient -c -a 'emacs'",
+    "description": "Start the emacs client"
+  },
+  {
+    "modmask": "M-S",
+    "key": "e",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- emacs --daemon=serve",
+    "description": "Start the emacs server/daemon"
+  },
+  {
     "modmask": "M",
     "key": "m",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "spotube",
+    "arg": "uwsm app -- spotube",
     "description": "Open the music player"
   },
   {
-    "name": "my_media",
     "modmask": "M-S",
     "key": "m",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "vlc",
+    "arg": "uwsm app -- vlc",
     "description": "Open the media player"
   },
   {
-    "modmask": "Unknown",
-    "key": "",
+    "modmask": "C-A",
+    "key": "m",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "vlc",
-    "description": "Open the media player"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBeats.sh",
+    "description": "ROFI Music Selector"
   },
   {
-    "name": "my_editc",
+    "modmask": "C-A",
+    "key": "t",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- wezterm -e tmux",
+    "description": "Open tmux in terminal with no padding"
+  },
+  {
+    "modmask": "M",
+    "key": "PRINT",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh",
+    "description": "Screenshot"
+  },
+  {
+    "modmask": ",",
+    "key": "PRINT",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh",
+    "description": "Screenshot"
+  },
+  {
     "modmask": "M",
     "key": "n",
     "submap": "",
     "dispatcher": "submap",
-    "arg": "neosubs",
-    "description": "Neovide<submap-neosubs>"
+    "arg": "text-edit",
+    "description": "Terminal/like text editor<submap-neosubs>"
   },
   {
     "modmask": ",",
     "key": "m",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide",
-    "description": "Open Neovide"
-  },
-  {
-    "modmask": ",",
-    "key": "m",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "arg": "hyprctl dispatch submap reset && cd /mnt/data/moosicmaan/CONFIG && uwsm app -- neovide",
+    "description": "<submap-nowsubs>Open Neovide"
   },
   {
     "modmask": ",",
     "key": "c",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config",
-    "description": "Open .config folder"
-  },
-  {
-    "modmask": ",",
-    "key": "c",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config &&",
+    "description": "<submap-nowsubs>Open .config folder"
   },
   {
     "modmask": ",",
     "key": "h",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config/hypr/",
-    "description": "Open hypr configs"
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/hypr/",
+    "description": "<submap-nowsubs>Open hypr configs"
   },
   {
     "modmask": ",",
-    "key": "h",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "key": "d",
+    "submap": "text-edit",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/dwm/",
+    "description": "<submap-nowsubs>Open dwm configs"
+  },
+  {
+    "modmask": ",",
+    "key": "a",
+    "submap": "text-edit",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/awesome/",
+    "description": "<submap-nowsubs>Open awesomewm configs"
   },
   {
     "modmask": ",",
     "key": "w",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config/waybar/",
-    "description": "Open waybar configs"
-  },
-  {
-    "modmask": ",",
-    "key": "w",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/waybar/",
+    "description": "<submap-nowsubs>Open waybar configs"
   },
   {
     "modmask": ",",
     "key": "s",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config/.scripts/",
-    "description": "Open scripts folder"
-  },
-  {
-    "modmask": ",",
-    "key": "s",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/.scripts/",
+    "description": "<submap-nowsubs>Open scripts folder"
   },
   {
     "modmask": ",",
     "key": "q",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config/qtile/",
-    "description": "Open qtile configs"
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/qtile/",
+    "description": "<submap-nowsubs>Open qtile configs"
   },
   {
     "modmask": ",",
-    "key": "q",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
-  },
-  {
-    "modmask": ",",
-    "key": "k",
-    "submap": "neosubs",
+    "key": "l",
+    "submap": "text-edit",
     "dispatcher": "exec",
-    "arg": "neovide ~/.config/hypr/conf/keybinding.conf",
-    "description": "Open hypr keybindings"
-  },
-  {
-    "modmask": ",",
-    "key": "k",
-    "submap": "neosubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "arg": "hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/nvim/",
+    "description": "<submap-nowsubs>Open LazyVim configs"
   },
   {
     "modmask": ",",
     "key": "escape",
-    "submap": "neosubs",
+    "submap": "text-edit",
     "dispatcher": "submap",
     "arg": "reset",
     "description": ""
   },
   {
-    "name": "my_brows2",
     "modmask": "M",
-    "key": "F1",
+    "key": "p",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "firefox",
-    "description": "Open alternate browser"
-  },
-  {
-    "name": "my_brows3",
-    "modmask": "C-A",
-    "key": "b",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "firedragon",
-    "desc": "Launch 2nd alternate browser"
-  },
-  {
-    "name": "my_email2",
-    "modmask": "M",
-    "key": "F2",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "bluemail",
-    "description": "Open alternate email"
-  },
-  {
-    "name": "my_filesc",
-    "modmask": "M",
-    "key": "F3",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "kitty -e ranger",
-    "description": "Open terminal file browser"
-  },
-  {
-    "name": "my_editg",
-    "modmask": "M",
-    "key": "F4",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "kate",
-    "description": "Open graphical text editor"
-  },
-  {
-    "name": "my_image",
-    "modmask": "M",
-    "key": "F5",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "gimp",
-    "description": "Open image editor"
-  },
-  {
-    "name": "my_office",
-    "modmask": "M",
-    "key": "F6",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "libreoffice",
-    "description": "Open office suite"
-  },
-  {
-    "modmask": "M",
-    "key": "F7",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "spotube",
-    "description": "Open music player"
-  },
-  {
-    "modmask": "M",
-    "key": "F8",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "vlc",
-    "description": "Open media playger"
-  },
-  {
-    "name": "my_stream",
-    "modmask": "M",
-    "key": "F9",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "obs",
-    "description": "Open streaming software"
-  },
-  {
-    "modmask": "M",
-    "key": "F10",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run",
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}'",
     "description": "RUN Menu"
   },
   {
-    "modmask": "M",
-    "key": "F11",
+    "modmask": "M-S",
+    "key": "p",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun",
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}'",
     "description": "DRUN Menu"
   },
   {
-    "modmask": "M",
-    "key": "F12",
+    "modmask": "M-C",
+    "key": "p",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window",
-    "description": "WINDOW Menu"
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show filebrowser",
+    "description": "FILES Menu"
+  },
+  {
+    "modmask": "M-A",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window",
+    "description": "WINDOWS Menu"
   },
   {
     "modmask": "M-S",
-    "key": "z",
+    "key": "k",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "pypr zoom",
-    "description": "ZOOM"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/KeyBinds.sh",
+    "description": "Show Keybindings"
   },
   {
     "modmask": "M-S",
+    "key": "o",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBookmarks.sh",
+    "description": "Select brave bookmarks"
+  },
+  {
+    "modmask": "M-C",
+    "key": "c",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh",
+    "description": "Show clipboard history"
+  },
+  {
+    "modmask": "M-C",
+    "key": "v",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh",
+    "description": "Show clipboard history"
+  },
+  {
+    "modmask": "M-C",
     "key": "q",
     "submap": "",
     "dispatcher": "exec",
@@ -417,108 +296,308 @@
     "description": "Logout Menu"
   },
   {
+    "modmask": "C-A",
+    "key": "p",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "nwg-drawer -c 7 -is 70 -spacing 20 -ovl",
+    "description": "Open full-screen menu"
+  },
+  {
+    "modmask": "M-A",
+    "key": "j",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle files",
+    "description": "Scratchpad (files)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "i",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle term",
+    "description": "Scratchpad (term)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "l",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle monitor",
+    "description": "Scratchpad (monitor)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "m",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle moosic",
+    "description": "Scratchpad (moosic)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "x",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr toggle audio",
+    "description": "Scratchpad (audio)"
+  },
+  {
+    "modmask": "M-A",
+    "key": "0",
+    "submap": "",
+    "dispatcher": "togglespecialworkspace",
+    "arg": "",
+    "description": "Scratchpad (special) full"
+  },
+  {
     "modmask": "M-S",
+    "key": "0",
+    "submap": "",
+    "dispatcher": "movetoworkspace",
+    "arg": "special",
+    "description": "Move window to special workspace"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F1",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- firefox",
+    "description": "Open alternate browser"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F2",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- bluemail",
+    "description": "Open alternate email"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F3",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- wezterm -e yazi",
+    "description": "Open terminal file browser"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F4",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- geany",
+    "description": "Open graphical text editor"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F5",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- gimp",
+    "description": "Open image editor"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F6",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- libreoffice",
+    "description": "Open office suite"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F7",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- spotube",
+    "description": "Open music player"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F8",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- vlc",
+    "description": "Open media playger"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F9",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "uwsm app -- obs",
+    "description": "Open streaming software"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F10",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}'",
+    "description": "RUN Menu"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F11",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}'",
+    "description": "DRUN Menu"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "F12",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "nwg-drawer -c 7 -is 70 -spacing 20 -ovl",
+    "description": "FULL Menu"
+  },
+  {
+    "modmask": ",",
+    "key": "F11",
+    "submap": "",
+    "dispatcher": "fullscreen",
+    "arg": "",
+    "description": "Toggle fullscreen"
+  },
+  {
+    "modmask": "M-C",
+    "key": "z",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr zoom",
+    "description": "ZOOM"
+  },
+  {
+    "modmask": "M-C",
     "key": "r",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "hyprctl reload",
-    "description": "Reload hypr configuration"
-  },
-  {
-    "modmask": "M",
-    "key": "PRINT",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/screenshot.sh",
-    "description": "Screenshot"
-  },
-  {
-    "modmask": "M",
-    "key": "rmet",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/screenshot.sh",
-    "description": "Screenshot"
-  },
-  {
-    "modmask": "M-S",
-    "key": "w",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/wallpaper.sh random",
-    "description": "Select random wallpapter"
-  },
-  {
-    "modmask": "M-C",
-    "key": "w",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/wallpaper.sh select",
-    "description": "Select wallpaper"
-  },
-  {
-    "modmask": "M-C",
-    "key": "h",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/keybindings.sh",
-    "description": "Show Keybindings"
-  },
-  {
-    "modmask": "M-S",
-    "key": "r",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/loadconfig.sh",
-    "description": "Load Config"
-  },
-  {
-    "modmask": "M-C",
-    "key": "c",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/cliphist.sh",
-    "description": "Show clipboard history"
-  },
-  {
-    "modmask": "M-C",
-    "key": "v",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/cliphist.sh",
-    "description": "Show clipboard history"
-  },
-  {
-    "modmask": "M-S",
-    "key": "o",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/bravebookmarks.sh",
-    "description": "Select brave bookmarks"
+    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init",
+    "description": "Reload hypr"
   },
   {
     "modmask": "M-C",
     "key": "t",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/themeswitcher.sh",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh",
     "description": "Switch waybar"
+  },
+  {
+    "modmask": "M-C",
+    "key": "b",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh",
+    "description": "Toggle Waybar"
+  },
+  {
+    "modmask": "M-C",
+    "key": "s",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select",
+    "description": "Select wallpaper"
+  },
+  {
+    "modmask": "M-C",
+    "key": "w",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random",
+    "description": "Select random wallpaper"
   },
   {
     "modmask": "C-A",
     "key": "k",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/toggle_kbd.sh",
-    "description": "Toggle kmonad"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_kbd.sh",
+    "description": "Toggle kmonad for external keyboard"
   },
   {
     "modmask": "C-A",
     "key": "j",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/toggle_kbd_dell.sh",
-    "description": "Toggle kmonad"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_lap_kbd.sh",
+    "description": "Toggle kmonad for laptop keyboard"
+  },
+  {
+    "modmask": "C-A",
+    "key": "h",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh",
+    "description": "Toggle Garuda visual elements"
+  },
+  {
+    "modmask": "M-C",
+    "key": "g",
+    "submap": "",
+    "dispatcher": "submap",
+    "arg": "themes",
+    "description": "Theme<submap-themes>"
+  },
+  {
+    "modmask": ",",
+    "key": "b",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh",
+    "description": "<submap-themes>Toggle Waybar"
+  },
+  {
+    "modmask": ",",
+    "key": "t",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh",
+    "description": "<submap-themes>Open waybar selector"
+  },
+  {
+    "modmask": ",",
+    "key": "s",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select",
+    "description": "<submap-themes>Select wallpaper"
+  },
+  {
+    "modmask": ",",
+    "key": "w",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random",
+    "description": "<submap-themes>Choose random wallpaper"
+  },
+  {
+    "modmask": ",",
+    "key": "r",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init",
+    "description": "<submap-themes>Start/restart wallpaper and waybar"
+  },
+  {
+    "modmask": ",",
+    "key": "g",
+    "submap": "themes",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh",
+    "description": "<submap-themes>Toggle Garuda visual elements"
+  },
+  {
+    "modmask": ",",
+    "key": "escape",
+    "submap": "themes",
+    "dispatcher": "submap",
+    "arg": "reset",
+    "description": ""
   },
   {
     "modmask": "M",
@@ -527,38 +606,6 @@
     "dispatcher": "killactive",
     "arg": "",
     "description": "Kill the active window"
-  },
-  {
-    "modmask": "M-C",
-    "key": "x",
-    "submap": "",
-    "dispatcher": "killactive",
-    "arg": "",
-    "description": "Kill the active window"
-  },
-  {
-    "modmask": "M",
-    "key": "f",
-    "submap": "",
-    "dispatcher": "togglefloating",
-    "arg": "",
-    "description": "Toggle floating window"
-  },
-  {
-    "modmask": "M-S",
-    "key": "f",
-    "submap": "",
-    "dispatcher": "fullscreen",
-    "arg": "",
-    "description": "Toggle fullscreen"
-  },
-  {
-    "modmask": "M-S",
-    "key": "t",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "/home/moosicmaan/.config/.scripts/toggleallfloat.sh",
-    "description": "Toggle float all windows"
   },
   {
     "modmask": "M",
@@ -577,20 +624,44 @@
     "description": "Swaps the focused window with the next window"
   },
   {
-    "modmask": "M-S",
-    "key": "s",
-    "submap": "",
-    "dispatcher": "swapsplit",
-    "arg": "",
-    "description": "Swaps the R and L side of the workspace"
-  },
-  {
     "modmask": "M",
     "key": "w",
     "submap": "",
     "dispatcher": "togglesplit",
     "arg": "",
     "description": "Toggle direction of split window"
+  },
+  {
+    "modmask": "M",
+    "key": "f",
+    "submap": "",
+    "dispatcher": "togglefloating",
+    "arg": "",
+    "description": "Toggle floating window"
+  },
+  {
+    "modmask": "M-S",
+    "key": "f",
+    "submap": "",
+    "dispatcher": "fullscreen",
+    "arg": "",
+    "description": "Toggle fullscreen"
+  },
+  {
+    "modmask": "M-C",
+    "key": "f",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch workspaceopt allfloat",
+    "description": "Toggle float all windows"
+  },
+  {
+    "modmask": "M-S",
+    "key": "s",
+    "submap": "",
+    "dispatcher": "swapsplit",
+    "arg": "",
+    "description": "Swaps the R and L side of the workspace"
   },
   {
     "modmask": "Unknown",
@@ -701,7 +772,7 @@
     "key": "left",
     "submap": "",
     "dispatcher": "resizeactive",
-    "arg": "-100 0",
+    "arg": "-50 0",
     "description": "Resize window (left)"
   },
   {
@@ -709,7 +780,7 @@
     "key": "down",
     "submap": "",
     "dispatcher": "resizeactive",
-    "arg": "0 100",
+    "arg": "0 50",
     "description": "Resize window (down)"
   },
   {
@@ -717,7 +788,7 @@
     "key": "up",
     "submap": "",
     "dispatcher": "resizeactive",
-    "arg": "0 -100",
+    "arg": "0 -50",
     "description": "Resize window (up)"
   },
   {
@@ -725,7 +796,7 @@
     "key": "right",
     "submap": "",
     "dispatcher": "resizeactive",
-    "arg": "100 0",
+    "arg": "50 0",
     "description": "Resize window (right)"
   },
   {
@@ -745,7 +816,7 @@
     "description": "Resize window with mouse"
   },
   {
-    "modmask": "M",
+    "modmask": "M-S",
     "key": "g",
     "submap": "",
     "dispatcher": "submap",
@@ -756,65 +827,33 @@
     "modmask": ",",
     "key": "g",
     "submap": "gsubs",
-    "dispatcher": "togglegroup",
-    "arg": "",
-    "description": "Toggles the current window into a group"
-  },
-  {
-    "modmask": ",",
-    "key": "g",
-    "submap": "gsubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch togglegroup && hyprctl dispatch submap reset",
+    "description": "<submap-gsubs>Toggles the current window into a group"
   },
   {
     "modmask": ",",
     "key": "x",
     "submap": "gsubs",
-    "dispatcher": "lockactivegroup",
-    "arg": "",
-    "description": "Lock toggle for the group"
-  },
-  {
-    "modmask": ",",
-    "key": "x",
-    "submap": "gsubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch lockactivegroup && hyprctl dispatch submap reset",
+    "description": "<submap-gsubs>Lock toggle for the group"
   },
   {
     "modmask": ",",
     "key": "h",
     "submap": "gsubs",
-    "dispatcher": "movewindoworgroup",
-    "arg": "l",
-    "description": "Moves window into/out of group (l)"
-  },
-  {
-    "modmask": ",",
-    "key": "h",
-    "submap": "gsubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch movewindoworgroup l && hyprctl dispatch submap reset",
+    "description": "<submap-gsubs>Move window into/out of group (l)"
   },
   {
     "modmask": ",",
     "key": "l",
     "submap": "gsubs",
-    "dispatcher": "movewindoworgroup",
-    "arg": "r",
-    "description": "Moves window into/out of group (r)"
-  },
-  {
-    "modmask": ",",
-    "key": "l",
-    "submap": "gsubs",
-    "dispatcher": "submap",
-    "arg": "reset",
-    "description": ""
+    "dispatcher": "exec",
+    "arg": "hyprctl dispatch movewindoworgroup r && hyprctl dispatch submap reset",
+    "description": "<submap-gsubs>Move window into/out of group (r)"
   },
   {
     "modmask": ",",
@@ -913,14 +952,6 @@
     "description": "Go to workspace 9"
   },
   {
-    "modmask": "M",
-    "key": "0",
-    "submap": "",
-    "dispatcher": "workspace",
-    "arg": "10",
-    "description": "Go to workspace 10"
-  },
-  {
     "modmask": "M-C",
     "key": "1",
     "submap": "",
@@ -993,14 +1024,6 @@
     "description": "Force workspace 9 to current monitor"
   },
   {
-    "modmask": "M-C",
-    "key": "0",
-    "submap": "",
-    "dispatcher": "focusworkspaceoncurrentmonitor",
-    "arg": "10",
-    "description": "Force workspace 10 to current monitor"
-  },
-  {
     "modmask": "M-S",
     "key": "1",
     "submap": "",
@@ -1038,7 +1061,7 @@
     "submap": "",
     "dispatcher": "movetoworkspacesilent",
     "arg": "5",
-    "description": "Move window to workspace 5"
+    "description": "Move winkow to workspace 5"
   },
   {
     "modmask": "M-S",
@@ -1073,12 +1096,92 @@
     "description": "Move window to workspace 9"
   },
   {
-    "modmask": "M-S",
-    "key": "0",
+    "modmask": "Unknown",
+    "key": "1",
     "submap": "",
     "dispatcher": "movetoworkspacesilent",
-    "arg": "10",
-    "description": "Move window to workspace 10"
+    "arg": "1",
+    "description": "Move window to workspace 1"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "2",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "2",
+    "description": "Move window to workspace 2"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "3",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "3",
+    "description": "Move window to workspace 3"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "4",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "4",
+    "description": "Move window to workspace 4"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "5",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "5",
+    "description": "Move window to workspace 5"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "6",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "6",
+    "description": "Move window to workspace 6"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "7",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "7",
+    "description": "Move window to workspace 7"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "8",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "8",
+    "description": "Move window to workspace 8"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "9",
+    "submap": "",
+    "dispatcher": "movetoworkspacesilent",
+    "arg": "9",
+    "description": "Move window to workspace 9"
+  },
+  {
+    "modmask": "M-C",
+    "key": "down",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "empty",
+    "description": "Go to first empty workspace"
+  },
+  {
+    "modmask": "M-C",
+    "key": "j",
+    "submap": "",
+    "dispatcher": "workspace",
+    "arg": "empty",
+    "description": "Go to first empty workspace"
   },
   {
     "modmask": "M",
@@ -1113,70 +1216,6 @@
     "description": "Go back one workspace"
   },
   {
-    "modmask": "M-C",
-    "key": "down",
-    "submap": "",
-    "dispatcher": "workspace",
-    "arg": "empty",
-    "description": "Go to first empty workspace"
-  },
-  {
-    "modmask": "M-A",
-    "key": "u",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pypr toggle yazi",
-    "description": "Scratchpad (yaai)"
-  },
-  {
-    "modmask": "M-A",
-    "key": "i",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pypr toggle term",
-    "description": "Scratchpad (terminal)"
-  },
-  {
-    "modmask": "M-A",
-    "key": "o",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pypr toggle btop",
-    "description": "Scratchpad (btop)"
-  },
-  {
-    "modmask": "M-A",
-    "key": "p",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pypr toggle moosic",
-    "description": "Scratchpad (musicCube)"
-  },
-  {
-    "modmask": "M-A",
-    "key": "v",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pypr toggle audio",
-    "description": "Scratchpad (Pulse Audio Control)"
-  },
-  {
-    "modmask": "M-S",
-    "key": "Minus",
-    "submap": "",
-    "dispatcher": "movetoworkspace",
-    "arg": "special",
-    "description": "Move window to special workspace"
-  },
-  {
-    "modmask": "M",
-    "key": "Minus",
-    "submap": "",
-    "dispatcher": "togglespecialworkspace",
-    "arg": "",
-    "description": "Scratchpad (Special) full"
-  },
-  {
     "modmask": "M",
     "key": "comma",
     "submap": "",
@@ -1193,8 +1232,16 @@
     "description": "Go to next monitor"
   },
   {
-    "modmask": "M-C",
+    "modmask": "M-A",
     "key": "LEFT",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "pypr shift_monitors +1",
+    "description": "Flip windows between monitors"
+  },
+  {
+    "modmask": "M-A",
+    "key": "period",
     "submap": "",
     "dispatcher": "exec",
     "arg": "pypr shift_monitors +1",
@@ -1205,7 +1252,7 @@
     "key": "XF86AudioRaiseVolume",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --inc",
     "description": "KBD raise volume"
   },
   {
@@ -1213,7 +1260,7 @@
     "key": "XF86AudioLowerVolume",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --dec",
     "description": "KBD lower volume"
   },
   {
@@ -1221,7 +1268,7 @@
     "key": "XF86AudioMute",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --toggle",
     "description": "KBD mute volume"
   },
   {
@@ -1229,7 +1276,7 @@
     "key": "XF86AudioPlay",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "playerctl play-pause",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause",
     "description": "KBD toggle toggle play music"
   },
   {
@@ -1237,7 +1284,7 @@
     "key": "XF86AudioStop",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "playerctl pause",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause",
     "description": "KBD toggle stop music"
   },
   {
@@ -1245,7 +1292,7 @@
     "key": "XF86AudioNext",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "playerctl next",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --nxt",
     "description": "KBD go to next song"
   },
   {
@@ -1253,23 +1300,15 @@
     "key": "XF86AudioPrev",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "playerctl previous",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --prv",
     "description": "KBD go to previous song"
-  },
-  {
-    "modmask": ",",
-    "key": "XF86AudioMicMute",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "description": "KBD toggle mute"
   },
   {
     "modmask": ",",
     "key": "XF86Calculator",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "qalculate-gtk",
+    "arg": "pkill galculator || uwsm app -- galculator",
     "description": "KBD toggle calculator"
   },
   {
@@ -1277,56 +1316,55 @@
     "key": "XF86Lock",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "swaylock",
+    "arg": "uwsm app -- swaylock -c 000000",
     "description": "KBD toggle lock computer"
   },
   {
     "modmask": ",",
-    "key": "XF86MonBrightnessUp",
+    "key": "XF86AppSelect",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "brightnessctl -q s +10%",
-    "description": "KBD brightness up"
-  },
-  {
-    "modmask": ",",
-    "key": "XF86MonBrightnessDown",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "brightnessctl -q s 10%-",
-    "description": "KBD brightness down"
-  },
-  {
-    "modmask": ",",
-    "key": "XF86ZoomIn",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "brightnessctl -q s +10%",
-    "description": "KBD brightness up"
-  },
-  {
-    "modmask": ",",
-    "key": "xF86ZoomOut",
-    "submap": "",
-    "dispatcher": "exec",
-    "arg": "brightnessctl -q s 10%-",
-    "description": "KBD brightness down"
-  },
-  {
-    "modmask": ",",
-    "key": "0x10081244",
-    "submap": "",
-    "dispatcher": "workspace",
-    "arg": "e+1",
-    "description": "KBD go to next workspace"
+    "arg": "nwg-drawer -c 7 -is 70 -spacing 20 -ovl",
+    "description": "KBD select app menu"
   },
   {
     "modmask": ",",
     "key": "XF86Tools",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "vlc",
+    "arg": "uwsm app -- vlc",
     "description": "KBD open the media player"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86ZoomIn",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc",
+    "description": "KBD brightness up"
+  },
+  {
+    "modmask": ",",
+    "key": "XF86ZoomOut",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec",
+    "description": "KBD brightness down"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "XF86ZoomIn",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --inc",
+    "description": "KBD ExMon brightness up"
+  },
+  {
+    "modmask": "Unknown",
+    "key": "XF86ZoomOut",
+    "submap": "",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --dec",
+    "description": "KBD ExMon brightness down"
   }
 ]
-

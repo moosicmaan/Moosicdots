@@ -1,26 +1,42 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Toggle between garuda and normal hyprland visuals
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
 
 # Check if kmonad is running
 if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
+  # Kill garuda elements
   echo "killing garuda visuals"
   notify-send --icon=configuration_section "killing garuda visuals"
   pkill -f "nwg-dock-hyprland" &
   pkill -f "wlsunset" &
-  cat ~/.config/hypr/conf/options/main/hyprland.conf.X >~/.config/hypr/hyprland.conf &
-  echo "/moosic;/moosic/black" >~/.cache/.themestyle.sh &
+
+  # Apply hyprland elements from normal config
+  cat ~/.config/hypr/conf/options/main/moosic.hyprland.conf >~/.config/hypr/hyprland.conf &
+  echo "/moosic;/moosic/black" >"$HOME/.cache/.themestyle.sh" &
   echo "/mnt/data/moosicmaan/FILES/Pictures/Backgrounds/wal101.jpg" >~/.cache/current_wallpaper &
-  ${PREFIX}$HOME/.config/.scripts/wallpaper.sh init &
+
+  # Load background and status bar
+  eval "${PREFIX}$HOME/.config/.scripts/wallpaper.sh init &"
   notify-send "...dead..." || notify-send --icon=configuration_section "Failed to stop garuda visuals"
 else
+  # Start garuda elements
   echo "Starting the garuda visuals"
   notify-send --icon=configuration_section "Starting the garuda visuals"
-  ${PREFIX}nwg-dock-hyprland -x -p "left" -i 24 -mt 10 -mb 10 -ml 5 -f &
-  ${PREFIX}wlsunset -t 2000 -T 2300 &
-  cat ~/.config/hypr/conf/options/main/hyprland.conf.G >~/.config/hypr/hyprland.conf &
-  echo "/gdefault;/gdefault/conf" >~/.cache/.themestyle.sh &
+  eval "${PREFIX}nwg-dock-hyprland -x -p 'left' -i 24 -mt 10 -mb 10 -ml 5 -f &"
+  eval "${PREFIX}wlsunset -t 2000 -T 2300 &"
+
+  # Apply hyprland elements from garuda config
+  cat ~/.config/hypr/conf/options/main/garuda.hyprland.conf >~/.config/hypr/hyprland.conf &
+  echo "/gdefault;/gdefault/conf" >"$HOME/.cache/.themestyle.sh" &
   echo "/home/moosicmaan/Pictures/Backgrounds/wal86.jpg" >~/.cache/current_wallpaper &
-  ${PREFIX}$HOME/.config/.scripts/wallpaper.sh init &
+
+  # Load background and status bar
+  eval "${PREFIX}$HOME/.config/.scripts/wallpaper.sh init &"
   notify-send --icon=configuration_section "Garuda visuals started."
 fi

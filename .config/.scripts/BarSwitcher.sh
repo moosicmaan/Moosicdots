@@ -1,49 +1,55 @@
 #!/bin/bash
+# =====================================================
 # -----------------------------------------------------
+# Launch the statusbar selector for wayland compositors
+#    Jason Bradberry (2024)
 # -----------------------------------------------------
-# Default theme folder
-# -----------------------------------------------------
+# =====================================================
+
 themes_path="$HOME/.config/.settings/barthemes"
 
-# -----------------------------------------------------
-# Initialize arrays
-# -----------------------------------------------------
-listThemes=""
-listNames=""
+# Initialize theme lists
+declare -a theme_list
+declare -a theme_names
 
 # -----------------------------------------------------
-# Read theme folder
+# Read available themes
 # -----------------------------------------------------
-options=$(find -L "$themes_path" -maxdepth 2 -type d)
-for value in $options; do
-  if [ ! "$value" == "$themes_path/assets" ]; then
-    if [ ! "$value" == "$themes_path" ]; then
-      if [ "$(find -L "$value" -maxdepth 1 -type d | wc -l)" = 1 ]; then
-        result=$(echo "$value" | sed "s#$themes_path/#/#g")
-        IFS='/' read -ra arrThemes <<<"$result"
-        listThemes[${#listThemes[@]}]="/${arrThemes[1]};$result"
-        if [ -f "$themes_path$result/config.sh" ]; then
-          source "$themes_path$result/config.sh"
-          listNames+="$theme_name\n"
-        else
-          listNames+="/${arrThemes[1]};$result\n"
-        fi
-      fi
-    fi
+while IFS= read -r theme_dir; do
+  [[ "$theme_dir" == "$themes_path/assets" || "$theme_dir" == "$themes_path" ]] && continue
+  [[ $(find -L "$theme_dir" -maxdepth 1 -type d | wc -l) -ne 1 ]] && continue
+
+  # Extract relative theme path
+  rel_path="${theme_dir#"$themes_path"}" # Remove base path
+  first_folder="${rel_path%/*}"          # Get first directory name
+  if [ "$first_folder" == "" ]; then     # For configs in the base theme folder
+    first_folder="$rel_path"
   fi
-done
+  formatted_theme="$first_folder;$rel_path"
+
+  config_path="$theme_dir/config.sh"
+
+  if [[ -f "$config_path" ]]; then
+    source "$config_path"
+    theme_names+=("$theme_name")
+  else
+    theme_names+=("$formatted_theme")
+  fi
+
+  theme_list+=("$formatted_theme")
+done < <(find -L "$themes_path" -maxdepth 2 -type d)
 
 # -----------------------------------------------------
-# Show rofi dialog
+# Show selection menu with rofi
 # -----------------------------------------------------
-listNames=${listNames::-2}
-choice=$(echo -e "$listNames" | rofi -dmenu -i -replace -config ~/.config/rofi/config-themes.rasi -no-show-icons -width 30 -p "Themes" -format i)
+choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
+  -config ~/.config/rofi/config-themes.rasi -no-show-icons -width 30 -p "Themes" -format i)
 
 # -----------------------------------------------------
-# Set new theme by writing the theme information to ~/.cache/.themestyle.sh
+# Apply selected theme
 # -----------------------------------------------------
-if [ "$choice" ]; then
+if [[ -n "$choice" ]]; then
   echo "Loading waybar theme..."
-  echo "${listThemes[$choice + 1]}" >~/.cache/.themestyle.sh
-  ~/.config/.scripts/BarLaunch.sh
+  echo "${theme_list[choice]}" >"$HOME/.cache/themestyle"
+  "$HOME/.config/.scripts/BarLaunch.sh"
 fi

@@ -230,10 +230,13 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
-
 alias jam 'RofiBeats.sh'
+
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
+
+# add the scripts folder to the path
+set -x PATH $HOME/.config/.scripts $PATH
 
 # moved to tty check above
 ## set colortheme to current wallpaper

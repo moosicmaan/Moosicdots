@@ -1,1 +1,0 @@
-/mnt/data/moosicmaan/CONFIG/.config/.scripts/RainbowBorders.sh

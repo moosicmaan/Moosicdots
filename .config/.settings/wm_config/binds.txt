@@ -1,14 +1,11 @@
+Keys: M-A-0 ()
+Description: Scratchpad (special) full
+-----------------------------
+Keys: -F11 ()
+Description: Toggle fullscreen
+-----------------------------
 Keys: M-q ()
 Description: Kill the active window
------------------------------
-Keys: M-C-x ()
-Description: Kill the active window
------------------------------
-Keys: M-f ()
-Description: Toggle floating window
------------------------------
-Keys: M-S-f ()
-Description: Toggle fullscreen
 -----------------------------
 Keys: M-c ()
 Description: Centers the active (floating) window
@@ -16,23 +13,20 @@ Description: Centers the active (floating) window
 Keys: M-s ()
 Description: Swaps the focused window with the next window
 -----------------------------
-Keys: M-S-s ()
-Description: Swaps the R and L side of the workspace
------------------------------
 Keys: M-w ()
 Description: Toggle direction of split window
 -----------------------------
+Keys: M-f ()
+Description: Toggle floating window
+-----------------------------
+Keys: M-S-f ()
+Description: Toggle fullscreen
+-----------------------------
+Keys: M-S-s ()
+Description: Swaps the R and L side of the workspace
+-----------------------------
 Keys: Unknown-TAB ()
 Description: Switch focus from current to previous window
------------------------------
-Keys: -g ()
-Description: Toggles the current window into a group
------------------------------
-Keys: -x ()
-Description: Lock toggle for the group
------------------------------
-Keys: M-Minus ()
-Description: Scratchpad (Special) full
 -----------------------------
 Keys: M-period (+1)
 Description: Go to next monitor
@@ -40,95 +34,89 @@ Description: Go to next monitor
 Keys: M-comma (-1)
 Description: Go to previous monitor
 -----------------------------
-Keys: M-S-left (-100 0)
-Description: Resize window (left)
------------------------------
 Keys: M-S-h (-50 0)
 Description: Resize window (left)
 -----------------------------
-Keys: M-S-o (/home/moosicmaan/.config/.scripts/bravebookmarks.sh)
-Description: Select brave bookmarks
+Keys: M-S-left (-50 0)
+Description: Resize window (left)
 -----------------------------
-Keys: M-C-c (/home/moosicmaan/.config/.scripts/cliphist.sh)
-Description: Show clipboard history
------------------------------
-Keys: M-C-v (/home/moosicmaan/.config/.scripts/cliphist.sh)
-Description: Show clipboard history
------------------------------
-Keys: M-C-h (/home/moosicmaan/.config/.scripts/keybindings.sh)
-Description: Show Keybindings
------------------------------
-Keys: M-S-r (/home/moosicmaan/.config/.scripts/loadconfig.sh)
-Description: Load Config
------------------------------
-Keys: M-PRINT (/home/moosicmaan/.config/.scripts/screenshot.sh)
-Description: Screenshot
------------------------------
-Keys: M-rmet (/home/moosicmaan/.config/.scripts/screenshot.sh)
-Description: Screenshot
------------------------------
-Keys: M-C-t (/home/moosicmaan/.config/.scripts/themeswitcher.sh)
+Keys: M-C-t (/mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh)
 Description: Switch waybar
 -----------------------------
-Keys: C-A-k (/home/moosicmaan/.config/.scripts/toggle_kbd.sh)
-Description: Toggle kmonad
+Keys: Unknown-XF86ZoomOut (/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --dec)
+Description: KBD ExMon brightness down
 -----------------------------
-Keys: C-A-j (/home/moosicmaan/.config/.scripts/toggle_kbd_dell.sh)
-Description: Toggle kmonad
+Keys: Unknown-XF86ZoomIn (/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --inc)
+Description: KBD ExMon brightness up
 -----------------------------
-Keys: M-S-t (/home/moosicmaan/.config/.scripts/toggleallfloat.sh)
-Description: Toggle float all windows
+Keys: -XF86AudioNext (/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --nxt)
+Description: KBD go to next song
 -----------------------------
-Keys: M-S-w (/home/moosicmaan/.config/.scripts/wallpaper.sh random)
-Description: Select random wallpapter
+Keys: -XF86AudioPlay (/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause)
+Description: KBD toggle toggle play music
 -----------------------------
-Keys: M-C-w (/home/moosicmaan/.config/.scripts/wallpaper.sh select)
+Keys: -XF86AudioStop (/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause)
+Description: KBD toggle stop music
+-----------------------------
+Keys: -XF86AudioPrev (/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --prv)
+Description: KBD go to previous song
+-----------------------------
+Keys: -XF86AudioLowerVolume (/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --dec)
+Description: KBD lower volume
+-----------------------------
+Keys: -XF86AudioRaiseVolume (/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --inc)
+Description: KBD raise volume
+-----------------------------
+Keys: -XF86AudioMute (/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --toggle)
+Description: KBD mute volume
+-----------------------------
+Keys: M-PRINT (/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh)
+Description: Screenshot
+-----------------------------
+Keys: -PRINT (/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh)
+Description: Screenshot
+-----------------------------
+Keys: C-A-k (/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_kbd.sh)
+Description: Toggle kmonad for external keyboard
+-----------------------------
+Keys: C-A-j (/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_lap_kbd.sh)
+Description: Toggle kmonad for laptop keyboard
+-----------------------------
+Keys: C-A-h (/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh)
+Description: Toggle Garuda visual elements
+-----------------------------
+Keys: -XF86ZoomOut (/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec)
+Description: KBD brightness down
+-----------------------------
+Keys: -XF86ZoomIn (/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc)
+Description: KBD brightness up
+-----------------------------
+Keys: M-C-w (/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random)
+Description: Select random wallpaper
+-----------------------------
+Keys: M-C-s (/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select)
 Description: Select wallpaper
------------------------------
-Keys: M-S-up (0 -100)
-Description: Resize window (up)
 -----------------------------
 Keys: M-S-k (0 -50)
 Description: Resize window (up)
 -----------------------------
-Keys: M-S-down (0 100)
-Description: Resize window (down)
+Keys: M-S-up (0 -50)
+Description: Resize window (up)
 -----------------------------
 Keys: M-S-j (0 50)
 Description: Resize window (down)
 -----------------------------
-Keys: M-S-right (100 0)
-Description: Resize window (right)
+Keys: M-S-down (0 50)
+Description: Resize window (down)
 -----------------------------
 Keys: M-S-l (50 0)
 Description: Resize window (right)
 -----------------------------
-Keys: M-t (alacritty)
-Description: Open the alternate terminal
+Keys: M-S-right (50 0)
+Description: Resize window (right)
 -----------------------------
 Keys: M-S-TAB (b)
 Description: Change the active window in a group -
------------------------------
-Keys: M-F2 (bluemail)
-Description: Open alternate email
------------------------------
-Keys: M-b (brave)
-Description: Open the default browser
------------------------------
-Keys: M-a (brave --app=https://chat.openai.com)
-Description: Open ChatGPT
------------------------------
-Keys: -XF86MonBrightnessUp (brightnessctl -q s +10%)
-Description: KBD brightness up
------------------------------
-Keys: -XF86ZoomIn (brightnessctl -q s +10%)
-Description: KBD brightness up
------------------------------
-Keys: -XF86MonBrightnessDown (brightnessctl -q s 10%-)
-Description: KBD brightness down
------------------------------
-Keys: -xF86ZoomOut (brightnessctl -q s 10%-)
-Description: KBD brightness down
 -----------------------------
 Keys: M-j (d)
 Description: Focus window (down)
@@ -142,53 +130,86 @@ Description: Scroll workspaces with mouse wheel +
 Keys: Unknown-TAB (e+1)
 Description: Advance one workspace
 -----------------------------
-Keys: -0x10081244 (e+1)
-Description: KBD go to next workspace
------------------------------
 Keys: M-mouse_up (e-1)
 Description: Scroll workspaces with mouse wheel -
 -----------------------------
 Keys: Unknown-TAB (e-1)
 Description: Go back one workspace
 -----------------------------
-Keys: M-S-e (emacs --daemon=serve)
-Description: Start the emacs server/daemon
------------------------------
-Keys: M-e (emacsclient -c -a 'emacs')
-Description: Start the emacs client
------------------------------
-Keys: M-i (emote)
-Description: Open the emoticon browser
------------------------------
 Keys: M-C-down (empty)
+Description: Go to first empty workspace
+-----------------------------
+Keys: M-C-j (empty)
 Description: Go to first empty workspace
 -----------------------------
 Keys: M-TAB (f)
 Description: Change the active window in a group +
 -----------------------------
-Keys: M-F1 (firefox)
-Description: Open alternate browser
------------------------------
-Keys: M-F5 (gimp)
-Description: Open image editor
------------------------------
-Keys: M-g (gsubs)
+Keys: M-S-g (gsubs)
 Description: Groups<submap-gsubs>
 -----------------------------
-Keys: M-S-r (hyprctl reload)
-Description: Reload hypr configuration
+Keys: -x (hyprctl dispatch lockactivegroup && hyprctl dispatch submap reset)
+Description: <submap-gsubs>Lock toggle for the group
 -----------------------------
-Keys: M-F4 (kate)
-Description: Open graphical text editor
+Keys: -h (hyprctl dispatch movewindoworgroup l && hyprctl dispatch submap reset)
+Description: <submap-gsubs>Move window into/out of group (l)
 -----------------------------
-Keys: M-RETURN (kitty)
-Description: Open the default terminal
+Keys: -l (hyprctl dispatch movewindoworgroup r && hyprctl dispatch submap reset)
+Description: <submap-gsubs>Move window into/out of group (r)
 -----------------------------
-Keys: M-F3 (kitty -e ranger)
-Description: Open terminal file browser
+Keys: -t (hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh)
+Description: <submap-themes>Open waybar selector
 -----------------------------
-Keys: C-A-T (kitty sh -c 'kitty @ set-spacing padding=0; tmux')
-Description: Open tmux in kitty with no padding
+Keys: -g (hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh)
+Description: <submap-themes>Toggle Garuda visual elements
+-----------------------------
+Keys: -w (hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random)
+Description: <submap-themes>Choose random wallpaper
+-----------------------------
+Keys: -s (hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select)
+Description: <submap-themes>Select wallpaper
+-----------------------------
+Keys: -m (hyprctl dispatch submap reset && cd /mnt/data/moosicmaan/CONFIG && uwsm app -- neovide)
+Description: <submap-nowsubs>Open Neovide
+-----------------------------
+Keys: -r (hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init)
+Description: <submap-themes>Start/restart wallpaper and waybar
+-----------------------------
+Keys: -b (hyprctl dispatch submap reset && pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh)
+Description: <submap-themes>Toggle Waybar
+-----------------------------
+Keys: -c (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config &&)
+Description: <submap-nowsubs>Open .config folder
+-----------------------------
+Keys: -s (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/.scripts/)
+Description: <submap-nowsubs>Open scripts folder
+-----------------------------
+Keys: -a (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/awesome/)
+Description: <submap-nowsubs>Open awesomewm configs
+-----------------------------
+Keys: -d (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/dwm/)
+Description: <submap-nowsubs>Open dwm configs
+-----------------------------
+Keys: -h (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/hypr/)
+Description: <submap-nowsubs>Open hypr configs
+-----------------------------
+Keys: -l (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/nvim/)
+Description: <submap-nowsubs>Open LazyVim configs
+-----------------------------
+Keys: -q (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/qtile/)
+Description: <submap-nowsubs>Open qtile configs
+-----------------------------
+Keys: -w (hyprctl dispatch submap reset && uwsm app -- neovide /mnt/data/moosicmaan/CONFIG/.config/waybar/)
+Description: <submap-nowsubs>Open waybar configs
+-----------------------------
+Keys: -g (hyprctl dispatch togglegroup && hyprctl dispatch submap reset)
+Description: <submap-gsubs>Toggles the current window into a group
+-----------------------------
+Keys: M-C-f (hyprctl dispatch workspaceopt allfloat)
+Description: Toggle float all windows
+-----------------------------
+Keys: M-C-r (hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init)
+Description: Reload hypr
 -----------------------------
 Keys: M-h (l)
 Description: Focus window (left)
@@ -196,92 +217,80 @@ Description: Focus window (left)
 Keys: M-left (l)
 Description: Focus window (left)
 -----------------------------
-Keys: -h (l)
-Description: Moves window into/out of group (l)
------------------------------
-Keys: M-F6 (libreoffice)
-Description: Open office suite
------------------------------
 Keys: M-mouse:272 (movewindow)
 Description: Move window with mouse
 -----------------------------
-Keys: M-n (neosubs)
-Description: Neovide<submap-neosubs>
+Keys: C-A-p (nwg-drawer -c 7 -is 70 -spacing 20 -ovl)
+Description: Open full-screen menu
 -----------------------------
-Keys: -m (neovide)
-Description: Open Neovide
+Keys: Unknown-F12 (nwg-drawer -c 7 -is 70 -spacing 20 -ovl)
+Description: FULL Menu
 -----------------------------
-Keys: -c (neovide ~/.config)
-Description: Open .config folder
+Keys: -XF86AppSelect (nwg-drawer -c 7 -is 70 -spacing 20 -ovl)
+Description: KBD select app menu
 -----------------------------
-Keys: -s (neovide ~/.config/.scripts/)
-Description: Open scripts folder
------------------------------
-Keys: -h (neovide ~/.config/hypr/)
-Description: Open hypr configs
------------------------------
-Keys: -k (neovide ~/.config/hypr/conf/keybinding.conf)
-Description: Open hypr keybindings
------------------------------
-Keys: -q (neovide ~/.config/qtile/)
-Description: Open qtile configs
------------------------------
-Keys: -w (neovide ~/.config/waybar/)
-Description: Open waybar configs
------------------------------
-Keys: M-F9 (obs)
-Description: Open streaming software
------------------------------
-Keys: -XF86AudioRaiseVolume (pactl set-sink-volume @DEFAULT_SINK@ +5%)
-Description: KBD raise volume
------------------------------
-Keys: -XF86AudioLowerVolume (pactl set-sink-volume @DEFAULT_SINK@ -5%)
-Description: KBD lower volume
------------------------------
-Keys: -XF86AudioMicMute (pactl set-source-mute @DEFAULT_SOURCE@ toggle)
-Description: KBD toggle mute
------------------------------
-Keys: M-S-RETURN (pcmanfm-qt)
-Description: Open the graphical file browser
------------------------------
-Keys: -XF86AudioNext (playerctl next)
-Description: KBD go to next song
------------------------------
-Keys: -XF86AudioStop (playerctl pause)
-Description: KBD toggle stop music
------------------------------
-Keys: -XF86AudioPlay (playerctl play-pause)
-Description: KBD toggle toggle play music
------------------------------
-Keys: -XF86AudioPrev (playerctl previous)
-Description: KBD go to previous song
------------------------------
-Keys: M-C-LEFT (pypr shift_monitors +1)
-Description: Flip windows between monitors
------------------------------
-Keys: M-A-v (pypr toggle audio)
-Description: Scratchpad (Pulse Audio Control)
------------------------------
-Keys: M-A-o (pypr toggle btop)
-Description: Scratchpad (btop)
------------------------------
-Keys: M-A-p (pypr toggle moosic)
-Description: Scratchpad (musicCube)
------------------------------
-Keys: M-A-i (pypr toggle term)
-Description: Scratchpad (terminal)
------------------------------
-Keys: M-A-u (pypr toggle yazi)
-Description: Scratchpad (yaai)
------------------------------
-Keys: M-S-z (pypr zoom)
-Description: ZOOM
------------------------------
-Keys: -XF86Calculator (qalculate-gtk)
+Keys: -XF86Calculator (pkill galculator || uwsm app -- galculator)
 Description: KBD toggle calculator
 -----------------------------
-Keys: M-o (qutebrowser)
-Description: Open the vim-based browser
+Keys: M-S-k (pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/KeyBinds.sh)
+Description: Show Keybindings
+-----------------------------
+Keys: C-A-m (pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBeats.sh)
+Description: ROFI Music Selector
+-----------------------------
+Keys: M-S-o (pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBookmarks.sh)
+Description: Select brave bookmarks
+-----------------------------
+Keys: M-C-c (pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh)
+Description: Show clipboard history
+-----------------------------
+Keys: M-C-v (pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh)
+Description: Show clipboard history
+-----------------------------
+Keys: M-S-p (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}')
+Description: DRUN Menu
+-----------------------------
+Keys: Unknown-F11 (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}')
+Description: DRUN Menu
+-----------------------------
+Keys: M-C-p (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show filebrowser)
+Description: FILES Menu
+-----------------------------
+Keys: M-A-p (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window)
+Description: WINDOWS Menu
+-----------------------------
+Keys: M-p (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}')
+Description: RUN Menu
+-----------------------------
+Keys: Unknown-F10 (pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}')
+Description: RUN Menu
+-----------------------------
+Keys: M-C-b (pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh)
+Description: Toggle Waybar
+-----------------------------
+Keys: M-A-LEFT (pypr shift_monitors +1)
+Description: Flip windows between monitors
+-----------------------------
+Keys: M-A-period (pypr shift_monitors +1)
+Description: Flip windows between monitors
+-----------------------------
+Keys: M-A-x (pypr toggle audio)
+Description: Scratchpad (audio)
+-----------------------------
+Keys: M-A-j (pypr toggle files)
+Description: Scratchpad (files)
+-----------------------------
+Keys: M-A-l (pypr toggle monitor)
+Description: Scratchpad (monitor)
+-----------------------------
+Keys: M-A-m (pypr toggle moosic)
+Description: Scratchpad (moosic)
+-----------------------------
+Keys: M-A-i (pypr toggle term)
+Description: Scratchpad (term)
+-----------------------------
+Keys: M-C-z (pypr zoom)
+Description: ZOOM
 -----------------------------
 Keys: M-l (r)
 Description: Focus window (right)
@@ -289,43 +298,10 @@ Description: Focus window (right)
 Keys: M-right (r)
 Description: Focus window (right)
 -----------------------------
-Keys: -l (r)
-Description: Moves window into/out of group (r)
------------------------------
-Keys: -m (reset)
-Description: 
------------------------------
-Keys: -c (reset)
-Description: 
------------------------------
-Keys: -h (reset)
-Description: 
------------------------------
-Keys: -w (reset)
-Description: 
------------------------------
-Keys: -s (reset)
-Description: 
------------------------------
-Keys: -q (reset)
-Description: 
------------------------------
-Keys: -k (reset)
-Description: 
------------------------------
 Keys: -escape (reset)
 Description: 
 -----------------------------
-Keys: -g (reset)
-Description: 
------------------------------
-Keys: -x (reset)
-Description: 
------------------------------
-Keys: -h (reset)
-Description: 
------------------------------
-Keys: -l (reset)
+Keys: -escape (reset)
 Description: 
 -----------------------------
 Keys: -escape (reset)
@@ -334,38 +310,14 @@ Description:
 Keys: M-mouse:273 (resizewindow)
 Description: Resize window with mouse
 -----------------------------
-Keys: M-S-p (rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun)
-Description: DRUN Menu
------------------------------
-Keys: M-F11 (rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun)
-Description: DRUN Menu
------------------------------
-Keys: M-C-p (rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window)
-Description: WINDOW Menu
------------------------------
-Keys: M-F12 (rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window)
-Description: WINDOW Menu
------------------------------
-Keys: M-p (rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run)
-Description: RUN Menu
------------------------------
-Keys: M-F10 (rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run)
-Description: RUN Menu
------------------------------
-Keys: M-S-Minus (special)
+Keys: M-S-0 (special)
 Description: Move window to special workspace
 -----------------------------
-Keys: M-m (spotube)
-Description: Open the music player
+Keys: M-n (text-edit)
+Description: Terminal/like text editor<submap-neosubs>
 -----------------------------
-Keys: M-F7 (spotube)
-Description: Open music player
------------------------------
-Keys: -XF86Lock (swaylock)
-Description: KBD toggle lock computer
------------------------------
-Keys: M-C-RETURN (thunderbird)
-Description: Open the default email
+Keys: M-C-g (themes)
+Description: Theme<submap-themes>
 -----------------------------
 Keys: M-k (u)
 Description: Focus window (up)
@@ -373,24 +325,81 @@ Description: Focus window (up)
 Keys: M-up (u)
 Description: Focus window (up)
 -----------------------------
-Keys: M-S-m (vlc)
+Keys: Unknown-F2 (uwsm app -- bluemail)
+Description: Open alternate email
+-----------------------------
+Keys: M-b (uwsm app -- brave)
+Description: Open the default browser
+-----------------------------
+Keys: M-a (uwsm app -- brave --app=https://chat.openai.com)
+Description: Open ChatGPT
+-----------------------------
+Keys: M-S-e (uwsm app -- emacs --daemon=serve)
+Description: Start the emacs server/daemon
+-----------------------------
+Keys: M-e (uwsm app -- emacsclient -c -a 'emacs')
+Description: Start the emacs client
+-----------------------------
+Keys: M-i (uwsm app -- emote)
+Description: Open the emoticon browser
+-----------------------------
+Keys: Unknown-F1 (uwsm app -- firefox)
+Description: Open alternate browser
+-----------------------------
+Keys: Unknown-F4 (uwsm app -- geany)
+Description: Open graphical text editor
+-----------------------------
+Keys: M-RETURN (uwsm app -- ghostty)
+Description: Open the default terminal
+-----------------------------
+Keys: Unknown-F5 (uwsm app -- gimp)
+Description: Open image editor
+-----------------------------
+Keys: Unknown-F6 (uwsm app -- libreoffice)
+Description: Open office suite
+-----------------------------
+Keys: Unknown-F9 (uwsm app -- obs)
+Description: Open streaming software
+-----------------------------
+Keys: M-S-RETURN (uwsm app -- pcmanfm-qt)
+Description: Open the graphical file browser
+-----------------------------
+Keys: M-o (uwsm app -- qutebrowser)
+Description: Open the vim-based browser
+-----------------------------
+Keys: M-m (uwsm app -- spotube)
+Description: Open the music player
+-----------------------------
+Keys: Unknown-F7 (uwsm app -- spotube)
+Description: Open music player
+-----------------------------
+Keys: -XF86Lock (uwsm app -- swaylock -c 000000)
+Description: KBD toggle lock computer
+-----------------------------
+Keys: M-C-RETURN (uwsm app -- thunderbird)
+Description: Open the default email
+-----------------------------
+Keys: M-S-m (uwsm app -- vlc)
 Description: Open the media player
 -----------------------------
-Keys: Unknown- (vlc)
-Description: Open the media player
------------------------------
-Keys: M-F8 (vlc)
+Keys: Unknown-F8 (uwsm app -- vlc)
 Description: Open media playger
 -----------------------------
-Keys: -XF86Tools (vlc)
+Keys: -XF86Tools (uwsm app -- vlc)
 Description: KBD open the media player
 -----------------------------
-Keys: M-S-q (wlogout)
+Keys: C-A-t (uwsm app -- wezterm -e tmux)
+Description: Open tmux in terminal with no padding
+-----------------------------
+Keys: Unknown-F3 (uwsm app -- wezterm -e yazi)
+Description: Open terminal file browser
+-----------------------------
+Keys: M-t (uwsm app -- wezterm;)
+Description: Open the alternate terminal
+-----------------------------
+Keys: M-C-q (wlogout)
 Description: Logout Menu
 -----------------------------
 Keys: C-A-DELETE (wlogout)
 Description: Logout Menu
------------------------------
-Keys: -XF86AudioMute (wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle)
-Description: KBD mute volume
 -----------------------------

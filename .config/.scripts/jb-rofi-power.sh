@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
-
+# =====================================================
+# -----------------------------------------------------
 # This script defines just a mode for rofi instead of being a self-contained
 # executable that launches rofi by itself. This makes it more flexible than
 # running rofi inside this script as now the user can call rofi as one pleases.
 # For instance:
 #
-#   rofi -show powermenu -modi powermenu:./rofi-power-menu
+# Mostly used for Xorg window managers
 #
-# See README.md for more information.
+#   rofi -show powermenu -modi powermenu:./rofi-power-menu
+# -----------------------------------------------------
+# =====================================================
 
 set -e
 set -u
 
+# -----------------------------------------------------
 # All supported choices
+# -----------------------------------------------------
 all=(shutdown reboot suspend hibernate logout lockscreen)
 
 # By default, show all (i.e., just copy the array)

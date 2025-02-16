@@ -163,7 +163,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
     spacing:                     0px;
     margin:                      0px 300px;
@@ -182,7 +182,7 @@ button selected {
 }
 
 /*****----- Message -----*****/
-error-message {
+false {
     padding:                     20px;
     background-color:            #22272C;
     text-color:                  white;

@@ -1,4 +1,10 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Set the brightness of an external monitor using ddcutil
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 
 # ICONS
 licon="/usr/share/icons/candy-icons/apps/scalable/lightbeat.svg"

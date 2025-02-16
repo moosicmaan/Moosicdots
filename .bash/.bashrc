@@ -108,6 +108,7 @@ fi
 alias vim="nvim"
 export PATH=$PATH:$HOME/.config/emacs/bin
 alias ec="emacsclient -c -a 'emacs' &"
+export PATH="$HOME/.config/.scripts:$PATH"
 alias config="cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 
 function yy() {

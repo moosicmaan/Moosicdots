@@ -33,17 +33,17 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (300, 600)
+    width = 400
 
     # The maximum height of a single notification, excluding the frame.
-    height = (0,600)
+    height = (0,700)
 
     # Position the notification in the top right corner
-    # origin = top-right
+    # origin4= top-right
     origin = top-right
 
     # Offset from the origin
-    offset = 13x13
+    offset = (14, 28)
 
     # Scale factor. It is auto-detected if value is 0. X11 only
     scale = 1
@@ -68,7 +68,7 @@
     progress_bar_min_width = 150
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
+    progress_bar_max_width = 400
 
     # Corner radius for the progress bar. 0 disables rounded corners.
     progress_bar_corner_radius = 5
@@ -119,7 +119,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto
 
     # Sort messages by urgency.
     sort = yes

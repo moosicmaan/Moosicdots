@@ -44,6 +44,8 @@ font_directory=/usr/share/kbd/consolefonts/
 d_line="\b===========================================================================\n"
 s_line="\b${BWhite}---------------------------------------------------------------------------"
 
+export PATH="$HOME/.config/.scripts:$PATH"
+
 clear
 if [[  $DISPLAY < 1  ]];
   then

@@ -33,7 +33,7 @@
       "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     }
   },
   "hyprland/workspaces": {
@@ -53,7 +53,7 @@
       "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     }
   },
   "hyprland/workspaces#kitty": {
@@ -79,7 +79,7 @@
       "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     }
   },
   "hyprland/workspaces#moony": {
@@ -97,7 +97,6 @@
       "3": "🌗",
       "4": "🌘",
       "5": "🌑",
-      // "6": "🌑",
       "6": "🌒",
       "7": "🌓",
       "8": "🌔",
@@ -106,7 +105,7 @@
       "special": "😍"
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     }
   },
   "hyprland/workspaces#roman": {
@@ -118,7 +117,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     },
     "format": "{icon}",
     "format-icons": {
@@ -130,7 +129,7 @@
       "6": "VI",
       "7": "VII",
       "8": "VIII",
-      "9": "IX",
+      "9": "IX"
       // "10": "X"
     }
   },
@@ -143,7 +142,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     },
     "format-icons": {
       "active": " 󰮯 ",
@@ -162,7 +161,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 3
+      "*": 4
     },
     "format-icons": {
       // "10": "",
@@ -186,7 +185,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 3
+      "*": 4
     },
     "format-icons": {
       // "10": "",
@@ -210,7 +209,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     },
     "format-icons": {
       "1": "󰎤",
@@ -221,7 +220,7 @@
       "6": "󰎳",
       "7": "󰎶",
       "8": "󰎹",
-      "9": "󰎼",
+      "9": "󰎼"
       // "10": "󰽽"
     }
   },
@@ -472,8 +471,10 @@
     "tooltip": true,
     "tooltip-format": "{status_icon} {dynamic}",
     "scroll-step": 5,
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+    // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    "on-scroll-up": "$HOME/.config/.scripts/Volume.sh --inc",
+    "on-scroll-down": "$HOME/.config/.scripts/Volume.sh --dec",
     "smooth-scrolling-threshold": 1,
     "player-icons": {
       "default": "▶ ",

@@ -1,14 +1,10 @@
 #!/bin/bash
-#                _ _
-# __      ____ _| | |_ __   __ _ _ __   ___ _ __
-# \ \ /\ / / _` | | | '_ \ / _` | '_ \ / _ \ '__|
-#  \ V  V / (_| | | | |_) | (_| | |_) |  __/ |
-#   \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|
-#                   |_|         |_|
-#
-# by Stephan Raabe (2023)
+# =====================================================
 # -----------------------------------------------------
-
+# Reload, Select, or Randomly Select the wallpaper and colorscheme
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
@@ -40,10 +36,8 @@ case $1 in
     wal -q -i ~/wallpaper/
   fi
   ;;
-
 # Select wallpaper with rofi
 "select")
-
   selected=$(find "$HOME/Pictures/Backgrounds" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
     echo -en "$rfile\x00icon\x1f$HOME/Pictures/Backgrounds/${rfile}\n"
   done | rofi -dmenu -replace -config ~/.config/rofi/config-wallpaper.rasi)
@@ -53,12 +47,10 @@ case $1 in
   fi
   wal -q -i ~/Pictures/Backgrounds/"$selected"
   ;;
-
 # Randomly select wallpaper
 *)
   wal -q -i ~/Pictures/Backgrounds/
   ;;
-
 esac
 
 # -----------------------------------------------------
@@ -91,11 +83,15 @@ newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
 transition_type="random"
 
 ${PREFIX}swww img "$wallpaper" \
-  --transition-bezier .43,1.19,1,.4 \
-  --transition-fps=60 \
   --transition-type=$transition_type \
-  --transition-duration=0.7 \
   --transition-pos "$(hyprctl cursorpos)"
+
+# ${PREFIX}swww img "$wallpaper" \
+#   --transition-bezier .43,1.19,1,.4 \
+#   --transition-fps=60 \
+#   --transition-type=$transition_type \
+#   --transition-duration=0.7 \
+#   --transition-pos "$(hyprctl cursorpos)"o
 
 # -----------------------------------------------------
 # Send notification

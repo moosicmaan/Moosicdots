@@ -1,6 +1,9 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Searchable enabled keybinds using rofi
+# =====================================================
+# -----------------------------------------------------
+# Search keybinds using rofi
+# -----------------------------------------------------
+# =====================================================
 
 # Kill yad to not interfere with this binds
 pkill yad || true
@@ -10,12 +13,6 @@ KEYBINDS_CONF="$HOME/.config/hypr/conf/keybinding.conf"
 
 # Combine the contents of the keybinds files and filter for keybinds
 KEYBINDS=$(cat "$KEYBINDS_CONF" | grep -E '^(bindd|binddl|binddle|bindde|binddm)')
-
-# Check if Laptop.conf exists and add its keybinds if present
-# if [[ -f "$LAPTOP_CONF" ]]; then
-#   LAPTOP_BINDS=$(grep -E '^(bind|bindl|binde|bindm)' "$LAPTOP_CONF")
-#   KEYBINDS+=$'\n'"$LAPTOP_BINDS"
-# fi
 
 # check for any keybinds to display
 if [[ -z "$KEYBINDS" ]]; then
