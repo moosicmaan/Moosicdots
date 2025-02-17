@@ -3,7 +3,7 @@
 # Show a Doppler RADAR of a user's preferred location.
 
 # secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
-secs=6 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
+secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
 radarloc="${XDG_CACHE_HOME:-$HOME/.cache}/radar"
 doppler="${XDG_CACHE_HOME:-$HOME/.cache}/doppler.gif"
 
