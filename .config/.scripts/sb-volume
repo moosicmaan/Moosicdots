@@ -15,9 +15,9 @@ wpctl() {
 }
 
 case "$BLOCK_BUTTON" in
-3) /home/moosicmaan/.config/.scripts/Volume.sh --inc ;;
-1) /home/moosicmaan/.config/.scripts/Volume.sh --dec ;;
-2) /home/moosicmaan/.config/.scripts/Volume.sh --toggle ;;
+3) "$HOME"/.config/.scripts/media-vol --inc ;;
+1) "$HOME"/.config/.scripts/media-vol --dec ;;
+2) "$HOME"/.config/.scripts/media-vol --toggle ;;
 6) terminal -e "$EDITOR" "$0" ;;
 esac
 

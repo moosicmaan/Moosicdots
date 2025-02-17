@@ -2,10 +2,10 @@
 # Display currently playing music.
 
 case "$BLOCK_BUTTON" in
-1) /home/moosicmaan/.config/.scripts/MediaCtrl.sh --prv ;;
-2) /home/moosicmaan/.config/.scripts/MediaCtrl.sh --pause ;;
-3) /home/moosicmaan/.config/.scripts/MediaCtrl.sh --nxt ;;
-4) /home/moosicmaan/.config/.scripts/MediaCtrl.sh --stop ;;
+1) "$HOME"/.config/.scripts/media-ctrl --prv ;;
+2) "$HOME"/.config/.scripts/media-ctrl --pause ;;
+3) "$HOME"/.config/.scripts/media-ctrl --nxt ;;
+4) "$HOME"/.config/.scripts/media-ctrl --stop ;;
 esac
 
 set -- --player=spotube,mpv,%any
