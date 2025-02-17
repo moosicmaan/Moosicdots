@@ -145,8 +145,8 @@
     "on-click-middle": "",
     "on-click-right": "",
     "on-update": "",
-    "on-scroll-up": "~/.config/.scripts/Brightness.sh --inc",
-    "on-scroll-down": "~/.config/.scripts/Brightness.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/ut-monbrightness --inc",
+    "on-scroll-down": "~/.config/.scripts/ut-monbrightness --dec",
     "smooth-scrolling-threshold": 1
   },
   "battery": {
@@ -181,8 +181,8 @@
     "format-time": "{H}h {M}min",
     "tooltip": true,
     "tooltip-format": "{timeTo} {power}w",
-    "on-click-middle": "~/.config/.scripts/ChangeBlur.sh",
-    "on-click-right": "~/.config/.scripts/Wlogout.sh"
+    // "on-click-middle": "~/.config/.scripts/ChangeBlur.sh",
+    "on-click-right": "wlogout"
   },
   "bluetooth": {
     "format": "",
@@ -397,10 +397,10 @@
     "format": "{format_source}",
     "format-source": " {volume}%",
     "format-source-muted": "",
-    "on-click": "~/.config/.scripts/Volume.sh --toggle-mic",
+    "on-click": "~/.config/.scripts/media-vol --toggle-mic",
     "on-click-right": "pavucontrol -t 4",
-    "on-scroll-up": "~/.config/.scripts/Volume.sh --mic-inc",
-    "on-scroll-down": "~/.config/.scripts/Volume.sh --mic-dec",
+    "on-scroll-up": "~/.config/.scripts/media-vol --mic-inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --mic-dec",
     "tooltip-format": "{source_desc} | {source_volume}%",
     "scroll-step": 5
   },
@@ -425,10 +425,10 @@
   "wireplumber": {
     "format": "{icon} {volume} %",
     "format-muted": " Mute",
-    "on-click": "~/.config/.scripts/Volume.sh --toggle",
+    "on-click": "~/.config/.scripts/media-vol --toggle",
     "on-click-right": "pavucontrol -t 3",
-    "on-scroll-up": "~/.config/.scripts/Volume.sh --inc",
-    "on-scroll-down": "~/.config/.scripts/Volume.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/media-vol --inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --dec",
     "format-icons": [
       "",
       "",
@@ -460,7 +460,7 @@
   "custom/keybinds": {
     "format": "󰺁 HINT!",
     "exec": "echo ; echo  Key Hints SUPER H",
-    "on-click": "~/.config/.scripts/KeyHints.sh",
+    "on-click": "~/.config/.scripts/hypr-keybinds",
     "interval": 86400,
     "tooltip": true
   },
@@ -474,8 +474,8 @@
     "format": "{}",
     "exec": "echo ; echo 󰔎 Dark-Light switcher",
     "on-click": "~/.config/.scripts/DarkLight.sh",
-    "on-click-right": "~/.config/.scripts/WaybarStyles.sh",
-    "on-click-middle": "~/.config/.scripts/Wallpaper.sh",
+    "on-click-right": "~/.config/.scripts/hypr-barswitch",
+    "on-click-middle": "~/.config/.scripts/ut-wallpaper",
     "interval": 86400,
     "tooltip": true
   },
@@ -495,7 +495,7 @@
     "on-click-right": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window"
   },
   "custom/cava_mviz": {
-    "exec": "~/.config/.scripts/WaybarCava.sh",
+    "exec": "~/.config/.scripts/waybar-cava",
     "format": "{}"
   },
   "custom/playerctl": {
@@ -507,8 +507,8 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "scroll-step": 5,
-    "on-scroll-up": "~/.config/.scripts/Volume.sh --inc",
-    "on-scroll-down": "~/.config/.scripts/Volume.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/media-vol --inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --dec",
     "smooth-scrolling-threshold": 1
   },
   "custom/power": {
@@ -600,8 +600,8 @@
     "on-click-middle": "",
     "on-click-right": "",
     "on-update": "",
-    "on-scroll-up": "~/.config/.scripts/Brightness.sh --inc",
-    "on-scroll-down": "~/.config/.scripts/Brightness.sh --dec",
+    "on-scroll-up": "~/.config/.scripts/ut-monbrightness --inc",
+    "on-scroll-down": "~/.config/.scripts/ut-monbrightness --dec",
     "smooth-scrolling-threshold": 1,
     "tooltip-format": "{percent}%"
   },
@@ -654,10 +654,10 @@
       ]
     },
     "scroll-step": 5,
-    "on-click": "~/.config/.scripts/Volume.sh --toggle",
+    "on-click": "~/.config/.scripts/media-vol --toggle",
     "on-click-right": "pavucontrol-qt -t 3",
-    "on-scroll-up": "~/.config/.scripts/volume --inc",
-    "on-scroll-down": "~/.config/.scripts/volume --dec",
+    "on-scroll-up": "~/.config/.scripts/media-vol --inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --dec",
     "tooltip-format": "{icon} {desc} | {volume}%",
     "smooth-scrolling-threshold": 1
   },
@@ -666,9 +666,9 @@
     "format-source": "󰍬",
     "format-source-muted": "󰍭",
     "on-click-right": "pavucontrol",
-    "on-click": "~/.config/.scripts/Volume.sh --toggle-mic",
-    "on-scroll-up": "~/.config/.scripts/Volume.sh --mic-inc",
-    "on-scroll-down": "~/.config/.scripts/Volume.sh --mic-dec",
+    "on-click": "~/.config/.scripts/media-vol --toggle-mic",
+    "on-scroll-up": "~/.config/.scripts/media-vol --mic-inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --mic-dec",
     "max-volume": 100,
     "tooltip": true,
     "tooltip-format": "{source_desc} | {source_volume}%"
@@ -691,7 +691,7 @@
   "custom/power_vertical": {
     "format": "⏻",
     "exec": "echo ; echo 󰟡 power // blur",
-    "on-click": "~/.config/.scripts/Wlogout.sh",
+    "on-click": "wlogout",
     "on-click-right": "~/.config/.scripts/ChangeBlur.sh",
     "interval": 86400,
     "tooltip": true

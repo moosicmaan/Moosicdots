@@ -118,20 +118,20 @@ static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
 static const char *varip[] = { "variety", "-p", NULL };
-static const char *rofi_power[] = { "rofi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/jb-rofi-power.sh", NULL };
-static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/toggle_lap_kbd.sh", NULL };
-static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/toggle_kbd.sh", NULL };
-static const char *jammpd[] = { "/home/moosicmaan/.config/.scripts/RofiBeats.sh", NULL };
+static const char *rofi_power[] = { "rofi", "-c", "config-narrow.rasi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/rofi-power", NULL };
+static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
+static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
+static const char *jammpd[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 
 /*MEDIA KEYS*/
 #include <X11/XF86keysym.h>
-static const char *volu[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--inc", NULL };
-static const char *vold[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--dec", NULL };
-static const char *volt[] = { "/home/moosicmaan/.config/.scripts/Volume.sh", "--toggle", NULL };
-static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--pause", NULL };
-static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--pause", NULL };
-static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--nxt", NULL };
-static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/MediaCtrl.sh", "--prv", NULL };
+static const char *volu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
+static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
+static const char *volt[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--toggle", NULL };
+static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
+static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
+static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--nxt", NULL };
+static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--prv", NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};

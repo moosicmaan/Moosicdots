@@ -62,9 +62,9 @@
   },
   "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist",
+    "on-click-right": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist d",
+    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist w",
     "tooltip": false
   },
   "custom/updates": {
@@ -72,7 +72,7 @@
     "tooltip-format": "{}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/.scripts/updates.sh",
+    "exec": "~/.config/.scripts/waybar-updates",
     "restart-interval": 60,
     "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
     "on-click-right": "~/.config/.settings/software.sh",
@@ -80,13 +80,13 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "~/.config/.scripts/wallpaper.sh select",
-    "on-click-right": "~/.config/.scripts/wallpaper.sh",
+    "on-click": "~/.config/.scripts/ut-wallpaper select",
+    "on-click-right": "~/.config/.scripts/ut-wallpaper random",
     "tooltip": false
   },
   "custom/waybarthemes": {
     "format": "",
-    "on-click": "~/.config/.scripts/themeswitcher.sh",
+    "on-click": "~/.config/.scripts/hypr-barswitch",
     "tooltip": false
   },
   "custom/settings": {
@@ -96,7 +96,7 @@
   },
   "custom/keybindings": {
     "format": "",
-    "on-click": "~/.config/.scripts/keybindings.sh",
+    "on-click": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/filemanager": {
@@ -122,13 +122,13 @@
   "custom/appmenu": {
     "format": "Apps",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/appmenuicon": {
     "format": "",
     "on-click": "rofi -show drun -replace",
-    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/exit": {

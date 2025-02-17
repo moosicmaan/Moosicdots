@@ -270,9 +270,9 @@
   },
   "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && ~/.config/.scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/.scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist",
+    "on-click-right": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist d",
+    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist w",
     "tooltip": false
   },
   "custom/appmenu": {
@@ -284,7 +284,7 @@
   "custom/launcher": {
     "format": "",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/exit": {
@@ -300,13 +300,13 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "~/.config/.scripts/wallpaper.sh select",
-    "on-click-right": "~/.config/.scripts/wallpaper.sh",
+    "on-click": "~/.config/.scripts/ut-wallpaper select",
+    "on-click-right": "~/.config/.scripts/ut-wallpaper random",
     "tooltip": false
   },
   "custom/waybarthemes": {
     "format": "",
-    "on-click": "~/.config/.scripts/themeswitcher.sh",
+    "on-click": "~/.config/.scripts/hypr-barswitch",
     "tooltip": false
   },
   "custom/settings": {
@@ -316,7 +316,7 @@
   },
   "custom/keybindings": {
     "format": "",
-    "on-click": "~/.config/.scripts/keybindings.sh",
+    "on-click": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/filemanager": {
@@ -348,7 +348,7 @@
     "format": "",
     "icon-size": 14,
     "on-click": "rofi -show drun -replace",
-    "on-click-right": "~/.config/.scripts/keybindings.sh",
+    "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
   },
   "custom/system": {
@@ -379,35 +379,37 @@
     "on-click": "wezterm start --class floating -e garuda-update"
   },
   "cava": {
-    "framerate": 30,
-    "autosens": 1,
-    "bars": 16,
-    "lower_cutoff_freq": 10,
-    "higher_cutoff_freq": 10000,
-    "method": "pipewire",
-    "source": "auto",
-    "stereo": true,
-    "reverse": false,
-    "sleep_timer": 7,
-    "hide_on_silence": true,
-    "bar_delimiter": 0,
-    "monstercat": true,
-    "waves": true,
-    "noise_reduction": 0.57,
-    "input_delay": 2,
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ],
-    "actions": {
-      "on-click-right": "mode"
-    }
+    // "framerate": 30,
+    // "autosens": 1,
+    // "bars": 16,
+    // "lower_cutoff_freq": 10,
+    // "higher_cutoff_freq": 10000,
+    // "method": "pipewire",
+    // "source": "auto",
+    // "stereo": true,
+    // "reverse": false,
+    // "sleep_timer": 7,
+    // "hide_on_silence": true,
+    // "bar_delimiter": 0,
+    // "monstercat": true,
+    // "waves": true,
+    // "noise_reduction": 0.57,
+    // "input_delay": 2,
+    // "format-icons": [
+    //   "▁",
+    //   "▂",
+    //   "▃",
+    //   "▄",
+    //   "▅",
+    //   "▆",
+    //   "▇",
+    //   "█"
+    // ],
+    // "actions": {
+    //   "on-click-right": "mode"
+    // },
+    "exec": "~/.config/.scripts/waybar-cava",
+    "format": "{}"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -473,8 +475,8 @@
     "scroll-step": 5,
     // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
     // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-    "on-scroll-up": "$HOME/.config/.scripts/Volume.sh --inc",
-    "on-scroll-down": "$HOME/.config/.scripts/Volume.sh --dec",
+    "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
+    "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
     "smooth-scrolling-threshold": 1,
     "player-icons": {
       "default": "▶ ",
