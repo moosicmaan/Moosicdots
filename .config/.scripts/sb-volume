@@ -21,7 +21,7 @@ case "$BLOCK_BUTTON" in
 6) terminal -e "$EDITOR" "$0" ;;
 esac
 
-. sb-theme
+. "$HOME"/.config/.scripts/sb-theme
 if wpctl get-volume | grep -q "[MUTED]"; then
   display "🔇M" 9
   exit

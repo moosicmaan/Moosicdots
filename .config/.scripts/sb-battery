@@ -14,7 +14,7 @@ case "$BLOCK_BUTTON" in
 6) terminal -e "$EDITOR" "$0" ;;
 esac
 
-. sb-theme
+. "$HOME"/.config/.scripts/sb-theme
 
 # Loop through all attached batteries.
 for battery in /sys/class/power_supply/BAT?*; do
