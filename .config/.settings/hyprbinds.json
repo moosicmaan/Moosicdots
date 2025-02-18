@@ -14,7 +14,7 @@
     "catch_all": false,
     "description": "Open the default terminal",
     "dispatcher": "exec",
-    "arg": "uwsm app -- ghostty"
+    "arg": "uwsm app -- wezterm"
   },
   {
     "locked": false,
@@ -31,7 +31,7 @@
     "catch_all": false,
     "description": "Open the alternate terminal",
     "dispatcher": "exec",
-    "arg": "uwsm app -- wezterm;"
+    "arg": "uwsm app -- ghostty;"
   },
   {
     "locked": false,
@@ -218,7 +218,7 @@
     "catch_all": false,
     "description": "ROFI Music Selector",
     "dispatcher": "exec",
-    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBeats.sh"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-beats"
   },
   {
     "locked": false,
@@ -252,7 +252,7 @@
     "catch_all": false,
     "description": "Screenshot",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-screenshot"
   },
   {
     "locked": false,
@@ -269,7 +269,7 @@
     "catch_all": false,
     "description": "Screenshot",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/screenshot.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-screenshot"
   },
   {
     "locked": false,
@@ -558,7 +558,7 @@
     "catch_all": false,
     "description": "Select brave bookmarks",
     "dispatcher": "exec",
-    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/RofiBookmarks.sh"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-bookmarks"
   },
   {
     "locked": false,
@@ -575,7 +575,7 @@
     "catch_all": false,
     "description": "Show clipboard history",
     "dispatcher": "exec",
-    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-cliphist"
   },
   {
     "locked": false,
@@ -592,7 +592,7 @@
     "catch_all": false,
     "description": "Show clipboard history",
     "dispatcher": "exec",
-    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/cliphist.sh"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-cliphist"
   },
   {
     "locked": false,
@@ -1017,7 +1017,7 @@
     "catch_all": false,
     "description": "Reload hypr",
     "dispatcher": "exec",
-    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init"
+    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper init"
   },
   {
     "locked": false,
@@ -1034,7 +1034,7 @@
     "catch_all": false,
     "description": "Switch waybar",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barswitch"
   },
   {
     "locked": false,
@@ -1051,7 +1051,7 @@
     "catch_all": false,
     "description": "Toggle Waybar",
     "dispatcher": "exec",
-    "arg": "pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh"
+    "arg": "pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barlaunch"
   },
   {
     "locked": false,
@@ -1068,7 +1068,7 @@
     "catch_all": false,
     "description": "Select wallpaper",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper select"
   },
   {
     "locked": false,
@@ -1085,7 +1085,7 @@
     "catch_all": false,
     "description": "Select random wallpaper",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper random"
   },
   {
     "locked": false,
@@ -1102,7 +1102,7 @@
     "catch_all": false,
     "description": "Toggle kmonad for external keyboard",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_kbd.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-350"
   },
   {
     "locked": false,
@@ -1119,7 +1119,7 @@
     "catch_all": false,
     "description": "Toggle kmonad for laptop keyboard",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggle_lap_kbd.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-lap"
   },
   {
     "locked": false,
@@ -1136,7 +1136,7 @@
     "catch_all": false,
     "description": "Toggle Garuda visual elements",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-visuals"
   },
   {
     "locked": false,
@@ -1170,7 +1170,7 @@
     "catch_all": false,
     "description": "<submap-themes>Toggle Waybar",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarLaunch.sh"
+    "arg": "hyprctl dispatch submap reset && pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barlaunch"
   },
   {
     "locked": false,
@@ -1187,7 +1187,7 @@
     "catch_all": false,
     "description": "<submap-themes>Open waybar selector",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/BarSwitcher.sh"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barswitch"
   },
   {
     "locked": false,
@@ -1204,7 +1204,7 @@
     "catch_all": false,
     "description": "<submap-themes>Select wallpaper",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh select"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper select"
   },
   {
     "locked": false,
@@ -1221,7 +1221,7 @@
     "catch_all": false,
     "description": "<submap-themes>Choose random wallpaper",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/wallpaper.sh random"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper random"
   },
   {
     "locked": false,
@@ -1238,7 +1238,7 @@
     "catch_all": false,
     "description": "<submap-themes>Start/restart wallpaper and waybar",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/monitorReload.sh init"
+    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper init"
   },
   {
     "locked": false,
@@ -1255,7 +1255,7 @@
     "catch_all": false,
     "description": "<submap-themes>Toggle Garuda visual elements",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/toggleg.sh"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-visuals"
   },
   {
     "locked": false,
@@ -2666,7 +2666,7 @@
     "catch_all": false,
     "description": "KBD raise volume",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --inc"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --inc"
   },
   {
     "locked": true,
@@ -2683,7 +2683,7 @@
     "catch_all": false,
     "description": "KBD lower volume",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --dec"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --dec"
   },
   {
     "locked": true,
@@ -2700,7 +2700,7 @@
     "catch_all": false,
     "description": "KBD mute volume",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/Volume.sh --toggle"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --toggle"
   },
   {
     "locked": true,
@@ -2717,7 +2717,7 @@
     "catch_all": false,
     "description": "KBD toggle toggle play music",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --pause"
   },
   {
     "locked": true,
@@ -2734,7 +2734,7 @@
     "catch_all": false,
     "description": "KBD toggle stop music",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --pause"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --pause"
   },
   {
     "locked": true,
@@ -2751,7 +2751,7 @@
     "catch_all": false,
     "description": "KBD go to next song",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --nxt"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --nxt"
   },
   {
     "locked": true,
@@ -2768,7 +2768,7 @@
     "catch_all": false,
     "description": "KBD go to previous song",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/MediaCtrl.sh --prv"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --prv"
   },
   {
     "locked": false,
@@ -2887,7 +2887,7 @@
     "catch_all": false,
     "description": "KBD ExMon brightness up",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --inc"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --inc"
   },
   {
     "locked": false,
@@ -2904,6 +2904,6 @@
     "catch_all": false,
     "description": "KBD ExMon brightness down",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/BrightnessExMon.sh --dec"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --dec"
   }
 ]
