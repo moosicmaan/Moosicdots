@@ -15,8 +15,8 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
 static const int showsystray        = 1;      /* 0 means no systray */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font Mono:size=8" };
-static const char dmenufont[]       = "Hack Nerd Font Mono:size=8";
+static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
+static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
 static const char col_gray1[]       = "#010101";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";
@@ -44,8 +44,8 @@ static const char *tagsel[][2] = {
   { col_gray1,  col_pinned },                 /* has pinned tag */
 };
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-// static const char *tags[] = { "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 
 static const Rule rules[] = {
 /* xprop(1):
@@ -63,7 +63,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55;          /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50;          /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;             /* number of clients in master area */
 static const int resizehints = 0;             /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1;          /* 1 will force focus on the fullscreen window */
@@ -71,24 +71,29 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
-  { "[]=",      tile },                       /* first entry is default */
-  { "[@]",      spiral },
-  { "[M]",      monocle },
-  { "[\\]",     dwindle },
+	//  { "[]=",      tile },                       /* first entry is default */
+	// { "><>",      NULL },    /* no layout function means floating behavior */
+	//  { "[M]",      monocle },
+	//  { "[@]",      spiral },
+	//  { "[\\]",     dwindle },
+  { "󰜵",      tile },                       /* first entry is default */
+	{ "󰘷",      NULL },    /* no layout function means floating behavior */
+  { "",      monocle },
+  { "󰁥",      spiral },
+  { "",     dwindle },
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
 #define AltMask Mod1Mask
-/*#define TAGKEYS(KEY,TAG) \*/
-/*{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \*/
-/*{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \*/
-/*{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \*/
-/*{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },*/
+#define MEH (Mod1Mask|ControlMask|ShiftMask)
+#define HYPER (Mod1Mask|ControlMask|ShiftMask|Mod4Mask)
+
 #define TAGKEYS(KEY,TAG)                                                                                               \
   &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
   &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
   &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MEH, KEY}},                                           tag,            {.ui = 1 << TAG} }), \
   &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},                  toggletag,      {.ui = 1 << TAG} }),
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -101,13 +106,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browscmd[]  = { "brave", NULL };
-static const char *my_term2[] = { "kitty", NULL };
+static const char *my_term2[] = { "ghostty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-// static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
 static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
@@ -119,10 +123,10 @@ static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
 static const char *varip[] = { "variety", "-p", NULL };
-static const char *rofi_power[] = { "rofi", "-config", "config-narrow.rasi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/rofi-power", NULL };
+static const char *rofi_power[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/rofi-power", NULL };
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
-static const char *jammpd[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
+static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 
 /*MEDIA KEYS*/
 #include <X11/XF86keysym.h>
@@ -154,7 +158,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
-	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jammpd } }),
+	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
 	&((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
 	&((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
@@ -196,7 +200,7 @@ static Keychord *keychords[] = {
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_q}}, spawn, SHCMD("neovide $HOME/.config/qtile/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_a}}, spawn, SHCMD("neovide $HOME/.config/awesome/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_w}}, spawn, SHCMD("neovide $HOME/.config/waybar/") }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/scripts/") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/.scripts/") }),
 
   /****VANITY GAPS****/
   &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
@@ -211,8 +215,8 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask,               XK_u}}, incrihgaps,     {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_y}}, incrivgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_u}}, incrivgaps,     {.i = -1 } }),
-  &((Keychord){1, {{MODKEY|AltMask|ControlMask|ShiftMask, XK_y}}, incrohgaps, {.i = +1 } }),
-  &((Keychord){1, {{MODKEY|AltMask|ControlMask|ShiftMask, XK_u}}, incrohgaps, {.i = -1 } }),
+  &((Keychord){1, {{HYPER,                        XK_y}}, incrohgaps, {.i = +1 } }),
+  &((Keychord){1, {{HYPER,                        XK_u}}, incrohgaps, {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_y}}, incrovgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
@@ -228,13 +232,14 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
-	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[0]} }),
-	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[1]} }),
-	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[2]} }),
-	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[3]} }),
-	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[4]} }),
+	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }),
+	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }),
+	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }),
+	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }),
+	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }),
 	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
+	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_0}}, tag,            {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY,                   XK_comma}}, focusmon,       {.i = -1 } }),
