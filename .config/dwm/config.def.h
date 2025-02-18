@@ -15,8 +15,8 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
 static const int showsystray        = 1;      /* 0 means no systray */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font Mono:size=8" };
-static const char dmenufont[]       = "Hack Nerd Font Mono:size=8";
+static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
+static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
 static const char col_gray1[]       = "#010101";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";
@@ -44,7 +44,8 @@ static const char *tagsel[][2] = {
   { col_gray1,  col_pinned },                 /* has pinned tag */
 };
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 
 static const Rule rules[] = {
 /* xprop(1):
@@ -70,11 +71,16 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
-  { "[]=",      tile },                       /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-  { "[M]",      monocle },
-  { "[@]",      spiral },
-  { "[\\]",     dwindle },
+	//  { "[]=",      tile },                       /* first entry is default */
+	// { "><>",      NULL },    /* no layout function means floating behavior */
+	//  { "[M]",      monocle },
+	//  { "[@]",      spiral },
+	//  { "[\\]",     dwindle },
+  { "󰜵",      tile },                       /* first entry is default */
+	{ "󰘷",      NULL },    /* no layout function means floating behavior */
+  { "",      monocle },
+  { "󰁥",      spiral },
+  { "",     dwindle },
 };
 
 /* key definitions */
@@ -194,7 +200,7 @@ static Keychord *keychords[] = {
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_q}}, spawn, SHCMD("neovide $HOME/.config/qtile/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_a}}, spawn, SHCMD("neovide $HOME/.config/awesome/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_w}}, spawn, SHCMD("neovide $HOME/.config/waybar/") }),
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/scripts/") }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/.scripts/") }),
 
   /****VANITY GAPS****/
   &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
@@ -233,6 +239,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }),
 	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
+	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_0}}, tag,            {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY,                   XK_comma}}, focusmon,       {.i = -1 } }),
