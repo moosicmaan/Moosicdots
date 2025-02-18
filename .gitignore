@@ -1,0 +1,76 @@
+# Prerequisites
+*.d
+
+# Compiled files and binaries
+*.o
+*.ko
+*.obj
+*.elf
+*.ilk
+*.map
+*.exp
+*.gch
+*.pch
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so*
+*.dylib
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Shell and configuration files
+.bash_*
+.luarc*
+.zsh/.zhistory
+.gitconfig
+.git-credentials
+
+# Fish shell
+.config/fish/completions*
+.config/fish/conf.d*
+.config/fish/fish_*
+
+# AwesomeWM
+.config/awesome/{freedesktop,lain,rofi,themes}*
+
+# LeftWM
+.config/leftwm/themes*
+
+# Window managers (DWM, DWL, River, Hyprland)
+.config/dwl/{*.o,*-protocol.[ch],.ccls-cache,config.h,*.orig,*.rej,dwl}
+.config/dwm/{*.o,*-protocol.[ch],.ccls-cache,config.h,*.orig,*.rej,dwm,include/dwmblocks*}
+.config/river/way*
+
+# Terminal tools
+.config/tmux/plugins*
+.config/yazi/{plugins,flavors}*
+
+# Hyprland plugins
+.config/hypr/plugins/hypr*
+
+# CMUS
+.config/cmus/{playlist*,autosave*,cache*,command-history,search-history,lib.pl*}
+
+# Miscellaneous
+.config/engrammer*
+.local/bin/{pt*,pip*}

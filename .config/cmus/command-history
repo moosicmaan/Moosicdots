@@ -1,0 +1,30 @@
+colorscheme spotify
+colorscheme zenburn
+colorscheme zenbun
+colorscheme xterm-white
+colorscheme solarized-light
+colorscheme solarized-dark
+colorscheme solarized-dard
+colorscheme gruvbox
+colorscheme gruvbox-warm
+colorscheme gruvbox-alt
+colorscheme green
+colorscheme green-mono-88
+colorscheme gray-88
+colorscheme cyan
+colorscheme amazon
+set replaygain 1
+fset replaygain = 1
+replaygain 1
+view 7
+set relpaygain=1
+view 2
+view 4
+view 3
+view 1
+shuffle
+colorscheme dracula
+colorscheme
+view2
+add ~/Music/Spotube/
+add
