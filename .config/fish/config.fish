@@ -79,9 +79,6 @@ if status --is-interactive
         end
         #echo "Fish in tty..."
     else
-        # set colortheme to current wallpaper
-        set cwp (cat ~/.cache/current_wallpaper)
-        wal -i $cwp >/dev/null
         ## Run fastfetch if session is interactive
         # fastfetch --config neofetch.jsonc
         fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
@@ -224,6 +221,10 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # ===============================================================================
 # JDB --->
 # -------------------------------------------------------------------------------
+# set colortheme to current wallpaper in a wayland session
+if status is-interactive
+    /home/moosicmaan/.config/.scripts/wayland-prefix fish
+end
 # my aliases
 # alias vim 'kitty @ set-spacing padding=0 && nvim'
 # alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"

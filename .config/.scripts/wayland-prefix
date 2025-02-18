@@ -1,6 +1,12 @@
 #!/bin/bash
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
+  if [ "$1" == "fish" ]; then
+    # run pywal for fish interactive
+    cwp=$(cat ~/.cache/current_wallpaper)
+    wal -i "$cwp" >/dev/null
+    exit 0
+  fi
   echo "uwsm app -- "
 else
   echo ""

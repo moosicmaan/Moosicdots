@@ -45,7 +45,6 @@ static const char *tagsel[][2] = {
 };
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-// static const char *tags[] = { "➀", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈" };
 
 static const Rule rules[] = {
 /* xprop(1):
@@ -63,7 +62,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55;          /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50;          /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;             /* number of clients in master area */
 static const int resizehints = 0;             /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1;          /* 1 will force focus on the fullscreen window */
@@ -72,8 +71,9 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 static const Layout layouts[] = {
 /* symbol     arrange function */
   { "[]=",      tile },                       /* first entry is default */
-  { "[@]",      spiral },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
   { "[M]",      monocle },
+  { "[@]",      spiral },
   { "[\\]",     dwindle },
 };
 
@@ -100,13 +100,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browscmd[]  = { "brave", NULL };
-static const char *my_term2[] = { "kitty", NULL };
+static const char *my_term2[] = { "ghostty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-// static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
 static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
@@ -227,11 +226,11 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
-	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[0]} }),
-	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[1]} }),
-	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[2]} }),
-	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[3]} }),
-	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[4]} }),
+	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }),
+	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }),
+	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }),
+	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }),
+	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }),
 	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
