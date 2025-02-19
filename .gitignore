@@ -71,6 +71,30 @@ dkms.conf
 # CMUS
 .config/cmus/{playlist*,autosave*,cache*,command-history,search-history,lib.pl*}
 
+# Suckless patch output
+*.rej
+*.orig
+
+# Backup files
+*~
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Secrets
+*.env
+*.pem
+*.key
+*.crt
+*.p12
+
+# Logs
+*.log
+*.trace
+*.stackdump
+*.strace
+
 # Miscellaneous
 .config/engrammer*
 .local/bin/{pt*,pip*}
