@@ -1,6 +1,11 @@
 #!/bin/sh
-
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Shows the current moon phase.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # moonfile="${XDG_DATA_HOME:-$HOME/.local/share}/moonphase"
 moonfile="${XDG_CACHE_HOME:-$HOME/.cache}/moonphase"

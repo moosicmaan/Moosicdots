@@ -1,6 +1,11 @@
 #!/bin/sh
-# This script wraps around my frequently used terminals to provide a uniform
-# interface.
+# =====================================================
+# -----------------------------------------------------
+# This script wraps around my frequently used terminals
+# to provide a uniform interface.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 shiftArgs() {
   arg="${args%%"$IFS"*}"

@@ -1,6 +1,14 @@
 #!/bin/sh
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Display the average CPU load.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
 TERMINAL="kitty"
+
 case "$BLOCK_BUTTON" in
 1) notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)" ;;
 2) setsid -f "$TERMINAL" -e btop ;;

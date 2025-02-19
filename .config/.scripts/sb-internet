@@ -1,8 +1,14 @@
 #!/bin/sh
-
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Show wifi 📶 and percent strength or 📡 if none.
 # Show 🌐 if connected to ethernet or ❎ if none.
 # Show 🔒 if a vpn connection is active
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
 TERMINAL="kitty"
 
 case $BLOCK_BUTTON in

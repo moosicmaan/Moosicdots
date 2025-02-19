@@ -1,4 +1,11 @@
 #!/bin/sh
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
+# Display the current monitor brightness
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # current brightness
 curr_brightness=$(cat /sys/class/backlight/*/brightness)

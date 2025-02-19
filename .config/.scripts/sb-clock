@@ -1,4 +1,11 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
+# Display the current time and date in a nice format.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 clock=$(date '+%I')
 

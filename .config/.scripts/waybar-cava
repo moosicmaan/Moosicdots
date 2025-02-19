@@ -1,6 +1,11 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Not my own work. This was added through Github PR. Credit to original author
+#     Modified by Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")

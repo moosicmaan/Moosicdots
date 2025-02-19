@@ -1,6 +1,12 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From:
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Scripts for volume controls for audio and mic
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 iDIR="/usr/share/icons/candy-icons/status/scalable"
 sDIR="$HOME/.config/.scripts"

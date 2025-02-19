@@ -1,6 +1,12 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From:
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Playerctl
+#     Nodified by Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # music_icon="$HOME/.config/.settngs/icons/music.png"
 music_icon="/usr/share/icons/candy-icons/mimetypes/scalable/audio-x-generic.svg"

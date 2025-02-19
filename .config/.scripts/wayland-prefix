@@ -1,4 +1,12 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Script to populate the prefix for wayland app launching
+# using uwsm
+# Will also do various things based on if backend
+#     Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
   if [ "$1" == "fish" ]; then

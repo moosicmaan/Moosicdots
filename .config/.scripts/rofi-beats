@@ -1,6 +1,14 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From:
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For Rofi Beats to play online Music or Locally save media files
+# This script wraps around my frequently used terminals
+# to provide a uniform interface.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # Directory local music folder
 mDIR="$HOME/Music/Spotube/"

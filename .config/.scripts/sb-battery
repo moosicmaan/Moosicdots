@@ -1,5 +1,11 @@
 #!/bin/sh
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Display the current battery status.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 notify() {
   notify-send \

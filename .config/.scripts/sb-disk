@@ -1,7 +1,12 @@
 #!/bin/sh
-
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Status bar module for disk space
 # $1 should be drive mountpoint, otherwise assumed /.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 location=${1:-/}
 

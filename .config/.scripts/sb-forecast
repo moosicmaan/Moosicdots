@@ -1,7 +1,12 @@
 #!/bin/sh
-
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Displays today's precipication chance (☔), and daily low (🥶) and high (🌞).
 # Usually intended for the statusbar.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 url="${WTTRURL:-wttr.in}"
 weatherreport="${XDG_CACHE_HOME:-$HOME/.cache}/weatherreport"

@@ -1,5 +1,11 @@
 #!/bin/sh
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Utility functions for theming statusbar scripts.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 display() {
   if [ -n "$2" ]; then

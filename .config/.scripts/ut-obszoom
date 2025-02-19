@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script for setting the virtual mic and sink for OBS and Zoom
+#     Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # create a virtual mic and sink to use with obs and zoom
 # systemctl --user restart pipewire.service to restart pipewire

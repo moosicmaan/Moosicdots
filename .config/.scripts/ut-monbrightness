@@ -1,9 +1,15 @@
 #!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From:
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Script for Monitor backlights (if supported) using brightnessctl
+# Script for screen backlights (if supported) using brightnessctl
+#     Modified by Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 iDIR="/usr/share/icons/Papirus-Dark/symbolic/status"
-notification_timeout=1000
+# notification_timeout=1000
 step=5 # INCREASE/DECREASE BY THIS VALUE
 
 # Get brightness

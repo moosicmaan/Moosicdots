@@ -1,5 +1,11 @@
 #!/bin/sh
-# Display volume levels.
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
+# Display currently playing music.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 wpctl() {
   arg="$2"

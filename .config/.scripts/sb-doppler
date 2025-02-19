@@ -1,6 +1,11 @@
 #!/bin/sh
-
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
 # Show a Doppler RADAR of a user's preferred location.
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
 secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.

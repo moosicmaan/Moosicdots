@@ -1,8 +1,15 @@
+#/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# From:
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Modified Script for Google Search
 # Original Submitted by https://github.com/LeventKaanOguz
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
-# Opens rofi in dmenu mod and waits for input. Then pushes the input to the query of the URL.
+# Opens rofi and waits for input. Then pushes the input to the query of the URL.
 
 rofi_config="$HOME/.config/rofi/dmenu.rasi"
 

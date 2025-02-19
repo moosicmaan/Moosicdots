@@ -1,5 +1,14 @@
 #!/bin/sh
+# =====================================================
+# -----------------------------------------------------
+# From: I cannot remember where I got this script from.
+# Display the memory used and total memory
+#     Modified by: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
 TERMINAL="kitty"
+
 case $BLOCK_BUTTON in
 1) notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
 2) setsid -f "$TERMINAL" -e htop ;;
