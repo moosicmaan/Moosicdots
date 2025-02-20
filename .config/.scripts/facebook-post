@@ -1,0 +1,44 @@
+#!/bin/bash
+
+life_motto() {
+  while [[ -z "$happy" ]]; do
+    now="$(self-awareness --get)"
+    case "$now" in
+    "anxious") stop --breathe --5-4-3-2-1 ;;
+    "overthinking")
+      stop --breathe
+      judgement "$now" --remove
+      ;;
+    "numb")
+      stop --breathe
+      set-goal realistic "$plan"
+      ;;
+    "unloved")
+      stop --breathe
+      love myself
+      ;;
+    "hopeless")
+      stop --breathe
+      complete part "$plan"
+      ;;
+    "lonely")
+      stop --breathe
+      remember=$(theiropinions theirstory)
+      create opportunities
+      ;;
+    *)
+      stop --breathe
+      judgement "$now" --remove
+      ;;
+    esac
+    renice +4 $(pgrep self-talk)
+    judgement "$now" "$remember"
+  done
+}
+
+plan=$(self-awareness --getplan)
+if [ "$1" = "attitude-adjustment-needed" ]; then
+  life_motto
+else
+  smile
+fi

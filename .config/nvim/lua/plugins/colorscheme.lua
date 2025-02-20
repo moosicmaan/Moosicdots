@@ -6,7 +6,7 @@ return {
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
-      -- colorscheme = "gruvbox",
+      colorscheme = "gruvbox",
       -- colorscheme = "murphy",
       -- colorscheme = "elflord",
       -- colorscheme = "slate",
@@ -14,7 +14,7 @@ return {
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
-      colorscheme = "industry",
+      -- colorscheme = "industry",
       transparent = true,
       styles = {
         sidebars = "transparent",
