@@ -40,6 +40,7 @@ $textsize: 16px;
 .popup {
     background-color: $bg;
     color: #50fa7b;
+    // border-radius: 16px;
     border-radius: 16px;
 }
 
@@ -404,7 +405,7 @@ highlight {
     &.failed {
         color: $red;
     }
-    border-radius: 16px;
+    border-radius: 1px;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 4px;

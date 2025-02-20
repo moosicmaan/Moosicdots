@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # =====================================================
 # -----------------------------------------------------
 # From:
@@ -4522,7 +4522,7 @@ exit
 ♾️	Symbols	math		
 ♾	Symbols	math		forever | infinity | unbounded | universal | eternal | unbound
 ‼️	Symbols	punctuation	exclamation mark	
-‼	Symbols	punctuation	exclamation mark	twice | again | bangbang | double exclamation mark | exclamation | mark | punctuation
+‼	Symbols	punctuation	exclamation mark	! | ! | bangbang | double exclamation mark | exclamation | mark | punctuation
 ⁉️	Symbols	punctuation	question mark	
 ⁉	Symbols	punctuation	question mark	! | !? | ? | exclamation | interrobang | mark | punctuation | question | exclamation question mark
 ❓	Symbols	punctuation	question mark	? | mark | punctuation | question | red question mark

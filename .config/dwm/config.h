@@ -71,16 +71,16 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
-	//  { "[]=",      tile },                       /* first entry is default */
-	// { "><>",      NULL },    /* no layout function means floating behavior */
-	//  { "[M]",      monocle },
-	//  { "[@]",      spiral },
-	//  { "[\\]",     dwindle },
-  { "󰜵",      tile },                       /* first entry is default */
-	{ "󰘷",      NULL },    /* no layout function means floating behavior */
-  { "",      monocle },
-  { "󰁥",      spiral },
-  { "",     dwindle },
+	//  { "[]=",      tile },                   /* first entry is default */
+	// { "><>",      NULL },                    /* no layout function means floating behavior */
+	//  { "[M]",      monocle },                /* only one visable window per tag */
+	//  { "[@]",      spiral },                 /* much like hyprland*/
+	//  { "[\\]",     dwindle },                /* smaller to the SE*/
+  { "󰜵",      tile },                         /* first entry is default */
+	{ "󰘷",      NULL },                         /* no layout function means floating behavior */
+  { "",      monocle },                      /* only one visable window per tag */
+  { "󰁥",      spiral },                       /* much like hyprland*/
+  { "",     dwindle },                       /* smaller to the SE*/
 };
 
 /* key definitions */

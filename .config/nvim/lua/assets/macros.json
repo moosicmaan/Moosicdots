@@ -1,0 +1,14 @@
+{
+  "macros": [
+    {
+      "name": "Insert Incremented Numbers Until Space",
+      "raw": "MHlmIGowUDCA/ARB",
+      "content": "0yf<Space>j0P0<C-A>"
+    },
+    {
+      "name": "Double Space",
+      "raw": "bxtq",
+      "content": "o<Esc>j"
+    }
+  ]
+}

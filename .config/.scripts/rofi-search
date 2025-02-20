@@ -12,6 +12,7 @@
 # Opens rofi and waits for input. Then pushes the input to the query of the URL.
 
 rofi_config="$HOME/.config/rofi/dmenu.rasi"
+# rofi_config="$HOME/.config/rofi/config-wide.rasi"
 
 # Kill Rofi if already running before execution
 if pgrep -x "rofi" >/dev/null; then
@@ -20,4 +21,5 @@ if pgrep -x "rofi" >/dev/null; then
 fi
 
 # Open rofi with a dmenu and pass the selected item to xdg-open for Google search
-echo "" | rofi -dmenu -config "$rofi_config" -p "Search:" | xargs -I{} xdg-open "https://www.google.com/search?q={}"
+# echo "" | rofi -dmenu -config "$rofi_config" -p "Search:" | xargs -I{} xdg-open "https://www.google.com/search?q={}"
+echo "" | rofi -dmenu -config "$rofi_config" -p "Search:" | xargs -I{} xdg-open "https://duckduckgo.com/?q={}"
