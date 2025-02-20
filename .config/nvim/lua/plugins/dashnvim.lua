@@ -45,7 +45,10 @@ return {
         icon = "󰏓 ",
         -- action can be a function type, e.g.
         -- action = func(path) vim.cmd('telescope find_files cwd=' .. path) end
-        action = "require('fzf-lua').files({})",
+        -- action = "require('fzf-lua').files({})",
+        action = function()
+          require("snacks").picker("files")
+        end,
         label = " Recent Projects:",
       },
       mru = {

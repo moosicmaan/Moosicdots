@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = false,
   opts = {
     add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
     statusline = true,

@@ -1,3 +1,6 @@
+set editing-mode vi
 set show-mode-in-prompt on
-set vi-ins-mode-string " \033[1;37m└──|"
-set vi-cmd-mode-string " \033[1;37m└──(\033[0;31mc\033[1;37m)|\e[0m"
+set vi-ins-mode-string " \1\033[1;37m└──|\2"
+# set vi-cmd-mode-string " \033[1;37m└─V|"
+# set vi-cmd-mode-string " \1\033[1;37m\2└(\1\033[0;31m\2V\1\033[1;37m\2)|\1\033[0m\2"
+set vi-cmd-mode-string " \1\033[1;37m\2└──\1\033[0;31m\2V"

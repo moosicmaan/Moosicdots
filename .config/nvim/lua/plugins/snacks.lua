@@ -3,6 +3,41 @@ return {
   {
     "snacks.nvim",
     opts = {
+      explorer = {
+        -- your explorer configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        enabled = true,
+      },
+      picker = {
+        sources = {
+          buffers = {
+            hidden = true,
+          },
+          grep = {
+            hidden = true,
+          },
+          files = {
+            hidden = true,
+          },
+          explorer = {
+            -- to show the explorer to the right, add the below to
+            -- your config under `opts.picker.sources.explorer`
+            -- layout = { layout = { position = "right" } },
+            -- your explorer picker configuration comes here
+            -- or leave it empty to use the default settings
+            hidden = true,
+            tree = true,
+            auto_close = false,
+            jump = { close = true },
+            layout = {
+              layout = { position = "right" },
+              preset = "sidebar",
+              preview = false,
+            },
+          },
+        },
+      },
       dashboard = {
         enabled = false,
         -- your dashboard configuration comes here

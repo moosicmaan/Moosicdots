@@ -3,10 +3,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      colorscheme = "tokyonight-night",
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
-      colorscheme = "gruvbox",
+      -- colorscheme = "gruvbox",
       -- colorscheme = "murphy",
       -- colorscheme = "elflord",
       -- colorscheme = "slate",
