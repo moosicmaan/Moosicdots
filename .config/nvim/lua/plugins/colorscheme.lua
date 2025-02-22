@@ -6,7 +6,6 @@ return {
   { "bluz71/vim-moonfly-colors" },
   { "abstract-ide/abstract-cs" },
   { "daltonmenezes/aura-theme" },
-  { "scottmckendry/cyberdream.nvim" },
   { "projekt0n/github-nvim-theme", name = "gitbub-theme" },
   {
     "LazyVim/LazyVim",
@@ -14,7 +13,8 @@ return {
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "moonfly",
       -- colorscheme = "kanagawa",
-      colorscheme = "kanagawa-dragon",
+      -- colorscheme = "kanagawa-dragon",
+      colorscheme = "abscs",
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
