@@ -40,13 +40,15 @@ DrmAmdCard: card0
 AmdGPUThermalZone: /device/hwmon/hwmon1/temp1_input
 
 # The command to execute on suspend
-SuspendCommand: ~/.config/scripts/sys.sh suspend
+# SuspendCommand: ~/.config/scripts/sys.sh suspend
+SuspendCommand: sleep 1; systemctl suspend
 
 # The command to execute on lock
-LockCommand: ~/.config/scripts/sys.sh lock
+# LockCommand: ~/.config/scripts/sys.sh lock
+LockCommand: sleep 1; swaylock
 
 # The command to execute on exit
-ExitCommand: killall Hyprland
+ExitCommand: killall -9 -u $USER
 
 # The folder, where the battery sensors reside
 BatteryFolder: /sys/class/power_supply/BAT0

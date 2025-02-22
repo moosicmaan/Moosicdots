@@ -36,20 +36,7 @@ while IFS= read -r theme_dir; do
     theme_names+=("$formatted_theme")
   fi
 
+  echo "$formatted_theme"
+
   theme_list+=("$formatted_theme")
 done < <(find -L "$themes_path" -maxdepth 2 -type d)
-
-# -----------------------------------------------------
-# Show selection menu with rofi
-# -----------------------------------------------------
-choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
-  -config ~/.config/rofi/config-narrow.rasi -no-show-icons -width 30 -p "Themes" -format i)
-
-# -----------------------------------------------------
-# Apply selected theme
-# -----------------------------------------------------
-if [[ -n "$choice" ]]; then
-  echo "Loading waybar theme..."
-  echo "${theme_list[choice]}" >"$HOME/.cache/themestyle"
-  "$HOME/.config/.scripts/hypr-barlaunch"
-fi

@@ -8,7 +8,7 @@ return {
 
 	warn_about_missing_glyphs = false,
 
-	scrollback_lines = 5000,
+	scrollback_lines = 2000,
 
 	audible_bell = "Disabled",
 

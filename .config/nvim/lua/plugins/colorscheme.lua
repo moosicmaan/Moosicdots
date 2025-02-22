@@ -1,9 +1,19 @@
 return {
+  -- Extra themes
   { "ellisonleao/gruvbox.nvim" },
+  { "rebelot/kanagawa.nvim" },
+  { "edeneast/nightfox.nvim" },
+  { "bluz71/vim-moonfly-colors" },
+  { "abstract-ide/abstract-cs" },
+  { "daltonmenezes/aura-theme" },
+  { "scottmckendry/cyberdream.nvim" },
+  { "projekt0n/github-nvim-theme", name = "gitbub-theme" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "moonfly",
+      colorscheme = "kanagawa-dragon",
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
@@ -23,4 +33,5 @@ return {
       },
     },
   },
+  -- Other theme plugins
 }

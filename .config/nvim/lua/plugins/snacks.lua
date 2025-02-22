@@ -31,7 +31,7 @@ return {
             auto_close = false,
             jump = { close = true },
             layout = {
-              layout = { position = "right" },
+              layout = { position = "left" },
               preset = "sidebar",
               preview = false,
             },

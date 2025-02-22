@@ -19,38 +19,35 @@ pkill gBar
 sleep 0.2
 
 # -----------------------------------------------------
-# Default theme: /THEMEFOLDER;/VARIATION
+# Default theme: THEMEFOLDER;VARIATION
 # -----------------------------------------------------
-themestyle="/moosic;/moosic/mixed"
+defaulttheme="moosic;moosic/mixed"
 
 # -----------------------------------------------------
 # Get current theme information from .cache/themestyle
 # -----------------------------------------------------
-if [ -f "$themecache" ]; then
-  themestyle=$(cat "$themecache")
-else
+if [ ! -f "$themecache" ]; then
+  echo -e "Theme cache file, $themecache, not found! \nUsing default: $defaulttheme"
   touch "$themecache"
-  echo "$themestyle" >"$themecache"
+  echo "$defaulttheme" >"$themecache"
 fi
+
+themestyle=$(cat "$themecache")
+echo "Using the following to open the bar(s): $themestyle"
 
 IFS=';' read -ra arrThemes <<<"$themestyle"
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 echo "Theme: ${arrThemes[0]}"
-
-if [ ! -f "$HOME/.config/waybar/themes${arrThemes[1]}/style.css" ]; then
-  themestyle="/moosic;/moosic/mixed"
-fi
-
-echo "Using themestyle: $themestyle"
+echo "Style: ${arrThemes[1]}"
 
 # -----------------------------------------------------
 # Load gBar if selected
 # -----------------------------------------------------
-if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "/gBar" ]; then
+if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "gBar" ]; then
+  echo "Starting gBar..."
+  notify-send -i "monitor" "Setting the statusbar to gBar"
   eval "${PREFIX}gBar bar 0" &
   # ${PREFIX}gBar bar 1 &
-  notify-send "Set the statusbar to gBar"
-  exit 1
+  exit 0
 fi
 
 # -----------------------------------------------------
@@ -59,13 +56,5 @@ fi
 config_file="config.jsonc"
 style_file="style.css"
 
-# Standard files can be overwritten with an existing config-custom or style-custom.css
-if [ -n "${arrThemes[0]}" ] && [ -f "$HOME/.config/waybar/themes/${arrThemes[0]}/config-custom" ]; then
-  config_file="config-custom"
-fi
-
-if [ -n "${arrThemes[1]}" ] && [ -f "$HOME/.config/waybar/themes/${arrThemes[1]}/style-custom.css" ]; then
-  style_file="style-custom.css"
-fi
-
-eval "${PREFIX}waybar -c $HOME/.config/waybar/themes${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes${arrThemes[1]}/$style_file" &
+echo "Starting Waybar..."
+eval "${PREFIX}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" &

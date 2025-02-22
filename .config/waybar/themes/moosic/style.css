@@ -25,6 +25,7 @@ background-color: #ffffff;
   margin: 0px 1px 0px 1px;
   padding: 0px 0px 0px 0px;
   font-size: 12px;
+  color: @textcolor1;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
 
@@ -333,6 +334,10 @@ tooltip label {
  * ----------------------------------------------------- */
 #tray {
   padding: 0px 4px 0px 4px;
+  color: @iconcolor;
+  background-color: @backgroundlight;
+  border: 1px solid @bordercolor;
+  border-bottom: 2px solid @bordercolorb;
 }
 #tray > :hover {
   color: @tooltiptext;

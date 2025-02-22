@@ -18,7 +18,7 @@ if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
 
   # Apply hyprland elements from normal config
   cat ~/.config/hypr/conf/options/main/moosic.hyprland.conf >~/.config/hypr/hyprland.conf &
-  echo "/moosic;/moosic/black" >"$HOME/.cache/themestyle" &
+  echo "moosic;moosic/black" >"$HOME/.cache/themestyle" &
   echo "/mnt/data/moosicmaan/FILES/Pictures/Backgrounds/wal101.jpg" >~/.cache/current_wallpaper &
 
   # Load background and status bar
@@ -34,7 +34,7 @@ else
 
   # Apply hyprland elements from garuda config
   cat ~/.config/hypr/conf/options/main/garuda.hyprland.conf >~/.config/hypr/hyprland.conf &
-  echo "/gdefault;/gdefault/conf" >"$HOME/.cache/themestyle" &
+  echo "gdefault;gdefault/conf" >"$HOME/.cache/themestyle" &
   echo "/home/moosicmaan/Pictures/Backgrounds/wal86.jpg" >~/.cache/current_wallpaper &
 
   # Load background and status bar

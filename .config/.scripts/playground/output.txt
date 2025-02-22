@@ -1,0 +1,2 @@
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m   [32m0[0m [1;33mmoosicmaan[0m [34m21 Feb 10:54[0m output.txt
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [32m166[0m [1;33mmoosicmaan[0m [34m21 Feb 10:35[0m [1;32mrun_all.sh[0m
