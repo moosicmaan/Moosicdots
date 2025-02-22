@@ -50,6 +50,11 @@ dkms.conf
 .config/fish/conf.d*
 .config/fish/fish_*
 
+# LazyVim files
+.config/nvim/spell*
+.config/nvim/lazy*
+.config/neovim/.neo*
+
 # AwesomeWM
 .config/awesome/{freedesktop,lain,rofi,themes}*
 
