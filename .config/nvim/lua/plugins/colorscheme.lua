@@ -13,6 +13,7 @@ return {
     opts = {
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "moonfly",
+      -- colorscheme = "kanagawa",
       colorscheme = "kanagawa-dragon",
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
