@@ -39,7 +39,7 @@ static const char *const autostart[] = {
 static const char *tagsel[][2] = {
    /*   fg         bg    */
   { col_gray3, col_gray1 },                   /* norm */
-  { col_gray1, col_accent  },                 /* sel */
+  { col_gray1, col_accent },                 /* sel */
   { col_gray1,  col_gray3 },                  /* occ but not sel */
   { col_gray1,  col_pinned },                 /* has pinned tag */
 };

@@ -38,6 +38,7 @@ for battery in /sys/class/power_supply/BAT?*; do
     status=" "
   elif [ "$capacity" -lt 6 ]; then
     notify-send -u critical "Battery low" "Battery is at ${capacity}%!"
+    sleep 10
     rofi -config /home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi -show powermenu -modi powermenu:~/.config/.scripts/rofi-power
     status=" "
   else
