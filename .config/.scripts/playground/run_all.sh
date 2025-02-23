@@ -1,8 +1,15 @@
-#!/bin/bash
-echo "Today is " $(date)
+#!/bin/sh
 
-echo -e "\nenter the path to directory"
-read the_path
+# Define your function here
+Hello() {
+  ret="Hello World $1 $2"
+  return "$ret"
+}
 
-echo -e "\n you path has the following files and folders: "
-ls $the_path
+# Invoke your function
+Hello Zara Ali
+
+# Capture value returnd by last command
+# ret=$?
+
+echo "Return value is $ret"

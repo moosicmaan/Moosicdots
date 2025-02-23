@@ -1,2 +1,43 @@
-.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m   [32m0[0m [1;33mmoosicmaan[0m [34m21 Feb 10:54[0m output.txt
-.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [32m166[0m [1;33mmoosicmaan[0m [34m21 Feb 10:35[0m [1;32mrun_all.sh[0m
+root:x:0:0::/root:/usr/bin/bash
+bin:x:1:1::/:/usr/bin/nologin
+daemon:x:2:2::/:/usr/bin/nologin
+mail:x:8:12::/var/spool/mail:/usr/bin/nologin
+ftp:x:14:11::/srv/ftp:/usr/bin/nologin
+http:x:33:33::/srv/http:/usr/bin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/usr/bin/nologin
+dbus:x:81:81:System Message Bus:/:/usr/bin/nologin
+systemd-coredump:x:980:980:systemd Core Dumper:/:/usr/bin/nologin
+systemd-network:x:979:979:systemd Network Management:/:/usr/bin/nologin
+systemd-oom:x:978:978:systemd Userspace OOM Killer:/:/usr/bin/nologin
+systemd-journal-remote:x:977:977:systemd Journal Remote:/:/usr/bin/nologin
+systemd-resolve:x:976:976:systemd Resolver:/:/usr/bin/nologin
+systemd-timesync:x:975:975:systemd Time Synchronization:/:/usr/bin/nologin
+uuidd:x:68:68::/:/usr/bin/nologin
+avahi:x:974:974:Avahi mDNS/DNS-SD daemon:/:/usr/bin/nologin
+named:x:40:40:BIND DNS Server:/:/usr/bin/nologin
+_talkd:x:973:973:User for legacy talkd server:/:/usr/bin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/usr/bin/nologin
+rpcuser:x:34:34:RPC Service User:/var/lib/nfs:/usr/bin/nologin
+tss:x:972:972:tss user for tpm2:/:/usr/bin/nologin
+deluge:x:968:968:Deluge BitTorrent daemon:/srv/deluge:/usr/bin/nologin
+dnsmasq:x:967:967:dnsmasq daemon:/:/usr/bin/nologin
+fwupd:x:966:966:Firmware update daemon:/var/lib/fwupd:/usr/bin/nologin
+geoclue:x:965:965:Geoinformation service:/var/lib/geoclue:/usr/bin/nologin
+git:x:964:964:git daemon user:/:/usr/bin/git-shell
+nm-openconnect:x:963:963:NetworkManager OpenConnect:/:/usr/bin/nologin
+nm-openvpn:x:962:962:NetworkManager OpenVPN:/:/usr/bin/nologin
+ldap:x:439:439:LDAP Server:/var/lib/openldap:/usr/bin/nologin
+openvpn:x:961:961:OpenVPN:/:/usr/bin/nologin
+passim:x:960:960:Local Caching Server:/usr/share/empty:/usr/bin/nologin
+polkitd:x:102:102:User for polkitd:/:/usr/bin/nologin
+rtkit:x:133:133:RealtimeKit:/proc:/usr/bin/nologin
+sddm:x:959:959:SDDM Greeter Account:/var/lib/sddm:/usr/bin/nologin
+usbmux:x:140:140:usbmux user:/:/usr/bin/nologin
+moosicmaan:x:1000:1000:Jason Bradberry:/home/moosicmaan:/usr/bin/bash
+alpm:x:958:958:Arch Linux Package Management:/:/usr/bin/nologin
+nvidia-persistenced:x:143:143:NVIDIA Persistence Daemon:/:/usr/bin/nologin
+flatpak:x:957:957:Flatpak system helper:/:/usr/bin/nologin
+libvirt-qemu:x:955:955:Libvirt QEMU user:/:/usr/bin/nologin
+qemu:x:954:954:QEMU user:/:/usr/bin/nologin
+cups:x:209:209:cups helper user:/:/usr/bin/nologin
+mpd:x:45:45::/var/lib/mpd:/usr/bin/nologin

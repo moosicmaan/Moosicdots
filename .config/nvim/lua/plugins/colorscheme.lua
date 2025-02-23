@@ -11,10 +11,10 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight-night",
-      -- colorscheme = "moonfly",
+      colorscheme = "moonfly",
       -- colorscheme = "kanagawa",
       -- colorscheme = "kanagawa-dragon",
-      colorscheme = "abscs",
+      -- colorscheme = "abscs",
       -- colorscheme = "retrobox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
