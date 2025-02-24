@@ -32,7 +32,8 @@
       "activated": "",
       "deactivated": ""
     },
-    "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh"
+    "on-click-right": "swaylock"
+    // "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh"
   },
   "tray": {
     "icon-size": 20,
@@ -137,7 +138,7 @@
   },
   "custom/keyboard-layout": {
     "format": " Cheat",
-    "on-click": "~/.local/bin/keyhint.sh"
+    "on-click": "$HOME/.config/.scripts/hypr-keybinds"
   },
   "pulseaudio": {
     "format": "{icon} {volume}% {format_source}",

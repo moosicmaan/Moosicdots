@@ -321,13 +321,13 @@
   },
   "custom/filemanager": {
     "format": "",
-    "on-click": "~/.config/.settings/filemanager.sh",
+    "on-click": "pcmanfm-qt",
     "tooltip": true,
     "tooltip-format": "File Manager"
   },
   "custom/browser": {
     "format": "",
-    "on-click": "~/.config/.settings/browser.sh",
+    "on-click": "brave",
     "tooltip": true,
     "tooltip-format": "Internet Browser"
   },
@@ -364,7 +364,7 @@
     "exec": "waybar-module-pacman-updates",
     "restart-interval": 60,
     "on-click": "wezterm start --class floating -e garuda-update",
-    "on-click-right": "~/.config/.settings/software.sh"
+    // "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
     "format": "{} {icon}",
@@ -379,37 +379,37 @@
     "on-click": "wezterm start --class floating -e garuda-update"
   },
   "cava": {
-    // "framerate": 30,
-    // "autosens": 1,
-    // "bars": 16,
-    // "lower_cutoff_freq": 10,
-    // "higher_cutoff_freq": 10000,
-    // "method": "pipewire",
-    // "source": "auto",
-    // "stereo": true,
-    // "reverse": false,
-    // "sleep_timer": 7,
-    // "hide_on_silence": true,
-    // "bar_delimiter": 0,
-    // "monstercat": true,
-    // "waves": true,
-    // "noise_reduction": 0.57,
-    // "input_delay": 2,
-    // "format-icons": [
-    //   "▁",
-    //   "▂",
-    //   "▃",
-    //   "▄",
-    //   "▅",
-    //   "▆",
-    //   "▇",
-    //   "█"
-    // ],
-    // "actions": {
-    //   "on-click-right": "mode"
-    // },
-    "exec": "~/.config/.scripts/waybar-cava",
-    "format": "{}"
+    "framerate": 30,
+    "autosens": 1,
+    "bars": 16,
+    "lower_cutoff_freq": 10,
+    "higher_cutoff_freq": 10000,
+    "method": "pipewire",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "sleep_timer": 7,
+    "hide_on_silence": true,
+    "bar_delimiter": 0,
+    "monstercat": true,
+    "waves": true,
+    "noise_reduction": 0.57,
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    },
+    // "exec": "~/.config/.scripts/waybar-cava",
+    // "format": "{}"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",

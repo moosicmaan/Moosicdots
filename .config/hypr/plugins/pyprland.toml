@@ -21,7 +21,7 @@ animation = "fromRight"
 command = "uwsm app -- wezterm start --class Sfiles yazi"
 class = "Sfiles"
 lazy = true
-size = "94% 92%"
+size = "94% 72%"
 
 [scratchpads.monitor]
 animation = "fromBottom"
@@ -29,7 +29,7 @@ animation = "fromBottom"
 command = "uwsm app -- wezterm start --class=Smonitor btop"
 class = "Smonitor"
 lazy = true
-size = "75% 90%"
+size = "72% 88%"
 
 [scratchpads.moosic]
 animation = "fromLeft"

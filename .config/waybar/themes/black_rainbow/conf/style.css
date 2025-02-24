@@ -165,7 +165,7 @@ label:focus {
 }
 
 #tray {
-  border: solid 1px blueviolet;
+  border: solid 0px blueviolet;
   border-radius: 30px;
 }
 
