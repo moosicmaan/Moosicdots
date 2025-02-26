@@ -223,7 +223,11 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # -------------------------------------------------------------------------------
 # set colortheme to current wallpaper in a wayland session
 if status is-interactive
-    /home/moosicmaan/.config/.scripts/wayland-prefix fish
+    if test -n "$WAYLAND_DISPLAY"
+        # Run pywal for Fish interactive
+        set cwp (cat ~/.cache/current_wallpaper)
+        wal -i "$cwp" >/dev/null
+    end
 end
 # my aliases
 # alias vim 'kitty @ set-spacing padding=0 && nvim'

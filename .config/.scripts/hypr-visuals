@@ -18,12 +18,11 @@ if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
 
   # Apply hyprland elements from normal config
   cat ~/.config/hypr/conf/options/main/moosic.hyprland.conf >~/.config/hypr/hyprland.conf &
-  echo "moosic;moosic/black" >"$HOME/.cache/themestyle" &
-  echo "/mnt/data/moosicmaan/FILES/Pictures/Backgrounds/wal101.jpg" >~/.cache/current_wallpaper &
+  echo "moosic;moosic/mixed" >"$HOME/.cache/themestyle" &
 
   # Load background and status bar
-  # eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper init &"
-  eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper random &"
+  # eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --init &"
+  eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --random &"
   notify-send "...dead..." || notify-send --icon=configuration_section "Failed to stop garuda visuals"
 else
   # Start garuda elements
@@ -34,10 +33,10 @@ else
 
   # Apply hyprland elements from garuda config
   cat ~/.config/hypr/conf/options/main/garuda.hyprland.conf >~/.config/hypr/hyprland.conf &
+  eval "${PREFIX}waypaper --wallpaper $HOME/Pictures/Backgrounds/wal86.jpg &"
   echo "gdefault;gdefault/conf" >"$HOME/.cache/themestyle" &
-  echo "/home/moosicmaan/Pictures/Backgrounds/wal86.jpg" >~/.cache/current_wallpaper &
 
   # Load background and status bar
-  eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper init &"
-  notify-send --icon=configuration_section "Garuda visuals started."
+  eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --init &"
+  notify-send --icon=configuration_section "Garuda visuals applied."
 fi

@@ -1,0 +1,146 @@
+M-RETURN "Open the default terminal": exec uwsm app -- wezterm
+M-t "Open the alternate terminal": exec uwsm app -- ghostty;
+M-S-RETURN "Open the graphical file browser": exec uwsm app -- pcmanfm-qt
+M-C-RETURN "Open the default email": exec uwsm app -- thunderbird
+M-b "Open the default browser": exec uwsm app -- brave
+M-o "Open the vim-based browser": exec uwsm app -- qutebrowser
+M-a "Open ChatGPT": exec uwsm app -- brave --app=https://chat.openai.com
+M-i "Open the emoticon browser": exec uwsm app -- emote
+M-e "Start the emacs client": exec uwsm app -- emacsclient -c -a 'emacs'
+M-S-e "Start the emacs server/daemon": exec uwsm app -- emacs --daemon=serve
+M-m "Open the music player": exec uwsm app -- spotube
+M-S-m "Open the media player": exec uwsm app -- vlc
+C-A-m "ROFI Music Selector": exec pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-beats
+C-A-t "Open tmux in terminal with no padding": exec uwsm app -- wezterm -e tmux
+M-PRINT "Screenshot": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-screenshot
+(NONE)-PRINT "Screenshot": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-screenshot
+M-p "RUN Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}'
+M-S-p "DRUN Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}'
+M-C-p "FILES Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show filebrowser
+M-A-p "WINDOWS Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window
+M-S-k "Show Keybindings": exec pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-keybinds
+M-S-o "Select brave bookmarks": exec pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-bookmarks
+M-C-c "Show clipboard history": exec pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-cliphist
+M-C-v "Show clipboard history": exec pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-cliphist
+M-C-q "Logout Menu": exec wlogout
+C-A-DELETE "Logout Menu": exec wlogout
+C-A-p "Open full-screen menu": exec nwg-drawer -c 7 -is 70 -spacing 20 -ovl
+M-A-j "Scratchpad (files)": exec pypr toggle files
+M-A-i "Scratchpad (term)": exec pypr toggle term
+M-A-l "Scratchpad (monitor)": exec pypr toggle monitor
+M-A-m "Scratchpad (moosic)": exec pypr toggle moosic
+M-A-x "Scratchpad (audio)": exec pypr toggle audio
+M-A-0 "Scratchpad (special) full": togglespecialworkspace 
+M-S-0 "Move window to special workspace": movetoworkspace special
+MEH(C-A-S)-F1 "Open alternate browser": exec uwsm app -- firefox
+MEH(C-A-S)-F2 "Open alternate email": exec uwsm app -- bluemail
+MEH(C-A-S)-F3 "Open terminal file browser": exec uwsm app -- wezterm -e yazi
+MEH(C-A-S)-F4 "Open graphical text editor": exec uwsm app -- geany
+MEH(C-A-S)-F5 "Open image editor": exec uwsm app -- gimp
+MEH(C-A-S)-F6 "Open office suite": exec uwsm app -- libreoffice
+MEH(C-A-S)-F7 "Open music player": exec uwsm app -- spotube
+MEH(C-A-S)-F8 "Open media playger": exec uwsm app -- vlc
+MEH(C-A-S)-F9 "Open streaming software": exec uwsm app -- obs
+MEH(C-A-S)-F10 "RUN Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}'
+MEH(C-A-S)-F11 "DRUN Menu": exec pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}'
+MEH(C-A-S)-F12 "FULL Menu": exec nwg-drawer -c 7 -is 70 -spacing 20 -ovl
+(NONE)-F11 "Toggle fullscreen": fullscreen 
+M-C-z "ZOOM": exec pypr zoom
+M-C-r "Reload hypr": exec hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper init
+M-C-t "Switch waybar": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barswitch
+M-C-b "Toggle Waybar": exec pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barlaunch
+M-C-s "Select wallpaper": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --select
+M-C-w "Select random wallpaper": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --random
+C-A-k "Toggle kmonad for external keyboard": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-350
+C-A-j "Toggle kmonad for laptop keyboard": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-lap
+C-A-h "Toggle Garuda visual elements": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-visuals
+M-q "Kill the active window": killactive 
+M-c "Centers the active (floating) window": centerwindow 
+M-s "Swaps the focused window with the next window": swapnext 
+M-w "Toggle direction of split window": togglesplit 
+M-f "Toggle floating window": togglefloating 
+M-S-f "Toggle fullscreen": fullscreen 
+M-C-f "Toggle float all windows": exec hyprctl dispatch workspaceopt allfloat
+M-S-s "Swaps the R and L side of the workspace": swapsplit 
+A-TAB "Switch focus from current to previous window": focuscurrentorlast 
+M-h "Focus window (left)": movefocus l
+M-j "Focus window (down)": movefocus d
+M-k "Focus window (up)": movefocus u
+M-l "Focus window (right)": movefocus r
+M-left "Focus window (left)": movefocus l
+M-down "Focus window (down)": movefocus d
+M-up "Focus window (up)": movefocus u
+M-right "Focus window (right)": movefocus r
+M-S-h "Resize window (left)": resizeactive -50 0
+M-S-j "Resize window (down)": resizeactive 0 50
+M-S-k "Resize window (up)": resizeactive 0 -50
+M-S-l "Resize window (right)": resizeactive 50 0
+M-S-left "Resize window (left)": resizeactive -50 0
+M-S-down "Resize window (down)": resizeactive 0 50
+M-S-up "Resize window (up)": resizeactive 0 -50
+M-S-right "Resize window (right)": resizeactive 50 0
+M-mouse:272 "Move window with mouse": mouse movewindow
+M-mouse:273 "Resize window with mouse": mouse resizewindow
+M-TAB "Change the active window in a group +": changegroupactive f
+M-S-TAB "Change the active window in a group -": changegroupactive b
+M-1 "Go to workspace 1": workspace 1
+M-2 "Go to workspace 2": workspace 2
+M-3 "Go to workspace 3": workspace 3
+M-4 "Go to workspace 4": workspace 4
+M-5 "Go to workspace 5": workspace 5
+M-6 "Go to workspace 6": workspace 6
+M-7 "Go to workspace 7": workspace 7
+M-8 "Go to workspace 8": workspace 8
+M-9 "Go to workspace 9": workspace 9
+M-C-1 "Force workspace 1 to current monitor": focusworkspaceoncurrentmonitor 1
+M-C-2 "Force workspace 2 to current monitor": focusworkspaceoncurrentmonitor 2
+M-C-3 "Force workspace 3 to current monitor": focusworkspaceoncurrentmonitor 3
+M-C-4 "Force workspace 4 to current monitor": focusworkspaceoncurrentmonitor 4
+M-C-5 "Force workspace 5 to current monitor": focusworkspaceoncurrentmonitor 5
+M-C-6 "Force workspace 6 to current monitor": focusworkspaceoncurrentmonitor 6
+M-C-7 "Force workspace 7 to current monitor": focusworkspaceoncurrentmonitor 7
+M-C-8 "Force workspace 8 to current monitor": focusworkspaceoncurrentmonitor 8
+M-C-9 "Force workspace 9 to current monitor": focusworkspaceoncurrentmonitor 9
+M-S-1 "Move window to workspace 1": movetoworkspacesilent 1
+M-S-2 "Move window to workspace 2": movetoworkspacesilent 2
+M-S-3 "Move window to workspace 3": movetoworkspacesilent 3
+M-S-4 "Move window to workspace 4": movetoworkspacesilent 4
+M-S-5 "Move winkow to workspace 5": movetoworkspacesilent 5
+M-S-6 "Move window to workspace 6": movetoworkspacesilent 6
+M-S-7 "Move window to workspace 7": movetoworkspacesilent 7
+M-S-8 "Move window to workspace 8": movetoworkspacesilent 8
+M-S-9 "Move window to workspace 9": movetoworkspacesilent 9
+MEH(C-A-S)-1 "Move window to workspace 1": movetoworkspacesilent 1
+MEH(C-A-S)-2 "Move window to workspace 2": movetoworkspacesilent 2
+MEH(C-A-S)-3 "Move window to workspace 3": movetoworkspacesilent 3
+MEH(C-A-S)-4 "Move window to workspace 4": movetoworkspacesilent 4
+MEH(C-A-S)-5 "Move window to workspace 5": movetoworkspacesilent 5
+MEH(C-A-S)-6 "Move window to workspace 6": movetoworkspacesilent 6
+MEH(C-A-S)-7 "Move window to workspace 7": movetoworkspacesilent 7
+MEH(C-A-S)-8 "Move window to workspace 8": movetoworkspacesilent 8
+MEH(C-A-S)-9 "Move window to workspace 9": movetoworkspacesilent 9
+M-C-down "Go to first empty workspace": workspace empty
+M-C-j "Go to first empty workspace": workspace empty
+M-mouse_down "Scroll workspaces with mouse wheel +": workspace e+1
+M-mouse_up "Scroll workspaces with mouse wheel -": workspace e-1
+C-TAB "Advance one workspace": workspace e+1
+C-S-TAB "Go back one workspace": workspace e-1
+M-comma "Go to previous monitor": focusmonitor -1
+M-period "Go to next monitor": focusmonitor +1
+M-A-LEFT "Flip windows between monitors": exec pypr shift_monitors +1
+M-A-period "Flip windows between monitors": exec pypr shift_monitors +1
+(NONE)-XF86AudioRaiseVolume "KBD raise volume": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --inc
+(NONE)-XF86AudioLowerVolume "KBD lower volume": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --dec
+(NONE)-XF86AudioMute "KBD mute volume": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-vol --toggle
+(NONE)-XF86AudioPlay "KBD toggle toggle play music": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --pause
+(NONE)-XF86AudioStop "KBD toggle stop music": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --pause
+(NONE)-XF86AudioNext "KBD go to next song": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --nxt
+(NONE)-XF86AudioPrev "KBD go to previous song": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --prv
+(NONE)-XF86Calculator "KBD toggle calculator": exec pkill galculator || uwsm app -- galculator
+(NONE)-XF86Lock "KBD toggle lock computer": exec uwsm app -- swaylock -c 000000
+(NONE)-XF86AppSelect "KBD select app menu": exec nwg-drawer -c 7 -is 70 -spacing 20 -ovl
+(NONE)-XF86Tools "KBD open the media player": exec uwsm app -- vlc
+(NONE)-XF86ZoomIn "KBD brightness up": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc
+(NONE)-XF86ZoomOut "KBD brightness down": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec
+S-XF86ZoomIn "KBD ExMon brightness up": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --inc
+S-XF86ZoomOut "KBD ExMon brightness down": exec /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --dec

@@ -363,7 +363,7 @@
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
     "restart-interval": 60,
-    "on-click": "wezterm start --class floating -e garuda-update",
+    "on-click": "wezterm start --class floating -e garuda-update"
     // "on-click-right": "~/.config/.settings/software.sh"
   },
   "custom/updates#gar": {
@@ -407,9 +407,13 @@
     ],
     "actions": {
       "on-click-right": "mode"
-    },
+    }
     // "exec": "~/.config/.scripts/waybar-cava",
     // "format": "{}"
+  },
+  "custom/cava_mviz": {
+    "exec": "~/.config/.scripts/waybar-cava",
+    "format": "{}"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -836,7 +840,7 @@
     "orientation": "horizontal",
     "modules": [
       "mpris",
-      // "cava",
+      // "custom/cava_mviz",
       "pulseaudio"
     ]
   }

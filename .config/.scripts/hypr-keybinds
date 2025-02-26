@@ -8,7 +8,8 @@
 # =====================================================
 
 binds_file="$HOME/.config/.settings/hyprbinds.json"
-
+# bindtxt="$HOME/.config/.settings/binds.txt"
+# "$(date)" >"$bindtxt"
 # Function to map modmask values to strings
 map_modmask() {
   case "$1" in
@@ -44,10 +45,11 @@ echo "File '$binds_file' has been created successfully."
 
 # Filter JSON entries based on criteria
 filtered_entries=$(jq -r '.[] | select(.submap == "" and .dispatcher != "submap") | 
-    "\(.modmask)-\(.key) \"\(.description)\": \(.dispatcher) \(.arg)"' "$binds_file")
+    "\(.modmask):\(.key)\t\"\(.description)\": \(.dispatcher) \(.arg)"' "$binds_file")
 
 # Show options in rofi and get user selection
-selected=$(echo "$filtered_entries" | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi")
+# echo "$filtered_entries" >>"$bindtxt"
+selected=$(echo "$filtered_entries" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi")
 
 # Extract dispatcher and arg from the selected entry
 dispatcher=$(echo "$selected" | sed -E 's/.*: ([^ ]+) .*/\1/')

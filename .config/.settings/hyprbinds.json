@@ -1068,7 +1068,7 @@
     "catch_all": false,
     "description": "Select wallpaper",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper select"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --select"
   },
   {
     "locked": false,
@@ -1085,7 +1085,7 @@
     "catch_all": false,
     "description": "Select random wallpaper",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper random"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --random"
   },
   {
     "locked": false,
@@ -1204,7 +1204,7 @@
     "catch_all": false,
     "description": "<submap-themes>Select wallpaper",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper select"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --select"
   },
   {
     "locked": false,
@@ -1221,7 +1221,7 @@
     "catch_all": false,
     "description": "<submap-themes>Choose random wallpaper",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper random"
+    "arg": "hyprctl dispatch submap reset && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --random"
   },
   {
     "locked": false,

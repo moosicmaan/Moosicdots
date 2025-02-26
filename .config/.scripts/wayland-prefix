@@ -3,18 +3,13 @@
 # -----------------------------------------------------
 # Script to populate the prefix for wayland app launching
 # using uwsm
-# Will also do various things based on if backend
+# Will also do various things based on backend
+# if the calling program cannot do it itself
 #     Jason Bradberry (2024)
 # -----------------------------------------------------
 # =====================================================
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
-  if [ "$1" == "fish" ]; then
-    # run pywal for fish interactive
-    cwp=$(cat ~/.cache/current_wallpaper)
-    wal -i "$cwp" >/dev/null
-    exit 0
-  fi
   echo "uwsm app -- "
 else
   echo ""

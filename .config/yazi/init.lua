@@ -54,6 +54,7 @@ require("yatline"):setup({
 			},
 			section_b = {},
 			section_c = {
+				{ type = "string", custom = false, name = "hovered_mime" },
 				{ type = "coloreds", custom = false, name = "symlink" },
 			},
 		},
@@ -91,6 +92,7 @@ require("yatline"):setup({
 			section_c = {
 				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
 				{ type = "coloreds", custom = false, name = "permissions" },
+				{ type = "string", custom = false, name = "hovered_ownership" },
 			},
 		},
 	},

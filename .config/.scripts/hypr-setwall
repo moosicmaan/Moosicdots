@@ -6,10 +6,6 @@
 # -----------------------------------------------------
 # =====================================================
 
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+NEWWALL=$1
 
-newwall=$1
-
-echo "$newwall" >"$HOME"/.cache/current_wallpaper
-eval "${PREFIX}swww img" "$newwall" &
-"$HOME"/.config/.scripts/ut-wallpaper init
+"$HOME"/.config/.scripts/ut-wallpaper --file "$NEWWALL"
