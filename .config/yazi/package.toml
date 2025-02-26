@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "dedukun/relative-motions"
-rev = "a1466a9"
-hash = "26d7fd10e163e0624d733c067eba4b61"
+rev = "8103065"
+hash = "9f13f0740fa3a0c18e47ec6fb62ddfaa"
 
 [[plugin.deps]]
 use = "TD-Sky/sudo"
@@ -42,6 +42,11 @@ hash = "f28138c2e11e87962b66d583fef724c3"
 use = "boydaihungst/restore"
 rev = "a7a6e5e"
 hash = "4d6e6cc76c8ce08b5f6f344aa9413034"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "433cf30"
+hash = "86e0312b01bc5762813c6c1d0517f073"
 
 [flavor]
 deps = []

@@ -30,8 +30,8 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-hypr-setwall = [
-  { run = '/home/moosicmaan/.config/.scripts/hypr-setwall "$@"', desc = "Set as wallpaper - swww", for = "linux" },
+yazi-setwall = [
+  { run = '/home/moosicmaan/.config/.scripts/yazi-setwall "$@"', desc = "Set as wallpaper - swww", for = "linux" },
   { run = 'swww img "$@"', desc = "Set as wallpaper - swww", for = "macos" },
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
@@ -81,7 +81,7 @@ rules = [
   { mime = "image/*", use = [
     "open",
     "reveal",
-    "hypr-setwall",
+    "yazi-setwall",
   ] },
   # Media
   { mime = "{audio,video}/*", use = [
