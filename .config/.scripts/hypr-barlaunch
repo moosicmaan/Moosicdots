@@ -9,6 +9,8 @@
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
 themecache="$HOME/.cache/themestyle"
+# Default theme: THEMEFOLDER;VARIATION
+defaulttheme="moosic;moosic/mixed"
 
 # -----------------------------------------------------
 # Quit all running statuesbar instances
@@ -17,11 +19,6 @@ killall waybar
 pkill waybar
 pkill gBar
 sleep 0.2
-
-# -----------------------------------------------------
-# Default theme: THEMEFOLDER;VARIATION
-# -----------------------------------------------------
-defaulttheme="moosic;moosic/mixed"
 
 # -----------------------------------------------------
 # Get current theme information from .cache/themestyle
