@@ -46,7 +46,7 @@ export BROWSER=brave
 export TERM=xterm-256color
 export EMAIL=thunderbird
 
-export TESTING2=fromEnv
+export UWSM_SESSION=true
 # echo "$(date) - FINISHED in uwsm/env setting environment" >>"$HOME/.config/hypr/start.log"
 # # Nvidia Specific (second monitor)
 # export LIBVA_DRIVER_NAME,nvidia

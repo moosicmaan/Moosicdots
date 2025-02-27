@@ -63,8 +63,8 @@
   "custom/cliphist": {
     "format": "",
     "on-click": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist",
-    "on-click-right": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist d",
-    "on-click-middle": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist w",
+    // "on-click-right": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist d",
+    // "on-click-middle": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist w",
     "tooltip": false
   },
   "custom/updates": {
@@ -75,7 +75,7 @@
     "exec": "~/.config/.scripts/waybar-updates",
     "restart-interval": 60,
     "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
-    "on-click-right": "~/.config/.settings/software.sh",
+    // "on-click-right": "~/.config/.settings/software.sh",
     "tooltip": false
   },
   "custom/wallpaper": {
@@ -91,7 +91,7 @@
   },
   "custom/settings": {
     "format": "",
-    "on-click": "wezterm start --class dotfiles-floating -e ~/.config/.settings/start-settings.sh",
+    // "on-click": "wezterm start --class dotfiles-floating -e ~/.config/.settings/start-settings.sh",
     "tooltip": false
   },
   "custom/keybindings": {
@@ -101,12 +101,12 @@
   },
   "custom/filemanager": {
     "format": "",
-    "on-click": "~/.config/.settings/filemanager.sh",
+    "on-click": "pcmanfm-qt",
     "tooltip": false
   },
   "custom/browser": {
     "format": "🖧",
-    "on-click": "~/.config/.settings/browser.sh",
+    "on-click": "brave",
     "tooltip": false
   },
   "custom/chatgpt": {
@@ -159,17 +159,17 @@
   },
   "cpu": {
     "format": "/ C {usage}% ",
-    "on-click": "wezterm start -e htop"
+    "on-click": "wezterm start -e btop"
   },
   "memory": {
     "format": "/ M {}% ",
-    "on-click": "wezterm start -e htop"
+    "on-click": "wezterm start -e btop"
   },
   "disk": {
     "interval": 30,
     "format": "D {percentage_used}% ",
     "path": "/",
-    "on-click": "wezterm start -e htop"
+    "on-click": "wezterm start -e btop"
   },
   "hyprland/language": {
     "format": "/ K {short}"
@@ -214,7 +214,7 @@
     "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/.settings/networkmanager.sh"
+    "on-click": "nm-connection-editor"
   },
   "battery": {
     "states": {
@@ -275,6 +275,6 @@
       "activated": "",
       "deactivated": ""
     },
-    "on-click-right": "hyprlock"
+    "on-click-right": "swaylock -f"
   }
 }

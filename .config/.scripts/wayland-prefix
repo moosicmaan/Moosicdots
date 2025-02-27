@@ -9,7 +9,8 @@
 # -----------------------------------------------------
 # =====================================================
 
-if [[ -n "$WAYLAND_DISPLAY" ]]; then
+if [[ -n "$UWSM_SESSION" ]]; then
+  # notify-send --icon="alarm" "UWSM_SESSION=true" "PREFIX: uwsm app -- "
   echo "uwsm app -- "
 else
   echo ""
