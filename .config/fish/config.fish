@@ -1,4 +1,13 @@
-## Set values
+# =====================================================
+# -----------------------------------------------------
+# FISH SHELL CONFIGURATION
+#    Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
+# -----------------------------------------------------
+# SET VALUES, ENVIRONMENT, AND PATHS
+# -----------------------------------------------------
 # Hide welcome message & ensure we are still reporting bash as shell
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
@@ -15,9 +24,8 @@ end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-
 ## Environment setup
-# Apply .profile: use this to put fish compatible .profile stuff in
+# Apply .fish_profile: use this to put fish compatible .profile stuff in
 if test -f ~/.fish_profile
     source ~/.fish_profile
 end
@@ -29,19 +37,16 @@ if test -d ~/.local/bin
     end
 end
 
-# Add depot_tools to PATH
-if test -d ~/Applications/depot_tools
-    if not contains -- ~/Applications/depot_tools $PATH
-        set -p PATH ~/Applications/depot_tools
-    end
-end
+# # Add depot_tools to PATH
+# if test -d ~/Applications/depot_tools
+#     if not contains -- ~/Applications/depot_tools $PATH
+#         set -p PATH ~/Applications/depot_tools
+#     end
+# end
 
-
-### Starship prompt
-#if status --is-interactive
-#    source ("/usr/bin/starship" init fish --print-full-init | psub)
-#end
-
+# -----------------------------------------------------
+# PROMPT
+# -----------------------------------------------------
 ## Starship prompt
 if status --is-interactive
     if string match -q "/dev/tty*" (tty)
@@ -81,16 +86,18 @@ if status --is-interactive
     else
         ## Run fastfetch if session is interactive
         # fastfetch --config neofetch.jsonc
-        fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
+        # fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
         # start starship prompt
         source ("/usr/bin/starship" init fish --print-full-init | psub)
     end
 end
 
 
+# -----------------------------------------------------
+# FUNCTIONS AND HELPER PROGRAMS
+# -----------------------------------------------------
 ## Advanced command-not-found hook
 source /usr/share/doc/find-the-command/ftc.fish noupdate info
-
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -150,8 +157,9 @@ function cleanup
     end
 end
 
-## Useful aliases
-
+# -----------------------------------------------------
+# USEFUL ALIASES
+# -----------------------------------------------------
 # Replace ls with eza
 alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
 alias la 'eza -a --color=always --group-directories-first --icons' # all files and dirs
@@ -164,7 +172,6 @@ alias cat 'bat --style header --style snip --style changes --style header'
 if not test -x /usr/bin/yay; and test -x /usr/bin/paru
     alias yay paru
 end
-
 
 # Common use
 alias .. 'cd ..'
@@ -211,15 +218,13 @@ alias jctl 'journalctl -p 3 -xb'
 # Recent installed packages
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
-### Run fastfetch if session is interactive
-#if status --is-interactive && type -q fastfetch
-#    # fastfetch --config neofetch.jsonc
-#    fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
-#end
-
 
 # ===============================================================================
 # JDB --->
+# -------------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------------
+# MY ALIASES AND ENVIRONMENT
 # -------------------------------------------------------------------------------
 # set colortheme to current wallpaper in a wayland session
 if status is-interactive
@@ -229,13 +234,13 @@ if status is-interactive
         wal -i "$cwp" >/dev/null
     end
 end
-# my aliases
+
 # alias vim 'kitty @ set-spacing padding=0 && nvim'
 # alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
-alias jam 'RofiBeats.sh'
+alias jam rofi-beats
 
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
@@ -243,16 +248,23 @@ fish_add_path /home/moosicmaan/.config/emacs/bin
 # add the scripts folder to the path
 set -x PATH $HOME/.config/.scripts $PATH
 
-# moved to tty check above
-## set colortheme to current wallpaper
-#set cwp (cat ~/.cache/current_wallpaper)
-#wal -i $cwp >/dev/null
-
 # set vi mode
-###set -o vi
 fish_vi_key_bindings
 
-# FUNCTIONS
+alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+
+# -------------------------------------------------------------------------------
+# KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
+# -------------------------------------------------------------------------------
+# In Fish shell:
+# \c represents the Ctrl key.
+# \e represents the Alt key (also known as the Meta key).
+# This command binds Ctrl + Alt + y to call the yy function, that changes the working directory on exit through yazi.
+bind \cy yy
+bind \cf ff
+bind \cn nf
+
+# change the working directory using yazi
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -262,27 +274,16 @@ function yy
     rm -f -- "$tmp"
 end
 
-# KEYBINDINGS
-# change the working directory using yazi
-# In Fish shell:
-# \c represents the Ctrl key.
-# \e represents the Alt key (also known as the Meta key).
-# This command binds Ctrl + Alt + y to call the yy function, that changes the working directory on exit through yazi.
-# bind \e\cy yy
-# bind \e\cf ff
-# bind \e\cn nf
-bind \cy yy
-bind \cf ff
-bind \cn nf
-
-alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-# alias nf='kitty @ set-spacing padding=0 && nvim $(ff)'
-# alias nf "fish -c 'nvim $(fzf)'"
 function nf
     nvim (ff)
 end
-# alias np='nvim $(ft)'
+
+# replace cd with zoxide, a better cd with an interactive feature
+zoxide init fish | source
+abbr --erase cd &>/dev/null
+alias cd=__zoxide_z
+abbr --erase cdi &>/dev/null
+alias cdi=__zoxide_zi
 
 # search man pages with fzf
 function man_fzf
@@ -293,10 +294,20 @@ function man_fzf
     end
 end
 
+# search pages with fzf
 function manf
     man_fzf $argv | xargs man
 end
 
+# bun
+# All-in-one JavaScript runtime built for speed, with bundler, transpiler, test runner,
+# and package manager. Includes bunx, shell completions and support for baseline CPUs
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# -------------------------------------------------------------------------------
+# FZF CONFIG
+# -------------------------------------------------------------------------------
 # insert fzf keybinding
 fzf --fish | source
 
@@ -365,17 +376,6 @@ export FZF_DEFAULT_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-# replace cd with zoxide, a better cd with an interactive feature
-zoxide init fish | source
-abbr --erase cd &>/dev/null
-alias cd=__zoxide_z
-abbr --erase cdi &>/dev/null
-alias cdi=__zoxide_zi
-
 # -------------------------------------------------------------------------------
 # <--- JDB
 # ===============================================================================
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
