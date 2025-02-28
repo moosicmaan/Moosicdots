@@ -1,17 +1,19 @@
 return {
   -- Extra themes
-  { "ellisonleao/gruvbox.nvim" },
-  { "rebelot/kanagawa.nvim" },
-  { "edeneast/nightfox.nvim" },
-  { "bluz71/vim-moonfly-colors" },
-  { "abstract-ide/abstract-cs" },
-  { "daltonmenezes/aura-theme" },
-  { "projekt0n/github-nvim-theme", name = "gitbub-theme" },
+  { "ellisonleao/gruvbox.nvim", name = "gruvbox", lazy = false, priority = 1000 },
+  { "rebelot/kanagawa.nvim", name = "kanagawa", lazy = false, priority = 1000 },
+  { "edeneast/nightfox.nvim", name = "nightfox", lazy = false, priority = 1000 },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+  { "abstract-ide/abstract-cs", name = "abstract", lazy = false, priority = 1000 },
+  { "daltonmenezes/aura-theme", name = "aura", lazy = false, priority = 1000 },
+  { "projekt0n/github-nvim-theme", name = "gitbub-theme", lazy = false, priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight-night",
       colorscheme = "moonfly",
+      -- colorscheme = "nightfly",
       -- colorscheme = "kanagawa",
       -- colorscheme = "kanagawa-dragon",
       -- colorscheme = "abscs",
@@ -27,11 +29,6 @@ return {
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
       -- colorscheme = "industry",
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
     },
   },
   -- Other theme plugins

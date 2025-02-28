@@ -8,7 +8,7 @@
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=Sway
 
-export TESTING3=FromEnvSway
+export UWSM_SESSION_TYPE=SWAY
 # Not sure if this is where it should go -- testing
 
 # # =====================================================

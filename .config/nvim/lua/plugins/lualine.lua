@@ -6,8 +6,11 @@ return {
       options = {
         -- theme = "powerline_dark",
         -- theme = "pywal",
+        theme = "codedark",
         -- theme = "gruvbox",
-        theme = "ayu_dark",
+        -- theme = "ayu_dark",
+        -- theme = "moonfly",
+        -- theme = "papercolor_dark",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         -- component_separators = { left = "", right = "" },

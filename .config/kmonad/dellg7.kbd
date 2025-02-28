@@ -29,7 +29,7 @@
   sym   (layer-toggle symbols)            ;; Bind to a button that toggles a layer - hold to activate layer
   dir   (layer-toggle direction)          ;; Bind to a button that toggles a layer - hold to activate layer
   fuc   (layer-toggle function)           ;; bind to a button that toggles a layer - hold to activate layer
-  med   (layer-toggle media)           ;; bind to a button that toggles a layer - hold to activate layer
+  med   (layer-toggle media)              ;; bind to a button that toggles a layer - hold to activate layer
 
   kil   C-A-del                           ;; Bind kil to a button that Ctrl-Alt-deletes
   big   C-=                               ;; CTRL and equals

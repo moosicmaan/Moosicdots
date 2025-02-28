@@ -8,7 +8,7 @@
 export XDG_SESSION_DESKTOP=qtile
 export XDG_CURRENT_DESKTOP=Qtile
 
-export TESTING3=FromEnvQtile
+export UWSM_SESSION_TYPE=QTILE
 # Not sure if this is where it should go -- testing
 
 # # =====================================================
