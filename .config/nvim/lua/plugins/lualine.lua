@@ -5,8 +5,8 @@ return {
     local opts = {
       options = {
         -- theme = "powerline_dark",
-        -- theme = "pywal",
-        theme = "codedark",
+        theme = "pywal",
+        -- theme = "codedark",
         -- theme = "gruvbox",
         -- theme = "ayu_dark",
         -- theme = "moonfly",

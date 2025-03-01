@@ -76,6 +76,9 @@ dkms.conf
 # CMUS
 .config/cmus/{playlist*,autosave*,cache*,command-history,search-history,lib.pl*}
 
+# Thunderbird
+.thunderbird*
+
 # Suckless patch output
 *.rej
 *.orig
