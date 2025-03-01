@@ -1,4 +1,4 @@
 return {
-  "milisims/tree-sitter-org",
-  options = {},
+  -- "milisims/tree-sitter-org",
+  -- options = {},
 }
