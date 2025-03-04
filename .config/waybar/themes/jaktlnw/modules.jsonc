@@ -8,7 +8,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     },
     "format-icons": {
       "active": "",
@@ -24,7 +24,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 4
     },
     "format-icons": {
       "1": "I",
@@ -35,8 +35,7 @@
       "6": "VI",
       "7": "VII",
       "8": "VIII",
-      "9": "IX",
-      "10": "X"
+      "9": "IX"
     }
   },
   "hyprland/workspaces#pacman": {
@@ -484,7 +483,7 @@
     "exec": "echo ; echo 󰷛  screen lock",
     "interval": 86400,
     "tooltip": true,
-    "on-click": "~/.config/.scripts/LockScreen.sh"
+    "on-click": "swaylock -c ~/.config/swaylock/config"
   },
   "custom/menu": {
     "format": " 󰮯 ",
