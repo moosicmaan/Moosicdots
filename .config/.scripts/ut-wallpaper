@@ -35,6 +35,9 @@ case $IN_ARG in
   ;;
 "--random")
   waypaper --random
+  # waypaper --random --monitor "eDP-1"
+  # MON1="$(cat /home/moosicmaan/.cache/swww/eDP-1)"
+  # waypaper --wallpaper "$MON1" --monitor "HDMI-A-1"
   ;;
 "--file")
   if [ "$IN_FILE" ]; then

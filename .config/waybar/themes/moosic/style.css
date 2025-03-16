@@ -8,7 +8,7 @@
 
 /* -----------------------------------------------------
  * General 
- * ------------------------------------------------------
+ * -----------------------------------------------------
 font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
   sans-serif;
 font-family: DejaVuSansM Nerd Font Propo;
@@ -21,7 +21,8 @@ background-color: #ffffff;
 * {
   font-family: Iosevka Nerd font Propo;
   border: none;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
+  border-radius: 5px;
   margin: 0px 1px 0px 1px;
   padding: 0px 0px 0px 0px;
   font-size: 12px;
@@ -45,10 +46,14 @@ window#waybar {
   );
   background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
   */
-  background-color: alpha (@barbackground, 0.2);
+  background-color: alpha (@barbackground, 0.4);
   border-radius: 0px;
 }
 
+#window {
+  background-color: transparent;
+  padding: 0px 0px 0px 9px;
+}
 window#waybar.spotube {
   background: linear-gradient(
     0.45turn,
@@ -58,17 +63,13 @@ window#waybar.spotube {
     #00ff00 99%
   );
 }
-
-#window {
-  background-color: transparent;
-}
 window#waybar.empty #window {
   background-color: transparent;
 }
 
 /* -----------------------------------------------------
  * Workspaces and Tags
- * ----------------------------------------------------- 
+ * -----------------------------------------------------
 #workspaces
 #workspaces button
 #workspaces button.active
@@ -135,7 +136,7 @@ window#waybar.empty #window {
 
 /* -----------------------------------------------------
  * Tooltips
- * ----------------------------------------------------- 
+ * -----------------------------------------------------
  */
 tooltip {
   background-color: @tooltipbackground;
@@ -148,7 +149,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * Custom Quicklinks
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #custom-browser,
 #custom-keybindings,
 #custom-filemanager,
@@ -156,21 +158,24 @@ tooltip label {
 #custom-calculator,
 #custom-cliphist,
 #custom-wallpaper,
-#custom-wallpaper,
 #custom-system,
 #custom-waybarthemes {
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
 }
+#custom-system {
+padding: 0px 8px 0px 8px;
+}
 
 /* -----------------------------------------------------
  * APP MENU
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #appo {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
-  padding: 0px 1px 0px 1px;
+  padding: 0px 3px 0px 1px;
 }
 #appo :hover {
   color: @tooltiptext;
@@ -213,7 +218,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * CURRENTS GROUP
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #custom-weatherD,
 #custom-weatherC,
 #clock {
@@ -247,7 +253,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * Hardware Group
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #hardware {
   color: @iconcolor;
   font-size: 11px;
@@ -331,7 +338,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * TRAY
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #tray {
   padding: 0px 4px 0px 4px;
   color: @iconcolor;
@@ -354,7 +362,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * USER
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #user {
   color: @textcolor2;
   font-size: 3px;
@@ -362,7 +371,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * AUDIO
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #audios {
   /*
   border: 1px solid @bordercolor;
@@ -414,12 +424,13 @@ tooltip label {
 
 /* -----------------------------------------------------
  * CUSTOM EXIT
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #custom-exit {
   color: @textcolor1;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
-  padding: 0px 3px 0px 6px;
+  padding: 0px 9px 0px 9px;
 }
 #custom-exit:hover {
   color: @tooltiptext;
@@ -428,7 +439,8 @@ tooltip label {
 
 /* -----------------------------------------------------
  * SPECIAL MARKS
- * ----------------------------------------------------- */
+ * -----------------------------------------------------
+ */
 #custom-separator,
 #custom-right,
 #custom-left {

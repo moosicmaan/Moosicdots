@@ -288,7 +288,7 @@
     "tooltip": false
   },
   "custom/exit": {
-    "format": " ",
+    "format": "",
     "on-click": "wlogout",
     "tooltip": true,
     "tooltip-format": "Power Menu"
@@ -352,7 +352,7 @@
     "tooltip": false
   },
   "custom/system": {
-    "format": " ",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "System Status"
   },

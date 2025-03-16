@@ -27,8 +27,8 @@
     ],
     "modules-right": [
       "group/currents",
-      "tray",
       "group/hardware",
+      "tray",
       "custom/exit"
     ]
   },
