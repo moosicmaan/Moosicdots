@@ -30,7 +30,7 @@ return {
       "toml",
       "rust",
       "hyprlang",
-      "org",
+      -- "org",
       "rasi",
       "fish",
     },

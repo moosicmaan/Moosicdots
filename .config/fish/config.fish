@@ -92,7 +92,6 @@ if status --is-interactive
     end
 end
 
-
 # -----------------------------------------------------
 # FUNCTIONS AND HELPER PROGRAMS
 # -----------------------------------------------------
@@ -218,7 +217,6 @@ alias jctl 'journalctl -p 3 -xb'
 # Recent installed packages
 alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
-
 # ===============================================================================
 # JDB --->
 # -------------------------------------------------------------------------------
@@ -248,21 +246,17 @@ fish_add_path /home/moosicmaan/.config/emacs/bin
 # add the scripts folder to the path
 set -x PATH $HOME/.config/.scripts $PATH
 
-# set vi mode
-fish_vi_key_bindings
-
 alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
 # -------------------------------------------------------------------------------
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------
-# In Fish shell:
-# \c represents the Ctrl key.
-# \e represents the Alt key (also known as the Meta key).
-# This command binds Ctrl + Alt + y to call the yy function, that changes the working directory on exit through yazi.
-bind \cy yy
-bind \cf ff
-bind \cn nf
+# set vi mode
+fish_vi_key_bindings
+
+bind --mode insert ctrl-y yy
+bind --mode insert ctrl-f ff
+bind --mode insert ctrl-n nf
 
 # change the working directory using yazi
 function yy
