@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="MoosMinDk"
+theme_name="MoosicMinDk"

@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="MoosMinLt"
+theme_name="MoosicMinLt"

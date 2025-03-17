@@ -214,7 +214,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 
-(setq org-directory "/mnt/scsi/data/moosicmaan/AGENDA"
+(setq org-directory "/mnt/data/moosicmaan/ORG/agenda/"
   org-ellipsis " ▼ "
   org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
   org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦))) ; changes +/- symbols in item lists)

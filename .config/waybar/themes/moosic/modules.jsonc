@@ -273,7 +273,8 @@
     "on-click": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist",
     "on-click-right": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist d",
     "on-click-middle": "sleep 0.1 && ~/.config/.scripts/rofi-cliphist w",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Clipboard History"
   },
   "custom/appmenu": {
     "format": "",
@@ -300,14 +301,16 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "~/.config/.scripts/ut-wallpaper select",
-    "on-click-right": "~/.config/.scripts/ut-wallpaper random",
-    "tooltip": false
+    "on-click": "~/.config/.scripts/ut-wallpaper --select",
+    "on-click-right": "~/.config/.scripts/ut-wallpaper --random",
+    "tooltip": true,
+    "tooltip-format": "Wallpaper Selector"
   },
   "custom/waybarthemes": {
-    "format": "",
+    "format": "󰁱",
     "on-click": "~/.config/.scripts/hypr-barswitch",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Status Bar Selector"
   },
   "custom/settings": {
     "format": "",
@@ -315,9 +318,10 @@
     "tooltip": false
   },
   "custom/keybindings": {
-    "format": "",
+    "format": " ",
     "on-click": "~/.config/.scripts/hypr-keybinds",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Keybindings and Exec"
   },
   "custom/filemanager": {
     "format": "",
@@ -554,8 +558,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": " ",
-      "deactivated": " "
+      "activated": "   ",
+      "deactivated": "   "
     },
     "on-click-right": "swaylock"
   },
@@ -568,7 +572,7 @@
     "format": " {icon}  {capacity}% {time} ",
     "format-charging": "   {capacity}% {time} ",
     "format-plugged": "   {capacity}% ",
-    "format-full": " 󱟢 ",
+    "format-full": " 󱟢 Full ",
     "format-icons": [
       "  ",
       "  ",
@@ -815,16 +819,18 @@
       "custom/chatgpt",
       "custom/browser",
       "custom/filemanager",
-      "custom/calculator"
+      "custom/calculator",
+      "custom/waybarthemes",
+      "custom/wallpaper",
+      "custom/cliphist",
+      "custom/keybindings"
     ]
   },
   "group/settings": {
     "orientation": "horizontal",
     "modules": [
       "custom/chatgpt",
-      "custom/settings",
-      "custom/waybarthemes",
-      "custom/wallpaper"
+      "custom/settings"
     ]
   },
   "group/currents": {

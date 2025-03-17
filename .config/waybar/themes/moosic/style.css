@@ -4,7 +4,7 @@
 // Ref:https://man.archlinux.org/man/extra/waybar/waybar.5.en
 // -----------------------------------------------------
 // =====================================================
-*/
+ */
 
 /* -----------------------------------------------------
  * General 
@@ -17,7 +17,7 @@ font-family: Roboto Condensed;
 font-family: MonaspiceRn Nerd Font Propo;
 background-color: @backgroundlight;
 background-color: #ffffff;
-*/
+ */
 * {
   font-family: Iosevka Nerd font Propo;
   border: none;
@@ -30,6 +30,14 @@ background-color: #ffffff;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
 
+/* -----------------------------------------------------
+ * Waybar Main Window
+ * -----------------------------------------------------
+ */
+#window {
+  background-color: transparent;
+  padding: 0px 0px 0px 9px;
+}
 window#waybar {
   /*
   border-bottom: 2px solid @bordercolorb;
@@ -46,13 +54,8 @@ window#waybar {
   );
   background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
   */
-  background-color: alpha (@barbackground, 0.4);
+  background-color: alpha (@barbackground, 0.6);
   border-radius: 0px;
-}
-
-#window {
-  background-color: transparent;
-  padding: 0px 0px 0px 9px;
 }
 window#waybar.spotube {
   background: linear-gradient(
@@ -79,7 +82,7 @@ window#waybar.empty #window {
 #workspaces button.visible
 #workspaces button.urgent
 #workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
-*/
+ */
 #workspaces {
   /* 
   background: @workspacesbackground1;
@@ -101,7 +104,7 @@ window#waybar.empty #window {
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */
-  padding: 0px 3px 0px 3px;
+  padding: 0px 5px 0px 5px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
@@ -148,7 +151,7 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * Custom Quicklinks
+ * Quicklinks
  * -----------------------------------------------------
  */
 #custom-browser,
@@ -159,13 +162,13 @@ tooltip label {
 #custom-cliphist,
 #custom-wallpaper,
 #custom-system,
-#custom-waybarthemes {
+#custom-waybarthemes,
+#custom-system {
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
-}
-#custom-system {
-padding: 0px 8px 0px 8px;
+  padding: 0px 8px 0px 8px;
+  margin: 0px 0px;
 }
 
 /* -----------------------------------------------------
@@ -209,12 +212,6 @@ padding: 0px 8px 0px 8px;
   padding: 0px 8px 0px 8px;
   margin: 3px 0px 0px 5px;
 }
-#custom-browser,
-#custom-filemanager,
-#custom-calculator {
-  padding: 0px 8px 0px 8px;
-  margin: 0px 0px;
-}
 
 /* -----------------------------------------------------
  * CURRENTS GROUP
@@ -229,7 +226,7 @@ padding: 0px 8px 0px 8px;
   color: @textcolor1;
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-*/
+  */
   font-size: 13px;
   padding: 0px 4px 0px 4px;
 }
@@ -343,7 +340,7 @@ padding: 0px 8px 0px 8px;
 #tray {
   padding: 0px 4px 0px 4px;
   color: @iconcolor;
-  background-color: @backgroundlight;
+  background-color: @workspacesbackground2;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
 }
@@ -378,7 +375,7 @@ padding: 0px 8px 0px 8px;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   background-color: @backgroundlight;
-*/
+  */
   color: @textcolor3;
   opacity: 0.8;
 }
