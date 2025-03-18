@@ -54,19 +54,19 @@
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 16)
 ;; (setq doom-font (font-spec :family "SauceCodePro Nerd Font Propo" :size 16)
-(setq doom-font (font-spec :family "Space Mono Nerd Font" :size 18 :height 1.0)
-      doom-big-font (font-spec :family "Space Mono Nerd Font" :size 26 :height 1.0)
+(setq doom-font (font-spec :family "MesloLGM Nerd Font Mono" :size 20 :height 1.0)
+      doom-big-font (font-spec :family "MesloLGM Nerd Font Mono" :size 30 :height 1.0)
       ;; doom-big-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 24))
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 16))
+      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font Propo" :size 16))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 (set-frame-font "Space Mono Nerd Font 18" nil t)
 
 (custom-set-faces
- '(mode-line ((t (:family "Space Mono Nerd Font" :size 18))))
- '(mode-line-active ((t (:family "Space Mono Nerd Font" :size 18))))
- '(mode-line-inactive ((t (:family "Space Mono Nerd Font" :size 18)))))
+ '(mode-line ((t (:family "MesloLGM Nerd Font Mono" :size 14))))
+ '(mode-line-active ((t (:family "MesloLGM Nerd Font Mono Bold" :size 14))))
+ '(mode-line-inactive ((t (:family "MesloLGM Nerd Font Mono" :size 14)))))
 
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
@@ -83,10 +83,9 @@
 ;;destroys all highlighting in org-agenda).
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
-        (when (not (memq major-mode
-        (list 'org-agenda-mode)))
-        (rainbow-mode 1))))
-(global-rainbow-mode 1 )
+    (when (not (memq major-mode '(org-agenda-mode)))
+      (rainbow-mode 1)))
+  :group 'rainbow-mode) ;; Specify the customization group
 
 ;; ----------------------------------------------------------------------------
 ;; CIRCE UI
@@ -127,17 +126,16 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;;(setq doom-theme 'doom-homage-black)
-;;(setq doom-theme 'manoj-dark)
-;;(setq doom-theme 'doom-ir-black)
-;;(setq doom-theme 'doom-acario-dark)
-;;(setq doom-theme 'doom-sourcerer)
-;;(setq doom-theme 'doom-monokai-ristretto)
-;;(setq doom-theme 'doom-challenger-deep)
-;;(setq doom-theme 'ewal-doom-vibrant)
-;;(setq doom-theme 'ewal-doom-one)
+;; (setq doom-theme 'doom-homage-black)
+;; (setq doom-theme 'manoj-dark)
+;; (setq doom-theme 'doom-ir-black)
+;; (setq doom-theme 'doom-monokai-ristretto)
+;; (setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'ewal-doom-vibrant)
+;; (setq doom-theme 'ewal-doom-one)
 (setq doom-theme 'doom-outrun-electric)
 ;; (setq doom-theme 'catppuccin)
+;; (setq doom-theme 'modus-vivendi-deuteranopia)
 
 (setq inhibit-splash-screen t)
 (transient-mark-mode 1)
@@ -197,7 +195,6 @@
 ;; ----------------------------------------------------------------------------
 ;; MARGINALIA - included with DOOM, but put here to ensure extras are in vertico
 ;; ----------------------------------------------------------------------------
-
 ;; Show lots of useful stuff in the minibuffer
 (use-package marginalia
   :after vertico
@@ -210,26 +207,24 @@
 ;; ORG
 ;; ============================================================================
 ;; ----------------------------------------------------------------------------
-;;
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-
 (setq org-directory "/mnt/data/moosicmaan/ORG/agenda/"
   org-ellipsis " ▼ "
   org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
   org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦))) ; changes +/- symbols in item lists)
 
 (setq org-todo-keywords          ; This overwrites the default Doom org-todo-keywords
-          '((sequence
-             "TODO(t)"           ; A task that is ready to be tackled
-             "BLOG(b)"           ; Blog writing assignments
-             "GYM(g)"            ; Things to accomplish at the gym
-             "PROJ(p)"           ; A project that contains other tasks
-             "VIDEO(v)"          ; Video assignments
-             "WAIT(w)"           ; Something is holding up this task
-             "|"                 ; The pipe necessary to separate "active" states and "inactive" states
-             "DONE(d)"           ; Task has been completed
-             "CANCELLED(c)" )))  ; Task has been cancelled
+    '((sequence
+       "TODO(t)"           ; A task that is ready to be tackled
+       "BLOG(b)"           ; Blog writing assignments
+       "GYM(g)"            ; Things to accomplish at the gym
+       "PROJ(p)"           ; A project that contains other tasks
+       "VIDEO(v)"          ; Video assignments
+       "WAIT(w)"           ; Something is holding up this task
+       "|"                 ; The pipe necessary to separate "active" states and "inactive" states
+       "DONE(d)"           ; Task has been completed
+       "CANCELLED(c)" )))  ; Task has been cancelled
 
 (font-lock-add-keywords 'org-mode
   '(("^ *\\([-]\\) "
@@ -319,26 +314,26 @@
    org-agenda-block-separator 8411)
 
 (setq org-agenda-custom-commands
-      '(("v" "A better agenda view"
-          ((agenda "")
-          (tags "PRIORITY=\"A\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                 (org-agenda-overriding-header "HIGH-PRIORITY:")))
-          (tags "PRIORITY=\"B\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                 (org-agenda-overriding-header "MEDIUM-PRIORITY:")))
-          (tags "PRIORITY=\"C\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                 (org-agenda-overriding-header "LOW-PRIORITY:")))
-          (tags "customtag"
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                 (org-agenda-overriding-header "Tasks marked with customtag:")))
+  '(("v" "A better agenda view"
+    ((agenda "")
+    (tags "PRIORITY=\"A\""
+           ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+            (org-agenda-overriding-header "HIGH-PRIORITY:")))
+    (tags "PRIORITY=\"B\""
+           ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+            (org-agenda-overriding-header "MEDIUM-PRIORITY:")))
+    (tags "PRIORITY=\"C\""
+           ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+            (org-agenda-overriding-header "LOW-PRIORITY:")))
+    (tags "customtag"
+           ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+            (org-agenda-overriding-header "Tasks marked with customtag:")))
 
-          (alltodo "")))))
+     (alltodo "")))))
 
 ;;Some custom functions to insert the date.
 ;;The function ‘insert-todays-date’ can be used one of three different ways:
@@ -371,10 +366,10 @@
 (defun jdb/insert-todays-date (prefix)
   (interactive "P")
   (let ((format (cond
-                 ((not prefix) "%A, %B %d, %Y")
-                 ((equal prefix '(4)) "%m-%d-%Y")
-                 ((equal prefix '(16)) "%Y-%m-%d"))))
-    (insert (format-time-string format))))
+       ((not prefix) "%A, %B %d, %Y")
+       ((equal prefix '(4)) "%m-%d-%Y")
+       ((equal prefix '(16)) "%Y-%m-%d"))))
+     (insert (format-time-string format))))
 
 (require 'calendar)
 (defun jdb/insert-any-date (date)
@@ -521,11 +516,11 @@
 ;; DIRED
 ;; ----------------------------------------------------------------------------
 (map! :leader
-(:prefix ("d" . "dired")
-:desc "Open dired" "d" #'dired
-:desc "Dired jump to current" "j" #'dired-jump)
-(:after dired
-(:map dired-mode-map
+  (:prefix ("d" . "dired")
+  :desc "Open dired" "d" #'dired
+  :desc "Dired jump to current" "j" #'dired-jump)
+  (:after dired
+    (:map dired-mode-map
         :desc "Peep-dired image previews" "d p" #'peep-dired
         :desc "Dired view file"           "d v" #'dired-view-file)))
 
@@ -567,12 +562,12 @@
                               ("mp4" . "mpv")))
 
 (evil-define-key 'normal peep-dired-mode-map
-(kbd "j") 'peep-dired-next-file
-(kbd "k") 'peep-dired-prev-file)
+  (kbd "j") 'peep-dired-next-file
+  (kbd "k") 'peep-dired-prev-file)
 (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
 
 (setq delete-by-moving-to-trash t
-trash-directory "~/.local/share/Trash/files/")
+  trash-directory "~/.local/share/Trash/files/")
 
 ;; ----------------------------------------------------------------------------
 ;; ============================================================================

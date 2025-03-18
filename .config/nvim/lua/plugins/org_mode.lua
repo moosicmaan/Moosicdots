@@ -15,10 +15,10 @@ return {
       org_archive_location = "/mnt/data/moosicmaan/ORG/agenda/archive.org::* From %s",
       win_split_mode = "vertical",
       org_startup_folded = "content",
-      org_todo_keywords = { "TODO", "WAITING", "|", "DONE", "DELEGATED" },
+      org_todo_keywords = { "TODO", "WAITING", "|", "CANCELLED", "DONE" },
       org_todo_keyword_faces = {
         WAITING = ":foreground blue :weight bold",
-        DELEGATED = ":background #FFFFFF :slant italic :underline on",
+        CANCELLED = ":background #FFFFFF :slant italic :underline on",
         TODO = ":background #000000 :foreground red", -- overrides builtin color for `TODO` keyword
       },
       org_log_done = "note",

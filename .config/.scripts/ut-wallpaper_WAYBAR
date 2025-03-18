@@ -1,0 +1,90 @@
+#!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Reload, Set, Select, or Randomly Select the wallpaper and colorscheme
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
+#!/bin/bash
+IN_ARG="$1"
+IN_FILE="$2"
+
+WAYLIST=$(waypaper --list)
+# echo "DEBUG WAYLIST before: $WAYLIST"
+
+CONFIG_FILE="$HOME/.config/waypaper/config.ini"
+RASI_FILE="$HOME/.cache/current_wallpaper.rasi"
+CACHE_FILE="$HOME/.cache/current_wallpaper"
+WAL_DIR="$HOME/Pictures/Backgrounds"
+
+# Backup the existing config
+cp "$CONFIG_FILE" "$CONFIG_FILE.bak"
+
+# Update the XDG setting to ensure proper file handling
+sed -i 's|^use_xdg_state =.*|use_xdg_state = True|' "$CONFIG_FILE"
+
+# Launch Waypaper based on selected argument
+case $IN_ARG in
+"--init")
+  waypaper --restore
+  ;;
+"--select")
+  # Set post_command to kill waypaper after selection
+  sed -i 's|^post_command =.*|post_command = pkill waypaper|' "$CONFIG_FILE"
+  waypaper --folder "$WAL_DIR"
+  ;;
+"--random")
+  waypaper --random
+  # waypaper --random --monitor "eDP-1"
+  # MON1="$(cat /home/moosicmaan/.cache/swww/eDP-1)"
+  # waypaper --wallpaper "$MON1" --monitor "HDMI-A-1"
+  ;;
+"--file")
+  if [ "$IN_FILE" ]; then
+    waypaper --wallpaper "$IN_FILE"
+  else
+    echo -e "\nERROR: No file path provided"
+    echo -e "\nSetting random wallpaper..."
+    waypaper --random
+  fi
+  ;;
+*)
+  echo -e "\nERROR: Invalid argument"
+  echo "Accepted |--init|--select|--random|--file <path>|"
+  echo -e "\nSetting random wallpaper..."
+  waypaper --random
+  ;;
+esac
+
+# Get and set the pywal colors from the 'All' wallpaper
+sleep 1 && WAYLIST=$(waypaper --list)
+# echo "DEBUG WAYLIST after: $WAYLIST"
+
+# Extract the wallpaper path for the monitor "All" from which to extract the colors
+NEWWALL=$(echo "$WAYLIST" | jq -r '.[] | select(.monitor == "All") | .wallpaper')
+
+# Load wallpaper into cacle files
+# Create rasi file if not exists
+if [ ! -f "$RASI_FILE" ]; then
+  touch "$RASI_FILE"
+fi
+echo "* { current-image: url(\"$NEWWALL\", height); }" >"$RASI_FILE"
+echo "$NEWWALL" >"$CACHE_FILE"
+
+# Run pywal with the extracted wallpaper path
+wal -q -i "$NEWWALL"
+
+# Reload waybar with new colors
+# Sending output to /dev/null to make debugging easier
+"$HOME/.config/.scripts/hypr-barlaunch" >/dev/null 2>&1
+
+# Restore the original config
+mv "$CONFIG_FILE.bak" "$CONFIG_FILE"
+
+# Send notification
+if [ "$IN_ARG" == "--init" ]; then
+  echo ":: Init"
+else
+  sleep 1
+  notify-send --icon=monitor "Colors and Wallpaper Updated" "Main Image: $NEWWALL"
+fi

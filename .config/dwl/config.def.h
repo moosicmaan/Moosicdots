@@ -121,7 +121,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 static const char *termcmd[] = { "kitty", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
-static const char *browscmd[]  = { "brave", NULL };
+static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_term2[] = { "kitty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
