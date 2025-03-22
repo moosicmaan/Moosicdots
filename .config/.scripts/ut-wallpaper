@@ -1,107 +1,90 @@
 #!/bin/bash
 # =====================================================
 # -----------------------------------------------------
-# Reload, Select, or Randomly Select the wallpaper and colorscheme
+# Reload, Set, Select, or Randomly Select the wallpaper and colorscheme
 #    Jason Bradberry (2025)
 # -----------------------------------------------------
 # =====================================================
-# Cache file for holding the current wallpaper
-cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
+#!/bin/bash
+IN_ARG="$1"
+IN_FILE="$2"
 
-# Prefix to run commands in wayland using uwsm.
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+WAYLIST=$(waypaper --list)
+# echo "DEBUG WAYLIST before: $WAYLIST"
 
-# Create cache file if not exists
-if [ ! -f "$cache_file" ]; then
-  touch "$cache_file"
-  echo "$HOME/Pictures/Backgrounds/1.jpg" >"$cache_file"
-fi
+CONFIG_FILE="$HOME/.config/waypaper/config.ini"
+RASI_FILE="$HOME/.cache/current_wallpaper.rasi"
+CACHE_FILE="$HOME/.cache/current_wallpaper"
+WAL_DIR="$HOME/Pictures/Backgrounds"
 
-# Create rasi file if not exists
-if [ ! -f "$rasi_file" ]; then
-  touch "$rasi_file"
-  echo "* { current-image: url(\"$HOME/Pictures/Backgrounds/1.jpg\", height); }" >"$rasi_file"
-fi
+# Backup the existing config
+cp "$CONFIG_FILE" "$CONFIG_FILE.bak"
 
-current_wallpaper=$(cat "$cache_file")
+# Update the XDG setting to ensure proper file handling
+sed -i 's|^use_xdg_state =.*|use_xdg_state = True|' "$CONFIG_FILE"
 
-case $1 in
-
-# Load wallpaper from .cache of last session
+# Launch Waypaper based on selected argument
+case $IN_ARG in
 "--init")
-  if [ -f "$cache_file" ]; then
-    wal -q -i "$current_wallpaper"
-  else
-    wal -q -i ~/wallpaper/
-  fi
+  waypaper --restore
   ;;
-# Select wallpaper with rofi
 "--select")
-  selected=$(find "$HOME/Pictures/Backgrounds" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
-    echo -en "$rfile\x00icon\x1f$HOME/Pictures/Backgrounds/${rfile}\n"
-  done | rofi -dmenu -replace -config ~/.config/rofi/config-wall.rasi)
-  if [ ! "$selected" ]; then
-    echo "No wallpaper selected"
-    exit
-  fi
-  wal -q -i ~/Pictures/Backgrounds/"$selected"
+  # Set post_command to kill waypaper after selection
+  sed -i 's|^post_command =.*|post_command = pkill waypaper|' "$CONFIG_FILE"
+  waypaper --folder "$WAL_DIR"
   ;;
-# Randomly select wallpaper
+"--random")
+  waypaper --random
+  # waypaper --random --monitor "eDP-1"
+  # MON1="$(cat /home/moosicmaan/.cache/swww/eDP-1)"
+  # waypaper --wallpaper "$MON1" --monitor "HDMI-A-1"
+  ;;
+"--file")
+  if [ "$IN_FILE" ]; then
+    waypaper --wallpaper "$IN_FILE"
+  else
+    echo -e "\nERROR: No file path provided"
+    echo -e "\nSetting random wallpaper..."
+    waypaper --random
+  fi
+  ;;
 *)
-  wal -q -i ~/Pictures/Backgrounds/
+  echo -e "\nERROR: Invalid argument"
+  echo "Accepted |--init|--select|--random|--file <path>|"
+  echo -e "\nSetting random wallpaper..."
+  waypaper --random
   ;;
 esac
 
-# -----------------------------------------------------
-# Load current pywal color scheme
-# -----------------------------------------------------
-source "$HOME/.cache/wal/colors.sh"
-echo ":: Wallpaper: $wallpaper"
+# Get and set the pywal colors from the 'All' wallpaper
+sleep 1 && WAYLIST=$(waypaper --list)
+# echo "DEBUG WAYLIST after: $WAYLIST"
 
-# -----------------------------------------------------
-# Write selected wallpaper into .cache files
-# -----------------------------------------------------
-echo "$wallpaper" >"$cache_file"
-echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
+# Extract the wallpaper path for the monitor "All" from which to extract the colors
+NEWWALL=$(echo "$WAYLIST" | jq -r '.[] | select(.monitor == "All") | .wallpaper')
 
-# -----------------------------------------------------
-# get wallpaper image name
-# -----------------------------------------------------
-newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
+# Load wallpaper into cacle files
+# Create rasi file if not exists
+if [ ! -f "$RASI_FILE" ]; then
+  touch "$RASI_FILE"
+fi
+echo "* { current-image: url(\"$NEWWALL\", height); }" >"$RASI_FILE"
+echo "$NEWWALL" >"$CACHE_FILE"
 
-# -----------------------------------------------------
+# Run pywal with the extracted wallpaper path
+wal -q -i "$NEWWALL"
+
 # Reload waybar with new colors
-# -----------------------------------------------------
-"$HOME/.config/.scripts/hypr-barlaunch"
+# Sending output to /dev/null to make debugging easier
+"$HOME/.config/.scripts/hypr-barlaunch" >/dev/null 2>&1
 
-# -----------------------------------------------------
-# Set the new wallpaper
-# -----------------------------------------------------
-# transition_type="wipe"
-# transition_type="outer"
-transition_type="random"
+# Restore the original config
+mv "$CONFIG_FILE.bak" "$CONFIG_FILE"
 
-${PREFIX}swww img "$wallpaper" \
-  --transition-type=$transition_type \
-  --transition-pos "$(hyprctl cursorpos)"
-
-# ${PREFIX}swww img "$wallpaper" \
-#   --transition-bezier .43,1.19,1,.4 \
-#   --transition-fps=60 \
-#   --transition-type=$transition_type \
-#   --transition-duration=0.7 \
-#   --transition-pos "$(hyprctl cursorpos)"o
-
-# -----------------------------------------------------
 # Send notification
-# -----------------------------------------------------
-
-if [ "$1" == "init" ]; then
+if [ "$IN_ARG" == "--init" ]; then
   echo ":: Init"
 else
   sleep 1
-  notify-send --icon=monitor "Colors and Wallpaper updated" "with image $newwall"
+  notify-send --icon=monitor "Colors and Wallpaper Updated" "Main Image: $NEWWALL"
 fi
-
-echo "DONE"
