@@ -12,7 +12,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight-night",
-      colorscheme = "moonfly",
+      -- colorscheme = "moonfly",
+      colorscheme = "abscs",
       -- colorscheme = "nightfly",
       -- colorscheme = "kanagawa",
       -- colorscheme = "kanagawa-dragon",

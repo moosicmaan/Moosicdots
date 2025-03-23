@@ -39,7 +39,7 @@ static const char *const autostart[] = {
 static const char *tagsel[][2] = {
    /*   fg         bg    */
   { col_gray3, col_gray1 },                   /* norm */
-  { col_gray1, col_accent  },                 /* sel */
+  { col_gray1, col_accent },                 /* sel */
   { col_gray1,  col_gray3 },                  /* occ but not sel */
   { col_gray1,  col_pinned },                 /* has pinned tag */
 };
@@ -71,11 +71,11 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
-	//  { "[]=",      tile },                   /* first entry is default */
-	// { "><>",      NULL },                    /* no layout function means floating behavior */
-	//  { "[M]",      monocle },                /* only one visable window per tag */
-	//  { "[@]",      spiral },                 /* much like hyprland*/
-	//  { "[\\]",     dwindle },                /* smaller to the SE*/
+	//  { "[]=",      tile },                       /* first entry is default */
+	//  { "><>",      NULL },                       /* no layout function means floating behavior */
+	//  { "[M]",      monocle },                    /* only one visable window per tag */
+	//  { "[@]",      spiral },                     /* much like hyprland*/
+	//  { "[\\]",     dwindle },                    /* smaller to the SE*/
   { "󰜵",      tile },                         /* first entry is default */
 	{ "󰘷",      NULL },                         /* no layout function means floating behavior */
   { "",      monocle },                      /* only one visable window per tag */
@@ -101,12 +101,12 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/* commands */
+/* APPLICATIONS */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *browscmd[]  = { "brave", NULL };
 static const char *my_term2[] = { "ghostty", NULL };
+static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
@@ -215,8 +215,8 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask,               XK_u}}, incrihgaps,     {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_y}}, incrivgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_u}}, incrivgaps,     {.i = -1 } }),
-  &((Keychord){1, {{HYPER,                        XK_y}}, incrohgaps, {.i = +1 } }),
-  &((Keychord){1, {{HYPER,                        XK_u}}, incrohgaps, {.i = -1 } }),
+  &((Keychord){1, {{HYPER,                        XK_y}}, incrohgaps,     {.i = +1 } }),
+  &((Keychord){1, {{HYPER,                        XK_u}}, incrohgaps,     {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_y}}, incrovgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
