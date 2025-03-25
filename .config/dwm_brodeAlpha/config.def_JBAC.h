@@ -101,12 +101,12 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/* APPLICATIONS */
+/* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *browscmd[]  = { "brave", NULL };
 static const char *my_term2[] = { "ghostty", NULL };
-static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
@@ -215,8 +215,8 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask,               XK_u}}, incrihgaps,     {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_y}}, incrivgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_u}}, incrivgaps,     {.i = -1 } }),
-  &((Keychord){1, {{HYPER,                        XK_y}}, incrohgaps,     {.i = +1 } }),
-  &((Keychord){1, {{HYPER,                        XK_u}}, incrohgaps,     {.i = -1 } }),
+  &((Keychord){1, {{HYPER,                        XK_y}}, incrohgaps, {.i = +1 } }),
+  &((Keychord){1, {{HYPER,                        XK_u}}, incrohgaps, {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_y}}, incrovgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
@@ -259,7 +259,7 @@ static Keychord *keychords[] = {
 	   TAGKEYS(                                       XK_7,                      6)
 	   TAGKEYS(                                       XK_8,                      7)
 	   TAGKEYS(                                       XK_9,                      8)
-};
+ };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */

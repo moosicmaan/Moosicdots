@@ -90,10 +90,10 @@ wl_xcursor_theme = "Bibata-Modern-Ice"
 wl_xcursor_size = 36
 
 env = {
-    # "GBM_BACKEND": "nvidia-drm",
+    "GBM_BACKEND": "nvidia-drm",
     "XDG_CURRENT_DESKTOP": "Qtile",
-    # "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
-    # "LIBVA_DRIVER_NAME": "nvidia",
+    "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+    "LIBVA_DRIVER_NAME": "nvidia",
     "XDG_SESSION_TYPE": "wayland",
     "XDG_SESSION_DESKTOP": "Qtile",
     "QT_QPA_PLATFORMTHEME": "qt6ct",
@@ -126,10 +126,10 @@ modifier_keys = {
 # -----------------------------------------------
 # Default Applications - copied from /include/vars.py
 # -----------------------------------------------
-my_term = "wezterm"  # (M-return) Launch default terminal
+my_term = "kitty"  # (M-return) Launch default terminal
 my_term2 = "ghostty"  # (M-t) Launch alternate terminal
-my_brows = "brave"  # (M-b) Launch default browser
-my_brows2 = "firefox"  # (M-f1) Launch alternate browser
+my_brows = "zen-browser"  # (M-b) Launch default browser
+my_brows2 = "brave"  # (M-f1) Launch alternate browser
 my_brows3 = "firedragon"  # (C-A-b) Launch 2nd alternate browser
 my_browsv = "qutebrowser"  # (M-o) Launch VIM-based browser
 my_email = "thunderbird"  # (M-A-return) Launch default email client
@@ -137,10 +137,15 @@ my_email2 = "bluemail"  # (M-f2) Launch alternate email client
 my_editg = "kate"  # (M-f3) Launch GUI text editor
 my_editc = "nvim"  # (M-n) Launch console text editor
 my_filesg = "pcmanfm-qt"  # (M-S-return) Launch GUI file browser
-my_filesc = "wezterm -e yazi"
-menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run"
-menu_drun = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun"
-menu_win = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window"
+my_filesc = "kitty -e yazi"
+# menu_run = "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run"
+menu_run = "wmenu-run"
+menu_drun = (
+    "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun"
+)
+menu_win = (
+    "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window"
+)
 my_music = "spotube"  # (M-m) Launch music player
 my_media = "vlc"  # (M-S-m) Launch media player
 my_office = "libreoffice"  # (M-f4) Launch office suite
@@ -675,7 +680,7 @@ groups.append(
         [
             DropDown(
                 "term",
-                "wezterm",
+                "kitty",
                 x=0.05,
                 y=0.02,
                 height=0.8,
@@ -686,7 +691,7 @@ groups.append(
             ),
             DropDown(
                 "btop",
-                "wezterm -e btop",
+                "kitty -e btop",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -696,7 +701,7 @@ groups.append(
             ),
             DropDown(
                 "yazi",
-                "wezterm -e yazi",
+                "kitty -e yazi",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -706,7 +711,7 @@ groups.append(
             ),
             DropDown(
                 "moosic",
-                "wezterm -e musikcube",
+                "kitty -e musikcube",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -716,7 +721,7 @@ groups.append(
             ),
             DropDown(
                 "qtileshell",
-                "wezterm -e qtile shell",
+                "kitty -e qtile shell",
                 x=0.05,
                 y=0.02,
                 width=0.9,

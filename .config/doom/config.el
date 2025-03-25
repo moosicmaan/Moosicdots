@@ -128,12 +128,12 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-homage-black)
 ;; (setq doom-theme 'manoj-dark)
-;; (setq doom-theme 'doom-ir-black)
+(setq doom-theme 'doom-ir-black)
 ;; (setq doom-theme 'doom-monokai-ristretto)
 ;; (setq doom-theme 'doom-challenger-deep)
 ;; (setq doom-theme 'ewal-doom-vibrant)
 ;; (setq doom-theme 'ewal-doom-one)
-(setq doom-theme 'doom-outrun-electric)
+;; (setq doom-theme 'doom-outrun-electric)
 ;; (setq doom-theme 'catppuccin)
 ;; (setq doom-theme 'modus-vivendi-deuteranopia)
 

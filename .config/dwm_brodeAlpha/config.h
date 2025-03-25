@@ -25,10 +25,17 @@ static const char col_cyan[]        = "#020202";
 static const char col_white[]       = "#ffffff";
 static const char col_accent[]       = "#aaaafe";
 static const char col_pinned[]       = "#aaffee";
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 /*               fg         bg         border   */
 [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 [SchemeSel]  = { col_gray4, col_cyan,  col_white  },
+};
+static const unsigned int alphas[][3]      = {
+    /*               fg      bg        border*/
+    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 static const char *const autostart[] = {
@@ -259,7 +266,7 @@ static Keychord *keychords[] = {
 	   TAGKEYS(                                       XK_7,                      6)
 	   TAGKEYS(                                       XK_8,                      7)
 	   TAGKEYS(                                       XK_9,                      8)
-};
+ };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
