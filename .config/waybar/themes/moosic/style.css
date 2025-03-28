@@ -15,17 +15,21 @@ font-family: DejaVuSansM Nerd Font Propo;
 font-family: SpaceMono Nerd Font Propo;
 font-family: Roboto Condensed;
 font-family: MonaspiceRn Nerd Font Propo;
+  font-family: OpenDyslexicM Nerd Font Propo;
+  font-family: Iosevka Nerd font Propo;
+  font-family: ProFont IIx Nerd Font Propo;
 background-color: @backgroundlight;
 background-color: #ffffff;
  */
 * {
-  font-family: Iosevka Nerd font Propo;
+  
+  font-family: ComicShannsMono Nerd Font Propo;
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
   margin: 0px 1px 0px 1px;
   padding: 0px 0px 0px 0px;
-  font-size: 12px;
+  font-size: 14px;
   color: @textcolor1;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
@@ -94,7 +98,7 @@ window#waybar.empty #window {
   font-style: normal;
   opacity: 0.7;
   border: 1px solid @bordercolor;
-  border-bottom: 2px solid @bordercolorb;
+  border-bottom: 3px solid @bordercolorb;
   background-color: @workspacesbackground1;
   color: @textcolor1;
 }
@@ -144,9 +148,10 @@ window#waybar.empty #window {
 tooltip {
   background-color: @tooltipbackground;
   opacity: 0.95;
+  font-size: 18px;
 }
 tooltip label {
-  font-size: 16px;
+  font-size: 18px;
   color: @tooltiptext;
 }
 
@@ -177,7 +182,7 @@ tooltip label {
  */
 #appo {
   border: 1px solid @bordercolor;
-  border-bottom: 2px solid @bordercolorb;
+  border-bottom: 3px solid @bordercolorb;
   padding: 0px 3px 0px 1px;
 }
 #appo :hover {
@@ -188,7 +193,7 @@ tooltip label {
 #custom-appmenu {
   color: @textcolor1;
   opacity: 0.8;
-  padding: 0px 8px 0px 4px;
+  padding: 0px 4px 0px 4px;
 }
 /* TASKBAR */
 #taskbar {
@@ -237,7 +242,7 @@ tooltip label {
   background-color: @backgrounddark;
   color: @textcolor1;
   border: 1px solid @bordercolor;
-  border-bottom: 2px solid @bordercolorb;
+  border-bottom: 3px solid @bordercolorb;
 }
 #submap,
 #mpris {
@@ -342,7 +347,7 @@ tooltip label {
   color: @iconcolor;
   background-color: @workspacesbackground2;
   border: 1px solid @bordercolor;
-  border-bottom: 2px solid @bordercolorb;
+  border-bottom: 3px solid @bordercolorb;
 }
 #tray > :hover {
   color: @tooltiptext;
@@ -426,7 +431,7 @@ tooltip label {
 #custom-exit {
   color: @textcolor1;
   border: 1px solid @bordercolor;
-  border-bottom: 2px solid @bordercolorb;
+  border-bottom: 3px solid @bordercolorb;
   padding: 0px 9px 0px 9px;
 }
 #custom-exit:hover {

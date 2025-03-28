@@ -2,7 +2,7 @@
 # N E O V I D E
 #   config
 # ---------------------------------
-backtraces_path = "/path/to/neovide_backtraces.log" # see below for the default platform specific location
+backtraces_path = "/home/moosicmaan/.config/neovide/neovide_backtraces.log" # see below for the default platform specific location
 fork = false
 frame = "full"
 idle = true
@@ -17,6 +17,8 @@ title-hidden = true
 vsync = true
 wsl = false
 
+# normal = ["ComicShannsMono Nerd Font Propo"]
+# normal = ["OpenDyslexic Nerd Font Mono"]
 [font]
-normal = [] # Will use the bundled Fira Code Nerd Font by default
-size = 14.0
+normal = ["HeavyData Nerd Font"]
+size = 24

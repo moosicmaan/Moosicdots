@@ -1,7 +1,9 @@
 local wezterm = require("wezterm")
 local platform = require("utils.platform")
 
-local font = "MesloLGM Nerd Font Mono"
+-- local font = "HeavyData Nerd Font"
+local font = "ComicShannsMono Nerd Font Mono"
+-- local font = "MesloLGM Nerd Font Mono"
 -- local font = "JetBrainsMono Nerd Font"
 -- local font = "SpaceMono Nerd Font Mono"
 -- local font = "MesloLGS Nerd Font Mono"
