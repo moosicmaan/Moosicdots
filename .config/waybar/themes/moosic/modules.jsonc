@@ -250,7 +250,8 @@
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
       "(.*) - Kitty": "$1",
-      "(.*) - Wezterm": "$1"
+      "(.*) - Wezterm": "$1",
+      "(.*) - Zen": "$1"
     },
     "separate-outputs": true,
     "icon": true,
@@ -330,7 +331,7 @@
     "tooltip-format": "File Manager"
   },
   "custom/browser": {
-    "format": "",
+    "format": "",
     "on-click": "brave",
     "tooltip": true,
     "tooltip-format": "Internet Browser"
@@ -458,7 +459,7 @@
     "player-icons": {
       "default": "▶ ",
       "mpv": "󰐹 ",
-      "spotube": "󰎆 ",
+      "spotube": "󰋋 ",
       "spotify": " ",
       "chromium": " ",
       "firefox": " ",

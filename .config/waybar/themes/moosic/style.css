@@ -98,7 +98,8 @@ window#waybar.empty #window {
   font-style: normal;
   opacity: 0.7;
   border: 1px solid @bordercolor;
-  border-bottom: 3px solid @bordercolorb;
+  border-bottom: 2px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
   background-color: @workspacesbackground1;
   color: @textcolor1;
 }
@@ -182,7 +183,8 @@ tooltip label {
  */
 #appo {
   border: 1px solid @bordercolor;
-  border-bottom: 3px solid @bordercolorb;
+  border-bottom: 2px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
   padding: 0px 3px 0px 1px;
 }
 #appo :hover {
@@ -242,7 +244,8 @@ tooltip label {
   background-color: @backgrounddark;
   color: @textcolor1;
   border: 1px solid @bordercolor;
-  border-bottom: 3px solid @bordercolorb;
+  border-bottom: 2px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
 }
 #submap,
 #mpris {
@@ -347,7 +350,8 @@ tooltip label {
   color: @iconcolor;
   background-color: @workspacesbackground2;
   border: 1px solid @bordercolor;
-  border-bottom: 3px solid @bordercolorb;
+  border-bottom: 2px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
 }
 #tray > :hover {
   color: @tooltiptext;
@@ -396,7 +400,7 @@ tooltip label {
   padding: 0px 9px 0px 9px;
 }
 #pulseaudio.muted {
-  background-color: @backgrounddark;
+  background-color: rgba(200,0,0,0.6);
   color: @textcolor1;
 }
 #wireplumber,
@@ -431,7 +435,8 @@ tooltip label {
 #custom-exit {
   color: @textcolor1;
   border: 1px solid @bordercolor;
-  border-bottom: 3px solid @bordercolorb;
+  border-bottom: 2px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
   padding: 0px 9px 0px 9px;
 }
 #custom-exit:hover {
