@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+my_scripts="$HOME/.config/.scripts"
+
+HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+if [ "$HYPRGAMEMODE" = 1 ]; then
+  hyprctl --batch "\
+        keyword animations:enabled 0;\
+        keyword decoration:shadow:enabled 0;\
+        keyword decoration:blur:enabled 0;\
+        keyword general:gaps_in 0;\
+        keyword general:gaps_out 0;\
+        keyword general:border_size 0;\
+        keyword decoration:rounding 0;\
+        keyword decoration:active_opacity 1;\
+        keyword decoration:inactive_opacity 1;\
+        keyword decoration:fullscreen_opacity 1"
+  pkill swww-daemon
+  pkill waybar
+  notify-send -i "bell" "GAME MODE" "ON"
+  exit
+else
+  swww query || swww-daemon &
+  sleep 1
+  "$my_scripts/ut-wallpaper init &" #Reload gui environment
+  notify-send -i "bell" "GAME MODE" "OFF"
+fi
+hyprctl reload

@@ -398,6 +398,7 @@ tooltip label {
 }
 #pulseaudio {
   padding: 0px 9px 0px 9px;
+/* background-color: @backgroundlight; */
 }
 #pulseaudio.muted {
   background-color: rgba(200,0,0,0.6);
