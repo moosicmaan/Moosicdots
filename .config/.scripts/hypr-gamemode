@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 my_scripts="$HOME/.config/.scripts"
+winrules="$HOME/.config/hypr/winrules"
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then
@@ -17,12 +18,14 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword decoration:fullscreen_opacity 1"
   pkill swww-daemon
   pkill waybar
+  mv $winrules $winrules.bak
   notify-send -i "bell" "GAME MODE" "ON"
   exit
 else
-  swww query || swww-daemon &
-  sleep 1
-  "$my_scripts/ut-wallpaper init &" #Reload gui environment
+  # hypr-barlaunch
+  swww-daemon &
+  "$my_scripts"/hypr-barlaunch &
+  mv $winrules.bak $winrules
   notify-send -i "bell" "GAME MODE" "OFF"
 fi
 hyprctl reload
