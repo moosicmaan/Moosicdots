@@ -9,9 +9,6 @@ return {
         -- refer to the configuration section below
         enabled = true,
       },
-      lazygit = {
-        eneabled = true,
-      },
       picker = {
         sources = {
           buffers = {

@@ -15,7 +15,9 @@
 -- -----------------------------------------------
 -- ===============================================
 
+-- -----------------------------------------------
 -- {{{ Required libraries
+-- -----------------------------------------------
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 -- Standard awesome library
@@ -43,7 +45,9 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi = require("beautiful.xresources").apply_dpi
 -- }}}
 
+-- -----------------------------------------------
 -- {{{ Error handling
+-- -----------------------------------------------
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -94,8 +98,8 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 -- However, you can use another modifier like Mod1, but it may interact with others.
 -- modkey = "Mod4"
 local modkey = "Mod4"
-local altkey = "Mod1"
-local modkey1 = "Control"
+local Alt = "Mod1"
+local Ctrl = "Control"
 
 -- Themes define colours, icons, and wallpapers
 -- beautiful.init("/home/moosicmaan/.config/awesome/themes/blackarch/theme.lua")
@@ -131,7 +135,6 @@ local my_brows = "zen-browser" -- Launch default browser
 local my_brows2 = "firefox" -- Launch alternate browser
 local my_browsv = "qutebrowser" -- Launch VIM-based browser
 local my_email = "thunderbird" -- Launch default email client
-local my_email2 = "bluemail" -- Launch alternate email client
 local my_editg = "geany" -- Launch GUI text editor
 local my_editc = "neovide" -- Launch terminal or console-like text editor
 local my_filesg = "pcmanfm-qt" -- Launch GUI file browser
@@ -151,28 +154,28 @@ local prntscrn = "$my_scripts/ut-screenshot" -- Take a screenshot
 local my_calc = "pkill galculator || galculator" -- Toggle calculator
 
 -- APPLICATION LAUNCHERS AND MENUS
-local logot = "wlogout" -- Launch power menu
-local menu_full = "nwg-drawer -c 7 -is 70 -spacing 20 -ovl" -- Full screen app drawer
-local menu_run = "pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '$ex {cmd}'" -- Launch RUN menu
-local menu_drun = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '$ex {cmd}'" -- Launch DRUN menu
-local menu_win = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show window" -- Launch active window selector
-local menu_files = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser" -- Launch FILEbrowser selector
-local bsearch = "pkill rofi || $my_scripts/rofi-search" -- Start a online search
-local clips = "pkill rofi || $my_scripts/rofi-cliphist" -- Search clipboard history
-local keybs = "pkill rofi || $my_scripts/hypr-keybinds" -- Search keybindings
-local bbooks = "pkill rofi || $my_scripts/rofi-bookmarks" -- Search browser bookmarks
-local my_radio = "pkill rofi || $my_scripts/rofi-beats" -- Rofi Media and Radio Selector
+-- local logot = "wlogout" -- Launch power menu
+-- local menu_full = "nwg-drawer -c 7 -is 70 -spacing 20 -ovl" -- Full screen app drawer
+-- local menu_run = "pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '$ex {cmd}'" -- Launch RUN menu
+-- local menu_drun = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '$ex {cmd}'" -- Launch DRUN menu
+-- local menu_win = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show window" -- Launch active window selector
+-- local menu_files = "pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser" -- Launch FILEbrowser selector
+-- local bsearch = "pkill rofi || $my_scripts/rofi-search" -- Start a online search
+-- local clips = "pkill rofi || $my_scripts/rofi-cliphist" -- Search clipboard history
+-- local keybs = "pkill rofi || $my_scripts/hypr-keybinds" -- Search keybindings
+-- local bbooks = "pkill rofi || $my_scripts/rofi-bookmarks" -- Search browser bookmarks
+-- local my_radio = "pkill rofi || $my_scripts/rofi-beats" -- Rofi Media and Radio Selector
 
 -- ENVIRONMENT ACTIONS
-local bartog = "pkill waybar || $my_scripts/hypr-barlaunch" -- Toggle status bar
-local zoomscrn = "pypr zoom" --"#Zoom the screen toggle
-local rload = "hyprctl reload && $my_scripts/hypr-mon-reload && $my_scripts/ut-wallpaper init" --"#Reload gui environment
-local wallr = "$my_scripts/ut-wallpaper --random" --"#Select random wallpaper
-local barsel = "$my_scripts/hypr-barswitch" --"#Select status bar theme
-local walls = "$my_scripts/ut-wallpaper --select" --"# Select wallpaper
+-- local bartog = "pkill waybar || $my_scripts/hypr-barlaunch" -- Toggle status bar
+-- local zoomscrn = "pypr zoom" --"#Zoom the screen toggle
+-- local rload = "hyprctl reload && $my_scripts/hypr-mon-reload && $my_scripts/ut-wallpaper init" --"#Reload gui environment
+-- local wallr = "$my_scripts/ut-wallpaper --random" --"#Select random wallpaper
+-- local barsel = "$my_scripts/hypr-barswitch" --"#Select status bar theme
+-- local walls = "$my_scripts/ut-wallpaper --select" --"# Select wallpaper
 local kmndext = "$my_scripts/ut-kbd-350" --"#Toggle external keyboard
 local kmndlap = "$my_scripts/ut-kbd-lap" --"#Toggle laptop keyboard
-local visualh = "$my_scripts/hypr-visuals" --"#Toggle visual element themes
+-- local visualh = "$my_scripts/hypr-visuals" --"#Toggle visual element themes
 
 -- MEDIA KEYS
 local volu = "$my_scripts/media-vol --inc"
@@ -425,10 +428,81 @@ globalkeys = awful.util.table.join(
 		end
 	end),
 
-	-- Standard program
+	-- APPLICATIONS
 	awful.key({ modkey }, "Return", function()
-		awful.util.spawn(terminal)
+		awful.util.spawn(my_term)
 	end),
+	awful.key({ modkey }, "t", function()
+		awful.util.spawn(my_term2)
+	end),
+	awful.key({ modkey }, "b", function()
+		awful.util.spawn(my_brows)
+	end),
+	awful.key({ modkey, "Ctrl" }, "b", function()
+		awful.util.spawn(my_brows2)
+	end),
+	awful.key({ modkey }, "o", function()
+		awful.util.spawn(my_browsv)
+	end),
+	awful.key({ modkey, "Ctrl" }, "Return", function()
+		awful.util.spawn(my_email)
+	end),
+	awful.key({ modkey }, "F4", function()
+		awful.util.spawn(my_editg)
+	end),
+	awful.key({ modkey }, "n", function()
+		awful.util.spawn(my_editc)
+	end),
+	awful.key({ modkey, "Shift" }, "Return", function()
+		awful.util.spawn(my_filesg)
+	end),
+	awful.key({ modkey, "Alt" }, "j", function()
+		awful.util.spawn(my_filesc)
+	end),
+	awful.key({ modkey }, "m", function()
+		awful.util.spawn(my_music)
+	end),
+	awful.key({ modkey, "Shift" }, "m", function()
+		awful.util.spawn(my_media)
+	end),
+	awful.key({ modkey }, "F3", function()
+		awful.util.spawn(my_office)
+	end),
+	awful.key({ modkey }, "F5", function()
+		awful.util.spawn(my_image)
+	end),
+	awful.key({ modkey, "Shift" }, "e", function()
+		awful.util.spawn(emacsd)
+	end),
+	awful.key({ modkey }, "e", function()
+		awful.util.spawn(emacsc)
+	end),
+	awful.key({ modkey }, "i", function()
+		awful.util.spawn(emojis)
+	end),
+	awful.key({ modkey }, "F6", function()
+		awful.util.spawn(my_stream)
+	end),
+	awful.key({ modkey }, "a", function()
+		awful.util.spawn(chatgpt)
+	end),
+	awful.key({ "Ctrl", "Alt" }, "t", function()
+		awful.util.spawn(my_mux)
+	end),
+	awful.key({ "Ctrl", "Alt" }, "Delete", function()
+		awful.util.spawn(lockscr)
+	end),
+	awful.key({ modkey }, "Print", function()
+		awful.util.spawn(prntscrn)
+	end),
+	-- awful.key({ modkey }, "X", function()
+	-- 	awful.util.spawn(my_calc)
+	-- end),
+
+	-- Standard program
+	-- awful.key({ modkey }, "Return", function()
+	-- 	awful.util.spawn(terminal)
+	-- end),
 	awful.key({ modkey, "Control" }, "r", awesome.restart),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit),
 
@@ -557,7 +631,30 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
+-- -- {{{ Rules
+-- awful.rules.rules = {
+-- 	-- All clients will match this rule.
+-- 	{
+-- 		rule = {},
+-- 		properties = {
+-- 			border_width = beautiful.border_width,
+-- 			border_color = beautiful.border_normal,
+-- 			focus = awful.client.focus.filter,
+-- 			keys = clientkeys,
+-- 			buttons = clientbuttons,
+-- 		},
+-- 	},
+-- 	{ rule = { class = "MPlayer" }, properties = { floating = true } },
+-- 	{ rule = { class = "pinentry" }, properties = { floating = true } },
+-- 	{ rule = { class = "vlc" }, properties = { floating = true } },
+-- 	-- Set Firefox to always map on tags number 2 of screen 1.
+-- 	-- { rule = { class = "Firefox" },
+-- 	--   properties = { tag = tags[1][2] } },
+-- }
+-- -- }}}
+
 -- {{{ Rules
+-- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
 	-- All clients will match this rule.
 	{
@@ -566,19 +663,163 @@ awful.rules.rules = {
 			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
 			focus = awful.client.focus.filter,
-			keys = clientkeys,
-			buttons = clientbuttons,
+			raise = true,
+			keys = Clientkeys,
+			buttons = Clientbuttons,
+			screen = awful.screen.preferred,
+			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+			size_hints_honor = false,
 		},
 	},
-	{ rule = { class = "MPlayer" }, properties = { floating = true } },
-	{ rule = { class = "pinentry" }, properties = { floating = true } },
-	{ rule = { class = "gimp" }, properties = { floating = true } },
-	-- Set Firefox to always map on tags number 2 of screen 1.
-	-- { rule = { class = "Firefox" },
-	--   properties = { tag = tags[1][2] } },
+
+	-- Titlebars
+	{ rule_any = { type = { "dialog", "normal" } }, properties = { titlebars_enabled = false } },
+	-- Set applications to always map on the tag 2 on screen 1.
+	--{ rule = { class = "Subl" },
+	--properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
+	-- Set applications to always map on the tag 1 on screen 1.
+	-- find class or role via xprop command
+	--{ rule = { class = browser2 },
+	--properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
+
+	--{ rule = { class = browser1 },
+	--properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
+
+	--{ rule = { class = "Vivaldi-stable" },
+	--properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true } },
+
+	--{ rule = { class = "Chromium" },
+	--properties = { screen = 1, tag = awful.util.tagnames[1], switchtotag = true  } },
+
+	--{ rule = { class = "Opera" },
+	--properties = { screen = 1, tag = awful.util.tagnames[1],switchtotag = true  } },
+
+	-- Set applications to always map on the tag 2 on screen 1.
+	--{ rule = { class = "Subl" },
+	--properties = { screen = 1, tag = awful.util.tagnames[2],switchtotag = true  } },
+
+	--{ rule = { class = my_editg },
+	--properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
+	--{ rule = { class = "Brackets" },
+	--properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
+	--{ rule = { class = "Code" },
+	--properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
+	--    { rule = { class = "Geany" },
+	--  properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
+
+	-- Set applications to always map on the tag 3 on screen 1.
+	--{ rule = { class = "Inkscape" },
+	--properties = { screen = 1, tag = awful.util.tagnames[3], switchtotag = true  } },
+
+	-- Set applications to always map on the tag 4 on screen 1.
+	--{ rule = { class = "Gimp" },
+	--properties = { screen = 1, tag = awful.util.tagnames[4], switchtotag = true  } },
+
+	-- Set applications to always map on the tag 5 on screen 1.
+	--{ rule = { class = "Meld" },
+	--properties = { screen = 1, tag = awful.util.tagnames[5] , switchtotag = true  } },
+
+	-- Set applications to be maximized at startup.
+	-- find class or role via xprop command
+
+	{ rule = { class = my_editg }, properties = { maximized = true } },
+
+	{ rule = { class = "Geany" }, properties = { maximized = false, floating = false } },
+
+	-- { rule = { class = "Thunar" },
+	--     properties = { maximized = false, floating = false } },
+
+	{ rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
+
+	{ rule = { class = "Gnome-disks" }, properties = { maximized = true } },
+
+	{ rule = { class = "inkscape" }, properties = { maximized = true } },
+
+	{ rule = { class = my_music }, properties = { maximized = true } },
+
+	{ rule = { class = "Vlc" }, properties = { maximized = true } },
+
+	{ rule = { class = "VirtualBox Manager" }, properties = { maximized = true } },
+
+	{ rule = { class = "VirtualBox Machine" }, properties = { maximized = true } },
+
+	--    { rule = { class = "Vivaldi-stable" },
+	--          properties = { maximized = false, floating = false } },
+
+	--    { rule = { class = "Vivaldi-stable" },
+	--          properties = { callback = function (c) c.maximized = false end } },
+
+	--IF using Vivaldi snapshot you must comment out the rules above for Vivaldi-stable as they conflict
+	--    { rule = { class = "Vivaldi-snapshot" },
+	--          properties = { maximized = false, floating = false } },
+
+	--    { rule = { class = "Vivaldi-snapshot" },
+	--          properties = { callback = function (c) c.maximized = false end } },
+
+	{ rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
+
+	-- Floating clients.
+	{
+		rule_any = {
+			instance = {
+				"DTA", -- Firefox addon DownThemAll.
+				"copyq", -- Includes session name in class.
+			},
+			class = {
+				"Arandr",
+				"Blueberry",
+				"Galculator",
+				"Gnome-font-viewer",
+				"Gpick",
+				"Imagewriter",
+				"Font-manager",
+				"Kruler",
+				"MessageWin", -- kalarm.
+				"archlinux-logout",
+				"Peek",
+				"Skype",
+				"System-config-printer.py",
+				"Sxiv",
+				"Unetbootin.elf",
+				"Wpa_gui",
+				"pinentry",
+				"veromix",
+				"xtightvncviewer",
+				"Xfce4-terminal",
+			},
+
+			name = {
+				"Event Tester", -- xev.
+			},
+			role = {
+				"AlarmWindow", -- Thunderbird's calendar.
+				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+				"Preferences",
+				"setup",
+			},
+		},
+		properties = { floating = true },
+	},
+
+	-- Floating clients but centered in screen
+	{
+		rule_any = {
+			class = {
+				"Polkit-gnome-authentication-agent-1",
+				"Arcolinux-calamares-tool.py",
+			},
+		},
+		properties = { floating = true },
+		callback = function(c)
+			awful.placement.centered(c, nil)
+		end,
+	},
 }
 -- }}}
-
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c, startup)
