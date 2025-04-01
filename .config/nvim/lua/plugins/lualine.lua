@@ -5,10 +5,10 @@ return {
     local opts = {
       options = {
         -- theme = "powerline_dark",
-        theme = "pywal",
+        -- theme = "pywal",
         -- theme = "codedark",
         -- theme = "gruvbox",
-        -- theme = "ayu_dark",
+        theme = "ayu_dark",
         -- theme = "moonfly",
         -- theme = "papercolor_dark",
         globalstatus = vim.o.laststatus == 3,

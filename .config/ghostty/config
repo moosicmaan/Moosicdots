@@ -7,7 +7,9 @@ window-decoration = false
 window-padding-balance = true
 # theme = "GruvboxLight"
 # theme = "UltraDark"
-theme = "FunForrest"
+# theme = "FunForrest"
+# theme = "RetroLegends"
+theme = "Cobalt Neon"
 # theme = "ForestBlue"
 confirm-close-surface = false
 
