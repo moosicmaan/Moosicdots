@@ -15,6 +15,7 @@ if [[ -z "$BA_CATS" ]]; then
 fi
 
 # User selects category
+clear
 CAT_SEL=$(echo "$BA_CATS" | sort | fzf \
   --tmux 80% \
   --preview 'pacman -Sg {} | awk "{print \$2}" | column' \
@@ -35,6 +36,7 @@ if [[ -z "$CAT_APPS" ]]; then
 fi
 
 # User selects app
+clear
 APP_SEL=$(echo "$CAT_APPS" | sort | fzf \
   --tmux 80% \
   --preview 'pacman -Si {}' \

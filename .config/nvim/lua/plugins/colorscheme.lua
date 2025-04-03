@@ -9,12 +9,13 @@ return {
   { "daltonmenezes/aura-theme", name = "aura", lazy = false, priority = 1000 },
   { "projekt0n/github-nvim-theme", name = "gitbub-theme", lazy = false, priority = 1000 },
   { "ayaz-amin/cyberpunk.nvim", name = "cyberpunk", lazy = false, priority = 1000 },
+  { "scottmckendry/cyberdream.nvim", name = "cyberdream", lazy = false, priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "moonfly",
-      -- colorscheme = "cyberpunk",
+      -- colorscheme = "cyberdream",
       -- colorscheme = "abscs",
       colorscheme = "nightfly",
       -- colorscheme = "kanagawa",

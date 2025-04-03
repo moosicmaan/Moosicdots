@@ -7,20 +7,21 @@ static const unsigned int gappiv    = 8;      /* vert inner gap between windows 
 static const unsigned int gappoh    = 8;      /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 8;      /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;      /* 1 means no outer gap when there is only one window */
-static const unsigned int systraypinning = 1; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2; /* systray spacing */
-static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;      /* 0 means no systray */
 static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
+static const unsigned int systraypinning = 1; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 2; /* systray spacing */
+static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor,
+                                                 False: display systray on the last monitor*/
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
-static const char col_1[]           = "#1b3b53";
+static const char col_1[]           = "#2c3043";
 static const char col_2[]           = "#ff5874";
 static const char col_3[]           = "#b2ceee";
 static const char col_4[]           = "#82aaff";
-static const char col_cyan[]        = "#011516";
+static const char col_cyan[]        = "#081e2f";
 static const char col_white[]       = "#21c7a8";
 static const char col_accent[]      = "#a1cd5e";
 static const char col_pinned[]      = "#ae81ff";
@@ -86,11 +87,11 @@ static const Layout layouts[] = {
 #define HYPER (Mod1Mask|ControlMask|ShiftMask|Mod4Mask)
 
 #define TAGKEYS(KEY,TAG) \
-  &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
-  &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
-  &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
-  &((Keychord){1, {{MEH, KEY}},                                           tag,            {.ui = 1 << TAG} }), \
-  &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},                  toggletag,      {.ui = 1 << TAG} }),
+  &((Keychord){1, {{MODKEY, KEY}},                          view,           {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ControlMask, KEY}},              toggleview,     {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                tag,            {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MEH, KEY}},                             tag,            {.ui = 1 << TAG} }), \
+  &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},    toggletag,      {.ui = 1 << TAG} }),
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -100,9 +101,9 @@ static const Layout layouts[] = {
 /* APPLICATIONS */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",
-    dmenumon, "-fn", dmenufont, "-nb",
-    col_1, "-nf", col_3, "-sb", col_cyan, "-sf", col_4, 
+    "dmenu_run",
+    "-m", dmenumon, "-fn", dmenufont,
+    "-nb", col_1, "-nf", col_3, "-sb", col_cyan, "-sf", col_4, 
     NULL
 };
 static const char *termcmd[]  = { "kitty", NULL };
@@ -158,9 +159,7 @@ static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
-static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", 
-    NULL
-};
+static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 
 static Keychord *keychords[] = {
   /*                             Keys                     function        argument */
