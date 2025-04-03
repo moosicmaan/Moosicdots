@@ -110,6 +110,10 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 alias ec="emacsclient -c -a 'emacs' &"
 export PATH="$HOME/.config/.scripts:$PATH"
 alias config="cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
+# play local music and net radio
+alias jam="~/.config/.scripts/rofi-beats"
+# search/install/run blackarch packages - cli
+alias black="~/.config/.scripts/ut-blackmenu"
 
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

@@ -238,8 +238,10 @@ end
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias ec "emacsclient -c -a 'emacs' &"
+# play local music and net radio
 alias jam rofi-beats
-
+# search/install/run blackarch packages - cli
+alias black "$HOME/.config/.scripts/ut-blackmenu"
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
 

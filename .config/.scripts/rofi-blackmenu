@@ -1,17 +1,47 @@
 #!/usr/bin/bash
 
-BA_CATS=$(pacman -Sg | grep blackarch)
+# Ensure pacman is accessible
+if ! command -v pacman &>/dev/null; then
+  echo "Error: pacman not found. Make sure you're running this on an Arch-based system."
+  exit 1
+fi
 
+# Get BlackArch categories
+BA_CATS=$(pacman -Sg | grep blackarch || true)
+
+if [[ -z "$BA_CATS" ]]; then
+  echo "Error: No BlackArch categories found. Make sure the repository is enabled."
+  exit 1
+fi
+
+# User selects category
 CAT_SEL=$(echo "$BA_CATS" | sort | rofi -dmenu -config "$HOME/.config/rofi/config.rasi")
 
+if [[ -z "$CAT_SEL" ]]; then
+  echo "No category selected. Exiting."
+  exit 1
+fi
+
+# Get apps in selected category
 CAT_APPS=$(pacman -Sg "$CAT_SEL" | awk '{print $2}' | xargs -r pacman -Si | awk -F ': ' '/^Name/ {name=$2} /^Description/ {print name ": " $2}')
 
+if [[ -z "$CAT_APPS" ]]; then
+  echo "Error: No apps found in the selected category."
+  exit 1
+fi
+
+# User selects app
 APP_SEL=$(echo "$CAT_APPS" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi")
+
+if [[ -z "$APP_SEL" ]]; then
+  echo "No app selected. Exiting."
+  exit 1
+fi
 
 APP_NAME=$(echo "$APP_SEL" | awk -F ': ' '{print $1}')
 
 if pacman -Q "$APP_NAME" &>/dev/null; then
-  "$APP_NAME"
+  kitty -e sh -c "$APP_NAME; bash"
 else
-  kitty -e sh -c "sudo pacman -S $APP_NAME"
+  kitty -e sh -c "sudo pacman -S $APP_NAME; bash"
 fi
