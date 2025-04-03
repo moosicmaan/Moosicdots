@@ -1,0 +1,90 @@
+#!/usr/bin/bash
+
+# Ensure pacman is accessible
+if ! command -v pacman &>/dev/null; then
+  echo "Error: pacman not found. Make sure you're running this on an Arch-based system."
+  exit 1
+fi
+
+# Get BlackArch categories
+BA_CATS=$(pacman -Sg | grep blackarch || true)
+
+if [[ -z "$BA_CATS" ]]; then
+  echo "Error: No BlackArch categories found. Make sure the repository is enabled."
+  exit 1
+fi
+
+# User selects category
+CAT_SEL=$(echo "$BA_CATS" | sort | fzf \
+  --tmux 80% \
+  --preview 'pacman -Sg {} | awk "{print \$2}" | column' \
+  --preview-window 'right,80%,wrap' \
+  --border-label '╢ Pick A Category ╟')
+
+if [[ -z "$CAT_SEL" ]]; then
+  echo "No category selected. Exiting."
+  exit 1
+fi
+
+# Get apps in selected category
+CAT_APPS=$(pacman -Sg "$CAT_SEL" | awk '{print $2}' || true)
+
+if [[ -z "$CAT_APPS" ]]; then
+  echo "Error: No apps found in the selected category."
+  exit 1
+fi
+
+# User selects app
+APP_SEL=$(echo "$CAT_APPS" | sort | fzf \
+  --tmux 80% \
+  --preview 'pacman -Si {}' \
+  --preview-window 'right,80%,wrap' \
+  --border-label '╢ Pick An App ╟')
+
+if [[ -z "$APP_SEL" ]]; then
+  echo "No app selected. Exiting."
+  exit 1
+fi
+
+clear
+
+APP_NAME="$APP_SEL" # No need for awk parsing anymore
+
+# Check if the app is already installed
+if pacman -Q "$APP_NAME" &>/dev/null; then
+  APP_DETAILS=$(pacman -Qi "$APP_NAME")
+  printf "%s is already installed:" "$APP_NAME"
+  printf "\n\n%s" "$APP_DETAILS"
+  printf "\n\nDo you want to run it?\n[Press Enter to run, or type N to cancel]: "
+
+  read -r REPLY
+  if [[ -z "$REPLY" || "$REPLY" =~ ^[Yy]$ ]]; then
+    clear
+    "$APP_NAME" &
+    # "$APP_NAME" &>/dev/null &
+    exit 0
+  else
+    exit 69
+  fi
+else
+  # Fetch package info
+  if ! APP_DETAILS=$(pacman -Si "$APP_NAME" 2>/dev/null); then
+    echo "Error: Package '$APP_NAME' not found in the repositories."
+    exit 1
+  fi
+
+  printf "%s is not installed:" "$APP_NAME"
+  printf "\n\n%s" "$APP_DETAILS"
+  printf "\n\nDo you want to install it?\n[Press Enter to install, or type N to cancel]: "
+
+  read -r REPLY
+  if [[ -z "$REPLY" || "$REPLY" =~ ^[Yy]$ ]]; then
+    if ! sudo pacman -S "$APP_NAME"; then
+      echo "Error: Installation of '$APP_NAME' failed."
+      exit 1
+    fi
+    exit 0
+  else
+    exit 69
+  fi
+fi

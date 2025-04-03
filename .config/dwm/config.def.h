@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx  = 2;      /* border pixel of windows */
 static const unsigned int snap      = 32;     /* snap pixel */
@@ -9,7 +8,7 @@ static const unsigned int gappoh    = 8;      /* horiz outer gap between windows
 static const unsigned int gappov    = 8;      /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;      /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 1; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft = 0;  /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2; /* systray spacing */
 static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;      /* 0 means no systray */
@@ -17,18 +16,18 @@ static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
-static const char col_gray1[]       = "#0c2a42";
-static const char col_gray2[]       = "#ff5874";
-static const char col_gray3[]       = "#b2ceee";
-static const char col_gray4[]       = "#82aaff";
+static const char col_1[]           = "#1b3b53";
+static const char col_2[]           = "#ff5874";
+static const char col_3[]           = "#b2ceee";
+static const char col_4[]           = "#82aaff";
 static const char col_cyan[]        = "#011516";
 static const char col_white[]       = "#21c7a8";
-static const char col_accent[]       = "#a1cd5e";
-static const char col_pinned[]       = "#ae81ff";
+static const char col_accent[]      = "#a1cd5e";
+static const char col_pinned[]      = "#ae81ff";
 static const char *colors[][3]      = {
-/*               fg         bg         border   */
-[SchemeNorm] = { col_gray3, col_cyan, col_gray2 },
-[SchemeSel]  = { col_gray4, col_cyan,  col_white  },
+/*               fg         bg     border   */
+[SchemeNorm] = { col_3, col_cyan, col_2 },
+[SchemeSel]  = { col_4, col_cyan, col_white  },
 };
 
 static const char *const autostart[] = {
@@ -38,14 +37,16 @@ static const char *const autostart[] = {
 
 static const char *tagsel[][2] = {
    /*   fg         bg    */
-  { col_gray3, col_cyan },                   /* norm */
-  { col_gray1, col_accent },                 /* sel */
-  { col_gray1,  col_gray3 },                  /* occ but not sel */
-  { col_gray1,  col_pinned },                 /* has pinned tag */
+  { col_3,     col_cyan },                    /* norm */
+  { col_1,   col_accent },                    /* sel */
+  { col_1,        col_3 },                    /* occ but not sel */
+  { col_1,   col_pinned },                    /* has pinned tag */
 };
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
+// static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
+// static const char *tags[] = { "󰫮", "󰫱", "󰫴", "󰫷", "M", "󰫽", "󰬀", "󰬃", "󰬇" };
 
 static const Rule rules[] = {
 /* xprop(1):
@@ -71,16 +72,11 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
-	//  { "[]=",      tile },                       /* first entry is default */
-	//  { "><>",      NULL },                       /* no layout function means floating behavior */
-	//  { "[M]",      monocle },                    /* only one visable window per tag */
-	//  { "[@]",      spiral },                     /* much like hyprland*/
-	//  { "[\\]",     dwindle },                    /* smaller to the SE*/
-  { "󰜵",      tile },                         /* first entry is default */
-	{ "󰘷",      NULL },                         /* no layout function means floating behavior */
-  { "",      monocle },                      /* only one visable window per tag */
-  { "󰁥",      spiral },                       /* much like hyprland*/
-  { "",     dwindle },                       /* smaller to the SE*/
+  { "󰝤󰕱",      tile },                        /* []=first entry is default */
+	{ "󰉧󰉨",      NULL },                        /* ><>no layout function means floating behavior */
+  { "",      monocle },                      /* [M]only one visable window per tag */
+  { "󰝤󰁥",      spiral },                      /* [@]much like hyprland*/
+  { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
 };
 
 /* key definitions */
@@ -89,7 +85,7 @@ static const Layout layouts[] = {
 #define MEH (Mod1Mask|ControlMask|ShiftMask)
 #define HYPER (Mod1Mask|ControlMask|ShiftMask|Mod4Mask)
 
-#define TAGKEYS(KEY,TAG)                                                                                               \
+#define TAGKEYS(KEY,TAG) \
   &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
   &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
   &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
@@ -103,7 +99,12 @@ static const Layout layouts[] = {
 
 /* APPLICATIONS */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = {
+    "dmenu_run", "-m",
+    dmenumon, "-fn", dmenufont, "-nb",
+    col_1, "-nf", col_3, "-sb", col_cyan, "-sf", col_4, 
+    NULL
+};
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *my_term2[] = { "ghostty", NULL };
 static const char *browscmd[]  = { "zen-browser", NULL };
@@ -112,8 +113,16 @@ static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "drun", NULL };
-static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi", "-show", "window", NULL };
+static const char *menu_drun[] = { 
+    "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "-show", "drun", 
+    NULL 
+};
+static const char *menu_win[] = { 
+    "rofi","-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "-show", "window", 
+    NULL
+};
 static const char *my_music[] = { "spotube", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
@@ -123,10 +132,16 @@ static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
 static const char *varip[] = { "variety", "-p", NULL };
-static const char *rofi_power[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", "-show", "powermenu", "-modi", "powermenu:~/.config/.scripts/rofi-power", NULL };
+static const char *rofi_power[] = { 
+    "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", 
+    "-show", "powermenu", 
+    "-modi", "powermenu:~/.config/.scripts/rofi-power", 
+    NULL 
+};
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
+static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 
 /*MEDIA KEYS*/
 #include <X11/XF86keysym.h>
@@ -142,8 +157,10 @@ static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "-
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
+static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", 
+    NULL
+};
 
 static Keychord *keychords[] = {
   /*                             Keys                     function        argument */
@@ -156,6 +173,7 @@ static Keychord *keychords[] = {
  
   /****APPLICATIONS****/
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
+	&((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
@@ -232,11 +250,11 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
-	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }),
-	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }),
-	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }),
-	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }),
-	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }),
+	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
+	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
+	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
+	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
+	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
 	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),

@@ -9,7 +9,8 @@ window-padding-balance = true
 # theme = "UltraDark"
 # theme = "FunForrest"
 # theme = "RetroLegends"
-theme = "Cobalt Neon"
+# theme = "Cobalt Neon"
+theme = "HaX0R_GR33N"
 # theme = "ForestBlue"
 confirm-close-surface = false
 
