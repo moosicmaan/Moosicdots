@@ -131,7 +131,7 @@ alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ F
 alias nf='nvim $(ff)'
 # alias np='nvim $(ft)'
 
-# bind \co ranger-cd
+# bind \co yasi cd
 bind '"/C-y":yy'
 bind '"/C-f":ff'
 bind '"/C-j":nf'

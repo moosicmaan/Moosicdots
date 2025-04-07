@@ -48,7 +48,7 @@ static const MonitorRule monrules[] = {
 	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	*/
 	/* defaults */
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ NULL,       0.5f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
 
 /* keyboard */
@@ -60,7 +60,7 @@ static const struct xkb_rule_names xkb_rules = {
 	.options = "caps:escape_shifted_capslock",
 };
 
-static const int repeat_rate = 95;
+static const int repeat_rate = 99;
 static const int repeat_delay = 300;
 
 /* Trackpad */
@@ -122,14 +122,14 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const char *termcmd[] = { "kitty", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *browscmd[]  = { "zen-browser", NULL };
-static const char *my_term2[] = { "kitty", NULL };
+static const char *my_term2[] = { "ghostty", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "pcmanfm-qt", NULL };
 static const char *my_filesc[] = { "kitty", "-e", "yazi", NULL };
-static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config-raa.rasi", "-show", "drun", NULL };
+static const char *menu_drun[] = { "rofi", "-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "drun", NULL };
 static const char *menu_win[] = { "rofi","-config", "/home/moosicmaan/.config/rofi/config.rasi", "-show", "window", NULL };
 static const char *my_music[] = { "spotube", NULL };
 static const char *my_media[] = { "vlc", NULL };
@@ -158,8 +158,8 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,          togglebar,      {0} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
-	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
-	{ MODKEY,                    XKB_KEY_d,          incnmaster,     {.i = -1} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_i,          incnmaster,     {.i = +1} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_d,          incnmaster,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_h,          setmfact,       {.f = -0.05f} },
 	{ MODKEY,                    XKB_KEY_l,          setmfact,       {.f = +0.05f} },
 	{ MODKEY,                    XKB_KEY_z,          zoom,           {0} },

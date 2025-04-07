@@ -86,8 +86,8 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc           nlck kp/  kp*  kp-
   tab   @qdr @wsm @efc @lmh t    y    @rmh @ifc @osm @pdr [    ]    \             7    8    9    kp+
   caps   @lsh @lct @lmt @lat @lhr h    j    k    l    @rsh @tsm ret               4    5    6
-  lsft    z    x    c    v    b    @rhr @rat @rmt @rct /    rsft       up         1    2    3    kprt
-  lctl   rmet lmet lalt          spc           ralt   cmp   rctl  left down rght  kp0       kp.
+  lsft    z    @xmd c    v    b    @rhr @rat @rmt @rct /    rsft       up         1    2    3    ret
+  lctl   rmet lmet lalt          spc           ralt   cmp   rctl  left down rght  0         .
 )
 
 (deflayer symbols

@@ -1,4 +1,15 @@
-/* See LICENSE file for copyright and license details. */
+/* =====================================================
+   -----------------------------------------------------
+   |        D W M  C O N F I G U R A T I O N           |
+   |          .config/dwm/config.def.h                 |
+   |Copy this configuration to config.h to make changes|
+   |       to UI. Temp changes to config.h only.       |
+   |See LICENSE file for copyright and license details.|
+   |          Jason Bradberry, 2024                    |
+   -----------------------------------------------------
+   =====================================================
+*/
+
 /* appearance */
 static const unsigned int borderpx  = 2;      /* border pixel of windows */
 static const unsigned int snap      = 32;     /* snap pixel */
