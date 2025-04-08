@@ -11,7 +11,8 @@
 # =====================================================
 
 # Directory local music folder
-mDIR="$HOME/Music/Spotube/"
+mDIR="$HOME/Music/Offline/"
+pDIR="$HOME/Music/Playlists/"
 
 # Directory for icons
 iDIR="/usr/share/icons/candy-icons/status/scalable/"
@@ -90,6 +91,14 @@ shuffle_local_music() {
   eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no $mDIR"
 }
 
+# Main function for shuffling easy listening music
+shuffle_easy_music() {
+  notification "Shuffle Play Local Easy Listening"
+
+  # Play music in $mDIR on shuffle
+  eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no $pDIR"
+}
+
 # Main function for playing online music
 play_online_music() {
   choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Online Music")
@@ -112,7 +121,7 @@ play_online_music() {
 pkill mpv && notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music stopped" || {
 
   # Prompt the user to choose between local and online music
-  user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/config-wide.rasi -p "Select music source")
+  user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder\nShuffle Local Easy Listening" | rofi -dmenu -config ~/.config/rofi/config-wide.rasi -p "Select music source")
   # user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Select music source")
 
   case "$user_choice" in
@@ -124,6 +133,9 @@ pkill mpv && notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music sto
     ;;
   "Shuffle Play from Music Folder")
     shuffle_local_music
+    ;;
+  "Shuffle Local Easy Listening")
+    shuffle_easy_music
     ;;
   *)
     echo "Invalid choice"

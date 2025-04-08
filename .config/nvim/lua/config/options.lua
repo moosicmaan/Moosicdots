@@ -5,6 +5,7 @@
 -- JDB --> my changes/additions
 local opt = vim.opt
 opt.wrap = true -- Disable line wrap
+opt.termguicolors = true
 opt.breakindent = true -- wrapped line repeats indent
 opt.colorcolumn = "120"
 opt.lisp = true -- automatic indenting for Lisp

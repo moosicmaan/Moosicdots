@@ -179,7 +179,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{MODKEY|AltMask,               XK_j}}, togglescratch,  {.v = yazi_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_p}}, togglescratch,  {.v = moosic_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_l}}, togglescratch,  {.v = btop_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_v}}, togglescratch,  {.v = volume_scratch } }),
+	&((Keychord){1, {{MODKEY|AltMask,               XK_x}}, togglescratch,  {.v = volume_scratch } }),
  
   /****APPLICATIONS****/
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
@@ -256,24 +256,24 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_d}}, incnmaster,     {.i = -1 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_h}}, setmfact,       {.f = -0.05} }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_l}}, setmfact,       {.f = +0.05} }),
-	&((Keychord){1, {{AltMask,                      XK_s}}, zoom,           {0} }),
-	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
-	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
-	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
-	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
-	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
-	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
-	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
-	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
-	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
-	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_0}}, tag,            {.ui = ~0 } }),
 	&((Keychord){1, {{MODKEY,                   XK_comma}}, focusmon,       {.i = -1 } }),
 	&((Keychord){1, {{MODKEY,                  XK_period}}, focusmon,       {.i = +1 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,         XK_comma}}, tagmon,         {.i = -1 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,        XK_period}}, tagmon,         {.i = +1 } }),
+	&((Keychord){1, {{AltMask,                      XK_s}}, zoom,           {0} }),
+	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
+	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
+	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
+	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
+	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
+	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
+	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
+	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
+	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
+	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
+	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
 
   /****DWM ACTIONS****/
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_r}}, quit,           {1} }),
