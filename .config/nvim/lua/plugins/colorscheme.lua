@@ -1,15 +1,16 @@
 return {
   -- Extra themes
-  { "ellisonleao/gruvbox.nvim", name = "gruvbox", lazy = false, priority = 1000 },
-  { "rebelot/kanagawa.nvim", name = "kanagawa", lazy = false, priority = 1000 },
-  { "edeneast/nightfox.nvim", name = "nightfox", lazy = false, priority = 1000 },
-  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-  { "abstract-ide/abstract-cs", name = "abstract", lazy = false, priority = 1000 },
-  { "daltonmenezes/aura-theme", name = "aura", lazy = false, priority = 1000 },
-  { "projekt0n/github-nvim-theme", name = "gitbub-theme", lazy = false, priority = 1000 },
-  { "ayaz-amin/cyberpunk.nvim", name = "cyberpunk", lazy = false, priority = 1000 },
-  { "scottmckendry/cyberdream.nvim", name = "cyberdream", lazy = false, priority = 1000 },
+  { "ellisonleao/gruvbox.nvim", name = "gruvbox", lazy = true, priority = 5000 },
+  { "rebelot/kanagawa.nvim", name = "kanagawa", lazy = true, priority = 5000 },
+  { "edeneast/nightfox.nvim", name = "nightfox", lazy = true, priority = 5000 },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = true, priority = 5000 },
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true, priority = 5000 },
+  { "abstract-ide/abstract-cs", name = "abstract", lazy = true, priority = 5000 },
+  { "daltonmenezes/aura-theme", name = "aura", lazy = true, priority = 5000 },
+  { "projekt0n/github-nvim-theme", name = "gitbub-theme", lazy = true, priority = 5000 },
+  { "ayaz-amin/cyberpunk.nvim", name = "cyberpunk", lazy = true, priority = 5000 },
+  { "scottmckendry/cyberdream.nvim", name = "cyberdream", lazy = true, priority = 5000 },
+  { "alphaTechnolog/pywal.nvim", name = "pywal", laxy = true, priority = 5000 },
   {
     "LazyVim/LazyVim",
     opts = {

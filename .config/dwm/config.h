@@ -119,8 +119,8 @@ static const char *dmenucmd[] = {
 };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *my_term2[] = { "ghostty", NULL };
-static const char *browscmd[]  = { "zen-browser", NULL };
-static const char *my_browsv[] = { "qutebrowser", NULL };
+static const char *browscmd[]  = { "brave", NULL };
+static const char *my_browsv[] = { "zen-browser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "geany", NULL };
 static const char *my_editc[] = { "neovide", NULL };

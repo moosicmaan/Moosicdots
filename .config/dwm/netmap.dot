@@ -1,0 +1,3 @@
+digraph "NetMap" { 
+   node [ color = red, shape=triangle, label="Invalid\nhost", style=filled ];
+}
