@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 # =====================================================
 # -----------------------------------------------------
 # From: I cannot remember where I got this script from.
@@ -48,4 +48,5 @@ else
   icon="🔈️ "
 fi
 
-display "$icon$volume%"
+display "| $icon$volume%"
+# echo -e "| \x04$icon$volume%"

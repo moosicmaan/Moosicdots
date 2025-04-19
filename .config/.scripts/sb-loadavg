@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 # =====================================================
 # -----------------------------------------------------
 # From: I cannot remember where I got this script from.
@@ -26,4 +26,5 @@ is_threshold_exceeded="$(echo "$load > $THRESHOLD" | bc)"
 [ "$is_threshold_exceeded" -eq 1 ] && color=9
 
 . "$HOME"/.config/.scripts/sb-theme
-display " $load" "$color"
+display "$load" "$color"
+# echo -e "\x03$load" "\x04$color"

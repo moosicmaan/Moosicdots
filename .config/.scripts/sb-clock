@@ -50,4 +50,6 @@ case $BLOCK_BUTTON in
 esac
 
 # date "+%Y %b %d (%a) $icon %I:%M%p"
-date "+%a, %b %d $icon %I:%M%p"
+# date "+%a, %b %d $icon %I:%M%p"
+icon="🕒"
+printf "| %s %s %s\n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p')"

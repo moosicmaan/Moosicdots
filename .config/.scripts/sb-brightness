@@ -27,4 +27,4 @@ case $BLOCK_BUTTON in
   ;;
 esac
 
-echo "💡 ${brightness_per}%"
+echo "|💡 ${brightness_per}%"

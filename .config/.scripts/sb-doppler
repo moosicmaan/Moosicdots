@@ -289,4 +289,4 @@ After $secs seconds, new clicks will also automatically update the doppler RADAR
 6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-echo 🌅
+echo "🌅"

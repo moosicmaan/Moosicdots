@@ -57,7 +57,7 @@ case $BLOCK_BUTTON in
 # 1)
 #   cat /home/moosicmaan/.cache/weatherreport >/tmp/debug_weather
 #   setsid -f kitty -T weatherreport sh -c "less -R /tmp/debug_weather"
-#   ;;
+#N   ;;
 2) checkforecast || getforecast && showweather ;;
 3) notify-send "🌈 Weather module" "\- Left click for full forecast.
 - Middle click to update forecast.

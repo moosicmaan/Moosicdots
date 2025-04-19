@@ -46,6 +46,8 @@
   hypr  C-A-M-S                           ;; HYPER key
   meh   C-A-S                             ;; MEH key
 
+  now   Media
+
   lsh (tap-hold-next-release 200 a lsft)  ;; SHIFT(hold) and a(tap) key
   lct (tap-hold-next-release 200 s lctl)  ;; CTRL and s key
   lmt (tap-hold-next-release 200 d lmet)  ;; SUPER and d key
@@ -141,6 +143,6 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _          _    _    _    _
   _     _    _    _    _    _    _    _    _    mute pp   _    _    _    _    _          _    _    _    _
   _      _    _    del  _    _    prev vold volu next ret  _    _             _          _    _    _
-  _       _    _    _    _    _    _    _    _    _    _    _                 _          _    _    _    _
+  _       _    _    _    _    _    @now _    _    _    _    _                 _          _    _    _    _
   _      _       _              bspc           _      _     _            _    _    _     _         _
 )

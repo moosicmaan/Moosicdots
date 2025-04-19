@@ -32,14 +32,14 @@ static const char col_1[]           = "#2c3043";
 static const char col_2[]           = "#ff5874";
 static const char col_3[]           = "#b2ceee";
 static const char col_4[]           = "#82aaff";
-static const char col_cyan[]        = "#081e2f";
-static const char col_white[]       = "#21c7a8";
+static const char col_bg[]          = "#081e2f";
+static const char col_border[]      = "#21c7a8";
 static const char col_accent[]      = "#a1cd5e";
 static const char col_pinned[]      = "#ae81ff";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
-[SchemeNorm] = { col_3, col_cyan, col_2 },
-[SchemeSel]  = { col_4, col_cyan, col_white  },
+[SchemeNorm] = { col_3,   col_bg,   col_2 },
+[SchemeSel]  = { col_4,   col_bg,   col_border },
 };
 
 static const char *const autostart[] = {
@@ -48,11 +48,11 @@ static const char *const autostart[] = {
 };
 
 static const char *tagsel[][2] = {
-   /*   fg         bg    */
-  { col_3,     col_cyan },                    /* norm */
-  { col_1,   col_accent },                    /* sel */
-  { col_1,        col_3 },                    /* occ but not sel */
-  { col_1,   col_pinned },                    /* has pinned tag */
+ /*   fg         bg    */
+  { col_3,      col_bg },                         /* norm */
+  { col_1,      col_accent },                     /* sel */
+  { col_1,      col_3 },                          /* occ but not sel */
+  { col_1,      col_pinned },                     /* has pinned tag */
 };
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -114,7 +114,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = {
     "dmenu_run",
     "-m", dmenumon, "-fn", dmenufont,
-    "-nb", col_1, "-nf", col_3, "-sb", col_cyan, "-sf", col_4, 
+    "-nb", col_1, "-nf", col_3, "-sb", col_bg, "-sf", col_4, 
     NULL
 };
 static const char *termcmd[]  = { "kitty", NULL };
@@ -164,6 +164,7 @@ static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--
 static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--nxt", NULL };
 static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--prv", NULL };
+static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--now", NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
@@ -185,7 +186,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
-	&((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
 	&((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
@@ -210,6 +211,7 @@ static Keychord *keychords[] = {
   /****MEDIA KEYS****/
 	&((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
 	&((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
+	&((Keychord){1, {{0,               XF86XK_AudioMedia}}, spawn,          {.v = mnow } }),
 	&((Keychord){1, {{0,                XF86XK_AudioMute}}, spawn,          {.v = volt } }),
 	&((Keychord){1, {{0,                XF86XK_AudioPlay}}, spawn,          {.v = mpp } }),
 	&((Keychord){1, {{0,                XF86XK_AudioStop}}, spawn,          {.v = mstop } }),

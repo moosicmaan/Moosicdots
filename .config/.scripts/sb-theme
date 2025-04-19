@@ -1,28 +1,30 @@
 #!/bin/sh
 # =====================================================
 # -----------------------------------------------------
+# Utility functions for theming statusbar scripts.
 # From: I cannot remember where I got this script from.
 # Utility functions for theming statusbar scripts.
 #     Modified by: Jason Bradberry (2024)
+#     ...does not currently work - not passing in arguments from other scripts.
 # -----------------------------------------------------
 # =====================================================
-
 display() {
   if [ -n "$2" ]; then
     color="$2"
   else
     case "$(basename "$0")" in
-    sb-music) color="FFFFF0" ;;
-    sb-disk) color="FFFF00" ;;
-    sb-memory) color="FFF000" ;;
-    sb-loadavg) color="FF0000" ;;
-    sb-mic) color="F00000" ;;
-    sb-record) color="999999" ;;
-    sb-volume) color="999990" ;;
-    sb-battery) color="888FF0" ;;
-    sb-date) color="999FF0" ;;
-    sb-network) color="99FFF0" ;;
-    *) color="FFFFFF" ;;
+    sb-mail) color=13 ;;
+    sb-music) color=14 ;;
+    sb-disk) color=10 ;;
+    sb-memory) color=15 ;;
+    sb-loadavg) color=11 ;;
+    sb-mic) color=9 ;;
+    sb-record) color=9 ;;
+    sb-volume) color=15 ;;
+    sb-battery) color=14 ;;
+    sb-date) color=12 ;;
+    sb-network) color=9 ;;
+    *) color=15 ;;
     esac
   fi
 

@@ -21,12 +21,12 @@
 #define BLOCKS(X)             \
     X("", "$HOME/.config/.scripts/sb-music", 10, 2) \
     X("", "$HOME/.config/.scripts/sb-volume", 0, 8)  \
+    X("", "$HOME/.config/.scripts/sb-brightness", 0, 1) \
+    X("", "$HOME/.config/.scripts/sb-battery", 60, 6) \
     X("", "$HOME/.config/.scripts/sb-internet", 10, 12) \
     X("", "$HOME/.config/.scripts/sb-disk", 1800, 3) \
     X("", "$HOME/.config/.scripts/sb-memory", 10, 4) \
     X("", "$HOME/.config/.scripts/sb-loadavg", 600, 5) \
-    X("", "$HOME/.config/.scripts/sb-battery", 60, 6) \
-    X("", "$HOME/.config/.scripts/sb-brightness", 0, 1) \
     X("", "$HOME/.config/.scripts/sb-moonphase", 1900, 7) \
     X("", "$HOME/.config/.scripts/sb-doppler", 600, 9) \
     X("", "$HOME/.config/.scripts/sb-forecast", 1900, 11) \

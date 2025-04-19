@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 # =====================================================
 # -----------------------------------------------------
 # From: I cannot remember where I got this script from.
@@ -27,7 +27,7 @@ case "$icon" in
 *) exit 1 ;;
 esac
 
-echo "${icon-?}"
+echo "| ${icon-?}"
 
 case $BLOCK_BUTTON in
 3) notify-send "🌜 Moon phase module" "Displays current moon phase.

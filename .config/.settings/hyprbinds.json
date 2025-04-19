@@ -82,7 +82,7 @@
     "catch_all": false,
     "description": "Open the default browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- zen-browser"
+    "arg": "uwsm app -- brave"
   },
   {
     "locked": false,
@@ -99,7 +99,7 @@
     "catch_all": false,
     "description": "Open the vim-based browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- qutebrowser"
+    "arg": "uwsm app -- zen-browser"
   },
   {
     "locked": false,
@@ -796,7 +796,7 @@
     "catch_all": false,
     "description": "Open alternate browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- firefox"
+    "arg": "uwsm app -- qutebrowser"
   },
   {
     "locked": false,
@@ -847,7 +847,7 @@
     "catch_all": false,
     "description": "Open alternate browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- firefox"
+    "arg": "uwsm app -- qutebrowser"
   },
   {
     "locked": false,
@@ -1216,6 +1216,23 @@
     "has_description": true,
     "modmask": "M-C",
     "submap": "",
+    "key": "u",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Toggle game mode",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "M-C",
+    "submap": "",
     "key": "z",
     "keycode": 0,
     "catch_all": false,
@@ -1375,6 +1392,23 @@
     "description": "Theme<submap-themes>",
     "dispatcher": "submap",
     "arg": "themes"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "(NONE)",
+    "submap": "themes",
+    "key": "u",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Toggle game mode",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
   },
   {
     "locked": false,
@@ -2846,14 +2880,14 @@
     "longPress": false,
     "non_consuming": false,
     "has_description": true,
-    "modmask": "M-A",
+    "modmask": "M-S",
     "submap": "",
-    "key": "LEFT",
+    "key": "comma",
     "keycode": 0,
     "catch_all": false,
     "description": "Flip windows between monitors",
     "dispatcher": "exec",
-    "arg": "pypr shift_monitors +1"
+    "arg": "pypr shift_monitors -1"
   },
   {
     "locked": false,
@@ -2863,7 +2897,7 @@
     "longPress": false,
     "non_consuming": false,
     "has_description": true,
-    "modmask": "M-A",
+    "modmask": "M-S",
     "submap": "",
     "key": "period",
     "keycode": 0,
@@ -2990,6 +3024,23 @@
     "description": "KBD go to previous song",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --prv"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "(NONE)",
+    "submap": "",
+    "key": "XF86AudioMedia",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD display current media informantion",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --now"
   },
   {
     "locked": false,
