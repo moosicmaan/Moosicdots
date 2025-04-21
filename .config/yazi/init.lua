@@ -1,9 +1,10 @@
--- ~/.config/yazi/init.lua
-require("relative-motions"):setup({ show_numbers = "relative", show_motion = true })
 require("full-border"):setup({
 	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
 	type = ui.Border.ROUNDED,
 })
+
+require("git"):setup()
+
 require("yatline"):setup({
 	--theme = my_theme,
 	section_separator = { open = "", close = "" },
@@ -60,10 +61,10 @@ require("yatline"):setup({
 		},
 		right = {
 			section_a = {
-				{ type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
+				-- { type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
 			},
 			section_b = {
-				{ type = "string", custom = false, name = "date", params = { "%X" } },
+				-- { type = "string", custom = false, name = "date", params = { "%X" } },
 			},
 			section_c = {},
 		},
@@ -97,24 +98,3 @@ require("yatline"):setup({
 		},
 	},
 })
-require("restore"):setup({
-	-- Set the position for confirm and overwrite dialogs.
-	-- don't forget to set height: `h = xx`
-	-- https://yazi-rs.github.io/docs/plugins/utils/#ya.input
-	position = { "center", w = 70, h = 40 },
-
-	-- Show confirm dialog before restore.
-	-- NOTE: even if set this to false, overwrite dialog still pop up
-	show_confirm = true,
-
-	-- colors for confirm and overwrite dialogs
-	theme = {
-		title = "blue",
-		header = "green",
-		-- header color for overwrite dialog
-		header_warning = "yellow",
-		list_item = { odd = "blue", even = "blue" },
-	},
-})
-require("yatline-symlink"):setup()
-require("git"):setup()
