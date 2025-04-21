@@ -29,16 +29,16 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
 static const char col_1[]           = "#2c3043";
-static const char col_2[]           = "#ff5874";
-static const char col_3[]           = "#b2ceee";
-static const char col_4[]           = "#82aaff";
-static const char col_bg[]          = "#081e2f";
+static const char col_2[]           = "#c792ea";
+static const char col_3[]           = "#82aaff";
+static const char col_4[]           = "#7fdbca";
+static const char col_bg[]          = "#1d3b53";
 static const char col_border[]      = "#21c7a8";
 static const char col_accent[]      = "#a1cd5e";
 static const char col_pinned[]      = "#ae81ff";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
-[SchemeNorm] = { col_3,   col_bg,   col_2 },
+[SchemeNorm] = { col_4,   col_bg,   col_2 },
 [SchemeSel]  = { col_4,   col_bg,   col_border },
 };
 
@@ -67,7 +67,7 @@ static const Rule rules[] = {
 	  class      instance    title          tags mask  isfloating  monitor Scratchkey float x,y,w,h   floatborderpx*/
 /*{ "Gimp",     NULL,       NULL,           0,         1,          -1,     0,       50,50,500,500,     9 },*/
 	{ "Firefox",  NULL,       NULL,           1 << 8,    0,          -1,     0,       50,50,500,500,     9 },
-	{ NULL,       NULL,   "termdrop",         0,         1,          -1,    's',      150,50,1620,900,   9 },
+	{ NULL,       NULL,   "termdrop",         0,         1,          -1,    's',      150,50,1620,900,   4 },
 	{ NULL,       NULL,   "yazidrop",         0,         1,          -1,    'j',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "btopdrop",         0,         1,          -1,    'l',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,900,   9 },

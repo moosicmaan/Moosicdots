@@ -15,12 +15,12 @@ require("yatline"):setup({
 		fg = "black",
 		bg_mode = {
 			normal = "white",
-			select = "brightyellow",
-			un_set = "brightred",
+			select = "yellow",
+			un_set = "red",
 		},
 	},
-	style_b = { bg = "brightblack", fg = "brightwhite" },
-	style_c = { bg = "black", fg = "brightwhite" },
+	style_b = { bg = "black", fg = "white" },
+	style_c = { bg = "brightblack", fg = "brightwhite" },
 
 	permissions_t_fg = "green",
 	permissions_r_fg = "yellow",
@@ -62,6 +62,7 @@ require("yatline"):setup({
 		right = {
 			section_a = {
 				-- { type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
+				{ type = "string", custom = false, name = "hovered_path" },
 			},
 			section_b = {
 				-- { type = "string", custom = false, name = "date", params = { "%X" } },
@@ -79,7 +80,6 @@ require("yatline"):setup({
 				{ type = "string", custom = false, name = "hovered_size" },
 			},
 			section_c = {
-				{ type = "string", custom = false, name = "hovered_path" },
 				{ type = "coloreds", custom = false, name = "count" },
 			},
 		},
