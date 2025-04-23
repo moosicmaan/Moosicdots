@@ -3,8 +3,7 @@
 #  / _` | | | | '_ \/ __| __| 
 # | (_| | |_| | | | \__ \ |_  
 #  \__,_|\__,_|_| |_|___/\__| 
-#                             
-#  
+#
 # ----------------------------------------------------- 
 
 # See dunst(5) for all configuration options
@@ -26,13 +25,13 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = none
+    follow = keyboard
 
     ### Geometry ###
 
     # dynamic width from 0 to 300
-    # width = (0, 300)
     # constant width of 300
+    # width = (0, 400)
     width = 400
 
     # The maximum height of a single notification, excluding the frame.
@@ -43,7 +42,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = (14, 28)
+    offset = (8, 28)
 
     # Scale factor. It is auto-detected if value is 0. X11 only
     scale = 1
@@ -211,7 +210,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = "BeautyLine, breeze, Adwaita"
+    icon_theme = "breeze, Adwaita, BeautyLine"
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 

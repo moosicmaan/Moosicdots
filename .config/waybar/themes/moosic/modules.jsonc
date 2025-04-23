@@ -319,7 +319,7 @@
     "tooltip": false
   },
   "custom/keybindings": {
-    "format": " ",
+    "format": "",
     "on-click": "~/.config/.scripts/hypr-keybinds",
     "tooltip": true,
     "tooltip-format": "Keybindings and Exec"
