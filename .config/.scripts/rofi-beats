@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # =====================================================
 # -----------------------------------------------------
 # From:
@@ -19,6 +19,12 @@ iDIR="/usr/share/icons/candy-icons/status/scalable/"
 
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+
+if [ "${UWSM_SESSION}" ]; then
+  ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
+else
+  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-6.rasi"
+fi
 
 # Online Stations. Edit as required
 # https://streamurl.link is a good resource for online music
@@ -62,7 +68,8 @@ play_local_music() {
   populate_local_music
 
   # Prompt the user to select a song
-  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Local Music")
+  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Local Music")
+  # choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Local Music")
   # choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Local Music")
 
   if [ -z "$choice" ]; then
@@ -76,7 +83,7 @@ play_local_music() {
       notification "$choice"
 
       # Play the selected local music file using mpv
-      ${PREFIX}mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+      "${PREFIX}"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
 
       break
     fi
@@ -91,17 +98,74 @@ shuffle_local_music() {
   eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no $mDIR"
 }
 
-# Main function for shuffling easy listening music
-shuffle_easy_music() {
-  notification "Shuffle Play Local Easy Listening"
+shuffle_playlist() {
+  # Get the list of full directories into an array
+  mapfile -t LISTS < <(find "$pDIR" -mindepth 1 -maxdepth 1 -type d | sort)
 
-  # Play music in $mDIR on shuffle
-  eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no $pDIR"
+  # Get just the folder names (basename) into a second array
+  NAMES=()
+  for path in "${LISTS[@]}"; do
+    NAMES+=("$(basename "$path")")
+  done
+
+  # Let the user pick a name
+  pNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Playlists")
+
+  # Convert selected name back to full path
+  for i in "${!NAMES[@]}"; do
+    if [[ "${NAMES[$i]}" == "$pNAME" ]]; then
+      pLIST="${LISTS[$i]}"
+      break
+    fi
+  done
+
+  notification "Shuffle Play a Playlist"
+
+  # Run the player
+  if [[ -n "$pLIST" && -d "$pLIST" ]]; then
+    eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no \"$pLIST\""
+  else
+    exit 1
+  fi
+}
+
+shuffle_artist() {
+  # Get the list of full directories into an array
+  mapfile -t ARTS < <(find "$mDIR" -mindepth 1 -maxdepth 1 -type d | sort)
+
+  # Get just the folder names (basename) into a second array
+  NAMES=()
+  for path in "${ARTS[@]}"; do
+    NAMES+=("$(basename "$path")")
+  done
+
+  # Let the user pick a name
+  aNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Artists")
+
+  # Convert selected name back to full path
+  for i in "${!NAMES[@]}"; do
+    echo [Debug] "NAMES[$i]: ${NAMES[$i]} aNAME: $aNAME"
+    if [[ "${NAMES[$i]}" == "$aNAME" ]]; then
+      aLIST="${ARTS[$i]}"
+      break
+    fi
+  done
+
+  echo [Debug] "aLIST: $aLIST"
+  notification "Shuffle Play an Artist"
+
+  # Run the player
+  if [[ -n "$aLIST" && -d "$aLIST" ]]; then
+    eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no \"$aLIST\""
+  else
+    echo [Debug] "No such directory: $aLIST"
+    exit 1
+  fi
 }
 
 # Main function for playing online music
 play_online_music() {
-  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Online Music")
+  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Online Music")
   # choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Online Music")
 
   if [ -z "$choice" ]; then
@@ -110,6 +174,7 @@ play_online_music() {
 
   link="${online_music[$choice]}"
 
+  # user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Select music source")
   notification "$choice"
 
   # Play the selected online music using mpv
@@ -117,28 +182,33 @@ play_online_music() {
   # ${PREFIX}mpg123 "$link"
 }
 
-# Check if an online music process is running and send a notification, otherwise run the main function
-pkill mpv && notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music stopped" || {
-
+# ------MAIN------
+if pkill mpv; then
+  notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music stopped"
+else
+  # code to run if mpv was not already running
+  # echo "mpv was not running"
   # Prompt the user to choose between local and online music
-  user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder\nShuffle Local Easy Listening" | rofi -dmenu -config ~/.config/rofi/config-wide.rasi -p "Select music source")
-  # user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Select music source")
+  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nShuffle an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select music source")
 
   case "$user_choice" in
-  "Play from Music Folder")
-    play_local_music
-    ;;
   "Play from Online Stations")
     play_online_music
     ;;
-  "Shuffle Play from Music Folder")
+  "Choose a Song From the Music Folder")
+    play_local_music
+    ;;
+  "Shuffle Play the Music Folder")
     shuffle_local_music
     ;;
-  "Shuffle Local Easy Listening")
-    shuffle_easy_music
+  "Shuffle-play a Playlist")
+    shuffle_playlist
+    ;;
+  "Shuffle an Artist-Ablum")
+    shuffle_artist
     ;;
   *)
     echo "Invalid choice"
     ;;
   esac
-}
+fi
