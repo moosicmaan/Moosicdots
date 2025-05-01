@@ -10,7 +10,7 @@
    =====================================================
 */
 
-/* appearance */
+/**** APPEARANCE ****/
 static const unsigned int borderpx  = 2;      /* border pixel of windows */
 static const unsigned int snap      = 32;     /* snap pixel */
 static const unsigned int gappih    = 8;      /* horiz inner gap between windows */
@@ -42,11 +42,7 @@ static const char *colors[][3]      = {
 [SchemeSel]  = { col_4,   col_bg,   col_border },
 };
 
-static const char *const autostart[] = {
-	"/home/moosicmaan/.config/dwm/include/autostart.sh", NULL,
-	NULL /* terminate */
-};
-
+/* TAGS */
 static const char *tagsel[][2] = {
  /*   fg         bg    */
   { col_3,      col_bg },                         /* norm */
@@ -54,12 +50,16 @@ static const char *tagsel[][2] = {
   { col_1,      col_3 },                          /* occ but not sel */
   { col_1,      col_pinned },                     /* has pinned tag */
 };
-/* tagging */
+
+
+/**** WINDOW RULES AND LAYOUTS ****/
+/* TAGGING */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 // static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
 // static const char *tags[] = { "󰫮", "󰫱", "󰫴", "󰫷", "M", "󰫽", "󰬀", "󰬃", "󰬇" };
 
+/* RULES */
 static const Rule rules[] = {
 /* xprop(1):
 *	WM_CLASS(STRING) = instance, class
@@ -75,12 +75,11 @@ static const Rule rules[] = {
 	{ NULL,       NULL,   "weatherreport",    0,         1,          -1,    'v',      150,50,1620,900,   9 },
 };
 
-/* layout(s) */
+/* LAYOUTS */
 static const float mfact     = 0.50;          /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;             /* number of clients in master area */
 static const int resizehints = 0;             /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1;          /* 1 will force focus on the fullscreen window */
-
 #include "fibonacci.c"
 static const Layout layouts[] = {
 /* symbol     arrange function */
@@ -91,7 +90,14 @@ static const Layout layouts[] = {
   { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
 };
 
-/* key definitions */
+/* AUTOSTART */
+static const char *const autostart[] = {
+	"/home/moosicmaan/.config/dwm/include/autostart.sh", NULL,
+	NULL /* terminate */
+};
+
+
+/**** KEY DEFINITIONS ****/
 #define MODKEY Mod4Mask
 #define AltMask Mod1Mask
 #define MEH (Mod1Mask|ControlMask|ShiftMask)
@@ -109,7 +115,7 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/* APPLICATIONS */
+/**** APPLICATION DEFINITIONS ****/
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
@@ -117,14 +123,6 @@ static const char *dmenucmd[] = {
     "-nb", col_1, "-nf", col_3, "-sb", col_bg, "-sf", col_4, 
     NULL
 };
-static const char *termcmd[]  = { "kitty", NULL };
-static const char *my_term2[] = { "ghostty", NULL };
-static const char *browscmd[]  = { "brave", NULL };
-static const char *my_browsv[] = { "zen-browser", NULL };
-static const char *my_email[] = { "thunderbird", NULL };
-static const char *my_editg[] = { "geany", NULL };
-static const char *my_editc[] = { "neovide", NULL };
-static const char *my_filesg[] = { "pcmanfm-qt", NULL };
 static const char *menu_drun[] = { 
     "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
     "-show", "drun", 
@@ -135,54 +133,63 @@ static const char *menu_win[] = {
     "-show", "window", 
     NULL
 };
-static const char *my_music[] = { "spotube", NULL };
-static const char *my_media[] = { "vlc", NULL };
-static const char *my_image[] = { "gimp", NULL };
-static const char *emojis[] = { "emote", NULL };
-static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
-static const char *variq[] = { "variety", "-q", NULL };
-static const char *varin[] = { "variety", "-n", NULL };
-static const char *varif[] = { "variety", "-f", NULL };
-static const char *varip[] = { "variety", "-p", NULL };
 static const char *rofi_power[] = { 
     "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", 
     "-show", "powermenu", 
     "-modi", "powermenu:~/.config/.scripts/rofi-power", 
     NULL 
 };
+static const char *termcmd[]  = { "kitty", NULL };
+static const char *my_term2[] = { "ghostty", NULL };
+static const char *browscmd[]  = { "brave", NULL };
+static const char *my_browsv[] = { "zen-browser", NULL };
+static const char *my_email[] = { "thunderbird", NULL };
+static const char *my_editg[] = { "geany", NULL };
+static const char *my_editc[] = { "neovide", NULL };
+static const char *my_filesg[] = { "pcmanfm-qt", NULL };
+static const char *my_music[] = { "spotube", NULL };
+static const char *my_media[] = { "vlc", NULL };
+static const char *my_image[] = { "gimp", NULL };
+static const char *emojis[] = { "emote", NULL };
+static const char *variq[] = { "variety", "-q", NULL };
+static const char *varin[] = { "variety", "-n", NULL };
+static const char *varif[] = { "variety", "-f", NULL };
+static const char *varip[] = { "variety", "-p", NULL };
+static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 
-/*MEDIA KEYS*/
+/*   MEDIA KEYS   */
 #include <X11/XF86keysym.h>
+static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *volu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
 static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
 static const char *volt[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--toggle", NULL };
-static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
-static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--nxt", NULL };
 static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--prv", NULL };
 static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--now", NULL };
+static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 
-/*First arg only serves to match against key in rules*/
+/*   FOR SCRATCHPADS - First arg only serves to match against key in rules   */
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
 static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
 static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 
+/****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
   /*                             Keys                     function        argument */
-  /****SCRATCHPADS****/
+  /*   SCRATCHPADS   */
 	&((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_j}}, togglescratch,  {.v = yazi_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_p}}, togglescratch,  {.v = moosic_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_l}}, togglescratch,  {.v = btop_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_x}}, togglescratch,  {.v = volume_scratch } }),
  
-  /****APPLICATIONS****/
+  /*   APPLICATIONS   */
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
 	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
@@ -208,7 +215,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
 	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
 
-  /****MEDIA KEYS****/
+  /*   MEDIA KEYS   */
 	&((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
 	&((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
 	&((Keychord){1, {{0,               XF86XK_AudioMedia}}, spawn,          {.v = mnow } }),
@@ -218,10 +225,10 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{0,                XF86XK_AudioNext}}, spawn,          {.v = mnxt } }),
 	&((Keychord){1, {{0,                XF86XK_AudioPrev}}, spawn,          {.v = mprv } }),
 
-  /****EXPERIMENTAL****/
+  /*   EXPERIMENTAL   */
   &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
 
-  /*-V-NVIM EDITING-V-*/
+  /*   -V-NVIM EDITING-V-   */
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_editc } }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn, SHCMD("cd /mnt/data/moosicmaan/CONFIG/ && neovide") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide $HOME/.config/") }),
@@ -232,7 +239,7 @@ static Keychord *keychords[] = {
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_w}}, spawn, SHCMD("neovide $HOME/.config/waybar/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/.scripts/") }),
 
-  /****VANITY GAPS****/
+  /*   VANITY GAPS   */
   &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_g}}, incrgaps,       {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_h}}, incrogaps,      {.i = +1 } }),
@@ -250,7 +257,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_y}}, incrovgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
-  /****WINDOWS LAYOUTS MONITORS****/
+  /*   WINDOWS LAYOUTS MONITORS   */
 	&((Keychord){1, {{MODKEY|ShiftMask,             XK_b}}, togglebar,      {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_h}}, focusstack,     {.i = +1 } }),
 	&((Keychord){1, {{MODKEY,                       XK_l}}, focusstack,     {.i = -1 } }),
@@ -277,7 +284,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
 	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
 
-  /****DWM ACTIONS****/
+  /*   DWM ACTIONS   */
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_r}}, quit,           {1} }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_q}}, quit,           {0} }),
 	   TAGKEYS(                                       XK_1,                      0)
@@ -291,7 +298,7 @@ static Keychord *keychords[] = {
 	   TAGKEYS(                                       XK_9,                      8)
 };
 
-/* button definitions */
+/****MOUSE BUTTON DEFINITIONS****/
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
