@@ -17,7 +17,7 @@ return {
 	-- The color scheme:
 	-- color_scheme = "Campbell '(Gogh)",
 	-- color_scheme = "CGA",
-	color_scheme = "Moonfly '(Gogh)",
+	-- color_scheme = "Moonfly '(Gogh)",
 	-- colors = {
 	-- 	foreground = "white",
 	-- 	background = "black",

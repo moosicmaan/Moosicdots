@@ -1,7 +1,7 @@
 [pyprland]
 plugins = [
   "scratchpads",
-  "layout_center",
+  # "layout_center",
   # "toggle_dpms",
   "magnify",
   "expose",
@@ -13,15 +13,15 @@ plugins = [
 max_workspaces = 10
 
 [expose]
-include_special = false
+include_special = true
 
 [scratchpads.files]
-animation = "fromRight"
+animation = "fromBottom"
 # command = "kitty --class Syazi yazi"
 command = "uwsm app -- wezterm start --class Sfiles yazi"
 class = "Sfiles"
 lazy = true
-size = "94% 72%"
+size = "94% 92%"
 
 [scratchpads.monitor]
 animation = "fromBottom"
@@ -29,22 +29,22 @@ animation = "fromBottom"
 command = "uwsm app -- wezterm start --class=Smonitor btop"
 class = "Smonitor"
 lazy = true
-size = "72% 88%"
+size = "75% 90%"
 
 [scratchpads.moosic]
-animation = "fromLeft"
+animation = "fromTop"
 # command = "kitty --class moosic "
 command = "uwsm app -- wezterm start --class=moosic musikcube"
 class = "moosic"
 lazy = true
-size = "94% 50%"
+size = "94% 45%"
 
 [scratchpads.audio]
-animation = "fromLeft"
+animation = "fromBottom"
 command = "uwsm app -- pavucontrol-qt"
 class = "pavucontrol-qt"
 lazy = true
-size = "94% 50%"
+size = "94% 45%"
 
 [scratchpads.term]
 animation = "fromTop"

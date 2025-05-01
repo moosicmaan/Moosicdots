@@ -70,8 +70,8 @@ static const Rule rules[] = {
 	{ NULL,       NULL,   "termdrop",         0,         1,          -1,    's',      150,50,1620,900,   4 },
 	{ NULL,       NULL,   "yazidrop",         0,         1,          -1,    'j',      150,50,1620,900,   9 },
 	{ NULL,       NULL,   "btopdrop",         0,         1,          -1,    'l',      150,50,1620,900,   9 },
-	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,900,   9 },
-	{ NULL,       NULL,   "Volume Control",   0,         1,          -1,    'v',      150,50,1620,900,   9 },
+	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,600,   9 },
+	{ NULL,       NULL,   "Volume Control",   0,         1,          -1,    'v',      150,50,1620,600,   9 },
 	{ NULL,       NULL,   "weatherreport",    0,         1,          -1,    'v',      150,50,1620,900,   9 },
 };
 
@@ -184,10 +184,15 @@ static Keychord *keychords[] = {
   /*                             Keys                     function        argument */
   /*   SCRATCHPADS   */
 	&((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
+	&((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_j}}, togglescratch,  {.v = yazi_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_p}}, togglescratch,  {.v = moosic_scratch } }),
+	&((Keychord){1, {{HYPER,                        XK_4}}, togglescratch,  {.v = yazi_scratch } }),
+	&((Keychord){1, {{MODKEY|AltMask,               XK_m}}, togglescratch,  {.v = moosic_scratch } }),
+	&((Keychord){1, {{HYPER,                        XK_1}}, togglescratch,  {.v = moosic_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_l}}, togglescratch,  {.v = btop_scratch } }),
+	&((Keychord){1, {{HYPER,                        XK_6}}, togglescratch,  {.v = btop_scratch } }),
 	&((Keychord){1, {{MODKEY|AltMask,               XK_x}}, togglescratch,  {.v = volume_scratch } }),
+	&((Keychord){1, {{HYPER,                        XK_2}}, togglescratch,  {.v = volume_scratch } }),
  
   /*   APPLICATIONS   */
 	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
@@ -240,14 +245,14 @@ static Keychord *keychords[] = {
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_s}}, spawn, SHCMD("neovide $HOME/.config/.scripts/") }),
 
   /*   VANITY GAPS   */
+  &((Keychord){1, {{MODKEY|AltMask,               XK_0}}, togglegaps,     {0} }),
+  &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_0}}, defaultgaps,    {0} }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_g}}, incrgaps,       {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_h}}, incrogaps,      {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_g}}, incrogaps,      {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_h}}, incrigaps,      {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_g}}, incrigaps,      {.i = -1 } }),
-  &((Keychord){1, {{MODKEY|AltMask,               XK_0}}, togglegaps,     {0} }),
-  &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_0}}, defaultgaps,    {0} }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_y}}, incrihgaps,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_u}}, incrihgaps,     {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_y}}, incrivgaps,     {.i = +1 } }),
