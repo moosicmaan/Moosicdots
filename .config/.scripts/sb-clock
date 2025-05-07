@@ -49,7 +49,8 @@ case $BLOCK_BUTTON in
 6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-# date "+%Y %b %d (%a) $icon %I:%M%p"
+# date "+%Y %b %d (%a) $icon %I:M%p"
 # date "+%a, %b %d $icon %I:%M%p"
 icon="🕒"
+# printf "| %s %s %s      -SYSTRAY-      \n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p')"
 printf "| %s %s %s\n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p')"

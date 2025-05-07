@@ -23,11 +23,13 @@ static const int showbar            = 1;      /* 0 means no bar */
 static const int topbar             = 1;      /* 0 means bottom bar */
 static const unsigned int systraypinning = 1; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2; /* systray spacing */
+static const unsigned int systrayspacing = 0; /* systray spacing */
 static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor,
                                                  False: display systray on the last monitor*/
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
+static const unsigned int baralpha = 0x10;
+static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#2c3043";
 static const char col_2[]           = "#c792ea";
 static const char col_3[]           = "#82aaff";
@@ -38,14 +40,19 @@ static const char col_accent[]      = "#a1cd5e";
 static const char col_pinned[]      = "#ae81ff";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
-[SchemeNorm] = { col_4,   col_bg,   col_2 },
-[SchemeSel]  = { col_4,   col_bg,   col_border },
+[SchemeNorm] = { col_4,   col_1,   col_2 },
+[SchemeSel]  = { col_4,   col_1,   col_border },
+};
+static const unsigned int alphas[][3]      = {
+    /*               fg      bg        border*/
+    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* TAGS */
 static const char *tagsel[][2] = {
  /*   fg         bg    */
-  { col_3,      col_bg },                         /* norm */
+  { col_3,      col_1 },                         /* norm */
   { col_1,      col_accent },                     /* sel */
   { col_1,      col_3 },                          /* occ but not sel */
   { col_1,      col_pinned },                     /* has pinned tag */
@@ -64,15 +71,28 @@ static const Rule rules[] = {
 /* xprop(1):
 *	WM_CLASS(STRING) = instance, class
 *	WM_NAME(STRING) = title
-	  class      instance    title          tags mask  isfloating  monitor Scratchkey float x,y,w,h   floatborderpx*/
-/*{ "Gimp",     NULL,       NULL,           0,         1,          -1,     0,       50,50,500,500,     9 },*/
-	{ "Firefox",  NULL,       NULL,           1 << 8,    0,          -1,     0,       50,50,500,500,     9 },
-	{ NULL,       NULL,   "termdrop",         0,         1,          -1,    's',      150,50,1620,900,   4 },
-	{ NULL,       NULL,   "yazidrop",         0,         1,          -1,    'j',      150,50,1620,900,   9 },
-	{ NULL,       NULL,   "btopdrop",         0,         1,          -1,    'l',      150,50,1620,900,   9 },
-	{ NULL,       NULL,   "moosCube",         0,         1,          -1,    'p',      150,50,1620,600,   9 },
-	{ NULL,       NULL,   "Volume Control",   0,         1,          -1,    'v',      150,50,1620,600,   9 },
-	{ NULL,       NULL,   "weatherreport",    0,         1,          -1,    'v',      150,50,1620,900,   9 },
+	  class                       instance title                          tagsmask float mon key  float x,y,w,h   fbor*/
+/*{ "Gimp",                      NULL,   NULL,                           0,       1,   -1,  0,  50,50,500,500,   9 },*/
+	{ "Firefox",                   NULL,   NULL,                           1 << 8,  0,   -1,  0,  50,50,500,500,   9 },
+	{ NULL,                        NULL,   "termdrop",                     0,       1,   -1, 's', 150,50,1620,900, 4 },
+	{ NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
+	{ NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
+	{ NULL,                        NULL,   "moosCube",                     0,       1,   -1, 'p', 150,50,1620,600, 9 },
+	{ NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'v', 150,50,1620,600, 9 },
+	{ NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
+	{ "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
+	{ "vlc",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
+	{ NULL,                        NULL,   "galculator",                   0,       1,   -1,  0,  50,50,800,450,   9 },
+	{ NULL,                        NULL,   "btrfs-assistant",              0,       1,   -1,  0,  50,50,800,950,   9 },
+	{ NULL,                        NULL,   "fsearch",                      0,       1,   -1,  0,  50,50,800,450,   9 },
+ 	{ NULL,                        NULL,   "Bluetooth Devices",            0,       1,   -1,  0,  50,50,800,450,   9 },
+	{ NULL,                        NULL,   "Network Connections",          0,       1,   -1,  0,  50,50,800,450,   9 },
+	{ NULL,                        NULL,   "Garuda Assistant",             0,       1,   -1,  0,  50,50,800,600,   9 },
+	{ "garuda-welcome",            NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+	{ "garuda-gamer",              NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+	{ "garuda-boot-options",       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+	{ "garuda-network-assistant",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+	{ "garuda-settings-manaager",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
 };
 
 /* LAYOUTS */
@@ -97,7 +117,7 @@ static const char *const autostart[] = {
 };
 
 
-/**** KEY DEFINITIONS ****/
+/**** ENVIRONMENT DEFINITIONS ****/
 #define MODKEY Mod4Mask
 #define AltMask Mod1Mask
 #define MEH (Mod1Mask|ControlMask|ShiftMask)
@@ -115,7 +135,7 @@ static const char *const autostart[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/**** APPLICATION DEFINITIONS ****/
+/*   APPLICATION DEFINITIONS   */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
@@ -276,7 +296,7 @@ static Keychord *keychords[] = {
 	&((Keychord){1, {{MODKEY,                  XK_period}}, focusmon,       {.i = +1 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,         XK_comma}}, tagmon,         {.i = -1 } }),
 	&((Keychord){1, {{MODKEY|ShiftMask,        XK_period}}, tagmon,         {.i = +1 } }),
-	&((Keychord){1, {{AltMask,                      XK_s}}, zoom,           {0} }),
+	&((Keychord){1, {{MODKEY,                       XK_w}}, zoom,           {0} }),
 	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
 	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
