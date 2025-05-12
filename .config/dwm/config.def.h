@@ -28,7 +28,7 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
                                                  False: display systray on the last monitor*/
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
-static const unsigned int baralpha = 0x10;
+static const unsigned int baralpha = 0x33;
 static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#2c3043";
 static const char col_2[]           = "#c792ea";
@@ -40,20 +40,20 @@ static const char col_accent[]      = "#a1cd5e";
 static const char col_pinned[]      = "#ae81ff";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
-[SchemeNorm] = { col_4,   col_1,   col_2 },
-[SchemeSel]  = { col_4,   col_1,   col_border },
+  [SchemeNorm] = { col_4,   col_1,   col_2 },
+  [SchemeSel]  = { col_4,   col_1,   col_border },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
-    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+  [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+  [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* TAGS */
 static const char *tagsel[][2] = {
  /*   fg         bg    */
-  { col_3,      col_1 },                         /* norm */
-  { col_1,      col_accent },                     /* sel */
+  { col_3,      col_1 },                          /* norm */
+  { col_1,      col_4 },                          /* sel */
   { col_1,      col_3 },                          /* occ but not sel */
   { col_1,      col_pinned },                     /* has pinned tag */
 };
@@ -69,30 +69,30 @@ static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "�
 /* RULES */
 static const Rule rules[] = {
 /* xprop(1):
-*	WM_CLASS(STRING) = instance, class
-*	WM_NAME(STRING) = title
-	  class                       instance title                          tagsmask float mon key  float x,y,w,h   fbor*/
+* WM_CLASS(STRING) = instance, class
+* WM_NAME(STRING) = title
+   class                       instance title                          tagsmask float mon key  float x,y,w,h   fbor*/
 /*{ "Gimp",                      NULL,   NULL,                           0,       1,   -1,  0,  50,50,500,500,   9 },*/
-	{ "Firefox",                   NULL,   NULL,                           1 << 8,  0,   -1,  0,  50,50,500,500,   9 },
-	{ NULL,                        NULL,   "termdrop",                     0,       1,   -1, 's', 150,50,1620,900, 4 },
-	{ NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
-	{ NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
-	{ NULL,                        NULL,   "moosCube",                     0,       1,   -1, 'p', 150,50,1620,600, 9 },
-	{ NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'v', 150,50,1620,600, 9 },
-	{ NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
-	{ "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
-	{ "vlc",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
-	{ NULL,                        NULL,   "galculator",                   0,       1,   -1,  0,  50,50,800,450,   9 },
-	{ NULL,                        NULL,   "btrfs-assistant",              0,       1,   -1,  0,  50,50,800,950,   9 },
-	{ NULL,                        NULL,   "fsearch",                      0,       1,   -1,  0,  50,50,800,450,   9 },
- 	{ NULL,                        NULL,   "Bluetooth Devices",            0,       1,   -1,  0,  50,50,800,450,   9 },
-	{ NULL,                        NULL,   "Network Connections",          0,       1,   -1,  0,  50,50,800,450,   9 },
-	{ NULL,                        NULL,   "Garuda Assistant",             0,       1,   -1,  0,  50,50,800,600,   9 },
-	{ "garuda-welcome",            NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
-	{ "garuda-gamer",              NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
-	{ "garuda-boot-options",       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
-	{ "garuda-network-assistant",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
-	{ "garuda-settings-manaager",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+  { "Firefox",                   NULL,   NULL,                           1 << 8,  0,   -1,  0,  50,50,500,500,   9 },
+  { NULL,                        NULL,   "termdrop",                     0,       1,   -1, 's', 150,50,1620,900, 4 },
+  { NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
+  { NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
+  { NULL,                        NULL,   "moosCube",                     0,       1,   -1, 'p', 150,50,1620,600, 9 },
+  { NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'v', 150,50,1620,600, 9 },
+  { NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
+  { "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
+  { "vlc",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
+  { NULL,                        NULL,   "galculator",                   0,       1,   -1,  0,  50,50,800,450,   9 },
+  { NULL,                        NULL,   "btrfs-assistant",              0,       1,   -1,  0,  50,50,800,950,   9 },
+  { NULL,                        NULL,   "fsearch",                      0,       1,   -1,  0,  50,50,800,450,   9 },
+  { NULL,                        NULL,   "Bluetooth Devices",            0,       1,   -1,  0,  50,50,800,450,   9 },
+  { NULL,                        NULL,   "Network Connections",          0,       1,   -1,  0,  50,50,800,450,   9 },
+  { NULL,                        NULL,   "Garuda Assistant",             0,       1,   -1,  0,  50,50,800,600,   9 },
+  { "garuda-welcome",            NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+  { "garuda-gamer",              NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+  { "garuda-boot-options",       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+  { "garuda-network-assistant",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
+  { "garuda-settings-manaager",  NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,950,   9 },
 };
 
 /* LAYOUTS */
@@ -104,7 +104,7 @@ static const int lockfullscreen = 1;          /* 1 will force focus on the fulls
 static const Layout layouts[] = {
 /* symbol     arrange function */
   { "󰝤󰕱",      tile },                        /* []=first entry is default */
-	{ "󰉧󰉨",      NULL },                        /* ><>no layout function means floating behavior */
+  { "󰉧󰉨",      NULL },                        /* ><>no layout function means floating behavior */
   { "",      monocle },                      /* [M]only one visable window per tag */
   { "󰝤󰁥",      spiral },                      /* [@]much like hyprland*/
   { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
@@ -112,8 +112,8 @@ static const Layout layouts[] = {
 
 /* AUTOSTART */
 static const char *const autostart[] = {
-	"/home/moosicmaan/.config/dwm/include/autostart.sh", NULL,
-	NULL /* terminate */
+  "/home/moosicmaan/.config/dwm/include/autostart.sh", NULL,
+  NULL /* terminate */
 };
 
 
@@ -203,52 +203,52 @@ static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "mu
 static Keychord *keychords[] = {
   /*                             Keys                     function        argument */
   /*   SCRATCHPADS   */
-	&((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
-	&((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_j}}, togglescratch,  {.v = yazi_scratch } }),
-	&((Keychord){1, {{HYPER,                        XK_4}}, togglescratch,  {.v = yazi_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_m}}, togglescratch,  {.v = moosic_scratch } }),
-	&((Keychord){1, {{HYPER,                        XK_1}}, togglescratch,  {.v = moosic_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_l}}, togglescratch,  {.v = btop_scratch } }),
-	&((Keychord){1, {{HYPER,                        XK_6}}, togglescratch,  {.v = btop_scratch } }),
-	&((Keychord){1, {{MODKEY|AltMask,               XK_x}}, togglescratch,  {.v = volume_scratch } }),
-	&((Keychord){1, {{HYPER,                        XK_2}}, togglescratch,  {.v = volume_scratch } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
+  &((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_j}}, togglescratch,  {.v = yazi_scratch } }),
+  &((Keychord){1, {{HYPER,                        XK_4}}, togglescratch,  {.v = yazi_scratch } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_m}}, togglescratch,  {.v = moosic_scratch } }),
+  &((Keychord){1, {{HYPER,                        XK_1}}, togglescratch,  {.v = moosic_scratch } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_l}}, togglescratch,  {.v = btop_scratch } }),
+  &((Keychord){1, {{HYPER,                        XK_6}}, togglescratch,  {.v = btop_scratch } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_x}}, togglescratch,  {.v = volume_scratch } }),
+  &((Keychord){1, {{HYPER,                        XK_2}}, togglescratch,  {.v = volume_scratch } }),
  
   /*   APPLICATIONS   */
-	&((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
-	&((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
-	&((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
+  &((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
-	&((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
-	&((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
-	&((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
-	&((Keychord){1, {{MODKEY,                  XK_Return}}, spawn,          {.v = termcmd } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,        XK_Return}}, spawn,          {.v = my_filesg } }),
-	&((Keychord){1, {{MODKEY|ControlMask,      XK_Return}}, spawn,          {.v = my_email } }),
-	&((Keychord){1, {{MODKEY,                       XK_b}}, spawn,          {.v = browscmd } }),
-	&((Keychord){1, {{MODKEY,                       XK_t}}, spawn,          {.v = my_term2 } }),
-	&((Keychord){1, {{MODKEY,                       XK_o}}, spawn,          {.v = my_browsv } }),
-	&((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
-	&((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
-	&((Keychord){1, {{MODKEY,                       XK_m}}, spawn,          {.v = my_music } }),
-	&((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
-	&((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
-	&((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
-	&((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
-	&((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
-	&((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
+  &((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
+  &((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
+  &((Keychord){1, {{MODKEY,                  XK_Return}}, spawn,          {.v = termcmd } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,        XK_Return}}, spawn,          {.v = my_filesg } }),
+  &((Keychord){1, {{MODKEY|ControlMask,      XK_Return}}, spawn,          {.v = my_email } }),
+  &((Keychord){1, {{MODKEY,                       XK_b}}, spawn,          {.v = browscmd } }),
+  &((Keychord){1, {{MODKEY,                       XK_t}}, spawn,          {.v = my_term2 } }),
+  &((Keychord){1, {{MODKEY,                       XK_o}}, spawn,          {.v = my_browsv } }),
+  &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
+  &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
+  &((Keychord){1, {{MODKEY,                       XK_m}}, spawn,          {.v = my_music } }),
+  &((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
+  &((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
+  &((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
+  &((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
+  &((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
+  &((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
 
   /*   MEDIA KEYS   */
-	&((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
-	&((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
-	&((Keychord){1, {{0,               XF86XK_AudioMedia}}, spawn,          {.v = mnow } }),
-	&((Keychord){1, {{0,                XF86XK_AudioMute}}, spawn,          {.v = volt } }),
-	&((Keychord){1, {{0,                XF86XK_AudioPlay}}, spawn,          {.v = mpp } }),
-	&((Keychord){1, {{0,                XF86XK_AudioStop}}, spawn,          {.v = mstop } }),
-	&((Keychord){1, {{0,                XF86XK_AudioNext}}, spawn,          {.v = mnxt } }),
-	&((Keychord){1, {{0,                XF86XK_AudioPrev}}, spawn,          {.v = mprv } }),
+  &((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
+  &((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
+  &((Keychord){1, {{0,               XF86XK_AudioMedia}}, spawn,          {.v = mnow } }),
+  &((Keychord){1, {{0,                XF86XK_AudioMute}}, spawn,          {.v = volt } }),
+  &((Keychord){1, {{0,                XF86XK_AudioPlay}}, spawn,          {.v = mpp } }),
+  &((Keychord){1, {{0,                XF86XK_AudioStop}}, spawn,          {.v = mstop } }),
+  &((Keychord){1, {{0,                XF86XK_AudioNext}}, spawn,          {.v = mnxt } }),
+  &((Keychord){1, {{0,                XF86XK_AudioPrev}}, spawn,          {.v = mprv } }),
 
   /*   EXPERIMENTAL   */
   &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
@@ -283,61 +283,61 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
   /*   WINDOWS LAYOUTS MONITORS   */
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_b}}, togglebar,      {0} }),
-	&((Keychord){1, {{MODKEY,                       XK_h}}, focusstack,     {.i = +1 } }),
-	&((Keychord){1, {{MODKEY,                       XK_l}}, focusstack,     {.i = -1 } }),
-	&((Keychord){1, {{AltMask,                      XK_i}}, incnmaster,     {.i = +1 } }),
-	&((Keychord){1, {{AltMask,                      XK_d}}, incnmaster,     {.i = -1 } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_h}}, setmfact,       {.f = -0.05} }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_l}}, setmfact,       {.f = +0.05} }),
-	&((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_0}}, tag,            {.ui = ~0 } }),
-	&((Keychord){1, {{MODKEY,                   XK_comma}}, focusmon,       {.i = -1 } }),
-	&((Keychord){1, {{MODKEY,                  XK_period}}, focusmon,       {.i = +1 } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,         XK_comma}}, tagmon,         {.i = -1 } }),
-	&((Keychord){1, {{MODKEY|ShiftMask,        XK_period}}, tagmon,         {.i = +1 } }),
-	&((Keychord){1, {{MODKEY,                       XK_w}}, zoom,           {0} }),
-	&((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
-	&((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
-	&((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
-	&((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
-	&((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
-	&((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
-	&((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
-	&((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
-	&((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
-	&((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
-	&((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_b}}, togglebar,      {0} }),
+  &((Keychord){1, {{MODKEY,                       XK_h}}, focusstack,     {.i = +1 } }),
+  &((Keychord){1, {{MODKEY,                       XK_l}}, focusstack,     {.i = -1 } }),
+  &((Keychord){1, {{AltMask,                      XK_i}}, incnmaster,     {.i = +1 } }),
+  &((Keychord){1, {{AltMask,                      XK_d}}, incnmaster,     {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_h}}, setmfact,       {.f = -0.05} }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_l}}, setmfact,       {.f = +0.05} }),
+  &((Keychord){1, {{MODKEY,                       XK_0}}, view,           {.ui = ~0 } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_0}}, tag,            {.ui = ~0 } }),
+  &((Keychord){1, {{MODKEY,                   XK_comma}}, focusmon,       {.i = -1 } }),
+  &((Keychord){1, {{MODKEY,                  XK_period}}, focusmon,       {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,         XK_comma}}, tagmon,         {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,        XK_period}}, tagmon,         {.i = +1 } }),
+  &((Keychord){1, {{MODKEY,                       XK_w}}, zoom,           {0} }),
+  &((Keychord){1, {{AltMask,                    XK_Tab}}, view,           {0} }),
+  &((Keychord){1, {{MODKEY,                     XK_Tab}}, view,           {0} }),
+  &((Keychord){1, {{MODKEY,                       XK_q}}, killclient,     {0} }),
+  &((Keychord){1, {{MODKEY,                       XK_f}}, togglefloating, {0} }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
+  &((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
+  &((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
+  &((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
+  &((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
+  &((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
+  &((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/
 
   /*   DWM ACTIONS   */
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_r}}, quit,           {1} }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_q}}, quit,           {0} }),
-	   TAGKEYS(                                       XK_1,                      0)
-	   TAGKEYS(                                       XK_2,                      1)
-	   TAGKEYS(                                       XK_3,                      2)
-	   TAGKEYS(                                       XK_4,                      3)
-	   TAGKEYS(                                       XK_5,                      4)
-	   TAGKEYS(                                       XK_6,                      5)
-	   TAGKEYS(                                       XK_7,                      6)
-	   TAGKEYS(                                       XK_8,                      7)
-	   TAGKEYS(                                       XK_9,                      8)
+     TAGKEYS(                                       XK_1,                      0)
+     TAGKEYS(                                       XK_2,                      1)
+     TAGKEYS(                                       XK_3,                      2)
+     TAGKEYS(                                       XK_4,                      3)
+     TAGKEYS(                                       XK_5,                      4)
+     TAGKEYS(                                       XK_6,                      5)
+     TAGKEYS(                                       XK_7,                      6)
+     TAGKEYS(                                       XK_8,                      7)
+     TAGKEYS(                                       XK_9,                      8)
 };
 
 /****MOUSE BUTTON DEFINITIONS****/
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
-	/* click                event mask      button          function        argument */
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
-	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
-	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+  /* click                event mask      button          function        argument */
+  { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+  { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+  { ClkWinTitle,          0,              Button2,        zoom,           {0} },
+  { ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+  { ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+  { ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
+  { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+  { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+  { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+  { ClkTagBar,            0,              Button1,        view,           {0} },
+  { ClkTagBar,            0,              Button3,        toggleview,     {0} },
+  { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+  { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
