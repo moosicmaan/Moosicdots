@@ -6,7 +6,7 @@
 
 // Maximum number of Unicode characters that a block can output.
 // #define MAX_BLOCK_OUTPUT_LENGTH 45
-#define MAX_BLOCK_OUTPUT_LENGTH 200
+#define MAX_BLOCK_OUTPUT_LENGTH 250
 
 // Control whether blocks are clickable.
 #define CLICKABLE_BLOCKS 1
@@ -23,7 +23,6 @@
     X("", "$HOME/.config/.scripts/sb-volume", 0, 8)  \
     X("", "$HOME/.config/.scripts/sb-brightness", 0, 1) \
     X("", "$HOME/.config/.scripts/sb-battery", 60, 6) \
-    X("", "$HOME/.config/.scripts/sb-internet", 60, 12) \
     X("", "$HOME/.config/.scripts/sb-disk", 1800, 3) \
     X("", "$HOME/.config/.scripts/sb-memory", 10, 4) \
     X("", "$HOME/.config/.scripts/sb-loadavg", 600, 5) \
