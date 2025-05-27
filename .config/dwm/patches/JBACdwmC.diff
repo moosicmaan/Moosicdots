@@ -1,0 +1,41 @@
+945c945
+< 				drw_text(drw, m->ww - statusw + x, 0, tw, bh, 0, text, 0);
+---
+>         drw_text(drw, m->ww - statusw - stw - barpadding_x + x, 0, tw, bh, 0, text, 0);
+952c952
+< 		drw_text(drw, m->ww - statusw + x, 0, tw, bh, 0, text, 0);
+---
+>     drw_text(drw, m->ww - statusw - stw - barpadding_x + x, 0, tw, bh, 0, text, 0);
+1658,1659c1658,1660
+< resizebarwin(Monitor *m) {
+< 	unsigned int w = m->ww;
+---
+> resizebarwin(Monitor *m)
+> {
+> 	unsigned int w = m->ww - 2 * barpadding_x;
+1662c1663,1664
+< 	XMoveResizeWindow(dpy, m->barwin, m->wx, m->by, w, bh);
+---
+> 
+> 	XMoveResizeWindow(dpy, m->barwin, m->wx + barpadding_x, m->by, w, bh);
+2467d2468
+< 		// .background_pixmap = ParentRelative,
+2495a2497
+> 
+2497,2500c2499,2502
+< 		m->wh -= bh;
+< 		m->by = m->topbar ? m->wy : m->wy + m->wh;
+< 		m->wy = m->topbar ? m->wy + bh : m->wy;
+< 	} else
+---
+> 		m->wh -= bh + barpadding_y;
+> 		m->by = m->topbar ? m->wy + barpadding_y : m->wy + m->wh;
+> 		m->wy = m->topbar ? m->wy + bh + barpadding_y : m->wy;
+> 	} else {
+2501a2504
+> 	}
+2741c2744,2745
+< 	unsigned int x = m->mx + m->mw;
+---
+> 	// unsigned int x = m->mx + m->mw;
+>   unsigned int x = m->mx + m->mw - barpadding_x;

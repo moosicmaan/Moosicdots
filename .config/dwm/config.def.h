@@ -30,7 +30,7 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
                                                  False: display systray on the last monitor*/
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
-static const unsigned int baralpha = 0x33;
+static const unsigned int baralpha = 0xA3;
 static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#2c3043";
 static const char col_2[]           = "#c792ea";

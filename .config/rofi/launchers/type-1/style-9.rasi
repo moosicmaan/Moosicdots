@@ -70,7 +70,8 @@ window {
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
-    background-color:            @background-colour;
+    // background-color:            @background-colour;
+    background-color:            #2c3043;
     /* Backgroud Image */
     //background-image:          url("/path/to/image.png", none);
     /* Simple Linear Gradient */
