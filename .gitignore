@@ -45,6 +45,9 @@ dkms.conf
 .gitconfig
 .git-credentials
 moosictoken
+.local/bin/pip*
+.local/bin/pti*
+.local/bin/ptp*
 
 # Fish shell
 .config/fish/completions*
