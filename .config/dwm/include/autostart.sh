@@ -23,4 +23,4 @@ pgrep -f polkit-gnome-authentication-agent >/dev/null ||
 pgrep -x dwmblocks >/dev/null || /usr/local/bin/dwmblocks >/tmp/dwmblocks.log 2>&1 &
 
 # Musikcube background server
-pgrep -x musikcubed >/dev/null || musikcubed --start &
+# pgrep -x musikcubed >/dev/null || musikcubed --start &
