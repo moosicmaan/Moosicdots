@@ -44,6 +44,7 @@ dkms.conf
 .zsh/.zhistory
 .gitconfig
 .git-credentials
+moosictoken
 
 # Fish shell
 .config/fish/completions*
