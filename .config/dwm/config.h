@@ -183,6 +183,7 @@ static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap",
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
+static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 
 /*   MEDIA KEYS   */
 #include <X11/XF86keysym.h>
@@ -238,6 +239,8 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
   &((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
+  &((Keychord){1, {{MODKEY,                   XK_Print}}, spawn,          {.v = screenshot } }),
+  &((Keychord){1, {{0,                        XK_Print}}, spawn,          {.v = screenshot } }),
   &((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
   &((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
   &((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
