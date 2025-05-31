@@ -64,11 +64,11 @@
   },
   "cpu": {
     "format": "🖳{usage}%",
-    "on-click": "foot -e htop"
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "format": "🖴 {: >3}%",
-    "on-click": "foot -e htop"
+    "on-click": "kitty -e btop"
   },
   "temperature": {
     "thermal-zone": 7,
@@ -123,7 +123,7 @@
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "foot -e update"
+    "on-click": "kitty -e update"
   },
   "custom/power": {
     "format": "⏻",

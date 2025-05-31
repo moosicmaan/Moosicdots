@@ -685,7 +685,7 @@
     "format-icons": [
       "󰈸"
     ],
-    "on-click-right": "wezterm start --title nvtop sh -c 'nvtop'"
+    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
   },
   "custom/power_vertical": {
     "format": "⏻",
@@ -822,7 +822,8 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "wezterm"
+      "wezterm",
+      "kitty"
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"

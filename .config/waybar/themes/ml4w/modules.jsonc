@@ -74,7 +74,7 @@
     "return-type": "json",
     "exec": "~/.config/.scripts/waybar-updates",
     "restart-interval": 60,
-    "on-click": "wezterm start --class dotfiles-floating -e garuda-update",
+    "on-click": "kitty --class dotfiles-floating -e garuda-update",
     // "on-click-right": "~/.config/.settings/software.sh",
     "tooltip": false
   },
@@ -159,17 +159,17 @@
   },
   "cpu": {
     "format": "/ C {usage}% ",
-    "on-click": "wezterm start -e btop"
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "format": "/ M {}% ",
-    "on-click": "wezterm start -e btop"
+    "on-click": "kitty -e btop"
   },
   "disk": {
     "interval": 30,
     "format": "D {percentage_used}% ",
     "path": "/",
-    "on-click": "wezterm start -e btop"
+    "on-click": "kitty -e btop"
   },
   "hyprland/language": {
     "format": "/ K {short}"
