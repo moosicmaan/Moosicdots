@@ -1,5 +1,5 @@
 ignore-empty-password
-font=Ubuntu
+font=ComicShannsMono Nerd Font
 
 clock
 timestr=%R
@@ -10,7 +10,7 @@ image=/home/moosicmaan/Pictures/Backgrounds/wal19.jpg
 scaling=fit
 
 fade-in=2.2
-grace=30
+grace=60
 grace-no-mouse
 grace-no-touch
 
