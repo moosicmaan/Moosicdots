@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+rofi -config /home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi -show powermenu -modi powermenu:~/.config/.scripts/rofi-power 
