@@ -1,4 +1,10 @@
 #!/usr/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Turn off Hyprland animations and other effects for gaming
+#    Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 my_scripts="$HOME/.config/.scripts"
 winrules="$HOME/.config/hypr/winrules"
