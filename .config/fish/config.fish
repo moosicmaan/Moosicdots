@@ -250,6 +250,8 @@ set -x PATH $HOME/.config/.scripts $PATH
 
 alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
+# alias vial "~/Downloads/Vial*.AppImage"
+
 # -------------------------------------------------------------------------------
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------

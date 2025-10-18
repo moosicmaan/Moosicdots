@@ -7,7 +7,7 @@ xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
 # Keyboard setup
 # Reset XKB to a clean state, then apply only the options you want
 setxkbmap -layout us -option
-setxkbmap -layout us -option caps:escape_shifted_capslock -option compose:ralt
+# setxkbmap -layout us -option caps:escape_shifted_capslock -option compose:ralt
 
 # Key repeat rate
 xset r rate 300 120

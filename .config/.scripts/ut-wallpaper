@@ -37,7 +37,7 @@ case $IN_ARG in
   waypaper --random
   # waypaper --random --monitor "eDP-1"
   # MON1="$(cat /home/moosicmaan/.cache/swww/eDP-1)"
-  # waypaper --wallpaper "$MON1" --monitor "HDMI-A-1"
+  # exit
   ;;
 "--file")
   if [ "$IN_FILE" ]; then
@@ -74,9 +74,11 @@ echo "$NEWWALL" >"$CACHE_FILE"
 # Run pywal with the extracted wallpaper path
 wal -q -i "$NEWWALL"
 
-# Reload waybar with new colors
+# Reload waybar and dunst with new colors
 # Sending output to /dev/null to make debugging easier
 "$HOME/.config/.scripts/hypr-barlaunch" >/dev/null 2>&1
+killall -9 dunst
+dunst &
 
 # Restore the original config
 mv "$CONFIG_FILE.bak" "$CONFIG_FILE"

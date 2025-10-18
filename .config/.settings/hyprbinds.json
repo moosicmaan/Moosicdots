@@ -184,7 +184,7 @@
     "catch_all": false,
     "description": "Open the music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotube"
+    "arg": "uwsm app -- spotify"
   },
   {
     "locked": false,
@@ -1119,7 +1119,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotube"
+    "arg": "uwsm app -- spotify"
   },
   {
     "locked": false,
@@ -1170,7 +1170,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotube"
+    "arg": "uwsm app -- spotify"
   },
   {
     "locked": false,
@@ -1357,7 +1357,7 @@
     "catch_all": false,
     "description": "ZOOM in",
     "dispatcher": "exec",
-    "arg": "pypr zoom ++0.5"
+    "arg": "pypr zoom --0.5"
   },
   {
     "locked": false,
@@ -1374,7 +1374,7 @@
     "catch_all": false,
     "description": "ZOOM out",
     "dispatcher": "exec",
-    "arg": "pypr zoom --0.5"
+    "arg": "pypr zoom ++0.5"
   },
   {
     "locked": false,
@@ -3159,7 +3159,7 @@
     "catch_all": false,
     "description": "KBD toggle stop music",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --pause"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --stop"
   },
   {
     "locked": true,
@@ -3210,7 +3210,24 @@
     "catch_all": false,
     "description": "KBD display current media informantion",
     "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --now"
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --show"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "Unknown: 77",
+    "submap": "",
+    "key": "M",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD display current media informantion",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/media-ctrl --show"
   },
   {
     "locked": false,
@@ -3342,6 +3359,142 @@
     "modmask": "S",
     "submap": "",
     "key": "XF86ZoomOut",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD ExMon brightness down",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --dec"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "(NONE)",
+    "submap": "",
+    "key": "XF86KbdBrightnessUp",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD brightness up",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "MEH(C-A-S)",
+    "submap": "",
+    "key": "u",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD brightness up",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "(NONE)",
+    "submap": "",
+    "key": "XF86KbdBrightnessDown",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD brightness down",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "MEH(C-A-S)",
+    "submap": "",
+    "key": "d",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD brightness down",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "S",
+    "submap": "",
+    "key": "XF86KbdBrightnessUp",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD ExMon brightness up",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --inc"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "Unknown: 77",
+    "submap": "",
+    "key": "u",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD ExMon brightness up",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --inc"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "S",
+    "submap": "",
+    "key": "XF86KbdBrightnessDown",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "KBD ExMon brightness down",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-exmon-brightness --dec"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "Unknown: 77",
+    "submap": "",
+    "key": "d",
     "keycode": 0,
     "catch_all": false,
     "description": "KBD ExMon brightness down",

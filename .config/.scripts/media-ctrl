@@ -9,7 +9,8 @@
 # =====================================================
 
 # music_icon="$HOME/.config/.settngs/icons/music.png"
-music_icon="/usr/share/icons/candy-icons/mimetypes/scalable/audio-x-generic.svg"
+music_icon="/usr/share/icons/BeautyLine/actions/scalable/audio-x-generic.svg"
+music_dir="/usr/share/icons/BeautyLine/actions/scalable"
 # music_icon="music"
 
 # Show the current status of the media player
@@ -20,29 +21,31 @@ show_now() {
 # Play the next track
 play_next() {
   playerctl next
-  sleep 2
+  sleep 1
   show_music_notification
 }
 
 # Play the previous track
 play_previous() {
   playerctl previous
-  sleep 2
+  sleep 1
   show_music_notification
 }
 
 # Toggle play/pause
 toggle_play_pause() {
   playerctl play-pause
-  sleep 2
+  sleep 1
   show_music_notification
 }
 
 # Stop playback
 stop_playback() {
+  player_name=$(playerctl metadata --format '{{uc(playerName)}}')
+  music_icon="$music_dir/media-playback-stopped.svg"
   playerctl stop
-  sleep 2
-  notify-send -e -u low -i "$music_icon" "Playback Stopped"
+  sleep 1
+  notify-send -e -u low -i "$music_icon" "Playback Stopped" "$player_name"
 }
 
 # Display notification with song information
@@ -50,7 +53,9 @@ show_music_notification() {
   status=$(playerctl status)
   player=$(playerctl -l | head -n 1)
   if [[ "$status" == "Playing" ]]; then
+    music_icon="/usr/share/icons/BeautyLine/actions/scalable/media-playback-start.svg"
     if [[ "$player" == "mpv" ]]; then
+      music_icon="/tmp/mpv.covert_art.jpg"
       if [[ "$1" != "i" ]]; then
         # notify-send -e -u low -i "$music_icon" "MPV PLAYER without i(info requested) flag"
         exit 1
@@ -59,11 +64,11 @@ show_music_notification() {
     song_title=$(playerctl metadata title)
     song_artist=$(playerctl metadata artist)
     song_pos=$(playerctl metadata --format '{{uc(playerName)}} - ''{{duration(position)}} | {{duration(mpris:length)}}')
-    music_icon="/usr/share/icons/candy-icons/status/scalable/media-playback-playing.svg"
     notify-send -e -u normal -i "$music_icon" "Now Playing:" "$song_title ($song_artist)\non $song_pos"
   elif [[ "$status" == "Paused" ]]; then
-    music_icon="/usr/share/icons/candy-icons/status/scalable/media-playback-paused.svg"
-    notify-send -e -u normal -i "$music_icon" "Playback Paused"
+    music_icon="$music_dir/media-playback-pause.svg"
+    player_name=$(playerctl metadata --format '{{uc(playerName)}}')
+    notify-send -e -u normal -i "$music_icon" "Playback Paused" "$player_name"
   fi
 }
 
@@ -81,7 +86,7 @@ case "$1" in
 "--stop")
   stop_playback
   ;;
-"--now")
+"--show")
   show_now
   ;;
 *)

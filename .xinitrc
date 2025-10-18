@@ -2,7 +2,8 @@
 
 # Set up display and keyboard settings
 xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1-0 --mode 1920x1080 --pos 1920x0 --rotate normal
-setxkbmap -option 'caps:escape_shifted_capslock'
+# setxkbmap -option 'caps:escape_shifted_capslock'
+setxkbmap -layout us -option
 xset r rate 300 120
 
 export JBSTARTSCRIPT="$HOME/.xinitrc"
