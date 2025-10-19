@@ -534,7 +534,7 @@
     "longPress": false,
     "non_consuming": false,
     "has_description": true,
-    "modmask": "M-S",
+    "modmask": "M-A",
     "submap": "",
     "key": "k",
     "keycode": 0,
