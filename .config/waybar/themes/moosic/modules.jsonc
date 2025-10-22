@@ -36,6 +36,11 @@
       "*": 4
     }
   },
+  "custom/workspaces": {
+    "exec": "hyprctl workspaces -j | jq -r '[.[] | .name |= sub(\"^scratch_\"; \"\")] | tojson'",
+    "return-type": "json",
+    "interval": 1
+  },
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
@@ -44,13 +49,21 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
+    // "markup": true,
     "format": "{name}{icon}",
+    // "format": "{icon}<span fgcolor=\"transparent\" size=\"0\">{name}</span>",
+    // Optional: show only icon for special workspaces
+    "special-format": "{icon}",
     "format-icons": {
       "default": "",
       "empty": "",
       "visible": "󰹑",
-      "special": "😍",
-      "urgent": ""
+      "urgent": "",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     },
     "persistent-workspaces": {
       "*": 4

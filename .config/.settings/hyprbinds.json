@@ -1408,7 +1408,7 @@
     "catch_all": false,
     "description": "Reload hypr",
     "dispatcher": "exec",
-    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper init"
+    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --init"
   },
   {
     "locked": false,
@@ -1646,7 +1646,7 @@
     "catch_all": false,
     "description": "<submap-themes>Start/restart wallpaper and waybar",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper init"
+    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --init"
   },
   {
     "locked": false,

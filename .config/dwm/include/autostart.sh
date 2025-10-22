@@ -9,7 +9,9 @@ pkill kmonad
 // setxkbmap -layout us -option && setxkbmap -layout us -option caps:escape_shifted_capslock -option compose:ralt
 setxkbmap -layout us -option
 
-# Start system tray apps only if not running
+# Set the colorscheme used by kitty and others
+wal --theme tokyonight-moon >/dev/null
+
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x pasystray >/dev/null || pasystray &
 pgrep -x firewall-applet >/dev/null || firewall-applet &

@@ -109,7 +109,7 @@ window#waybar.empty #window {
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */
-  padding: 0px 5px 0px 5px;
+  padding: 0px 1px 0px 1px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;

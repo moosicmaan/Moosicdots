@@ -16,14 +16,10 @@
     "modules-left": [
       "group/appo",
       "hyprland/window",
-      "sway/window",
-      "sway/mode",
       "hyprland/submap"
     ],
     "modules-center": [
-      "hyprland/workspaces#4",
-      "dwl/tags",
-      "sway/workspaces"
+      "hyprland/workspaces"
     ],
     "modules-right": [
       "group/currents",
@@ -52,9 +48,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
-      "hyprland/workspaces#4",
-      "dwl/tags",
-      "sway/workspaces"
+      "hyprland/workspaces"
     ],
     "modules-right": [
       "group/audios",
