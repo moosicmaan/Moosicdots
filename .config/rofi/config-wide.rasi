@@ -37,6 +37,7 @@ window {
 /* properties for window widget 
     background-image:            @current-image;
     background-color:            transparent;
+    background-color:            black/60%;
 */
     transparency:                "real";
     location:                    center;
@@ -45,7 +46,7 @@ window {
     width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-color:            black/60%;
+    background-image:            @current-image;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -61,22 +62,21 @@ mainbox {
     spacing:                     25px;
     padding:                     40px;
     background-color:            transparent;
-    children:                    [ "inputbar", "message","listview", "mode-switcher" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     0px;
-    margin:                      0px 200px;
+    // margin:                      0px 200px;
     padding:                     0px;
     border:                      1px;
     border-radius:               6px;
     border-color:                gray/25%;
     background-color:            @color1;
-    children:                    [ "textbox-prompt-colon", "entry" ];
+    children:                    [ "textbox-prompt-colon", "prompt", "entry" ];
 }
-
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
@@ -86,6 +86,14 @@ textbox-prompt-colon {
     text-color:                  black;
     str:                         "";
 }
+prompt {
+    enabled:                     true;
+    padding:                     3px 3px;
+    border:                      0px;
+    background-color:            transparent;
+    text-color:                  white;
+    str:                         "";
+}
 entry {
     enabled:                     true;
     padding:                     3px 6px;
@@ -93,7 +101,7 @@ entry {
     background-color:            transparent;
     text-color:                  white;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 "...";
     placeholder-color:           inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -117,7 +125,6 @@ listview {
     background-color:            transparent;
     cursor:                      "default";
 }
-
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
@@ -158,46 +165,6 @@ element-text {
     background-color:            transparent;
     text-color:                  @color15;
     cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-}
-
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     false;
-    expand:                      false;
-    spacing:                     0px;
-    margin:                      0px 300px;
-    padding:                     6px;
-    border-radius:               6px;
-    background-color:            @color1;
-}
-button {
-    background-color:            inherit;
-    text-color:                  @color12;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            inherit;
-    text-color:                  white;
-}
-
-/*****----- Message -----*****/
-false {
-    padding:                     20px;
-    background-color:            #22272C;
-    text-color:                  white;
-}
-message {
-    padding:                     0px;
-    background-color:            inherit;
-    text-color:                  #FF9030;
-}
-textbox {
-    padding:                     0px;
-    border-radius:               0px;
-    background-color:            @color1;
-    text-color:                  white;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }

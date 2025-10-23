@@ -49,7 +49,7 @@ filtered_entries=$(jq -r '.[] | select(.submap == "" and .dispatcher != "submap"
 
 # Show options in rofi and get user selection
 # echo "$filtered_entries" >>"$bindtxt"
-selected=$(echo "$filtered_entries" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi")
+selected=$(echo "$filtered_entries" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi" -p "Search:")
 
 # Extract dispatcher and arg from the selected entry
 dispatcher=$(echo "$selected" | sed -E 's/.*: ([^ ]+) .*/\1/')

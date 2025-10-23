@@ -8,16 +8,16 @@
 
 case $1 in
 d)
-  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi | cliphist delete
+  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi -p "To Delete:" | cliphist delete
   ;;
 
 w)
-  if [ $(echo -e "Clear\nCancel" | rofi -dmenu -config ~/.config/rofi/config-simple.rasi) == "Clear" ]; then
+  if [ $(echo -e "Clear\nCancel" | rofi -dmenu -config ~/.config/rofi/config-simple.rasi "To wipe:") == "Clear" ]; then
     cliphist wipe
   fi
   ;;
 
 *)
-  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi | cliphist decode | wl-copy
+  cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-wide.rasi -p "Search List" | cliphist decode | wl-copy
   ;;
 esac

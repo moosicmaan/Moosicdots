@@ -109,7 +109,7 @@ window#waybar.empty #window {
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */
-  padding: 0px 1px 0px 1px;
+  padding: 0px 2px 0px 2px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
@@ -195,7 +195,7 @@ tooltip label {
 #custom-appmenu {
   color: @textcolor1;
   opacity: 0.8;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 2px 0px 2px;
 }
 /* TASKBAR */
 #taskbar {

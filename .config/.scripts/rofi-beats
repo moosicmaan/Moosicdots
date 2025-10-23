@@ -15,7 +15,7 @@ mDIR="$HOME/Music/Offline/"
 pDIR="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/candy-icons/status/scalable/"
+iDIR="/usr/share/icons/BeautyLine/actions/scalable"
 
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
@@ -68,9 +68,7 @@ play_local_music() {
   populate_local_music
 
   # Prompt the user to select a song
-  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Local Music")
-  # choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi -p "Local Music")
-  # choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Local Music")
+  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Select Song:")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -83,7 +81,7 @@ play_local_music() {
       notification "$choice"
 
       # Play the selected local music file using mpv
-      "${PREFIX}"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+      "${PREFIX}mpv" --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
 
       break
     fi
@@ -109,7 +107,7 @@ shuffle_playlist() {
   done
 
   # Let the user pick a name
-  pNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Playlists")
+  pNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Playlists:")
 
   # Convert selected name back to full path
   for i in "${!NAMES[@]}"; do
@@ -140,7 +138,7 @@ shuffle_artist() {
   done
 
   # Let the user pick a name
-  aNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Artists")
+  aNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Artists:")
 
   # Convert selected name back to full path
   for i in "${!NAMES[@]}"; do
@@ -165,8 +163,7 @@ shuffle_artist() {
 
 # Main function for playing online music
 play_online_music() {
-  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Online Music")
-  # choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Online Music")
+  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Online Music:")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -174,12 +171,10 @@ play_online_music() {
 
   link="${online_music[$choice]}"
 
-  # user_choice=$(printf "Play from Online Stations\nPlay from Music Folder\nShuffle Play from Music Folder" | rofi -dmenu -config ~/.config/rofi/launchers/type-1/style-14.rasi -p "Select music source")
   notification "$choice"
 
   # Play the selected online music using mpv
   eval "${PREFIX}mpv --shuffle --vid=no $link"
-  # ${PREFIX}mpg123 "$link"
 }
 
 # ------MAIN------
@@ -189,7 +184,7 @@ else
   # code to run if mpv was not already running
   # echo "mpv was not running"
   # Prompt the user to choose between local and online music
-  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nShuffle an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select music source")
+  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nShuffle an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select source:")
 
   case "$user_choice" in
   "Play from Online Stations")

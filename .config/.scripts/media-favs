@@ -1,0 +1,64 @@
+#!/usr/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# Script to put put a link of the current playing song
+# into a playlist forlder using Rofi.
+# To be used with Rofi-beats.
+#     Created by: Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
+
+# Directory local music folder
+pDIR="$HOME/Music/Playlists/"
+
+# Directory for icons
+iDIR="/usr/share/icons/BeautyLine/actions/scalable"
+
+if [ "${UWSM_SESSION}" ]; then
+  ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
+else
+  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-6.rasi"
+fi
+
+# get current song
+# song=$(playerctl -p mpv metadata xesam:url | sed 's|file://||')
+nSONG=$(playerctl -p mpv metadata xesam:title 2>/dev/null)
+nSONG=$(printf '%b' "${nSONG//%/\\x}")
+pSONG=$(playerctl -p mpv metadata xesam:url)
+pSONG=$(printf '%b' "${pSONG//%/\\x}" | sed 's|file://||')
+
+# Generate the list (directories + management options)
+sCHOICES=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
+  "$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
+
+# Show in rofi
+sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -p "Manage Playlists:")
+
+# Handle selection
+case "$sCHOICE" in
+"🎵 New Playlist")
+  NEWNAME=$(rofi -dmenu -config "$ROFI_CONFIG" -p "Enter new playlist name:")
+  if [[ -n "$NEWNAME" ]]; then
+    mkdir -p "$pDIR/$NEWNAME"
+    notify-send -i "$iDIR/music-playlist.svg" "Playlist created" "$NEWNAME"
+  fi
+  ;;
+"🗑️ Delete Playlist")
+  TODEL=$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$ROFI_CONFIG" -p "Delete which playlist?")
+  if [[ -n "$TODEL" ]]; then
+    rm -rf "${pDIR:?}/${TODEL:?}"
+    notify-send -i "$iDIR/music-playlist.svg" "Playlist deleted" "$TODEL"
+  fi
+  ;;
+"")
+  # user hit Escape
+  exit 0
+  ;;
+*)
+  # Otherwise, assume they picked an existing playlist — add song
+  # create symlink
+  ln -s "$pSONG" "$pDIR/$sCHOICE/"
+  ln -s "$pSONG" "$pDIR/favorites/"
+  notify-send -i "$iDIR/music-playlist.svg" "Adding \"$nSONG\" to:" "$sCHOICE"
+  ;;
+esac

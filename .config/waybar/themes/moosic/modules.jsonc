@@ -89,7 +89,12 @@
       "8": "😻",
       "9": "😺",
       "special": "😍",
-      "urgent": ""
+      "urgent": "",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     },
     "persistent-workspaces": {
       "*": 4
@@ -115,7 +120,12 @@
       "8": "🌔",
       "9": "🌕",
       "active": "🌏",
-      "special": "😍"
+      "special": "😍",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     },
     "persistent-workspaces": {
       "*": 4
@@ -142,7 +152,12 @@
       "6": "VI",
       "7": "VII",
       "8": "VIII",
-      "9": "IX"
+      "9": "IX",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
       // "10": "X"
     }
   },
@@ -162,7 +177,12 @@
       "visible": "󰮯 ",
       "persistent": "󰊠",
       "default": "󱎓",
-      "special": "😍"
+      "special": "😍",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     }
   },
   "hyprland/workspaces#4": {
@@ -186,7 +206,12 @@
       "6": "",
       "7": "",
       "8": "",
-      "9": ""
+      "9": "",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     }
   },
   "hyprland/workspaces#music": {
@@ -210,7 +235,12 @@
       "6": "󰽯",
       "7": "󰝱",
       "8": "󰽩",
-      "9": "󰝚"
+      "9": "󰝚",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
     }
   },
   "hyprland/workspaces#num": {
@@ -233,12 +263,17 @@
       "6": "󰎳",
       "7": "󰎶",
       "8": "󰎹",
-      "9": "󰎼"
+      "9": "󰎼",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
       // "10": "󰽽"
     }
   },
   "hyprland/submap": {
-    "format": "✌️ {}",
+    "format": "🔺{}🔺",
     "max-length": 18,
     "tooltip": false
   },
@@ -609,8 +644,8 @@
   "bluetooth": {
     "format": "  {status}",
     "format-connected": "  {device_alias}",
-    "format-disabled": "",
-    "format-off": "",
+    "format-disabled": "  DIS",
+    "format-off": "  OFF",
     "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
     "interval": 30,
     "on-click": "blueman-manager",

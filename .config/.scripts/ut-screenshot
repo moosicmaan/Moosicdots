@@ -27,13 +27,13 @@ case $choice in
   # notify-send --icon=configuration_section "Screenshot created" "Mode: Selected area"
   ;;
 "$option2")
-  # sleep 3
+  sleep 3
   # grim - | swappy -f -
   flameshot screen -d 3 -p "$DIR$NAME"
   # notify-send --icon=configuration_section "Screenshot created" "Mode: Fullscreen"
   ;;
 "$option3")
-  # sleep 3
+  sleep 3
   # grim - | swappy -f -
   flameshot full -d 3 -p "$DIR$NAME"
   # notify-send --icon=configuration_section "Screenshot created" "Mode: Double Fullscreen"
