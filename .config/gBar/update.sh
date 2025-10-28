@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # This script is not used by default. It is a human-readable version of the default Arch-applicable
 # package command with explanations

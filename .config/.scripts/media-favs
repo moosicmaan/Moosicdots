@@ -24,8 +24,32 @@ fi
 # song=$(playerctl -p mpv metadata xesam:url | sed 's|file://||')
 nSONG=$(playerctl -p mpv metadata xesam:title 2>/dev/null)
 nSONG=$(printf '%b' "${nSONG//%/\\x}")
-pSONG=$(playerctl -p mpv metadata xesam:url)
-pSONG=$(printf '%b' "${pSONG//%/\\x}" | sed 's|file://||')
+pSONG=$(playerctl -p mpv metadata xesam:url 2>/dev/null)
+pSONG=$(printf '%b' "${pSONG//%/\\x}")
+
+# Check for empty URL
+if [[ -z "$pSONG" ]]; then
+  notify-send -i "$iDIR/music-playlist.svg" "No song is currently playing!" "Cannot add to playlist."
+  exit 1
+fi
+
+# Check that the URL starts with 'file://'
+if [[ "$pSONG" != file://* ]]; then
+  notify-send -i "$iDIR/music-playlist.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
+  exit 1
+fi
+
+# Strip 'file://' prefix safely
+pSONG=${pSONG#file://}
+
+# Check if the local file actually exists
+if [[ ! -f "$pSONG" ]]; then
+  notify-send -i "$iDIR/music-playlist.svg" "File not found!" "Local file could not be accessed: $pSONG"
+  exit 1
+fi
+
+# (optional) log success or continue your logic here
+echo "Local song detected: $nSONG ($pSONG)"
 
 # Generate the list (directories + management options)
 sCHOICES=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \

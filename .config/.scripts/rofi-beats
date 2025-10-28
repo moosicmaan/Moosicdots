@@ -127,10 +127,10 @@ shuffle_playlist() {
   fi
 }
 
-shuffle_artist() {
+play_artist() {
   # Get the list of full directories into an array
   mapfile -t ARTS < <(find "$mDIR" -mindepth 1 -maxdepth 1 -type d | sort)
-
+  echo "in play_artist function"
   # Get just the folder names (basename) into a second array
   NAMES=()
   for path in "${ARTS[@]}"; do
@@ -150,11 +150,11 @@ shuffle_artist() {
   done
 
   echo [Debug] "aLIST: $aLIST"
-  notification "Shuffle Play an Artist"
+  notification "Play an Artist"
 
   # Run the player
   if [[ -n "$aLIST" && -d "$aLIST" ]]; then
-    eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no \"$aLIST\""
+    eval "${PREFIX}mpv --loop-playlist --vid=no \"$aLIST\""
   else
     echo [Debug] "No such directory: $aLIST"
     exit 1
@@ -184,7 +184,7 @@ else
   # code to run if mpv was not already running
   # echo "mpv was not running"
   # Prompt the user to choose between local and online music
-  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nShuffle an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select source:")
+  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nPlay an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select source:")
 
   case "$user_choice" in
   "Play from Online Stations")
@@ -199,8 +199,8 @@ else
   "Shuffle-play a Playlist")
     shuffle_playlist
     ;;
-  "Shuffle an Artist-Ablum")
-    shuffle_artist
+  "Play an Artist-Ablum")
+    play_artist
     ;;
   *)
     echo "Invalid choice"

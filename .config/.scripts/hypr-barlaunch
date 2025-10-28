@@ -15,9 +15,9 @@ defaulttheme="moosic;moosic/mixed"
 # -----------------------------------------------------
 # Quit all running statuesbar instances
 # -----------------------------------------------------
-killall waybar
 pkill waybar
 pkill gBar
+hyprpanel quit
 sleep 0.2
 
 # -----------------------------------------------------
@@ -26,7 +26,7 @@ sleep 0.2
 if [ ! -f "$themecache" ]; then
   echo -e "Theme cache file, $themecache, not found! \nUsing default: $defaulttheme"
   touch "$themecache"
-  echo "$defaulttheme" >"$themecache"
+  dw echo "$defaulttheme" >"$themecache"
 fi
 
 themestyle=$(cat "$themecache")
@@ -44,6 +44,16 @@ if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "gBar" ]; then
   notify-send -i "monitor" "Setting the statusbar to gBar"
   eval "${PREFIX}gBar bar 0" &
   # ${PREFIX}gBar bar 1 &
+  exit 0
+fi
+
+# -----------------------------------------------------
+# Load hyprpanel if selected
+# -----------------------------------------------------
+if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "hyprpanel" ]; then
+  echo "Starting hyprpanel..."
+  notify-send -i "monitor" "Setting the statusbar to hyprpanel"
+  eval "${PREFIX}hyprpanel" &
   exit 0
 fi
 
