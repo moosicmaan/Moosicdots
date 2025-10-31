@@ -63,8 +63,8 @@ static const char *tagsel[][2] = {
 
 /**** WINDOW RULES AND LAYOUTS ****/
 /* TAGGING */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 // static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
 // static const char *tags[] = { "󰫮", "󰫱", "󰫴", "󰫷", "M", "󰫽", "󰬀", "󰬃", "󰬇" };
 
@@ -80,7 +80,7 @@ static const Rule rules[] = {
   { NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
   { NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
   { NULL,                        NULL,   "moosCube",                     0,       1,   -1, 'p', 150,50,1620,600, 9 },
-  { NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'v', 150,50,1620,600, 9 },
+  { NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'x', 150,50,1620,600, 9 },
   { NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
   { "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
   { "vlc",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
@@ -174,6 +174,7 @@ static const char *my_music[] = { "spotube", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
 static const char *emojis[] = { "emote", NULL };
+static const char *calc[] = { "pkill", "galculator", "||", "galculator", NULL };
 static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };
@@ -182,6 +183,7 @@ static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL }
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
+static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/media-favs", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 
@@ -193,14 +195,14 @@ static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--
 static const char *volt[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--toggle", NULL };
 static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--nxt", NULL };
 static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--prv", NULL };
-static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--now", NULL };
+static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--show", NULL };
 static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 
 /*   FOR SCRATCHPADS - First arg only serves to match against key in rules   */
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *volume_scratch[] = {"v", "pavucontrol-qt", NULL};
+static const char *volume_scratch[] = {"x", "pavucontrol-qt", NULL};
 static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
 
 /****KEYCHORDS/KEY BINDINGS****/
@@ -224,6 +226,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
+  &((Keychord){1, {{HYPER,                        XK_i}}, spawn,          {.v = mfavs } }),
   &((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
   &((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
@@ -246,15 +249,17 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
   &((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
 
-  /*   MEDIA KEYS   */
+/*   MEDIA KEYS   */
   &((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
   &((Keychord){1, {{0,         XF86XK_AudioLowerVolume}}, spawn,          {.v = vold } }),
   &((Keychord){1, {{0,               XF86XK_AudioMedia}}, spawn,          {.v = mnow } }),
+  &((Keychord){1, {{HYPER,                        XK_m}}, spawn,          {.v = mnow } }),
   &((Keychord){1, {{0,                XF86XK_AudioMute}}, spawn,          {.v = volt } }),
   &((Keychord){1, {{0,                XF86XK_AudioPlay}}, spawn,          {.v = mpp } }),
   &((Keychord){1, {{0,                XF86XK_AudioStop}}, spawn,          {.v = mstop } }),
   &((Keychord){1, {{0,                XF86XK_AudioNext}}, spawn,          {.v = mnxt } }),
   &((Keychord){1, {{0,                XF86XK_AudioPrev}}, spawn,          {.v = mprv } }),
+  &((Keychord){1, {{0,               XF86XK_Calculator}}, spawn,          {.v = calc } }),
 
   /*   EXPERIMENTAL   */
   &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
