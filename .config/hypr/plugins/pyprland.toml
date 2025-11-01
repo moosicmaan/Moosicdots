@@ -33,7 +33,7 @@ size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromTop"
-command = "uwsm app -- kitty --class Moosic musikcube"
+command = "uwsm app -- pithos"
 # command = "uwsm app -- wezterm start --class=moosic musikcube"
 class = "Moosic"
 lazy = true

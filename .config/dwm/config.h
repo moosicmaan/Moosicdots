@@ -79,7 +79,7 @@ static const Rule rules[] = {
   { NULL,                        NULL,   "termdrop",                     0,       1,   -1, 's', 150,50,1620,900, 4 },
   { NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
   { NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
-  { NULL,                        NULL,   "moosCube",                     0,       1,   -1, 'p', 150,50,1620,600, 9 },
+  { NULL,                        NULL,   "Pithos",                       0,       1,   -1, 'm', 150,50,1620,600, 9 },
   { NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'x', 150,50,1620,600, 9 },
   { NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
   { "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
@@ -203,7 +203,7 @@ static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
 static const char *volume_scratch[] = {"x", "pavucontrol-qt", NULL};
-static const char *moosic_scratch[] = {"p", "kitty", "-T", "moosCube", "-e", "musikcube", NULL};
+static const char *moosic_scratch[] = {"m", "pithos", NULL};
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
