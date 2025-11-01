@@ -14,7 +14,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
       -- colorscheme = "abscs",
@@ -22,7 +23,7 @@ return {
       -- colorscheme = "kanagawa",
       -- colorscheme = "kanagawa-dragon",
       -- colorscheme = "abscs",
-      -- colorscheme = "retrobox",
+      colorscheme = "carbonfox",
       -- colorscheme = "pywal",
       -- colorscheme = "pablo",
       -- colorscheme = "gruvbox",
