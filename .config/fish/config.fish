@@ -261,9 +261,9 @@ alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=round
 # set vi mode
 fish_vi_key_bindings
 
-bind --mode insert ctrl-y yy
+bind --mode insert ctrl-alt-y yy
 bind --mode insert ctrl-f ff
-bind --mode insert ctrl-n nf
+bind --mode insert ctrl-alt-n nf
 
 # change the working directory using yazi
 function yy
@@ -273,7 +273,6 @@ function yy
         builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
-    pwd
 end
 
 function nf
