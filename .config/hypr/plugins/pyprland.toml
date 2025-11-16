@@ -37,7 +37,7 @@ command = "uwsm app -- pithos"
 # command = "uwsm app -- wezterm start --class=moosic musikcube"
 class = "Moosic"
 lazy = true
-size = "94% 45%"
+size = "34% 45%"
 
 [scratchpads.audio]
 animation = "fromBottom"

@@ -184,7 +184,7 @@
     "catch_all": false,
     "description": "Open the music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotify"
+    "arg": "uwsm app -- pithos"
   },
   {
     "locked": false,
@@ -556,7 +556,7 @@
     "key": "k",
     "keycode": 0,
     "catch_all": false,
-    "description": "Show Keybindings",
+    "description": "Show Keybinding Selector",
     "dispatcher": "exec",
     "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-keybinds"
   },
@@ -1136,7 +1136,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotify"
+    "arg": "uwsm app -- pithos"
   },
   {
     "locked": false,
@@ -1187,7 +1187,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- spotify"
+    "arg": "uwsm app -- pithos"
   },
   {
     "locked": false,
