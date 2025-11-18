@@ -52,11 +52,15 @@ fi
 echo "Local song detected: $nSONG ($pSONG)"
 
 # Generate the list (directories + management options)
-sCHOICES=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
-  "$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
+# sCHOICES=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
+# "$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
+sCHOICES="$(
+  find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+  printf "🎵 New Playlist\n🗑️ Delete Playlist\n"
+)"
 
 # Show in rofi
-sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -p "Manage Playlists:")
+sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -p "Add Current Song To or Manage Playlists:")
 
 # Handle selection
 case "$sCHOICE" in
