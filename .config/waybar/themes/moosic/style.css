@@ -348,7 +348,8 @@ tooltip label {
 #tray {
   padding: 0px 4px 0px 4px;
   color: @iconcolor;
-  background-color: @workspacesbackground2;
+  /* background-color: @workspacesbackground2; */
+  background-color: alpha (@workspacesbackground2, 0.6);
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;

@@ -76,6 +76,7 @@ wal -q -i "$NEWWALL"
 
 # Reload waybar and dunst with new colors
 # Sending output to /dev/null to make debugging easier
+sleep 1
 "$HOME/.config/.scripts/hypr-barlaunch" >/dev/null 2>&1
 killall -9 dunst
 dunst &
@@ -89,4 +90,6 @@ if [ "$IN_ARG" == "--init" ]; then
 else
   sleep 1
   notify-send --icon=monitor "Colors and Wallpaper Updated" "Main Image: $NEWWALL"
+  # the following might be useful in the future for debugging
+  sed -i 's|^post_command =.*|post_command = |' "$CONFIG_FILE"
 fi
