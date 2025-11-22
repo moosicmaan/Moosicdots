@@ -8,7 +8,8 @@
 # -----------------------------------------------------
 # =====================================================
 
-iDIR="/usr/share/icons/Papirus-Dark/symbolic/status"
+# iDIR="/usr/share/icons/Papirus-Dark/symbolic/status"
+iDIR="/usr/share/icons/BeautyLine/actions/scalable"
 # notification_timeout=1000
 step=5 # INCREASE/DECREASE BY THIS VALUE
 
@@ -20,16 +21,22 @@ get_backlight() {
 # Get icons
 get_icon() {
   current=$(get_backlight)
-  if [ "$current" -le "20" ]; then
-    icon="$iDIR/display-brightness-low-symbolic.svg"
-  elif [ "$current" -le "60" ]; then
-    icon="$iDIR/display-brightness-medium-symbolic.svg"
-  elif [ "$current" -gt "80" ]; then
-    icon="$iDIR/display-brightness-high-symbolic.svg"
-  elif [ "$current" -le "5" ]; then
-    icon="$iDIR/display-brightness-off-symbolic.svg"
+  echo "Current brightness: $current"
+  if [ "$current" -le 20 ]; then
+    # icon="$iDIR/display-brightness-low-symbolic.svg"
+    icon="$iDIR/brightness-low.svg"
+  elif [ "$current" -le 60 ]; then
+    # icon="$iDIR/display-brightness-medium-symbolic.svg"
+    icon="$iDIR/brightness-display.svg"
+  elif [ "$current" -gt 80 ]; then
+    # icon="$iDIR/display-brightness-high-symbolic.svg"
+    icon="$iDIR/brightness-high.svg"
+  elif [ "$current" -le 5 ]; then
+    # icon="$iDIR/display-brightness-off-symbolic.svg"
+    icon="$iDIR/brightness-display.svg"
   else
-    icon="$iDIR/display-brightness-symbolic.svg"
+    # icon="$iDIR/display-brightness-symbolic.svg"
+    icon="$iDIR/brightness-display.svg"
   fi
 }
 
