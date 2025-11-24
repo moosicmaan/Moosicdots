@@ -19,6 +19,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
+      "dwl/tags",
       "hyprland/workspaces"
     ],
     "modules-right": [
@@ -48,6 +49,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
+      "dwl/tags",
       "hyprland/workspaces"
     ],
     "modules-right": [

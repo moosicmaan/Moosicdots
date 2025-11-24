@@ -21,7 +21,6 @@
     ],
     "modules-center": [
       "hyprland/workspaces#roman",
-      "sway/workspaces",
       "dwl/tags"
     ],
     "modules-right": [
@@ -52,7 +51,6 @@
     ],
     "modules-center": [
       "hyprland/workspaces#roman",
-      "sway/workspaces",
       "dwl/tags"
     ],
     "modules-right": [

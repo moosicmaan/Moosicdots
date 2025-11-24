@@ -20,6 +20,7 @@
       "group/motherboard"
     ],
     "modules-center": [
+      "dwl/tags",
       "hyprland/workspaces#roman",
       "hyprland/submap"
     ],
@@ -78,6 +79,7 @@
       "mpris#moosic"
     ],
     "modules-center": [
+      "dwl/tags",
       "hyprland/workspaces#roman",
       "hyprland/submap"
     ],

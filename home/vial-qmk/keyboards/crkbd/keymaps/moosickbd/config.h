@@ -9,8 +9,6 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-// #define AUDIO_ENABLE
-
 #undef DYNAMIC_KEYMAP_LAYER_COUNT
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 #define TAPPING_TERM 380
