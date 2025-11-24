@@ -15,6 +15,7 @@ font-family: DejaVuSansM Nerd Font Propo;
 font-family: SpaceMono Nerd Font Propo;
 font-family: Roboto Condensed;
 font-family: MonaspiceRn Nerd Font Propo;
+  font-family: ComicShannsMono Nerd Font Propo;
   font-family: OpenDyslexicM Nerd Font Propo;
   font-family: Iosevka Nerd font Propo;
   font-family: ProFont IIx Nerd Font Propo;
@@ -23,7 +24,7 @@ background-color: #ffffff;
  */
 * {
   
-  font-family: ComicShannsMono Nerd Font Propo;
+  font-family: Hack Nerd Font Propo;
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
