@@ -1,0 +1,19 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=B4A6-1349                            /boot/efi      vfat    defaults,umask=0077 0 2
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /              btrfs   subvol=/@,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /home          btrfs   subvol=/@home,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /root          btrfs   subvol=/@root,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /srv           btrfs   subvol=/@srv,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /var/cache     btrfs   subvol=/@cache,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /var/log       btrfs   subvol=/@log,defaults,noatime,compress=zstd 0 0
+UUID=db0d6115-5056-4c99-9fd5-e89d9bf63cc4 /var/tmp       btrfs   subvol=/@tmp,defaults,noatime,compress=zstd 0 0
+UUID=faa511c7-87a3-43ab-bd7c-d3de0d323e66 swap           swap    defaults   0 0
+# JDB -->
+UUID=f148c284-e3b4-489c-b2a2-c9f8d605afce /mnt/data	     btrfs	 defaults,nofail	0 0
+UUID=7ded2f86-a9a0-4434-a413-e199ec5ba184 /mnt/media	   ext4	   defaults,nofail	0 0

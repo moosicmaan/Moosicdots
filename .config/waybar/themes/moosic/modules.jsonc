@@ -60,8 +60,9 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     // "markup": true,
     "format": "{name}{icon}",
-    // "format": "{icon}<span fgcolor=\"transparent\" size=\"0\">{name}</span>",
+    // "format": "{icon}",
     // Optional: show only icon for special workspaces
+    // "format": "{icon}<span fgcolor=\"transparent\" size=\"0\">{name}</span>",
     "special-format": "{icon}",
     "format-icons": {
       "default": "",
@@ -199,6 +200,7 @@
     "all-outputs": true,
     "show-special": true,
     "format": "{icon}",
+    // "format": "{name}{icon}",
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -295,7 +297,8 @@
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
       "(.*) - Kitty": "$1",
-      "(.*) - Wezterm": "$1"
+      "(.*) - Wezterm": "$1",
+      "(.*) - Zen Browser": "$1"
     },
     "separate-outputs": true,
     "icon": true,

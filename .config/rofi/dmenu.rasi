@@ -59,10 +59,10 @@ window {
     /* properties for window widget */
     transparency:                "real";
     location:                    north;
-    anchor:                      north;
+    anchor:                      south;
     fullscreen:                  false;
     width:                       100%;
-    x-offset:                    1px;
+    x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
@@ -73,7 +73,8 @@ window {
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
-    background-color:            transparent;
+    // background-color:            transparent;
+    background-color:            @background;
 }
 
 /*****----- Main Box -----*****/
@@ -147,7 +148,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     5px;
+    spacing:                     2px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -167,7 +168,7 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     6px;
     margin:                      0px;
     padding:                     1px 6px;
     border:                      0px solid;

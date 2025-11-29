@@ -110,3 +110,6 @@ moosictoken
 # Miscellaneous
 .config/engrammer*
 .local/bin/{pt*,pip*}
+.mozilla/*
+.thunderbird/*
+.zen/*
