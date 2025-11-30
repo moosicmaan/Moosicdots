@@ -17,8 +17,8 @@ title-hidden = true
 vsync = true
 wsl = false
 
-# normal = ["OpenDyslexic Nerd Font Mono"]
 [font]
-normal = ["ComicShannsMono Nerd Font Mono"]
+# normal = ["ComicShannsMono Nerd Font Mono"]
+normal = ["Hack Nerd Font Mono"]
 # normal = ["HeavyData Nerd Font"]
 size = 24

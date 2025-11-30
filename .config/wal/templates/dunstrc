@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    font = "ComicShannsMono Nerd Font Propo" 14
+    font = "Hack Nerd Font Propo" 14
     width = 400
     height = (0,700)
     origin = top-right

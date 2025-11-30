@@ -29,7 +29,8 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Iosevka Nerd Font 14";
+    // font:                        "Iosevka Nerd Font 14";
+    font:                        "Hack Nerd Font Propo Regular 12";
 }
 
 /*****----- Main Window -----*****/
