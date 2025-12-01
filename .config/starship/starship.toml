@@ -2,7 +2,8 @@ format = '$username$os$hostname$jobs$directory$sudo$git_status$git_state$git_met
 # format = '$username$hostname$jobs$directory$sudo$git_status$all'
 right_format = "$battery$time"
 add_newline = true
-command_timeout = 1000
+command_timeout = 2000
+scan_timeout = 60
 
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌

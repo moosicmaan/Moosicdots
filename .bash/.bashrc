@@ -101,10 +101,11 @@ font_directory=/usr/share/kbd/consolefonts/
 # Changing the font if in TTY session
 if [[ $DISPLAY == "" ]]; then
   setfont $font_directory$my_font
-  echo "----> Font set to: $font_directory$my_font"
+  echo " > Font set to: $font_directory$my_font"
 fi
 
 # My aliases and prompts - not using starship in bash.
+alias hypr="uwsm start -- hyprland.desktop"
 alias vim="nvim"
 export PATH=$PATH:$HOME/.config/emacs/bin
 alias ec="emacsclient -c -a 'emacs' &"
