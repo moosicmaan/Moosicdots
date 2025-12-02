@@ -228,3 +228,4 @@ alias cdi='__zoxide_zi'
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 . "$HOME/.cargo/env"
+export PATH="$HOME/bin:$PATH"

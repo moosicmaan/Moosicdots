@@ -13,3 +13,4 @@ uwsm aux app-daemon
 #   # if uwsm check may-start && uwsm select; then
 #   exec uwsm start default
 # fi
+. "$HOME/.cargo/env"

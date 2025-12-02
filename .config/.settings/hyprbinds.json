@@ -31,7 +31,7 @@
     "catch_all": false,
     "description": "Open the alternate terminal",
     "dispatcher": "exec",
-    "arg": "uwsm app -- ghostty;"
+    "arg": "uwsm app -- foot;"
   },
   {
     "locked": false,
@@ -48,7 +48,7 @@
     "catch_all": false,
     "description": "Open the graphical file browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- pcmanfm-qt"
+    "arg": "uwsm app -- dolphin"
   },
   {
     "locked": false,
@@ -252,7 +252,7 @@
     "catch_all": false,
     "description": "Open tmux in terminal with no padding",
     "dispatcher": "exec",
-    "arg": "uwsm app -- uwsm app -- ghostty -e tmux"
+    "arg": "uwsm app -- uwsm app -- foot -e tmux"
   },
   {
     "locked": false,
@@ -949,7 +949,7 @@
     "catch_all": false,
     "description": "Open alternate email",
     "dispatcher": "exec",
-    "arg": "uwsm app -- bluemail"
+    "arg": "uwsm app -- thunderbird"
   },
   {
     "locked": false,
@@ -1000,7 +1000,7 @@
     "catch_all": false,
     "description": "Open alternate email",
     "dispatcher": "exec",
-    "arg": "uwsm app -- bluemail"
+    "arg": "uwsm app -- thunderbird"
   },
   {
     "locked": false,
@@ -1034,7 +1034,7 @@
     "catch_all": false,
     "description": "Open graphical text editor",
     "dispatcher": "exec",
-    "arg": "uwsm app -- geany"
+    "arg": "uwsm app -- kate"
   },
   {
     "locked": false,
@@ -1085,7 +1085,7 @@
     "catch_all": false,
     "description": "Open graphical text editor",
     "dispatcher": "exec",
-    "arg": "uwsm app -- geany"
+    "arg": "uwsm app -- kate"
   },
   {
     "locked": false,
