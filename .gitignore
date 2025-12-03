@@ -111,6 +111,5 @@ moosictoken
 .config/engrammer*
 .local/bin/{pt*,pip*}
 .mozilla/*
-.thunderbird/*
 .zen/*
 .config/BraveSoftware/*

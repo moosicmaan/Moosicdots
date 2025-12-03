@@ -36,11 +36,11 @@
     hide_duplicate_count = false
     show_indicators = yes
     enable_recursive_icon_lookup = true
-    icon_theme = "breeze, Adwaita, BeautyLine"
+    icon_theme = "Beautyline, Tela-circle-dracula-dark, breeze, Adwaita"
     icon_position = left
     min_icon_size = 64
     max_icon_size = 64
-	  icon_path = /usr/share/icons/BeautyLine/apps/scalable
+	  icon_path = /usr/share/icons/Tela-circle-dracula-dark/scalable
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:

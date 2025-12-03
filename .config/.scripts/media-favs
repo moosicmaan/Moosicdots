@@ -12,7 +12,7 @@
 pDIR="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/BeautyLine/actions/scalable"
+iDIR="/usr/share/icons/breeze-dark"
 
 if [ "${UWSM_SESSION}" ]; then
   ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
