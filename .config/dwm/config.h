@@ -28,8 +28,8 @@ static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner,
 static const unsigned int systrayspacing = 0; /* systray spacing */
 static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor,
                                                  False: display systray on the last monitor*/
-static const char *fonts[]          = { "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9" };
-static const char dmenufont[]       = "NotoSansM Nerd Font Mono Condensed ExtraBold:size=9";
+static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=8" };
+static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=8";
 static const unsigned int baralpha = 0xA3;
 static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#2c3043";
@@ -105,20 +105,20 @@ static const int resizehints = 0;             /* 1 means respect size hints in t
 static const int lockfullscreen = 1;          /* 1 will force focus on the fullscreen window */
 #include "fibonacci.c"
 static const Layout layouts[] = {
-// /* symbol     arrange function */
-//   { "󰝤󰕱",      tile },                        /* []=first entry is default */
-//   { "󰉧󰉨",      NULL },                        /* ><>no layout function means floating behavior */
-//   { "",      monocle },                      /* [M]only one visable window per tag */
-//   { "󰝤󰁥",      spiral },                      /* [@]much like hyprland*/
-//   { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
-// };
 /* symbol     arrange function */
-  { "[]=",      tile },                        /* []=first entry is default */
-  { "><>",      NULL },                        /* ><>no layout function means floating behavior */
+  { "󰝤󰕱",      tile },                        /* []=first entry is default */
+  { "󰉧󰉨",      NULL },                        /* ><>no layout function means floating behavior */
   { "",      monocle },                      /* [M]only one visable window per tag */
-  { "[@]",      spiral },                      /* [@]much like hyprland*/
-  { "[\\]",     dwindle },                      /* [\\]smaller to the SE*/
+  { "󰝤󰁥",      spiral },                      /* [@]much like hyprland*/
+  { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
 };
+// /* symbol     arrange function */
+//   { "[]=",      tile },                        /* []=first entry is default */
+//   { "><>",      NULL },                        /* ><>no layout function means floating behavior */
+//   { "",      monocle },                      /* [M]only one visable window per tag */
+//   { "[@]",      spiral },                      /* [@]much like hyprland*/
+//   { "[\\]",     dwindle },                      /* [\\]smaller to the SE*/
+// };
 
 /* AUTOSTART */
 static const char *const autostart[] = {

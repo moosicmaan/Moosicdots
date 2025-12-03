@@ -41,12 +41,12 @@ if [ -z "$volume" ]; then
 fi
 
 if [ "$volume" -gt 40 ]; then
-  icon="🔊 "
+  icon="🔊"
 elif [ "$volume" -gt 15 ]; then
-  icon="🔉 "
+  icon="🔉"
 else
-  icon="🔈️ "
+  icon="🔈️"
 fi
 
-display "| $icon$volume%"
-# echo -e "| \x04$icon$volume%"
+display " $icon$volume%"
+# echo -e "  \x04$icon$volume%"

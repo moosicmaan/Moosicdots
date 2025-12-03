@@ -15,10 +15,10 @@ case "$BLOCK_BUTTON" in
 esac
 
 set -- --player=spotube,mpv,%any
-icon="▶️"
-paused_icon="⏸️"
-# icon=">"
-# paused_icon="||"
+icon="󰐊"
+paused_icon="󰏤"
+# icon="▶️"
+# paused_icon="⏸️"
 if status="$(playerctl "$@" status 2>&1)" && [ "$status" != "Stopped" ]; then
   [ "$status" = "Paused" ] && icon="$paused_icon"
 
@@ -30,8 +30,7 @@ fi
 
 . "$HOME"/.config/.scripts/sb-theme
 # display "$icon $song"
-display "$(printf '%.99s' "$icon $song")"
-# display "$icon $song"
+display "  $(printf '%.99s' "$icon $song")"
 
 # display "$(printf '%.79s' "\x1b[33m$icon \x1b[32m$song\x1b[0m")"
 # printf '%.79s' "$icon $song"
