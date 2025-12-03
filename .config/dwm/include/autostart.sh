@@ -12,7 +12,7 @@ setxkbmap -layout us -option
 # Set the colorscheme used by kitty and others
 wal --theme tokyonight-moon >/dev/null
 
-pgrep -x nm-applet >/dev/null || nm-applet &
+pgrep -x nm-tray >/dev/null || nm-tray &
 pgrep -x pasystray >/dev/null || pasystray &
 pgrep -x firewall-applet >/dev/null || firewall-applet &
 pgrep -x dunst >/dev/null || dunst &
@@ -20,7 +20,7 @@ pgrep -x flameshot >/dev/null || flameshot &
 pgrep -x blueman-applet >/dev/null || blueman-applet &
 
 # Polkit agent (usually doesn't duplicate, but just in case)
-pgrep -f /usr/lib/polkit-1/polkitd >/dev/null ||
+pgrep -f /usr/lib/polkit-kde-authentication-agent-1 >/dev/null ||
   /usr/lib/polkit-kde-authentication-agent-1 &
 
 # Start dwmblocks (with logging) if not already running

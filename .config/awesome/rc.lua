@@ -126,20 +126,20 @@ local modkey1 = "Control"
 -- -----------------------------------------------
 -- moosic variables
 local my_term = "kitty" -- (M-return) Launch default terminal
-local my_term2 = "ghostty" --# (M-t) Launch alternate terminal
+local my_term2 = "foot" --# (M-t) Launch alternate terminal
 local my_brows = "zen-browser" --# (M-b) Launch default browser
 local my_brows2 = "brave" --# (M-f1) Launch alternate browser
 local my_browsv = "qutebrowser" --# (M-o) Launch VIM-based browser
 local my_email = "thunderbird" --# (M-A-return) Launch default email client
 local my_email2 = "bluemail" --# (M-f2) Launch alternate email client
-local my_editg = "geany" --# (M-f3) Launch GUI text editor
+local my_editg = "kate" --# (M-f3) Launch GUI text editor
 local my_editc = "neovide" --# (M-n) Launch console text editor
-local my_filesg = "pcmanfm-qt" --# (M-S-return) Launch GUI file browser
+local my_filesg = "dolphin" --# (M-S-return) Launch GUI file browser
 local my_filesc = "kitty -e yazi" --# (M-A-o) Launch console file browser
 local menu_run = "rofi -config /home/moosicmaan/.config/rofi/dmenu.rasi -show run" --# (M-p) Launch RUN menu
 local menu_drun = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun" --# (M-S-p) Launch DRUN menu
 local menu_win = "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window" --# (M-A-p) Launch WINmenu
-local my_music = "pithos" --# (M-m) Launch music player
+local my_music = "elisa" --# (M-m) Launch music player
 local my_media = "vlc" --# (M-S-m) Launch media player
 local my_office = "libreoffice" --# (M-f4) Launch office suite
 local my_image = "gimp" --# (M-f5) Launch GUI image editor
@@ -173,8 +173,6 @@ awful.layout.layouts = {
 	awful.layout.suit.max.fullscreen,
 	awful.layout.suit.magnifier,
 	awful.layout.suit.corner.nw,
-	awful.layout.suit.corner.ne,
-	awful.layout.suit.corner.sw,
 	awful.layout.suit.corner.se,
 	lain.layout.cascade,
 	lain.layout.cascade.tile,
