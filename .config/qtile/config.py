@@ -76,7 +76,7 @@ my_settings = os.path.expanduser("~/.config/.settings/")
 wl_input_rules = {
     "type:keyboard": InputConfig(
         # kb_options="caps:swapescape",
-        kb_options="caps:escape_shifted_capslock",
+        # kb_options="caps:escape_shifted_capslock",
         kb_repeat_rate=90,
         kb_repeat_delay=300,
     )
@@ -127,16 +127,14 @@ modifier_keys = {
 # Default Applications - copied from /include/vars.py
 # -----------------------------------------------
 my_term = "kitty"  # (M-return) Launch default terminal
-my_term2 = "ghostty"  # (M-t) Launch alternate terminal
+my_term2 = "foot"  # (M-t) Launch alternate terminal
 my_brows = "zen-browser"  # (M-b) Launch default browser
 my_brows2 = "brave"  # (M-f1) Launch alternate browser
-my_brows3 = "firedragon"  # (C-A-b) Launch 2nd alternate browser
 my_browsv = "qutebrowser"  # (M-o) Launch VIM-based browser
 my_email = "thunderbird"  # (M-A-return) Launch default email client
-my_email2 = "bluemail"  # (M-f2) Launch alternate email client
 my_editg = "kate"  # (M-f3) Launch GUI text editor
 my_editc = "nvim"  # (M-n) Launch console text editor
-my_filesg = "pcmanfm-qt"  # (M-S-return) Launch GUI file browser
+my_filesg = "dolphin"  # (M-S-return) Launch GUI file browser
 my_filesc = "kitty -e yazi"
 # menu_run = "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run"
 menu_run = "wmenu-run"
@@ -146,7 +144,7 @@ menu_drun = (
 menu_win = (
     "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window"
 )
-my_music = "spotube"  # (M-m) Launch music player
+my_music = "elise"  # (M-m) Launch music player
 my_media = "vlc"  # (M-S-m) Launch media player
 my_office = "libreoffice"  # (M-f4) Launch office suite
 my_image = "gimp"  # (M-f5) Launch GUI image editor
@@ -300,7 +298,7 @@ keys = [
     EzKey("M-e", lazy.spawn("emacsclient -c -a 'emacs'"), desc="Launch emacs client"),
     EzKey("M-S-e", lazy.spawn("emacs --daemon=serve"), desc="Launch emacs server"),
     EzKey("M-o", lazy.spawn(my_browsv), desc="Launch qutebrowser"),
-    EzKey("M-t", lazy.spawn(my_term2), desc="Launch alacritty"),
+    EzKey("M-t", lazy.spawn(my_term2), desc="Launch terminal"),
     EzKey("M-m", lazy.spawn(my_music), desc="Launch music"),
     EzKey("M-v", lazy.spawn(my_media), desc="Launch media player"),
     EzKey("M-S-p", lazy.spawn(menu_drun), desc="Launch Rofi menu"),
@@ -332,7 +330,7 @@ keys = [
         desc="Qtile Shell Scratchpad",
     ),
     EzKey(
-        "M-A-v",
+        "M-A-x",
         lazy.group["scratchpad"].dropdown_toggle("volumectl"),
         desc="Pulse Volume Control Scratchpad",
     ),
@@ -379,14 +377,12 @@ keys = [
     # FUNCTION KEYS
     # -----------------------------------------------------------------
     EzKey("M-<F1>", lazy.spawn(my_brows2), desc="Launch web browser"),
-    EzKey("M-<F2>", lazy.spawn(my_email2), desc="Launch email"),
     EzKey("M-<F3>", lazy.spawn(my_filesg), desc="Launch file browser"),
     EzKey("M-<F4>", lazy.spawn(my_editg), desc="Launch graphical editor"),
     EzKey("M-<F5>", lazy.spawn(my_image), desc="Launch GIMP"),
     EzKey("M-<F6>", lazy.spawn(my_media), desc="Launch Media Player"),
     EzKey("M-<F7>", lazy.spawn("obs"), desc="Launch OBS"),
     EzKey("M-<F8>", lazy.spawn("zoom"), desc="Launch zoom"),
-    EzKey("M-<F9>", lazy.spawn("skypeforlinux"), desc="Launch Skype"),
     # -----------------------------------------------------------------
     # ACTIONS
     # -----------------------------------------------------------------
@@ -711,7 +707,7 @@ groups.append(
             ),
             DropDown(
                 "moosic",
-                "kitty -e musikcube",
+                "elise",
                 x=0.05,
                 y=0.02,
                 width=0.9,
@@ -731,7 +727,7 @@ groups.append(
             ),
             DropDown(
                 "volumectl",
-                "pavucontrol",
+                "pavucontrol-qt",
                 x=0.05,
                 y=0.02,
                 width=0.9,

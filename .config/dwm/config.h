@@ -112,13 +112,6 @@ static const Layout layouts[] = {
   { "󰝤󰁥",      spiral },                      /* [@]much like hyprland*/
   { "󰝤",     dwindle },                      /* [\\]smaller to the SE*/
 };
-// /* symbol     arrange function */
-//   { "[]=",      tile },                        /* []=first entry is default */
-//   { "><>",      NULL },                        /* ><>no layout function means floating behavior */
-//   { "",      monocle },                      /* [M]only one visable window per tag */
-//   { "[@]",      spiral },                      /* [@]much like hyprland*/
-//   { "[\\]",     dwindle },                      /* [\\]smaller to the SE*/
-// };
 
 /* AUTOSTART */
 static const char *const autostart[] = {
@@ -171,17 +164,17 @@ static const char *rofi_power[] = {
     NULL 
 };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *my_term2[] = { "ghostty", NULL };
-static const char *browscmd[]  = { "brave", NULL };
-static const char *my_browsv[] = { "zen-browser", NULL };
+static const char *my_term2[] = { "konsole", NULL };
+static const char *browscmd[]  = { "zen-browser", NULL };
+static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
-static const char *my_editg[] = { "geany", NULL };
+static const char *my_editg[] = { "kate", NULL };
 static const char *my_editc[] = { "neovide", NULL };
-static const char *my_filesg[] = { "pcmanfm-qt", NULL };
-static const char *my_music[] = { "spotube", NULL };
+static const char *my_filesg[] = { "dolphin", NULL };
+static const char *my_music[] = { "elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
-static const char *emojis[] = { "emote", NULL };
+static const char *emojis[] = { "pkill", "emote", "||", "emote", NULL };
 static const char *calc[] = { "pkill", "galculator", "||", "galculator", NULL };
 static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
@@ -241,9 +234,9 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY,                  XK_Return}}, spawn,          {.v = termcmd } }),
   &((Keychord){1, {{MODKEY|ShiftMask,        XK_Return}}, spawn,          {.v = my_filesg } }),
   &((Keychord){1, {{MODKEY|ControlMask,      XK_Return}}, spawn,          {.v = my_email } }),
-  &((Keychord){1, {{MODKEY,                       XK_b}}, spawn,          {.v = browscmd } }),
+  &((Keychord){1, {{MODKEY,                       XK_o}}, spawn,          {.v = browscmd } }),
   &((Keychord){1, {{MODKEY,                       XK_t}}, spawn,          {.v = my_term2 } }),
-  &((Keychord){1, {{MODKEY,                       XK_o}}, spawn,          {.v = my_browsv } }),
+  &((Keychord){1, {{MODKEY,                       XK_b}}, spawn,          {.v = my_browsv } }),
   &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
   &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
   &((Keychord){1, {{MODKEY,                       XK_m}}, spawn,          {.v = my_music } }),
