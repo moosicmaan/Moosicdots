@@ -20,7 +20,7 @@
     "key": "RETURN",
     "submap": "",
     "dispatcher": "exec",
-    "arg": "uwsm app -- pcmanfm-qt",
+    "arg": "uwsm app -- dolphin",
     "description": "Open the graphical file browser"
   },
   {

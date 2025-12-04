@@ -118,7 +118,7 @@
         "key": "RETURN",
         "submap": "",
         "dispatcher": "exec",
-        "arg": "pcmanfm-qt",
+        "arg": "dolphin",
         "description": "Open the GUI file browser"
       },
       {
@@ -1232,8 +1232,14 @@
       }
     ],
     "hypr": [
-      { "attr": "some code", "desc": "description" },
-      { "attr2": "some other code", "desc": "description" }
+      {
+        "attr": "some code",
+        "desc": "description"
+      },
+      {
+        "attr2": "some other code",
+        "desc": "description"
+      }
     ]
   }
 ]

@@ -98,7 +98,7 @@
         (command: Execute, value: "qutebrowser", modifier: ["modkey"], key: "o"),
         (command: Execute, value: "thunderbird", modifier: ["modkey", "Control"], key: "Return"),
         (command: Execute, value: "cd /mnt/data/moosicmaan/CONFIG/;  neovide", modifier: ["modkey"], key: "n"),
-        (command: Execute, value: "pcmanfm-qt", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "dolphin", modifier: ["modkey", "Shift"], key: "Return"),
         (command: Execute, value: "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show drun", modifier: ["modkey", "Shift"], key: "p"),
         (command: Execute, value: "rofi -config /home/moosicmaan/.config/rofi/config.rasi -show window", modifier: ["modkey", "Control"], key: "p"),
         (command: Execute, value: "spotube", modifier: ["modkey"], key: "m"),

@@ -1,6 +1,6 @@
 M-RETURN "Open the default terminal": exec uwsm app -- wezterm
 M-t "Open the alternate terminal": exec uwsm app -- ghostty;
-M-S-RETURN "Open the graphical file browser": exec uwsm app -- pcmanfm-qt
+M-S-RETURN "Open the graphical file browser": exec uwsm app -- dolphin
 M-C-RETURN "Open the default email": exec uwsm app -- thunderbird
 M-b "Open the default browser": exec uwsm app -- brave
 M-o "Open the vim-based browser": exec uwsm app -- qutebrowser

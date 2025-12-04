@@ -101,7 +101,7 @@
   },
   "custom/filemanager": {
     "format": "",
-    "on-click": "pcmanfm-qt",
+    "on-click": "dolphin",
     "tooltip": false
   },
   "custom/browser": {

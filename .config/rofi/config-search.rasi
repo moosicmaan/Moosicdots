@@ -26,11 +26,12 @@ configuration {
 @import "~/.cache/wal/colors-rofi-pywal"
 @import "~/.cache/current_wallpaper.rasi"
 @import "~/.config/.settings/rofi-border.rasi"
+@import                          "shared/fonts.rasi"
 
 /*****----- Global Properties -----*****/
 * {
     // font:                        "Iosevka Nerd Font 14";
-    font:                        "Hack Nerd Font Propo Bold 12";
+    // font:                        "Hack Nerd Font Propo 12";
 }
 
 /*****----- Main Window -----*****/
