@@ -86,7 +86,7 @@ if status --is-interactive
     else
         ## Run fastfetch if session is interactive
         # fastfetch --config neofetch.jsonc
-        # fastfetch --load-config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
+        # fastfetch --config /home/moosicmaan/.config/fastfetch/presets/MOOSICized.json
         # start starship prompt
         source ("/usr/bin/starship" init fish --print-full-init | psub)
     end

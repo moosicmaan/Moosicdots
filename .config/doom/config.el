@@ -450,8 +450,8 @@
 
 (defalias 'year-calendar 'jdb/year-calendar)
 
-(use-package! calfw)
-(use-package! calfw-org)
+;; (use-package! calfw)
+;; (use-package! calfw-org)
 
 ;; ----------------------------------------------------------------------------
 ;; ============================================================================
