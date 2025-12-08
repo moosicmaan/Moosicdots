@@ -263,7 +263,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{0,               XF86XK_Calculator}}, spawn,          {.v = calc } }),
 
   /*   EXPERIMENTAL   */
-  &((Keychord){3, {{MODKEY, XK_s}, {0, XK_o}, {0, XK_y}}, spawn,          {.v = my_media } }),
+  &((Keychord){3, {{MODKEY, XK_space}, {0, XK_o}, {0, XK_y}}, spawn,      {.v = my_media } }),
 
   /*   -V-NVIM EDITING-V-   */
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_editc } }),
