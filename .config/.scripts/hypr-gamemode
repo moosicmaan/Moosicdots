@@ -7,7 +7,7 @@
 # =====================================================
 
 my_scripts="$HOME/.config/.scripts"
-winrules="$HOME/.config/hypr/winrules"
+hypr_conf="$HOME/.config/hypr/conf"
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then
@@ -22,16 +22,17 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword decoration:active_opacity 1;\
         keyword decoration:inactive_opacity 1;\
         keyword decoration:fullscreen_opacity 1"
+  hyprctl keyword monitor "eDP-1, disable"
   pkill swww-daemon
   pkill waybar
-  mv $winrules $winrules.bak
+  "mv $hypr_conf/winRules.conf $hypr_conf/winRules.conf.bak"
   notify-send -i "bell" "GAME MODE" "ON"
   exit
 else
   # hypr-barlaunch
   swww-daemon &
   "$my_scripts"/hypr-barlaunch &
-  mv $winrules.bak $winrules
+  "mv $hypr_conf/winRules.conf.bak $hypr_conf/winRules.conf"
   notify-send -i "bell" "GAME MODE" "OFF"
 fi
 hyprctl reload
