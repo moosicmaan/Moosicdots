@@ -8,10 +8,12 @@
 
 my_scripts="$HOME/.config/.scripts"
 # /home/moosicmaan/.config/hypr/conf/winRules.conf
-hypr_conf="$HOME/.config/hypr/conf"
+hypr_conf="$HOME/.config/hypr"
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then
+  cat "$hypr_conf"/conf/options/main/minimal.hyprland.conf >"$hypr_conf"/hyprland.conf
+  /mnt/data/moosicmaan/CONFIG/.config/hypr/conf/options/main/minimal.hyprland.conf
   hyprctl --batch "\
         keyword animations:enabled 0;\
         keyword decoration:shadow:enabled 0;\
@@ -26,14 +28,13 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
   hyprctl keyword monitor "eDP-1, disable"
   pkill swww-daemon
   pkill waybar
-  mv "$hypr_conf"/winRules.conf "$hypr_conf"/winRules.conf.bak
   notify-send -i "bell" "GAME MODE" "ON"
   exit
 else
   # hypr-barlaunch
   swww-daemon &
   "$my_scripts"/hypr-barlaunch &
-  mv "$hypr_conf"/winRules.conf.bak "$hypr_conf"/winRules.conf
+  cat "$hypr_conf"/conf/options/main/moosic.hyprland.conf >"$hypr_conf"/hyprland.conf
   notify-send -i "bell" "GAME MODE" "OFF"
 fi
 hyprctl reload

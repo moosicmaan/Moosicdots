@@ -3,7 +3,7 @@
     model: "",
     layout: "us",
     variant: "",
-    options: Some("compose:ralt,caps:escape,lv3:lalt_switch"),
+    options: None,
     repeat_delay: 600,
-    repeat_rate: 45,
+    repeat_rate: 25,
 )

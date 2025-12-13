@@ -2,7 +2,7 @@
 # =====================================================
 # -----------------------------------------------------
 # Script to put put a link of the current playing song
-# into a playlist forlder using Rofi.
+# into a playlist folder using Rofi.
 # To be used with Rofi-beats.
 #     Created by: Jason Bradberry (2025)
 # -----------------------------------------------------
