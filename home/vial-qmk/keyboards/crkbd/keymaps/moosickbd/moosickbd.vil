@@ -240,7 +240,7 @@
         "LCTL(KC_LSHIFT)",
         "KC_LGUI",
         "KC_FIND",
-        "KC_NO",
+        "LCA(KC_G)",
         "KC_TRNS"
       ],
       [

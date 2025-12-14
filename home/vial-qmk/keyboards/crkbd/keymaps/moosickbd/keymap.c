@@ -42,6 +42,7 @@
 #define LCA_F5  LCA(KC_F5)
 #define LCA_F1  LCA(KC_F1)
 #define LCA_DEL LCA(KC_DEL)
+#define LCA_G   LCA(KC_G)
 #define LS_A    LSFT_T(KC_A) 
 #define LS_1    LSFT(KC_1)
 #define LS_2    LSFT(KC_2)
@@ -113,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_TRNS,  KC_TAB,  KC_ESC, XXXXXXX,    LC_R, XXXXXXX, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10,  LCA_F5,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     KC_TRNS,    LC_A,   LC_LS, KC_LGUI, KC_FIND, XXXXXXX, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  LCA_F1,
+     KC_TRNS,    LC_A,   LC_LS, KC_LGUI, KC_FIND, LCA_G  , KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  LCA_F1,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_PSCR,    LC_Z,    LC_X,    LC_C,    LC_V, XXXXXXX,                      XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F12,  LCA_DEL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
