@@ -22,9 +22,12 @@ fi
 
 # get current song
 # song=$(playerctl -p mpv metadata xesam:url | sed 's|file://||')
-nSONG=$(playerctl -p mpv metadata xesam:title 2>/dev/null)
+PLAYER="elisa,mpv,"
+
+nSONG=$(playerctl -p "$PLAYER" metadata xesam:title 2>/dev/null)
+pSONG=$(playerctl -p "$PLAYER" metadata xesam:url 2>/dev/null)
+
 nSONG=$(printf '%b' "${nSONG//%/\\x}")
-pSONG=$(playerctl -p mpv metadata xesam:url 2>/dev/null)
 pSONG=$(printf '%b' "${pSONG//%/\\x}")
 
 # Check for empty URL

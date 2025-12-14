@@ -4,12 +4,13 @@ return {
   opts = function()
     local opts = {
       options = {
+        -- theme = "catppucchin",
         -- theme = "powerline_dark",
         -- theme = "pywal",
         -- theme = "codedark",
         -- theme = "gruvbox",
         -- theme = "ayu_dark",
-        theme = "nightfly",
+        -- theme = "nightfly",
         -- theme = "papercolor_dark",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
