@@ -213,16 +213,15 @@ client_is_float_type(Client *c)
 	if (client_is_x11(c)) {
 		struct wlr_xwayland_surface *surface = c->surface.xwayland;
 		xcb_size_hints_t *size_hints = surface->size_hints;
-		size_t i;
 		if (surface->modal)
 			return 1;
 
-		for (i = 0; i < surface->window_type_len; i++)
-			if (surface->window_type[i] == netatom[NetWMWindowTypeDialog]
-					|| surface->window_type[i] == netatom[NetWMWindowTypeSplash]
-					|| surface->window_type[i] == netatom[NetWMWindowTypeToolbar]
-					|| surface->window_type[i] == netatom[NetWMWindowTypeUtility])
-				return 1;
+		if (wlr_xwayland_surface_has_window_type(surface, WLR_XWAYLAND_NET_WM_WINDOW_TYPE_DIALOG)
+				|| wlr_xwayland_surface_has_window_type(surface, WLR_XWAYLAND_NET_WM_WINDOW_TYPE_SPLASH)
+				|| wlr_xwayland_surface_has_window_type(surface, WLR_XWAYLAND_NET_WM_WINDOW_TYPE_TOOLBAR)
+				|| wlr_xwayland_surface_has_window_type(surface, WLR_XWAYLAND_NET_WM_WINDOW_TYPE_UTILITY)) {
+			return 1;
+		}
 
 		return size_hints && size_hints->min_width > 0 && size_hints->min_height > 0
 			&& (size_hints->max_width == size_hints->min_width
@@ -265,8 +264,8 @@ client_is_stopped(Client *c)
 
 	wl_client_get_credentials(c->surface.xdg->client->client, &pid, NULL, NULL);
 	if (waitid(P_PID, pid, &in, WNOHANG|WCONTINUED|WSTOPPED|WNOWAIT) < 0) {
-		/* This process is not our child process, while is very unluckely that
-		 * it is stopped, in order to do not skip frames assume that it is. */
+		/* This process is not our child process, while is very unlikely that
+		 * it is stopped, in order to do not skip frames, assume that it is. */
 		if (errno == ECHILD)
 			return 1;
 	} else if (in.si_pid) {

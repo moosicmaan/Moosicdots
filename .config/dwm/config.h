@@ -214,7 +214,7 @@ static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
-  /*                             Keys                     function        argument */
+  /*                Keys                                  function         argument */
   /*   SCRATCHPADS   */
   &((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
   &((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),
@@ -330,15 +330,15 @@ static Keychord *keychords[] = {
   /*   DWM ACTIONS   */
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_r}}, quit,           {1} }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_q}}, quit,           {0} }),
-     TAGKEYS(                                       XK_1,                      0)
-     TAGKEYS(                                       XK_2,                      1)
-     TAGKEYS(                                       XK_3,                      2)
-     TAGKEYS(                                       XK_4,                      3)
-     TAGKEYS(                                       XK_5,                      4)
-     TAGKEYS(                                       XK_6,                      5)
-     TAGKEYS(                                       XK_7,                      6)
-     TAGKEYS(                                       XK_8,                      7)
-     TAGKEYS(                                       XK_9,                      8)
+     TAGKEYS(                                       XK_1,                  0)
+     TAGKEYS(                                       XK_2,                  1)
+     TAGKEYS(                                       XK_3,                  2)
+     TAGKEYS(                                       XK_4,                  3)
+     TAGKEYS(                                       XK_5,                  4)
+     TAGKEYS(                                       XK_6,                  5)
+     TAGKEYS(                                       XK_7,                  6)
+     TAGKEYS(                                       XK_8,                  7)
+     TAGKEYS(                                       XK_9,                  8)
 };
 
 /****MOUSE BUTTON DEFINITIONS****/
