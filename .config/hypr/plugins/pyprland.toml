@@ -35,18 +35,18 @@ size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromTop"
-command = "uwsm app -- org.kde.elisa"
+command = "uwsm app -- foot --app-id=Smoosic /home/moosicmaan/.config/.scripts/rofi-beats"
 # command = "uwsm app -- wezterm start --class=moosic musikcube"
-class = "Moosic"
+class = "Smoosic"
 lazy = true
-size = "34% 45%"
+size = "34% 34%"
 
 [scratchpads.audio]
 animation = "fromBottom"
 command = "uwsm app -- pavucontrol"
 class = "pavucontrol-qt"
 lazy = true
-size = "94% 45%"
+size = "54% 45%"
 
 [scratchpads.term]
 animation = "fromTop"

@@ -80,7 +80,7 @@ static const Rule rules[] = {
   { NULL,                        NULL,   "termdrop",                     0,       1,   -1, 's', 150,50,1620,900, 4 },
   { NULL,                        NULL,   "yazidrop",                     0,       1,   -1, 'j', 150,50,1620,900, 9 },
   { NULL,                        NULL,   "btopdrop",                     0,       1,   -1, 'l', 150,50,1620,900, 9 },
-  { NULL,                        NULL,   "Pithos",                       0,       1,   -1, 'm', 150,50,1620,600, 9 },
+  { NULL,                        NULL,   "moosicdrop",                   0,       1,   -1, 'm', 150,50,1620,600, 9 },
   { NULL,                        NULL,   "Volume Control",               0,       1,   -1, 'x', 150,50,1620,600, 9 },
   { NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
   { "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
@@ -142,9 +142,15 @@ static const char *const autostart[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
-    "-y", "8", "-x", "8", "-z", "1904",
-    "-m", dmenumon, "-fn", dmenufont,
-    "-nb", col_1, "-nf", col_3, "-sb", col_bg, "-sf", col_4, 
+    "-y", "8", 
+    "-x", "8", 
+    "-z", "1904",
+    "-m", dmenumon, 
+    "-fn", dmenufont,
+    "-nb", col_1, 
+    "-nf", col_3, 
+    "-sb", col_bg, 
+    "-sf", col_4, 
     NULL
 };
 static const char *menu_drun[] = { 
@@ -171,7 +177,7 @@ static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
-static const char *my_music[] = { "elise", NULL };
+static const char *my_music[] = { "org.kde.elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
 static const char *emojis[] = { "pkill", "emote", "||", "emote", NULL };
@@ -203,8 +209,8 @@ static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "
 static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *volume_scratch[] = {"x", "pavucontrol-qt", NULL};
-static const char *moosic_scratch[] = {"m", "pithos", NULL};
+static const char *volume_scratch[] = {"x", "pavucontrol", NULL};
+static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "/home/moosicmaan/.config/.scripts/rofi-beats", NULL};
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
