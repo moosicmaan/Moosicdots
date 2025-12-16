@@ -184,7 +184,7 @@
     "catch_all": false,
     "description": "Open the music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- elisa"
+    "arg": "uwsm app -- org.kde.elisa"
   },
   {
     "locked": false,
@@ -1136,7 +1136,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- elisa"
+    "arg": "uwsm app -- org.kde.elisa"
   },
   {
     "locked": false,
@@ -1187,7 +1187,7 @@
     "catch_all": false,
     "description": "Open music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- elisa"
+    "arg": "uwsm app -- org.kde.elisa"
   },
   {
     "locked": false,
@@ -1350,23 +1350,6 @@
     "longPress": false,
     "non_consuming": false,
     "has_description": true,
-    "modmask": "C-A",
-    "submap": "",
-    "key": "g",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Toggle game mode",
-    "dispatcher": "exec",
-    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "has_description": true,
     "modmask": "M-A",
     "submap": "",
     "key": "z",
@@ -1494,6 +1477,23 @@
     "description": "Select random wallpaper",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --random"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": "C-A",
+    "submap": "",
+    "key": "g",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Toggle game mode",
+    "dispatcher": "exec",
+    "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
   },
   {
     "locked": false,
