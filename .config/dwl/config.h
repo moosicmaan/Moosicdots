@@ -9,7 +9,8 @@ static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
 static const float rootcolor[]             = COLOR(0x000000ff);
 static const float bordercolor[]           = COLOR(0x444444ff);
-static const float focuscolor[]            = COLOR(0x005577ff);
+// static const float focuscolor[]            = COLOR(0x005577ff);
+static const float focuscolor[]            = COLOR(0xFFFFFFff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.0f, 0.0f, 0.0f, 1.0f}; /* You can also use glsl colors */
@@ -48,7 +49,7 @@ static const MonitorRule monrules[] = {
 	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	*/
 	/* defaults */
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ NULL,       0.50f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
 
 /* keyboard */
@@ -154,17 +155,17 @@ static const char *my_music[] = { "org.kde.elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
 static const char *emojis[] = { "pkill", "emote", "||", "emote", NULL };
-static const char *calc[] = { "pkill", "galculator", "||", "galculator", NULL };
 static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
-static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
-static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/media-favs", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 
 /*   MEDIA KEYS   */
 // #include <xkbcommon/xkbcommon-keysyms.h>
+static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
+static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/media-favs", NULL };
+static const char *calc[] = { "pkill", "galculator", "||}", "galculator", NULL };
 static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *volu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
 static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
@@ -184,73 +185,76 @@ static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
-	/* modifier                  key                           function        argument */
-	{ MODKEY,                    XKB_KEY_p,                    spawn,          {.v = menucmd} },
-	{ MODKEY|CtrlMask,           XKB_KEY_p,                    spawn,          {.v = menu_win} },
-	{ MODKEY|ShiftMask,          XKB_KEY_P,                    spawn,          {.v = menu_drun} },
-	{ MODKEY,                    XKB_KEY_Return,               spawn,          {.v = termcmd} },
-	{ MODKEY,                    XKB_KEY_t,                    spawn,          {.v = my_term2} },
-	{ MODKEY,                    XKB_KEY_o,                    spawn,          {.v = browscmd} },
-	{ MODKEY,                    XKB_KEY_b,                    spawn,          {.v = my_browsv} },
-	{ MODKEY|CtrlMask,           XKB_KEY_Return,               spawn,          {.v = my_email} },
-	{ MODKEY,                    XKB_KEY_F3,                   spawn,          {.v = my_editg} },
-	{ MODKEY,                    XKB_KEY_F5,                   spawn,          {.v = my_editc} },
-	{ MODKEY|ShiftMask,          XKB_KEY_Return,               spawn,          {.v = my_filesg} },
-	{ MODKEY,                    XKB_KEY_m,                    spawn,          {.v = my_music} },
-	{ MODKEY|ShiftMask,          XKB_KEY_M,                    spawn,          {.v = my_media} },
-	{ MODKEY,                    XKB_KEY_F4,                   spawn,          {.v = my_image} },
-	{ MODKEY,                    XKB_KEY_i,                    spawn,          {.v = emojis} },
-	{ MODKEY,                    XKB_KEY_a,                    spawn,          {.v = aichat} },
-	{ HYPER,                     XKB_KEY_I,                    spawn,          {.v = mfavs} },
-	{ MODKEY,                    XKB_KEY_Print,                spawn,          {.v = screenshot} },
-	{ 0,                         XKB_KEY_Print,                spawn,          {.v = screenshot} },
-	{ 0,                         XKB_KEY_XF86Calculator,       spawn,          {.v = calc} },
-	{ 0,                         XKB_KEY_XF86AudioPlay,        spawn,          {.v = mpp} },
-	{ 0,                         XKB_KEY_XF86AudioRaiseVolume, spawn,          {.v = volu} },
-	{ 0,                         XKB_KEY_XF86AudioLowerVolume, spawn,          {.v = vold} },
-	{ 0,                         XKB_KEY_XF86AudioMute,        spawn,          {.v = volt} },
-	{ 0,                         XKB_KEY_XF86AudioNext,        spawn,          {.v = mnxt} },
-	{ 0,                         XKB_KEY_XF86AudioPrev,        spawn,          {.v = mprv} },
-	{ 0,                         XKB_KEY_XF86AudioStop,        spawn,          {.v = mstop} },
-	{ HYPER,                     XKB_KEY_M,                    spawn,          {.v = mnow} },
-  { CtrlMask|AltMask,          XKB_KEY_Delete,               spawn,          {.v = rofi_power } },
-  { CtrlMask|AltMask,          XKB_KEY_b,                    spawn,          {.v = barch} },
-  { CtrlMask|AltMask,          XKB_KEY_k,                    spawn,          {.v = kmonade} },
-  { CtrlMask|AltMask,          XKB_KEY_j,                    spawn,          {.v = kmonadl} },
-  { CtrlMask|AltMask,          XKB_KEY_m,                    spawn,          {.v = jamrofi} },
+	/* modifier                  key                           function          argument */
+	{ MODKEY,                    XKB_KEY_p,                    spawn,            {.v = menucmd} },
+	{ MODKEY|CtrlMask,           XKB_KEY_p,                    spawn,            {.v = menu_win} },
+	{ MODKEY|ShiftMask,          XKB_KEY_P,                    spawn,            {.v = menu_drun} },
+	{ MODKEY,                    XKB_KEY_Return,               spawn,            {.v = termcmd} },
+	{ MODKEY,                    XKB_KEY_t,                    spawn,            {.v = my_term2} },
+	{ MODKEY,                    XKB_KEY_o,                    spawn,            {.v = browscmd} },
+	{ MODKEY,                    XKB_KEY_b,                    spawn,            {.v = my_browsv} },
+	{ MODKEY|CtrlMask,           XKB_KEY_Return,               spawn,            {.v = my_email} },
+	{ MODKEY,                    XKB_KEY_F3,                   spawn,            {.v = my_editg} },
+	{ MODKEY,                    XKB_KEY_F5,                   spawn,            {.v = my_editc} },
+	{ MODKEY|ShiftMask,          XKB_KEY_Return,               spawn,            {.v = my_filesg} },
+	{ MODKEY,                    XKB_KEY_m,                    spawn,            {.v = my_music} },
+	{ MODKEY|ShiftMask,          XKB_KEY_M,                    spawn,            {.v = my_media} },
+	{ MODKEY,                    XKB_KEY_F4,                   spawn,            {.v = my_image} },
+	{ MODKEY,                    XKB_KEY_i,                    spawn,            {.v = emojis} },
+	{ MODKEY,                    XKB_KEY_a,                    spawn,            {.v = aichat} },
+	{ HYPER,                     XKB_KEY_I,                    spawn,            {.v = mfavs} },
+	{ MODKEY,                    XKB_KEY_Print,                spawn,            {.v = screenshot} },
+	{ 0,                         XKB_KEY_Print,                spawn,            {.v = screenshot} },
+	{ 0,                         XKB_KEY_XF86Calculator,       spawn,            {.v = calc} },
+	{ 0,                         XKB_KEY_XF86AudioPlay,        spawn,            {.v = mpp} },
+	{ 0,                         XKB_KEY_XF86AudioRaiseVolume, spawn,            {.v = volu} },
+	{ 0,                         XKB_KEY_XF86AudioLowerVolume, spawn,            {.v = vold} },
+	{ 0,                         XKB_KEY_XF86AudioMute,        spawn,            {.v = volt} },
+	{ 0,                         XKB_KEY_XF86AudioNext,        spawn,            {.v = mnxt} },
+	{ 0,                         XKB_KEY_XF86AudioPrev,        spawn,            {.v = mprv} },
+	{ 0,                         XKB_KEY_XF86AudioStop,        spawn,            {.v = mstop} },
+	{ HYPER,                     XKB_KEY_M,                    spawn,            {.v = mnow} },
+  { CtrlMask|AltMask,          XKB_KEY_Delete,               spawn,            {.v = rofi_power } },
+  { CtrlMask|AltMask,          XKB_KEY_b,                    spawn,            {.v = barch} },
+  { CtrlMask|AltMask,          XKB_KEY_k,                    spawn,            {.v = kmonade} },
+  { CtrlMask|AltMask,          XKB_KEY_j,                    spawn,            {.v = kmonadl} },
+  { CtrlMask|AltMask,          XKB_KEY_m,                    spawn,            {.v = jamrofi} },
 
 
-	{ MODKEY,                    XKB_KEY_j,                    focusstack,     {.i = +1} },
-	{ MODKEY,                    XKB_KEY_k,                    focusstack,     {.i = -1} },
-	{ MODKEY,                    XKB_KEY_i,                    incnmaster,     {.i = +1} },
-	{ MODKEY,                    XKB_KEY_d,                    incnmaster,     {.i = -1} },
-	{ MODKEY,                    XKB_KEY_h,                    setmfact,       {.f = -0.05f} },
-	{ MODKEY,                    XKB_KEY_l,                    setmfact,       {.f = +0.05f} },
-	{ MODKEY,                    XKB_KEY_z,                    zoom,           {0} },
-	{ MODKEY,                    XKB_KEY_Tab,                  view,           {0} },
-	{ MODKEY,                    XKB_KEY_q,                    killclient,     {0} },
-	{ AltMask,                   XKB_KEY_t,                    setlayout,      {.v = &layouts[0]} },
-	{ AltMask,                   XKB_KEY_f,                    setlayout,      {.v = &layouts[1]} },
-	{ AltMask,                   XKB_KEY_m,                    setlayout,      {.v = &layouts[2]} },
-	{ AltMask,                   XKB_KEY_space,                setlayout,      {0} },
+	{ MODKEY|CtrlMask,           XKB_KEY_b,                    togglebar,        {0} },
+	{ MODKEY,                    XKB_KEY_h,                    focusstack,       {.i = +1} },
+	{ MODKEY,                    XKB_KEY_l,                    focusstack,       {.i = -1} },
+	{ MODKEY,                    XKB_KEY_i,                    incnmaster,       {.i = +1} },
+	{ MODKEY,                    XKB_KEY_d,                    incnmaster,       {.i = -1} },
+	{ MODKEY|ShiftMask,          XKB_KEY_H,                    setmfact,         {.f = -0.05f} },
+	{ MODKEY|ShiftMask,          XKB_KEY_L,                    setmfact,         {.f = +0.05f} },
+	{ MODKEY,                    XKB_KEY_z,                    zoom,             {0} },
+	{ MODKEY,                    XKB_KEY_Tab,                  view,             {0} },
+	{ MODKEY,                    XKB_KEY_q,                    killclient,       {0} },
+	{ AltMask,                   XKB_KEY_t,                    setlayout,        {.v = &layouts[0]} },
+	{ AltMask,                   XKB_KEY_f,                    setlayout,        {.v = &layouts[1]} },
+	{ AltMask,                   XKB_KEY_m,                    setlayout,        {.v = &layouts[2]} },
+	{ AltMask,                   XKB_KEY_space,                setlayout,        {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_F,                    togglefullscreen, {0} },
-	{ MODKEY,                    XKB_KEY_f,                    togglefloating, {0} },
-	{ MODKEY,                    XKB_KEY_0,                    view,           {.ui = ~0} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright,           tag,            {.ui = ~0} },
-	{ MODKEY,                    XKB_KEY_comma,                focusmon,       {.i = WLR_DIRECTION_LEFT} },
-	{ MODKEY,                    XKB_KEY_period,               focusmon,       {.i = WLR_DIRECTION_RIGHT} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,                 tagmon,         {.i = WLR_DIRECTION_LEFT} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,              tagmon,         {.i = WLR_DIRECTION_RIGHT} },
-	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                               0),
-	TAGKEYS(          XKB_KEY_2, XKB_KEY_at,                                   1),
-	TAGKEYS(          XKB_KEY_3, XKB_KEY_numbersign,                           2),
-	TAGKEYS(          XKB_KEY_4, XKB_KEY_dollar,                               3),
-	TAGKEYS(          XKB_KEY_5, XKB_KEY_percent,                              4),
-	TAGKEYS(          XKB_KEY_6, XKB_KEY_asciicircum,                          5),
-	TAGKEYS(          XKB_KEY_7, XKB_KEY_ampersand,                            6),
-	TAGKEYS(          XKB_KEY_8, XKB_KEY_asterisk,                             7),
-	TAGKEYS(          XKB_KEY_9, XKB_KEY_parenleft,                            8),
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,                    quit,           {0} },
+	{ 0,                         XKB_KEY_F1,                   togglefullscreen, {0} },
+	{ MODKEY,                    XKB_KEY_f,                    togglefloating,   {0} },
+	{ MODKEY,                    XKB_KEY_0,                    view,             {.ui = ~0} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright,           tag,              {.ui = ~0} },
+	{ MODKEY,                    XKB_KEY_comma,                focusmon,         {.i = WLR_DIRECTION_LEFT} },
+	{ MODKEY,                    XKB_KEY_period,               focusmon,         {.i = WLR_DIRECTION_RIGHT} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,                 tagmon,           {.i = WLR_DIRECTION_LEFT} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,              tagmon,           {.i = WLR_DIRECTION_RIGHT} },
+	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                                 0),
+	TAGKEYS(          XKB_KEY_2, XKB_KEY_at,                                     1),
+	TAGKEYS(          XKB_KEY_3, XKB_KEY_numbersign,                             2),
+	TAGKEYS(          XKB_KEY_4, XKB_KEY_dollar,                                 3),
+	TAGKEYS(          XKB_KEY_5, XKB_KEY_percent,                                4),
+	TAGKEYS(          XKB_KEY_6, XKB_KEY_asciicircum,                            5),
+	TAGKEYS(          XKB_KEY_7, XKB_KEY_ampersand,                              6),
+	TAGKEYS(          XKB_KEY_8, XKB_KEY_asterisk,                               7),
+	TAGKEYS(          XKB_KEY_9, XKB_KEY_parenleft,                              8),
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,                    quit,             {0} },
+	{ MODKEY|CtrlMask,           XKB_KEY_r,                    quit,             {1} },
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },

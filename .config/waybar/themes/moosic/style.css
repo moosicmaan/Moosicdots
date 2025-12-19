@@ -30,7 +30,7 @@ background-color: #ffffff;
   border-radius: 5px;
   margin: 0px 1px 0px 1px;
   padding: 0px 0px 0px 0px;
-  font-size: 12px;
+  font-size: 11px;
   color: @textcolor1;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
@@ -104,7 +104,6 @@ window#waybar.empty #window {
   background-color: @workspacesbackground1;
   color: @textcolor1;
 }
-/*#tags button,*/
 #workspaces button {
   /* 
   background: @workspacesbackground1;
@@ -121,7 +120,6 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
-/*#tags button.occupied,*/
 #workspaces button.active {
   color: @textcolor1;
   /* 
@@ -131,7 +129,11 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
-/*#tags button:hover,*/
+#tags button.focused {
+  border: 1px solid #FFFFFF;
+}
+#tags button.occupied,
+#tags button:hover,
 #workspaces button:hover {
   /* 
   background: @workspacesbackground1;
@@ -150,10 +152,10 @@ window#waybar.empty #window {
 tooltip {
   background-color: @tooltipbackground;
   opacity: 0.95;
-  font-size: 18px;
+  font-size: 20px;
 }
 tooltip label {
-  font-size: 18px;
+  font-size: 22px;
   color: @tooltiptext;
 }
 
@@ -235,7 +237,7 @@ tooltip label {
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   */
-  font-size: 13px;
+  font-size: 11px;
   padding: 0px 4px 0px 4px;
 }
 #mpris,

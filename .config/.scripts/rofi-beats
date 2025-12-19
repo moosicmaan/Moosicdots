@@ -20,9 +20,11 @@ iDIR="/usr/share/icons/BeautyLine/actions/scalable"
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
 
-if [ "${UWSM_SESSION}" ]; then
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+  echo "Wayland session"
   ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
 else
+  echo "X11 session"
   ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-6.rasi"
 fi
 

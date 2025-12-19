@@ -11,16 +11,27 @@
       // "VII",
       // "VIII",
       // "IX"
-      "1🌕",
-      "2🌖",
-      "3🌗",
-      "4🌘",
-      "5🌑",
-      "6🌒",
-      "7🌓",
-      "8🌔",
-      "9🌕"
+      "🌕",
+      "🌖",
+      "🌗",
+      "🌘",
+      "🌑",
+      "🌒",
+      "🌓",
+      "🌔",
+      "🌕"
     ],
+    "format": "{icon}",
+    "format-icons": {
+      "occupied": "",
+      "focused": "󰹑",
+      "urgent": "",
+      "Term": "",
+      "BTOP": "⚙",
+      "Yazi": "",
+      "Audio": "",
+      "Moosic": ""
+    },
     "disable-click": false
   },
   "sway/workspaces": {
@@ -709,7 +720,8 @@
     "return-type": "json"
   },
   "custom/weatherC": {
-    "format": "Local {}°",
+    // "format": "Local {}°",
+    "format": "{}°",
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
@@ -723,7 +735,8 @@
   "clock": {
     "format-alt": "{:%H:%M}  ",
     "format": "{:%a, %b %d, %Y -  %R  }",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "{:%a, %b %d, %Y -  %R  }\n<tt><small>{calendar}</small></tt>",
+    // "tooltip-format": "{:%H:%M}",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
@@ -900,9 +913,9 @@
     "orientation": "inherit",
     "modules": [
       "custom/weatherC",
-      "clock",
-      "custom/weatherD",
-      "clock#2"
+      "clock"
+      // "custom/weatherD",
+      // "clock#2"
     ]
   },
   "group/audios": {

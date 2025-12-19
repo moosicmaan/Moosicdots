@@ -38,11 +38,9 @@
     "margin": "0 0 6 0",
     "modules-left": [
       "group/appo#leg",
-      "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
-      "hyprland/submap",
-      "dwl/window"
+      "hyprland/submap"
     ],
     "modules-center": [
       "mpris"

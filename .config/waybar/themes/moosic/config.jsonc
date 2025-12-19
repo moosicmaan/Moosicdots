@@ -15,6 +15,7 @@
     ],
     "modules-left": [
       "group/appo",
+      "dwl/window",
       "hyprland/window",
       "hyprland/submap"
     ],
@@ -45,6 +46,7 @@
     ],
     "modules-left": [
       "group/appo",
+      "dwl/window",
       "hyprland/window",
       "hyprland/submap"
     ],
