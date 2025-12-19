@@ -6,7 +6,7 @@
 exec kitty
 
 workspaces 9
-background 0.25 0.21 0.2
+background 0.00 0.00 0.00
 
 escape C-space
 

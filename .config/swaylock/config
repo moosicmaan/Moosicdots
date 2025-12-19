@@ -3,10 +3,11 @@ font=Hack Nerd Font
 
 clock
 timestr=%R
-datestr=%a, %e of %B
+# datestr=%a, %e of %B
+datestr=%a, %x
 
 # screenshots
-image=/home/moosicmaan/Pictures/Backgrounds/wal19.jpg
+image=/home/moosicmaan/Pictures/Backgrounds/wal67.png
 scaling=fit
 
 fade-in=2.2
@@ -21,9 +22,9 @@ effect-vignette=0.4:0.1
 effect-scale=0.3
 
 indicator
-indicator-image=/home/moosicmaan/Pictures/Backgrounds/qnkDwm.jpg
+indicator-image=/home/moosicmaan/Pictures/Backgrounds/wp8096937.jpg
 indicator-radius=240
-indicator-thickness=20
+indicator-thickness=10
 indicator-caps-lock
 
 key-hl-color=eab676
@@ -37,7 +38,7 @@ inside-ver-color=d9d8d800
 inside-wrong-color=ee2e2400
 
 # ring-color=231f20D9
-ring-color=eab67655
+ring-color=eab67611
 ring-clear-color=231f20D9
 ring-caps-lock-color=231f20D9
 ring-ver-color=231f20D9
@@ -49,6 +50,7 @@ line-caps-lock-color=009ddcFF
 line-ver-color=d9d8d8FF
 line-wrong-color=ee2e24FF
 
+text-color=eab77655
 text-clear-color=ffd20400
 text-ver-color=d9d8d800
 text-wrong-color=ee2e2400

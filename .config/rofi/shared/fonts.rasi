@@ -9,5 +9,5 @@
 
 * {
     // font: "Iosevka Nerd Font 12";
-    font: "Hack Nerd Font Propo 14";
+    font: "Hack Nerd Font Propo 12";
 }

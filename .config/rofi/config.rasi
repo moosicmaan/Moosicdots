@@ -26,7 +26,7 @@ configuration {
 @import "~/.cache/wal/colors-rofi-pywal"
 @import "~/.cache/current_wallpaper.rasi"
 @import "~/.config/.settings/rofi-border.rasi"
-@import                          "shared/fonts.rasi"
+@import "shared/fonts.rasi"
 
 /*****----- Global Properties -----*****/
 * {

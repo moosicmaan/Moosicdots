@@ -154,17 +154,20 @@ static const char *dmenucmd[] = {
     NULL
 };
 static const char *menu_drun[] = { 
-    "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "rofi", 
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
     "-show", "drun", 
     NULL 
 };
 static const char *menu_win[] = { 
-    "rofi","-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "rofi",
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
     "-show", "window", 
     NULL
 };
 static const char *rofi_power[] = { 
-    "rofi", "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", 
+    "rofi", 
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", 
     "-show", "powermenu", 
     "-modi", "powermenu:~/.config/.scripts/rofi-power", 
     NULL 
@@ -210,7 +213,12 @@ static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
 static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
 static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
 static const char *volume_scratch[] = {"x", "pavucontrol", NULL};
-static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "/home/moosicmaan/.config/.scripts/rofi-beats", NULL};
+static const char *moosic_scratch[] = {
+    "m", "kitty",
+    "-T", "moosicdrop",
+    "-e", "/home/moosicmaan/.config/.scripts/rofi-beats",
+    NULL
+};
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
