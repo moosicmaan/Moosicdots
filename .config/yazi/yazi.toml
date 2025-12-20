@@ -25,7 +25,7 @@ cache_dir = ""
 image_delay = 30
 image_filter = "triangle"
 image_quality = 75
-sixel_fraction = 15
+# sixel_fraction = 15
 ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
@@ -36,7 +36,15 @@ yazi-setwall = [
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 edit = [
-  { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = '${EDITOR:-nvim} "$@"', desc = "nvim", block = true, for = "unix" },
+  { run = '${EDITOR:-kate} "$@"', desc = "kate", block = true, for = "unix" },
+  { run = '${EDITOR:-okular} "$@"', desc = "okular", block = true, for = "unix" },
+  { run = 'code %*', orphan = true, desc = "code", for = "windows" },
+  { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
+]
+image = [
+  { run = 'gimp "$@"', desc = "gimp", block = true, for = "unix" },
+  { run = 'org.kde.gwenview "$@"', desc = "gwenview", block = true, for = "unix" },
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
@@ -59,6 +67,7 @@ extract = [
 ]
 play = [
   { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+  { run = 'vlc "$@"', orphan = true, for = "unix" },
   { run = 'mpv --force-window %*', orphan = true, for = "windows" },
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
@@ -79,6 +88,7 @@ rules = [
   # Image
   { mime = "image/*", use = [
     "open",
+    "image",
     "reveal",
     "yazi-setwall",
   ] },

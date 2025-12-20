@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# =====================================================
+# -----------------------------------------------------
+# Autostart
+# -----------------------------------------------------
+# =====================================================
+
+# --> generally not needed when using uwsm - should all be taken care of by SystemD services <--
+# Start Polkit
+# exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec-once = uwsm app -- /usr/lib/polkit-kde-authentication-agent-1
+
+# # -----------------------------------------------------
+# # ENVIRONMENT VARIABLES
+# # -----------------------------------------------------
+# export GTK2_RC_FILES="$HOME"/.gtkrc-2.0
+#
+# # Session
+# export XDG_SESSION_TYPE=wayland
+# export WAYLAND_DISPLAY=wayland-1
+# export XDG_CONFIG_HOME="$HOME"/.config
+#
+# # GTK
+# export MOZ_ENABLE_WAYLAND=1 # only start firefox in wayland mode and no other GTK apps
+# export MOZ_DBUS_REMOTE=1    # fixes firefox is already running, but is not responding
+# export MOZ_WAYLAND_USE_VAAPI=1
+# export GDK_BACKEND=wayland,x11 # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
+# # export GDK_SCALE,2
+#
+# # clutter
+# #export CLUTTER_BACKEND=wayland          # this can prevent programs from starting. therefore, this should be set per app instead of globally.
+#
+# # elementary
+# export ECORE_EVAS_ENGINE=wayland-egl
+# export ELM_ENGINE=wayland_egl
+#
+# # java
+# # export _JAVA_AWT_WM_NONREPARENTING=1
+# export NO_AT_BRIDGE=1
+# export BEMENU_BACKEND=wayland
+#
+# # sdl
+# # export SDL_VIDEODRIVER=wayland # this can prevent programs from starting old sdl games. therefore, this should be set per app instead of globally.
+#
+# # QT
+# export QT_QPA_PLATFORMTHEME=qt6ct
+# export QT_QPA_PLATFORM=wayland
+# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
+# # export QT_STYLE_OVERRIDE,kvantum
+#
+# # User preferences
+# export EDITOR=nvim
+# export BROWSER=zen-browser
+# export TERM=xterm-256color
+# export EMAIL=thunderbird
+#
+# # export UWSM_SESSION=true
+# # echo "$(date) - FINISHED in uwsm/env setting environment" >>"$HOME/.config/hypr/start.log"
+# # # Nvidia Specific (second monitor)
+# # export LIBVA_DRIVER_NAME,nvidia
+# # export GBM_BACKEND,nvidia-drm
+# # export __GLX_VENDOR_LIBRARY_NAME,nvidia
+#
+# # added to make sure dolphin plays nice and opens files with the right program
+# export XDG_MENU_PREFIX=arch-
+#
+# # SESSION
+# export XDG_SESSION_DESKTOP=dwl
+# export XDG_CURRENT_DESKTOP=dwl
+#
+# # ACQUAMARINE
+# export AQ_DRM_DEVICES=/dev/dri/card2:/dev/dri/card1 # use the integrated card first, and then use nvidia card if needed
+
+# -----------------------------------------------------
+# PLUGINS/APPS
+# -----------------------------------------------------
+
+# Load Dunst Notification Manager
+dunst &
+
+# Using swayidle to start swaylock
+swayidle -w &
+
+# Load cliphist history
+wl-paste --watch cliphist store &
+# exec-once = uwsm app -- /usr/bin/emacs --daemon=serve
+
+# Initialize swww
+swww query || swww-daemon &
+
+# Startup the system tray applets:
+nm-tray &
+pasystray &
+garuda-system-maintenance &
+blueman-applet &
+flameshot &
+firewall-applet &
+
+# Startup the foot terminal daemon for faster terminal launches
+foot --server &
+
+# -----------------------------------------------------
+# toggle_kmonad
+#------------------------------------------------
+#exec-once = $HOME/.config/.scripts/toggle_kmonad.sh
+# exec-once = uwsm app -- kmonad $HOME/.config/kmonad/k350.kbd
+
+# BORROWING FROM garuda
+"$HOME"/.config/.scripts/ut-bluelight &
+# exec-once = wlsunset -t 2000 -T 2300
+# exec-once = wlsunset -t 3000 -T 4000
+
+# Load last wallpaper and waybar with pywal colors
+sleep 5 && "$HOME"/.config/.scripts/ut-wallpaper --init

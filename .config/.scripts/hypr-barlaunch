@@ -39,23 +39,23 @@ echo "Style: ${arrThemes[1]}"
 # -----------------------------------------------------
 # Load gBar if selected
 # -----------------------------------------------------
-if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "gBar" ]; then
-  echo "Starting gBar..."
-  notify-send -i "monitor" "Setting the statusbar to gBar"
-  eval "${PREFIX}gBar bar 0" &
-  # ${PREFIX}gBar bar 1 &
-  exit 0
-fi
+# if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "gBar" ]; then
+#   echo "Starting gBar..."
+#   notify-send -i "monitor" "Setting the statusbar to gBar"
+#   eval "${PREFIX}gBar bar 0" &
+#   # ${PREFIX}gBar bar 1 &
+#   exit 0
+# fi
 
 # -----------------------------------------------------
 # Load hyprpanel if selected
 # -----------------------------------------------------
-if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "hyprpanel" ]; then
-  echo "Starting hyprpanel..."
-  notify-send -i "monitor" "Setting the statusbar to hyprpanel"
-  eval "${PREFIX}hyprpanel" &
-  exit 0
-fi
+# if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "hyprpanel" ]; then
+#   echo "Starting hyprpanel..."
+#   notify-send -i "monitor" "Setting the statusbar to hyprpanel"
+#   eval "${PREFIX}hyprpanel" &
+#   exit 0
+# fi
 
 # -----------------------------------------------------
 # Loading the configuration for Waybar

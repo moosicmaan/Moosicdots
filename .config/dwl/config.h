@@ -119,8 +119,8 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 	{ MODKEY,                    KEY,            view,            {.ui = 1 << TAG} }, \
 	{ MODKEY|CtrlMask,           KEY,            toggleview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,          SKEY,           tag,             {.ui = 1 << TAG} }, \
-	{ MEH,                       SKEY,           tag,             {.ui = 1 << TAG} }, \
 	{ MODKEY|CtrlMask|ShiftMask, SKEY,           toggletag,       {.ui = 1 << TAG} }
+	// { MEH,                       SKEY,           tag,             {.ui = 1 << TAG} }, \
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -137,9 +137,10 @@ static const char *menu_win[] = {
     NULL
 };
 static const char *rofi_power[] = { 
-    "rofi", "-config", "/home/moosicmaan/.config/rofi/config-narrow.rasi", 
-    "-show", "powermenu", 
-    "-modi", "powermenu:~/.config/.scripts/rofi-power", 
+    // "rofi", "-config", "/home/moosicmaan/.config/rofi/config-narrow.rasi", 
+    // "-show", "powermenu", 
+    // "-modi", "powermenu:~/.config/.scripts/rofi-power", 
+    "wlogout",
     NULL 
 };
 static const char *termcmd[]  = { "foot", NULL };
@@ -151,21 +152,30 @@ static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
-static const char *my_music[] = { "org.kde.elise", NULL };
+static const char *my_music[] = { "org.kde.elisa", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
-static const char *emojis[] = { "pkill", "emote", "||", "emote", NULL };
+static const char *emojis[] = { "emote", NULL };
 static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 
+
+/*   BACKGROUND/WAYBAR   */
+static const char *wallr[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--random", NULL };
+static const char *walls[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--select", NULL };
+static const char *bars[] = { "/home/moosicmaan/.config/.scripts/hypr-barswitch",  NULL };
+static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/hypr-barlaunch", NULL };
+static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/dwl-startup",  NULL };
+
+
 /*   MEDIA KEYS   */
 // #include <xkbcommon/xkbcommon-keysyms.h>
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/media-favs", NULL };
-static const char *calc[] = { "pkill", "galculator", "||}", "galculator", NULL };
+static const char *calc[] = { "galculator", NULL };
 static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *volu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
 static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
@@ -220,8 +230,12 @@ static const Key keys[] = {
   { CtrlMask|AltMask,          XKB_KEY_j,                    spawn,            {.v = kmonadl} },
   { CtrlMask|AltMask,          XKB_KEY_m,                    spawn,            {.v = jamrofi} },
 
-
-	{ MODKEY|CtrlMask,           XKB_KEY_b,                    togglebar,        {0} },
+  { MODKEY|CtrlMask,           XKB_KEY_d,                    spawn,            {.v = startdwl} },
+  { MODKEY|CtrlMask,           XKB_KEY_w,                    spawn,            {.v = wallr} },
+  { MODKEY|CtrlMask,           XKB_KEY_s,                    spawn,            {.v = walls} },
+  { MODKEY|CtrlMask,           XKB_KEY_t,                    spawn,            {.v = bars} },
+  { MODKEY|CtrlMask,           XKB_KEY_b,                    spawn,            {.v = bartog} },
+  { MODKEY|AltMask,            XKB_KEY_b,                    togglebar,        {0} },
 	{ MODKEY,                    XKB_KEY_h,                    focusstack,       {.i = +1} },
 	{ MODKEY,                    XKB_KEY_l,                    focusstack,       {.i = -1} },
 	{ MODKEY,                    XKB_KEY_i,                    incnmaster,       {.i = +1} },
