@@ -15,12 +15,12 @@
     ],
     "modules-left": [
       "group/appo",
-      "dwl/window",
+      // "dwl/window",
       "hyprland/window",
       "hyprland/submap"
     ],
     "modules-center": [
-      "dwl/tags",
+      // "dwl/tags",
       "hyprland/workspaces"
     ],
     "modules-right": [
@@ -46,12 +46,12 @@
     ],
     "modules-left": [
       "group/appo",
-      "dwl/window",
       "hyprland/window",
+      // "dwl/window",
       "hyprland/submap"
     ],
     "modules-center": [
-      "dwl/tags",
+      // "dwl/tags",
       "hyprland/workspaces"
     ],
     "modules-right": [

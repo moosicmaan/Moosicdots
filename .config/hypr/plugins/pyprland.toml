@@ -17,9 +17,8 @@ include_special = true
 
 [scratchpads.files]
 animation = "fromBottom"
-command = "uwsm app -- foot --app-id=Sfiles yazi"
-# command = "uwsm app -- kitty --class Sfiles yazi"
-# command = "uwsm app -- wezterm start --class Sfiles yazi"
+# command = "uwsm app -- foot --app-id=Sfiles yazi"
+command = "uwsm app -- kitty --class Sfiles yazi"
 class = "Sfiles"
 lazy = true
 size = "94% 92%"
@@ -28,15 +27,13 @@ size = "94% 92%"
 animation = "fromBottom"
 command = "uwsm app -- foot --app-id=Smonitor btop"
 # command = "uwsm app -- kitty --class Smonitor btop"
-# command = "uwsm app -- wezterm start --class=Smonitor btop"
 class = "Smonitor"
 lazy = true
 size = "75% 90%"
 
 [scratchpads.moosic]
 animation = "fromTop"
-command = "uwsm app -- foot --app-id=Smoosic /home/moosicmaan/.config/.scripts/rofi-beats"
-# command = "uwsm app -- wezterm start --class=moosic musikcube"
+command = "uwsm app -- foot --app-id=Smoosic pianobar"
 class = "Smoosic"
 lazy = true
 size = "34% 34%"
@@ -52,7 +49,6 @@ size = "54% 45%"
 animation = "fromTop"
 command = "uwsm app -- foot --app-id=Dropterm"
 # command = "uwsm app -- kitty --class Dropterm"
-# command = "uwsm app -- wezterm start --class=Dropterm"
 class = "Dropterm"
 lazy = true
 size = "75% 90%"

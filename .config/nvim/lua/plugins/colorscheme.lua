@@ -17,7 +17,7 @@ return {
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
-      -- colorscheme = "moonfly",
+      colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
       -- colorscheme = "cyberpunk",
       -- colorscheme = "abscs",
@@ -36,7 +36,7 @@ return {
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
-      colorscheme = "industry",
+      -- colorscheme = "industry",
     },
   },
   -- Other theme plugins
