@@ -32,18 +32,18 @@ static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=8" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=8";
 static const unsigned int baralpha = 0xA3;
 static const unsigned int borderalpha = OPAQUE;
-static const char col_1[]           = "#2c3043";
-static const char col_2[]           = "#c792ea";
-static const char col_3[]           = "#82aaff";
-static const char col_4[]           = "#7fdbca";
-static const char col_bg[]          = "#1d3b53";
-static const char col_border[]      = "#21c7a8";
-static const char col_accent[]      = "#a1cd5e";
-static const char col_pinned[]      = "#ae81ff";
+static const char col_1[]           = "#282A36";
+static const char col_2[]           = "#BD93F9";
+static const char col_3[]           = "#6272A4";
+static const char col_4[]           = "#F8F8F2";
+static const char col_bg[]          = "#1d1b13";
+static const char col_border[]      = "#FF79C6";
+static const char col_accent[]      = "#50FA7B";
+static const char col_pinned[]      = "#FFB86C";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
   [SchemeNorm] = { col_4,   col_1,   col_2 },
-  [SchemeSel]  = { col_4,   col_1,   col_border },
+  [SchemeSel]  = { col_4,   col_1,   col_accent },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -54,9 +54,9 @@ static const unsigned int alphas[][3]      = {
 /* TAGS */
 static const char *tagsel[][2] = {
  /*   fg         bg    */
-  { col_3,      col_1 },                          /* norm */
+  { col_4,      col_1 },                          /* norm */
   { col_1,      col_4 },                          /* sel */
-  { col_1,      col_3 },                          /* occ but not sel */
+  { col_1,      col_2 },                          /* occ but not sel */
   { col_1,      col_pinned },                     /* has pinned tag */
 };
 
@@ -64,8 +64,8 @@ static const char *tagsel[][2] = {
 /**** WINDOW RULES AND LAYOUTS ****/
 /* TAGGING */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
-// static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
+// static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 // static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
 // static const char *tags[] = { "󰫮", "󰫱", "󰫴", "󰫷", "M", "󰫽", "󰬀", "󰬃", "󰬇" };
 
@@ -309,7 +309,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_u}}, incrovgaps,     {.i = -1 } }),
  
   /*   WINDOWS LAYOUTS MONITORS   */
-  &((Keychord){1, {{MODKEY|ShiftMask,             XK_b}}, togglebar,      {0} }),
+  &((Keychord){1, {{MODKEY|ControlMask,           XK_b}}, togglebar,      {0} }),
   &((Keychord){1, {{MODKEY,                       XK_h}}, focusstack,     {.i = +1 } }),
   &((Keychord){1, {{MODKEY,                       XK_l}}, focusstack,     {.i = -1 } }),
   &((Keychord){1, {{AltMask,                      XK_i}}, incnmaster,     {.i = +1 } }),

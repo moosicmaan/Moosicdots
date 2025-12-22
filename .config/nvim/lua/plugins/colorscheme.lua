@@ -10,14 +10,16 @@ return {
   { "projekt0n/github-nvim-theme", name = "gitbub-theme", lazy = true, priority = 5000 },
   { "ayaz-amin/cyberpunk.nvim", name = "cyberpunk", lazy = true, priority = 5000 },
   { "scottmckendry/cyberdream.nvim", name = "cyberdream", lazy = true, priority = 5000 },
-  { "alphaTechnolog/pywal.nvim", name = "pywal", laxy = true, priority = 5000 },
+  { "alphaTechnolog/pywal.nvim", name = "pywal", lazy = true, priority = 5000 },
+  { "Mofiqul/dracula.nvim", name = "dracula", lazy = true, priority = 5000 },
   {
     "LazyVim/LazyVim",
     opts = {
+      colorscheme = "dracula",
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
-      colorscheme = "moonfly",
+      -- colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
       -- colorscheme = "cyberpunk",
       -- colorscheme = "abscs",

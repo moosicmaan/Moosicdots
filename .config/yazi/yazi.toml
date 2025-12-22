@@ -37,6 +37,7 @@ yazi-setwall = [
 ]
 edit = [
   { run = '${EDITOR:-nvim} "$@"', desc = "nvim", block = true, for = "unix" },
+  { run = '${EDITOR:-vim} "$@"', desc = "vim", block = true, for = "unix" },
   { run = '${EDITOR:-kate} "$@"', desc = "kate", block = true, for = "unix" },
   { run = '${EDITOR:-okular} "$@"', desc = "okular", block = true, for = "unix" },
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },

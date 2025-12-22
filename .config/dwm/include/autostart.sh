@@ -10,7 +10,7 @@ pkill kmonad
 setxkbmap -layout us -option
 
 # Set the colorscheme used by kitty and others
-wal --theme tokyonight-moon >/dev/null
+wal --theme dracula >/dev/null
 
 pgrep -x nm-tray >/dev/null || nm-tray &
 pgrep -x pasystray >/dev/null || pasystray &
