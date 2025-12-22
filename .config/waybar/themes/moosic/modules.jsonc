@@ -428,7 +428,7 @@
     "tooltip": false
   },
   "custom/system": {
-    "format": " ",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "System Status"
   },

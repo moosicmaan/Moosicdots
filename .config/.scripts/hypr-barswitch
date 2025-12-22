@@ -32,6 +32,7 @@ while IFS= read -r theme_dir; do
   if [[ -f "$config_path" ]]; then
     source "$config_path"
     theme_names+=("$theme_name")
+    echo "Sourcing config for $config_path"
   else
     theme_names+=("$formatted_theme")
   fi

@@ -17,7 +17,7 @@ opt.ttyfast = true -- speeds up scrolling in vim
 -- for orgmode
 opt.conceallevel = 2
 opt.concealcursor = "nc"
-vim.g.tutor_is_loaded = 0
+-- vim.g.tutor_is_loaded = 0 -- to always show tutor tips
 -- for hyprlang and other files/types not natively recognized
 vim.filetype.add({
   extension = { rasi = "rasi" },

@@ -11,8 +11,8 @@
       "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
-      "hyprland/submap",
-      "dwl/window"
+      "hyprland/submap"
+      // "dwl/window"
     ],
     "modules-center": [
       "clock#leg"
@@ -41,8 +41,8 @@
       "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
-      "hyprland/submap",
-      "dwl/window"
+      "hyprland/submap"
+      // "dwl/window"
     ],
     "modules-center": [
       "mpris"

@@ -9,16 +9,17 @@
 /* -----------------------------------------------------
  * General 
  * -----------------------------------------------------
-font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
-  sans-serif;
-font-family: DejaVuSansM Nerd Font Propo;
-font-family: SpaceMono Nerd Font Propo;
-font-family: Roboto Condensed;
-font-family: MonaspiceRn Nerd Font Propo;
+  
+  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: DejaVuSansM Nerd Font Propo;
+  font-family: SpaceMono Nerd Font Propo;
+  font-family: Roboto Condensed;
+  font-family: MonaspiceRn Nerd Font Propo;
   font-family: ComicShannsMono Nerd Font Propo;
   font-family: OpenDyslexicM Nerd Font Propo;
   font-family: Iosevka Nerd font Propo;
   font-family: ProFont IIx Nerd Font Propo;
+  font-family: ComicShannsMono Nerd Font Propo;
 background-color: @backgroundlight;
 background-color: #ffffff;
  */
@@ -59,7 +60,7 @@ window#waybar {
   );
   background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
   */
-  background-color: alpha (@barbackground, 0.6);
+  background-color: alpha (@barbackground, 0.7);
   border-radius: 0px;
 }
 window#waybar.spotube {
@@ -188,7 +189,7 @@ tooltip label {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
-  padding: 0px 3px 0px 1px;
+  padding: 0px 5px 0px 5px;
 }
 #appo :hover {
   color: @tooltiptext;
@@ -266,7 +267,7 @@ tooltip label {
 #hardware {
   color: @iconcolor;
   font-size: 11px;
-  padding: 0px 6px 0px 0px;
+  padding: 0px 3px 0px 3px;
 }
 #network {
   color: @textcolor2;
@@ -442,7 +443,7 @@ tooltip label {
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
-  padding: 0px 9px 0px 9px;
+  padding: 0px 10px 0px 10px;
 }
 #custom-exit:hover {
   color: @tooltiptext;

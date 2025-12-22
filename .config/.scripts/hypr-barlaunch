@@ -16,8 +16,8 @@ defaulttheme="moosic;moosic/mixed"
 # Quit all running statuesbar instances
 # -----------------------------------------------------
 pkill waybar
-pkill gBar
-hyprpanel quit
+# pkill gBar
+# hyprpanel quit
 sleep 0.2
 
 # -----------------------------------------------------

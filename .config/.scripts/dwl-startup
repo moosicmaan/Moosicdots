@@ -113,3 +113,6 @@ foot --server &
 
 # Load last wallpaper and waybar with pywal colors
 sleep 5 && "$HOME"/.config/.scripts/ut-wallpaper --init
+pkill waybar
+sleep 2 && waybar -c "$HOME"/.config/waybar/themes/moosic/config_dwl.jsonc \
+  -s "$HOME"/.config/waybar/themes/moosic/mixed/style.css &

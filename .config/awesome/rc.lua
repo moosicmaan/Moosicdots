@@ -424,7 +424,7 @@ Globalkeys = my_table.join(
 	-- -----------------------------------------------
 	awful.key({ modkey1, altkey }, "t", function()
 		-- awful.util.spawn("kitty sh -c 'kitty @ set-spacing padding=0; tmux'")
-		awful.util.spawn("wezterm tmux'")
+		awful.util.spawn("kitty tmux'")
 	end, { description = "Open TMUX in terminal with no padding", group = "apps" }),
 	awful.key({ modkey }, "t", function()
 		awful.util.spawn(my_term2)

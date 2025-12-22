@@ -116,7 +116,7 @@
        tty               ; improve the terminal Emacs experience
 
        :lang
-       hyprlang            ;just a guess than this might work
+       hyprls            ;just a guess than this might work
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;(cc +lsp)         ; C > C++ == 1
@@ -160,7 +160,7 @@
        ;;(org +journal +pretty +roam2)               ; organize your plain life in plain text
        (org
         +journal             ; enable org journal
-        +roam2               ; create a personal wiki
+        +roam               ; create a personal wiki
         +pretty              ; replace asterisks with pretty org bullets
         +publish)            ; create static websites with org
        ;;php               ; perl's insecure younger brother

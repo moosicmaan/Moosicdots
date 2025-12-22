@@ -16,7 +16,7 @@ max_workspaces = 10
 include_special = true
 
 [scratchpads.files]
-animation = "fromBottom"
+animation = "fromLeft"
 # command = "uwsm app -- foot --app-id=Sfiles yazi"
 command = "uwsm app -- kitty --class Sfiles yazi"
 class = "Sfiles"
@@ -24,26 +24,26 @@ lazy = true
 size = "94% 92%"
 
 [scratchpads.monitor]
-animation = "fromBottom"
+animation = "fromRight"
 command = "uwsm app -- foot --app-id=Smonitor btop"
 # command = "uwsm app -- kitty --class Smonitor btop"
 class = "Smonitor"
 lazy = true
-size = "75% 90%"
+size = "94% 80%"
 
 [scratchpads.moosic]
-animation = "fromTop"
+animation = "fromBottom"
 command = "uwsm app -- foot --app-id=Smoosic pianobar"
 class = "Smoosic"
 lazy = true
-size = "34% 34%"
+size = "34% 46%"
 
 [scratchpads.audio]
 animation = "fromBottom"
 command = "uwsm app -- pavucontrol"
 class = "pavucontrol-qt"
 lazy = true
-size = "54% 45%"
+size = "54% 46%"
 
 [scratchpads.term]
 animation = "fromTop"
@@ -51,4 +51,4 @@ command = "uwsm app -- foot --app-id=Dropterm"
 # command = "uwsm app -- kitty --class Dropterm"
 class = "Dropterm"
 lazy = true
-size = "75% 90%"
+size = "76% 90%"
