@@ -128,7 +128,7 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-homage-black)
 ;; (setq doom-theme 'manoj-dark)
-(setq doom-theme 'doom-ir-black)
+(setq doom-theme 'doom-dracula)
 ;; (setq doom-theme 'doom-monokai-ristretto)
 ;; (setq doom-theme 'doom-challenger-deep)
 ;; (setq doom-theme 'ewal-doom-vibrant)
@@ -458,9 +458,12 @@
 ;; USER PROGRAMS
 ;; ============================================================================
 ;; ----------------------------------------------------------------------------
-;; (use-package! hyprlang-ts-mode
-;;   :custom
-;;   (hyprlang-ts-mode-indent-offset 4))
+(add-to-list 'treesit-language-source-alist
+        '(hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang"))
+
+(use-package! hyprlang-ts-mode
+  :custom
+  (hyprlang-ts-mode-indent-offset 4))
 
 ;; ----------------------------------------------------------------------------
 ;; ============================================================================

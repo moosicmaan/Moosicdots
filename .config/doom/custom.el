@@ -4,7 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a"
+   '("8c7e832be864674c220f9a9361c851917a93f921fedb7717b1b5ece47690c098"
+     "9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a"
      "da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738"
      "6e33d3dd48bc8ed38fd501e84067d3c74dfabbfc6d345a92e24f39473096da3f"
      "ff24d14f5f7d355f47d53fd016565ed128bf3af30eb7ce8cae307ee4fe7f3fd0"
@@ -39,7 +40,8 @@
  '(org-agenda-files
    '("/mnt/data/moosicmaan/ORG/repos.org" "/mnt/data/moosicmaan/ORG/README.org"
      "/mnt/data/moosicmaan/ORG/agenda/worktasks.org" "/mnt/data/moosicmaan/ORG/agenda/techtasks.org"
-     "/mnt/data/moosicmaan/ORG/agenda/hometasks.org" "/mnt/data/moosicmaan/ORG/agenda/familytasks.org")))
+     "/mnt/data/moosicmaan/ORG/agenda/hometasks.org" "/mnt/data/moosicmaan/ORG/agenda/familytasks.org"))
+ '(package-selected-packages '(hyprlang-ts-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
