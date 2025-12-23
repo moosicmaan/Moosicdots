@@ -13,7 +13,7 @@ if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
 
   # Kill garuda elements
   echo "killing garuda visuals"
-  notify-send --icon=configuration_section "killing garuda visuals"
+  notify-send --icon=emblem-system-symbolic "killing garuda visuals"
   pkill -f "nwg-dock-hyprland" &
   pkill -f "wlsunset" &
 
@@ -24,13 +24,13 @@ if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
   # Load background and status bar
   # eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --init &"
   eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --random &"
-  notify-send "...dead..." || notify-send --icon=configuration_section "Failed to stop garuda visuals"
+  notify-send "...dead..." || notify-send --icon=emblem-system-symbolic "Failed to stop garuda visuals"
 
 else
 
   # Start garuda elements
   echo "Starting the garuda visuals"
-  notify-send --icon=configuration_section "Starting the garuda visuals"
+  notify-send --icon=emblem-system-symbolic "Starting the garuda visuals"
   eval "${PREFIX}nwg-dock-hyprland -x -p 'left' -i 24 -mt 10 -mb 10 -ml 5 -f &"
   eval "${PREFIX}wlsunset -t 2000 -T 2300 &"
 
@@ -41,6 +41,6 @@ else
 
   # Load background and status bar
   eval "${PREFIX}$HOME/.config/.scripts/ut-wallpaper --init &"
-  notify-send --icon=configuration_section "Garuda visuals applied."
+  notify-send "Garuda visuals applied."
 
 fi

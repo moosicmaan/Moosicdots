@@ -48,7 +48,7 @@ window {
     width:                       400px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-color:            @background;
+    background-color:            @color0;
 
     /* properties for all widgets */
     enabled:                     true;

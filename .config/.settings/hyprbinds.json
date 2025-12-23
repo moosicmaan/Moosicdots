@@ -201,7 +201,7 @@
     "catch_all": false,
     "description": "Open the media player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- vlc"
+    "arg": "uwsm app -- mpv --player-operation-mode=pseudo-gui"
   },
   {
     "locked": false,
@@ -1153,7 +1153,7 @@
     "catch_all": false,
     "description": "Open media playger",
     "dispatcher": "exec",
-    "arg": "uwsm app -- vlc"
+    "arg": "uwsm app -- mpv --player-operation-mode=pseudo-gui"
   },
   {
     "locked": false,
@@ -1204,7 +1204,7 @@
     "catch_all": false,
     "description": "Open media playger",
     "dispatcher": "exec",
-    "arg": "uwsm app -- vlc"
+    "arg": "uwsm app -- mpv --player-operation-mode=pseudo-gui"
   },
   {
     "locked": false,
@@ -1408,7 +1408,7 @@
     "catch_all": false,
     "description": "reload hypr",
     "dispatcher": "exec",
-    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --init"
+    "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ud-wallpaper --init"
   },
   {
     "locked": false,
@@ -1663,7 +1663,7 @@
     "catch_all": false,
     "description": "<submap-themes>Start/restart wallpaper and waybar",
     "dispatcher": "exec",
-    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --init"
+    "arg": "hyprctl dispatch submap reset && hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ud-wallpaper --init"
   },
   {
     "locked": false,
@@ -3346,7 +3346,7 @@
     "catch_all": false,
     "description": "KBD open the media player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- vlc"
+    "arg": "uwsm app -- mpv --player-operation-mode=pseudo-gui"
   },
   {
     "locked": false,

@@ -12,7 +12,7 @@
 pDIR="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/breeze-dark"
+iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
 
 if [ "${UWSM_SESSION}" ]; then
   ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
@@ -32,13 +32,13 @@ pSONG=$(printf '%b' "${pSONG//%/\\x}")
 
 # Check for empty URL
 if [[ -z "$pSONG" ]]; then
-  notify-send -i "$iDIR/music-playlist.svg" "No song is currently playing!" "Cannot add to playlist."
+  notify-send -i "$iDIR/face-surprise-symbolic.svg" "No song is currently playing!" "Cannot add to playlist."
   exit 1
 fi
 
 # Check that the URL starts with 'file://'
 if [[ "$pSONG" != file://* ]]; then
-  notify-send -i "$iDIR/music-playlist.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
+  notify-send -i "$iDIR/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
   exit 1
 fi
 
@@ -47,7 +47,7 @@ pSONG=${pSONG#file://}
 
 # Check if the local file actually exists
 if [[ ! -f "$pSONG" ]]; then
-  notify-send -i "$iDIR/music-playlist.svg" "File not found!" "Local file could not be accessed: $pSONG"
+  notify-send -i "$iDIR/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $pSONG"
   exit 1
 fi
 
@@ -71,14 +71,14 @@ case "$sCHOICE" in
   NEWNAME=$(rofi -dmenu -config "$ROFI_CONFIG" -p "Enter new playlist name:")
   if [[ -n "$NEWNAME" ]]; then
     mkdir -p "$pDIR/$NEWNAME"
-    notify-send -i "$iDIR/music-playlist.svg" "Playlist created" "$NEWNAME"
+    notify-send -i "$iDIR/face-smile-symbolic.svg" "Playlist created" "$NEWNAME"
   fi
   ;;
 "🗑️ Delete Playlist")
   TODEL=$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$ROFI_CONFIG" -p "Delete which playlist?")
   if [[ -n "$TODEL" ]]; then
     rm -rf "${pDIR:?}/${TODEL:?}"
-    notify-send -i "$iDIR/music-playlist.svg" "Playlist deleted" "$TODEL"
+    notify-send -i "$iDIR/face-devilish-symbolic.svg" "Playlist deleted" "$TODEL"
   fi
   ;;
 "")
@@ -90,6 +90,6 @@ case "$sCHOICE" in
   # create symlink
   ln -s "$pSONG" "$pDIR/$sCHOICE/"
   ln -s "$pSONG" "$pDIR/favorites/"
-  notify-send -i "$iDIR/music-playlist.svg" "Adding \"$nSONG\" to:" "$sCHOICE"
+  notify-send -i "$iDIR/emote-love-symbolic.svg" "Adding \"$nSONG\" to:" "$sCHOICE"
   ;;
 esac

@@ -7,7 +7,7 @@
 # =====================================================
 
 # ICONS
-licon="/usr/share/icons/candy-icons/apps/scalable/lightbeat.svg"
+licon="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status/night-light-symbolic.svg"
 
 # Get the current brightness value
 notify-send -u normal -i "$licon" "Getting/Setting Brightness" "For External Monitor..."

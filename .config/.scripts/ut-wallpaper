@@ -89,7 +89,7 @@ if [ "$IN_ARG" == "--init" ]; then
   echo ":: Init"
 else
   sleep 1
-  notify-send --icon=monitor "Colors and Wallpaper Updated" "Main Image: $NEWWALL"
+  notify-send --icon=image-x-generic-symbolic "Colors and Wallpaper Updated" "Main Image: $NEWWALL"
   # the following might be useful in the future for debugging
   sed -i 's|^post_command =.*|post_command = |' "$CONFIG_FILE"
 fi

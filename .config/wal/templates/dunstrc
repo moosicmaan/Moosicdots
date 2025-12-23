@@ -12,7 +12,7 @@
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 400
-    progress_bar_corner_radius = 5
+    progress_bar_corner_radius = 0
     icon_corner_radius = 0
     indicate_hidden = yes
     transparency = 0
@@ -20,9 +20,8 @@
     padding = 8
     horizontal_padding = 8
     text_icon_padding = 0
-    frame_width = 3
+    frame_width = 2
     gap_size = 0
-    separator_color = auto
     sort = yes
     line_height = 1
     markup = full
@@ -36,7 +35,7 @@
     hide_duplicate_count = false
     show_indicators = yes
     enable_recursive_icon_lookup = true
-    icon_theme = "Beautyline, Tela-circle-dracula-dark, breeze, Adwaita"
+    icon_theme = "Tela-circle-dracula-dark, breeze, Adwaita"
     icon_position = left
     min_icon_size = 64
     max_icon_size = 64
@@ -48,7 +47,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 5
+    corner_radius = 0
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
@@ -58,7 +57,7 @@
     frame_color = "{color5}"
     separator_color = "{color9}"
     background = "{background}ee"
-    foreground = "{foreground}"
+    foreground = "{color15}"
     highlight = "{color4}"
 
 [experimental]
@@ -67,12 +66,12 @@
 [urgency_low]
     frame_color = "{color5}"
     background = "{background}ee"
-    foreground = "{foreground}"
+    foreground = "{color15}"
 
 [urgency_normal]
     frame_color = "{color5}"
     background = "{background}ee"
-    foreground = "{foreground}"
+    foreground = "{color15}"
 
 [urgency_critical]
     frame_color = "{color1}"

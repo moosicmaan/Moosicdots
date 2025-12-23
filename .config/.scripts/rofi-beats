@@ -15,7 +15,7 @@ mDIR="$HOME/Music/Offline/"
 pDIR="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/BeautyLine/actions/scalable"
+iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/actions"
 
 # Prefix to run commands in wayland using uwsm.
 PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
@@ -62,7 +62,7 @@ populate_local_music() {
 notification() {
   # notify-send -u normal -i "$iDIR/media-playback-playing.svg" "Playing: $@"
   # echo "$iDIR/media-playback-playing.svg" "Playing: $@"
-  echo "$iDIR/media-playback-playing.svg" "Playing..."
+  echo "$iDIR/media-playback-start-symbolic.svg" "Playing..."
 }
 
 # Main function for playing local music
@@ -181,7 +181,7 @@ play_online_music() {
 
 # ------MAIN------
 if pkill mpv; then
-  notify-send -u low -i "$iDIR/media-playback-stopped.svg" "Music stopped"
+  notify-send -u low -i "$iDIR/media-playback-stop-symbolic.svg" "Music stopped"
 else
   # code to run if mpv was not already running
   # echo "mpv was not running"

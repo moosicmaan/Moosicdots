@@ -6,7 +6,7 @@
 # -----------------------------------------------------
 # =====================================================
 
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
 
 LOGFILE="/tmp/kmonad.log"
 
