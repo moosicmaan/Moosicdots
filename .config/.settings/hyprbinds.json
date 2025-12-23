@@ -114,7 +114,7 @@
     "key": "a",
     "keycode": 0,
     "catch_all": false,
-    "description": "Open ChatGPT",
+    "description": "Open chatgpt",
     "dispatcher": "exec",
     "arg": "uwsm app -- brave --app=https://chat.openai.com"
   },
@@ -216,7 +216,7 @@
     "key": "m",
     "keycode": 0,
     "catch_all": false,
-    "description": "ROFI Music Selector",
+    "description": "ROFI music selector",
     "dispatcher": "exec",
     "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-beats"
   },
@@ -233,7 +233,7 @@
     "key": "i",
     "keycode": 0,
     "catch_all": false,
-    "description": "ROFI Playlist Mangager",
+    "description": "ROFI playlist mangager",
     "dispatcher": "exec",
     "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-favs"
   },
@@ -488,7 +488,7 @@
     "key": "p",
     "keycode": 0,
     "catch_all": false,
-    "description": "RUN Menu",
+    "description": "RUN menu",
     "dispatcher": "exec",
     "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/dmenu.rasi -show run -run-command 'uwsm app -- {cmd}'"
   },
@@ -505,7 +505,7 @@
     "key": "p",
     "keycode": 0,
     "catch_all": false,
-    "description": "DRUN Menu",
+    "description": "DRUN menu",
     "dispatcher": "exec",
     "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show drun -run-command 'uwsm app -- {cmd}'"
   },
@@ -522,7 +522,7 @@
     "key": "p",
     "keycode": 0,
     "catch_all": false,
-    "description": "FILES Menu",
+    "description": "FILES menu",
     "dispatcher": "exec",
     "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show filebrowser"
   },
@@ -539,7 +539,7 @@
     "key": "p",
     "keycode": 0,
     "catch_all": false,
-    "description": "WINDOWS Menu",
+    "description": "WINDOWS menu",
     "dispatcher": "exec",
     "arg": "pkill rofi || rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window"
   },
@@ -556,7 +556,7 @@
     "key": "k",
     "keycode": 0,
     "catch_all": false,
-    "description": "Show Keybinding Selector",
+    "description": "Show keybinding selector",
     "dispatcher": "exec",
     "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-keybinds"
   },
@@ -624,7 +624,7 @@
     "key": "q",
     "keycode": 0,
     "catch_all": false,
-    "description": "Logout Menu",
+    "description": "logout menu",
     "dispatcher": "exec",
     "arg": "wlogout"
   },
@@ -641,7 +641,7 @@
     "key": "DELETE",
     "keycode": 0,
     "catch_all": false,
-    "description": "Logout Menu",
+    "description": "logout menu",
     "dispatcher": "exec",
     "arg": "wlogout"
   },
@@ -1355,7 +1355,7 @@
     "key": "z",
     "keycode": 0,
     "catch_all": false,
-    "description": "ZOOM in",
+    "description": "zoom in",
     "dispatcher": "exec",
     "arg": "pypr zoom --0.5"
   },
@@ -1372,7 +1372,7 @@
     "key": "z",
     "keycode": 0,
     "catch_all": false,
-    "description": "ZOOM out",
+    "description": "zoom out",
     "dispatcher": "exec",
     "arg": "pypr zoom ++0.5"
   },
@@ -1389,7 +1389,7 @@
     "key": "z",
     "keycode": 0,
     "catch_all": false,
-    "description": "ZOOM toggle",
+    "description": "zoom toggle",
     "dispatcher": "exec",
     "arg": "pypr zoom"
   },
@@ -1406,7 +1406,7 @@
     "key": "r",
     "keycode": 0,
     "catch_all": false,
-    "description": "Reload hypr",
+    "description": "reload hypr",
     "dispatcher": "exec",
     "arg": "hyprctl reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-mon-reload && /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --init"
   },
@@ -1423,7 +1423,7 @@
     "key": "t",
     "keycode": 0,
     "catch_all": false,
-    "description": "Switch waybar",
+    "description": "switch waybar",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barswitch"
   },
@@ -1440,7 +1440,7 @@
     "key": "b",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle Waybar",
+    "description": "toggle waybar",
     "dispatcher": "exec",
     "arg": "pkill waybar || /mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-barlaunch"
   },
@@ -1457,7 +1457,7 @@
     "key": "s",
     "keycode": 0,
     "catch_all": false,
-    "description": "Select wallpaper",
+    "description": "select wallpaper",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --select"
   },
@@ -1474,7 +1474,7 @@
     "key": "w",
     "keycode": 0,
     "catch_all": false,
-    "description": "Select random wallpaper",
+    "description": "select random wallpaper",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-wallpaper --random"
   },
@@ -1491,7 +1491,7 @@
     "key": "g",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle game mode",
+    "description": "toggle game mode",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
   },
@@ -1508,7 +1508,7 @@
     "key": "k",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle kmonad for external keyboard",
+    "description": "toggle kmonad for external keyboard",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-350"
   },
@@ -1525,7 +1525,7 @@
     "key": "j",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle kmonad for laptop keyboard",
+    "description": "toggle kmonad for laptop keyboard",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-kbd-lap"
   },
@@ -1542,7 +1542,7 @@
     "key": "h",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle Garuda visual elements",
+    "description": "toggle garuda visual elements",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-visuals"
   },
@@ -1576,7 +1576,7 @@
     "key": "u",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle game mode",
+    "description": "<submap-themes>Toggle game mode",
     "dispatcher": "exec",
     "arg": "/mnt/data/moosicmaan/CONFIG/.config/.scripts/hypr-gamemode"
   },
@@ -1712,7 +1712,7 @@
     "key": "q",
     "keycode": 0,
     "catch_all": false,
-    "description": "Kill the active window",
+    "description": "kill the active window",
     "dispatcher": "killactive",
     "arg": ""
   },
@@ -1729,7 +1729,7 @@
     "key": "c",
     "keycode": 0,
     "catch_all": false,
-    "description": "Centers the active (floating) window",
+    "description": "centers the active (floating) window",
     "dispatcher": "centerwindow",
     "arg": ""
   },
@@ -1746,7 +1746,7 @@
     "key": "s",
     "keycode": 0,
     "catch_all": false,
-    "description": "Swaps the focused window with the next window",
+    "description": "swaps the focused window with the next window",
     "dispatcher": "swapnext",
     "arg": ""
   },
@@ -1763,7 +1763,7 @@
     "key": "w",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle direction of split window",
+    "description": "toggle direction of split window",
     "dispatcher": "togglesplit",
     "arg": ""
   },
@@ -1780,7 +1780,7 @@
     "key": "f",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle floating window",
+    "description": "toggle floating window",
     "dispatcher": "togglefloating",
     "arg": ""
   },
@@ -1797,7 +1797,7 @@
     "key": "f",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle fullscreen",
+    "description": "toggle fullscreen",
     "dispatcher": "fullscreen",
     "arg": ""
   },
@@ -1814,7 +1814,7 @@
     "key": "f",
     "keycode": 0,
     "catch_all": false,
-    "description": "Toggle float all windows",
+    "description": "toggle float all windows",
     "dispatcher": "exec",
     "arg": "hyprctl dispatch workspaceopt allfloat"
   },
@@ -1831,7 +1831,7 @@
     "key": "s",
     "keycode": 0,
     "catch_all": false,
-    "description": "Swaps the R and L side of the workspace",
+    "description": "swaps the R and L side of the workspace",
     "dispatcher": "swapsplit",
     "arg": ""
   },
@@ -1848,7 +1848,7 @@
     "key": "TAB",
     "keycode": 0,
     "catch_all": false,
-    "description": "Switch focus from current to previous window",
+    "description": "switch focus from current to previous window",
     "dispatcher": "focuscurrentorlast",
     "arg": ""
   },
@@ -1865,7 +1865,7 @@
     "key": "h",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (left)",
+    "description": "focus window (left)",
     "dispatcher": "movefocus",
     "arg": "l"
   },
@@ -1882,7 +1882,7 @@
     "key": "j",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (down)",
+    "description": "focus window (down)",
     "dispatcher": "movefocus",
     "arg": "d"
   },
@@ -1899,7 +1899,7 @@
     "key": "k",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (up)",
+    "description": "focus window (up)",
     "dispatcher": "movefocus",
     "arg": "u"
   },
@@ -1916,7 +1916,7 @@
     "key": "l",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (right)",
+    "description": "focus window (right)",
     "dispatcher": "movefocus",
     "arg": "r"
   },
@@ -1933,7 +1933,7 @@
     "key": "left",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (left)",
+    "description": "focus window (left)",
     "dispatcher": "movefocus",
     "arg": "l"
   },
@@ -1950,7 +1950,7 @@
     "key": "down",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (down)",
+    "description": "focus window (down)",
     "dispatcher": "movefocus",
     "arg": "d"
   },
@@ -1967,7 +1967,7 @@
     "key": "up",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (up)",
+    "description": "focus window (up)",
     "dispatcher": "movefocus",
     "arg": "u"
   },
@@ -1984,7 +1984,7 @@
     "key": "right",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus window (right)",
+    "description": "focus window (right)",
     "dispatcher": "movefocus",
     "arg": "r"
   },
@@ -2001,7 +2001,7 @@
     "key": "h",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (left)",
+    "description": "resize window (left)",
     "dispatcher": "resizeactive",
     "arg": "-50 0"
   },
@@ -2018,7 +2018,7 @@
     "key": "j",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (down)",
+    "description": "resize window (down)",
     "dispatcher": "resizeactive",
     "arg": "0 50"
   },
@@ -2035,7 +2035,7 @@
     "key": "k",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (up)",
+    "description": "resize window (up)",
     "dispatcher": "resizeactive",
     "arg": "0 -50"
   },
@@ -2052,7 +2052,7 @@
     "key": "l",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (right)",
+    "description": "resize window (right)",
     "dispatcher": "resizeactive",
     "arg": "50 0"
   },
@@ -2069,7 +2069,7 @@
     "key": "left",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (left)",
+    "description": "resize window (left)",
     "dispatcher": "resizeactive",
     "arg": "-50 0"
   },
@@ -2086,7 +2086,7 @@
     "key": "down",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (down)",
+    "description": "resize window (down)",
     "dispatcher": "resizeactive",
     "arg": "0 50"
   },
@@ -2103,7 +2103,7 @@
     "key": "up",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (up)",
+    "description": "resize window (up)",
     "dispatcher": "resizeactive",
     "arg": "0 -50"
   },
@@ -2120,7 +2120,7 @@
     "key": "right",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window (right)",
+    "description": "resize window (right)",
     "dispatcher": "resizeactive",
     "arg": "50 0"
   },
@@ -2137,7 +2137,7 @@
     "key": "mouse:272",
     "keycode": 0,
     "catch_all": false,
-    "description": "Move window with mouse",
+    "description": "move window with mouse",
     "dispatcher": "mouse",
     "arg": "movewindow"
   },
@@ -2154,7 +2154,7 @@
     "key": "mouse:273",
     "keycode": 0,
     "catch_all": false,
-    "description": "Resize window with mouse",
+    "description": "resize window with mouse",
     "dispatcher": "mouse",
     "arg": "resizewindow"
   },
@@ -3038,7 +3038,7 @@
     "key": "comma",
     "keycode": 0,
     "catch_all": false,
-    "description": "Go to previous monitor",
+    "description": "go to previous monitor",
     "dispatcher": "focusmonitor",
     "arg": "-1"
   },
@@ -3055,7 +3055,7 @@
     "key": "period",
     "keycode": 0,
     "catch_all": false,
-    "description": "Go to next monitor",
+    "description": "go to next monitor",
     "dispatcher": "focusmonitor",
     "arg": "+1"
   },
@@ -3072,7 +3072,7 @@
     "key": "comma",
     "keycode": 0,
     "catch_all": false,
-    "description": "Flip windows between monitors",
+    "description": "flip windows between monitors",
     "dispatcher": "exec",
     "arg": "pypr shift_monitors -1"
   },
@@ -3089,7 +3089,7 @@
     "key": "period",
     "keycode": 0,
     "catch_all": false,
-    "description": "Flip windows between monitors",
+    "description": "flip windows between monitors",
     "dispatcher": "exec",
     "arg": "pypr shift_monitors +1"
   },

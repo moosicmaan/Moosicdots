@@ -45,7 +45,8 @@ echo "File '$binds_file' has been created successfully."
 
 # Filter JSON entries based on criteria
 filtered_entries=$(jq -r '.[] | select(.submap == "" and .dispatcher != "submap") | 
-    "\(.modmask):\(.key)\t\"\(.description)\": \(.dispatcher) \(.arg)"' "$binds_file")
+    "\(.modmask):\(.key) \"\(.description)\": \(.dispatcher) \(.arg)"' "$binds_file")
+# "\(.modmask):\(.key)\t\"\(.description)\": \(.dispatcher) \(.arg)"' "$binds_file")
 
 # Show options in rofi and get user selection
 # echo "$filtered_entries" >>"$bindtxt"

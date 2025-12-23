@@ -48,13 +48,13 @@ window {
     width:                       400px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-image:            @current-image;
+    background-color:            @background;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border-radius:               6px;
+    border-radius:               0px;
     cursor:                      "default";
 }
 
@@ -74,7 +74,7 @@ inputbar {
     margin:                      0px;
     padding:                     0px;
     border:                      1px;
-    border-radius:               6px;
+    border-radius:               0px;
     border-color:                gray/25%;
     background-color:            @color1;
     children:                    [ "textbox-prompt-colon", "entry" ];
@@ -84,7 +84,7 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     padding:                     3px 6px;
-    border-radius:               6px;
+    border-radius:               0px;
     background-color:            white;
     text-color:                  black;
     str:                         "";
@@ -126,9 +126,9 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px;
+    padding:                     0px;
     border:                      0px;
-    border-radius:               6px;
+    border-radius:               0px;
     border-color:                gray/15%;
     background-color:            transparent;
     text-color:                  white;
@@ -172,7 +172,7 @@ mode-switcher{
     spacing:                     0px;
     margin:                      0px 300px;
     padding:                     6px;
-    border-radius:               6px;
+    border-radius:               0px;
     background-color:            @color1;
 }
 button {

@@ -47,37 +47,13 @@ window {
     width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
-    background-image:            @current-image;
+    background-color:            @background;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border-radius:               6px;
-}
-
-/*****----- Main Window -----*****/
-window {
-/* properties for window widget 
-    background-image:            @current-image;
-    background-color:            transparent;
-    background-color:            black/60%;
-*/
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       900px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-    background-image:            @current-image;
-
-    /* properties for all widgets */
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border-radius:               6px;
-    cursor:                      "default";
+    border-radius:               0px;
 }
 
 /*****----- Main Box -----*****/
@@ -96,7 +72,7 @@ inputbar {
     // margin:                      0px 200px;
     padding:                     0px;
     border:                      1px;
-    border-radius:               6px;
+    border-radius:               0px;
     border-color:                gray/25%;
     background-color:            @color1;
     children:                    [ "textbox-prompt-colon", "prompt", "entry" ];
@@ -105,7 +81,7 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     padding:                     3px 6px;
-    border-radius:               6px;
+    border-radius:               0px;
     background-color:            white;
     text-color:                  black;
     str:                         "";
@@ -154,9 +130,9 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px;
+    // padding:                     5px;
     border:                      0px;
-    border-radius:               6px;
+    border-radius:               0px;
     border-color:                gray/15%;
     background-color:            transparent;
     text-color:                  white;
@@ -182,7 +158,7 @@ element normal.normal {
 }
 element-icon {
     background-color:            transparent;
-    size:                        24px;
+    size:                        0px;
     cursor:                      inherit;
 }
 element-text {

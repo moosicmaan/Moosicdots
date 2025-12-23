@@ -93,6 +93,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # JDB --->
 # -----------------------------------------------
+alias suedit="VISUAL= sudoedit"
 
 # Variables
 my_font=ter-v28n.psf.gz
@@ -106,7 +107,8 @@ fi
 
 # My aliases and prompts - not using starship in bash.
 alias hypr="uwsm start -- hyprland.desktop"
-alias vim="nvim"
+# alias vim="nvim"
+alias vi="vim"
 export PATH=$PATH:$HOME/.config/emacs/bin
 alias ec="emacsclient -c -a 'emacs' &"
 export PATH="$HOME/.config/.scripts:$PATH"

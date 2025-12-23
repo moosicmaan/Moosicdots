@@ -236,6 +236,8 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 #     end
 # end
 
+alias suedit "VISUAL= sudoedit"
+alias vi vim
 # alias vim 'kitty @ set-spacing padding=0 && nvim'
 # alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
@@ -370,13 +372,14 @@ export FZF_DEFAULT_OPTS="-m \
 --border-label '╢ FZF ╟' \
 --preview 'bat -n --color=always {}' \
 --info hidden \
---header '<TAB> for MULTI' \
 --color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--header '<TAB> for MULTI' \
 --preview-label ' ~ Preview ~ ' \
 --prompt 'FIND ▶ ' \
 --pointer '→' \
 --marker '*'"
 
+# --color 'bg+:-1,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8,fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc,marker:#f5e0dc,fg+:#a6e3a1,prompt:#cba6f7,hl+:#f38ba8' \
 # -------------------------------------------------------------------------------
 # <--- JDB
 # ===============================================================================
