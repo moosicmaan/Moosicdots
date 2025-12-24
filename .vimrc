@@ -77,6 +77,10 @@ set so=7
 " Set auto indent
 set autoindent
 
+" Set the cursor shape(s)
+let &t_SI = "\e[6 q"  " Insert mode: vertical bar
+let &t_EI = "\e[2 q"  " Normal mode: block
+
 " Set the cursor line
 " set cursorline
 

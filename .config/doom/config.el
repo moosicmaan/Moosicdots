@@ -514,7 +514,6 @@
 (global-set-key (kbd "C-<wheel-down>") 'text-scale-decrease)
 (map! :leader
       :desc "Toggle Treemacs" "e" #'+treemacs/toggle)
-
 ;; ----------------------------------------------------------------------------
 ;; DIRED
 ;; ----------------------------------------------------------------------------

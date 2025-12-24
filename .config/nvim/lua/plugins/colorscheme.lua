@@ -11,11 +11,13 @@ return {
   { "ayaz-amin/cyberpunk.nvim", name = "cyberpunk", lazy = true, priority = 5000 },
   { "scottmckendry/cyberdream.nvim", name = "cyberdream", lazy = true, priority = 5000 },
   { "alphaTechnolog/pywal.nvim", name = "pywal", lazy = true, priority = 5000 },
+  { "shaunsingh/nord.nvim", name = "nord", lazy = true, priority = 5000 },
   { "Mofiqul/dracula.nvim", name = "dracula", lazy = true, priority = 5000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      colorscheme = "nord",
+      -- colorscheme = "dracula",
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",

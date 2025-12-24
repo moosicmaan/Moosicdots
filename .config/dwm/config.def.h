@@ -43,7 +43,7 @@ static const char col_pinned[]      = "#FFB86C";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
   [SchemeNorm] = { col_4,   col_1,   col_2 },
-  [SchemeSel]  = { col_4,   col_1,   col_accent },
+  [SchemeSel]  = { col_4,   col_1,   col_border },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -238,8 +238,8 @@ static Keychord *keychords[] = {
   /*   APPLICATIONS   */
   &((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
-  &((Keychord){1, {{ControlMask|AltMask,          XK_k}}, spawn,          {.v = kmonade } }),
-  &((Keychord){1, {{ControlMask|AltMask,          XK_j}}, spawn,          {.v = kmonadl } }),
+  &((Keychord){1, {{MEH,                          XK_k}}, spawn,          {.v = kmonade } }),
+  &((Keychord){1, {{MEH,                          XK_j}}, spawn,          {.v = kmonadl } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
   &((Keychord){1, {{HYPER,                        XK_i}}, spawn,          {.v = mfavs } }),
   &((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),

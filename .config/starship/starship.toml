@@ -87,6 +87,12 @@ read_only = " 󰌾"
 truncation_length = 0
 truncation_symbol = "repo: "
 
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
 # Fourth param
 [sudo]
 format = "[as](white) [$symbol]($style)"
