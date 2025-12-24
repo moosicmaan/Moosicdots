@@ -225,6 +225,10 @@ eval "$(zoxide init bash)"
 alias cd='__zoxide_z'
 alias cdi='__zoxide_zi'
 
+# Enable bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  source /usr/share/bash-completion/bash_completion
+fi
 # -----------------------------------------------
 # <--- JDB
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
