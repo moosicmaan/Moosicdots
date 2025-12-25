@@ -235,7 +235,7 @@
     "catch_all": false,
     "description": "rofi playlist mangager",
     "dispatcher": "exec",
-    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/media-favs"
+    "arg": "pkill rofi || /mnt/data/moosicmaan/CONFIG/.config/.scripts/rofi-beat-favs"
   },
   {
     "locked": false,
@@ -2205,7 +2205,7 @@
     "key": "g",
     "keycode": 0,
     "catch_all": false,
-    "description": "<sub-gsubs>Toggles the current window into a group",
+    "description": "<sub-gsubs>toggles the current window into a group",
     "dispatcher": "exec",
     "arg": "hyprctl dispatch togglegroup && hyprctl dispatch submap reset"
   },
@@ -2222,7 +2222,7 @@
     "key": "h",
     "keycode": 0,
     "catch_all": false,
-    "description": "<sub-gsubs>Move window into/out of group (l)",
+    "description": "<sub-gsubs>move window into/out of group (l)",
     "dispatcher": "exec",
     "arg": "hyprctl dispatch movewindoworgroup l && hyprctl dispatch submap reset"
   },
@@ -2239,7 +2239,7 @@
     "key": "l",
     "keycode": 0,
     "catch_all": false,
-    "description": "<sub-gsubs>Move window into/out of group (r)",
+    "description": "<sub-gsubs>move window into/out of group (r)",
     "dispatcher": "exec",
     "arg": "hyprctl dispatch movewindoworgroup r && hyprctl dispatch submap reset"
   },
@@ -2256,7 +2256,7 @@
     "key": "x",
     "keycode": 0,
     "catch_all": false,
-    "description": "<sub-gsubs>Lock toggle for the group",
+    "description": "<sub-gsubs>lock toggle for the group",
     "dispatcher": "exec",
     "arg": "hyprctl dispatch lockactivegroup && hyprctl dispatch submap reset"
   },
