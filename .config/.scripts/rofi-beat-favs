@@ -14,15 +14,17 @@ pDIR="$HOME/Music/Playlists/"
 # Directory for icons
 iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
 
-if [ "${UWSM_SESSION}" ]; then
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+  echo "Wayland session"
   ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
 else
-  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-6.rasi"
+  echo "X11 session"
+  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 
 # get current song
 # song=$(playerctl -p mpv metadata xesam:url | sed 's|file://||')
-PLAYER="elisa,mpv,"
+PLAYER="elisa,mpv,vlc"
 
 nSONG=$(playerctl -p "$PLAYER" metadata xesam:title 2>/dev/null)
 pSONG=$(playerctl -p "$PLAYER" metadata xesam:url 2>/dev/null)
@@ -32,7 +34,7 @@ pSONG=$(printf '%b' "${pSONG//%/\\x}")
 
 # Check for empty URL
 if [[ -z "$pSONG" ]]; then
-  notify-send -i "$iDIR/face-surprise-symbolic.svg" "No song is currently playing!" "Cannot add to playlist."
+  notify-send -i "$iDIR/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
   exit 1
 fi
 

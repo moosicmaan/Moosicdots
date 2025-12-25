@@ -25,7 +25,7 @@ if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
   ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
 else
   echo "X11 session"
-  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-6.rasi"
+  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 
 # Online Stations. Edit as required

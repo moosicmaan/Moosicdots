@@ -33,12 +33,27 @@ get_icon() {
   else
     icon="$iDIR/display-brightness-symbolic.svg"
   fi
+  echo "icon path in get_icon: $icon"
 }
 
 # Notify
+# notify_user() {
+#   echo "$icon" "$current%"
+#   notify-send -u normal -p -i "$icon" "Brightness : $current%"
+# }
 notify_user() {
-  echo "$icon" "$current%"
-  notify-send -i "$icon" "Brightness : $current%"
+  # echo "In notify_user icon path: $icon"
+  # echo "In Notify_user Brightness: $current"
+  id_file="/tmp/light_notify_id"
+  [[ -f $id_file ]] && id=$(<"$id_file") || id=0
+
+  id=$(notify-send -p -r "$id" \
+    -h int:value:"$current" \
+    -u normal \
+    -i "$icon" \
+    "Brightness: ${current}%")
+
+  echo "$id" >"$id_file"
 }
 
 # Change brightness

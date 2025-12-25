@@ -126,6 +126,9 @@ modifier_keys = {
 # -----------------------------------------------
 # Default Applications - copied from /include/vars.py
 # -----------------------------------------------
+my_dots = "/mnt/data/moosicmaan/CONFIG"
+my_config = "my_dots/.config"
+my_scripts = "my_dots/.config/.scripts"
 my_term = "kitty"  # (M-return) Launch default terminal
 my_term2 = "foot"  # (M-t) Launch alternate terminal
 my_brows = "zen-browser"  # (M-b) Launch default browser
@@ -145,6 +148,8 @@ menu_win = (
     "rofi -config /mnt/data/moosicmaan/CONFIG/.config/rofi/config.rasi -show window"
 )
 my_music = "elise"  # (M-m) Launch music player
+my_beats = "pkill rofi || my_scripts/rofi-beats"  # Rofi Media and Radio Selector
+my_favs = "pkill rofi || my_scripts/rofi-beat-favs"  # Rofi Playlist Manager
 my_media = "vlc"  # (M-S-m) Launch media player
 my_office = "libreoffice"  # (M-f4) Launch office suite
 my_image = "gimp"  # (M-f5) Launch GUI image editor
@@ -304,6 +309,8 @@ keys = [
     EzKey("M-S-p", lazy.spawn(menu_drun), desc="Launch Rofi menu"),
     EzKey("M-p", lazy.spawn(menu_run), desc="Launch Rofi prompt"),
     EzKey("M-C-p", lazy.spawn(menu_win), desc="Launch Rofi windows"),
+    EzKey("C-A-m", lazy.spawn(my_beats), desc="Launch Rofi windows"),
+    EzKey("C-A-i", lazy.spawn(my_favs), desc="Launch Rofi windows"),
     EzKey(
         "M-A-i",
         lazy.group["scratchpad"].dropdown_toggle("term"),

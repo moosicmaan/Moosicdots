@@ -25,11 +25,11 @@ static const int barpadding_y       = 4;      // vertical padding for the bar (t
 static const int showsystray        = 1;      /* 0 means no systray */
 static const unsigned int systraypinning = 1; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft  = 0; /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 3; /* systray spacing */
+static const unsigned int systrayspacing = 6; /* systray spacing */
 static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display systray on the first monitor,
                                                  False: display systray on the last monitor*/
-static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=8" };
-static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=8";
+static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=10" };
+static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=10";
 static const unsigned int baralpha = 0xA3;
 static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#282A36";
@@ -63,9 +63,9 @@ static const char *tagsel[][2] = {
 
 /**** WINDOW RULES AND LAYOUTS ****/
 /* TAGGING */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 // static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
-static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
+// static const char *tags[] = { "󰬺", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂" };
 // static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
 // static const char *tags[] = { "󰫮", "󰫱", "󰫴", "󰫷", "M", "󰫽", "󰬀", "󰬃", "󰬇" };
 
@@ -142,9 +142,9 @@ static const char *const autostart[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
-    "-y", "8", 
-    "-x", "8", 
-    "-z", "1904",
+    "-y", "4", 
+    "-x", "4", 
+    "-z", "1912",
     "-m", dmenumon, 
     "-fn", dmenufont,
     "-nb", col_1, 
@@ -193,7 +193,7 @@ static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL }
 static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap", NULL };
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
-static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/media-favs", NULL };
+static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/rofi-beat-favs", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 
@@ -236,29 +236,29 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{HYPER,                        XK_2}}, togglescratch,  {.v = volume_scratch } }),
  
   /*   APPLICATIONS   */
+  &((Keychord){1, {{MODKEY,                  XK_Return}}, spawn,          {.v = termcmd } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,        XK_Return}}, spawn,          {.v = my_filesg } }),
+  &((Keychord){1, {{MODKEY|ControlMask,      XK_Return}}, spawn,          {.v = my_email } }),
+  &((Keychord){1, {{MODKEY,                   XK_Print}}, spawn,          {.v = screenshot } }),
+  &((Keychord){1, {{0,                        XK_Print}}, spawn,          {.v = screenshot } }),
   &((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
   &((Keychord){1, {{MEH,                          XK_k}}, spawn,          {.v = kmonade } }),
   &((Keychord){1, {{MEH,                          XK_j}}, spawn,          {.v = kmonadl } }),
-  &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
   &((Keychord){1, {{HYPER,                        XK_i}}, spawn,          {.v = mfavs } }),
   &((Keychord){1, {{MODKEY,                       XK_p}}, spawn,          {.v = dmenucmd } }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_p}}, spawn,          {.v = menu_drun } }),
   &((Keychord){1, {{MODKEY|ControlMask,           XK_p}}, spawn,          {.v = menu_win } }),
-  &((Keychord){1, {{MODKEY,                  XK_Return}}, spawn,          {.v = termcmd } }),
-  &((Keychord){1, {{MODKEY|ShiftMask,        XK_Return}}, spawn,          {.v = my_filesg } }),
-  &((Keychord){1, {{MODKEY|ControlMask,      XK_Return}}, spawn,          {.v = my_email } }),
   &((Keychord){1, {{MODKEY,                       XK_o}}, spawn,          {.v = browscmd } }),
   &((Keychord){1, {{MODKEY,                       XK_t}}, spawn,          {.v = my_term2 } }),
   &((Keychord){1, {{MODKEY,                       XK_b}}, spawn,          {.v = my_browsv } }),
-  &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
-  &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
   &((Keychord){1, {{MODKEY,                       XK_m}}, spawn,          {.v = my_music } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
   &((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
   &((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
-  &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
-  &((Keychord){1, {{MODKEY,                   XK_Print}}, spawn,          {.v = screenshot } }),
-  &((Keychord){1, {{0,                        XK_Print}}, spawn,          {.v = screenshot } }),
+  &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
+  &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
   &((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
   &((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
   &((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
@@ -293,8 +293,8 @@ static Keychord *keychords[] = {
   /*   VANITY GAPS   */
   &((Keychord){1, {{MODKEY|AltMask,               XK_0}}, togglegaps,     {0} }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_0}}, defaultgaps,    {0} }),
-  &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = +1 } }),
-  &((Keychord){1, {{MODKEY|AltMask,               XK_g}}, incrgaps,       {.i = -1 } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_g}}, incrgaps,       {.i = +1 } }),
+  &((Keychord){1, {{MODKEY|AltMask,               XK_h}}, incrgaps,       {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_h}}, incrogaps,      {.i = +1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ShiftMask,     XK_g}}, incrogaps,      {.i = -1 } }),
   &((Keychord){1, {{MODKEY|AltMask|ControlMask,   XK_h}}, incrigaps,      {.i = +1 } }),

@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/colors/nightfly.rasi"
+@import "/home/moosicmaan/.config/rofi/colors/dracula.rasi"
