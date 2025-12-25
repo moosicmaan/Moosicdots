@@ -9,7 +9,7 @@
 # =====================================================
 
 # iDIR="/usr/share/icons/Papirus-Dark/symbolic/status"
-iDIR="/usr/share/icons/BeautyLine/actions/scalable"
+iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
 # notification_timeout=1000
 step=5 # INCREASE/DECREASE BY THIS VALUE
 
@@ -22,27 +22,23 @@ get_backlight() {
 get_icon() {
   current=$(get_backlight)
   echo "Current brightness: $current"
-  if [ "$current" -le 20 ]; then
-    # icon="$iDIR/display-brightness-low-symbolic.svg"
-    icon="$iDIR/brightness-low.svg"
+  if [ "$current" -le 10 ]; then
+    icon="$iDIR/display-brightness-off-symbolic.svg"
+  elif [ "$current" -le 30 ]; then
+    icon="$iDIR/display-brightness-low-symbolic.svg"
   elif [ "$current" -le 60 ]; then
-    # icon="$iDIR/display-brightness-medium-symbolic.svg"
-    icon="$iDIR/brightness-display.svg"
-  elif [ "$current" -gt 80 ]; then
-    # icon="$iDIR/display-brightness-high-symbolic.svg"
-    icon="$iDIR/brightness-high.svg"
-  elif [ "$current" -le 5 ]; then
-    # icon="$iDIR/display-brightness-off-symbolic.svg"
-    icon="$iDIR/brightness-display.svg"
+    icon="$iDIR/display-brightness-medium-symbolic.svg"
+  elif [ "$current" -gt 75 ]; then
+    icon="$iDIR/display-brightness-high-symbolic.svg"
   else
-    # icon="$iDIR/display-brightness-symbolic.svg"
-    icon="$iDIR/brightness-display.svg"
+    icon="$iDIR/display-brightness-symbolic.svg"
   fi
 }
 
 # Notify
 notify_user() {
-  notify-send -e -h string:x-canonical-private-synchronous:brightness_notif -h int:value:$current -u low -i "$icon" "Brightness : $current%"
+  echo "$icon" "$current%"
+  notify-send -i "$icon" "Brightness : $current%"
 }
 
 # Change brightness

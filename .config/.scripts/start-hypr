@@ -1,0 +1,45 @@
+#!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# If this is not a UWSM_SESSION, then run the processes
+# that SystemD would have normally run
+#     Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
+
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+HYPRDIR="/mnt/data/moosicmaan/CONFIG/.config"
+
+LOGFILE="/tmp/hypr.log"
+
+Hyprland &
+
+echo "----------------------------------------" | tee -a "$LOGFILE"
+echo "[$(date)] Running hyprttystart script..." | tee -a "$LOGFILE"
+
+# Check if PREFIX is set
+if [[ -z "$PREFIX" ]]; then
+  echo "[$(date)] PREFIX is empty. Check wayland-prefix.sh if this is unexpected!" | tee -a "$LOGFILE"
+  # kitty --detach --title Hyprland-TTY --class Hyprland-TTY sudo /home/moosicmaan/.config/.script/start-hypr &
+  # Load environment variables
+  "$HYPRDIR"/uwsm/env | tee -a "$LOGFILE" &
+  "$HYPRDIR"/uwsm/env-hyprland | tee -a "$LOGFILE" &
+  # Start Polkit
+  # exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+  /usr/lib/polkit-kde-authentication-agent-1 &
+  # Setup XDG for screen sharing
+  #/mnt/data/moosicmaan/CONFIG/.config/.scripts/start-xdg
+  # $HYPRDIR/.scripts/start-xdg | tee -a "$LOGFILE" &
+  "$HYPRDIR"/.scripts/start-xdg
+  # Load GTK settings
+  #/mnt/data/moosicmaan/CONFIG/.config/.scripts/start-gtk
+  # $HYPRDIR/.scripts/start-gtk | tee -a "$LOGFILE" &
+  "$HYPRDIR"/.scripts/start-gtk
+  export UWSM_SESSION=false
+  export UWSM_SESSION_TYPE=none
+  echo "[$(date)] UWSM_SESSION set to false? $UWSM_SESSION" | tee -a "$LOGFILE"
+  echo "[$(date)] UWSM_SESSION_TYPE set to false? $UWSM_SESSION_TYPE" | tee -a "$LOGFILE"
+  # exit
+else
+  echo "[$(date)] PREFIX is set to uwsm(true). Normal Start." | tee -a "$LOGFILE"
+fi

@@ -168,7 +168,7 @@ static const char *wallr[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper",
 static const char *walls[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--select", NULL };
 static const char *bars[] = { "/home/moosicmaan/.config/.scripts/hypr-barswitch",  NULL };
 static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/hypr-barlaunch", NULL };
-static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/dwl-startup",  NULL };
+static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/start-dwl",  NULL };
 
 
 /*   MEDIA KEYS   */

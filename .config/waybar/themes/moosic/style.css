@@ -267,7 +267,7 @@ tooltip label {
 #hardware {
   color: @iconcolor;
   font-size: 11px;
-  padding: 0px 3px 0px 3px;
+  padding: 0px 0px 0px 0px;
 }
 #network {
   color: @textcolor2;

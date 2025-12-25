@@ -7,18 +7,9 @@
 # -----------------------------------------------------
 # =====================================================
 
-# current brightness
-curr_brightness=$(cat /sys/class/backlight/*/brightness)
-
-# max_brightness
-max_brightness=$(cat /sys/class/backlight/*/max_brightness)
-
-# brightness percentage
-brightness_per=$((100 * curr_brightness / max_brightness))
-
 case $BLOCK_BUTTON in
-1) "$HOME"/.config/.scripts//ut-monbrightness --dec ;;
-3) "$HOME"/.config/.scripts//ut-monbrightness --inc ;;
+1) /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --dec & ;;
+3) /mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --inc & ;;
 2)
   notify-send "💡 Brightness module" "\- Shows current brightness level ☀️."
   ;;
@@ -26,5 +17,15 @@ case $BLOCK_BUTTON in
   setsid -f "$TERMINAL" -e "$EDITOR" "$0"
   ;;
 esac
+
+# current brightness
+# curr_brightness=$(cat /sys/class/backlight/*/brightness)
+
+# max_brightness
+# max_brightness=$(cat /sys/class/backlight/*/max_brightness)
+
+# brightness percentage
+# brightness_per=$((100 * curr_brightness / max_brightness))
+brightness_per=$(/mnt/data/moosicmaan/CONFIG/.config/.scripts/ut-monbrightness --get)
 
 echo " 💡${brightness_per}%"

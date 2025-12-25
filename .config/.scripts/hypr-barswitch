@@ -6,7 +6,9 @@
 # -----------------------------------------------------
 # =====================================================
 
-themes_path="$HOME/.config/.settings/barthemes/"
+# use the following when there are a number of non-waybar themes to concider
+# themes_path="$HOME/.config/.settings/barthemes/"
+themes_path="$HOME/.config/waybar/themes/"
 
 # Initialize theme lists
 declare -a theme_list

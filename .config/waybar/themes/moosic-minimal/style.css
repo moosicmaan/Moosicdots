@@ -121,9 +121,12 @@ window#waybar.empty #window {
   color: @textcolor2;
   transition: all 0.3s ease-in-out;
   opacity: 0.9;
-  border-top: 2px solid @bordercolor;
-  border-right: 1px solid @bordercolorb;
-  border-left: 3px solid @bordercolorb;
+  /* border-top: 2px solid @bordercolor; */
+  /* border-right: 1px solid @bordercolorb; */
+  /* border-left: 3px solid @bordercolorb; */
+     border-top: 3px solid #FFFFFF;
+     border-right: 3px solid #FFFFFF;
+     border-left: 3px solid #FFFFFF;
 }
 #tags button:hover,
 #workspaces button:hover {

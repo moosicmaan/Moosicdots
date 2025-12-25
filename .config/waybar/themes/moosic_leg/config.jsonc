@@ -18,9 +18,10 @@
       "clock#leg"
     ],
     "modules-right": [
+      "custom/weatherC",
       "custom/lefty",
-      "custom/weather",
-      "group/tech#leg",
+      // "group/tech#leg",
+      "group/hardware",
       "custom/righty",
       "tray",
       "custom/power"

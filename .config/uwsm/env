@@ -41,10 +41,9 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt
 # export QT_STYLE_OVERRIDE,kvantum
 
 # User preferences
-export EDITOR=nvim
-export BROWSER=brave
-export TERM=xterm-256color
-export EMAIL=thunderbird
+# export EDITOR=nvim
+# export BROWSER=brave
+# export EMAIL=thunderbird
 
 export UWSM_SESSION=true
 # echo "$(date) - FINISHED in uwsm/env setting environment" >>"$HOME/.config/hypr/start.log"

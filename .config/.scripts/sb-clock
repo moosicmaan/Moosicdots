@@ -53,4 +53,4 @@ esac
 # date "+%a, %b %d $icon %I:%M%p"
 icon="🕒"
 # printf "| %s %s %s      -SYSTRAY-      \n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p')"
-printf " %s %s %s\n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p  ')"
+printf " %s %s %s\n" "$(date '+%a, %b %d')" "$icon" "$(date '+%I:%M%p  ') "
