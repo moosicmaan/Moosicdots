@@ -90,17 +90,17 @@ wl_xcursor_theme = "Bibata-Modern-Ice"
 wl_xcursor_size = 36
 
 env = {
-    "GBM_BACKEND": "nvidia-drm",
+    # "GBM_BACKEND": "nvidia-drm",
     "XDG_CURRENT_DESKTOP": "Qtile",
-    "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
-    "LIBVA_DRIVER_NAME": "nvidia",
-    "XDG_SESSION_TYPE": "wayland",
+    # "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+    # "LIBVA_DRIVER_NAME": "nvidia",
+    # "XDG_SESSION_TYPE": "wayland",
     "XDG_SESSION_DESKTOP": "Qtile",
     "QT_QPA_PLATFORMTHEME": "qt6ct",
-    "QT_QPA_PLATFORM": "wayland",
-    "GDK_BACKEND": "wayland",
-    "CLUTTER_BACKEND": "wayland",
-    "SDL_VIDEODRIVER": "wayland",
+    # "QT_QPA_PLATFORM": "wayland",
+    # "GDK_BACKEND": "wayland",
+    # "CLUTTER_BACKEND": "wayland",
+    # "SDL_VIDEODRIVER": "wayland",
     "WLR_NO_HARDWARE_CURSORS": "1",
 }
 
@@ -403,7 +403,7 @@ keys = [
     EzKey(
         "M-S-q",
         lazy.spawn(
-            "rofi -show powermenu -config ~/.config/rofi/config-compact.rasi -modi powermenu:~/.config/.scripts/jb-rofi-power.sh"
+            "rofi -show powermenu -config ~/.config/rofi/config-compact.rasi -modi powermenu:~/.config/.scripts/rofi-power"
         ),
         desc="Logout menu",
     ),

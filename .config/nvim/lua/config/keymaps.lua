@@ -20,6 +20,6 @@ vim.keymap.set("n", "<leader>z", ":Dashboard<CR>", {
 })
 
 -- Missing WhichKey descriptions
-vim.keymap.set("n", "<leader>o", "", {
-  desc = "Org Mode", -- This description will appear in WhichKey
+vim.keymap.set("n", "<leader>o", ":Obsidian<CR>", {
+  desc = "Obsidian", -- This description will appear in WhichKey
 })

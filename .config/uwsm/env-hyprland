@@ -27,5 +27,5 @@ export EMAIL=thunderbird
 export EDITOR=nvim
 export VISUAL=kate
 export SUDO_EDITOR=vim
-export PAGER=bat
-export MANPAGER="sh -c 'col -bx | bat"
+# export PAGER=bat
+# export MANPAGER="sh -c 'col -bx | bat"
