@@ -31,7 +31,7 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=10";
 static const unsigned int baralpha = 0xA3;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int borderalpha = 0xA3;
 static const char col_1[]           = "#282A36";
 static const char col_2[]           = "#BD93F9";
 static const char col_3[]           = "#6272A4";
@@ -43,7 +43,7 @@ static const char col_pinned[]      = "#FFB86C";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
   [SchemeNorm] = { col_4,   col_1,   col_2 },
-  [SchemeSel]  = { col_4,   col_1,   col_border },
+  [SchemeSel]  = { col_4,   col_1,   col_4 },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -196,6 +196,8 @@ static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats",
 static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/rofi-beat-favs", NULL };
 static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
+static const char *emacss[] = { "emacs", "--daemon=serve", NULL };
+static const char *emacsc[] = { "emacsclient", "-c", "-a", "emacs", NULL };
 
 /*   MEDIA KEYS   */
 #include <X11/XF86keysym.h>
@@ -209,10 +211,10 @@ static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "-
 static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 
 /*   FOR SCRATCHPADS - First arg only serves to match against key in rules   */
-static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
-static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
-static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *volume_scratch[] = {"x", "pavucontrol", NULL};
+static const char *ter_scratch[] = { "s", "kitty", "-T", "termdrop", NULL };
+static const char *yazi_scratch[] = { "j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL };
+static const char *btop_scratch[] = { "l", "kitty", "-T", "btopdrop", "-e", "btop", NULL };
+static const char *volume_scratch[] = { "x", "pavucontrol", NULL };
 static const char *moosic_scratch[] = {
     "m", "kitty",
     "-T", "moosicdrop",
@@ -256,13 +258,15 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY,                       XK_m}}, spawn,          {.v = my_music } }),
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
   &((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
-  &((Keychord){1, {{MODKEY,                       XK_a}}, spawn,          {.v = aichat } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_a}}, spawn,          {.v = aichat } }),
   &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
   &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
   &((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
   &((Keychord){1, {{AltMask,                      XK_n}}, spawn,          {.v = varin } }),
   &((Keychord){1, {{AltMask,                      XK_f}}, spawn,          {.v = varif } }),
   &((Keychord){1, {{AltMask,                      XK_p}}, spawn,          {.v = varip } }),
+  &((Keychord){1, {{MODKEY|ShiftMask,             XK_e}}, spawn,          {.v = emacss } }),
+  &((Keychord){1, {{MODKEY,                       XK_e}}, spawn,          {.v = emacsc } }),
 
 /*   MEDIA KEYS   */
   &((Keychord){1, {{0,         XF86XK_AudioRaiseVolume}}, spawn,          {.v = volu } }),
