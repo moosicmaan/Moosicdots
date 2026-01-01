@@ -178,7 +178,7 @@ static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
-static const char *my_editc[] = { "neovide", NULL };
+// static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
 static const char *my_music[] = { "org.kde.elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
@@ -198,6 +198,7 @@ static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 static const char *emacss[] = { "emacs", "--daemon=serve", NULL };
 static const char *emacsc[] = { "emacsclient", "-c", "-a", "emacs", NULL };
+static const char *my_notes[] = { "obsidian", NULL };
 
 /*   MEDIA KEYS   */
 #include <X11/XF86keysym.h>
@@ -284,7 +285,7 @@ static Keychord *keychords[] = {
   &((Keychord){3, {{MODKEY, XK_space}, {0, XK_o}, {0, XK_y}}, spawn,      {.v = my_media } }),
 
   /*   -V-NVIM EDITING-V-   */
-  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_editc } }),
+  &((Keychord){2, {{MODKEY, XK_n}, {0, XK_n}}, spawn,                     {.v = my_notes } }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_m}}, spawn, SHCMD("cd /mnt/data/moosicmaan/CONFIG/ && neovide") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_c}}, spawn, SHCMD("neovide $HOME/.config/") }),
   &((Keychord){2, {{MODKEY, XK_n}, {0, XK_d}}, spawn, SHCMD("neovide $HOME/.config/dwm/") }),

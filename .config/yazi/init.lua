@@ -1,6 +1,6 @@
 require("full-border"):setup({
 	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
-	type = ui.Border.ROUNDED,
+	type = ui.Border.PLAIN,
 })
 
 require("git"):setup()
@@ -14,13 +14,13 @@ require("yatline"):setup({
 	style_a = {
 		fg = "black",
 		bg_mode = {
-			normal = "white",
+			normal = "brightgreen",
 			select = "yellow",
 			un_set = "red",
 		},
 	},
-	style_b = { bg = "black", fg = "white" },
-	style_c = { bg = "brightblack", fg = "brightwhite" },
+	style_b = { bg = "brightwhite", fg = "black" },
+	style_c = { bg = "black", fg = "brightwhite" },
 
 	permissions_t_fg = "green",
 	permissions_r_fg = "yellow",
@@ -29,7 +29,7 @@ require("yatline"):setup({
 	permissions_s_fg = "white",
 
 	tab_width = 20,
-	tab_use_inverse = false,
+	tab_use_inverse = true,
 
 	selected = { icon = "󰻭", fg = "yellow" },
 	copied = { icon = "", fg = "green" },
@@ -54,18 +54,16 @@ require("yatline"):setup({
 				{ type = "line", custom = false, name = "tabs", params = { "left" } },
 			},
 			section_b = {},
-			section_c = {
-				{ type = "string", custom = false, name = "hovered_mime" },
-				{ type = "coloreds", custom = false, name = "symlink" },
-			},
+			section_c = {},
 		},
 		right = {
 			section_a = {
 				-- { type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
-				{ type = "string", custom = false, name = "hovered_path" },
+				{ type = "string", custom = false, name = "date", params = { "%X" } },
 			},
 			section_b = {
-				-- { type = "string", custom = false, name = "date", params = { "%X" } },
+				{ type = "string", custom = false, name = "hovered_path" },
+				{ type = "coloreds", custom = false, name = "link" },
 			},
 			section_c = {},
 		},
@@ -77,7 +75,9 @@ require("yatline"):setup({
 				{ type = "string", custom = false, name = "tab_mode" },
 			},
 			section_b = {
-				{ type = "string", custom = false, name = "hovered_size" },
+				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
+				{ type = "string", custom = false, name = "hovered_mime" },
+				-- { type = "string", custom = false, name = "hovered_size" },
 			},
 			section_c = {
 				{ type = "coloreds", custom = false, name = "count" },
@@ -86,14 +86,14 @@ require("yatline"):setup({
 		right = {
 			section_a = {
 				{ type = "string", custom = false, name = "cursor_position" },
+				-- { type = "string", custom = false, name = "cursor_percentage" },
 			},
 			section_b = {
-				{ type = "string", custom = false, name = "cursor_percentage" },
+				{ type = "string", custom = false, name = "hovered_ownership" },
 			},
 			section_c = {
-				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
+				-- { type = "string", custom = false, name = "hovered_file_extension", params = { true } },
 				{ type = "coloreds", custom = false, name = "permissions" },
-				{ type = "string", custom = false, name = "hovered_ownership" },
 			},
 		},
 	},

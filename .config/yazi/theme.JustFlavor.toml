@@ -1,0 +1,9 @@
+[flavor]
+dark = "ashen"
+
+[user]
+filetype.rules = [
+  { name = "*.config/", fg = "#ffffff", bold = true }, # make .config stand out
+  { name = "*.local/", fg = "#ffdddd", bold = true },  # make .config stand out
+  { name = "*.cache/", fg = "#ddeeee", bold = true },  # make .config stand out
+]

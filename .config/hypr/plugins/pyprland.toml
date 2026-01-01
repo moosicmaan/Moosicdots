@@ -17,8 +17,8 @@ include_special = true
 
 [scratchpads.files]
 animation = "fromLeft"
-# command = "uwsm app -- foot --app-id=Sfiles yazi"
-command = "uwsm app -- kitty --class Sfiles yazi"
+command = "uwsm app -- foot --app-id=Sfiles yazi"
+# command = "uwsm app -- kitty --class Sfiles yazi"
 class = "Sfiles"
 lazy = true
 size = "94% 92%"
