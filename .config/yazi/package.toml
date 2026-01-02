@@ -1,17 +1,17 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "63f9650"
+rev = "398796d"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "63f9650"
-hash = "d0ad0c1946b46a30c8489735fe8de41c"
+rev = "398796d"
+hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "7a08a09"
-hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
+rev = "0e56060"
+hash = "ab2e66065a94cca4886b303518e44bd8"
 
 [[plugin.deps]]
 use = "Ape/open-with-cmd"
@@ -20,28 +20,28 @@ hash = "86e0312b01bc5762813c6c1d0517f073"
 
 [[plugin.deps]]
 use = "dedukun/relative-motions"
-rev = "2e3b617"
-hash = "b67ee12053113983273e9118a7d1272b"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "b7c3376"
-hash = "d9dbd61d8b814e74a5420dba1e4788c4"
+rev = "6395e52"
+hash = "f107436db5d2cccccc11ab54bc97b761"
 
 [[plugin.deps]]
 use = "TD-Sky/sudo"
-rev = "af70636"
-hash = "a94dcbe9266512806c677138e8591ddb"
+rev = "86205aa"
+hash = "9628b660afb192d32f2ea5f6634d3e72"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "4872af0"
-hash = "d32742ded0e73146a8ca590fdc4fb404"
+rev = "88bd1c5"
+hash = "981acbe9b758b1af3a8154c932bb936d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "63f9650"
-hash = "bf6f074cd41ee33c3360341d168f9733"
+rev = "398796d"
+hash = "73788c7dc5827ef4677c502c3ea8fa19"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-dark"

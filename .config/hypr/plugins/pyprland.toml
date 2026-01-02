@@ -17,11 +17,11 @@ include_special = true
 
 [scratchpads.files]
 animation = "fromLeft"
-command = "uwsm app -- foot --app-id=Sfiles yazi"
-# command = "uwsm app -- kitty --class Sfiles yazi"
+# command = "uwsm app -- foot --app-id=Sfiles yazi"
+command = "uwsm app -- kitty --class Sfiles yazi"
 class = "Sfiles"
 lazy = true
-size = "94% 92%"
+size = "94% 80%"
 
 [scratchpads.monitor]
 animation = "fromRight"
@@ -40,8 +40,10 @@ size = "34% 46%"
 
 [scratchpads.audio]
 animation = "fromBottom"
-command = "uwsm app -- pavucontrol"
-class = "pavucontrol-qt"
+# command = "uwsm app -- pavucontrol"
+command = "uwsm app -- foot --app-id=Saudio wiremix"
+# class = "pavucontrol-qt"
+class = "Saudio"
 lazy = true
 size = "54% 46%"
 
@@ -51,4 +53,4 @@ command = "uwsm app -- foot --app-id=Dropterm"
 # command = "uwsm app -- kitty --class Dropterm"
 class = "Dropterm"
 lazy = true
-size = "76% 90%"
+size = "70% 90%"

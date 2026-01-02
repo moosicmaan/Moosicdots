@@ -44,8 +44,8 @@ format = " [╭─](white)[$user]($style)"
 # format = " ╔══ [$user]($style)"
 show_always = true
 style_root = "underline bg:#bf5700"
-# style_user = "white"
-style_user = "bold blue"
+style_user = "white"
+# style_user = "bold blue"
 # style_user = "underline bg:#bf5700"
 # aliases = { "moosicmaan" = "me" }
 disabled = false
