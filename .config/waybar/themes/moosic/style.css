@@ -29,7 +29,7 @@ background-color: #ffffff;
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
-  margin: 0px 1px 0px 1px;
+  margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 11px;
   color: @textcolor1;
@@ -94,10 +94,10 @@ window#waybar.empty #window {
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   text-shadow: 2px 2px 5px rgba(100, 100, 100, 0);
-  padding: 0px 0px 0px 0px;
   */
   font-weight: bold;
   font-style: normal;
+  padding: 0px 8px 0px 0px;
   opacity: 0.7;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
@@ -109,8 +109,8 @@ window#waybar.empty #window {
   /* 
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
+  padding: 0px 0px 0px 0px;
   */
-  padding: 0px 2px 0px 2px;
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
@@ -206,7 +206,7 @@ tooltip label {
   margin: 0px 0px;
 }
 #taskbar button {
-  padding: 3px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
 }
 #taskbar:hover {
   background-color: transparent;
@@ -221,7 +221,7 @@ tooltip label {
   background-repeat: no-repeat;
   background-position: center;
   padding: 0px 8px 0px 8px;
-  margin: 3px 0px 0px 5px;
+  margin: 0px 0px 0px 5px;
 }
 
 /* -----------------------------------------------------
@@ -398,8 +398,8 @@ tooltip label {
   background-color: @tooltipbackground;
 }
 #cava {
-  font-size: 12px;
-  padding: 1px 0px 0px 2px;
+  font-size: 8px;
+  padding: 0px 0px 0px 2px;
 }
 #pulseaudio {
   padding: 0px 9px 0px 9px;
@@ -422,14 +422,14 @@ tooltip label {
   background-color: #ffffff;
 }
 #pulseaudio-slider trough {
-  min-height: 10px;
+  min-height: 9px;
   min-width: 80px;
   border-radius: 5px;
   background-color: #00ff00;
 }
 #pulseaudio-slider highlight {
   min-width: 9px;
-  min-height: 10px;
+  min-height: 9px;
   border-radius: 5px;
   background-color: #ff00ff;
 }
