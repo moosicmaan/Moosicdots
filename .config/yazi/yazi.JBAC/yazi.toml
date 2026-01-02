@@ -3,13 +3,13 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
-ratio = [1, 4, 5]
+ratio = [2, 3, 5]
 sort_by = "alphabetical"
 sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
-linemode = "size"
+linemode = "none"
 show_hidden = true
 show_symlink = true
 scrolloff = 5
@@ -42,7 +42,7 @@ edit = [
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
-pics = [
+image = [
   { run = 'gimp "$@"', desc = "gimp", block = true, for = "unix" },
   { run = 'org.kde.gwenview "$@"', desc = "gwenview", block = true, for = "unix" },
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
@@ -94,13 +94,13 @@ rules = [
   { mime = "image/*", use = [
     "open",
     "reveal",
-    "yazi-setwall",
-    "pics",
   ] },
   # Media
   { mime = "{audio,video}/*", use = [
     "play",
     "reveal",
+    "setwall",
+    "image",
   ] },
   # Archive
   { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [
@@ -283,13 +283,3 @@ sort_by = "none"
 sort_sensitive = false
 sort_reverse = false
 sort_translit = false
-
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*/"
-run = "git"
