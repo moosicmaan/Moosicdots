@@ -20,4 +20,7 @@ return {
     --   { icon = "📝", key = "o", desc = "Obsidian", action = ":Obsidian" },
     -- },
   },
+  ui = {
+    enabled = false,
+  },
 }

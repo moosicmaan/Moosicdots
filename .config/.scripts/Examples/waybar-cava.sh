@@ -8,7 +8,7 @@
 # =====================================================
 
 # Prefix to run commands in wayland using uwsm.
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix.sh")
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
 
 #----- Optimized bars animation without much CPU usage increase --------
 bar="▁▂▃▄▅▆▇█"
@@ -23,7 +23,7 @@ for ((i = 0; i < bar_length; i++)); do
 done
 
 # Create cava config
-config_file="/tmp/bar_cava_config"
+config_file="$HOME/.cache/bar_cava_config"
 cat >"$config_file" <<EOF
 [general]
 bars = 10
@@ -43,5 +43,6 @@ EOF
 pkill -f "cava -p $config_file"
 
 # Read stdout from cava and perform substitution in a single sed command
-"${PREFIX}cava -p $config_file" | sed -u "$dict"
+# "${PREFIX}cava -p $HOME/.cache/bar_cava_config" | sed -u "$dict"
+"cava -p $HOME/.cache/bar_cava_config" | sed -u "$dict"
 # cavalier | sed -u "$dict"

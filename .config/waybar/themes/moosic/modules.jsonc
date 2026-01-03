@@ -26,11 +26,11 @@
       "occupied": "",
       "focused": "󰹑",
       "urgent": "",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     },
     "disable-click": false
   },
@@ -70,7 +70,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     // "markup": true,
-    "format": "{name}{icon}",
+    "format": "{icon}{name}",
     // "format": "{icon}",
     // Optional: show only icon for special workspaces
     // "format": "{icon}<span fgcolor=\"transparent\" size=\"0\">{name}</span>",
@@ -80,11 +80,11 @@
       "empty": "",
       "visible": "󰹑",
       "urgent": "",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     },
     "persistent-workspaces": {
       "*": 4
@@ -111,11 +111,11 @@
       "9": "😺",
       "special": "😍",
       "urgent": "",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     },
     "persistent-workspaces": {
       "*": 4
@@ -142,11 +142,11 @@
       "9": "🌕",
       "active": "🌏",
       "special": "😍",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     },
     "persistent-workspaces": {
       "*": 4
@@ -174,11 +174,11 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
       // "10": "X"
     }
   },
@@ -199,11 +199,11 @@
       "persistent": "󰊠",
       "default": "󱎓",
       "special": "😍",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     }
   },
   "hyprland/workspaces#4": {
@@ -229,11 +229,11 @@
       "7": "",
       "8": "",
       "9": "",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     }
   },
   "hyprland/workspaces#music": {
@@ -258,11 +258,11 @@
       "7": "󰝱",
       "8": "󰽩",
       "9": "󰝚",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
     }
   },
   "hyprland/workspaces#num": {
@@ -286,11 +286,11 @@
       "7": "󰎶",
       "8": "󰎹",
       "9": "󰎼",
-      "Term": "",
-      "BTOP": "⚙",
-      "Yazi": "",
-      "Audio": "",
-      "Moosic": ""
+      "S-term": " .",
+      "S-mon": " ⚙.",
+      "S-files": " .",
+      "S-vol": " .",
+      "S-moosic": " ."
       // "10": "󰽽"
     }
   },
@@ -337,6 +337,7 @@
     "rewrite": {
       "(.*) - Mozilla Firefox": "🌎 $1",
       "(.*) - vim": " $1",
+      "(.*) - nvim": " $1",
       "(.*) - zsh": " [$1]"
     }
   },
@@ -403,16 +404,15 @@
   },
   "custom/browser": {
     "format": "",
-    "on-click": "brave",
+    "on-click": "zen-browser",
     "tooltip": true,
     "tooltip-format": "Internet Browser"
   },
   "custom/chatgpt": {
-    "format": " ",
+    "format": "󱜹",
     "on-click": "brave --app=https://chat.openai.com",
-    "icon-size": 14,
     "tooltip": true,
-    "tooltip-format": "ChatGPT Web App"
+    "tooltip-format": "AI Web App"
   },
   "custom/calculator": {
     "format": "",
@@ -422,7 +422,7 @@
   },
   "custom/appmenuicon": {
     "format": "",
-    "icon-size": 14,
+    // "icon-size": 14,
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
@@ -433,7 +433,7 @@
     "tooltip-format": "System Status"
   },
   "custom/updates": {
-    "format": "  {}",
+    "format": " {}",
     "escape": true,
     "return-type": "json",
     "exec-if": "which waybar-module-pacman-updates",
@@ -455,21 +455,7 @@
     "on-click": "kitty --class floating -e garuda-update"
   },
   "cava": {
-    "framerate": 30,
-    "autosens": 1,
-    "bars": 16,
-    "lower_cutoff_freq": 10,
-    "higher_cutoff_freq": 10000,
-    "method": "pipewire",
-    "source": "auto",
-    "stereo": true,
-    "reverse": false,
-    "sleep_timer": 7,
-    "hide_on_silence": true,
-    "bar_delimiter": 0,
-    "monstercat": true,
-    "waves": true,
-    "noise_reduction": 0.57,
+    "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
     "input_delay": 2,
     "format-icons": [
       "▁",
@@ -484,17 +470,11 @@
     "actions": {
       "on-click-right": "mode"
     }
-    // "exec": "~/.config/.scripts/waybar-cava",
-    // "format": "{}"
-  },
-  "custom/cava_mviz": {
-    "exec": "~/.config/.scripts/waybar-cava",
-    "format": "{}"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": " {volume}% {icon}   {format_source}",
-    "format-bluetooth-muted": " 󰂲H {icon}   {format_source}",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "󰂲H {icon}  {format_source}",
     "format-muted": "󰝟 {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
@@ -549,6 +529,7 @@
       "qutebrowser": "",
       "vlc": "󰕼 ",
       "kdeconnect": " ",
+      "Zen Browser": "󰚀 ",
       "youtube": " "
     },
     "status-icons": {
@@ -595,24 +576,26 @@
     "spacing": 5
   },
   "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
+    "format": "{icon}{short_state}",
+    "icon-size": 11,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "Alacritty"
+      "Alacritty",
+      "foot"
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
     "rewrite": {
       "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
+      "Foot Server": "Terminal",
+      "Zen Browser": "Zen"
     }
   },
   "user": {
-    "format": "{user} (up {work_d} days ↑)",
+    "format": " {user}(up {work_d} days ↑)",
     "interval": 60,
     "height": 16,
     "width": 16,
@@ -694,11 +677,11 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   },
   "cpu": {
-    "format": "    {usage}% ",
+    "format": "  {usage}% ",
     "on-click": "kitty -e btop"
   },
   "memory": {
-    "format": " 🖴 {:>3}% ",
+    "format": " 🖴{:>3}% ",
     "on-click": "kitty -e btop"
   },
   "temperature": {
@@ -866,7 +849,9 @@
       "custom/separator",
       "idle_inhibitor",
       "custom/separator",
-      "battery"
+      "battery",
+      "custom/separator",
+      "user"
     ]
   },
   "group/tech#leg": {
@@ -935,7 +920,7 @@
     "orientation": "horizontal",
     "modules": [
       "mpris",
-      // "custom/cava_mviz",
+      // "cava",
       "pulseaudio"
     ]
   }

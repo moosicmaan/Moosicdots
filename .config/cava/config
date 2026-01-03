@@ -175,9 +175,9 @@ gradient_color_8 = '#FF5555'
 # gradient_color_14 = '#a6cc33'
 # gradient_color_15 = '#80cc33'
 # gradient_color_16 = '#59cc33'
-
-[smoothing]
-
+#
+# [smoothing]
+#
 # Percentage value for integral smoothing. Takes values from 0 - 100.
 # Higher values means smoother, but less precise. 0 to disable.
 # DEPRECATED as of 0.8.0, use noise_reduction instead

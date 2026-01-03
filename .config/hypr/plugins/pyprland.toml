@@ -23,7 +23,7 @@ class = "Sfiles"
 lazy = true
 size = "94% 80%"
 
-[scratchpads.monitor]
+[scratchpads.mon]
 animation = "fromRight"
 command = "uwsm app -- foot --app-id=Smonitor btop"
 # command = "uwsm app -- kitty --class Smonitor btop"
@@ -38,7 +38,7 @@ class = "Smoosic"
 lazy = true
 size = "34% 46%"
 
-[scratchpads.audio]
+[scratchpads.vol]
 animation = "fromBottom"
 # command = "uwsm app -- pavucontrol"
 command = "uwsm app -- foot --app-id=Saudio wiremix"
