@@ -1,0 +1,70 @@
+  [
+    {
+      "id": 1,
+      "output": "eDP-1",
+      "type": "dock",
+      "position": "top",
+      "start_hidden": false,
+      "exclusive": true,
+      "height": 0,
+      "margin-left": 4,
+      "margin-right": 4,
+      "margin-top": 0,
+      "margin-bottom": 0,
+      "spacing": 0, // Gaps between modules
+      "fixed-center": true,
+      "reload_style_on_change": true,
+      "include": [
+        "~/.config/waybar/modules.jsonc"
+      ],
+      "modules-left": [
+        "dwl/tags",
+        "hyprland/workspaces"
+      ],
+      "modules-center": [
+        "clock"
+      ],
+      "modules-right": [
+        "memory",
+        "cpu",
+        "backlight",
+        "backlight/slider#horizontal",
+        // "pulseaudio",
+        // "pulseaudio/slider#horizontal",
+        "battery",
+        "tray",
+        "custom/power"
+      ]
+    },
+    {
+      "id": 2,
+      "output": "HDMI-A-1",
+      "type": "dock",
+      "position": "bottom",
+      "start_hidden": false,
+      "exclusive": true,
+      "height": 0,
+      "margin-left": 4,
+      "margin-right": 4,
+      "margin-top": 0,
+      "margin-bottom": 0,
+      "fixed-center": true,
+      "reload_style_on_change": true,
+      "include": [
+        "~/.config/waybar/modules.jsonc"
+      ],
+      "modules-left": [
+        "dwl/tags",
+        "hyprland/workspaces"
+      ],
+      "modules-center": [
+        "clock"
+      ],
+      "modules-right": [
+        "mpris",
+        // "pulseaudio",
+        "pulseaudio/slider#horizontal",
+        "custom/power"
+      ]
+    }
+  ]

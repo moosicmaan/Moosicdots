@@ -9,7 +9,7 @@
     "modules-left": [
       "group/appo#leg",
       "dwl/tags",
-      "hyprland/workspaces",
+      "hyprland/workspaces#named",
       "hyprland/window",
       "hyprland/submap"
       // "dwl/window"
@@ -27,7 +27,7 @@
       "custom/power"
     ],
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ]
   },
   {
@@ -40,7 +40,7 @@
     "modules-left": [
       "group/appo#leg",
       "dwl/tags",
-      "hyprland/workspaces",
+      "hyprland/workspaces#named",
       "hyprland/window",
       "hyprland/submap"
       // "dwl/window"
@@ -52,7 +52,7 @@
       "pulseaudio"
     ],
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ]
   }
 ]

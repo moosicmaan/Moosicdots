@@ -11,7 +11,7 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "group/appo",
@@ -20,8 +20,8 @@
       // "hyprland/submap"
     ],
     "modules-center": [
+      "hyprland/workspaces",
       "dwl/tags"
-      // "hyprland/workspaces"
     ],
     "modules-right": [
       "group/currents",
@@ -42,7 +42,7 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "group/appo",
@@ -51,8 +51,8 @@
       // "hyprland/submap"
     ],
     "modules-center": [
+      "hyprland/workspaces",
       "dwl/tags"
-      // "hyprland/workspaces"
     ],
     "modules-right": [
       "group/audios",

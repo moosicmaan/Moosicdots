@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "type": "dock",
+    "layer": "top",
+    "position": "top",
+    "name": "main",
+    "height": 0,
+    "reload_style_on_change": true,
+    "margin-top": 4,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "include": [
+      "~/.config/waybar/themes/mocha/modules.jsonc",
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "group/traym",
+      // "dwl/tags",
+      "hyprland/workspaces",
+      "hyprland/submap",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "custom/spacer7",
+      "cpu",
+      "temperature",
+      "custom/nvidia",
+      "memory#ram",
+      "memory#swap",
+      "disk",
+      "network#info",
+      "custom/spacer2"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      // "pulseaudio#input",
+      // "pulseaudio#output",
+      "cava",
+      "custom/headsetbattery",
+      "custom/spacer3",
+      // "hyprland/language",
+      "backlight",
+      "battery",
+      "custom/spacer4",
+      "custom/weather",
+      "clock"
+    ]
+  },
+  {
+    // SECONDARY BAR //
+    "id": 2,
+    "type": "dock",
+    "layer": "top",
+    "position": "bottom",
+    "output": "HDMI-A-1",
+    "name": "secondary",
+    "height": 0,
+    "reload_style_on_change": true,
+    "margin-top": 4,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "group/traym",
+      // "dwl/tags",
+      "hyprland/workspaces",
+      "hyprland/submap",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "custom/spacer7",
+      "mpris",
+      "custom/spacer2"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "custom/headsetbattery",
+      "custom/spacer3",
+      "backlight",
+      "battery",
+      "custom/spacer4",
+      "clock"
+    ]
+  },
+  {
+    // INDICATOR BAR //
+    "layer": "top",
+    "position": "top",
+    "name": "indicator",
+    "passthrough": true,
+    "reload_style_on_change": true,
+    // "output": "eDP-1",
+    "height": 30,
+    "margin-top": -29,
+    // "margin-left": 10,
+    "margin-right": 24,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-right": [
+      "custom/batteryindicator"
+    ],
+    "custom/batteryindicator": {
+      "interval": 4,
+      "return-type": "json",
+      "tooltip": false,
+      "format": " "
+    }
+  }
+]

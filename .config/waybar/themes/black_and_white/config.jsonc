@@ -8,29 +8,31 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/black_and_white/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
+      "dwl/tags",
       "cpu",
       "memory",
       "custom/updates",
-      "custom/keyboard-layout",
-      "custom/network_traffic"
+      "backlight",
+      "custom/keybindings"
     ],
     "modules-center": [
+      "custom/separator",
       "hyprland/window",
-      "hyprland/submap"
+      "hyprland/submap",
+      "custom/separator"
     ],
     "modules-right": [
-      "tray",
-      "backlight",
-      "idle_inhibitor",
-      "pulseaudio",
+      "custom/network_traffic",
       "network",
       "battery",
+      "tray",
       "clock",
+      "idle_inhibitor",
       "custom/power"
     ]
   },
@@ -43,15 +45,18 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/black_and_white/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "custom/launcher",
+      "dwl/tags",
       "hyprland/workspaces"
     ],
     "modules-center": [
+      "custom/separator",
       "hyprland/window",
-      "hyprland/submap"
+      "hyprland/submap",
+      "custom/separator"
     ],
     "modules-right": [
       "mpris",

@@ -2,6 +2,7 @@
   "height": 30,
   "spacing": 4,
   "modules-left": [
+    "dwl/tags",
     "hyprland/workspaces",
     "custom/waybarthemes"
   ],

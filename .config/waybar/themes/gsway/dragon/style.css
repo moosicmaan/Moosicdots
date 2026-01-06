@@ -39,7 +39,7 @@ nord15 #b48ead
 
 /* Reset all styles
 
-  background: #2e3440;
+  background:00000040;
   background-color: rgba(43, 45, 50, 0.6);
 */
 
@@ -63,9 +63,13 @@ window#waybar {
   padding: 0px 4px;
   border-bottom: 3px;
   color: #eceff4;
-  border-color: #d8dee9;
+  border-color: #ebcb8b;
   border-style: solid;
   margin-top: 2px;
+}
+
+#workspaces button:hover {
+  border-color: #d8dee9;
 }
 
 #workspaces button.focused {
@@ -76,7 +80,7 @@ window#waybar {
   color: #ebcb8b;
 }
 
-#custom-launcher,
+#custom-launcherg,
 #mode,
 #window,
 #network,
@@ -105,7 +109,7 @@ window#waybar {
  * Module styles
  * -------------------------------------------------------------------------- */
 
-#custom-launcher {
+#custom-launcherg {
   font-size: 16px;
   background-image: url("/home/moosicmaan/.config/waybar/assets/launcher.png");
   background-position: center;
@@ -208,6 +212,6 @@ window#waybar {
 
 #custom-power {
   border-style: hidden;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 0px;
 }

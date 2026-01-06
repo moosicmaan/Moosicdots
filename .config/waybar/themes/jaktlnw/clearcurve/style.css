@@ -6,9 +6,9 @@
   font-weight: bold;
   min-height: 0;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-  font-size: 96%;
+  font-size: 13px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  padding: 1px;
+  padding: 0px;
 }
 
 window#waybar {
@@ -52,8 +52,8 @@ tooltip {
   border: 3px solid @color14;
   border-radius: 40px 0px 0px 0px;
   background-color: @color1;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   padding-right: 4px;
   padding-left: 4px;
 }
@@ -62,8 +62,8 @@ tooltip {
   border: 3px solid @color14;
   border-radius: 60px 0px 60px 0px;
   background-color: @background;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   padding-right: 4px;
   padding-left: 4px;
 }
@@ -72,8 +72,8 @@ tooltip {
   border: 3px solid @color14;
   border-radius: 0px 0px 40px 0px;
   background-color: @color1;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   padding-right: 4px;
   padding-left: 4px;
 }
@@ -165,10 +165,10 @@ tooltip {
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
   color: @foreground;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 1px;
+  padding-left: 1px;
 }
 
 #temperature.critical {

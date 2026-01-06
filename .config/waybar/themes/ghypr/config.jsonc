@@ -3,21 +3,21 @@
     "id": 1,
     "output": "eDP-1",
     "position": "top",
-    "margin-top": 0,
-    "margin-bottom": 0,
+    "margin": "3, 5, 0, 5",
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/ghypr/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
+      "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
     ],
     "modules-center": [
-      "clock"
+      "custom/keybindings"
     ],
     "modules-right": [
       "custom/network_traffic",
@@ -25,10 +25,10 @@
       "backlight",
       "memory",
       "battery",
-      "pulseaudio",
-      "tray",
       "idle_inhibitor",
       "custom/weather",
+      "clock",
+      "tray",
       "custom/power"
     ]
   },
@@ -36,15 +36,15 @@
     "id": 2,
     "output": "HDMI-A-1",
     "position": "bottom",
-    "margin-top": 0,
-    "margin-bottom": 0,
+    "margin": "0, 5, 3, 5",
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/ghypr/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
+      "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
@@ -58,3 +58,20 @@
     ]
   }
 ]
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

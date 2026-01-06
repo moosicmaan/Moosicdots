@@ -7,23 +7,24 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/gdefault/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
+      "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
     ],
     "modules-center": [
-      "custom/network_traffic"
+      "custom/keybindings"
     ],
     "modules-right": [
+      "custom/network_traffic",
       "custom/updates",
       "backlight",
       "memory",
       "battery",
-      "pulseaudio",
       "idle_inhibitor",
       "custom/weather",
       "clock",
@@ -39,10 +40,11 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/gdefault/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
+      "dwl/tags",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"

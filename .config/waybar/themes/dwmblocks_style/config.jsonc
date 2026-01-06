@@ -2,7 +2,10 @@
   {
     "id": 1,
     "output": "eDP-1",
+    "type": "dock",
     "position": "top",
+    "start_hidden": false,
+    "exclusive": true,
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
@@ -10,36 +13,40 @@
     "include": [
       "~/.config/waybar/modules.jsonc"
     ],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 14, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
     "modules-left": [
-      "custom/launcher",
+      // "sway/workspaces",
+      // "sway/mode"
+      "dwl/tags",
+      "hyprland/workspaces",
+      "hyprland/submap"
+    ],
+    // "modules-center": ["sway/window"],
+    "modules-right": [
+      "tray",
       "custom/separator",
+      "custom/updates",
+      "custom/separator",
+      "custom/disk_home",
+      "custom/disk_root",
+      "custom/separator",
+      "temperature",
       "cpu",
       "custom/separator",
       "memory",
       "custom/separator",
+      "custom/mail",
       "network",
-      "custom/separator",
-      "custom/updates",
-      "custom/separator",
-      "custom/keybindings",
-      "custom/separator",
-      "idle_inhibitor",
-      "custom/separator",
-      "custom/network_traffic"
-    ],
-    "modules-center": [
-      "hyprland/workspaces#symbols",
-      "dwl/tags",
-      "hyprland/submap"
-    ],
-    "modules-right": [
-      "tray",
       "custom/separator",
       "backlight",
       "custom/separator",
       "battery",
       "custom/separator",
-      "pulseaudio",
+      "idle_inhibitor",
       "custom/separator",
       "clock",
       "custom/separator",
@@ -49,7 +56,10 @@
   {
     "id": 2,
     "output": "HDMI-A-1",
+    "type": "dock",
     "position": "bottom",
+    "start_hidden": false,
+    "exclusive": true,
     "margin-top": 0,
     "margin-bottom": 0,
     "fixed-center": true,
@@ -58,20 +68,15 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
-      "custom/separator",
-      "mpris"
+      "dwl/tags",
+      "hyprland/workspaces",
+      "hyprland/submap"
     ],
     "modules-center": [
-      "hyprland/workspaces#symbols",
-      "dwl/tags",
-      "hyprland/submap"
+      "mpris"
     ],
     "modules-right": [
       "pulseaudio",
-      "custom/separator",
-      "clock",
-      "custom/separator",
       "custom/power"
     ]
   }

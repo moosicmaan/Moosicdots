@@ -11,7 +11,7 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "group/appo",
@@ -21,6 +21,7 @@
     ],
     "modules-center": [
       "dwl/tags",
+      // "hyprland/workspaces#named"
       "hyprland/workspaces"
     ],
     "modules-right": [
@@ -42,7 +43,7 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/moosic/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
       "group/appo",
@@ -52,6 +53,7 @@
     ],
     "modules-center": [
       "dwl/tags",
+      // "hyprland/workspaces#kitty"
       "hyprland/workspaces"
     ],
     "modules-right": [

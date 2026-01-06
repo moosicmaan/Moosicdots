@@ -2,68 +2,65 @@
   {
     "id": 1,
     "output": "eDP-1",
-    "include": "/mnt/data/moosicmaan/CONFIG/.config/waybar/themes/jakcamellia/modules.jsonc",
+    "include": "~/.config/waybar/modules.jsonc",
     "layer": "top",
     "exclusive": true,
     "passthrough": false,
     "position": "top",
-    "margin-top": 3,
+    "margin-top": 4,
     "margin-bottom": 0,
-    "margin-left": 3,
-    "margin-right": 3,
-    "spacing": 3,
+    "margin-left": 4,
+    "margin-right": 4,
+    // "spacing": 3,
     "fixed-center": true,
     "ipc": true,
     "modules-left": [
+      "dwl/tags",
       "hyprland/workspaces#roman",
       "custom/separator#line",
-      "custom/swaync",
-      "tray#cam",
-      "wlr/taskbar#cam"
+      "tray",
+      "wlr/taskbar"
     ],
     "modules-center": [
-      "hyprland/window#cam",
+      "hyprland/window",
       "hyprland/submap"
     ],
     "modules-right": [
       "custom/backlight",
       "backlight/slider",
-      "custom/speaker",
-      "mpris",
       "pulseaudio/slider",
-      "battery#cam",
-      "clock#cam",
-      "network#cam"
+      "battery",
+      "network",
+      "clock#cam"
     ]
   },
   {
     "id": 2,
     "output": "HDMI-A-1",
-    "include": "/mnt/data/moosicmaan/CONFIG/.config/waybar/themes/jakcamellia/modules.jsonc",
+    "include": "~/.config/waybar/modules.jsonc",
     "layer": "top",
     "exclusive": true,
     "passthrough": false,
     "position": "bottom",
-    "spacing": 3,
+    // "spacing": 4,
     "margin-top": 0,
-    "margin-bottom": 0,
-    "margin-left": 3,
-    "margin-right": 3,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "margin-right": 4,
     "fixed-center": true,
     "ipc": true,
     "modules-left": [
+      "dwl/tags",
       "hyprland/workspaces#roman",
       "custom/separator#line",
-      "wlr/taskbar#cam"
+      "wlr/taskbar"
     ],
     "modules-center": [
-      "hyprland/window#cam",
-      "hyprland/submap",
-      "mpris#moosic"
+      "hyprland/window",
+      "hyprland/submap"
     ],
     "modules-right": [
-      "custom/cava_mviz",
-      "custom/speaker",
+      "mpris",
       "pulseaudio/slider",
       "clock#cam"
     ]

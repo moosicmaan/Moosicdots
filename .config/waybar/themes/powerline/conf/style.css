@@ -1,0 +1,99 @@
+@import "/home/moosicmaan/.cache/wal/colors-waybar.css";
+* {
+	font-size: 14px;
+	font-family: monospace;
+}
+
+window#waybar {
+	/* background: #292b2e; */
+	background: @color0;
+	color: @color15;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: @color1;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	/* color: #292b2e; */
+	color: @color0;
+	background: @color1;
+}
+ 
+#tags,
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#custom-separator,
+#custom-launcher,
+#custom-power,
+#battery,
+#disk,
+#mpris,
+#custom-inverse-separator-r,
+#custom-inverse-separator-l,
+#tray {
+	background: @color1;
+}
+
+#custom-launcher,
+#custom-power {
+	color: @color15;
+}
+#clock.1,
+#clock.2,
+#clock.3,
+#mpris {
+	color: @color15;
+}
+#tags button,
+#workspaces button {
+	padding: 0 2px;
+	color: @color5;
+}
+#tags button,focused,
+#workspaces button.focused {
+	color: @color14;
+}
+#tags button:hover,
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#tags button:hover,
+#workspaces button:hover {
+	background: @color2;
+  color: @color15;
+	border: @color13;
+	padding: 0 3px;
+}
+
+#pulseaudio {
+	color: @color11;
+}
+#memory {
+	color: @color12;
+}
+#cpu {
+	color: @color13;
+}
+#battery {
+	color: @color14;
+}
+#disk {
+	color: @color15;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+	padding: 0 10px;
+}

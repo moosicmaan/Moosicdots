@@ -8,11 +8,12 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/gsway/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
       "sway/workspaces",
+      "dwl/tags",
       "hyprland/workspaces",
       "sway/mode",
       "sway/window",
@@ -46,11 +47,12 @@
     "fixed-center": true,
     "reload_style_on_change": true,
     "include": [
-      "~/.config/waybar/themes/gsway/modules.jsonc"
+      "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/launcher",
+      "custom/launcherg",
       "sway/workspaces",
+      "dwl/tags",
       "hyprland/workspaces",
       "sway/mode",
       "sway/window",
@@ -58,9 +60,10 @@
       "hyprland/submap"
     ],
     "modules-center": [
-      "mpris"
+      "clock"
     ],
     "modules-right": [
+      "mpris",
       "pulseaudio",
       "custom/power"
     ]

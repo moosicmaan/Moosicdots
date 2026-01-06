@@ -46,7 +46,7 @@ nord15 #b48ead
   border: 0;
   border-radius: 0;
   padding: 0 0;
-  font-family: Symbols Nerd Font Mono;
+  font-family: "JetBrainsMono";
   font-size: 12px;
   margin-right: 3px;
   margin-left: 3px;
@@ -83,7 +83,7 @@ window#waybar {
 #pulseaudio,
 #tray,
 #window,
-#custom-launcher,
+#custom-launcherg,
 #custom-power,
 #custom-updates,
 #custom-network_traffic,
@@ -174,7 +174,7 @@ window#waybar {
 #tray {
 }
 
-#custom-launcher {
+#custom-launcherg {
   font-size: 20px;
   background-image: url("/home/moosicmaan/.config/waybar/assets/launcher.png");
   background-position: center;

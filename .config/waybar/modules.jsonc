@@ -19,18 +19,22 @@
       "🌒",
       "🌓",
       "🌔",
+      "🌕",
+      "🌕",
+      "🌖",
+      "🌗",
+      "🌘",
+      "🌑",
+      "🌒",
+      "🌓",
+      "🌔",
       "🌕"
     ],
     "format": "{icon}",
     "format-icons": {
       "occupied": "",
       "focused": "󰹑",
-      "urgent": "",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      "urgent": ""
     },
     "disable-click": false
   },
@@ -56,12 +60,10 @@
       "*": 4
     }
   },
-  "custom/workspaces": {
-    "exec": "hyprctl workspaces -j | jq -r '[.[] | .name |= sub(\"^scratch_\"; \"\")] | tojson'",
-    "return-type": "json",
-    "interval": 1
-  },
   "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 4
+    },
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -69,12 +71,57 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    // "markup": true,
+    "sort-by-number": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "default": "",
+      "empty": "",
+      "visible": "󰹑",
+      "urgent": "",
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
+    }
+  },
+  "hyprland/workspaces#short": {
+    "disable-scroll-wraparound": true,
+    "smooth-scrolling-threshold": 4,
+    "enable-bar-scroll": true,
+    "format": "{icon}",
+    "show-special": true,
+    "special-visible-only": false,
+    "format-icons": {
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
+    }
+  },
+  "hyprland/workspaces#named": {
+    "persistent-workspaces": {
+      "*": 4
+    },
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "special-visible-only": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
     "format": "{icon}{name}",
-    // "format": "{icon}",
-    // Optional: show only icon for special workspaces
-    // "format": "{icon}<span fgcolor=\"transparent\" size=\"0\">{name}</span>",
-    "special-format": "{icon}",
     "format-icons": {
       "default": "",
       "empty": "",
@@ -84,13 +131,13 @@
       "S-mon": " ⚙.",
       "S-files": " .",
       "S-vol": " .",
-      "S-moosic": " ."
-    },
-    "persistent-workspaces": {
-      "*": 4
+      "S-moosic": " 󰝚."
     }
   },
   "hyprland/workspaces#kitty": {
+    "persistent-workspaces": {
+      "*": 4
+    },
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -98,6 +145,7 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
     "format": "{icon}",
     "format-icons": {
       "1": "😺",
@@ -109,19 +157,19 @@
       "7": "😸",
       "8": "😻",
       "9": "😺",
-      "special": "😍",
+      // "special": "😍",
       "urgent": "",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
-    },
-    "persistent-workspaces": {
-      "*": 4
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
     }
   },
   "hyprland/workspaces#moony": {
+    "persistent-workspaces": {
+      "*": 4
+    },
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -129,6 +177,7 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
     "format": "{icon}",
     "format-icons": {
       "1": "🌕",
@@ -142,17 +191,17 @@
       "9": "🌕",
       "active": "🌏",
       "special": "😍",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
-    },
-    "persistent-workspaces": {
-      "*": 4
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
     }
   },
   "hyprland/workspaces#roman": {
+    "persistent-workspaces": {
+      "*": 4
+    },
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -160,9 +209,7 @@
     "special-visible-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "persistent-workspaces": {
-      "*": 4
-    },
+    "sort-by-number": true,
     "format": "{icon}",
     "format-icons": {
       "1": "I",
@@ -174,39 +221,41 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
       // "10": "X"
     }
   },
   "hyprland/workspaces#pacman": {
-    "active-only": false,
-    "all-outputs": true,
-    "format": "{icon}{name}",
-    "show-special": true,
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
       "*": 4
     },
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "special-visible-only": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "format": "{icon}",
     "format-icons": {
-      "active": " 󰮯 ",
-      "visible": "󰮯 ",
+      "active": "󰮯",
+      "visible": "󰮯",
       "persistent": "󰊠",
       "default": "󱎓",
-      "special": "😍",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      //"special": "😍",
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
     }
   },
-  "hyprland/workspaces#4": {
+  "hyprland/workspaces#symbols": {
     "active-only": false,
     "all-outputs": true,
     "show-special": true,
@@ -219,7 +268,6 @@
       "*": 4
     },
     "format-icons": {
-      // "10": "",
       "1": "",
       "2": "",
       "3": "󰒪",
@@ -229,24 +277,26 @@
       "7": "",
       "8": "",
       "9": "",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
     }
   },
   "hyprland/workspaces#music": {
-    "active-only": false,
-    "all-outputs": true,
-    "show-special": true,
-    "format": "{icon}",
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
       "*": 4
     },
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "special-visible-only": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "format": "{icon}",
     "format-icons": {
       // "10": "",
       "1": "󱡬",
@@ -258,24 +308,26 @@
       "7": "󰝱",
       "8": "󰽩",
       "9": "󰝚",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
     }
   },
-  "hyprland/workspaces#num": {
-    "active-only": false,
-    "all-outputs": true,
-    "show-special": true,
-    "format": "{icon}",
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  "hyprland/workspaces#numberblocks": {
     "persistent-workspaces": {
       "*": 4
     },
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "show-special": true,
+    "special-visible-only": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "format": "{icon}",
     "format-icons": {
       "1": "󰎤",
       "2": "󰎧",
@@ -286,11 +338,11 @@
       "7": "󰎶",
       "8": "󰎹",
       "9": "󰎼",
-      "S-term": " .",
-      "S-mon": " ⚙.",
-      "S-files": " .",
-      "S-vol": " .",
-      "S-moosic": " ."
+      "S-term": "(  )",
+      "S-mon": "( ⚙ )",
+      "S-files": "(  )",
+      "S-vol": "(   )",
+      "S-moosic": "( 󰝚 )"
       // "10": "󰽽"
     }
   },
@@ -305,40 +357,60 @@
   "sway/window": {
     "format": "{}",
     "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
       "(.*) - Kitty": "$1",
+      "(.*) - Foot": "$1",
+      "(.*) - Footclient": "$1",
       "(.*) - Wezterm": "$1",
+      "(.*) - Zen": "$1",
+      "(.*) - vim": " $1",
+      "(.*) - nvim": " $1",
       "(.*) - Zen Browser": "$1"
     },
     "separate-outputs": true,
     "icon": true,
     "spacing": 5,
-    "icon-size": 14
+    "icon-size": 11
   },
   "hyprland/window": {
     "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1",
       "(.*) - Kitty": "$1",
+      "(.*) - Foot": "$1",
+      "(.*) - Footclient": "$1",
       "(.*) - Wezterm": "$1",
-      "(.*) - Zen": "$1"
+      "(.*) - Zen": "$1",
+      "(.*) - vim": " $1",
+      "(.*) - nvim": " $1",
+      "(.*) - Zen Browser": "$1"
     },
     "separate-outputs": true,
+    "max-length": 46,
     "icon": true,
     "spacing": 5,
-    "icon-size": 14
+    "icon-size": 11
   },
   "dwl/window": {
     "format": "{}",
     "icon": true,
-    "icon-size": 14,
+    "icon-size": 11,
     "max-length": 50,
     "rewrite": {
       "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - Brave": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Kitty": "$1",
+      "(.*) - Foot": "$1",
+      "(.*) - Footclient": "$1",
+      "(.*) - Wezterm": "$1",
+      "(.*) - Zen": "$1",
       "(.*) - vim": " $1",
       "(.*) - nvim": " $1",
-      "(.*) - zsh": " [$1]"
+      "(.*) - Zen Browser": "$1"
     }
   },
   "custom/cliphist": {
@@ -359,6 +431,11 @@
     "format": "",
     "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "on-click-right": "~/.config/.scripts/hypr-keybinds",
+    "tooltip": false
+  },
+  "custom/launcherg": {
+    "format": "    ",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip": false
   },
   "custom/exit": {
@@ -422,7 +499,7 @@
   },
   "custom/appmenuicon": {
     "format": "",
-    // "icon-size": 14,
+    "icon-size": 11,
     "on-click": "rofi -show drun -replace",
     "on-click-right": "~/.config/.scripts/hypr-keybinds",
     "tooltip": false
@@ -433,26 +510,20 @@
     "tooltip-format": "System Status"
   },
   "custom/updates": {
-    "format": " {}",
-    "escape": true,
-    "return-type": "json",
-    "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates",
-    "restart-interval": 60,
-    "on-click": "kitty --class floating -e garuda-update"
-    // "on-click-right": "~/.config/.settings/software.sh"
-  },
-  "custom/updates#gar": {
     "format": "{} {icon}",
     "return-type": "json",
     "format-icons": {
-      "has-updates": "󱍷",
+      // "has-updates": "󱍷",
+      "has-updates": "",
       "updated": "󰂪",
       "interval": 7200
     },
+    // "escape": true,
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates",
-    "on-click": "kitty --class floating -e garuda-update"
+    // "restart-interval": 60,
+    // "on-click": "kitty --class floating -e garuda-update"
+    "on-click": "$TERMINAL --class floating -e garuda-update"
   },
   "cava": {
     "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
@@ -471,11 +542,24 @@
       "on-click-right": "mode"
     }
   },
+  "custom/playerctl": {
+    "format": "<span>{}</span>",
+    "return-type": "json",
+    "max-length": 35,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} ~ {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5,
+    "on-scroll-up": "~/.config/.scripts/Volume.sh --inc",
+    "on-scroll-down": "~/.config/.scripts/Volume.sh --dec",
+    "smooth-scrolling-threshold": 1
+  },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
     "format-bluetooth-muted": "󰂲H {icon}  {format_source}",
-    "format-muted": "󰝟 {format_source}",
+    "format-muted": "  {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
@@ -491,12 +575,60 @@
         " "
       ]
     },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": " 1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
     "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
     "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
     "on-click": "$HOME/.config/.scripts/media-ctrl --prv",
-    "on-click-middle": "$HOME/.config/.scripts/media-ctrl --pause",
+    "on-click-middle": "pavucontrol",
+    // "on-click-middle": "$HOME/.config/.scripts/media-ctrl --pause",
     "on-click-right": "$HOME/.config/.scripts/media-ctrl --nxt"
-    // "on-click": "pavucontrol-qt"
+    // "on-click-foward": "pavucontrol-qt",
+    // "on-click-backward": "pavucontrol-qt"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "~/.config/.scripts/media-vol --toggle-mic",
+    "on-click-right": "pavucontrol -t 4",
+    "on-scroll-up": "~/.config/.scripts/media-vol --mic-inc",
+    "on-scroll-down": "~/.config/.scripts/media-vol --mic-dec",
+    "tooltip-format": "{source_desc} | {source_volume}%",
+    "scroll-step": 5
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "pulseaudio/slider#vertical": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "orientation": "vertical",
+    "device": "pulseaudio",
+    "scroll-step": 1
+  },
+  "pulseaudio/slider#horizontal": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "orientation": "horizontal",
+    "device": "pulseaudio",
+    "scroll-step": 1
   },
   "wireplumber": {
     "format": "{volume}% {icon}",
@@ -571,9 +703,9 @@
     }
   },
   "tray": {
-    "icon-size": 14,
+    "icon-size": 11,
     "show-passive-items": true,
-    "spacing": 5
+    "spacing": 6
   },
   "wlr/taskbar": {
     "format": "{icon}{short_state}",
@@ -595,12 +727,24 @@
     }
   },
   "user": {
-    "format": " {user}(up {work_d} days ↑)",
+    "format": " {user}(up {work_d} days ↑) ",
+    "tooltip-format": "{user}(up {work_d} days ↑)",
     "interval": 60,
-    "height": 16,
-    "width": 16,
+    "height": 12,
+    "width": 12,
     "icon": true
   },
+  // "disk": {
+  //   "interval": 16,
+  //   "format": " {percentage_used}%",
+  //   "tooltip": "{}",
+  //   "tooltip-format": "Free {free}",
+  //   "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
+  //   "states": {
+  //     "warning": 85,
+  //     "critical": 95
+  //   }
+  // },
   "disk": {
     "interval": 30,
     "format": " D {percentage_used}% ",
@@ -608,30 +752,90 @@
     // "on-click": "wezterm start -e btop"
     "on-click": "kitty -e btop"
   },
+  "custom/disk_home": {
+    "format": "🏠 {} ",
+    "interval": 30,
+    "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '"
+  },
+  "custom/disk_root": {
+    "format": "💽 {} ",
+    "interval": 30,
+    "exec": "df -h --output=avail / | tail -1 | tr -d ' '"
+  },
+  "custom/mail": {
+    "format": "📩{}",
+    "interval": 30,
+    "exec": "notmuch count tag:flagged OR tag:inbox AND NOT tag:killed"
+  },
   "network": {
     "format": " {ifname}",
-    "format-wifi": "    {signalStrength}%",
+    "format-wifi": "   {signalStrength}%",
     "format-ethernet": " 󰈀 {ifname}",
-    "format-disconnected": " Disconnected",
+    "format-alt": " {ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": " ⚠ Disabled",
+    "format-linked": " {ifname} (No IP)",
+    "family": "ipv4",
     "tooltip-format": "󰈀  {ifname} via {gwaddri}",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": "󰈀  {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "⚠ Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/.settings/networkmanager.sh"
+    "on-click-right": "nmtui-connect"
   },
   "custom/network_traffic": {
-    "exec": "~/.config/waybar/scripts/network_traffic.sh",
+    "exec": "~/.config/.scripts/waybar/network_traffic.sh",
     "return-type": "json",
     "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
+  },
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "on-click": "nm-connection-editor"
+  },
+  "network#info": {
+    "interval": 2,
+    "format": "󱘖  Offline",
+    "format-wifi": "{icon} {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "min-length": 11,
+    "tooltip": "{}",
+    "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
+    "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
+    "on-click": "iwgtk& aplay ~/.config/sounds/interact.wav",
+    "format-icons": [
+      "󰤫",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "states": {
+      "normal": 25
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "   ",
-      "deactivated": "   "
+      "activated": "",
+      "deactivated": ""
     },
-    "on-click-right": "swaylock"
+    "on-click-right": "swaylock -f"
   },
   "battery": {
     "states": {
@@ -639,27 +843,28 @@
       "warning": 30,
       "critical": 15
     },
-    "format": " {icon}  {capacity}% {time} ",
-    "format-charging": "   {capacity}% {time} ",
-    "format-plugged": "   {capacity}% ",
-    "format-full": " 󱟢 Full ",
+    "format": "{icon}-{capacity}% {time}",
+    "format-charging": " -{capacity}% {time}",
+    "format-plugged": "-{capacity}% {time}",
+    "format-full": "󱟢-Full",
+    "format-alt": "{icon}-{time}",
     "format-icons": [
-      "  ",
-      "  ",
-      "  ",
-      "  ",
-      "  "
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ]
   },
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
-    "format": " {name} {icon}",
+    "format": "{name} {icon}",
     "format-icons": {
-      "locked": " ",
-      "unlocked": " "
-    },
-    "icon-size": 14
+      "locked": "",
+      "unlocked": ""
+    }
+    // "icon-size": 11
   },
   "bluetooth": {
     "format": "  {status}",
@@ -676,23 +881,79 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   },
-  "cpu": {
-    "format": "  {usage}% ",
-    "on-click": "kitty -e btop"
-  },
   "memory": {
-    "format": " 🖴{:>3}% ",
-    "on-click": "kitty -e btop"
+    "interval": 30,
+    "format": "🖴 {used:0.2f}GB",
+    "on-click": "$TERMINAL -e 'btop'",
+    "max-length": 10,
+    "critical": 80
+  },
+  "memory#ram": {
+    "interval": 4,
+    "format": " {percentage}%",
+    "states": {
+      "warning": 80,
+      "critical": 95
+    },
+    "tooltip": "{}",
+    "tooltip-format": "{used}/{total} GiB"
+  },
+  "memory#swap": {
+    "interval": 16,
+    "format": "󰾵 {swapPercentage}%",
+    "tooltip": "{}",
+    "tooltip-format": "{swapUsed}/{swapTotal}GiB"
+  },
+  "memory#pie": {
+    "interval": 1,
+    "rotate": 270,
+    "format": "{icon}",
+    "format-icons": [
+      "󰝦",
+      "󰪞",
+      "󰪟",
+      "󰪠",
+      "󰪡",
+      "󰪢",
+      "󰪣",
+      "󰪤",
+      "󰪥"
+    ],
+    "max-length": 10
+  },
+  "cpu#pie": {
+    "interval": 1,
+    "format": "{icon}",
+    "rotate": 270,
+    "format-icons": [
+      "󰝦",
+      "󰪞",
+      "󰪟",
+      "󰪠",
+      "󰪡",
+      "󰪢",
+      "󰪣",
+      "󰪤",
+      "󰪥"
+    ]
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%",
+    "max-length": 10,
+    "on-click": "$TERMINAL -e 'btop'"
   },
   "temperature": {
-    "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    "format-critical": "  {temperatureC}°C",
-    "format": "  {temperatureC}°C"
+    "format": "{icon}&#8239;{temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "backlight": {
-    "format": " {icon} {percent}% ",
+    "format": "{icon} {percent}%",
     "format-icons": [
       "",
       "",
@@ -704,9 +965,37 @@
       "",
       ""
     ],
-    "on-scroll-down": "brightnessctl -c backlight set 1%-",
-    "on-scroll-up": "brightnessctl -c backlight set +1%",
-    "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
+    "on-scroll-up": "~/.config/.scripts/ut-monbrightness --inc",
+    "on-scroll-down": "~/.config/.scripts/ut-monbrightness --dec"
+  },
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "backlight/slider#vertical": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "orientation": "vertical",
+    "device": "intel_backlight",
+    "scroll-step": 1
+  },
+  "backlight/slider#horizontal": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "orientation": "horizontal",
+    "device": "intel_backlight",
+    "scroll-step": 1
+  },
+  "custom/weather": {
+    // "format": "Local {}°",
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
+    "return-type": "json"
   },
   "custom/weatherD": {
     "format": "Davao:{}°",
@@ -729,9 +1018,9 @@
     "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
   },
   "clock": {
-    "format-alt": "{:%H:%M}  ",
-    "format": "{:%a, %b %d, %Y -  %R  }",
-    "tooltip-format": "{:%a, %b %d, %Y -  %R  }\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%H:%M}",
+    "format": "{:%a, %b %d, %Y - %R}",
+    "tooltip-format": "{:%a, %b %d, %Y - %R  %Z}\n<tt><small>{calendar}</small></tt>",
     // "tooltip-format": "{:%H:%M}",
     "calendar": {
       "mode": "year",
@@ -750,14 +1039,14 @@
       "Asia/Manila"
     ],
     "actions": {
-      "on-click-right": "mode",
+      "on-click-right": "~/.config/.scripts/waybar/OCV",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
   },
-  "clock#2": {
+  "clock#Asia": {
     "timezone": "Asia/Manila",
     "format": "{:%a- %R  }",
     "format-alt": "{:%H:%M}  ",
@@ -780,12 +1069,75 @@
   },
   "clock#simple": {
     "timezone": "America/Denver",
-    "format": "{:%H:%M}  ",
+    "format": "{:%H:%M} ",
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "actions": {
       "on-click-right": "mode"
     }
+  },
+  "custom/spacer1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer4": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer5": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer6": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/spacer7": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/trayicon": {
+    // "format": " ",
+    // "format": "Zäni",
+    // "format": "󰣇 ",
+    // "format": " ",
+    "format": "ᗧ ",
+    "tooltip": false,
+    "on-click": " bash ~/.config/scripts/pacman.sh",
+    "on-scroll-up": "",
+    "on-scroll-down": ""
+  },
+  "custom/left-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/inverse-separator-r": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/inverse-separator-l": {
+    "format": "",
+    "tooltip": false
   },
   "custom/spacer": {
     "format": "  ",
@@ -809,7 +1161,216 @@
   },
   "custom/separator": {
     "format": "|",
+    "interval": "once",
     "tooltip": false
+  },
+  "custom/separator#dot": {
+    "format": "",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separator#dot-line": {
+    "format": "",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separator#line": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separator#blank": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separator#blank_2": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separator#blank_3": {
+    "format": "   ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "backlight#vertical": {
+    "interval": 2,
+    "align": 0.35,
+    "rotate": 1,
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "on-click": "",
+    "on-click-middle": "",
+    "on-click-right": "",
+    "on-update": "",
+    "on-scroll-up": "~/.config/.scripts/ut-monbrightness --inc",
+    "on-scroll-down": "~/.config/.scripts/ut-monbrightness --dec",
+    "smooth-scrolling-threshold": 1,
+    "tooltip-format": "{percent}%"
+  },
+  "clock#1": {
+    "format": "{:%a}",
+    "tooltip": false
+  },
+  "clock#2": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+  "clock#3": {
+    "format": "{:%m-%d}",
+    "tooltip": false
+  },
+  "clock#vertical": {
+    "format": "\n{:%H\n%M\n%S\n\n \n%d\n%m\n%y}",
+    "interval": 1,
+    "tooltip": true,
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "format": {
+        "today": "<span color='#0dbc79'>{}</span>"
+      }
+    }
+  },
+  "cpu#vertical": {
+    "format": "󰍛\n{usage}%",
+    "interval": 1,
+    "on-click-right": "gnome-system-monitor"
+  },
+  "memory#vertical": {
+    "interval": 10,
+    "format": "󰾆\n{percentage}%",
+    "format-alt": "󰾆\n{used:0.1f}G",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
+  },
+  "pulseaudio#vertical": {
+    "format": "{icon}",
+    "format-bluetooth": "󰂰",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        ""
+      ],
+      "tooltip-format": "{icon} {desc} | {volume}%",
+      "ignored-sinks": [
+        "Easy Effects Sink"
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "~/.config/.scripts/Volume.sh --toggle",
+    "on-click-right": "pavucontrol-qt -t 3",
+    "on-scroll-up": "~/.config/.scripts/volume --inc",
+    "on-scroll-down": "~/.config/.scripts/volume --dec",
+    "tooltip-format": "{icon} {desc} | {volume}%",
+    "smooth-scrolling-threshold": 1
+  },
+  "pulseaudio#microphone_vertical": {
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "on-click-right": "pavucontrol",
+    "on-click": "~/.config/.scripts/Volume.sh --toggle-mic",
+    "on-scroll-up": "~/.config/.scripts/Volume.sh --mic-inc",
+    "on-scroll-down": "~/.config/.scripts/Volume.sh --mic-dec",
+    "max-volume": 100,
+    "tooltip": true,
+    "tooltip-format": "{source_desc} | {source_volume}%"
+  },
+  "temperature#vertical": {
+    "interval": 10,
+    "tooltip": true,
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon1/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp"
+    ],
+    "critical-threshold": 80,
+    "format-critical": "{icon}\n{temperatureC}°C",
+    "format": " {icon}",
+    "format-icons": [
+      "󰈸"
+    ],
+    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+  },
+  "custom/power_vertical": {
+    "format": "⏻",
+    "exec": "echo ; echo 󰟡 power // blur",
+    "on-click": "~/.config/.scripts/Wlogout.sh",
+    "on-click-right": "~/.config/.scripts/ChangeBlur.sh",
+    "interval": 86400,
+    "tooltip": true
+  },
+  "group/traym": {
+    "orientation": "horizontal",
+    "drawer": {},
+    "modules": [
+      "custom/trayicon",
+      "tray"
+    ]
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": "500",
+      "transition-left-to-right": "true",
+      "children-class": "drawer-child"
+      //"click-to-reveal": "false"
+    },
+    "modules": [
+      "battery",
+      "backlight"
+    ]
+  },
+  "group/motherboard": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature",
+      "disk"
+    ]
+  },
+  "group/laptop": {
+    "orientation": "horizontal",
+    "modules": [
+      "backlight",
+      "battery"
+    ]
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#microphone"
+    ]
   },
   "group/appo#leg": {
     "orientation": "inherit",

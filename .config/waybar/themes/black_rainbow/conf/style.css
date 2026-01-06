@@ -1,7 +1,7 @@
 * {
   border: none;
   font-family: "JetBrainsMono";
-  font-size: 14px;
+  font-size: 12px;
 }
 
 window#waybar {
@@ -18,7 +18,7 @@ window#waybar.hidden {
 
 #workspaces button {
   padding: 0px;
-  margin: 4px 0 6px 0;
+  margin: 0px 0 0px 0;
   background-color: transparent;
   color: #ffffff;
   min-width: 36px;
@@ -26,7 +26,6 @@ window#waybar.hidden {
 
 #workspaces button.active {
   padding: 0 0 0 0;
-  margin: 4px 0 6px 0;
   min-width: 36px;
 }
 
@@ -61,7 +60,8 @@ window#waybar.hidden {
 #custom-updates,
 #language {
   padding: 0px 3px;
-  margin: 4px 3px 5px 3px;
+  /* margin: 4px 3px 5px 3px; */
+  margin: 0px 3px 0px 3px;
   color: #ffffff;
   background-color: transparent;
 }
@@ -86,6 +86,12 @@ window#waybar.hidden {
   color: #90ee90;
 }
 
+#custom-keybindings,
+#custom-launcher {
+  color: red;
+  padding: 0px 8px 0px 8px;
+}
+
 #battery {
   color: red;
 }
@@ -107,13 +113,14 @@ label:focus {
 }
 
 #cpu {
-  color: #ff0000;
+  color: cyan;
 }
 
 #memory {
   color: #00f98f;
 }
 
+#mpris,
 #backlight {
   color: cyan;
 }
@@ -136,6 +143,7 @@ label:focus {
 
 #custom-power {
   color: #0db9d7;
+  padding: 0px 6px 0px 0px;
 }
 
 #custom-updates {
@@ -170,7 +178,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #343434;
+  color: #0db9d7;
   border-radius: 15px;
 }
 #custom-keyboard-layout {
@@ -183,5 +191,5 @@ label:focus {
 #custom-separator {
   color: white;
   margin: 0 1px;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
 }

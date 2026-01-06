@@ -20,18 +20,19 @@
   font-family: ComicShannsMono Nerd Font Propo;
   font-family: Iosevka Nerd font Propo;
   font-family: OpenDyslexicM Nerd Font Propo;
+  font-family: SpaceMono Nerd Font Propo;
 background-color: @backgroundlight;
 background-color: #ffffff;
  */
 * {
   
-  font-family: SpaceMono Nerd Font Propo;
+  font-family: Hack Nerd Font Propo Bold;
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-size: 11px;
+  font-size: 13px;
   color: @textcolor1;
   text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
 }
@@ -225,13 +226,14 @@ tooltip label {
 #custom-weatherC,
 #clock {
   /* 
-  font-family: Roboto bold;
   padding: 0px 9px 0px 9px;
   color: @textcolor1;
+  font-family: Roboto bold;
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   */
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: bold;
   padding: 0px 4px 0px 4px;
 }
 #mpris,
@@ -284,6 +286,7 @@ tooltip label {
 }
 /* BATTERY */
 #battery {
+  padding: 0px 4px 0px 3px;
   color: @textcolor2;
   opacity: 0.8;
 }
@@ -307,6 +310,7 @@ tooltip label {
 }
 /* IDLE INHIBATOR */
 #idle_inhibitor {
+  padding: 0px 8px 0px 1px;
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
@@ -391,7 +395,7 @@ tooltip label {
   background-color: @tooltipbackground;
 }
 #cava {
-  font-size: 8px;
+  font-size: 11px;
   padding: 0px 0px 0px 0px;
 }
 #pulseaudio {
