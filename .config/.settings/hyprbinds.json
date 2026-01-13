@@ -15,7 +15,7 @@
     "catch_all": false,
     "description": "open the default terminal",
     "dispatcher": "exec",
-    "arg": "uwsm app -- footclient"
+    "arg": "uwsm app -- foot"
   },
   {
     "locked": false,
@@ -1041,7 +1041,7 @@
     "catch_all": false,
     "description": "open terminal file browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- uwsm app -- footclient -e yazi"
+    "arg": "uwsm app -- uwsm app -- foot -e yazi"
   },
   {
     "locked": false,
@@ -1095,7 +1095,7 @@
     "catch_all": false,
     "description": "open terminal file browser",
     "dispatcher": "exec",
-    "arg": "uwsm app -- uwsm app -- footclient -e yazi"
+    "arg": "uwsm app -- uwsm app -- foot -e yazi"
   },
   {
     "locked": false,
@@ -1149,7 +1149,7 @@
     "catch_all": false,
     "description": "open office suite",
     "dispatcher": "exec",
-    "arg": "uwsm app -- libreoffice"
+    "arg": "uwsm app -- org.onlyoffice.desktopeditors"
   },
   {
     "locked": false,
@@ -1203,7 +1203,7 @@
     "catch_all": false,
     "description": "open office suite",
     "dispatcher": "exec",
-    "arg": "uwsm app -- libreoffice"
+    "arg": "uwsm app -- org.onlyoffice.desktopeditors"
   },
   {
     "locked": false,
