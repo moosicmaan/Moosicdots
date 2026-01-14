@@ -49,9 +49,9 @@ nord15 #b48ead
   border-radius: 5px;
   padding: 0 0;
   font-family: JetBrainsMono, SymbolsNerdFont;
-  font-size: 12px;
-  margin-right: 2px;
-  margin-left: 2px;
+  font-size: 10px;
+  margin-right: 1px;
+  margin-left: 1px;
   padding-bottom: 0px;
 }
 
@@ -60,18 +60,19 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0px 4px;
+  padding: 0px 2px;
   border-bottom: 3px;
   color: #eceff4;
   border-color: #ebcb8b;
   border-style: solid;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 #workspaces button:hover {
   border-color: #d8dee9;
 }
 
+#workspaces button.visible,
 #workspaces button.focused {
   border-color: #81a1c1;
 }
@@ -110,7 +111,7 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #custom-launcherg {
-  font-size: 16px;
+  font-size: 10px;
   background-image: url("/home/moosicmaan/.config/waybar/assets/launcher.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -119,7 +120,7 @@ window#waybar {
 }
 
 #mode {
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 }
 
 #window {
@@ -212,6 +213,6 @@ window#waybar {
 
 #custom-power {
   border-style: hidden;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 0px;
 }
