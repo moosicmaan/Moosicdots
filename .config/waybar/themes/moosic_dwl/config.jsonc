@@ -15,12 +15,16 @@
     ],
     "modules-left": [
       "group/appo",
+      "sway/window",
+      "sway/scratchpad",
+      "sway/mode",
       "dwl/window"
       // "hyprland/window",
       // "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/workspaces",
+      "sway/workspaces",
       "dwl/tags"
     ],
     "modules-right": [
@@ -46,12 +50,16 @@
     ],
     "modules-left": [
       "group/appo",
+      "sway/window",
+      "sway/scratchpad",
+      "sway/mode",
       "dwl/window"
       // "hyprland/window",
       // "hyprland/submap"
     ],
     "modules-center": [
       "hyprland/workspaces",
+      "sway/workspaces",
       "dwl/tags"
     ],
     "modules-right": [

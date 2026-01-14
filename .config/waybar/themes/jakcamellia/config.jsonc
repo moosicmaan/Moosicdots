@@ -16,6 +16,7 @@
     "ipc": true,
     "modules-left": [
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "custom/separator#line",
       "tray",
@@ -51,6 +52,7 @@
     "ipc": true,
     "modules-left": [
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "custom/separator#line",
       "wlr/taskbar"

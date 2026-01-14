@@ -20,6 +20,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "dwl/tags"
     ],
@@ -50,6 +51,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "dwl/tags"
     ],

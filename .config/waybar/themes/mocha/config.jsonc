@@ -18,7 +18,8 @@
     ],
     "modules-left": [
       "group/traym",
-      // "dwl/tags",
+      "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces",
       "hyprland/submap",
       "hyprland/window"
@@ -38,7 +39,7 @@
       "pulseaudio",
       // "pulseaudio#input",
       // "pulseaudio#output",
-      "cava",
+      // "cava",
       "custom/headsetbattery",
       "custom/spacer3",
       // "hyprland/language",
@@ -68,7 +69,8 @@
     ],
     "modules-left": [
       "group/traym",
-      // "dwl/tags",
+      "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces",
       "hyprland/submap",
       "hyprland/window"

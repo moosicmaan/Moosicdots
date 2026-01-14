@@ -3,6 +3,7 @@
   "spacing": 4,
   "modules-left": [
     "dwl/tags",
+    "sway/workspaces",
     "hyprland/workspaces",
     "custom/waybarthemes"
   ],

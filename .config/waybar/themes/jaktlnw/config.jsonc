@@ -18,6 +18,7 @@
       "custom/separator#blank_2",
       "custom/launcher",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "hyprland/submap"
     ],
@@ -76,6 +77,7 @@
       "custom/separator#blank_2",
       "custom/launcher",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#roman",
       "hyprland/submap"
     ],

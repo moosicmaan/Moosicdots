@@ -10,6 +10,15 @@
       // "VI",
       // "VII",
       // "VIII",
+      // "IX",
+      // "I",
+      // "II",
+      // "III",
+      // "IV",
+      // "V",
+      // "VI",
+      // "VII",
+      // "VIII",
       // "IX"
       "🌕",
       "🌖",
@@ -43,27 +52,58 @@
     "active-only": false,
     "all-outputs": true,
     "show-special": true,
-    "special-visible-only": false,
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{name}{icon}",
     "format-icons": {
-      "active": "",
-      "default": "",
-      // "default": "",
-      "empty": "",
-      "persistent": "",
-      "visible": "󰹑",
-      "special": "😍",
-      "urgent": ""
+      "default": "",
+      "persistent": "",
+      "urgent": "",
+      "focused": "󰹑"
     },
     "persistent-workspaces": {
-      "*": 4
+      "1": [
+        "eDP-1"
+      ], // Always show a workspace with name '1', on all outputs if it does not exists
+      "2": [
+        "eDP-1"
+      ],
+      "3": [
+        "eDP-1"
+      ],
+      // "4": [
+      //   "HDMI-A-1"
+      // ],
+      // "5": [
+      //   "HDMI-A-1"
+      // ],
+      // "6": [
+      //   "HDMI-A-1"
+      // ],
+      "7": [
+        "HDMI-A-1"
+      ],
+      "8": [
+        "HDMI-A-1"
+      ],
+      "9": [
+        "HDMI-A-1"
+      ]
     }
   },
   "hyprland/workspaces": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -113,7 +153,19 @@
   },
   "hyprland/workspaces#named": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -123,7 +175,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "sort-by-number": true,
-    "format": "{icon}{name}",
+    "format": "{icon} {name}",
     "format-icons": {
       "default": "",
       "empty": "",
@@ -138,7 +190,19 @@
   },
   "hyprland/workspaces#kitty": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -159,7 +223,6 @@
       "7": "😸",
       "8": "😻",
       "9": "😺",
-      // "special": "😍",
       "urgent": "",
       "S-term": "(  )",
       "S-mon": "( ⚙ )",
@@ -170,7 +233,19 @@
   },
   "hyprland/workspaces#moony": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -202,7 +277,19 @@
   },
   "hyprland/workspaces#roman": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -228,12 +315,23 @@
       "S-files": "(  )",
       "S-vol": "(   )",
       "S-moosic": "( 󰝚 )"
-      // "10": "X"
     }
   },
   "hyprland/workspaces#pacman": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -267,7 +365,19 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "format-icons": {
       "1": "",
@@ -288,7 +398,19 @@
   },
   "hyprland/workspaces#music": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -319,7 +441,19 @@
   },
   "hyprland/workspaces#numberblocks": {
     "persistent-workspaces": {
-      "*": 4
+      "eDP-1": [
+        1,
+        2,
+        3
+      ],
+      "HDMI-A-1": [
+        // 4,
+        // 5,
+        // 6,
+        7,
+        8,
+        9
+      ]
     },
     "on-click": "activate",
     "active-only": false,
@@ -345,7 +479,6 @@
       "S-files": "(  )",
       "S-vol": "(   )",
       "S-moosic": "( 󰝚 )"
-      // "10": "󰽽"
     }
   },
   "hyprland/submap": {
@@ -353,11 +486,23 @@
     "max-length": 18,
     "tooltip": false
   },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": [
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
   "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+    "format": " {}",
+    "max-length": 50
   },
   "sway/window": {
     "format": "{}",
+    "max-length": 50,
     "rewrite": {
       "(.*) - Mozilla Firefox": "🌎 $1",
       "(.*) - Brave": "$1",
@@ -371,10 +516,11 @@
       "(.*) - nvim": " $1",
       "(.*) - Zen Browser": "$1"
     },
-    "separate-outputs": true,
+    "all-outputs": true,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)",
     "icon": true,
-    "spacing": 5,
-    "icon-size": 11
+    "icon-size": 12
   },
   "hyprland/window": {
     "rewrite": {

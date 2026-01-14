@@ -21,6 +21,7 @@
     ],
     "modules-center": [
       "dwl/tags",
+      "sway/workspaces",
       // "hyprland/workspaces#named"
       "hyprland/workspaces"
     ],
@@ -53,7 +54,8 @@
     ],
     "modules-center": [
       "dwl/tags",
-      // "hyprland/workspaces#kitty"
+      "sway/workspaces",
+      // "hyprland/workspaces#named"
       "hyprland/workspaces"
     ],
     "modules-right": [

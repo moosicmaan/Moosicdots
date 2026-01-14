@@ -12,6 +12,7 @@
     "modules-left": [
       "custom/launcherg",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
@@ -45,6 +46,7 @@
     "modules-left": [
       "custom/launcherg",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
@@ -58,20 +60,3 @@
     ]
   }
 ]
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

@@ -12,11 +12,12 @@
     ],
     "modules-left": [
       "custom/launcherg",
-      "sway/workspaces",
       "dwl/tags",
-      "hyprland/workspaces",
+      "sway/workspaces",
+      "sway/scratchpad",
       "sway/mode",
       "sway/window",
+      "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
     ],
@@ -51,11 +52,12 @@
     ],
     "modules-left": [
       "custom/launcherg",
-      "sway/workspaces",
       "dwl/tags",
-      "hyprland/workspaces",
+      "sway/workspaces",
+      "sway/scratchpad",
       "sway/mode",
       "sway/window",
+      "hyprland/workspaces",
       "hyprland/window",
       "hyprland/submap"
     ],

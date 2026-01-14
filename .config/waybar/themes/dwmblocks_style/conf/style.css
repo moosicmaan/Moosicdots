@@ -1,3 +1,4 @@
+@import "../../../../../.cache/wal/colors-waybar.css";
 * {
 	border: none;
 	border-radius: 0;
@@ -29,15 +30,26 @@ window#waybar {
 	margin: 0px;
 }
 
+    /*
+    Sway workspaces
+     #workspaces button
+     #workspaces button.visible
+     #workspaces button.focused
+     #workspaces button.urgent
+     #workspaces button.persistent
+     #workspaces button.emp
+     #workspaces button.current_output
+     #workspaces button#sway-workspace-${name}
+    */
 #taqs button,
 #workspaces button {
-	padding: 0 2px;
+	padding: 0 0px;
 	margin: 0px;
 	background: transparent;
-	color: #ff8700;
+	color: #ffffff;
 	/*
 	color: #00afd7;
-	color: #ffffff;
+	color: #ff8700;
 	border: 1px solid #00afd7;
 	*/
 	border: 1px solid #1b1d1e;
@@ -50,8 +62,11 @@ window#waybar {
 }
 #tags button.focused,
 #workspaces button.focused {
-	background: #e88939;
+	/* 
+  background: #e88939; 
 	background: #00afd7;
+*/
+  background: @color5;
 	color: #1b1d1e;
 }
 #tags button.urgent,
@@ -70,6 +85,7 @@ window#waybar {
 }
 
 #clock {
+  font-size: 16px
 }
 
 #battery {

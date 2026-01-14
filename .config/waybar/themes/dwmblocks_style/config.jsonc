@@ -21,10 +21,11 @@
     "modules-left": [
       "sway/workspaces",
       "sway/window",
+      "sway/scratchpad",
       "sway/mode",
       "dwl/tags",
-      "dwl/tags",
       "hyprland/workspaces",
+      "hyprland/window",
       "hyprland/submap"
     ],
     // "modules-center": ["sway/window"],
@@ -72,8 +73,8 @@
     "modules-left": [
       "sway/workspaces",
       "sway/window",
+      "sway/scratchpad",
       "sway/mode",
-      "dwl/tags",
       "dwl/tags",
       "hyprland/workspaces",
       "hyprland/submap"

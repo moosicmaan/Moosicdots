@@ -9,6 +9,7 @@
     "modules-left": [
       "group/appo#leg",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#named",
       "hyprland/window",
       "hyprland/submap"
@@ -40,6 +41,7 @@
     "modules-left": [
       "group/appo#leg",
       "dwl/tags",
+      "sway/workspaces",
       "hyprland/workspaces#named",
       "hyprland/window",
       "hyprland/submap"
