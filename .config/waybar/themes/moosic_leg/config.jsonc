@@ -2,8 +2,9 @@
   {
     "id": "1",
     "output": "eDP-1",
-    "layer": "top",
     "position": "top",
+    "layer": "bottom",
+    "exclusive": true,
     "width": 1910,
     "margin": "6 0 0 0",
     "modules-left": [
@@ -34,8 +35,9 @@
   {
     "id": "2",
     "output": "HDMI-A-1",
-    "layer": "top",
     "position": "bottom",
+    "layer": "bottom",
+    "exclusive": true,
     "width": 1910,
     "margin": "0 0 6 0",
     "modules-left": [

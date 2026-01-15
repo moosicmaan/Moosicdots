@@ -126,6 +126,11 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static const char *menu_run[] = { 
+    "rofi", "-config", "/home/moosicmaan/.config/rofi/dmenu.rasi",
+    "-show", "run", 
+    NULL 
+};
 static const char *menu_drun[] = { 
     "rofi", "-config", "/home/moosicmaan/.config/rofi/config.rasi",
     "-show", "drun", 
@@ -144,7 +149,7 @@ static const char *rofi_power[] = {
     NULL 
 };
 static const char *termcmd[]  = { "foot", NULL };
-static const char *menucmd[] = { "wmenu-run", NULL };
+// static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *my_term2[] = { "kitty", NULL };
 static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
@@ -196,7 +201,7 @@ static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                           function          argument */
-	{ MODKEY,                    XKB_KEY_p,                    spawn,            {.v = menucmd} },
+	{ MODKEY,                    XKB_KEY_p,                    spawn,            {.v = menu_run} },
 	{ MODKEY|CtrlMask,           XKB_KEY_p,                    spawn,            {.v = menu_win} },
 	{ MODKEY|ShiftMask,          XKB_KEY_P,                    spawn,            {.v = menu_drun} },
 	{ MODKEY,                    XKB_KEY_Return,               spawn,            {.v = termcmd} },

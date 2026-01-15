@@ -23,7 +23,8 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-set $menu pkill wmenu-run || wmenu-run
+# set $menu pkill wmenu-run || wmenu-run
+set $menu pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
 # -----------------------------------------------------
 # KEYS AND CODES
 # -----------------------------------------------------
@@ -61,6 +62,8 @@ set $lockscr      swaylock -c 000000
 set $prntscrn     $my_scripts/ut-screenshot
 set $my_calc      pkill galculator || galculator
 set $my_notes     obsidian
+set $videdit      org.kde.kdenlive
+set $zoomclient   zoom
 # -----------------------------------------------------
 # APPLICATION LAUNCHERS AND MENUS
 # -----------------------------------------------------
@@ -168,8 +171,6 @@ for_window [class="obsidian"] border pixel 4
 # Colors
 # -----------------------------------------------------
 include ~/.cache/wal/colors-sway
-## Base16 Gruvbox dark, hard
-# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 # set $color0 #1d2021
 # set $color1 #3c3836
 # set $color2 #504945
@@ -188,7 +189,7 @@ include ~/.cache/wal/colors-sway
 # set $color15 #d65d0e
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border   BG       Text     Ind      Child Bor
-client.focused          #fbf1c7  $color13 $color0  $color12 $color13
+client.focused          $color5  $color13 $color0  $color12 #fbf1c7
 client.focused_inactive $color1  $color1  $color5  $color3  $color1
 client.urgent           $color8  $color8  $color0  $color8  $color8
 client.unfocused        $color1  $color0  $color5  $color1  $color1
@@ -307,11 +308,11 @@ input type:keyboard {
     bindsym $mod+F5  exec $my_image
     bindsym $mod+F6  exec $my_office
 
-    bindsym $MEH+F7  exec $my_music
-    bindsym $MEH+F8  exec $my_media
+    bindsym $MEH+F7  exec $zoomclient
+    bindsym $MEH+F8  exec $videdit
     bindsym $MEH+F9  exec $my_stream
-    bindsym $mod+F7  exec $my_music
-    bindsym $mod+F8  exec $my_media
+    bindsym $mod+F7  exec $zoomclient
+    bindsym $mod+F8  exec $videdit
     bindsym $mod+F9  exec $my_stream
 
     bindsym $MEH+F10 exec $menu_run
