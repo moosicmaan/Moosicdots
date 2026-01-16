@@ -134,7 +134,7 @@ exec_always autotiling --output HDMI-A-1             # make sway do master/stack
 # -----------------------------------------------------
 gaps {
   inner 4
-  outer 4
+  outer 2
 }
 smart_gaps              on
 smart_borders           on
@@ -142,21 +142,21 @@ smart_borders           on
 # rules
 for_window [app_id="zen-browser" title="^Picture-in-Picture$"] floating enable, move position 877 450, sticky enable, border none
 for_window [shell="xwayland"] title_format "<b>%class</b>"
+for_window [floating] border pixel 4
 
 for_window [app_id="waypaper"] floating enable
 for_window [app_id="waypaper"] resize set width 1530 px height 726 px
 for_window [app_id="waypaper"] move position center
-for_window [app_id="waypaper"] border pixel 4
 
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] resize set width 800 px height 450 px
 for_window [app_id="mpv"] move position center
 for_window [app_id="mpv"] border pixel 1
 
-for_window [app_id="vlc"] floating enable
-for_window [app_id="vlc"] resize set width 800 px height 450 px
-for_window [app_id="vlc"] move position center
-for_window [app_id="vlc"] border pixel 1
+for_window [class="vlc"] floating enable
+for_window [class="vlc"] resize set width 800 px height 450 px
+for_window [class="vlc"] move position center
+for_window [class="vlc"] border pixel 1
 
 for_window [app_id="galculator"] floating enable
 for_window [app_id="galculator"] resize set width 400 px height 400 px
@@ -203,15 +203,11 @@ client.placeholder      $color0  $color0  $color5  $color0  $color0
 client.background       $color7
 
 # -----------------------------------------------------
-# Wallpaper
-# -----------------------------------------------------
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
-# -----------------------------------------------------
 # Monitors
 # -----------------------------------------------------
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output eDP-1 resolution 1920x1080 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
 
@@ -365,6 +361,9 @@ bindsym Ctrl+Alt+k exec $kmndlap       $my_scripts/ut-kbd-lap
 # mouse button for dragging.
 floating_modifier $mod normal
 
+# Cycle through borders
+bindsym $mod+u border toggle
+
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 
@@ -396,6 +395,9 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+bindsym $mod+period focus output right
+bindsym $mod+comma focus output left
 
 # -----------------------------------------------------
 # Workspaces:
@@ -439,20 +441,22 @@ bindsym Alt+s layout stacking
 bindsym Alt+w layout tabbed
 bindsym Alt+e layout toggle split
 
-# Make the current focus fullscreen
-bindsym $mod+Shift+f fullscreen toggle
+# Move focus kto the parent container
+bindsym Alt+a focus parent
+
+# Swap focus between the tiling area and the floating area
+bindsym Alt+space focus mode_toggle
+
+# Toggle through all layouts
+bindsym $mod+Space layout toggle all
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+f floating toggle
 
-# Swap focus between the tiling area and the floating area
-bindsym $mod+space focus mode_toggle
-
-# Move focus to the parent container
-bindsym $mod+a focus parent
+# Make the current focus fullscreen
+bindsym $mod+Shift+f fullscreen toggle
 
 # PLAYGROUND:
-bindsym $mod+u border toggle
 
 # -----------------------------------------------------
 # Scratchpads:
@@ -641,7 +645,7 @@ exec firewall-applet
 # exec-once = uwsm app -- foot --server
 
 # Setup Pipewire for OBS and ZOOM
-exec ~/.config/.scripts/ut-obszoom 
+exec ~/.config/.scripts/ut-obszoom
 
 # toggle_kmonad
 # exec-once = $HOME/.config/.scripts/toggle_kmonad.sh
@@ -658,5 +662,6 @@ exec ~/.config/.scripts/hypr-barlaunch
 
 # -----------------------------------------------------
 # Libraries/Included:
-# -----------------------------------------------------
+# ---------------------
+include ~/.config/sway/config.d/*
 include /etc/sway/config.d/*

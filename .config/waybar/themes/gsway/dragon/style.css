@@ -71,7 +71,7 @@ window#waybar {
      #workspaces button#sway-workspace-${name}
     */
 #workspaces button {
-  padding: 0px 2px;
+  padding: 0px 0px;
   border-bottom: 3px;
   color: #eceff4;
   border-color: #ebcb8b;
@@ -92,6 +92,10 @@ window#waybar {
   color: #ebcb8b;
 }
 
+#scratchpad {
+  padding: 0px 0px 0px 12px;
+}
+
 #custom-launcherg,
 #mode,
 #window,
@@ -109,12 +113,12 @@ window#waybar {
 #clock,
 #tray,
 #custom-power {
-  padding: 0px 8px;
+  padding: 0px 6px;
   border: 1px;
-  border-bottom: 3px;
+  border-bottom: 2px;
   border-style: solid;
   border-radius: 5px;
-  margin-top: 1px;
+  margin-top: 0px;
 }
 
 /* -----------------------------------------------------------------------------

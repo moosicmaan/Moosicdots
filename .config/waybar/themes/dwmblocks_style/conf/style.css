@@ -63,7 +63,7 @@ window#waybar {
 #tags button.focused,
 #workspaces button.focused {
 	/* 
-  background: #e88939; 
+  background: #e88939;
 	background: #00afd7;
 */
   background: @color5;
@@ -73,6 +73,11 @@ window#waybar {
 #workspaces button.urgent {
 	background: #af005f;
 	color: #1b1d1e;
+}
+
+#scratchpad {
+  padding: 0px 8px 0px 6px;
+  background: @color1;
 }
 
 #mode {

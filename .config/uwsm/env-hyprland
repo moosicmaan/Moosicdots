@@ -18,14 +18,13 @@ export AQ_DRM_DEVICES=/dev/dri/card2:/dev/dri/card1 # use the integrated card fi
 export UWSM_SESSION_TYPE=HYPR
 
 # environment not set in Fish or bash
-export XDG_CONFIG_HOME=$HOME/.config
-export TERM=xterm-256color
-export TERMINAL=kitty
-export TERMINAL_EMULATOR=kitty
-export BROWSER=zen-browser
-export EMAIL=thunderbird
-export EDITOR=nvim
-export VISUAL=kate
-export SUDO_EDITOR=vim
-# export PAGER=bat
-# export MANPAGER="sh -c 'col -bx | bat"
+# these should be set through .bash_profile --> .profile now
+# export XDG_CONFIG_HOME=$HOME/.config
+# export TERM=xterm-256color
+# export TERMINAL=kitty
+# export TERMINAL_EMULATOR=kitty
+# export BROWSER=zen-browser
+# export EMAIL=thunderbird
+# export EDITOR=nvim
+# export VISUAL=kate
+# export SUDO_EDITOR=vim

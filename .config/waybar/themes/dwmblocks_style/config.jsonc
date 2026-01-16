@@ -22,8 +22,8 @@
     // Choose the order of the modules
     "modules-left": [
       "sway/workspaces",
-      "sway/window",
       "sway/scratchpad",
+      "sway/window",
       "sway/mode",
       "dwl/tags",
       "hyprland/workspaces",
@@ -77,8 +77,8 @@
     ],
     "modules-left": [
       "sway/workspaces",
-      "sway/window",
       "sway/scratchpad",
+      "sway/window",
       "sway/mode",
       "dwl/tags",
       "hyprland/workspaces",

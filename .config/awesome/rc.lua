@@ -143,7 +143,7 @@ local my_music = "elisa" --# (M-m) Launch music player
 local my_media = "vlc" --# (M-S-m) Launch media player
 local my_office = "libreoffice" --# (M-f4) Launch office suite
 local my_image = "gimp" --# (M-f5) Launch GUI image editor
-local emacsd = "emacs" --daemon=serve 	--# (M-S-d) EMACS daemon
+local emacsd = "emacs" --daemon=serve   --# (M-S-d) EMACS daemon
 local emacsc = "emacsclient - c - a('emacs')" --# (M-e) EMACS client
 local emojis = "emote" --# (M-i) Launch emoji browser
 local my_stream = "obs" --# (M-f5) Launch streaming software
@@ -547,13 +547,13 @@ Globalkeys = my_table.join(
 	--
 	-- screenshots
 	-- awful.key({}, "Print", function()
-	-- 	awful.util.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")
+	--  awful.util.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")
 	-- end, { description = "Scrot", group = "screenshots" }),
 	-- awful.key({ modkey1 }, "Print", function()
-	-- 	awful.util.spawn("xfce4-screenshooter")
+	--  awful.util.spawn("xfce4-screenshooter")
 	-- end, { description = "Xfce screenshot", group = "screenshots" }),
 	-- awful.key({ modkey1, "Shift" }, "Print", function()
-	-- 	awful.util.spawn("gnome-screenshot -i")
+	--  awful.util.spawn("gnome-screenshot -i")
 	-- end, { description = "Gnome screenshot", group = "screenshots" }),
 
 	-- Personal keybindings}}}
@@ -676,7 +676,7 @@ Globalkeys = my_table.join(
 
 	-- Standard program
 	-- awful.key({ modkey }, "Return", function()
-	-- 	awful.spawn(my_term)
+	--  awful.spawn(my_term)
 	-- end, { description = terminal, group = "super" }),
 	awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	-- awful.key({ modkey, "Shift"   }, "x", awesome.quit,
@@ -715,42 +715,33 @@ Globalkeys = my_table.join(
 		end
 	end, { description = "restore minimized", group = "client" }),
 
-	-- Widgets popups
-	--awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end,
-	--{description = "show calendar", group = "widgets"}),
-	--awful.key({ altkey, }, "h", function () if beautiful.fs then beautiful.fs.show(7) end end,
-	--{description = "show filesystem", group = "widgets"}),
-	--awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
-	--{description = "show weather", group = "widgets"}),
-
 	-- Brightness
 	-- awful.key({}, "XF86MonBrightnessUp", function()
-	-- 	os.execute("xbacklight -inc 10")
+	--  os.execute("xbacklight -inc 10")
 	-- end, { description = "+10%", group = "hotkeys" }),
 	-- awful.key({}, "XF86MonBrightnessDown", function()
-	-- 	os.execute("xbacklight -dec 10")
+	--  os.execute("xbacklight -dec 10")
 	-- end, { description = "-10%", group = "hotkeys" }),
 
-	-- ALSA volume control
-	--awful.key({ modkey1 }, "Up",
-	-- awful.key({}, "XF86AudioRaiseVolume", function()
-	-- 	os.execute(string.format("pactl set-sink-volume @DEFAULT_SINK@ +5%, beautiful.volume.channel"))
-	-- 	beautiful.volume.update()
-	-- end),
-	-- --awful.key({ modkey1 }, "Down",
-	-- awful.key({}, "XF86AudioLowerVolume", function()
-	-- 	os.execute(
-	-- 		string.format(
-	-- 			"pactl set-sink-volume @DEFAULT_SINK@ -5%, beautiful.volume.channel",
-	-- 			beautiful.volume.channel
-	-- 		)
-	-- 	)
-	-- 	beautiful.volume.update()
-	-- end),
-	-- awful.key({}, "XF86AudioMute", function()
-	-- 	os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-	-- 	beautiful.volume.update()
-	-- end),
+	-- Volume control
+	-- awful.key({ modkey1 }, "Up",
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		os.execute(string.format("/home/moosicmaan/.config/.scripts/media-vol --inc"))
+		-- beautiful.volume.update()
+	end),
+	--awful.key({ modkey1 }, "Down",
+	awful.key({}, "XF86AudioLowerVolume", function()
+		os.execute(string.format("/home/moosicmaan/.config/.scripts/media-vol --dec"))
+	end),
+	awful.key({}, "XF86AudioMute", function()
+		os.execute(
+			string.format(
+				"/home/moosicmaan/.config/.scripts/media-vol --mute",
+				beautiful.volume.togglechannel or beautiful.volume.channel
+			)
+		)
+		beautiful.volume.update()
+	end),
 	-- awful.key({ modkey1, "Shift" }, "m", function()
 	-- 	os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
 	-- 	beautiful.volume.update()
@@ -761,53 +752,18 @@ Globalkeys = my_table.join(
 	-- end),
 
 	--Media keys supported by vlc, spotify, audacious, xmm2, ...
-	--awful.key({}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end),
-	--awful.key({}, "XF86AudioNext", function() awful.util.spawn("playerctl next", false) end),
-	--awful.key({}, "XF86AudioPrev", function() awful.util.spawn("playerctl previous", false) end),
-	--awful.key({}, "XF86AudioStop", function() awful.util.spawn("playerctl stop", false) end),
-
-	--Media keys supported by mpd.
-	-- awful.key({}, "XF86AudioPlay", function()
-	-- 	awful.util.spawn("mpc toggle")
-	-- end),
-	-- awful.key({}, "XF86AudioNext", function()
-	-- 	awful.util.spawn("mpc next")
-	-- end),
-	-- awful.key({}, "XF86AudioPrev", function()
-	-- 	awful.util.spawn("mpc prev")
-	-- end),
-	-- awful.key({}, "XF86AudioStop", function()
-	-- 	awful.util.spawn("mpc stop")
-	-- end),
-	--
-	-- -- MPD control
-	-- awful.key({ modkey1, "Shift" }, "Up", function()
-	-- 	os.execute("mpc toggle")
-	-- 	beautiful.mpd.update()
-	-- end, { description = "mpc toggle", group = "widgets" }),
-	-- awful.key({ modkey1, "Shift" }, "Down", function()
-	-- 	os.execute("mpc stop")
-	-- 	beautiful.mpd.update()
-	-- end, { description = "mpc stop", group = "widgets" }),
-	-- awful.key({ modkey1, "Shift" }, "Left", function()
-	-- 	os.execute("mpc prev")
-	-- 	beautiful.mpd.update()
-	-- end, { description = "mpc prev", group = "widgets" }),
-	-- awful.key({ modkey1, "Shift" }, "Right", function()
-	-- 	os.execute("mpc next")
-	-- 	beautiful.mpd.update()
-	-- end, { description = "mpc next", group = "widgets" }),
-	-- awful.key({ modkey1, "Shift" }, "s", function()
-	-- 	local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-	-- 	if beautiful.mpd.timer.started then
-	-- 		beautiful.mpd.timer:stop()
-	-- 		common.text = common.text .. lain.util.markup.bold("OFF")
-	-- 	else
-	-- 		beautiful.mpd.timer:start()
-	-- 		common.text = common.text .. lain.util.markup.bold("ON")
-	-- 	end
-	-- 	naughty.notify(common)
-	-- end, { description = "mpc on/off", group = "widgets" }),
+	awful.key({}, "XF86AudioPlay", function()
+		awful.util.spawn("playerctl play-pause", false)
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.util.spawn("playerctl next", false)
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.util.spawn("playerctl previous", false)
+	end),
+	awful.key({}, "XF86AudioStop", function()
+		awful.util.spawn("playerctl stop", false)
+	end),
 
 	-- Copy primary to clipboard (terminals to gtk)
 	--awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
