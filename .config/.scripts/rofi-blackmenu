@@ -15,7 +15,7 @@ if [[ -z "$BA_CATS" ]]; then
 fi
 
 # User selects category
-CAT_SEL=$(echo "$BA_CATS" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi" -p "Select Category:" | awk '{print $1}')
+CAT_SEL=$(echo "$BA_CATS" | sort | rofi -dmenu -config "$HOME/.config/rofi/config-wide.rasi" -p "Select BlackArch Category:" | awk '{print $1}')
 
 if [[ -z "$CAT_SEL" ]]; then
   echo "No category selected. Exiting."

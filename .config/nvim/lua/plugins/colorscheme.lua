@@ -17,7 +17,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "nord",
-      colorscheme = "dracula",
+      -- colorscheme = "dracula",
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
@@ -41,6 +41,7 @@ return {
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
       -- colorscheme = "industry",
+      colorscheme = "ron",
     },
   },
   -- Other theme plugins

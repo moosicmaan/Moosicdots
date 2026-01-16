@@ -98,7 +98,7 @@ history = 10000
 multiplier = 3
 
 [terminal.shell]
-program = "/usr/bin/zsh"
+program = "/usr/bin/bash"
 
 [window]
 decorations = "full"

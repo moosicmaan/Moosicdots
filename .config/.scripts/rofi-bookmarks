@@ -12,5 +12,5 @@
 selected=$(grep '"url":' <~/.config/BraveSoftware/Brave-Browser/Default/Bookmarks | awk '{print $2}' | sed 's/"//g' | rofi -dmenu -config ~/.config/rofi/config-wide.rasi -p "Select a Brave Bookmark")
 
 if [ "$selected" ]; then
-  brave "$selected"
+  xdg-open "$selected"
 fi

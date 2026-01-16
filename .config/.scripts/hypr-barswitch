@@ -46,7 +46,7 @@ done < <(find -L "$themes_path" -maxdepth 2 -type d)
 # Show selection menu with rofi
 # -----------------------------------------------------
 choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
-  -config ~/.config/rofi/config-narrow.rasi -no-show-icons -width 30 -p "Themes" -format i)
+  -config ~/.config/rofi/config-narrow.rasi -no-show-icons -width 30 -p "Info Bar Themes" -format i)
 
 # -----------------------------------------------------
 # Apply selected theme

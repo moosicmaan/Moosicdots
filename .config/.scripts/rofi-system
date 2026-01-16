@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+  echo "Wayland session"
+  ROFI_CONFIG="$HOME/.config/rofi/config-narrow.rasi"
+else
+  echo "X11 session"
+  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-9.rasi"
+fi
+rofi -config "$ROFI_CONFIG" -show powermenu -modi powermenu:~/.config/.scripts/rofi-power

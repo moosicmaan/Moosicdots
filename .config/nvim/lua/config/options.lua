@@ -8,7 +8,7 @@ opt.wrap = true -- Disable line wrap
 opt.scrolloff = 14 -- Lines of context-put cursor in the middle of the screen
 opt.termguicolors = true
 opt.breakindent = true -- wrapped line repeats indent
-opt.colorcolumn = "120"
+-- opt.colorcolumn = "120"
 opt.lisp = true -- automatic indenting for Lisp
 opt.mousehide = true -- hide mouse pointer while typing
 opt.softtabstop = 2 -- see multiple spaces as tabstops so <BS> does the right thing
@@ -17,7 +17,6 @@ opt.ttyfast = true -- speeds up scrolling in vim
 -- for orgmode
 opt.conceallevel = 2
 opt.concealcursor = "nc"
--- vim.g.tutor_is_loaded = 0 -- to always show tutor tips
 -- for hyprlang and other files/types not natively recognized
 vim.filetype.add({
   extension = { rasi = "rasi" },

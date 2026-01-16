@@ -1,37 +1,31 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser";
-    show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
-	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	window-format:              "{w}   {c}   {t}";
-  layer:                      "overlay";
+	modes:                  "drun,run,filebrowser,window";
+  show-icons:             true;
+  display-drun:           "";
+  display-run:            "";
+  display-filebrowser:    "";
+  display-window:         "";
+	drun-display-format:    "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	window-format:          "{w}   {c}   {t}";
+  layer:                  "overlay";
 }
 
-/* ---- Load pywal colors (custom wal template) ---- */
-/*
-*/
-@import "~/.cache/wal/colors-rofi-pywal"
+/*****----- Global Properties -----*****/
+@import "~/.cache/wal/colors-rofi-pywal.rasi"
 @import "~/.cache/current_wallpaper.rasi"
 @import "~/.config/.settings/rofi-border.rasi"
-@import                          "shared/fonts.rasi"
-
-/*****----- Global Properties -----*****/
+@import "shared/fonts.rasi"
 * {
-    // font:                        "Iosevka Nerd Font 14";
-    // font:                        "Hack Nerd Font Propo 12";
+    /* properties for all widgets */
+  enabled:                true;
+  background-color:       transparent;
+  text-color:             @foreground;
+  margin:                 0px;
+  padding:                0px;
+  border-color:           transparent;
+  border:                 0px solid;
+  border-radius:          0px;
 }
 
 /*****----- Main Window -----*****/

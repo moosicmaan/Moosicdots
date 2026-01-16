@@ -14,98 +14,99 @@
 # =====================================================
 
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+  set $mod Mod4
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+  set $left h
+  set $down j
+  set $up k
+  set $right l
 # Your preferred terminal emulator
-set $term kitty
+  set $term kitty
 # Your preferred application launcher
 # set $menu pkill wmenu-run || wmenu-run
-set $menu pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
+  set $menu pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
 # -----------------------------------------------------
 # KEYS AND CODES
 # -----------------------------------------------------
 # $MOD = SUPER
-set $HYPER        $mod+Ctrl+Alt+Shift
-set $MEH          Ctrl+Alt+Shift
+  set $HYPER        $mod+Ctrl+Alt+Shift
+  set $MEH          Ctrl+Alt+Shift
 # -----------------------------------------------------
 # DIRECTORIES
 # -----------------------------------------------------
-set $my_dots      /mnt/data/moosicmaan/CONFIG
-set $my_config    $my_dots/.config
-set $my_scripts   $my_dots/.config/.scripts
+  set $my_dots      /mnt/data/moosicmaan/CONFIG
+  set $my_config    $my_dots/.config
+  set $my_scripts   $my_dots/.config/.scripts
 # -----------------------------------------------------
 # APPLICATIONS
 # -----------------------------------------------------
-set $my_term      foot
-set $my_brows     brave
-set $my_browsv    zen-browser
-set $my_email     thunderbird
-set $my_editg     kate
-set $my_editc     neovide
-set $my_filesg    dolphin
-set $my_filesc    $my_term -e yazi
-set $my_music     org.kde.elisa
-set $my_media     mpv --player-operation-mode=pseudo-gui
-set $my_office    org.onlyoffice.desktopeditors
-set $my_image     gimp
-set $emacsd       emacs --daemon=serve
-set $emacsc       emacsclient -c -a 'emacs'
-set $emojis       emote
-set $my_stream    obs
-set $aiassist     brave --app=https://chat.openai.com
-set $my_mux       $term -e tmux
-set $lockscr      swaylock -c 000000
-set $prntscrn     $my_scripts/ut-screenshot
-set $my_calc      pkill galculator || galculator
-set $my_notes     obsidian
-set $videdit      org.kde.kdenlive
-set $zoomclient   zoom
+  set $my_term      foot
+  set $my_brows     brave
+  set $my_browsv    zen-browser
+  set $my_email     thunderbird
+  set $my_editg     kate
+  set $my_editc     neovide
+  set $my_filesg    dolphin
+  set $my_filesc    $my_term -e yazi
+  set $my_music     org.kde.elisa
+  set $my_media     mpv --player-operation-mode=pseudo-gui
+  set $my_office    org.onlyoffice.desktopeditors
+  set $my_image     gimp
+  set $emacsd       emacs --daemon=serve
+  set $emacsc       emacsclient -c -a 'emacs'
+  set $emojis       emote
+  set $my_stream    obs
+  set $aiassist     brave --app=https://chat.openai.com
+  set $my_mux       $term -e tmux
+  set $lockscr      swaylock -c 000000
+  set $prntscrn     $my_scripts/ut-screenshot
+  set $my_calc      pkill galculator || galculator
+  set $my_notes     obsidian
+  set $videdit      org.kde.kdenlive
+  set $zoomclient   zoom
 # -----------------------------------------------------
 # APPLICATION LAUNCHERS AND MENUS
 # -----------------------------------------------------
-set $logot        wlogout
-set $menu_full    nwg-drawer -c 7 -is 70 -spacing 20 -ovl
-set $bsearch      pkill rofi || $my_scripts/rofi-search
-set $clips        pkill rofi || $my_scripts/rofi-cliphist
-set $keybs        pkill rofi || $my_scripts/hypr-keybinds
-set $bbooks       pkill rofi || $my_scripts/rofi-bookmarks
-set $my_beats     pkill rofi || $my_scripts/rofi-beats
-set $my_favs      pkill rofi || $my_scripts/rofi-beat-favs
-set $menu_run     pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
-set $menu_drun    pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '{cmd}'
-set $menu_win     pkill rofi || rofi -config $my_config/rofi/config.rasi -show window 
-set $menu_files   pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser 
+  set $logot        wlogout
+  set $menu_full    nwg-drawer -c 7 -is 70 -spacing 20 -ovl
+  set $bsearch      pkill rofi || $my_scripts/rofi-search
+  set $clips        pkill rofi || $my_scripts/rofi-cliphist
+  set $keybs        pkill rofi || $my_scripts/hypr-keybinds
+  set $bbooks       pkill rofi || $my_scripts/rofi-bookmarks
+  set $my_beats     pkill rofi || $my_scripts/rofi-beats
+  set $my_favs      pkill rofi || $my_scripts/rofi-beat-favs
+  set $black        pkill rofi || $my_scripts/rofi-blackmenu
+  set $menu_run     pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
+  set $menu_drun    pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '{cmd}'
+  set $menu_win     pkill rofi || rofi -config $my_config/rofi/config.rasi -show window
+  set $menu_files   pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser
 # -----------------------------------------------------
 # ENVIRONMENT ACTIONS
 # -----------------------------------------------------
-set $bartog       pkill waybar || $my_scripts/hypr-barlaunch
-set $zoomscrn     pypr zoom
-set $zoomscrnu    pypr zoom ++0.5
-set $zoomscrnd    pypr zoom --0.5
-set $wallr        $my_scripts/ut-wallpaper --random
-set $barsel       $my_scripts/hypr-barswitch
-set $walls        $my_scripts/ut-wallpaper --select
-set $kmndext      $my_scripts/ut-kbd-350
-set $kmndlap      $my_scripts/ut-kbd-lap
+  set $bartog       pkill waybar || $my_scripts/hypr-barlaunch
+  set $zoomscrn     pypr zoom
+  set $zoomscrnu    pypr zoom ++0.5
+  set $zoomscrnd    pypr zoom --0.5
+  set $wallr        $my_scripts/ut-wallpaper --random
+  set $barsel       $my_scripts/hypr-barswitch
+  set $walls        $my_scripts/ut-wallpaper --select
+  set $kmndext      $my_scripts/ut-kbd-350
+  set $kmndlap      $my_scripts/ut-kbd-lap
 # --------------------------------------------------
 # MEDIA KEYS
 # -----------------------------------------------------
-set $volu         $my_scripts/media-vol --inc
-set $vold         $my_scripts/media-vol --dec
-set $volt         $my_scripts/media-vol --toggle
-set $mpp          $my_scripts/media-ctrl --pause
-set $mstop        $my_scripts/media-ctrl --stop
-set $mnxt         $my_scripts/media-ctrl --nxt
-set $mprv         $my_scripts/media-ctrl --prv
-set $mnow         $my_scripts/media-ctrl --show
-set $brightu      $my_scripts/ut-monbrightness --inc
-set $brightd      $my_scripts/ut-monbrightness --dec
-set $brightmu     $my_scripts/ut-exmon-brightness --inc
-set $brightmd     $my_scripts/ut-exmon-brightness --dec
+  set $volu         $my_scripts/media-vol --inc
+  set $vold         $my_scripts/media-vol --dec
+  set $volt         $my_scripts/media-vol --toggle
+  set $mpp          $my_scripts/media-ctrl --pause
+  set $mstop        $my_scripts/media-ctrl --stop
+  set $mnxt         $my_scripts/media-ctrl --nxt
+  set $mprv         $my_scripts/media-ctrl --prv
+  set $mnow         $my_scripts/media-ctrl --show
+  set $brightu      $my_scripts/ut-monbrightness --inc
+  set $brightd      $my_scripts/ut-monbrightness --dec
+  set $brightmu     $my_scripts/ut-exmon-brightness --inc
+  set $brightmd     $my_scripts/ut-exmon-brightness --dec
 
 
 # =====================================================
@@ -117,84 +118,85 @@ set $brightmd     $my_scripts/ut-exmon-brightness --dec
 # -----------------------------------------------------
 # Appearance
 # -----------------------------------------------------
-default_border          pixel 2
-default_floating_border pixel 4
-floating_maximum_size   1800 x 900
-floating_minimum_size   100 x 50
-default_orientation     auto
-workspace_layout        default
-exec_always autotiling --output HDMI-A-1             # make sway do master/stack like dwm, but only on the external monitor
+  default_border          pixel 2
+  default_floating_border pixel 4
+  floating_maximum_size   1800 x 900
+  floating_minimum_size   100 x 50
+  default_orientation     auto
+  workspace_layout        default
+  exec_always autotiling --output HDMI-A-1             # make sway do master/stack like dwm, but only on the external monitor
 # -----------------------------------------------------
 # Windows:
 # -----------------------------------------------------
-gaps {
-  inner 4
-  outer 4
-}
-smart_gaps              on
-smart_borders           on
+  gaps {
+    inner 4
+    outer 4
+  }
+  smart_gaps              on
+  smart_borders           on
 
 # rules
-for_window [app_id="zen-browser" title="^Picture-in-Picture$"] floating enable, move position 877 450, sticky enable, border none
-for_window [shell="xwayland"] title_format "<b>%class</b>"
+  for_window [app_id="zen-browser" title="^Picture-in-Picture$"] floating enable, move position 877 450, sticky enable, border none
+  for_window [shell="xwayland"] title_format "<b>%class</b>"
 
-for_window [app_id="waypaper"] floating enable
-for_window [app_id="waypaper"] resize set width 1530 px height 726 px
-for_window [app_id="waypaper"] move position center
-for_window [app_id="waypaper"] border pixel 4
+  for_window [app_id="waypaper"] floating enable
+  for_window [app_id="waypaper"] resize set width 1530 px height 726 px
+  for_window [app_id="waypaper"] move position center
+  for_window [app_id="waypaper"] border pixel 4
 
-for_window [app_id="mpv"] floating enable
-for_window [app_id="mpv"] resize set width 800 px height 450 px
-for_window [app_id="mpv"] move position center
-for_window [app_id="mpv"] border pixel 1
+  for_window [app_id="mpv"] floating enable
+  for_window [app_id="mpv"] resize set width 800 px height 450 px
+  for_window [app_id="mpv"] move position center
+  for_window [app_id="mpv"] border pixel 1
 
-for_window [app_id="vlc"] floating enable
-for_window [app_id="vlc"] resize set width 800 px height 450 px
-for_window [app_id="vlc"] move position center
-for_window [app_id="vlc"] border pixel 1
+  for_window [app_id="vlc"] floating enable
+  for_window [app_id="vlc"] resize set width 800 px height 450 px
+  for_window [app_id="vlc"] move position center
+  for_window [app_id="vlc"] border pixel 1
 
-for_window [app_id="galculator"] floating enable
-for_window [app_id="galculator"] resize set width 400 px height 400 px
-for_window [app_id="galculator"] move position center
-for_window [app_id="galculator"] border pixel 4
+  for_window [app_id="galculator"] floating enable
+  for_window [app_id="galculator"] resize set width 400 px height 400 px
+  for_window [app_id="galculator"] move position center
+  for_window [app_id="galculator"] border pixel 4
 
-for_window [class="Vial"] floating enable
-for_window [class="Vial"] resize set width 1200 px height 950 px
-for_window [class="Vial"] move position center
-for_window [class="Vial"] border pixel 4
+# for_window [class="Vial"] floating enable
+# for_window [class="Vial"] resize set width 1200 px height 900 px
+# for_window [class="Vial"] move position center
+# for_window [class="Vial"] border pixel 4
 
-for_window [class="obsidian"] floating enable
-for_window [class="obsidian"] resize set width 1600 px height 950 px
-for_window [class="obsidian"] move position center
-for_window [class="obsidian"] border pixel 4
+  for_window [app_id="obsidian"] floating enable
+  for_window [app_id="obsidian"] resize set width 1600 px height 900 px
+  for_window [app_id="obsidian"] move position center
+  for_window [app_id="obsidian"] border pixel 4
+
 # -----------------------------------------------------
 # Colors
 # -----------------------------------------------------
-include ~/.cache/wal/colors-sway
-# set $color0 #1d2021
-# set $color1 #3c3836
-# set $color2 #504945
-# set $color3 #665c54
-# set $color4 #bdae93
-# set $color5 #d5c4a1
-# set $color6 #ebdbb2
-# set $color7 #fbf1c7
-# set $color8 #fb4934
-# set $color9 #fe8019
-# set $color10 #fabd2f
-# set $color11 #b8bb26
-# set $color12 #8ec07c
-# set $color13 #83a598
-# set $color14 #d3869b
-# set $color15 #d65d0e
-# Basic color configuration using the Base16 variables for windows and borders.
-# Property Name         Border   BG       Text     Ind      Child Bor
-client.focused          $color5  $color13 $color0  $color12 #fbf1c7
-client.focused_inactive $color1  $color1  $color5  $color3  $color1
-client.urgent           $color8  $color8  $color0  $color8  $color8
-client.unfocused        $color1  $color0  $color5  $color1  $color1
-client.placeholder      $color0  $color0  $color5  $color0  $color0
-client.background       $color7
+  include ~/.cache/wal/colors-sway
+  # set $color0 #1d2021
+  # set $color1 #3c3836
+  # set $color2 #504945
+  # set $color3 #665c54
+  # set $color4 #bdae93
+  # set $color5 #d5c4a1
+  # set $color6 #ebdbb2
+  # set $color7 #fbf1c7
+  # set $color8 #fb4934
+  # set $color9 #fe8019
+  # set $color10 #fabd2f
+  # set $color11 #b8bb26
+  # set $color12 #8ec07c
+  # set $color13 #83a598
+  # set $color14 #d3869b
+  # set $color15 #d65d0e
+  # Basic color configuration using the Base16 variables for windows and borders.
+  # Property Name         Border   BG       Text     Ind      Child Bor
+  client.focused          $color5  $color13 $color0  $color12 #fbf1c7
+  client.focused_inactive $color1  $color1  $color5  $color3  $color1
+  client.urgent           $color8  $color8  $color0  $color8  $color8
+  client.unfocused        $color1  $color0  $color5  $color1  $color1
+  client.placeholder      $color0  $color0  $color5  $color0  $color0
+  client.background       $color7
 # -----------------------------------------------------
 # Wallpaper
 # -----------------------------------------------------
@@ -209,16 +211,16 @@ output HDMI-A-1 resolution 1920x1080 position 1920,0
 # -----------------------------------------------------
 # Assign workspaces to monitors:
 # -----------------------------------------------------
-workspace 1 output eDP-1
-workspace 2 output eDP-1
-workspace 3 output eDP-1
-workspace 4 output HDMI-A-1
-workspace 5 output HDMI-A-1
-workspace 6 output HDMI-A-1
-workspace 7 output HDMI-A-1
-workspace 8 output HDMI-A-1
-workspace 9 output HDMI-A-1
-workspace 10 output eDP-1
+  workspace 1 output eDP-1
+  workspace 2 output eDP-1
+  workspace 3 output eDP-1
+  workspace 4 output HDMI-A-1
+  workspace 5 output HDMI-A-1
+  workspace 6 output HDMI-A-1
+  workspace 7 output HDMI-A-1
+  workspace 8 output HDMI-A-1
+  workspace 9 output HDMI-A-1
+  workspace 10 output eDP-1
 # -----------------------------------------------------
 # APPLICATIONS TO APPEAR IN SPECIFIC WORKSPACES
 # -----------------------------------------------------
@@ -267,7 +269,7 @@ input type:keyboard {
 # -----------------------------------------------------
     # Start a terminal
     bindsym $mod+Return exec $term
-
+  
     # Kill focused window
     bindsym $mod+q kill
 
@@ -330,9 +332,11 @@ input type:keyboard {
     bindsym $mod+Shift+p exec $menu_drun
     bindsym $mod+Ctrl+p exec $menu_files
     bindsym $mod+Alt+p exec $menu_win
-    # bindsym $mod+X exec $bsearch   
-    # bindsym $mod+X exec $clips     
-    # bindsym $mod+X exec $bbooks    
+    bindsym $mod+Ctrl+c exec $clips
+    bindsym $mod+Ctrl+v exec $clips
+    bindsym $mod+Shift+o exec $bbooks
+    bindsym Ctrl+ALT+o exec $bsearch
+    bindsym Ctrl+ALT+period exec $black
 # -----------------------------------------------------
 # ENVIRONMENT ACTIONS
 # -----------------------------------------------------
@@ -382,6 +386,8 @@ input type:keyboard {
 # -----------------------------------------------------
 # Workspaces:
 # -----------------------------------------------------
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -404,8 +410,6 @@ input type:keyboard {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
 # -----------------------------------------------------
 # Layout stuff:
 # -----------------------------------------------------
@@ -442,103 +446,102 @@ input type:keyboard {
 # -----------------------------------------------------
 # Scratchpads:
 # -----------------------------------------------------
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+u move scratchpad
+# Move the currently focused window to the scratchpad
+  bindsym $mod+Shift+u move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+Alt+u scratchpad show
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+  bindsym $mod+Alt+u scratchpad show
 
-    # Named Scratchpads
-    set $sterm S_term
-    for_window [app_id=$sterm] move scratchpad, scratchpad show, resize set 1300 px 900 px
-    bindsym $mod+Alt+i exec sway-scratch show --app-id $sterm --resize "set 1300 px 900 px" \
-      --exec "$term --class $sterm"
+# Named Scratchpads
+  set $sterm S_term
+  for_window [app_id=$sterm] move scratchpad, scratchpad show, resize set 1300 px 900 px
+  bindsym $mod+Alt+i exec sway-scratch show --app-id $sterm --resize "set 1300 px 900 px" \
+    --exec "$term --class $sterm"
 
-    set $smon S_mon 
-    for_window [app_id=$smon] move scratchpad, scratchpad show, resize set 1200 px 900 px
-    bindsym $mod+Alt+l exec sway-scratch show --app-id $smon --resize "set 1200 px 900 px" \
-      --exec "$term --class $smon -e btop"
+  set $smon S_mon
+  for_window [app_id=$smon] move scratchpad, scratchpad show, resize set 80 ppt 90 ppt
+  bindsym $mod+Alt+l exec sway-scratch show --app-id $smon --resize "set 80 ppt 90 ppt" \
+    --exec "$term --class $smon -e btop"
 
-    set $sfiles S_files 
-    for_window [app_id=$sfiles] move scratchpad, scratchpad show, resize set 90 ppt 90 ppt
-    bindsym $mod+Alt+j exec sway-scratch show --app-id $sfiles --resize "set 90 ppt 90 ppt" \
-      --exec "$term --class $sfiles -e yazi"
+  set $sfiles S_files
+  for_window [app_id=$sfiles] move scratchpad, scratchpad show, resize set 90 ppt 90 ppt
+  bindsym $mod+Alt+j exec sway-scratch show --app-id $sfiles --resize "set 90 ppt 90 ppt" \
+    --exec "$term --class $sfiles -e yazi"
 
-    set $saudio S_audio 
-    for_window [app_id=$saudio] move scratchpad, scratchpad show, resize set 50 ppt 50 ppt
-    bindsym $mod+Alt+x exec sway-scratch show --app-id $saudio --resize "set 50 ppt 50 ppt" \
-      --exec "$term --class $saudio -e wiremix"
+  set $saudio S_audio
+  for_window [app_id=$saudio] move scratchpad, scratchpad show, resize set 50 ppt 50 ppt
+  bindsym $mod+Alt+x exec sway-scratch show --app-id $saudio --resize "set 50 ppt 50 ppt" \
+    --exec "$term --class $saudio -e wiremix"
 
-    set $smoosic S_moosic 
-    for_window [app_id=$smoosic] move scratchpad, scratchpad show, resize set 30 ppt 40 ppt
-    bindsym $mod+Alt+m exec sway-scratch show --app-id $smoosic --resize "set 30 ppt 40 ppt" \
-      --exec "$term --class $smoosic -e pianobar"
+  set $smoosic S_moosic
+  for_window [app_id=$smoosic] move scratchpad, scratchpad show, resize set 30 ppt 40 ppt
+  bindsym $mod+Alt+m exec sway-scratch show --app-id $smoosic --resize "set 30 ppt 40 ppt" \
+    --exec "$term --class $smoosic -e pianobar"
 
-    for_window [class=Vial] move scratchpad, scratchpad show, resize set 1200 px 900 px
-    bindsym $mod+Alt+v exec  sway-scratch show --class Vial --resize "set 1200 px 900 px" \
-      --exec "Vial"
+  for_window [class=Vial] move scratchpad, scratchpad show, resize set 1200 px 900 px
+  bindsym $mod+Alt+v exec sway-scratch show --class Vial --resize "set 1200 px 900 px" \
+    --exec "Vial"
 
-    # set $snotes obsidian
-    for_window [class=obsidian] move scratchpad, scratchpad show, resize set 90 ppt 90 ppt
-    bindsym $mod+Alt+o exec  sway-scratch show --class obsidian --resize "set 90 ppt 90 ppt" \
-      --exec "obsidian"
+  for_window [class=obsidian] move scratchpad, scratchpad show, resize set 1600 px 900 px
+  bindsym $mod+Alt+o exec sway-scratch show --class obsidian --resize "set 1600 px 900 px" \
+    --exec "obsidian"
 # -----------------------------------------------------
 # MEDIA KEYS
 # -----------------------------------------------------
-    bindsym --locked XF86AudioMute exec $volt
-    bindsym --locked XF86AudioLowerVolume exec $vold 
-    bindsym --locked XF86AudioRaiseVolume exec $volu
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-    bindsym --locked XF86MonBrightnessDown exec $brightu
-    bindsym --locked XF86MonBrightnessUp exec $brightd
-    bindsym --locked XF86AudioPlay exec $mpp 
-    bindsym --locked XF86AudioPause exec $mpp
-    bindsym --locked XF86AudioNext exec $mnxt
-    bindsym --locked XF86AudioPrev exec $mprv
-    bindsym --locked XF86AudioStop exec $mstop
-    bindsym XF86Search exec bemenu-run
-    bindsym XF86AudioMedia exec $mnow
-    bindsym $HYPER+M exec $mnow
-    bindsym XF86Calculator exec $my_calc
-    bindsym XF86Tools exec $my_media
-    bindsym XF86ZoomIn exec $brightu
-    bindsym XF86ZoomOut exec $brightd
-    bindsym SHIFT+XF86ZoomIn exec $brightmu
-    bindsym SHIFT+XF86ZoomOut exec $brightmd
-    bindsym XF86KbdBrightnessUp exec $brightu
-    bindsym $MEH+u exec $brightu
-    bindsym XF86KbdBrightnessDown exec $brightd
-    bindsym $MEH+d exec $brightd
-    bindsym Shift+XF86KbdBrightnessUp exec $brightmu
-    bindsym $HYPER+u exec $brightmu
-    bindsym Shift+XF86KbdBrightnessDown exec $brightmd
-    bindsym $HYPER+d exec $brightmd
-    bindsym XF86AppSelect exec $menu_full
-    # bindsym XF86Lock exec $lockscr
+  bindsym --locked XF86AudioMute exec $volt
+  bindsym --locked XF86AudioLowerVolume exec $vold
+  bindsym --locked XF86AudioRaiseVolume exec $volu
+  bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+  bindsym --locked XF86MonBrightnessDown exec $brightu
+  bindsym --locked XF86MonBrightnessUp exec $brightd
+  bindsym --locked XF86AudioPlay exec $mpp 
+  bindsym --locked XF86AudioPause exec $mpp
+  bindsym --locked XF86AudioNext exec $mnxt
+  bindsym --locked XF86AudioPrev exec $mprv
+  bindsym --locked XF86AudioStop exec $mstop
+  bindsym XF86Search exec bemenu-run
+  bindsym XF86AudioMedia exec $mnow
+  bindsym $HYPER+M exec $mnow
+  bindsym XF86Calculator exec $my_calc
+  bindsym XF86Tools exec $my_media
+  bindsym XF86ZoomIn exec $brightu
+  bindsym XF86ZoomOut exec $brightd
+  bindsym SHIFT+XF86ZoomIn exec $brightmu
+  bindsym SHIFT+XF86ZoomOut exec $brightmd
+  bindsym XF86KbdBrightnessUp exec $brightu
+  bindsym $MEH+u exec $brightu
+  bindsym XF86KbdBrightnessDown exec $brightd
+  bindsym $MEH+d exec $brightd
+  bindsym Shift+XF86KbdBrightnessUp exec $brightmu
+  bindsym $HYPER+u exec $brightmu
+  bindsym Shift+XF86KbdBrightnessDown exec $brightmd
+  bindsym $HYPER+d exec $brightmd
+  bindsym XF86AppSelect exec $menu_full
+# bindsym XF86Lock exec $lockscr
 # -----------------------------------------------------
 # Resizing containers:
 # -----------------------------------------------------
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
+  mode "resize" {
+# left will shrink the containers width
+# right will grow the containers width
+# up will shrink the containers height
+# down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
+# Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # Return to default mode
+# Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -554,14 +557,14 @@ bindsym $mod+r mode "resize"
 # Idle configuration
 # Example configuration:
 # -----------------------------------------------------
-exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
-         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
-
+  exec swayidle -w \
+        timeout 600 'swaylock -f -c 000000' \
+        timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        before-sleep 'swaylock -f -c 000000'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
 # -----------------------------------------------------
 # Status Bar:
 # -----------------------------------------------------
@@ -580,6 +583,7 @@ exec swayidle -w \
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
+
 # -----------------------------------------------------
 # Autostart:
 # -----------------------------------------------------
@@ -594,15 +598,15 @@ exec swayidle -w \
 # Setup XDG for screen sharing
 # exec $HOME/.config/.scripts/start-xdg
 
-# Load GTK settings  
+# Load GTK settings
 # exec $HOME/.config/.scripts/start-gtk
 #
-exec dunst
+  exec dunst
 # Using swayidle to start swaylock
-exec swayidle -w
+  exec swayidle -w
 
 # Load cliphist history
-exec wl-paste --watch cliphist store
+  exec wl-paste --watch cliphist store
 
 # Start EMACS Server
 # exec-once = uwsm app -- /usr/bin/emacs --daemon=serve
@@ -611,32 +615,33 @@ exec wl-paste --watch cliphist store
 # exec swww query || uwsm app -- swww-daemon
 
 # Startup the system tray applets:
-exec nm-tray
-exec pasystray
-exec garuda-system-maintenance
-exec blueman-applet
-exec flameshot
-exec firewall-applet
+  exec nm-tray
+  exec pasystray
+  exec garuda-system-maintenance
+  exec blueman-applet
+  exec flameshot
+  exec firewall-applet
 
 # Startup the foot terminal daemon for faster terminal launches
 # exec-once = uwsm app -- foot --server
 
 # Setup Pipewire for OBS and ZOOM
-exec ~/.config/.scripts/ut-obszoom 
+  exec ~/.config/.scripts/ut-obszoom 
 
 # toggle_kmonad
 # exec-once = $HOME/.config/.scripts/toggle_kmonad.sh
 # exec-once = uwsm app -- kmonad $HOME/.config/kmonad/k350.kbd
 
 # set bluelight filter
-exec ~/.config/.scripts/ut-bluelight
+  exec ~/.config/.scripts/ut-bluelight
 # exec-once = wlsunset -t 2000 -T 2300
 # exec-once = wlsunset -t 3000 -T 4000
 
 # Load last wallpaper and waybar with pywal colors
 # exec sleep 1 && $HOME/.config/.scripts/ut-wallpaper --init
-exec ~/.config/.scripts/hypr-barlaunch
+  exec ~/.config/.scripts/hypr-barlaunch
+
 # -----------------------------------------------------
 # Libraries/Included:
 # -----------------------------------------------------
-include /etc/sway/config.d/*
+  include /etc/sway/config.d/*
