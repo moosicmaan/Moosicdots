@@ -1,0 +1,167 @@
+/* vim:fileencoding=utf-8:foldmethod=marker
+*/
+
+/* Define colors */
+@define-color background1 rgba(32, 32, 48, 1);
+@define-color background2 rgba(21, 21, 32, 1);
+@define-color hilight #45475a;
+@define-color window #b4befe;
+@define-color text2 #45475a;
+@define-color text #000000;
+
+/* Reset all styles */
+* {
+  border: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/* Main bar defaults */
+#waybar {
+  background: @background2;
+  padding: 10px 0px;
+  font-family: "JetBrainsMono Nerd Font propo";
+  font-size: 11pt;
+  font-weight: 600;
+  color: @text2;
+}
+
+#waybar button {
+  font-family: "JetBrains Mono Nerd Font propo";
+  font-size: 12pt;
+  font-weight: 600;
+  color: @text;
+}
+
+/* Main bar modules */
+#custom-weather,
+#clock,
+#cpu,
+#memory.swap,
+#memory.ram,
+#submap,
+#tray,
+#window
+{
+  padding-left: 5px;
+  padding-right: 6px;
+  background: @module_bg;
+}
+
+#weather {
+  padding: 0px 8px;
+}
+
+/* Module colors */
+#cpu,
+#memory.ram,
+#memory.swap,
+#disk,
+#mpris
+{
+  color: @text2;
+  /* background: @background1; */
+}
+
+#mpris {
+  padding: 3px 0px 0px 0px;
+  font-size: 10px;
+}
+
+
+#custom-weather,
+#clock {
+  color: @text2;
+  background: @background2;
+}
+
+#tray {
+  font-size: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#window {
+  /* color: @text2; */
+  box-shadow: none;
+  font-style: italic;
+}
+
+/* Workspaces */
+/* Default workspace settings */
+#workspaces {
+  padding-left: 20px;
+  padding-right: 4px;
+  margin-top: -6px;
+  margin-bottom: -6px;
+  background-image: linear-gradient(
+    -243.435deg,
+    @background2 17px,
+    transparent 21px,
+    transparent calc(100% -22px),
+    transparent calc(100% - 18px)
+  );
+}
+
+
+#workspaces button {
+  color: #45475a;
+  background: transparent;
+  border: 1.5px solid transparent;
+  padding-left: 14pt;
+  padding-right: 14pt;
+  transition: all 0.25s ease;
+  padding-right: 9px;
+  padding-left: 9px;
+  font-style: italic;
+  margin-left: -17px;
+  background-image: linear-gradient(
+    90deg,
+    transparent 25%,
+    @background2 25%,
+    @background2 75%,
+    transparent 75%
+  );
+}
+
+/* Focused workspace */
+#workspaces button.visible {
+  color: @text;
+  padding-left: 14pt;
+  padding-right: 14pt;
+  background-image: linear-gradient(
+    90deg,
+    transparent 25%,
+    @hilight 25%,
+    @hilight 75%,
+    transparent 75%
+  );
+}
+
+/* Focused workspace & monitor */
+#workspaces button.active {
+  color: @window;
+  background-image: linear-gradient(
+    90deg,
+    transparent 24%,
+    @background1 28%,
+    @background1 73%,
+    transparent 76%
+  );
+}
+
+/* Style when cursor is on the button */
+#workspaces button:hover {
+  color: @window;
+}
+
+tooltip {
+  background: @background;
+  border: 3px solid @hilight;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: "JetBrains Mono Nerd Font";
+}

@@ -118,34 +118,41 @@ alias jam="~/.config/.scripts/rofi-beats"
 # search/install/run blackarch packages - cli
 alias black="~/.config/.scripts/ut-blackmenu"
 
+# add zoxide, a better cd
+eval "$(zoxide init bash)"
+alias cd='__zoxide_z'
+alias cdi='__zoxide_zi'
+
+# Enable bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  source /usr/share/bash-completion/bash_completion
+fi
+
 function yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
 
-alias ff='fzf -m --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-#alias ft 'fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
 alias nf='nvim $(ff)'
 # alias np='nvim $(ft)'
 
 # bind \co yasi cd
-bind '"/C-y":yy'
-bind '"/C-f":ff'
-bind '"/C-j":nf'
-#bind -x '"/C-p":np'
+# bind '"<key>": <command>'
+bind -x '"\C-A-y":yy'
+bind -x '"\C-A-n":nf'
+bind -x '"\C-l":clear'
+bind -x '"\C-A-l":clear'
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
 export FZF_CTRL_T_OPTS="-m \
---height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -162,7 +169,7 @@ export FZF_CTRL_T_OPTS="-m \
 --marker '*'"
 
 export FZF_CTRL_R_OPTS="--height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --preview 'echo {}' \
@@ -177,7 +184,7 @@ export FZF_CTRL_R_OPTS="--height 85% \
 --marker '*'"
 
 export FZF_ALT_C_OPTS="--height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -192,8 +199,7 @@ export FZF_ALT_C_OPTS="--height 85% \
 --marker '*'"
 
 export FZF_DEFAULT_OPTS="-m \
---height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -208,30 +214,21 @@ export FZF_DEFAULT_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-man_fzf() {
-  if [ -z "$*" ]; then
-    man -k "" | sed 's/ .*//' | fzf --preview="man -P cat {}"
-  else
-    man -k "$@" | sed 's/ .*//' | fzf --query="$*" --preview="man -P cat {}"
-  fi
-}
-
-manf() {
-  man_fzf "$@" | xargs man
-}
-
-# add zoxide, a better cd
-eval "$(zoxide init bash)"
-alias cd='__zoxide_z'
-alias cdi='__zoxide_zi'
-
-# Enable bash completion
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  source /usr/share/bash-completion/bash_completion
-fi
+export FZF_TMUX_OPTS="-m \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
+--header '<TAB> for MULTI' \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
 # -----------------------------------------------
 # <--- JDB
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-. "$HOME/.cargo/env"
-export PATH="$HOME/bin:$PATH"

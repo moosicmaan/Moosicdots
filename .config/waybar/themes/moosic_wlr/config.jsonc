@@ -17,7 +17,6 @@
     "modules-left": [
       "group/appo",
       "sway/window",
-      "sway/scratchpad",
       "sway/mode"
       // "dwl/window"
       // "hyprland/window",
@@ -26,6 +25,7 @@
     "modules-center": [
       "hyprland/workspaces",
       "sway/workspaces",
+      "sway/scratchpad",
       "dwl/tags"
     ],
     "modules-right": [
@@ -53,7 +53,6 @@
     "modules-left": [
       "group/appo",
       "sway/window",
-      "sway/scratchpad",
       "sway/mode"
       // "dwl/window"
       // "hyprland/window",
@@ -62,6 +61,7 @@
     "modules-center": [
       "hyprland/workspaces",
       "sway/workspaces",
+      "sway/scratchpad",
       "dwl/tags"
     ],
     "modules-right": [

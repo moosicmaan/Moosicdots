@@ -46,7 +46,7 @@ window {
 mainbox {
     spacing:              25px;
     padding:              40px;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -55,18 +55,16 @@ inputbar {
   children:               [ "prompt", "entry" ];
 }
 prompt {
-  padding:                0px;
-  border:                 3px solid;
-  border-color:           gray/75%;
+  border:                 2px solid;
+  border-color:           gray/25%;
 }
 entry {
+  padding:                0px 0px 0px 10px;
   expand:                 false;
   width:                  100%;
   background-color:       @color9;
   text-color:             white;
-  placeholder:            "Search...";
-  vertical-align:         0.5;
-  horizontal-align:       0.5;
+  placeholder:            "...";
 }
 
 /*****----- Listview -----*****/
@@ -81,13 +79,13 @@ listview {
   fixed-height:           true;
   fixed-columns:          true;
   border:                 0px solid 0px 0px ;
-  spacing:                10px;
+  spacing:                13px;
   background-color:       transparent;
 }
 /*****----- Elements -----*****/
 element {
     enabled:              true;
-    spacing:              10px;
+    spacing:              0px;
     margin:               0px;
     padding:              0px;
     border:               0px;
@@ -98,6 +96,7 @@ element {
 }
 element {
   padding:                0px 0px 0px 4px;
+  children:               [ "element-icon", "element-text" ];
 }
 element alternate.normal,
 element normal.normal {
@@ -108,7 +107,25 @@ element selected.normal {
   background-color:       @color15;
   text-color:             @color0;
 }
+element-text {
+  vertical-align:         0.5;
+}
 element-icon {
     background-color:     transparent;
-    size:                 28px;
+  size:                   14px;
+}
+
+/*****----- Message -----*****/
+message {
+  border:                 1px solid;
+  padding:                1px;
+  text-color:             #FF9030;
+}
+error-message {
+  background-color:       #22272C;
+  text-color:             white;
+}
+textbox {
+  background-color:       @color5;
+  text-color:             white;
 }

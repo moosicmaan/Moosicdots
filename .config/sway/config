@@ -300,6 +300,19 @@ bindsym Ctrl+Alt+t exec $my_mux
 bindsym Ctrl+Alt+m exec $my_beats
 
 # -----------------------------------------------------
+# LAUNCHERS AND MENUS
+# -----------------------------------------------------
+# bindsym $mod+p exec $menu_run
+bindsym $mod+Shift+p exec $menu_drun
+bindsym $mod+Ctrl+p exec $menu_files
+bindsym $mod+Alt+p exec $menu_win
+bindsym $mod+Ctrl+c exec $clips
+bindsym $mod+Ctrl+v exec $clips
+bindsym $mod+Shift+o exec $bbooks
+bindsym Ctrl+ALT+o exec $bsearch
+bindsym Ctrl+ALT+period exec $black
+
+# -----------------------------------------------------
 # FUNCTION KEYS
 # -----------------------------------------------------
 bindsym $MEH+F1  exec $my_brows
@@ -331,19 +344,6 @@ bindsym $mod+F11 exec $menu_drun
 bindsym $mod+F12 exec $menu_full
 
 bindsym F11      fullscreen toggle
-
-# -----------------------------------------------------
-# LAUNCHERS AND MENUS
-# -----------------------------------------------------
-# bindsym $mod+p exec $menu_run
-bindsym $mod+Shift+p exec $menu_drun
-bindsym $mod+Ctrl+p exec $menu_files
-bindsym $mod+Alt+p exec $menu_win
-bindsym $mod+Ctrl+c exec $clips
-bindsym $mod+Ctrl+v exec $clips
-bindsym $mod+Shift+o exec $bbooks
-bindsym Ctrl+ALT+o exec $bsearch
-bindsym Ctrl+ALT+period exec $black
 
 # -----------------------------------------------------
 # ENVIRONMENT ACTIONS

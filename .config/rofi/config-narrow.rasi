@@ -46,7 +46,7 @@ window {
 mainbox {
     spacing:              25px;
     padding:              40px;
-    children:                    [ "inputbar", "listview" ];
+    children:             [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -57,7 +57,7 @@ inputbar {
 prompt {
   padding:                0px;
   border:                 3px solid;
-  border-color:           gray/75%;
+  border-color:           gray/25%;
 }
 entry {
   expand:                 false;
@@ -65,8 +65,6 @@ entry {
   background-color:       @color9;
   text-color:             white;
   placeholder:            "Search...";
-  vertical-align:         0.5;
-  horizontal-align:       0.5;
 }
 
 /*****----- Listview -----*****/
@@ -98,6 +96,8 @@ element {
 }
 element {
   padding:                0px 0px 0px 4px;
+  // children:               [ "element-icon", "element-text" ];
+  children:               [ "element-text" ];
 }
 element alternate.normal,
 element normal.normal {
@@ -108,7 +108,10 @@ element selected.normal {
   background-color:       @color15;
   text-color:             @color0;
 }
-element-icon {
-    background-color:     transparent;
-    size:                 28px;
+element-text {
+  horizontal-align:       0.5;
 }
+// element-icon {
+//     background-color:     transparent;
+//     size:                 14px;
+// }

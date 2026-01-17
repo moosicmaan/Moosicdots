@@ -65,7 +65,7 @@ sCHOICES="$(
 )"
 
 # Show in rofi
-sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -p "Add Current Song To or Manage Playlists:")
+sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -mesg "Add Current Song To or Manage Playlists:")
 
 # Handle selection
 case "$sCHOICE" in

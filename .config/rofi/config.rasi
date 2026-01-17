@@ -55,18 +55,16 @@ inputbar {
   children:               [ "prompt", "entry" ];
 }
 prompt {
-  padding:                0px;
-  border:                 3px solid;
+  border:                 2px solid;
   border-color:           gray/75%;
 }
 entry {
+  padding:                0px 0px 0px 10px;
   expand:                 false;
   width:                  360px;
   background-color:       @color9;
   text-color:             white;
-  placeholder:            "Search...";
-  vertical-align:         0.5;
-  horizontal-align:       0.5;
+  placeholder:            "...";
 }
 
 /*****----- Listview -----*****/
@@ -99,6 +97,7 @@ element {
 }
 element {
   padding:                0px 0px 0px 4px;
+  children:               [ "element-text", "element-icon" ];
 }
 element alternate.normal,
 element normal.normal {
@@ -112,6 +111,9 @@ element selected.normal {
 element-icon {
     background-color:     transparent;
     size:                 28px;
+}
+element-text {
+  vertical-align:         0.5;
 }
 
 /*****----- Mode Switcher -----*****/
@@ -132,21 +134,17 @@ button selected {
 }
 
 /*****----- Message -----*****/
-error-message {
-    padding:              20px;
-    background-color:     #22272C;
-    text-color:           white;
-}
 message {
+   border:                1px solid 0px 0px 0px ;
     padding:              0px;
     background-color:     inherit;
     text-color:           #FF9030;
 }
+error-message {
+    background-color:     #22272C;
+    text-color:           white;
+}
 textbox {
-    padding:              0px;
-    border-radius:        0px;
     background-color:     @color1;
     text-color:           white;
-    vertical-align:       0.5;
-    horizontal-align:     0.0;
 }

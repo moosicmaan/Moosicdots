@@ -352,18 +352,18 @@ alias nf='nvim $(ff)'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# search man pages with fzf
-man_fzf() {
-  if [ -z "$*" ]; then
-    man -k "" | sed 's/ .*//' | fzf --preview="man -P cat {}"
-  else
-    man -k "$@" | sed 's/ .*//' | fzf --query="$*" --preview="man -P cat {}"
-  fi
-}
-
-manf() {
-  man_fzf "$@" | xargs man
-}
+# # search man pages with fzf
+# man_fzf() {
+#   if [ -z "$*" ]; then
+#     man -k "" | sed 's/ .*//' | fzf --preview="man -P cat {}"
+#   else
+#     man -k "$@" | sed 's/ .*//' | fzf --query="$*" --preview="man -P cat {}"
+#   fi
+# }
+#
+# manf() {
+#   man_fzf "$@" | xargs man
+# }
 
 # --- setup fzf theme ---
 # fg="#CBE0F0"

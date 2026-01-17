@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "type": "dock",
+    "layer": "bottom",
+    "exclusive": true,
+    "position": "top",
+    "name": "main",
+    "height": 0,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "tray",
+      "dwl/tags",
+      "sway/mode",
+      "sway/workspaces",
+      "sway/scratchpad",
+      "sway/window",
+      "hyprland/workspaces",
+      "hyprland/submap",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "cpu",
+      "memory#ram",
+      "memory#swap"
+    ],
+    "modules-right": [
+      "battery",
+      "custom/weather",
+      "clock#simple"
+    ]
+  },
+  {
+    // SECONDARY BAR //
+    "id": 2,
+    "type": "dock",
+    "layer": "bottom",
+    "exclusive": true,
+    "position": "bottom",
+    "output": "HDMI-A-1",
+    "name": "secondary",
+    "height": 0,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "tray",
+      "dwl/tags",
+      "sway/mode",
+      "sway/workspaces",
+      "sway/scratchpad",
+      "sway/window",
+      "hyprland/workspaces",
+      "hyprland/submap",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "mpris"
+    ],
+    "modules-right": [
+      "clock#simple"
+    ]
+  }
+]

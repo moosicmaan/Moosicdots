@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Utility to speed up searching manpages.  It will take
+# into account all possible man page directories, and
+# open the appopriate one according to the user's chice
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+# manf - fuzzy find and open man pages (with section support)
+
+query="$*"
+
+# Run apropos
+man -k "${query:-.}" 2>/dev/null |
+  sed -E 's/^([^ ]+) \(([^)]+)\).*/\1\t\2/' |
+  fzf \
+    --prompt="man> " \
+    --with-nth=1,2 \
+    --preview='man {2} {1} | col -bx' |
+  {
+    read -r name section || exit 0
+    exec man "$section" "$name"
+  }
+
+# Adding the description column
+# #!/usr/bin/env bash
+#
+# # manf - fuzzy find and open man pages (with section + description)
+#
+# query="$*"
+#
+# man -k "${query:-.}" 2>/dev/null \
+# | sed -E 's/^([^ ]+) \(([^)]+)\) - (.*)/\1\t\2\t\3/' \
+# | fzf \
+#     --prompt="man> " \
+#     --with-nth=1,2,3 \
+#     --delimiter=$'\t' \
+#     --preview='man {2} {1} | col -bx' \
+# | {
+#     IFS=$'\t' read -r name section desc || exit 0
+#     exec man "$section" "$name"
+# }

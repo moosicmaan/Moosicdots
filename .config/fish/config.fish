@@ -11,14 +11,16 @@
 # Hide welcome message & ensure we are still reporting bash as shell
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# Use bat for man pages
 set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -xU MANROFFOPT -c
+
+# Being explicit about active shell
 set -x SHELL /usr/bin/bash
 
-## Export variable need for qt-theme
-if type qtile >>/dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME qt6ct
-end
+# Hint to exit PKGBUILD review in Paru
+set -x PARU_PAGER "less -P \"Press 'q' to exit the PKGBUILD review.\""
 
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
@@ -37,12 +39,12 @@ if test -d ~/.local/bin
     end
 end
 
-# # Add depot_tools to PATH
-# if test -d ~/Applications/depot_tools
-#     if not contains -- ~/Applications/depot_tools $PATH
-#         set -p PATH ~/Applications/depot_tools
-#     end
-# end
+# Add depot_tools to PATH
+if test -d ~/Applications/depot_tools
+    if not contains -- ~/Applications/depot_tools $PATH
+        set -p PATH ~/Applications/depot_tools
+    end
+end
 
 # -----------------------------------------------------
 # PROMPT
@@ -153,6 +155,9 @@ end
 function cleanup
     while pacman -Qdtq
         sudo pacman -R (pacman -Qdtq)
+        if test "$status" -eq 1
+            break
+        end
     end
 end
 
@@ -168,6 +173,7 @@ alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show o
 
 # Replace some more things with better alternatives
 abbr cat 'bat --style header,snip,changes'
+
 if not test -x /usr/bin/yay; and test -x /usr/bin/paru
     alias yay paru
 end
@@ -224,6 +230,8 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # -------------------------------------------------------------------------------
 # MY ALIASES AND ENVIRONMENT
 # -------------------------------------------------------------------------------
+#
+# Currretly doing this through importing wal cache files into configs
 # set colortheme to current wallpaper in a wayland session
 # if status is-interactive
 #     if test -n "$WAYLAND_DISPLAY"
@@ -236,42 +244,51 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 #     end
 # end
 
+# Making sure sudoedit from term is done with (n)vim 
 alias suedit "VISUAL= sudoedit"
+
 alias vi vim
+
 # alias vim 'kitty @ set-spacing padding=0 && nvim'
 # alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
-alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
-alias ec "emacsclient -c -a 'emacs' &"
-# play local music and net radio
-alias jam rofi-beats
-# search/install/run blackarch packages - cli
-alias black "$HOME/.config/.scripts/ut-blackmenu"
+
+alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
+
 # add emacs to the path
 fish_add_path /home/moosicmaan/.config/emacs/bin
+alias ec "emacsclient -c -a 'emacs' &"
+
+# play local music and net radio
+alias jam rofi-beats
+
+# search/install/run blackarch packages - cli
+alias black "$HOME/.config/.scripts/ut-blackmenu"
 
 # add the scripts folder to the path
 set -x PATH $HOME/.config/.scripts $PATH
 
-alias ff='fzf -m --tmux="center,75%,75%" --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-# alias vial "~/Downloads/Vial*.AppImage"
+# used in functions below - basic fzf search
+alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 
 # -------------------------------------------------------------------------------
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------
+
 # set vi mode
 fish_vi_key_bindings
 
+# KEYBINDINGS
 bind --mode insert ctrl-alt-y yy
-bind --mode insert ctrl-f ff
 bind --mode insert ctrl-alt-n nf
+# bind --mode insert ctrl-l clear
+bind --mode insert ctrl-alt-l 'echo "It is just C-l..."'
 
 # change the working directory using yazi
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
         builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
@@ -288,26 +305,6 @@ alias cd=__zoxide_z
 abbr --erase cdi &>/dev/null
 alias cdi=__zoxide_zi
 
-# search man pages with fzf
-function man_fzf
-    if set -q argv[1]
-        man -k $argv | sed 's/ .*//' | fzf --query="$argv" --preview="man {}"
-    else
-        man -k "" | sed 's/ .*//' | fzf --preview="man {}"
-    end
-end
-
-# search pages with fzf
-function manf
-    man_fzf $argv | xargs man
-end
-
-# bun
-# All-in-one JavaScript runtime built for speed, with bundler, transpiler, test runner,
-# and package manager. Includes bunx, shell completions and support for baseline CPUs
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
 # -------------------------------------------------------------------------------
 # FZF CONFIG
 # -------------------------------------------------------------------------------
@@ -315,8 +312,7 @@ set --export PATH $BUN_INSTALL/bin $PATH
 fzf --fish | source
 
 export FZF_CTRL_T_OPTS="-m \
---height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -324,7 +320,7 @@ export FZF_CTRL_T_OPTS="-m \
 --border-label '╢ FZF Find ╟' \
 --preview 'bat -n --color=always {}' \
 --info hidden \
---header '<TAB> for MULTI' \
+--header ' <TAB > for MULTI' \
 --color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
 --walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
 --preview-label ' ~ Preview ~ ' \
@@ -332,8 +328,8 @@ export FZF_CTRL_T_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-export FZF_CTRL_R_OPTS="--height 85% \
---tmux center,75%,75% \
+export FZF_CTRL_R_OPTS="-m \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --preview 'echo {}' \
@@ -347,8 +343,8 @@ export FZF_CTRL_R_OPTS="--height 85% \
 --pointer '→' \
 --marker '*'"
 
-export FZF_ALT_C_OPTS="--height 85% \
---tmux center,75%,75% \
+export FZF_ALT_C_OPTS="-m \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -363,8 +359,7 @@ export FZF_ALT_C_OPTS="--height 85% \
 --marker '*'"
 
 export FZF_DEFAULT_OPTS="-m \
---height 85% \
---tmux center,75%,75% \
+--tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
 --border rounded \
@@ -373,12 +368,27 @@ export FZF_DEFAULT_OPTS="-m \
 --preview 'bat -n --color=always {}' \
 --info hidden \
 --color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
---header '<TAB> for MULTI' \
+--header ' <TAB > for MULTI' \
 --preview-label ' ~ Preview ~ ' \
 --prompt 'FIND ▶ ' \
 --pointer '→' \
 --marker '*'"
 
+export FZF_TMUX_OPTS="-m \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
+--header ' <TAB > for MULTI' \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
 # -------------------------------------------------------------------------------
 # <--- JDB
 # ===============================================================================

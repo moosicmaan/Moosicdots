@@ -41,7 +41,7 @@ return {
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
       -- colorscheme = "industry",
-      colorscheme = "ron",
+      colorscheme = "koehler",
     },
   },
   -- Other theme plugins

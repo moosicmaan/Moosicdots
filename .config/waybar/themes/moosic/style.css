@@ -154,10 +154,10 @@ window#waybar.empty #window {
 tooltip {
   background-color: @tooltipbackground;
   opacity: 0.95;
-  font-size: 20px;
+  font-size: 14px;
 }
 tooltip label {
-  font-size: 22px;
+  font-size: 19px;
   color: @tooltiptext;
 }
 
@@ -375,6 +375,9 @@ tooltip label {
 #user {
   color: @textcolor2;
   font-size: 3px;
+}
+#scratchpad {
+  padding: 0px 1px;
 }
 
 /* -----------------------------------------------------
