@@ -13,11 +13,10 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "tray",
       "dwl/tags",
       "sway/mode",
-      "sway/workspaces",
       "sway/scratchpad",
+      "sway/workspaces",
       "sway/window",
       "hyprland/workspaces",
       "hyprland/submap",
@@ -26,10 +25,11 @@
     "modules-center": [
       "cpu",
       "memory#ram",
-      "memory#swap"
+      "memory#swap",
+      "battery"
     ],
     "modules-right": [
-      "battery",
+      "tray",
       "custom/weather",
       "clock#simple"
     ]
@@ -49,11 +49,10 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "tray",
       "dwl/tags",
       "sway/mode",
-      "sway/workspaces",
       "sway/scratchpad",
+      "sway/workspaces",
       "sway/window",
       "hyprland/workspaces",
       "hyprland/submap",
@@ -63,6 +62,7 @@
       "mpris"
     ],
     "modules-right": [
+      "pulseaudio",
       "clock#simple"
     ]
   }

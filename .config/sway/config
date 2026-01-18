@@ -13,16 +13,18 @@
 # Variables
 # -----------------------------------------------------
 # =====================================================
-
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term kitty
+
 # Your preferred application launcher
 # set $menu pkill wmenu-run || wmenu-run
 set $menu pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '{cmd}'
@@ -90,9 +92,6 @@ set $menu_files   pkill rofi || rofi -config $my_config/rofi/config.rasi -show f
 # ENVIRONMENT ACTIONS
 # -----------------------------------------------------
 set $bartog       pkill waybar || $my_scripts/hypr-barlaunch
-set $zoomscrn     pypr zoom
-set $zoomscrnu    pypr zoom ++0.5
-set $zoomscrnd    pypr zoom --0.5
 set $wallr        $my_scripts/ut-wallpaper --random
 set $barsel       $my_scripts/hypr-barswitch
 set $walls        $my_scripts/ut-wallpaper --select
@@ -110,6 +109,9 @@ set $mstop        $my_scripts/media-ctrl --stop
 set $mnxt         $my_scripts/media-ctrl --nxt
 set $mprv         $my_scripts/media-ctrl --prv
 set $mnow         $my_scripts/media-ctrl --show
+set $micup        $my_scripts/media-vol --mic-inc
+set $micdwn       $my_scripts/media-vol --mic-dec
+set $mictog       $my_scripts/media-vol --toggle-mic
 set $brightu      $my_scripts/ut-monbrightness --inc
 set $brightd      $my_scripts/ut-monbrightness --dec
 set $brightmu     $my_scripts/ut-exmon-brightness --inc
@@ -127,7 +129,7 @@ floating_maximum_size   1800 x 900
 floating_minimum_size   100 x 50
 default_orientation     auto
 workspace_layout        default
-exec_always autotiling --output HDMI-A-1             # make sway do master/stack like dwm, but only on the external monitor
+# exec_always autotiling --output HDMI-A-1             # make sway do master/stack like dwm, but only on the external monitor
 
 # -----------------------------------------------------
 # Windows:
@@ -268,7 +270,6 @@ input type:keyboard {
 # Key bindings:
 # -----------------------------------------------------
 # =====================================================
-#
 # Start a terminal
 bindsym $mod+Return exec $term
 
@@ -368,7 +369,7 @@ bindsym $mod+u border toggle
 bindsym $mod+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+q exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym Mod1+Ctrl+Delete exec wlogout
 
 # -----------------------------------------------------
@@ -404,6 +405,7 @@ bindsym $mod+comma focus output left
 # -----------------------------------------------------
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
+
 # Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -415,6 +417,7 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -455,8 +458,6 @@ bindsym $mod+f floating toggle
 
 # Make the current focus fullscreen
 bindsym $mod+Shift+f fullscreen toggle
-
-# PLAYGROUND:
 
 # -----------------------------------------------------
 # Scratchpads:
@@ -511,7 +512,10 @@ bindsym $mod+Alt+o exec sway-scratch show --class obsidian --resize "set 1600 px
 bindsym --locked XF86AudioMute exec $volt
 bindsym --locked XF86AudioLowerVolume exec $vold
 bindsym --locked XF86AudioRaiseVolume exec $volu
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMicMute exec $mictog
+bindsym --locked $HYPER+m exec $micdwn
+bindsym --locked $HYPER+comma exec $micup
+bindsym --locked $HYPER+period exec $mictog
 bindsym --locked XF86MonBrightnessDown exec $brightu
 bindsym --locked XF86MonBrightnessUp exec $brightd
 bindsym --locked XF86AudioPlay exec $mpp 
@@ -521,7 +525,7 @@ bindsym --locked XF86AudioPrev exec $mprv
 bindsym --locked XF86AudioStop exec $mstop
 bindsym XF86Search exec bemenu-run
 bindsym XF86AudioMedia exec $mnow
-bindsym $HYPER+M exec $mnow
+bindsym $HYPER+u exec $mnow
 bindsym XF86Calculator exec $my_calc
 bindsym XF86Tools exec $my_media
 bindsym XF86ZoomIn exec $brightu
@@ -529,13 +533,13 @@ bindsym XF86ZoomOut exec $brightd
 bindsym SHIFT+XF86ZoomIn exec $brightmu
 bindsym SHIFT+XF86ZoomOut exec $brightmd
 bindsym XF86KbdBrightnessUp exec $brightu
-bindsym $MEH+u exec $brightu
+bindsym $MEH+up exec $brightu
 bindsym XF86KbdBrightnessDown exec $brightd
-bindsym $MEH+d exec $brightd
+bindsym $MEH+down exec $brightd
 bindsym Shift+XF86KbdBrightnessUp exec $brightmu
-bindsym $HYPER+u exec $brightmu
+bindsym $HYPER+up exec $brightmu
 bindsym Shift+XF86KbdBrightnessDown exec $brightmd
-bindsym $HYPER+d exec $brightmd
+bindsym $HYPER+down exec $brightmd
 bindsym XF86AppSelect exec $menu_full
 # bindsym XF86Lock exec $lockscr
 
@@ -602,63 +606,6 @@ exec swayidle -w \
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
-
-# -----------------------------------------------------
-# Autostart:
-# -----------------------------------------------------
-# --> generally not needed when using uwsm - should all be taken care of by SystemD services <--
-# Start Polkit
-# exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec /usr/lib/polkit-kde-authentication-agent-1
-
-# added to make sure dolphin plays nice and opens files with the right program
-# env = XDG_MENU_PREFIX,arch-
-
-# Setup XDG for screen sharing
-# exec $HOME/.config/.scripts/start-xdg
-
-# Load GTK settings
-# exec $HOME/.config/.scripts/start-gtk
-#
-exec dunst
-# Using swayidle to start swaylock
-exec swayidle -w
-
-# Load cliphist history
-exec wl-paste --watch cliphist store
-
-# Start EMACS Server
-# exec-once = uwsm app -- /usr/bin/emacs --daemon=serve
-
-# # Initialize swww
-# exec swww query || uwsm app -- swww-daemon
-
-# Startup the system tray applets:
-exec nm-tray
-exec pasystray
-exec garuda-system-maintenance
-exec blueman-applet
-exec flameshot
-exec firewall-applet
-
-# Startup the foot terminal daemon for faster terminal launches
-# exec-once = uwsm app -- foot --server
-
-# Setup Pipewire for OBS and ZOOM
-exec ~/.config/.scripts/ut-obszoom
-
-# toggle_kmonad
-# exec-once = $HOME/.config/.scripts/toggle_kmonad.sh
-# exec-once = uwsm app -- kmonad $HOME/.config/kmonad/k350.kbd
-
-# set bluelight filter
-exec ~/.config/.scripts/ut-bluelight
-# exec-once = wlsunset -t 2000 -T 2300
-# exec-once = wlsunset -t 3000 -T 4000
-
-# Load last wallpaper and waybar with pywal colors
-# exec sleep 1 && $HOME/.config/.scripts/ut-wallpaper --init
-exec ~/.config/.scripts/hypr-barlaunch
 
 # -----------------------------------------------------
 # Libraries/Included:

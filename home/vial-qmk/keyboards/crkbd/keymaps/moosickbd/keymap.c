@@ -1,11 +1,16 @@
 #include QMK_KEYBOARD_H
 
-
 #define MEHT_R  MEH_T(KC_R)
 #define MEHT_U  MEH_T(KC_U)
 #define MEH_D   MEH(KC_D)
 #define MEH_U   MEH(KC_U)
 #define OMEH    OSM(MOD_MEH)
+#define MEH_UP  MEH(KC_UP)
+#define MEH_DWN MEH(KC_DOWN)
+#define HYPR_UP HYPR(KC_UP)
+#define HYPR_DN HYPR(KC_DOWN)
+#define HYPR_dt HYPR(KC_DOT)
+#define HYPR_co HYPR(KC_COMMA)
 #define HYPR_U  HYPR(KC_U)
 #define HYPR_M  HYPR(KC_M)
 #define HYPR_I  HYPR(KC_I)
@@ -21,9 +26,9 @@
 #define L2_BSPC LT(2,KC_BSPC)
 #define L3_E    LT(3,KC_E)
 #define L3_I    LT(3,KC_I)
-#define L3_HOME LT(3,KC_HOME) 
+#define L3_HOME LT(3,KC_HOME)
 #define L4_QUOT LT(4,KC_QUOT)
-#define L4_DEL  LT(4,KC_DEL) 
+#define L4_DEL  LT(4,KC_DEL)
 #define L5_X    LT(5,KC_X)
 #define L5_END  LT(5,KC_END)
 #define LG_D    LGUI_T(KC_D)
@@ -43,7 +48,7 @@
 #define LCA_F1  LCA(KC_F1)
 #define LCA_DEL LCA(KC_DEL)
 #define LCA_G   LCA(KC_G)
-#define LS_A    LSFT_T(KC_A) 
+#define LS_A    LSFT_T(KC_A)
 #define LS_1    LSFT(KC_1)
 #define LS_2    LSFT(KC_2)
 #define LS_3    LSFT(KC_3)
@@ -76,7 +81,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3_ex2(
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-      KC_TAB,   L1_Q,     L2_W,    L3_E,  MEHT_R, HYPRT_T, KC_PGUP,    KC_WH_U, HYPRT_Y, MEHT_U,  L3_I,    L2_O,    L1_P,    KC_BSLS,
+      KC_TAB,   L1_Q,     L2_W,    L3_E,  MEHT_R, HYPRT_T, KC_PGUP,    KC_WH_U, HYPRT_Y, MEHT_U,  L3_I,    L2_O,    L1_P,    KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
       KC_ESC,    LS_A,    LC_S,    LG_D,    LA_F,    KC_G, KC_PGDN,    KC_WH_D, KC_H,    KC_J,    KC_K,    KC_L,    RS_SCLN, L4_QUOT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -112,9 +117,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3_ex2(
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     KC_TRNS,  KC_TAB,  KC_ESC, XXXXXXX,    LC_R, XXXXXXX, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10,  LCA_F5,
+     KC_TRNS,  KC_TAB,  KC_ESC, XXXXXXX,    LC_R, XXXXXXX, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     KC_TRNS,    LC_A,   LC_LS, KC_LGUI, KC_FIND, LCA_G  , KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  LCA_F1,
+     KC_TRNS,    LC_A, KC_LCTRL, KC_LGUI, KC_LALT,  LCA_G, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_PSCR,    LC_Z,    LC_X,    LC_C,    LC_V, XXXXXXX,                      XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F12,  LCA_DEL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -128,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_TRNS,    LS_2,    LS_3,    LS_9,    LS_0, KC_MINS, KC_TRNS,    KC_TRNS, KC_SLSH, LS_BSLS, KC_BSLS, KC_EQL,  KC_PAST, KC_PSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     KC_LSFT,  LS_GRV,    LS_5, LS_LBRC, LS_RBRC, LS_MINS,                      LS_SLSH, LS_6,    LS_COMM, LS_DOT,  KC_PDOT, KC_PEQL,
+     KC_LSFT,  LS_GRV,    LS_5, LS_LBRC, LS_RBRC, LS_MINS,                      LS_6,    LS_4,    LS_COMM, LS_DOT,  KC_PDOT, KC_PEQL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                         KC_TRNS, KC_TRNS,  KC_BSPC,    KC_TRNS,  KC_TRNS, KC_TRNS
   //                                    |--------------------------|  |--------------------------|
@@ -136,11 +141,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [5] = LAYOUT_split_3x6_3_ex2(
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RM_TOGG,   MEH_U,    HYPR_U,  KC_MSEL, HYPR_M,  HYPR_I,  KC_MUTE, KC_MPLY, KC_CALC,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RM_TOGG,  MEH_UP,    HYPR_UP,  KC_MSEL, HYPR_U,  HYPR_I,  KC_MUTE, KC_MPLY, KC_CALC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,   RM_ON,   MEH_D,    HYPR_D,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MSTP, KC_EJCT,
+     RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,   RM_ON,  MEH_DN,    HYPR_DN,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MSTP, KC_EJCT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     RM_SPDD, RM_VALD, RM_SATD, RM_HUED, RM_PREV,  RM_OFF,                      KC_MRWD, XXXXXXX, XXXXXXX, KC_MFFD, XXXXXXX, TG(6),
+     RM_SPDD, RM_VALD, RM_SATD, RM_HUED, RM_PREV,  RM_OFF,                      XXXXXXX, HYPR_M,  HYPR_co, HYPR_dt, XXXXXXX, TG(6),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                         KC_TRNS, KC_TRNS,  KC_BSPC,    KC_TRNS,  KC_TRNS, KC_TRNS
   //                                    |--------------------------|  |--------------------------|
