@@ -916,24 +916,26 @@
     "exec": "notmuch count tag:flagged OR tag:inbox AND NOT tag:killed"
   },
   "network": {
-    "format": " {ifname}",
-    "format-wifi": "   {signalStrength}%",
-    "format-ethernet": " 󰈀 {ifname}",
-    "format-alt": " {ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": " ⚠ Disabled",
-    "format-linked": " {ifname} (No IP)",
+    "format": "{ifname}",
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "⚠ Disabled",
+    "format-linked": "{ifname} (No IP)",
     "family": "ipv4",
-    "tooltip-format": "󰈀  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "tooltip-format-ethernet": "󰈀  {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format": "󰈀 {ifname} via {gwaddri}",
+    "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "⚠ Disconnected",
     "max-length": 50,
-    "on-click-right": "nmtui-connect"
+    // "on-click-right": "$TERMINAL -e nmtui-connect"
+    "on-click-right": "networkmanager_dmenu"
   },
   "custom/network_traffic": {
     "exec": "~/.config/.scripts/waybar/network_traffic.sh",
     "return-type": "json",
-    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}"
+    "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "on-click-right": "networkmanager_dmenu"
   },
   "network#speed": {
     "interval": 1,
@@ -954,7 +956,8 @@
       "󰤥",
       "󰤨"
     ],
-    "on-click": "nm-connection-editor"
+    "on-click-right": "nm-connection-editor",
+    "on-click-left": "networkmanager_dmenu"
   },
   "network#info": {
     "interval": 2,
@@ -965,7 +968,6 @@
     "tooltip": "{}",
     "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-    "on-click": "iwgtk& aplay ~/.config/sounds/interact.wav",
     "format-icons": [
       "󰤫",
       "󰤟",
@@ -975,7 +977,8 @@
     ],
     "states": {
       "normal": 25
-    }
+    },
+    "on-click-right": "networkmanager_dmenu"
   },
   "idle_inhibitor": {
     "format": "{icon}",

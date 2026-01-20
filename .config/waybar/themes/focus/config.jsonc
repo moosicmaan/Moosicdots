@@ -23,6 +23,7 @@
       "hyprland/window"
     ],
     "modules-center": [
+      "network",
       "cpu",
       "memory#ram",
       "memory#swap",

@@ -24,7 +24,6 @@ fi
 current_wallpaper=$(cat "$cache_file")
 
 case $1 in
-
 # Load wallpaper from .cache of last session
 "--init")
   if [ -f "$cache_file" ]; then
@@ -33,6 +32,7 @@ case $1 in
     wal -q -i ~/wallpaper/
   fi
   ;;
+
 # Select wallpaper with rofi
 "--select")
   selected=$(find "$HOME/Pictures/Backgrounds" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
@@ -44,7 +44,13 @@ case $1 in
   fi
   wal -q -i ~/Pictures/Backgrounds/"$selected"
   ;;
-# Randomly select wallpaper
+
+# Use the file they sent
+"--file")
+  wal -q -i "$2"
+  ;;
+
+# Randomly select wallpaper for everything else
 *)
   wal -q -i ~/Pictures/Backgrounds/
   ;;
@@ -53,7 +59,8 @@ esac
 # -----------------------------------------------------
 # Load current pywal color scheme
 # -----------------------------------------------------
-source "$HOME/.cache/wal/colors.sh"
+source /home/moosicmaan/.cache/wal/colors.sh
+# source "$HOME"/.cache/wal/colors.sh
 echo ":: Wallpaper: $wallpaper"
 
 # -----------------------------------------------------
@@ -77,7 +84,7 @@ newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
 # -----------------------------------------------------
 # transition_type="wipe"
 # transition_type="outer"
-transition_type="random"
+transition_type="any"
 
 swww img "$wallpaper" \
   --transition-type=$transition_type
@@ -98,7 +105,7 @@ if [ "$1" == "init" ]; then
   echo ":: Init"
 else
   sleep 1
-  notify-send --icon=monitor "Colors and Wallpaper updated" "with image $newwall"
+  notify-send --icon=preferences "Colors and Wallpaper updated" "with image $newwall"
 fi
 
 echo "DONE"

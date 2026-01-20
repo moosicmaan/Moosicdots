@@ -27,7 +27,7 @@ set -o vi
 source "$HOME/.bash_prompt.sh"
 
 # Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.bash noupdate info
+# source /usr/share/doc/find-the-command/ftc.bash noupdate info
 
 ## Useful aliases
 

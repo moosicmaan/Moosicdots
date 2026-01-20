@@ -97,6 +97,7 @@ set $barsel       $my_scripts/hypr-barswitch
 set $walls        $my_scripts/ut-wallpaper --select
 set $kmndext      $my_scripts/ut-kbd-350
 set $kmndlap      $my_scripts/ut-kbd-lap
+set $bluet        $term --class bluet -e bluetui
 
 # --------------------------------------------------
 # MEDIA KEYS
@@ -142,43 +143,56 @@ smart_gaps              on
 smart_borders           on
 
 # rules
-for_window [app_id="zen-browser" title="^Picture-in-Picture$"] floating enable, move position 877 450, sticky enable, border none
 for_window [shell="xwayland"] title_format "<b>%class</b>"
 for_window [floating] border pixel 4
 
-for_window [app_id="waypaper"] floating enable
-for_window [app_id="waypaper"] resize set width 1530 px height 726 px
-for_window [app_id="waypaper"] move position center
+for_window [app_id="zen-browser" title="^Picture-in-Picture$"] \
+  floating enable, \
+  move position 877 450, \
+  sticky enable, \
+  border none
 
-for_window [app_id="mpv"] floating enable
-for_window [app_id="mpv"] resize set width 800 px height 450 px
-for_window [app_id="mpv"] move position center
-for_window [app_id="mpv"] border pixel 1
+for_window [app_id="waypaper"] \
+  floating enable, \
+  resize set width 1530 px height 726 px, \
+  move position center
 
-for_window [class="vlc"] floating enable
-for_window [class="vlc"] resize set width 800 px height 450 px
-for_window [class="vlc"] move position center
-for_window [class="vlc"] border pixel 1
+for_window [app_id="mpv"] \
+  floating enable, \
+  resize set width 800 px height 450 px, \
+  move position center, \
+  border pixel 1
 
-for_window [app_id="galculator"] floating enable
-for_window [app_id="galculator"] resize set width 400 px height 400 px
-for_window [app_id="galculator"] move position center
-for_window [app_id="galculator"] border pixel 4
+for_window [class="vlc"] \
+  floating enable, \
+  resize set width 800 px height 450 px, \
+  move position center, \
+  border pixel 1
 
-# for_window [class="Vial"] floating enable
-# for_window [class="Vial"] resize set width 1200 px height 900 px
-# for_window [class="Vial"] move position center
-# for_window [class="Vial"] border pixel 4
+for_window [app_id="galculator"] \
+  floating enable, \
+  resize set width 400 px height 400 px, \
+  move position center
 
-for_window [app_id="obsidian"] floating enable
-for_window [app_id="obsidian"] resize set width 1600 px height 900 px
-for_window [app_id="obsidian"] move position center
-for_window [app_id="obsidian"] border pixel 4
+# for_window [class="Vial"] \
+#   floating enable, \
+#   resize set width 1200 px height 900 px, \
+#   move position center, \
+#   border pixel 4
 
+for_window [app_id="obsidian"] \
+  floating enable, \
+  resize set width 1600 px height 900 px, \
+  move position center
+
+for_window [app_id="bluet"] \
+  floating enable, \
+  resize set width 800 px height 450 px, \
+  move position center
 # -----------------------------------------------------
 # Colors
 # -----------------------------------------------------
-include ~/.cache/wal/colors-sway
+# FALLBACK COLORS
 # set $color0 #1d2021
 # set $color1 #3c3836
 # set $color2 #504945
@@ -191,10 +205,12 @@ include ~/.cache/wal/colors-sway
 # set $color9 #fe8019
 # set $color10 #fabd2f
 # set $color11 #b8bb26
-# set $color12 #8ec07c
-# set $color13 #83a598
+# set $color1$color12 #8ec07c
+# set $color1$color13 #83a598
 # set $color14 #d3869b
 # set $color15 #d65d0e
+
+include ~/.cache/wal/colors-sway
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border   BG       Text     Ind      Child Bor
 client.focused          $color5  $color13 $color0  $color12 #fbf1c7
@@ -371,6 +387,10 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+q exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym Mod1+Ctrl+Delete exec wlogout
+
+# Manage networking and bluetooth
+bindsym Ctrl+Alt+b exec $bluet
+bindsym Ctrl+Alt+n exec networkmanager_dmenu
 
 # -----------------------------------------------------
 # Moving around:
