@@ -19,12 +19,12 @@ export UWSM_SESSION_TYPE=HYPR
 
 # environment not set in Fish or bash
 # these should be set through .bash_profile --> .profile now
-# export XDG_CONFIG_HOME=$HOME/.config
-# export TERM=xterm-256color
-# export TERMINAL=kitty
-# export TERMINAL_EMULATOR=kitty
-# export BROWSER=zen-browser
-# export EMAIL=thunderbird
-# export EDITOR=nvim
-# export VISUAL=kate
-# export SUDO_EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
+export TERM=xterm-256color
+export TERMINAL=kitty
+export TERMINAL_EMULATOR=kitty
+export BROWSER=zen-browser
+export EMAIL=thunderbird
+export EDITOR=nvim
+export VISUAL=kate
+export SUDO_EDITOR=vim

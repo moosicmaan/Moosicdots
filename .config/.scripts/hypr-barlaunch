@@ -37,17 +37,6 @@ echo "Theme: ${arrThemes[0]}"
 echo "Style: ${arrThemes[1]}"
 
 # -----------------------------------------------------
-# Load gBar if selected
-# -----------------------------------------------------
-# if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "gBar" ]; then
-#   echo "Starting gBar..."
-#   notify-send -i "monitor" "Setting the statusbar to gBar"
-#   eval "${PREFIX}gBar bar 0" &
-#   # ${PREFIX}gBar bar 1 &
-#   exit 0
-# fi
-
-# -----------------------------------------------------
 # Load hyprpanel if selected
 # -----------------------------------------------------
 # if [ -n "${arrThemes[0]}" ] && [ "${arrThemes[0]}" == "hyprpanel" ]; then
@@ -64,4 +53,4 @@ config_file="config.jsonc"
 style_file="style.css"
 
 echo "Starting Waybar..."
-eval "${PREFIX}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" &
+eval "${PREFIX}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" >/dev/null 2>&1 &

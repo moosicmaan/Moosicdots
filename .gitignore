@@ -39,7 +39,7 @@ Mkfile.old
 dkms.conf
 
 # Shell and configuration files
-.bash_*
+.bash_h*
 .luarc*
 .zsh/.zhistory
 .gitconfig
