@@ -671,7 +671,7 @@
     "exec": "waybar-module-pacman-updates",
     // "restart-interval": 60,
     // "on-click": "kitty --class floating -e garuda-update"
-    "on-click": "$TERMINAL --class floating -e garuda-update"
+    "on-click": "kitty --class floating -e ~/.config/.scripts/start-settings.sh"
   },
   "cava": {
     "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
@@ -928,7 +928,7 @@
     "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "⚠ Disconnected",
     "max-length": 50,
-    // "on-click-right": "$TERMINAL -e nmtui-connect"
+    // "on-click-right": "$kitty -e nmtui-connect"
     "on-click-right": "networkmanager_dmenu"
   },
   "custom/network_traffic": {
@@ -1035,7 +1035,7 @@
   "memory": {
     "interval": 30,
     "format": "🖴 {used:0.2f}GB",
-    "on-click": "$TERMINAL -e 'btop'",
+    "on-click": "$kitty -e 'btop'",
     "max-length": 10,
     "critical": 80
   },
@@ -1092,7 +1092,7 @@
     "interval": 10,
     "format": " {usage}%",
     "max-length": 10,
-    "on-click": "$TERMINAL -e 'btop'"
+    "on-click": "$kitty -e 'btop'"
   },
   "temperature": {
     "critical-threshold": 80,
