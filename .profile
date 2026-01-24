@@ -1,31 +1,37 @@
-# export TERM=xterm-256color
-# export PATH=".local/bin/bear:$PATH"
-#
-# export __GLX_VENDOR_LIBRARY_NAME=nvidia
-# export WLR_NO_HARDWARE_CURSORS=1
-#
-export JBSTARTSCRIPT="$HOME/.profile"
+export JBSTARTSCRIPT=".profile"
 
-# export TERM=xterm
-# export TERMINAL=kitty
-# export TERMINAL_EMULATOR=kitty
-# export BROWSER=zen-browser
-# export EDITOR=nvim
-# export VISUAL=kate
-# export SUDO_EDITOR=vim
-# export XDG_CONFIG_HOME=$HOME/.config
-# export EMAIL=thunderbird
-# export QT_QPA_PLATFORMTHEME=qt6ct
-#
-# export AMD_VULKAN_ICD=RADV
-# export GTK_USE_PORTAL=1
-# export MOZ_ENABLE_WAYLAND=1
-# uwsm aux app-daemon
-# uwsm check || uwsm start default
-
-# if uwsm check may-start; then
-#   # if uwsm check may-start && uwsm select; then
-#   exec uwsm start default
-# fi
+export TERM=xterm-256color
+export TERMINAL=kitty
+export TERMINAL_EMULATOR=kitty
+export BROWSER=zen-browser
+export EDITOR=nvim
+export VISUAL=kate
+export SUDO_EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
+export EMAIL=thunderbird
+export WHAT="Jason is a turnip"
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export WLR_NO_HARDWARE_CURSORS=1
+export MOZ_ENABLE_WAYLAND=1
+export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+export XDG_SESSION_TYPE=wayland
+export WAYLAND_DISPLAY=wayland-1
+export XDG_CONFIG_HOME=$HOME/.config
+export MOZ_ENABLE_WAYLAND=1 # only start firefox in wayland mode and no other GTK apps
+export MOZ_DBUS_REMOTE=1    # fixes firefox is already running, but is not responding
+export MOZ_WAYLAND_USE_VAAPI=1
+export GDK_BACKEND=wayland,x11 # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
+export ECORE_EVAS_ENGINE=wayland-egl
+export ELM_ENGINE=wayland_egl
+export NO_AT_BRIDGE=1
+export BEMENU_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland # this can prevent programs from starting old sdl games. therefore, this should be set per app instead of globally.
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
+export DISPLAY=:0
+export XDG_MENU_PREFIX=arch-
+export AMD_VULKAN_ICD=RADV
+export GTK_USE_PORTAL=1
 
 # export "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)"

@@ -1559,6 +1559,8 @@
       "custom/separator",
       "backlight",
       "custom/separator",
+      "network",
+      "custom/separator",
       "idle_inhibitor",
       "custom/separator",
       "battery",

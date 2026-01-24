@@ -523,7 +523,7 @@ bindsym $mod+Alt+v exec sway-scratch show --class Vial --resize "set 1200 px 900
   --exec "Vial"
 
 for_window [class=obsidian] move scratchpad, scratchpad show, resize set 1600 px 900 px
-bindsym $mod+Alt+o exec sway-scratch show --class obsidian --resize "set 1600 px 900 px" \
+bindsym $mod+Alt+period exec sway-scratch show --class obsidian --resize "set 1600 px 900 px" \
   --exec "obsidian"
 
 # -----------------------------------------------------

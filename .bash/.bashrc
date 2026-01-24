@@ -96,13 +96,15 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias suedit="VISUAL= sudoedit"
 
 # Variables
-my_font=ter-v28n.psf.gz
-font_directory=/usr/share/kbd/consolefonts/
+# my_font=ter-v28n.psf.gz
+# font_directory=/usr/share/kbd/consolefonts/
 
 # Changing the font if in TTY session
 if [[ $DISPLAY == "" ]]; then
-  setfont $font_directory$my_font
-  echo " > Font set to: $font_directory$my_font"
+  #   setfont $font_directory$my_font
+  #   echo " > Font set to: $font_directory$my_font"
+  clear
+  fastfetch
 fi
 
 # My aliases and prompts - not using starship in bash.
