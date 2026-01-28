@@ -1,6 +1,6 @@
 export JBSTARTSCRIPT=".profile"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export TERMINAL=kitty
 export TERMINAL_EMULATOR=kitty
 export BROWSER=zen-browser
@@ -10,13 +10,15 @@ export SUDO_EDITOR=vim
 export XDG_CONFIG_HOME=$HOME/.config
 export EMAIL=thunderbird
 export WHAT="Jason is a turnip"
+export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+export XDG_CONFIG_HOME=$HOME/.config
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export WLR_NO_HARDWARE_CURSORS=1
 export MOZ_ENABLE_WAYLAND=1
-export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 export XDG_SESSION_TYPE=wayland
-export WAYLAND_DISPLAY=wayland-1
-export XDG_CONFIG_HOME=$HOME/.config
 export MOZ_ENABLE_WAYLAND=1 # only start firefox in wayland mode and no other GTK apps
 export MOZ_DBUS_REMOTE=1    # fixes firefox is already running, but is not responding
 export MOZ_WAYLAND_USE_VAAPI=1
@@ -26,12 +28,13 @@ export ELM_ENGINE=wayland_egl
 export NO_AT_BRIDGE=1
 export BEMENU_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland # this can prevent programs from starting old sdl games. therefore, this should be set per app instead of globally.
-export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_QPA_PLATFORM=wayland
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
-export DISPLAY=:0
 export XDG_MENU_PREFIX=arch-
 export AMD_VULKAN_ICD=RADV
 export GTK_USE_PORTAL=1
+# Use bat for man pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+# export DISPLAY=:0
+# export WAYLAND_DISPLAY=wayland-0
 
 # export "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)"
