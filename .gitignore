@@ -112,3 +112,4 @@ moosictoken
 .zen/*
 .config/BraveSoftware/*
 .local/bin/hyprls
+.ssh/*
