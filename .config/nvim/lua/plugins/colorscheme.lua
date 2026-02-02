@@ -19,7 +19,7 @@ return {
       -- colorscheme = "nord",
       -- colorscheme = "dracula",
       -- colorscheme = "tokyonight-night",
-      -- colorscheme = "github_dark_high_contrast",
+      colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
       -- colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
@@ -41,7 +41,7 @@ return {
       -- colorscheme = "wildcharm",
       -- colorscheme = "koehler",
       -- colorscheme = "industry",
-      colorscheme = "koehler",
+      -- colorscheme = "koehler",
     },
   },
   -- Other theme plugins
