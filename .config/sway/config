@@ -97,7 +97,7 @@ set $barsel       $my_scripts/hypr-barswitch
 set $walls        $my_scripts/ut-wallpaper --select
 set $kmndext      $my_scripts/ut-kbd-350
 set $kmndlap      $my_scripts/ut-kbd-lap
-set $bluet        $term --class bluet -e bluetui
+set $bluet        $my_scripts/ut-tog-termclass
 
 # --------------------------------------------------
 # MEDIA KEYS

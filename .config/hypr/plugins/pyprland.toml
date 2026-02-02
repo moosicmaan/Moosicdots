@@ -49,8 +49,8 @@ size = "54% 46%"
 
 [scratchpads.term]
 animation = "fromTop"
-command = "uwsm app -- foot --app-id=Dropterm"
-# command = "uwsm app -- kitty --class Dropterm"
+# command = "uwsm app -- foot --app-id=Dropterm"
+command = "uwsm app -- kitty --class Dropterm"
 class = "Dropterm"
 lazy = true
 size = "70% 90%"

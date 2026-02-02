@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+# pgrep -f "kitty --class bluet" \
+#   && pkill -f "kitty--class bluet" \
+#   || kitty --class bluet -e bluetui
+
+
+pkill -f "kitty --class bluet" \
+  || kitty --class bluet -e bluetui
