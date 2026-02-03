@@ -224,6 +224,10 @@
   when: 1764704229
 - cmd: sudo pacman -S chaotic-aur/otf-font-awesome-4
   when: 1764704280
+- cmd: dmenu
+  when: 1764704432
+- cmd: dmenu-run
+  when: 1764704515
 - cmd: dmenu_run -y 8 -x 8 -z 1904 -m dmenumon, n", dmenufont,\n"-nb", col_1, "-nf", col_3, "-sb", col_bg, "-sf", col_4, \n\n\n:\n"
   when: 1764704625
 - cmd: sudo pacman -Ss sans
@@ -272,6 +276,8 @@
   when: 1764708357
   paths:
     - dmenu
+- cmd: dmenu_run
+  when: 1764708383
 - cmd: cd dmenu
   when: 1764708498
   paths:
@@ -1008,6 +1014,8 @@
   when: 1765744485
 - cmd: cdiq
   when: 1765759776
+- cmd: :w
+  when: 1765838749
 - cmd: rofi -show
   when: 1765843123
 - cmd: rofi -config /home/moosicmaan/.config/rofi/launchers/type-
@@ -1032,10 +1040,14 @@
   when: 1765860012
 - cmd: lllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
   when: 1765860260
+- cmd: man dwm
+  when: 1765860480
 - cmd: killall cagebreak
   when: 1765861506
 - cmd: sudo pacman -S cagebreak
   when: 1765861662
+- cmd: paru cagebreak
+  when: 1765861672
 - cmd: sudo pacman -Ss cagebreak
   when: 1765862000
 - cmd: paru -Ss spotify
@@ -1046,12 +1058,18 @@
   when: 1765862069
 - cmd: sudo pacman -S wlroots0.19
   when: 1765862838
+- cmd: dwl
+  when: 1765862865
 - cmd: killall dwl
   when: 1765862938
 - cmd: Hyprlang
   when: 1765862942
+- cmd: Hyprland
+  when: 1765863021
 - cmd: condfi
   when: 1765993222
+- cmd: man tmux
+  when: 1766015839
 - cmd: killall -9 steam
   when: 1766054982
 - cmd: ps aux | grep steam
@@ -1225,6 +1243,10 @@
   when: 1766259224
 - cmd: whereis sh
   when: 1766259235
+- cmd: cd dwl
+  when: 1766271747
+  paths:
+    - dwl
 - cmd: patch -p1 < patches/namedscratchpads.patch
   when: 1766271889
 - cmd: make clean install
@@ -1351,6 +1373,8 @@
   when: 1766359585
 - cmd: niri
   when: 1766359613
+- cmd: awesome
+  when: 1766359617
 - cmd: sudo pacman -Si dot-language-server
   when: 1766359962
 - cmd: sudo pacman -Qs hyprland
@@ -1555,6 +1579,14 @@
   when: 1766452250
   paths:
     - .config/fish/config.fish
+- cmd: suedit /etc/fstab
+  when: 1766453415
+  paths:
+    - /etc/fstab
+- cmd: vi
+  when: 1766453804
+- cmd: vim
+  when: 1766453825
 - cmd: sudoedit /etc/sudoers.d/
   when: 1766454076
   paths:
@@ -1725,12 +1757,16 @@
   when: 1766529916
   paths:
     - /usr/share/doc/herbstluftwm/examples/
+- cmd: xrandr
+  when: 1766530493
 - cmd: killall -9 xterm
   when: 1766530547
 - cmd: exity
   when: 1766530691
 - cmd: wal --theme dracula
   when: 1766530794
+- cmd: man xterm
+  when: 1766530904
 - cmd: sudo pacman -Ql herbstluftwm
   when: 1766531868
 - cmd: cd /etc/xdg/herbstluftwm
@@ -1758,6 +1794,8 @@
     - polybar/
 - cmd: rm polybar
   when: 1766533179
+- cmd: nvi
+  when: 1766533235
 - cmd: sudo pacman -Ss hc
   when: 1766533340
 - cmd: hc
@@ -1772,6 +1810,10 @@
   when: 1766534788
 - cmd: sudo pacman -S herbstluftwm xterm dzen2 xorg-xsetroot
   when: 1766534811
+- cmd: nvim .bashrc
+  when: 1766535086
+  paths:
+    - .bashrc
 - cmd: hc list_monitors | cut -d: -f1
   when: 1766535503
 - cmd: cd herbstluftwm/
@@ -1782,6 +1824,8 @@
   when: 1766535727
 - cmd: zen-browser &
   when: 1766535739
+- cmd: polybar
+  when: 1766536193
 - cmd: variety
   when: 1766536215
 - cmd: variety &
@@ -1956,6 +2000,8 @@
   when: 1766607256
 - cmd: echo $EDITOR
   when: 1766607472
+- cmd: echo $HYPRGAMEMODE
+  when: 1766608110
 - cmd: kitty --detach --title Hyprland-TTY --class Hyprland-TTY sudo /home/moosicmaan/.config/.script/start-hypr &
   when: 1766609676
 - cmd: hyprttystart
@@ -1970,6 +2016,8 @@
   when: 1766612334
 - cmd: echo $UWSM_SESSION
   when: 1766612348
+- cmd: killall -9 dwl
+  when: 1766612692
 - cmd: nvim config.h
   when: 1766618336
   paths:
@@ -2088,6 +2136,8 @@
   when: 1766686108
   paths:
     - themtest.sh
+- cmd: ranger
+  when: 1766687056
 - cmd: sudo pacman -Qc qtile
   when: 1766687090
 - cmd: sudo pacman -Qc hyprland
@@ -2124,6 +2174,8 @@
   when: 1766705511
 - cmd: echo $PAGER
   when: 1766705537
+- cmd: sudo pacman -Ss obsidian
+  when: 1766710547
 - cmd: sudo pacman -S obsidian
   when: 1766710581
 - cmd: curl wttn.in
@@ -2480,6 +2532,8 @@
   when: 1767325550
 - cmd: sudo pacman -Ss lua5.1
   when: 1767325767
+- cmd: sudo pacman
+  when: 1767327274
 - cmd: sudo pacman -S techtonic
   when: 1767327309
 - cmd: sudo pacman -S pdflatex
@@ -2680,6 +2734,10 @@
   paths:
     - "/home/moosicmaan/.config/waybar/themes/moosic/config.jsonc"
     - "/home/moosicmaan/.config/waybar/themes/moosic/mixed/style.css"
+- cmd: top
+  when: 1767470905
+- cmd: htop
+  when: 1767470931
 - cmd: sudo pacman -Qi wiremix
   when: 1767471010
 - cmd: hyprctl workspaces -j | jq -r '[.[] | .name |= sub(\\"^scratch_\\"; \\"\\")] | tojson'
@@ -2840,6 +2898,8 @@
   when: 1767656133
 - cmd: paru fuzzy-sys
   when: 1767656142
+- cmd: ld
+  when: 1767717132
 - cmd: killall -9 foot --server && foot --server
   when: 1767717440
 - cmd: killall -9 -e foot --server && foot --server
@@ -3086,6 +3146,10 @@
     - ~/.config/tmux/tmux.conf
 - cmd: ttyql
   when: 1768299167
+- cmd: clock
+  when: 1768299171
+- cmd: date
+  when: 1768299174
 - cmd: /home/moosicmaan/.config/.scripts/ut-blackmenu
   when: 1768300498
 - cmd: wl-paste --watch cliphist store
@@ -3198,6 +3262,10 @@
   when: 1768424311
 - cmd: super
   when: 1768427358
+- cmd: jobs
+  when: 1768427642
+- cmd: rs-pipes
+  when: 1768427903
 - cmd: paru rs-pipes
   when: 1768427920
 - cmd: paru -Syu
@@ -3218,6 +3286,8 @@
   when: 1768428783
 - cmd: sudo pacman -S extra/asciiquarium
   when: 1768428788
+- cmd: pipes-rs
+  when: 1768428812
 - cmd: asciiquarium
   when: 1768428837
 - cmd: asciiquarium -h
@@ -3262,6 +3332,12 @@
   when: 1768439084
 - cmd: flatpak lis
   when: 1768439090
+- cmd: flatpak list
+  when: 1768439092
+- cmd: cd .config/dwl
+  when: 1768440829
+  paths:
+    - .config/dwl
 - cmd: rm config.h && sudo make clean install
   when: 1768440905
   paths:
@@ -3272,6 +3348,8 @@
   when: 1768496703
 - cmd: kkkkkkkkkkkk..
   when: 1768499080
+- cmd: rofi -show run
+  when: 1768499924
 - cmd: rofi -dump-config > ~/.config/rofi/dmenu.rasi
   when: 1768500007
 - cmd: rofi -h -show run -layer-shell -config ~/.config/rofi/dmenu.rasi
@@ -3328,6 +3406,8 @@
   when: 1768509826
 - cmd: alacritty
   when: 1768509875
+- cmd: which bash
+  when: 1768509953
 - cmd: man 5 rofi-theme
   when: 1768512706
 - cmd: rofi -show drun -config ~/.config/rofi/wide.rasi
@@ -3435,6 +3515,8 @@
   when: 1768542521
 - cmd: emacs --daemon=serve
   when: 1768542538
+- cmd: rofi-beats
+  when: 1768544977
 - cmd: sudo cp /usr/share/blackarch/config/x11/xprofile /etc/xprofile
   when: 1768546511
   paths:
@@ -3463,6 +3545,8 @@
   when: 1768549701
 - cmd: rofi-system
   when: 1768549743
+- cmd: ut-blackmenu
+  when: 1768549899
 - cmd: sudo pacman -Ss blackarch-wallpaper
   when: 1768550121
 - cmd: sudo pacman -S blackarch-wallpaper
@@ -3511,466 +3595,10 @@
   when: 1768594605
   paths:
     - /home/moosicmaan/.config/sway/config.d/user_env.sh
-- cmd: kmonad -c /home/moosicmaan/.config/kmonad/k350.kbd
-  when: 1768596872
-- cmd: pkill kmonad
-  when: 1768596872
-- cmd: u
-  when: 1768596872
-- cmd: cd Music/Spotube/
-  when: 1768596872
-- cmd: man bun
-  when: 1768596872
-- cmd: bun --help
-  when: 1768596872
-- cmd: tldr bun
-  when: 1768596872
-- cmd: bin list
-  when: 1768596872
-- cmd: bun list
-  when: 1768596872
-- cmd: sudo pacman -Ss chaotic-aur/bun
-  when: 1768596872
-- cmd: paru -S bun
-  when: 1768596872
-- cmd: killall -9 qtile
-  when: 1768596872
-- cmd: paru -Ss bun
-  when: 1768596872
-- cmd: cd /usr/share/wayland-sessions
-  when: 1768596872
-- cmd: '; sudo systemctl restart sddm.service; ; a'
-  when: 1768596872
-- cmd: sudo systemctl restart sddm.service
-  when: 1768596872
-- cmd: sudoedit wayfire-uwsm.desktop
-  when: 1768596872
-- cmd: sudo pacman -Ss obsidian obsidian-ican-theme
-  when: 1768596872
-- cmd: sudo pacman -S obsidian obsidian-icon-theme
-  when: 1768596872
-- cmd: sudoedit /etc/default/grub
-  when: 1768596872
-- cmd: km
-  when: 1768596872
-- cmd: d
-  when: 1768596872
-- cmd: neovide
-  when: 1768596872
-- cmd: qqneovide
-  when: 1768596872
-- cmd: cat .Xresources
-  when: 1768596872
-- cmd: ______
-  when: 1768596872
-- cmd: code ls
-  when: 1768596872
-- cmd: command ls
-  when: 1768596872
-- cmd: man ghostty
-  when: 1768596872
-- cmd: ghostty +list-themess
-  when: 1768596872
-- cmd: Date
-  when: 1768596872
-- cmd: sudo pacman -Ss clock
-  when: 1768596872
-- cmd: tmux ls
-  when: 1768596872
-- cmd: kill
-  when: 1768596872
-- cmd: tmux connect -t 0
-  when: 1768596872
-- cmd: neo-matrix -F -m="Follow the White Rabbit"
-  when: 1768596872
-- cmd: pipes-rx
-  when: 1768596872
-- cmd: neo-matrix -F -m="Jason..time?"
-  when: 1768596872
-- cmd: emacs -nw
-  when: 1768596872
-- cmd: N>555555555555555555555555656565
-  when: 1768596872
-- cmd: tmux list
-  when: 1768596872
-- cmd: sudo pacman -Rsv blueprint
-  when: 1768596872
-- cmd: sudo pacman -Ss | grep blackarch
-  when: 1768596872
-- cmd: sudo pacman -Rsv blackarch-config-cursor blackarch-config-icons
-  when: 1768596872
-- cmd: sudo bactl
-  when: 1768596872
-- cmd: sudo bactl -h
-  when: 1768596872
-- cmd: sudo pacman -Rsv bactl
-  when: 1768596872
-- cmd: sudo pacman -Ss blackarch | grep installed
-  when: 1768596872
-- cmd: 
-  when: 1768596872
-- cmd: run-shell "/home/moosicmaan/.config/.scripts/ut-blackmenu"
-  when: 1768596872
-- cmd: tmux bind-key C-b run-shell "/home/moosicmaan/.config/.scripts/ut-blackmenu"
-  when: 1768596872
-- cmd: tmux list-sessions
-  when: 1768596872
-- cmd: flatpack list
-  when: 1768596872
-- cmd: ghostty +list-keybinds
-  when: 1768596872
-- cmd: ./generate_config.sh
-  when: 1768596872
-- cmd: man fzf
-  when: 1768596872
-- cmd: neo-tatrix
-  when: 1768596872
-- cmd: neo-matrix
-  when: 1768596872
-- cmd: sudo pacman -Rsv facebrok
-  when: 1768596872
-- cmd: tty-clocl -c
-  when: 1768596872
-- cmd: sudo pacman -Rsv 0trace
-  when: 1768596872
-- cmd: nf
-  when: 1768596872
-- cmd: builtin cd -- /home/moosicmaan/.config
-  when: 1768596872
-- cmd: musikcube
-  when: 1768596872
-- cmd: musikcubed
-  when: 1768596872
-- cmd: musikcubed --status
-  when: 1768596872
-- cmd: musikcubed --foreground
-  when: 1768596872
-- cmd: sudo pacman -Rsv 0d1n
-  when: 1768596872
-- cmd: builtin cd -- /home/moosicmaan/.config/foot
-  when: 1768596872
-- cmd: tmux -t attach 0
-  when: 1768596872
-- cmd: tmux --t attach 0
-  when: 1768596872
-- cmd: pipes-rs/
-  when: 1768596872
-- cmd: man dwl
-  when: 1768596872
-- cmd: tmux attach -t 0
-  when: 1768596872
-- cmd: ya pack -a TD-Sky/sudo
-  when: 1768596872
-- cmd: echo $ROFI_CONFIG
-  when: 1768596872
-- cmd: rofi -show drun -config $ROFI_CONFIG
-  when: 1768596872
-- cmd: source /mnt/data/moosicmaan/CONFIG/.config/tmux/tmux.conf
-  when: 1768596872
-- cmd: nvim /mnt/data/moosicmaan/CONFIG/.config/tmux/tmux.conf
-  when: 1768596872
-- cmd: SSSyazi
-  when: 1768596872
-- cmd: /usr/bin/hollywood
-  when: 1768596872
-- cmd: cd .config/dwmq
-  when: 1768596872
-- cmd: tmux kill-session
-  when: 1768596872
-- cmd: ghostty +list-fonts
-  when: 1768596872
-- cmd: maltrail -h
-  when: 1768596872
-- cmd: sudo maltrail
-  when: 1768596872
-- cmd: mailtrail
-  when: 1768596872
-- cmd: ltrail
-  when: 1768596872
-- cmd: maltrail
-  when: 1768596872
-- cmd: sudo pacman -Rsv maltrail
-  when: 1768596872
-- cmd: sudo pacman -Ss maltrail
-  when: 1768596872
-- cmd: sudo pacman -Rsv  hacktv
-  when: 1768596872
-- cmd: killall -9 kmonand
-  when: 1768596872
-- cmd: killall -9 kmonad
-  when: 1768596872
-- cmd: pipes-rs | lolcat
-  when: 1768596872
-- cmd: tty-clock -c
-  when: 1768596872
-- cmd: sudo systemctl disable sddm.service
-  when: 1768596872
-- cmd: uwsm
-  when: 1768596872
-- cmd: kmonad -c /home/moosicmaan/.config/kmonad/k350.kbd &
-  when: 1768596872
-- cmd: ghostty +list-themes
-  when: 1768596872
-- cmd: cfig
-  when: 1768596872
-- cmd: journalctl --user -xe
-  when: 1768596872
-- cmd: sudo pacman -Rsv dwl-git
-  when: 1768596872
-- cmd: paru -Rsv dwl
-  when: 1768596872
-- cmd: yaxi
-  when: 1768596872
-- cmd: tmux kill-serber
-  when: 1768596872
-- cmd: tmux kill-server
-  when: 1768596872
-- cmd: yy
-  when: 1768596872
-- cmd: confit
-  when: 1768596872
-- cmd: foot --app-id=JAson
-  when: 1768596872
-- cmd: man foot
-  when: 1768596872
-- cmd: manf fish
-  when: 1768596872
-- cmd: manf foot
-  when: 1768596872
-- cmd: sudo pacman -S kitty
-  when: 1768596872
-- cmd: vim .config/hypr/hyprland.conf
-  when: 1768596872
-- cmd: start qtile
-  when: 1768596872
-- cmd: qtile
-  when: 1768596872
-- cmd: /usr/bin/qtile start
-  when: 1768596872
-- cmd: ./.xprofile && /usr/bin/qtile start
-  when: 1768596872
-- cmd: start
-  when: 1768596872
-- cmd: /usr/vinm/start-cosmic
-  when: 1768596872
-- cmd: /usr/bin/start-cosmic
-  when: 1768596872
-- cmd: qtile start -b wayland
-  when: 1768596872
-- cmd: wayfire
-  when: 1768596872
-- cmd: uwsm start -- qtile.desktop
-  when: 1768596872
-- cmd: uwsm start -- qtile
-  when: 1768596872
-- cmd: hypr
-  when: 1768596872
-- cmd: easyeffects-skin
-  when: 1768596872
-- cmd: cs hypr
-  when: 1768596872
-- cmd: cd hypr
-  when: 1768596872
-- cmd: cd conf
-  when: 1768596872
-- cmd: kate vars.conf
-  when: 1768596872
-- cmd: kate win;rules.conf
-  when: 1768596872
-- cmd: sudo udevadm control --reload-rules && udevadm trigger
-  when: 1768596872
-- cmd: killall -9 dwm
-  when: 1768596872
-- cmd: cagebreak
-  when: 1768596872
-- cmd: export HYPRGAMEMODE=0
-  when: 1768596872
-- cmd: sudo restart
-  when: 1768596872
-- cmd: sudo shutdown -R now
-  when: 1768596872
-- cmd: sudo killall -9 sddm
-  when: 1768596872
-- cmd: sudo pacman -S $tlist
-  when: 1768596872
-- cmd: sudo grep / micro
-  when: 1768596872
-- cmd: sudo grep micro /
-  when: 1768596872
-- cmd: sudo grep micro
-  when: 1768596872
-- cmd: cd /usr
-  when: 1768596872
-- cmd: sudo grep micro | less
-  when: 1768596872
-- cmd: killall -9 sddm
-  when: 1768596872
-- cmd: sudo systemctl start sddm now
-  when: 1768596872
-- cmd: sudo systemctl start sddm
-  when: 1768596872
-- cmd: sudo killall -9 Hyprland
-  when: 1768596872
-- cmd: sudo killall -y guest
-  when: 1768596872
-- cmd: sudo killall -9 -u guest
-  when: 1768596872
-- cmd: ping guestg
-  when: 1768596872
-- cmd: ping guest
-  when: 1768596872
-- cmd: sudo shutdown -r now
-  when: 1768596872
-- cmd: ttykitty
-  when: 1768596872
-- cmd: kitty
-  when: 1768596872
-- cmd: kitty &
-  when: 1768596872
-- cmd: ditty
-  when: 1768596872
-- cmd: fis
-  when: 1768596872
-- cmd: hc list-monitors
-  when: 1768596872
-- cmd: herbstclient detect monitors
-  when: 1768596872
-- cmd: herbstclient detect-monitors
-  when: 1768596872
-- cmd: herbstclient detect_-monitors
-  when: 1768596872
-- cmd: qpkill variety
-  when: 1768596872
-- cmd: vtop
-  when: 1768596872
-- cmd: herbstclient detect_monitors
-  when: 1768596872
-- cmd: wew wd sddd
-  when: 1768596872
-- cmd: t
-  when: 1768596872
-- cmd: emacs .vimrc
-  when: 1768596872
-- cmd: vim .xprofile
-  when: 1768596872
-- cmd: fish
-  when: 1768596872
-- cmd: startx
-  when: 1768596872
-- cmd: dwm
-  when: 1768596872
-- cmd: ./.xinit
-  when: 1768596872
-- cmd: ./.xinitrc
-  when: 1768596872
-- cmd: echo $curr_brightness
-  when: 1768596872
-- cmd: echo $max_brightness
-  when: 1768596872
-- cmd: echo $brightness_per
-  when: 1768596872
-- cmd: sudo shutdown now
-  when: 1768596872
-- cmd: dmenu
-  when: 1768596872
-- cmd: dmenu-run
-  when: 1768596872
-- cmd: dmenu_run
-  when: 1768596872
-- cmd: :w
-  when: 1768596872
-- cmd: man dwm
-  when: 1768596872
-- cmd: paru cagebreak
-  when: 1768596872
-- cmd: dwl
-  when: 1768596872
-- cmd: Hyprland
-  when: 1768596872
-- cmd: man tmux
-  when: 1768596872
-- cmd: cd dwl
-  when: 1768596872
-- cmd: awesome
-  when: 1768596872
-- cmd: suedit /etc/fstab
-  when: 1768596872
-- cmd: vi
-  when: 1768596872
-- cmd: vim
-  when: 1768596872
-- cmd: xrandr
-  when: 1768596872
-- cmd: man xterm
-  when: 1768596872
-- cmd: nvi
-  when: 1768596872
-- cmd: nvim .bashrc
-  when: 1768596872
-- cmd: polybar
-  when: 1768596872
-- cmd: echo $HYPRGAMEMODE
-  when: 1768596872
-- cmd: killall -9 dwl
-  when: 1768596872
-- cmd: ranger
-  when: 1768596872
-- cmd: sudo pacman -Ss obsidian
-  when: 1768596872
-- cmd: sudo pacman
-  when: 1768596872
-- cmd: top
-  when: 1768596872
-- cmd: htop
-  when: 1768596872
-- cmd: ld
-  when: 1768596872
-- cmd: clock
-  when: 1768596872
-- cmd: date
-  when: 1768596872
-- cmd: jobs
-  when: 1768596872
-- cmd: rs-pipes
-  when: 1768596872
-- cmd: pipes-rs
-  when: 1768596872
-- cmd: flatpak list
-  when: 1768596872
-- cmd: cd .config/dwl
-  when: 1768596872
-- cmd: rofi -show run
-  when: 1768596872
-- cmd: which bash
-  when: 1768596872
-- cmd: rofi-beats
-  when: 1768596872
-- cmd: ut-blackmenu
-  when: 1768596872
 - cmd: sudo su
-  when: 1768596872
-- cmd: $term
-  when: 1768596891
-- cmd: $TERM
-  when: 1768596900
-- cmd: $TERMINAL
-  when: 1768596910
-- cmd: $TERMINAL_EMULATOR
-  when: 1768596930
-- cmd: $email
-  when: 1768596945
+  when: 1768594770
 - cmd: $EMAIL
-  when: 1768596970
-- cmd: bat --style header,snip,changes .config/environment.d/10-sway.conf
-  when: 1768597075
-  paths:
-    - .config/environment.d/10-sway.conf
-- cmd: $XDG_CACHE_HOME/
-  when: 1768597144
-- cmd: echo $XDG_DATA_HOME/
-  when: 1768597189
-- cmd: history
-  when: 1768597663
+  when: 1768596217
 - cmd: echo $XDG_CONFIG_HOME/
   when: 1768597988
 - cmd: echo $XDG_CACHE_HOME/
@@ -5072,6 +4700,8 @@
   when: 1769190040
 - cmd: sudo pacman -S firewalld firewalld-test
   when: 1769190069
+- cmd: sudo systemctl enable firewalld
+  when: 1769190116
 - cmd: sudo systemctl start --now firewallk
   when: 1769190133
 - cmd: sudo systemctl start --now firewall
@@ -5244,6 +4874,8 @@
   when: 1769218614
 - cmd: nvim .profile
   when: 1769218650
+  paths:
+    - .profile
 - cmd: sudo nmap -sV -p- -T4 10.160.0.17/24
   when: 1769225361
 - cmd: sudo nmap -sV -p- -T4 10.160.0.170/24
@@ -5571,6 +5203,8 @@
     - guest
 - cmd: cd /
   when: 1769365504
+  paths:
+    - /
 - cmd: sudo groups
   when: 1769365512
 - cmd: sudo users
@@ -5617,6 +5251,8 @@
   when: 1769454215
 - cmd: sway
   when: 1769455900
+- cmd: sudo update
+  when: 1769455965
 - cmd: mount sdb1 /media
   when: 1769456301
 - cmd: sudo mount sdb1 /media
@@ -5980,6 +5616,8 @@
   when: 1770079842
 - cmd: sudoedit /etc/fstab
   when: 1770080612
+  paths:
+    - /etc/fstab
 - cmd: lsbli
   when: 1770080739
 - cmd: sudo systemctl daemon-reload
@@ -5994,6 +5632,10 @@
   paths:
     - /dev/sdd1
     - /mnt/backup/
+- cmd: ls
+  when: 1770082156
+- cmd: lsblk
+  when: 1770082158
 - cmd: cd /run/media/moosicmaan
   when: 1770082170
   paths:
@@ -6004,53 +5646,3 @@
   when: 1770082239
   paths:
     - MoosicmaanBackup
-- cmd: sudo pacman -Ss waybar-module
-  when: 1770085203
-- cmd: sudo pacman -S waybar-module-pacman-updates-git
-  when: 1770085226
-- cmd: sudo update
-  when: 1770085397
-- cmd: sudo pacman -S trim
-  when: 1770085578
-- cmd: sudo pacman -S nvme-cli
-  when: 1770086155
-- cmd: sudo pacman -Ss nvme
-  when: 1770086676
-- cmd: sudo pacman -Ss trum
-  when: 1770086693
-- cmd: sudo pacman -Ss trim
-  when: 1770086697
-- cmd: sudo pacman -Ss fstrim
-  when: 1770086827
-- cmd: paru -Ss fstrim
-  when: 1770086837
-- cmd: sudo sg_vpd -a /dev/nvme0
-  when: 1770086933
-  paths:
-    - /dev/nvme0
-- cmd: lsblk
-  when: 1770086947
-- cmd: sudo sg_vpd -a /dev/nvme0n1
-  when: 1770086970
-  paths:
-    - /dev/nvme0n1
-- cmd: sudo systemctl enable firewalld
-  when: 1770087012
-- cmd: sudo systemctl start firewalld
-  when: 1770087023
-- cmd: sudo systemctl enable fstrim.timer
-  when: 1770087058
-- cmd: sudo systemctl start fstrim.timer
-  when: 1770087066
-- cmd: sudo fstrim -v/
-  when: 1770087080
-- cmd: sudo fstrim -v /
-  when: 1770087085
-  paths:
-    - /
-- cmd: sudo fstrim -v /mnt/data
-  when: 1770087101
-  paths:
-    - /mnt/data
-- cmd: config
-  when: 1770088714
