@@ -53,7 +53,7 @@ set $my_email     thunderbird
 set $my_editg     kate
 set $my_editc     neovide
 set $my_filesg    dolphin
-set $my_filesc    $my_term -e yazi
+set $my_filesc    $term -e yazi
 set $my_music     org.kde.elisa
 set $my_media     mpv --player-operation-mode=pseudo-gui
 set $my_office    org.onlyoffice.desktopeditors
@@ -97,7 +97,7 @@ set $barsel       $my_scripts/hypr-barswitch
 set $walls        $my_scripts/ut-wallpaper --select
 set $kmndext      $my_scripts/ut-kbd-350
 set $kmndlap      $my_scripts/ut-kbd-lap
-set $bluet        $my_scripts/ut-tog-termclass
+set $bluet        $my_scripts/ut-tog-termclass $term bluet bluetui
 
 # --------------------------------------------------
 # MEDIA KEYS
@@ -105,14 +105,14 @@ set $bluet        $my_scripts/ut-tog-termclass
 set $volu         $my_scripts/media-vol --inc
 set $vold         $my_scripts/media-vol --dec
 set $volt         $my_scripts/media-vol --toggle
+set $micu         $my_scripts/media-vol --mic-inc
+set $micd         $my_scripts/media-vol --mic-dec
+set $mict         $my_scripts/media-vol --mic-toggle
 set $mpp          $my_scripts/media-ctrl --pause
 set $mstop        $my_scripts/media-ctrl --stop
 set $mnxt         $my_scripts/media-ctrl --nxt
 set $mprv         $my_scripts/media-ctrl --prv
 set $mnow         $my_scripts/media-ctrl --show
-set $micup        $my_scripts/media-vol --mic-inc
-set $micdwn       $my_scripts/media-vol --mic-dec
-set $mictog       $my_scripts/media-vol --toggle-mic
 set $brightu      $my_scripts/ut-monbrightness --inc
 set $brightd      $my_scripts/ut-monbrightness --dec
 set $brightmu     $my_scripts/ut-exmon-brightness --inc
@@ -532,10 +532,10 @@ bindsym $mod+Alt+period exec sway-scratch show --class obsidian --resize "set 16
 bindsym --locked XF86AudioMute exec $volt
 bindsym --locked XF86AudioLowerVolume exec $vold
 bindsym --locked XF86AudioRaiseVolume exec $volu
-bindsym --locked XF86AudioMicMute exec $mictog
-bindsym --locked $HYPER+m exec $micdwn
-bindsym --locked $HYPER+comma exec $micup
-bindsym --locked $HYPER+period exec $mictog
+bindsym --locked XF86AudioMicMute exec $mict
+bindsym --locked $HYPER+period exec $mict
+bindsym --locked $HYPER+m exec $micd
+bindsym --locked $HYPER+comma exec $micu
 bindsym --locked XF86MonBrightnessDown exec $brightu
 bindsym --locked XF86MonBrightnessUp exec $brightd
 bindsym --locked XF86AudioPlay exec $mpp 
@@ -561,7 +561,6 @@ bindsym $HYPER+up exec $brightmu
 bindsym Shift+XF86KbdBrightnessDown exec $brightmd
 bindsym $HYPER+down exec $brightmd
 bindsym XF86AppSelect exec $menu_full
-# bindsym XF86Lock exec $lockscr
 
 # -----------------------------------------------------
 # Resizing containers:

@@ -4,6 +4,9 @@
 #   && pkill -f "kitty--class bluet" \
 #   || kitty --class bluet -e bluetui
 
+term="$1"
+class="$2"
+prog="$3"
 
-pkill -f "kitty --class bluet" \
-  || kitty --class bluet -e bluetui
+pkill -f "$term --class $class" ||
+  "$term" --class "$class" -e "$prog"
