@@ -36,7 +36,7 @@ local function default_gitdiff()
 
   -- Check if result is empty and handle it
   if result == "" then
-    return { "No changes detected or command failed." }
+    return { "\n  GIT Status: No git changes detected or command failed." }
   end
 
   -- Split the result into lines and store in a table
