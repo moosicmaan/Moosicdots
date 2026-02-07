@@ -31,7 +31,7 @@ window {
 
 button {
   color: @color5;
-  font-size: 20px;
+  font-size: 15px;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -61,37 +61,37 @@ Buttons
 */
 
 #lock {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/lock.png"));
 }
 
 #logout {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/logout.png"));
 }
 
 #suspend {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/suspend.png"));
 }
 
 #hibernate {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/hibernate.png"));
 }
 
 #shutdown {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/shutdown.png"));
 }
 
 #reboot {
-  margin: 10px;
+  margin: 5px;
   border-radius: 2px;
   background-image: image(url("icons/reboot.png"));
 }

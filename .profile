@@ -1,6 +1,6 @@
 export JBSTARTSCRIPT=".profile"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export TERMINAL=kitty
 export TERMINAL_EMULATOR=kitty
 export BROWSER=zen-browser
@@ -33,5 +33,5 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt
 export XDG_MENU_PREFIX=arch-
 export AMD_VULKAN_ICD=RADV
 export GTK_USE_PORTAL=1
-
+# export KDE_NO_KWALLET=1
 # export "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)"

@@ -1,0 +1,45 @@
+#!/bin/bash
+set -euo pipefail
+
+SRC="/mnt/data/moosicmaan/"
+DEST="/mnt/backup/MoosicmaanBackup"
+LOGFILE="$HOME/.config/.logs/ut-moosicmaan-backup.log"
+LOCKFILE="/tmp/ut-moosicmaan-backup.lock"
+
+exec 9>"$LOCKFILE" || exit 1
+flock -n 9 || exit 0 # silently exit if already running
+
+timestamp() {
+  date '+%Y-%m-%d %H:%M:%S'
+}
+
+log() {
+  echo "$(timestamp) - $1" | tee -a "$LOGFILE"
+}
+
+cleanup() {
+  log "Backup finished"
+  echo "-----------------------------------------------------------" | tee -a "$LOGFILE"
+  echo "" | tee -a "$LOGFILE"
+  rm -f "$LOCKFILE"
+}
+trap cleanup EXIT
+
+echo "===========================================================" | tee -a "$LOGFILE"
+log "Backup started"
+
+# ---- Verify destination is mounted ----
+if ! mountpoint -q /mnt/backup; then
+  log "ERROR: /mnt/backup is NOT mounted. Aborting."
+  exit 1
+fi
+
+# ---- Run rsync ----
+if rsync -av --delete "$SRC" "$DEST" 2>&1 |
+  grep -Ev '\.zen|BraveSoftware' |
+  tee -a "$LOGFILE"; then
+  log "Backup completed successfully"
+else
+  log "ERROR: rsync failed"
+  # exit 1
+fi

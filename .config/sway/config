@@ -120,8 +120,8 @@ set $brightmd     $my_scripts/ut-exmon-brightness --dec
 # =====================================================
 # Output configuration
 # =====================================================
-default_border          pixel 2
-default_floating_border pixel 4
+default_border          pixel 1
+default_floating_border pixel 2
 floating_maximum_size   1700 x 900
 floating_minimum_size   100 x 50
 default_orientation     auto
@@ -140,7 +140,7 @@ smart_borders           on
 
 # rules
 for_window [shell="xwayland"] title_format "<b>%class</b>"
-for_window [floating] border pixel 4
+for_window [floating] border pixel 3
 
 for_window [app_id="zen-browser" title="^Picture-in-Picture$"] \
   floating enable, \
@@ -510,8 +510,8 @@ bindsym $mod+Alt+x exec sway-scratch show --app-id $saudio --resize "set 50 ppt 
   --exec "$term --class $saudio -e wiremix"
 
 set $smoosic S_moosic
-for_window [app_id=$smoosic] move scratchpad, scratchpad show, resize set 30 ppt 40 ppt
-bindsym $mod+Alt+m exec sway-scratch show --app-id $smoosic --resize "set 30 ppt 40 ppt" \
+for_window [app_id=$smoosic] move scratchpad, scratchpad show, resize set 70 ppt 40 ppt
+bindsym $mod+Alt+m exec sway-scratch show --app-id $smoosic --resize "set 70 ppt 40 ppt" \
   --exec "$term --class $smoosic -e pianobar"
 
 for_window [class=Vial] move scratchpad, scratchpad show, resize set 1200 px 900 px

@@ -1,0 +1,7 @@
+[Unit]
+Description=Moosicmaan Backup
+
+[Service]
+Type=oneshot
+ExecStart=/home/moosicmaan/.config/.scripts/ut-moosicmaan-backup
+
