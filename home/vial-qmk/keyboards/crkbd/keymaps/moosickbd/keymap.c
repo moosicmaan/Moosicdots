@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_TRNS,  KC_TAB,  KC_ESC, XXXXXXX,    LC_R, XXXXXXX, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     KC_TRNS,    LC_A, KC_LCTRL, KC_LGUI, KC_LALT,  LCA_G, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  XXXXXXX,
+     KC_TRNS,    LC_A, KC_LCTL, KC_LGUI, KC_LALT,   LCA_G, KC_TRNS,    KC_TRNS, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      KC_PSCR,    LC_Z,    LC_X,    LC_C,    LC_V, XXXXXXX,                      XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F12,  LCA_DEL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RM_TOGG,  MEH_UP,    HYPR_UP,  KC_MSEL, HYPR_U,  HYPR_I,  KC_MUTE, KC_MPLY, KC_CALC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-     RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,   RM_ON,  MEH_DN,    HYPR_DN,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MSTP, KC_EJCT,
+     RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,   RM_ON, MEH_DWN,    HYPR_DN,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MSTP, KC_EJCT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
      RM_SPDD, RM_VALD, RM_SATD, RM_HUED, RM_PREV,  RM_OFF,                      XXXXXXX, HYPR_M,  HYPR_co, HYPR_dt, XXXXXXX, TG(6),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
