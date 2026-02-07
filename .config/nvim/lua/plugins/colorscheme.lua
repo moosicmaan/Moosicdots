@@ -18,9 +18,12 @@ return {
     opts = {
       -- colorscheme = "nord",
       -- colorscheme = "dracula",
-      -- colorscheme = "tokyonight",
-      colorscheme = "github_dark_high_contrast",
-      -- colorscheme = "github_dark_tritanopia",
+      -- colorscheme = "tokyonight-day",
+      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "tokyonight-storm",
+      -- colorscheme = "tokyonight-moon",
+      -- colorscheme = "github_dark_high_contrast",
+      colorscheme = "github_dark_tritanopia",
       -- colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
       -- colorscheme = "cyberpunk",
@@ -43,7 +46,6 @@ return {
       -- colorscheme = "industry",
       -- colorscheme = "koehler",
       --
-      -- style = "moon",
       -- styles = {
       --   transparent = true,
       --   sidebars = "transparent",

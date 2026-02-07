@@ -18,7 +18,7 @@ log() {
 }
 
 cleanup() {
-  log "Backup finished"
+  # log "Backup ended"
   echo "-----------------------------------------------------------" | tee -a "$LOGFILE"
   echo "" | tee -a "$LOGFILE"
   rm -f "$LOCKFILE"
@@ -36,7 +36,7 @@ fi
 
 # ---- Run rsync ----
 if rsync -av --delete "$SRC" "$DEST" 2>&1 |
-  grep -Ev '\.zen|BraveSoftware|\.git' |
+  grep -Ev '\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
   tee -a "$LOGFILE"; then
   log "Backup completed successfully"
 else

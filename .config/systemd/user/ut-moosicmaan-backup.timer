@@ -1,9 +1,9 @@
 [Unit]
-Description=Run Moosicmaan Backup Every 3 Hours
+Description=Run Moosicmaan Backup Every Hour
 
 [Timer]
-OnBootSec=10min
-OnUnitActiveSec=3h
+OnBootSec=3min
+OnUnitActiveSec=1h
 Persistent=true
 
 [Install]
