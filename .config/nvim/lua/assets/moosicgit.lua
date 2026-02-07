@@ -39,15 +39,15 @@ local function default_gitdiff()
   table.insert(gitdiff, "") -- First empty line
   table.insert(gitdiff, "  GIT Status:") -- Second line with icon
 
-  -- Use vim.split to process the output into lines
-  local lines = vim.split(result, "\n", { trimempty = true }) -- Split by newlines
-  for _, line in ipairs(lines) do
-    table.insert(gitdiff, "    " .. line) -- Prepend spacing
-  end
-
   -- Check if result is empty and handle it
   if result == "" then
     return { "  No git changes detected or command failed." }
+  else
+    -- Use vim.split to process the output into lines
+    local lines = vim.split(result, "\n", { trimempty = true }) -- Split by newlines
+    for _, line in ipairs(lines) do
+      table.insert(gitdiff, "    " .. line) -- Prepend spacing
+    end
   end
 
   return gitdiff
