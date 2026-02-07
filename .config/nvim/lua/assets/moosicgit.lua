@@ -34,11 +34,6 @@ local function default_gitdiff()
   local result = handle:read("*a") -- Read the entire output
   handle:close()
 
-  -- Check if result is empty and handle it
-  if result == "" then
-    return { "\n  GIT Status: No git changes detected or command failed." }
-  end
-
   -- Split the result into lines and store in a table
   local gitdiff = {}
   table.insert(gitdiff, "") -- First empty line
@@ -48,6 +43,11 @@ local function default_gitdiff()
   local lines = vim.split(result, "\n", { trimempty = true }) -- Split by newlines
   for _, line in ipairs(lines) do
     table.insert(gitdiff, "    " .. line) -- Prepend spacing
+  end
+
+  -- Check if result is empty and handle it
+  if result == "" then
+    return { "  No git changes detected or command failed." }
   end
 
   return gitdiff
