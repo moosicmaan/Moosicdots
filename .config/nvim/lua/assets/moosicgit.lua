@@ -41,7 +41,7 @@ local function default_gitdiff()
 
   -- Check if result is empty and handle it
   if result == "" then
-    return { "  No git changes detected or command failed." }
+    table.insert(gitdiff, "      No git changes")
   else
     -- Use vim.split to process the output into lines
     local lines = vim.split(result, "\n", { trimempty = true }) -- Split by newlines
