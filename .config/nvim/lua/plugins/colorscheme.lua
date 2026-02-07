@@ -18,7 +18,7 @@ return {
     opts = {
       -- colorscheme = "nord",
       -- colorscheme = "dracula",
-      -- colorscheme = "tokyonight-night",
+      -- colorscheme = "tokyonight",
       colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
       -- colorscheme = "moonfly",
@@ -42,6 +42,13 @@ return {
       -- colorscheme = "koehler",
       -- colorscheme = "industry",
       -- colorscheme = "koehler",
+      --
+      -- style = "moon",
+      -- styles = {
+      --   transparent = true,
+      --   sidebars = "transparent",
+      --   floats = "transparent",
+      -- },
     },
   },
   -- Other theme plugins

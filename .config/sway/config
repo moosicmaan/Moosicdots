@@ -140,7 +140,9 @@ smart_borders           on
 
 # rules
 for_window [shell="xwayland"] title_format "<b>%class</b>"
-for_window [floating] border pixel 3
+for_window [shell="xwayland"] border pixel 10
+
+for_window [floating] border pixel 1
 
 for_window [app_id="zen-browser" title="^Picture-in-Picture$"] \
   floating enable, \
