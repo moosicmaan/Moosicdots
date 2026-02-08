@@ -2,7 +2,7 @@
 Description=Run Moosicmaan Backup Every Hour
 
 [Timer]
-OnBootSec=3min
+OnBootSec=1min
 OnUnitActiveSec=1h
 Persistent=true
 

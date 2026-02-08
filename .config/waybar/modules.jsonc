@@ -1024,7 +1024,7 @@
     "format-off": "  OFF",
     "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
     "interval": 30,
-    "on-click": "blueman-manager",
+    "on-click": "kitty --class floating -e bluetui",
     "format-no-controller": "",
     "tooltip": true,
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
@@ -1146,6 +1146,7 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
+    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weatherD": {
@@ -1153,6 +1154,7 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar --date-format %m/%d  --fahrenheit --mph --location 'Davao+City'",
+    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weatherC": {
@@ -1161,12 +1163,13 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
+    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weather#leg": {
     "exec": "curl 'https://wttr.in/Walsenburg?format=3'",
     "interval": 900,
-    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
+    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom"
   },
   "clock": {
     "format-alt": "{:%H:%M}",
@@ -1549,17 +1552,17 @@
     },
     "modules": [
       "custom/system",
+      "bluetooth",
+      "custom/separator",
+      "network",
+      "custom/separator",
       "custom/updates",
       "custom/separator",
       "memory",
       "custom/separator",
       "cpu",
       "custom/separator",
-      "bluetooth",
-      "custom/separator",
       "backlight",
-      "custom/separator",
-      "network",
       "custom/separator",
       "idle_inhibitor",
       "custom/separator",

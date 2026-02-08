@@ -1,0 +1,9 @@
+[Unit]
+Description=Toshiba External USB Backup Drive
+
+[Automount]
+Where=/mnt/backup
+TimeoutIdleSec=10
+
+[Install]
+WantedBy=multi-user.target

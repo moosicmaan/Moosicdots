@@ -1,0 +1,12 @@
+[Unit]
+Description=Toshiba Extermal USB Backup Drive
+Documentation=man:mount(8)
+ 
+[Mount]
+What=/dev/mapper/luks-229e4561-b44f-4185-8e43-1b4298e29133
+Where=/mnt/backup                            
+Type=btrfs                                   
+Options=defaults,nofail                      
+ 
+[Install]
+WantedBy=multi-user.target                   
