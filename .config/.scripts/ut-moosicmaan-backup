@@ -36,7 +36,7 @@ fi
 
 # ---- Run rsync ----
 if rsync -av --delete "$SRC" "$DEST" 2>&1 |
-  grep -Ev '\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
+  grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
   tee -a "$LOGFILE"; then
   log "Backup completed successfully"
 else
