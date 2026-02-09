@@ -51,6 +51,7 @@ moosictoken
 .config/fish/completions*
 .config/fish/conf.d*
 .config/fish/fish_*
+.local/share/fish/fish_history
 
 # LazyVim files
 .config/nvim/spell*
