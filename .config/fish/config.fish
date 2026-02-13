@@ -165,11 +165,53 @@ end
 # USEFUL ALIASES
 # -----------------------------------------------------
 # Replace ls with eza
-alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
-alias la 'eza -a --color=always --group-directories-first --icons' # all files and dirs
-alias ll 'eza -l --color=always --group-directories-first --icons' # long format
-alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
-alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+# alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
+# alias la 'eza -a --color=always --group-directories-first --icons' # all files and dirs
+# alias ll 'eza -l --color=always --group-directories-first --icons' # long format
+# alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
+# alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+
+if [ -f /usr/bin/exa ]
+    alias la 'exa -Alh --color=always --group-directories-first --icons' # show hidden files
+    alias ls 'exa -ah -F --color=always --color=always --group-directories-first --icons' # add colors and file type extensions
+    # alias lx 'exa -lXBh --color=always --group-directories-first --icons' # sort by extension
+    # alias lk 'exa -lSrh --color=always --group-directories-first --icons '                # sort by size
+    # alias lc 'exa -ltcrh --color=always --group-directories-first --icons'                # sort by change time
+    # alias lu 'exa -lturh --color=always --group-directories-first --icons'                # sort by access time
+    # alias lr 'exa -lRh --color=always --group-directories-first --icons'                  # recursive ls
+    # alias ld 'exa -ltrh --color=always --group-directories-first --icons'                 # sort by date
+    # alias lm 'exa -alh |more --color=always --group-directories-first --icons'            # pipe through 'more'
+    # alias lw 'exa -xAh --color=always --group-directories-first --icons'                  # wide listing format
+    alias ll 'exa -l -F --color=always --group-directories-first --icons' # long listing format
+    # alias labc 'exa -lap --color=always --group-directories-first --icons'                # alphabetical sort
+    # alias lf "exa -l --color=always --icons | egrep -v '^d'"                              # files only
+    # alias ldir "exa -l --color=always --icons | egrep '^d'"                               # directories only
+    # alias lla 'exa -Al --color=always --group-directories-first --icons'                  # List and Hidden Files
+    # alias las 'exa -A --color=always --group-directories-first --icons'                   # Hidden Files
+    alias lls 'exa -l --color=always --group-directories-first --icons' # List
+    alias l. 'exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+    alias le 'exa -aT  --color=always --group-directories-first --icons' # tree listing
+else
+    alias la 'ls -Alh' # show hidden files
+    alias ls 'ls -aFh --color=always' # add colors and file type extensions
+    alias lx 'ls -lXBh' # sort by extension
+    alias lk 'ls -lSrh' # sort by size
+    alias lc 'ls -ltcrh' # sort by change time
+    alias lu 'ls -lturh' # sort by access time
+    alias lr 'ls -lRh' # recursive ls
+    alias ld 'ls -ltrh' # sort by date
+    alias lm 'ls -alh |more' # pipe through 'more'
+    alias lw 'ls -xAh' # wide listing format
+    alias ll 'ls -Fls' # long listing format
+    alias labc 'ls -lap' # alphabetical sort
+    alias lf "ls -l | egrep -v '^d'" # files only
+    alias ldir "ls -l | egrep '^d'" # directories only
+    alias lla 'ls -Al' # List and Hidden Files
+    alias las 'ls -A' # Hidden Files
+    alias lls 'ls -l' # List
+    alias le 'tree -aC' # tree listing
+    alias l. 'ls -ald .*' # show only dotfiles
+end
 
 # Replace some more things with better alternatives
 abbr cat 'bat --style header,snip,changes'
@@ -187,7 +229,7 @@ alias ...... 'cd ../../../../..'
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
-alias gitpkg 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+alias gitpkgs 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 alias grep 'ugrep --color=auto'
 alias egrep 'ugrep -E --color=auto'
 alias fgrep 'ugrep -F --color=auto'
@@ -202,6 +244,14 @@ alias untar 'tar -zxvf '
 alias upd /usr/bin/garuda-update
 alias vdir 'vdir --color=auto'
 alias wget 'wget -c '
+
+# Alias's to show disk space and space used in a folder
+alias diskspace "du -S | sort -n -r |more"
+alias folders 'du -h --max-depth=1'
+alias folderssort 'find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+alias tree 'tree -CAhF --dirsfirst'
+alias treed 'tree -CAFd'
+alias mountedinfo 'df -hT'
 
 # Get fastest mirrors
 alias mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'

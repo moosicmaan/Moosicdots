@@ -35,3 +35,4 @@ export AMD_VULKAN_ICD=RADV
 export GTK_USE_PORTAL=1
 # export KDE_NO_KWALLET=1
 # export "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)"
+export MAKEFLAGS=-j$(nproc)
