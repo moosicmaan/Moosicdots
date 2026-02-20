@@ -1,0 +1,333 @@
+layout: {qmk_keyboard: crkbd/rev4_1/standard, layout_name: LAYOUT_split_3x6_3_ex2}
+layers:
+  L0:
+  - TAB
+  - {t: Q, h: L1}
+  - {t: W, h: L2}
+  - {t: E, h: L3}
+  - {t: R, h: MEH}
+  - {t: T, h: HYPR}
+  - PGUP
+  - MS WHLU
+  - {t: Y, h: HYPR}
+  - {t: U, h: MEH}
+  - {t: I, h: L3}
+  - {t: O, h: L2}
+  - {t: P, h: L1}
+  - \
+  - ESC
+  - {t: A, h: LSFT}
+  - {t: S, h: LCTL}
+  - {t: D, h: LGUI}
+  - {t: F, h: LALT}
+  - G
+  - PGDN
+  - MS WHLD
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, h: RSFT}
+  - {t: '''', h: L4}
+  - CAPS
+  - Z
+  - {t: X, h: L5}
+  - C
+  - V
+  - B
+  - N
+  - {t: M, h: RALT}
+  - {t: ',', h: RGUI}
+  - {t: ., h: RCTL}
+  - {t: /, h: RSFT}
+  - SC SENT
+  - {t: HOME, h: L3}
+  - {t: BSPC, h: L2}
+  - SPC
+  - {t: ENT, h: L1}
+  - {t: DEL, h: L4}
+  - {t: END, h: L5}
+  L1:
+  - ''
+  - {t: PAUS, type: held}
+  - ESC
+  - MS WHLU
+  - SCRL
+  - MS ACL2
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - Ctl+-
+  - Ctl+=
+  - LCS(EQL)
+  - ''
+  - ''
+  - ''
+  - INS
+  - MS LEFT
+  - MS WHLD
+  - MS RGHT
+  - MS ACL1
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RGHT
+  - ENT
+  - ''
+  - MS BTN5
+  - MS BTN4
+  - MS BTN3
+  - MS BTN2
+  - MS BTN1
+  - MS ACL0
+  - MS LEFT
+  - MS DOWN
+  - MS UP
+  - MS RGHT
+  - MS BTN1
+  - MS BTN2
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  L2:
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - OS MEH
+  - OS HYPR
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '7'
+  - '8'
+  - '9'
+  - PPLS
+  - PMNS
+  - ''
+  - LSFT
+  - LCTL
+  - LGUI
+  - LALT
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '4'
+  - '5'
+  - '6'
+  - PAST
+  - PSLS
+  - LSFT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - PDOT
+  - PEQL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  L3:
+  - ''
+  - TAB
+  - ESC
+  - {type: held}
+  - Ctl+R
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - F7
+  - F8
+  - F8
+  - F10
+  - ''
+  - ''
+  - Ctl+A
+  - Ctl+LSFT
+  - LGUI
+  - FIND
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - F4
+  - F5
+  - F6
+  - F11
+  - ''
+  - PSCR
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - F12
+  - Ctl+Alt+DEL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  L4:
+  - ''
+  - Sft+4
+  - Sft+1
+  - '['
+  - ']'
+  - Sft+8
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+7
+  - ''''
+  - Sft+'
+  - ;
+  - PPLS
+  - PMNS
+  - ''
+  - Sft+2
+  - Sft+3
+  - Sft+9
+  - Sft+0
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - /
+  - Sft+\
+  - \
+  - '='
+  - PAST
+  - {t: PSLS, type: held}
+  - LSFT
+  - Sft+`
+  - Sft+5
+  - Sft+[
+  - Sft+]
+  - Sft+-
+  - Sft+/
+  - Sft+6
+  - Sft+,
+  - Sft+.
+  - PDOT
+  - PEQL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  L5:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RM TOGG
+  - Meh+U
+  - Hyper+U
+  - MSEL
+  - Hyper+M
+  - Hyper+I
+  - MUTE
+  - MPLY
+  - CALC
+  - RM SPDU
+  - RM VALU
+  - RM SATU
+  - RM HUEU
+  - RM NEXT
+  - RM ON
+  - Meh+D
+  - Hyper+D
+  - MPRV
+  - VOLU
+  - VOLD
+  - MNXT
+  - MSTP
+  - LCTL
+  - RM SPDD
+  - RM VALD
+  - {t: RM SATD, type: held}
+  - RM HUED
+  - RM PREV
+  - RM OFF
+  - MRWD
+  - ''
+  - ''
+  - MFFD
+  - ''
+  - {t: L6, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  L6:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - VOLU
+  - MPLY
+  - Y
+  - U
+  - I
+  - P
+  - '['
+  - ']'
+  - ESC
+  - A
+  - S
+  - D
+  - F
+  - G
+  - VOLD
+  - MNXT
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - CAPS
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - LCTL
+  - LALT
+  - SPC
+  - {t: ▽, type: trans}
+  - LGUI
+  - LSFT
+  L7: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', SPC, '', '', '']

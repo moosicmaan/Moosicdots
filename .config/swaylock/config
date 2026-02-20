@@ -7,7 +7,7 @@ timestr=%R
 datestr=%a, %x
 
 # screenshots
-image=/home/moosicmaan/Pictures/Backgrounds/wal67.png
+image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
 scaling=fit
 
 fade-in=2.2
@@ -22,7 +22,7 @@ effect-vignette=0.4:0.1
 effect-scale=0.3
 
 indicator
-indicator-image=/home/moosicmaan/Pictures/Backgrounds/wp8096937.jpg
+indicator-image=/home/moosicmaan/Pictures/Backgrounds/dark-red-wallpaper.jpg
 indicator-radius=240
 indicator-thickness=10
 indicator-caps-lock

@@ -36,7 +36,7 @@ animation = "fromBottom"
 command = "uwsm app -- foot --app-id=Smoosic pianobar"
 class = "Smoosic"
 lazy = true
-size = "70 ppt 40 ppt"
+size = "70%  40%"
 
 [scratchpads.vol]
 animation = "fromBottom"

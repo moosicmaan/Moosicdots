@@ -138,7 +138,7 @@ gaps {
 smart_gaps              on
 smart_borders           on
 
-# rules
+# Windows Rules
 for_window [shell="xwayland"] title_format "<b>%class</b>"
 for_window [shell="xwayland"] border pixel 10
 
