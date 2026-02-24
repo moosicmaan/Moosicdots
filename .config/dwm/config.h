@@ -30,20 +30,20 @@ static const int systraypinningfailfirst = 1; /* 1: if pinning fails, display sy
                                                  False: display systray on the last monitor*/
 static const char *fonts[]          = { "NotoSansM Nerd Font Mono:size=10" };
 static const char dmenufont[]       = "NotoSansM Nerd Font Mono:size=10";
-static const unsigned int baralpha = 0xA3;
-static const unsigned int borderalpha = 0xA3;
+static const unsigned int baralpha = 0xa0;
+static const unsigned int borderalpha = OPAQUE;
 static const char col_1[]           = "#282A36";
-static const char col_2[]           = "#BD93F9";
+static const char col_2[]           = "#3D6369";
 static const char col_3[]           = "#6272A4";
 static const char col_4[]           = "#F8F8F2";
-static const char col_bg[]          = "#1d1b13";
-static const char col_border[]      = "#FF79C6";
+static const char col_bg[]          = "#0d0b03";
+static const char col_border[]      = "#3F3936";
 static const char col_accent[]      = "#50FA7B";
 static const char col_pinned[]      = "#FFB86C";
 static const char *colors[][3]      = {
 /*               fg         bg     border   */
-  [SchemeNorm] = { col_4,   col_1,   col_2 },
-  [SchemeSel]  = { col_4,   col_1,   col_4 },
+  [SchemeNorm] = { col_4,   col_bg,   col_2 },
+  [SchemeSel]  = { col_4,   col_bg,   col_4 },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -54,9 +54,9 @@ static const unsigned int alphas[][3]      = {
 /* TAGS */
 static const char *tagsel[][2] = {
  /*   fg         bg    */
-  { col_4,      col_1 },                          /* norm */
+  { col_4,      col_bg },                          /* norm */
   { col_1,      col_4 },                          /* sel */
-  { col_1,      col_2 },                          /* occ but not sel */
+  { col_4,      col_2 },                          /* occ but not sel */
   { col_1,      col_pinned },                     /* has pinned tag */
 };
 
@@ -147,7 +147,7 @@ static const char *dmenucmd[] = {
     "-z", "1912",
     "-m", dmenumon, 
     "-fn", dmenufont,
-    "-nb", col_1, 
+    "-nb", col_bg, 
     "-nf", col_3, 
     "-sb", col_bg, 
     "-sf", col_4, 
@@ -341,7 +341,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_f}}, togglefullscr,  {0} }),
   &((Keychord){1, {{MODKEY,                   XK_space}}, setlayout,      {0} }),
   &((Keychord){1, {{AltMask,                      XK_t}}, setlayout,      {.v = &layouts[0]} }), /*tiling*/
-  &((Keychord){1, {{AltMask,                      XK_f}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
+  &((Keychord){1, {{AltMask,                      XK_l}}, setlayout,      {.v = &layouts[1]} }), /*floating*/
   &((Keychord){1, {{AltMask,                      XK_m}}, setlayout,      {.v = &layouts[2]} }), /*monocle/fullscreen*/
   &((Keychord){1, {{AltMask,                      XK_s}}, setlayout,      {.v = &layouts[3]} }), /*spiral*/
   &((Keychord){1, {{AltMask,                      XK_w}}, setlayout,      {.v = &layouts[4]} }), /*dwindle*/

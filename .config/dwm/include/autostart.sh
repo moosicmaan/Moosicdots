@@ -3,6 +3,10 @@
 # Start picom if not already running
 pgrep -x picom >/dev/null || picom -b &
 
+# Start polkit
+# /usr/lib/polkit-kde-authentication-agent-1
+/usr/lib/polkit-gnome/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Restart kmonad cleanly
 pkill kmonad
 # kmonad -c /home/moosicmaan/.config/kmonad/k350.kbd &
@@ -10,7 +14,7 @@ pkill kmonad
 setxkbmap -layout us -option
 
 # Set the colorscheme used by kitty and others
-wal --theme dracula >/dev/null
+wal --theme base16-irblack >/dev/null
 
 pgrep -x nm-tray >/dev/null || nm-tray &
 # pgrep -x pasystray >/dev/null || pasystray &

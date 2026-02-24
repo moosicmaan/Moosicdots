@@ -306,8 +306,8 @@ alias vi vim
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 
 # add emacs to the path
-fish_add_path /home/moosicmaan/.config/emacs/bin
-alias ec "emacsclient -c -a 'emacs' &"
+# fish_add_path /home/moosicmaan/.config/emacs/bin
+# alias ec "emacsclient -c -a 'emacs' &"
 
 # play local music and net radio
 alias jam rofi-beats
@@ -316,7 +316,7 @@ alias jam rofi-beats
 alias black "$HOME/.config/.scripts/ut-blackmenu"
 
 # add the scripts folder to the path
-set -x PATH $HOME/.config/.scripts $PATH
+# set -x PATH $HOME/.config/.scripts $PATH
 
 # used in functions below - basic fzf search
 alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
