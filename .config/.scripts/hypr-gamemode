@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # Turn off Hyprland animations and other effects for gaming

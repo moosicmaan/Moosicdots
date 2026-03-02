@@ -140,7 +140,7 @@ smart_borders           on
 
 # Windows Rules
 for_window [shell="xwayland"] title_format "<b>%class</b>"
-for_window [shell="xwayland"] border pixel 10
+for_window [shell="xwayland"] border pixel 1
 
 for_window [floating] border pixel 1
 

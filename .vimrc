@@ -5,9 +5,7 @@
 "
 " Awesome_version:
 "       Get this config, nice color schemes and lots of plugins!
-"
 "       Install the awesome version from:
-"
 "           https://github.com/amix/vimrc
 "
 " Sections:
@@ -150,7 +148,7 @@ if has("gui_macvim")
 endif
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

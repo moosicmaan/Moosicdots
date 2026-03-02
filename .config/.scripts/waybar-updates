@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # Update script for Waybar custom-updates module

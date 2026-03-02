@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # part of the garuda hyprland process...I'm not sure what/why this is here

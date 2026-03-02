@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # Toggles kmonad keymap for the Dell g7 laptop keyboard.

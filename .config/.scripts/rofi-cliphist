@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # Load the list of clipboard history and display it in Rofi

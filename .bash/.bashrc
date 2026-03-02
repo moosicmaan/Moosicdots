@@ -248,9 +248,7 @@ fi
 alias hypr="uwsm start -- hyprland.desktop"
 # alias vim="nvim"
 alias vi="vim"
-# export PATH=$PATH:$HOME/.config/emacs/bin
 # alias ec="emacsclient -c -a 'emacs' &"
-# export PATH="$HOME/.config/.scripts:$PATH"
 alias config="cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # play local music and net radio
 alias jam="~/.config/.scripts/rofi-beats"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # Set the brightness of an external monitor using ddcutil

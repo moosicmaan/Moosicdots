@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # This script wraps around my frequently used terminals

@@ -1,5 +1,4 @@
-#!/usr/bin/bash
-
+#!/usr/bin/env bash
 # Ensure pacman is accessible
 if ! command -v pacman &>/dev/null; then
   echo "Error: pacman not found. Make sure you're running this on an Arch-based system."

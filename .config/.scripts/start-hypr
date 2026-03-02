@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
 # If this is not a UWSM_SESSION, then run the processes
