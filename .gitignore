@@ -28,7 +28,7 @@
 *.su
 *.idb
 *.pdb
-dmenu
+.config/dwm/include/dmenu/*
 
 *.cmd
 .tmp_versions/
