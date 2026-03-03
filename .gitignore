@@ -28,6 +28,7 @@
 *.su
 *.idb
 *.pdb
+dmenu
 
 *.cmd
 .tmp_versions/
