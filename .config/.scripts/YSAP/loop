@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-echo "hello"
+# for uent in ../manf ../ut-figlet; do
+for uent in "$@"; do
+  echo "$uent: $(file $uent)"
+done

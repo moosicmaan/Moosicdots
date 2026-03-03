@@ -1,3 +1,13 @@
+# =====================================================
+# -----------------------------------------------------
+# BASH SHELL CONFIGURATION
+#    Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
+# -----------------------------------------------------
+# SET VALUES, ENVIRONMENT, AND PATHS
+# -----------------------------------------------------
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -5,6 +15,12 @@ HISTSIZE=5000
 export HISTIGNORE="ls:pwd:exit:clear"
 export HISTCONTROL=ignoredups:erasedups
 
+# set vim editing
+set -o vi
+
+# -----------------------------------------------------
+# PROMPT
+# -----------------------------------------------------
 # # Load starship prompt if starship is installed
 # if [ -x /usr/bin/starship ]; then
 #   __main() {
@@ -23,35 +39,42 @@ export HISTCONTROL=ignoredups:erasedups
 
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
-set -o vi
-source "$HOME/.bash_prompt.sh"
 
+if [ -f "$HOME/.bash_prompt.sh" ]; then
+  source "$HOME/.bash_prompt.sh"
+fi
+
+# -----------------------------------------------------
+# FUNCTIONS AND HELPER PROGRAMS
+# -----------------------------------------------------
 # Advanced command-not-found hook
-# source /usr/share/doc/find-the-command/ftc.bash noupdate info
+if [ -f /usr/share/doc/find-the-command/ftc.bash ]; then
+  source /usr/share/doc/find-the-command/ftc.bash noupdate info
+fi
 
-## Useful aliases
-
-# Replace ls with exa
+# -----------------------------------------------------
+# USEFUL ALIASES
+# -----------------------------------------------------
+# Replace ls with exa (eza)
 if [ -f /usr/bin/exa ]; then
-  alias la='exa -Alh --color=always --group-directories-first --icons'                  # show hidden files
-  alias ls='exa -ah -F --color=always --color=always --group-directories-first --icons' # add colors and file type extensions
-  # alias lx='exa -lXBh --color=always --group-directories-first --icons'                 # sort by extension
-  # alias lk='exa -lSrh --color=always --group-directories-first --icons '                # sort by size
-  # alias lc='exa -ltcrh --color=always --group-directories-first --icons'                # sort by change time
-  # alias lu='exa -lturh --color=always --group-directories-first --icons'                # sort by access time
-  # alias lr='exa -lRh --color=always --group-directories-first --icons'                  # recursive ls
-  # alias ld='exa -ltrh --color=always --group-directories-first --icons'                 # sort by date
-  # alias lm='exa -alh |more --color=always --group-directories-first --icons'            # pipe through 'more'
-  # alias lw='exa -xAh --color=always --group-directories-first --icons'                  # wide listing format
-  alias ll='exa -l -F --color=always --group-directories-first --icons' # long listing format
-  # alias labc='exa -lap --color=always --group-directories-first --icons'                # alphabetical sort
-  # alias lf="exa -l --color=always --icons | egrep -v '^d'"                              # files only
-  # alias ldir="exa -l --color=always --icons | egrep '^d'"                               # directories only
-  # alias lla='exa -Al --color=always --group-directories-first --icons'                  # List and Hidden Files
-  # alias las='exa -A --color=always --group-directories-first --icons'                   # Hidden Files
-  alias lls='exa -l --color=always --group-directories-first --icons'     # List
-  alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
-  alias le='exa -aT  --color=always --group-directories-first --icons'    # tree listing
+  alias ls='exa -ah -F --color=always --group-directories-first --icons'       # add colors and file type extensions
+  alias lw='exa -xah -F --color=always --group-directories-first --icons'      # wide listing format
+  alias ll='exa -lh -F --color=always --group-directories-first --icons'       # long listing format
+  alias la='exa -Alh --color=always --group-directories-first --icons'         # show hidden files long format
+  alias lm='exa -alh --color=always --group-directories-first --icons | more'  # pipe through 'more'
+  alias lT='exa -aTh  --color=always --group-directories-first --icons | more' # tree listing
+  alias lr='exa -lRh --color=always --group-directories-first --icons | more'  # recursive ls
+  alias labc='exa -lah --color=always --sort=name --icons'                     # sort by alphabetical
+  alias lx='exa -lXBh --color=always --sort=extension --icons'                 # sort by extension
+  alias lk='exa -lSrh --color=always --sort=size --icons '                     # sort by size
+  alias lc='exa -Alh --color=always --changed --sort=changed --icons'          # sort by change time
+  alias lu='exa -Alh --color=always --accessed --sort=accessed --icons'        # sort by access time
+  alias ld='exa -Alh --color=always --sort=date --icons'                       # sort by date
+  alias lf="exa -ah --color=always --follow-symlinks --only-files --icons"     # only files
+  alias ldir="exa -ah --color=always --follow-symlinks --only-dirs --icons"    # only directories
+  alias lla='exa -aAlh --color=always --group-directories-first --icons .*'    # only Hidden Files recursive long
+  alias lls='exa -aAh --color=always --group-directories-first --icons .*'     # Only Hidden Files recursive
+  alias l.='exa -aldh --color=always --group-directories-first --icons .*'     # only Dotfiles/dirs
 else
   alias la='ls -Alh'                # show hidden files
   alias ls='ls -aFh --color=always' # add colors and file type extensions
@@ -73,20 +96,29 @@ else
   alias le='tree -aC'               # tree listing
   alias l.='ls -ald .*'             # show only dotfiles
 fi
+# dir
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style snip --style changes --style header'
+if [ -f /usr/bin/bat ]; then
+  alias cat='bat --style header --style snip --style changes --style header'
+  # Use bat for man pages
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  # export MANROFFOPT=-c
+fi
+# use paru instead of yay to as a aur-helper
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
-# Alias's to modified commands
+# Aliases to modified commands
 # Common use
 alias ps='ps auxf'
 alias less='less -R -C'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
+alias rv='rv -i'
 alias grubup="sudo update-grub"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
 alias wget='wget -c '
@@ -99,17 +131,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='ugrep --color=auto'
-alias fgrep='ugrep -F --color=auto'
-alias egrep='ugrep -E --color=auto'
-alias hw='hwinfo --short'                           # Hardware Info
-alias big="expac -H M '%m\t%n' | sort -h | nl"      # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
-alias ip='ip -color'
 # cd into the old directory
 alias bd='cd "$OLDPWD"'
+alias hw='hwinfo --short' # Hardware Info
+alias ip='ip -color'
+
+if [ -f /usr/bin/ugrep ]; then
+  alias grep='ugrep --color=auto'
+  alias fgrep='ugrep -F --color=auto'
+  alias egrep='ugrep -E --color=auto'
+fi
 
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"
@@ -122,57 +153,28 @@ alias mountedinfo='df -hT'
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
-# Get fastest mirrors
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
 
+## PACMAN
 # Help people new to Arch
 alias apt='man pacman'
 alias apt-get='man pacman'
 alias please='sudo'
-alias tb='nc termbin.com 9999'
-alias helpme='cht.sh --shell'
 alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
-
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
-# Get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
-
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias big="expac -H M '%m\t%n' | sort -h | nl"      # Sort installed packages according to size in MB (expac must be installed)
+alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # JDB --->
 # -----------------------------------------------
 # IP address lookup
-alias whatismyip="whatsmyip"
-function whatsmyip() {
-  # Internal IP Lookup.
-  if command -v ip &>/dev/null; then
-    echo -n "Internal IP: "
-    ip addr show wlan0 | grep "inet " | awk '{print $2}' | cut -d/ -f1
-  else
-    echo -n "Internal IP: "
-    ifconfig wlan0 | grep "inet " | awk '{print $2}'
-  fi
-
-  # External IP Lookup
-  echo -n "External IP: "
-  curl -4 ifconfig.me
-}
-
-# Automatically do an ls after each cd, z, or zoxide
-cd() {
-  if [ -n "$1" ]; then
-    builtin cd "$@" && ls
-  else
-    builtin cd ~ && ls
-  fi
-}
+alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
 
 # Extracts any archive(s) (if unp isn't installed)
 extract() {
@@ -198,18 +200,6 @@ extract() {
   done
 }
 
-# Searches for text in all files in the current folder
-ftext() {
-  # -i case-insensitive
-  # -I ignore binary files
-  # -H causes filename to be printed
-  # -r recursive search
-  # -n causes line number to be printed
-  # optional: -F treat search term as a literal, not a regular expression
-  # optional: -l only print filenames and not the matching lines ex. grep -irl "$1" *
-  grep -iIHrn --color=always "$1" . | less -r
-}
-
 # Copy file with a progress bar
 cpp() {
   set -e
@@ -230,13 +220,9 @@ cpp() {
     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
 }
 
-alias suedit="VISUAL= sudoedit"
-
-# Variables
+# Changing the font if in TTY session
 my_font=ter-u22b.psf.gz
 font_directory=/usr/share/kbd/consolefonts
-
-# Changing the font if in TTY session
 if [[ $DISPLAY == "" ]]; then
   setfont $font_directory/$my_font
   echo " > Font set to: $font_directory/$my_font"
@@ -245,50 +231,70 @@ if [[ $DISPLAY == "" ]]; then
 fi
 
 # My aliases and prompts - not using starship in bash.
-alias hypr="uwsm start -- hyprland.desktop"
+alias hypr="start hyprland"
 # alias vim="nvim"
 alias vi="vim"
 # alias ec="emacsclient -c -a 'emacs' &"
-alias config="cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
+alias config="cd /mnt/data/moosicmaan/CONFIG/ && bash -c 'nvim'"
 # play local music and net radio
 alias jam="~/.config/.scripts/rofi-beats"
 # search/install/run blackarch packages - cli
 alias black="~/.config/.scripts/ut-blackmenu"
+# to help when system is opening sudoedit with graphical program
+alias suedit="VISUAL= sudoedit"
 
-# add zoxide, a better cd
-eval "$(zoxide init bash)"
-alias cd='__zoxide_z'
-alias cdi='__zoxide_zi'
+# Zoxide, a better cd
+if [ -f /usr/bin/zoxide ]; then
+  eval "$(zoxide init bash)"
+  # alias cd='__zoxide_z;pwd;ls'
+  # alias cdi='__zoxide_zi;pwd;ls'
+  alias cd='__zoxide_z'
+  alias cdi='__zoxide_zi'
+fi
 
 # Enable bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
   source /usr/share/bash-completion/bash_completion
 fi
 
+# if [ -f /usr/bin/yazi ]; then
 function yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  local tmp
+  local cwd
+
+  tmp="$(mktemp -t yazi-cwd.XXXXXX)" || return
+
   command yazi "$@" --cwd-file="$tmp"
+
   IFS= read -r -d '' cwd <"$tmp"
-  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+
+  if [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
+    builtin cd -- "$cwd"
+  fi
+
   rm -f -- "$tmp"
 }
+# fi
 
-alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-alias nf='nvim $(ff)'
-# alias np='nvim $(ft)'
-
-# bind \co yasi cd
 # bind '"<key>": <command>'
-bind -x '"\C-A-y":yy'
-bind -x '"\C-A-n":nf'
+bind -x '"\C-n":nf'
+bind -x '"\C-\A-n":nf'
 bind -x '"\C-l":clear'
 bind -x '"\C-A-l":clear'
+# bind \co yasi cd
+bind -x '"\C-y":yy'
+bind -x '"\C-\A-y":yy'
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+if [ -f /usr/bin/fzf ]; then
+  # Set up fzf key bindings and fuzzy completion
+  eval "$(fzf --bash)"
 
-export FZF_CTRL_T_OPTS="-m \
+  alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+
+  alias nf='nvim $(ff)'
+  # alias np='nvim $(ft)'
+
+  export FZF_CTRL_T_OPTS="-m \
 --tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
@@ -305,7 +311,7 @@ export FZF_CTRL_T_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-export FZF_CTRL_R_OPTS="--height 85% \
+  export FZF_CTRL_R_OPTS="--height 85% \
 --tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
@@ -320,7 +326,7 @@ export FZF_CTRL_R_OPTS="--height 85% \
 --pointer '→' \
 --marker '*'"
 
-export FZF_ALT_C_OPTS="--height 85% \
+  export FZF_ALT_C_OPTS="--height 85% \
 --tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
@@ -335,7 +341,7 @@ export FZF_ALT_C_OPTS="--height 85% \
 --pointer '→' \
 --marker '*'"
 
-export FZF_DEFAULT_OPTS="-m \
+  export FZF_DEFAULT_OPTS="-m \
 --tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
@@ -351,7 +357,7 @@ export FZF_DEFAULT_OPTS="-m \
 --pointer '→' \
 --marker '*'"
 
-export FZF_TMUX_OPTS="-m \
+  export FZF_TMUX_OPTS="-m \
 --tmux 75% \
 --margin 2%,2% \
 --scroll-off 3 \
@@ -366,6 +372,7 @@ export FZF_TMUX_OPTS="-m \
 --prompt 'FIND ▶ ' \
 --pointer '→' \
 --marker '*'"
+fi
 # -----------------------------------------------
 # <--- JDB
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

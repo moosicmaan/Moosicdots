@@ -98,7 +98,9 @@ end
 # FUNCTIONS AND HELPER PROGRAMS
 # -----------------------------------------------------
 ## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish noupdate info
+if [ -f /usr/share/doc/find-the-command/ftc.bash ]
+    source /usr/share/doc/find-the-command/ftc.fish noupdate info
+end
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -165,32 +167,25 @@ end
 # USEFUL ALIASES
 # -----------------------------------------------------
 # Replace ls with eza
-# alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
-# alias la 'eza -a --color=always --group-directories-first --icons' # all files and dirs
-# alias ll 'eza -l --color=always --group-directories-first --icons' # long format
-# alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
-# alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
-
 if [ -f /usr/bin/exa ]
-    alias la 'exa -Alh --color=always --group-directories-first --icons' # show hidden files
-    alias ls 'exa -ah -F --color=always --color=always --group-directories-first --icons' # add colors and file type extensions
-    # alias lx 'exa -lXBh --color=always --group-directories-first --icons' # sort by extension
-    # alias lk 'exa -lSrh --color=always --group-directories-first --icons '                # sort by size
-    # alias lc 'exa -ltcrh --color=always --group-directories-first --icons'                # sort by change time
-    # alias lu 'exa -lturh --color=always --group-directories-first --icons'                # sort by access time
-    # alias lr 'exa -lRh --color=always --group-directories-first --icons'                  # recursive ls
-    # alias ld 'exa -ltrh --color=always --group-directories-first --icons'                 # sort by date
-    # alias lm 'exa -alh |more --color=always --group-directories-first --icons'            # pipe through 'more'
-    # alias lw 'exa -xAh --color=always --group-directories-first --icons'                  # wide listing format
-    alias ll 'exa -l -F --color=always --group-directories-first --icons' # long listing format
-    # alias labc 'exa -lap --color=always --group-directories-first --icons'                # alphabetical sort
-    # alias lf "exa -l --color=always --icons | egrep -v '^d'"                              # files only
-    # alias ldir "exa -l --color=always --icons | egrep '^d'"                               # directories only
-    # alias lla 'exa -Al --color=always --group-directories-first --icons'                  # List and Hidden Files
-    # alias las 'exa -A --color=always --group-directories-first --icons'                   # Hidden Files
-    alias lls 'exa -l --color=always --group-directories-first --icons' # List
-    alias l. 'exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
-    alias le 'exa -aT  --color=always --group-directories-first --icons' # tree listing
+    alias ls 'exa -ah -F --color=always --group-directories-first --icons' # add colors and file type extensions
+    alias lw 'exa -xah -F --color=always --group-directories-first --icons' # wide listing format
+    alias ll 'exa -lh -F --color=always --group-directories-first --icons' # long listing format
+    alias la 'exa -Alh --color=always --group-directories-first --icons' # show hidden files long format
+    alias lm 'exa -alh --color=always --group-directories-first --icons | more' # pipe through 'more'
+    alias lT 'exa -aTh  --color=always --group-directories-first --icons | more' # tree listing
+    alias lr 'exa -lRh --color=always --group-directories-first --icons | more' # recursive ls
+    alias labc 'exa -lah --color=always --sort=name --icons' # sort by alphabetical
+    alias lx 'exa -lXBh --color=always --sort=extension --icons' # sort by extension
+    alias lk 'exa -lSrh --color=always --sort=size --icons ' # sort by size
+    alias lc 'exa -Alh --color=always --changed --sort=changed --icons' # sort by change time
+    alias lu 'exa -Alh --color=always --accessed --sort=accessed --icons' # sort by access time
+    alias ld 'exa -Alh --color=always --sort=date --icons' # sort by date
+    alias lf "exa -ah --color=always --follow-symlinks --only-files --icons" # only files
+    alias ldir "exa -ah --color=always --follow-symlinks --only-dirs --icons" # only directories
+    alias lla 'exa -aAlh --color=always --group-directories-first --icons .*' # only Hidden Files recursive long
+    alias lls 'exa -aAh --color=always --group-directories-first --icons .*' # Only Hidden Files recursive
+    alias l. 'exa -aldh --color=always --group-directories-first --icons .*' # only Dotfiles/dirs
 else
     alias la 'ls -Alh' # show hidden files
     alias ls 'ls -aFh --color=always' # add colors and file type extensions
@@ -214,18 +209,25 @@ else
 end
 
 # Replace some more things with better alternatives
-abbr cat 'bat --style header,snip,changes'
+if [ -f /usr/bin/bat ]
+    abbr cat 'bat --style header,snip,changes'
+end
 
 if not test -x /usr/bin/yay; and test -x /usr/bin/paru
     alias yay paru
 end
 
 # Common use
+alias cp 'cp -i'
+alias mv 'mv -i'
+alias rv 'rv -i'
 alias .. 'cd ..'
 alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
+# cd into the old directory
+alias bd 'cd "$OLDPWD"'
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
@@ -296,18 +298,11 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 
 # Making sure sudoedit from term is done with (n)vim 
 alias suedit "VISUAL= sudoedit"
-
 alias vi vim
-
 # alias vim 'kitty @ set-spacing padding=0 && nvim'
 # alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
 # alias mux 'kitty @ set-spacing padding=0 && tmux'
-
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
-
-# add emacs to the path
-# fish_add_path /home/moosicmaan/.config/emacs/bin
-# alias ec "emacsclient -c -a 'emacs' &"
 
 # play local music and net radio
 alias jam rofi-beats
@@ -318,21 +313,82 @@ alias black "$HOME/.config/.scripts/ut-blackmenu"
 # add the scripts folder to the path
 # set -x PATH $HOME/.config/.scripts $PATH
 
-# used in functions below - basic fzf search
-alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
 # -------------------------------------------------------------------------------
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------
+
+# IP address lookup
+alias whatsmyip "~/.config/.scripts/ut-whatsmyip"
+
+# # Extracts any archive(s) (if unp isn't installed)
+# extract() {
+#   for archive in "$@"; do
+#     if [ -f "$archive" ]; then
+#       case $archive in
+#       *.tar.bz2) tar xvjf "$archive" 
+# ;
+#       *.tar.gz) tar xvzf "$archive" 
+# ;
+#       *.bz2) bunzip2 "$archive" 
+# ;
+#       *.rar) rar x "$archive" 
+# ;
+#       *.gz) gunzip "$archive" 
+# ;
+#       *.tar) tar xvf "$archive" 
+# ;
+#       *.tbz2) tar xvjf "$archive" 
+# ;
+#       *.tgz) tar xvzf "$archive" 
+# ;
+#       *.zip) unzip "$archive" 
+# ;
+#       *.Z) uncompress "$archive" 
+# ;
+#       *.7z) 7z x "$archive" 
+# ;
+#       *) echo "don't know how to extract '$archive'..." 
+# ;
+#       esac
+#     else
+#       echo "'$archive' is not a valid file!"
+#     fi
+#   done
+# }
+
+# # Copy file with a progress bar
+# cpp() {
+#   set -e
+#   strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
+#     awk '{
+#         count += $NF
+#         if (count % 10 == 0) {
+#             percent = count / total_size * 100
+#             printf "%3d%% [", percent
+#             for (i=0;i<=percent;i++)
+#                 printf "="
+#             printf ">"
+#             for (i=percent;i<100;i++)
+#                 printf " "
+#             printf "]\r"
+#         }
+#     }
+#     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
+# }
+
+# check the current interfaces
+alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
 
 # set vi mode
 fish_vi_key_bindings
 
 # KEYBINDINGS
 bind --mode insert ctrl-alt-y yy
+bind --mode insert ctrl-y yy
 bind --mode insert ctrl-alt-n nf
-# bind --mode insert ctrl-l clear
-bind --mode insert ctrl-alt-l 'echo "It is just C-l..."'
+bind --mode insert ctrl-n nf
+bind --mode insert ctrl-alt-l clear
+bind --mode insert ctrl-l clear
 
 # change the working directory using yazi
 function yy
@@ -344,20 +400,23 @@ function yy
     rm -f -- "$tmp"
 end
 
-function nf
-    nvim (ff)
-end
-
 # replace cd with zoxide, a better cd with an interactive feature
 zoxide init fish | source
 abbr --erase cd &>/dev/null
-alias cd=__zoxide_z
+# alias cd="__zoxide_z;pwd;ls"
+alias cd="__zoxide_z"
 abbr --erase cdi &>/dev/null
-alias cdi=__zoxide_zi
+# alias cdi="__zoxide_zi;pwd;ls"
+alias cdi="__zoxide_zi"
 
 # -------------------------------------------------------------------------------
 # FZF CONFIG
 # -------------------------------------------------------------------------------
+function nf
+    nvim (ff)
+end
+# used in functions below - basic fzf search
+alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
 # insert fzf keybinding
 fzf --fish | source
 
