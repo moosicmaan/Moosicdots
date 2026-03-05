@@ -288,6 +288,11 @@ bind -x '"\C-y":yy'
 bind -x '"\C-\A-y":yy'
 
 if [ -f /usr/bin/fzf ]; then
+  # Setup fzf
+  # ---------
+  if [[ ! "$PATH" == */path/to/fzf/bin* ]]; then
+    PATH="${PATH:+${PATH}:}/path/to/fzf/bin"
+  fi
   # Set up fzf key bindings and fuzzy completion
   eval "$(fzf --bash)"
 
@@ -296,84 +301,6 @@ if [ -f /usr/bin/fzf ]; then
   alias nf='nvim $(ff)'
   # alias np='nvim $(ft)'
 
-  export FZF_CTRL_T_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF Find ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---header '<TAB> for MULTI' \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_CTRL_R_OPTS="--height 85% \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---preview 'echo {}' \
---preview-window 'right,40%,wrap' \
---border rounded \
---layout reverse \
---border-label '╢ FZF History ╟' \
---info hidden \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_ALT_C_OPTS="--height 85% \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF CD ╟' \
---walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
---preview 'tree -C {}' \
---info hidden \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_DEFAULT_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---header '<TAB> for MULTI' \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_TMUX_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
---header '<TAB> for MULTI' \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
 fi
 # -----------------------------------------------
 # <--- JDB

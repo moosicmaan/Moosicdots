@@ -85,6 +85,7 @@ static const Rule rules[] = {
   { NULL,                        NULL,   "weatherreport",                0,       1,   -1,  0,  150,50,1620,900, 9 },
   { "mpv",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
   { "vlc",                       NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,450,   9 },
+  { "bluet",                     NULL,   NULL,                           0,       1,   -1,  0,  50,50,800,750,   9 },
   { NULL,                        NULL,   "galculator",                   0,       1,   -1,  0,  50,50,800,450,   9 },
   { NULL,                        NULL,   "btrfs-assistant",              0,       1,   -1,  0,  50,50,800,950,   9 },
   { NULL,                        NULL,   "fsearch",                      0,       1,   -1,  0,  50,50,800,450,   9 },
@@ -155,19 +156,19 @@ static const char *dmenucmd[] = {
 };
 static const char *menu_drun[] = { 
     "rofi", 
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
     "-show", "drun", 
     NULL 
 };
 static const char *menu_win[] = { 
     "rofi",
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-7.rasi",
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
     "-show", "window", 
     NULL
 };
 static const char *rofi_power[] = { 
     "rofi", 
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-9.rasi", 
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi", 
     "-show", "powermenu", 
     "-modi", "powermenu:~/.config/.scripts/rofi-power", 
     NULL 
@@ -194,11 +195,12 @@ static const char *kmonadl[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-lap",
 static const char *kmonade[] = { "/home/moosicmaan/.config/.scripts/ut-kbd-350", NULL };
 static const char *jamrofi[] = { "/home/moosicmaan/.config/.scripts/rofi-beats", NULL };
 static const char *mfavs[] = { "/home/moosicmaan/.config/.scripts/rofi-beat-favs", NULL };
-static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
+// static const char *barch[] = { "/home/moosicmaan/.config/.scripts/rofi-blackmenu", NULL };
 static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screenshot", NULL };
 static const char *emacss[] = { "emacs", "--daemon=serve", NULL };
 static const char *emacsc[] = { "emacsclient", "-c", "-a", "emacs", NULL };
 static const char *my_notes[] = { "obsidian", NULL };
+static const char *bluet[]    = { "/home/moosicmaan/.config/.scripts/ut-tog-termclass", "kitty", "bluet", "bluetui", NULL };
 
 /*   MEDIA KEYS   */
 #include <X11/XF86keysym.h>
@@ -248,7 +250,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY,                   XK_Print}}, spawn,          {.v = screenshot } }),
   &((Keychord){1, {{0,                        XK_Print}}, spawn,          {.v = screenshot } }),
   &((Keychord){1, {{ControlMask|AltMask,     XK_Delete}}, spawn,          {.v = rofi_power } }),
-  &((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = barch } }),
+  &((Keychord){1, {{ControlMask|AltMask,          XK_b}}, spawn,          {.v = bluet } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_m}}, spawn,          {.v = jamrofi } }),
   &((Keychord){1, {{MEH,                          XK_k}}, spawn,          {.v = kmonade } }),
   &((Keychord){1, {{MEH,                          XK_j}}, spawn,          {.v = kmonadl } }),

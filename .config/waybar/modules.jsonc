@@ -127,13 +127,13 @@
       // "10": "10",
       "default": "",
       "empty": "",
-      "visible": "󰹑",
-      "urgent": "",
-      "S-term": "   ",
-      "S-mon": " ⚙ ",
-      "S-files": "   ",
-      "S-vol": "    ",
-      "S-moosic": " 󰝚  "
+      "visible": "󰹑 ",
+      "urgent": " ",
+      "S-term": " ",
+      "S-mon": "⚙ ",
+      "S-files": " ",
+      "S-vol": " ",
+      "S-moosic": "󰝚 "
     }
   },
   "hyprland/workspaces#short": {
@@ -144,11 +144,11 @@
     "show-special": true,
     "special-visible-only": false,
     "format-icons": {
-      "S-term": "   ",
-      "S-mon": " ⚙ ",
-      "S-files": "   ",
-      "S-vol": "    ",
-      "S-moosic": " 󰝚  "
+      "S-term": "  ",
+      "S-mon": "⚙ ",
+      "S-files": " ",
+      "S-vol": " ",
+      "S-moosic": "󰝚 "
     }
   },
   "hyprland/workspaces#named": {
@@ -184,7 +184,7 @@
       "S-term": " ",
       "S-mon": "⚙",
       "S-files": " ",
-      "S-vol": "  ",
+      "S-vol": " ",
       "S-moosic": "󰝚 "
     }
   },
@@ -227,7 +227,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -271,7 +271,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -313,7 +313,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -351,7 +351,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -392,7 +392,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -435,7 +435,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },
@@ -477,7 +477,7 @@
       "S-term": "( )",
       "S-mon": "(⚙)",
       "S-files": "( )",
-      "S-vol": "(  )",
+      "S-vol": "( )",
       "S-moosic": "(󰝚 )"
     }
   },

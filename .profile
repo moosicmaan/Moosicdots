@@ -20,3 +20,82 @@ export NO_AT_BRIDGE=1
 export QT_QPA_PLATFORMTHEME=qt6ct
 export XDG_MENU_PREFIX=arch-
 export AMD_VULKAN_ICD=RADV
+
+export FZF_CTRL_T_OPTS="-m \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF Find ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--header '<TAB> for MULTI' \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_CTRL_R_OPTS="--height 85% \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--preview 'echo {}' \
+--preview-window 'right,40%,wrap' \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF History ╟' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_ALT_C_OPTS="--height 85% \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF CD ╟' \
+--walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview 'tree -C {}' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_DEFAULT_OPTS="-m \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--header '<TAB> for MULTI' \
+--color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"
+
+export FZF_TMUX_OPTS="-m \
+--tmux 75% \
+--margin 2%,2% \
+--scroll-off 3 \
+--border rounded \
+--layout reverse \
+--border-label '╢ FZF ╟' \
+--preview 'bat -n --color=always {}' \
+--info hidden \
+--color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
+--header '<TAB> for MULTI' \
+--preview-label ' ~ Preview ~ ' \
+--prompt 'FIND ▶ ' \
+--pointer '→' \
+--marker '*'"

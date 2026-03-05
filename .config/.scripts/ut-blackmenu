@@ -17,7 +17,7 @@ fi
 clear
 CAT_SEL=$(echo "$BA_CATS" | sort | fzf \
   --tmux 80% \
-  --preview 'pacman -Sg {} | awk "{print \$2}" | column' \
+  --preview "pacman -Sg {} | awk '{print \$2}' | column" \
   --preview-window 'right,80%,wrap' \
   --border-label '╢ Pick A Category ╟')
 

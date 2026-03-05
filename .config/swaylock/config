@@ -1,30 +1,30 @@
 ignore-empty-password
-font=Hack Nerd Font
-
-clock
-timestr=%R
-# datestr=%a, %e of %B
-datestr=%a, %x
-
-# screenshots
-image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
-scaling=fit
-
 fade-in=2.2
 grace=60
 grace-no-mouse
 grace-no-touch
 
-# effect-blur=20x2
+font=JetBrainsMonoNL NFP ExtraLight
+
+clock
+timestr=%R
+datestr=%A
+
+# screenshots
+image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
+scaling=fit
+
+# effect-blur=2x2
 # effect-pixelate=16
-effect-vignette=0.4:0.1
+# effect-vignette=0.4:0.1
 # effect-greyscale
 effect-scale=0.3
 
 indicator
 indicator-image=/home/moosicmaan/Pictures/Backgrounds/dark-red-wallpaper.jpg
-indicator-radius=240
-indicator-thickness=10
+# indicator-radius=240
+indicator-radius=200
+indicator-thickness=5
 indicator-caps-lock
 
 key-hl-color=eab676
