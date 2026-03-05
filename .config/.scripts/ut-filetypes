@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if (($# > 0)); then
+  fname_array=("$@")
+else
+  fname_array=(* .*)
+fi
+
+file "${fname_array[@]}" |
+  awk 'NR % 2 == 1 {print "\033[1;36m" $0 "\033[0m"} NR % 2 == 0 {print $0}' |
+  bat --force-colorization

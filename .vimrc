@@ -282,12 +282,27 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+""""""""""""""""""""""""""""""
+" NETRW
+""""""""""""""""""""""""""""""
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 30
+let g:netrw_banner = 0
+let g:netrw_localcopydircmd = 'cp -r'
+hi! link netrwMarkFile Search
+" Open Netrw Directory (Explorer) full window
+map <leader>; :Explore<cr>
+" Open Netrw Directory (Explorer) l side current working directory
+nmap <leader>e :Lexplore %:p:h<CR>
+" Open Netrw Directory (Explorer) current file directory
+nmap <Leader>d :Lexplore<CR>
+
 
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=2
+set laststatus=1
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c

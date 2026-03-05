@@ -207,6 +207,8 @@ else
     alias le 'tree -aC' # tree listing
     alias l. 'ls -ald .*' # show only dotfiles
 end
+# list the types of files in a directory or list
+alias types '~/.config/.scripts/ut-filetypes'
 
 # Replace some more things with better alternatives
 if [ -f /usr/bin/bat ]

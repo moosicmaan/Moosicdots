@@ -181,11 +181,11 @@
       "empty": "",
       "visible": "󰹑",
       "urgent": "",
-      "S-term": "   ",
-      "S-mon": " ⚙ ",
-      "S-files": "   ",
-      "S-vol": "    ",
-      "S-moosic": " 󰝚  "
+      "S-term": " ",
+      "S-mon": "⚙",
+      "S-files": " ",
+      "S-vol": "  ",
+      "S-moosic": "󰝚 "
     }
   },
   "hyprland/workspaces#kitty": {
@@ -224,11 +224,11 @@
       "8": "😻",
       "9": "😺",
       "urgent": "",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#moony": {
@@ -268,11 +268,11 @@
       "9": "🌕",
       "active": "🌏",
       "special": "😍",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#roman": {
@@ -310,11 +310,11 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#pacman": {
@@ -348,11 +348,11 @@
       "persistent": "󰊠",
       "default": "󱎓",
       //"special": "😍",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#symbols": {
@@ -389,11 +389,11 @@
       "7": "",
       "8": "",
       "9": "",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#music": {
@@ -432,11 +432,11 @@
       "7": "󰝱",
       "8": "󰽩",
       "9": "󰝚",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/workspaces#numberblocks": {
@@ -474,11 +474,11 @@
       "7": "󰎶",
       "8": "󰎹",
       "9": "󰎼",
-      "S-term": "(   )",
-      "S-mon": "( ⚙ )",
-      "S-files": "(   )",
-      "S-vol": "(    )",
-      "S-moosic": "( 󰝚  )"
+      "S-term": "( )",
+      "S-mon": "(⚙)",
+      "S-files": "( )",
+      "S-vol": "(  )",
+      "S-moosic": "(󰝚 )"
     }
   },
   "hyprland/submap": {

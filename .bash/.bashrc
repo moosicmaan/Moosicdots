@@ -99,6 +99,8 @@ fi
 # dir
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
+# list the types of files in a directory or list
+alias types='~/.config/.scripts/ut-filetypes'
 
 # Replace some more things with better alternatives
 if [ -f /usr/bin/bat ]; then
@@ -117,7 +119,7 @@ alias less='less -R -C'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
-alias rv='rv -i'
+alias rm='rm -i'
 alias grubup="sudo update-grub"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
@@ -257,24 +259,24 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   source /usr/share/bash-completion/bash_completion
 fi
 
-# if [ -f /usr/bin/yazi ]; then
-function yy() {
-  local tmp
-  local cwd
+if [ -f /usr/bin/yazi ]; then
+  function yy() {
+    local tmp
+    local cwd
 
-  tmp="$(mktemp -t yazi-cwd.XXXXXX)" || return
+    tmp="$(mktemp -t yazi-cwd.XXXXXX)" || return
 
-  command yazi "$@" --cwd-file="$tmp"
+    command yazi "$@" --cwd-file="$tmp"
 
-  IFS= read -r -d '' cwd <"$tmp"
+    IFS= read -r -d '' cwd <"$tmp"
 
-  if [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
-    builtin cd -- "$cwd"
-  fi
+    if [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
+      builtin cd -- "$cwd"
+    fi
 
-  rm -f -- "$tmp"
-}
-# fi
+    rm -f -- "$tmp"
+  }
+fi
 
 # bind '"<key>": <command>'
 bind -x '"\C-n":nf'

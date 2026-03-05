@@ -8,51 +8,51 @@
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
+pic_folder="$HOME/Pictures/Backgrounds"
 
-# Create cache file if not exists
+# Create cache file if none exists
 if [ ! -f "$cache_file" ]; then
-  touch "$cache_file"
-  echo "$HOME/Pictures/Backgrounds/1.jpg" >"$cache_file"
+  echo "$pic_folder/default.png" >"$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f "$rasi_file" ]; then
-  touch "$rasi_file"
-  echo "* { current-image: url(\"$HOME/Pictures/Backgrounds/1.jpg\", height); }" >"$rasi_file"
+  echo "* { current-image: url(\"$pic_folder/default.png\", height); }" >"$rasi_file"
 fi
-
-current_wallpaper=$(cat "$cache_file")
 
 case $1 in
 # Load wallpaper from .cache of last session
 "--init")
-  if [ -f "$cache_file" ]; then
-    wal -q -i "$current_wallpaper"
-  else
-    wal -q -i ~/wallpaper/
-  fi
+  # if [ -f "$cache_file" ]; then
+  cwall=$(cat "$cache_file") >/dev/null 2>&1
+  echo "Debug in --init: cwall = $cwall"
+  wal -q -i "$cwall"
+  # else
+  # wal -q -i ~/Pictures/
+  # fi
   ;;
 
 # Select wallpaper with rofi
 "--select")
-  selected=$(find "$HOME/Pictures/Backgrounds" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
-    echo -en "$rfile\x00icon\x1f$HOME/Pictures/Backgrounds/${rfile}\n"
+  selected=$(find "$pic_folder" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read -r rfile; do
+    echo -en "$rfile\x00icon\x1f$pic_folder/${rfile}\n"
   done | rofi -dmenu -replace -config ~/.config/rofi/config-wall.rasi -p " > ")
   if [ ! "$selected" ]; then
     echo "No wallpaper selected"
     exit
   fi
-  wal -q -i ~/Pictures/Backgrounds/"$selected"
+  echo "Debug in --select: selected = $selected"
+  wal -q -i "$pic_folder/$selected" >/dev/null 2>&1
   ;;
-
 # Use the file they sent
 "--file")
-  wal -q -i "$2"
+  echo "Debugin --file: 2 = $2"
+  wal -q -i "$2" >/dev/null 2>&1
   ;;
 
 # Randomly select wallpaper for everything else
 *)
-  wal -q -i ~/Pictures/Backgrounds/
+  wal -q -i "$pic_folder/" >/dev/null 2>&1
   ;;
 esac
 
@@ -72,15 +72,8 @@ echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
 # -----------------------------------------------------
 # get wallpaper image name
 # -----------------------------------------------------
-newwall=$(echo "$wallpaper" | sed "s|$HOME/Pictures/Backgrounds/||g")
+newwall=$(echo "$wallpaper" | sed "s|$pic_folder/||g")
 
-# -----------------------------------------------------
-# Reload waybar with new colors
-# -----------------------------------------------------
-"$HOME/.config/.scripts/hypr-barlaunch"
-
-# -----------------------------------------------------
-# Set the new wallpaper
 # -----------------------------------------------------
 # transition_type="wipe"
 # transition_type="outer"
@@ -96,6 +89,11 @@ swww img "$wallpaper" \
 # --transition-type=$transition_type \
 # --transition-duration=0.7 \
 # --transition-pos "$(hyprctl cursorpos)"o
+
+# -----------------------------------------------------
+# Reload waybar with new colors
+# -----------------------------------------------------
+"$HOME/.config/.scripts/hypr-barlaunch"
 
 # -----------------------------------------------------
 # Send notification
