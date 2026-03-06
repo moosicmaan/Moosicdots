@@ -1,3 +1,4 @@
+#!/usr/bin/env sh 
 set editing-mode vi
 set show-mode-in-prompt on
 set vi-ins-mode-string " \1\033[1;37m└──|\2"

@@ -414,15 +414,97 @@ alias cdi="__zoxide_zi"
 # -------------------------------------------------------------------------------
 # FZF CONFIG
 # -------------------------------------------------------------------------------
-function nf
-    nvim (ff)
-end
-# used in functions below - basic fzf search
-alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+# Setup fzf
+# set -gx FZF_DEFAULT_OPTS_FILE $HOME/.config/fzf/fzf.conf
+set -gx FZF_CTRL_T_OPTS \
+    "-m \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF Find ╟' \
+--preview='bat -n --color=always {}' \
+--info=hidden \
+--header='<TAB> for MULTI' \
+--color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--walker-skip=.git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview-label=' ~ Preview ~ ' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker='✓'"
+
+# export FZF_CTRL_R_OPTS="--height 85% \
+# --tmux=75% \
+# --margin=2%,2% \
+# --scroll-off=3 \
+# --preview='echo {}' \
+# --preview-window='right,40%,wrap' \
+# --border=rounded \
+# --layout=reverse \
+# --border-label='╢ FZF History ╟' \
+# --info=hidden \
+# --color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+# --prompt='FIND ▶ ' \
+# --pointer='→' \
+# --marker '✓'"
+#
+# export FZF_ALT_C_OPTS="--height 85% \
+# --tmux=75% \
+# --margin=2%,2% \
+# --scroll-off=3 \
+# --border=rounded \
+# --layout=reverse \
+# --border-label='╢ FZF CD ╟' \
+# --walker-skip=.git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+# --preview='tree -C {}' \
+# --info=hidden \
+# --color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+# --prompt='FIND ▶ ' \
+# --pointer='→' \
+# --marker='✓'"
+#
+# export FZF_DEFAULT_OPTS="-m \
+# --tmux=75% \
+# --margin=2%,2% \
+# --scroll-off=3 \
+# --border=rounded \
+# --layout=reverse \
+# --border-label='╢ FZF ╟' \
+# --preview='bat -n --color=always {}' \
+# --info=hidden \
+# --header='<TAB> for MULTI' \
+# --color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+# --preview-label=' ~ Preview ~ ' \
+# --prompt='FIND ▶ ' \
+# --pointer='→' \
+# --marker='✓'"
+#
+# export FZF_TMUX_OPTS="-m \
+# --tmux=75% \
+# --margin=2%,2% \
+# --scroll-off=3 \
+# --border=rounded \
+# --layout=reverse \
+# --border-label='╢ FZF ╟' \
+# --preview='bat -n --color=always {}' \
+# --info=hidden \
+# --color='dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
+# --header='<TAB> for MULTI' \
+# --preview-label=' ~ Preview ~ ' \
+# --prompt='FIND ▶ ' \
+# --pointer='→' \
+# --marker='✓'"
 
 # insert fzf keybinding
 fzf --fish | source
 
+# used in functions below - basic fzf search
+alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+
+function nf
+    nvim (ff)
+end
 # -------------------------------------------------------------------------------
 # <--- JDB
 # ===============================================================================

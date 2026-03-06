@@ -1,3 +1,4 @@
+#!/usr/bin/env vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
 "       borrowed from Amir Salihefendic - @amix3k
