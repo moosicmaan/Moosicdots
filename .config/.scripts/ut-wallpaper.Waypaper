@@ -77,7 +77,7 @@ wal -q -i "$NEWWALL"
 # Reload waybar and dunst with new colors
 # Sending output to /dev/null to make debugging easier
 sleep 1
-"$HOME/.config/.scripts/hypr-barlaunch" >/dev/null 2>&1
+"$HOME/.config/.scripts/wb-launch" >/dev/null 2>&1
 killall -9 dunst
 dunst &
 

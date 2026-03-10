@@ -146,6 +146,10 @@ window#waybar.empty #window {
   background-color: @tooltipbackground;
   opacity: 1;
 }
+#scratchpad,
+#scratchpad.empty {
+  padding: 0px 0px 0px 8px;
+}
 
 /* -----------------------------------------------------
  * Tooltips

@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Launch the statusbar for wayland compositors
+#    Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
+
+# Prefix to run commands in wayland using uwsm.
+PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+themecache="$HOME/.cache/themestyle"
+# Default theme: THEMEFOLDER;VARIATION
+defaulttheme="moosic;moosic/mixed"
+
+# -----------------------------------------------------
+# Quit all running statuesbar instances
+# -----------------------------------------------------
+pkill waybar
+sleep 0.2
+
+# -----------------------------------------------------
+# Get current theme information from .cache/themestyle
+# -----------------------------------------------------
+if [ ! -f "$themecache" ]; then
+  echo -e "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
+  touch "$themecache"
+  echo "$defaulttheme" >"$themecache"
+fi
+
+themestyle=$(cat "$themecache")
+echo "Using the following to open the bar(s): $themestyle"
+
+# -----------------------------------------------------
+# Discover the current Wayland Compositor
+# -----------------------------------------------------
+case "$DESKTOP_SESSION" in
+sway | sway:wlroots)
+  cdesk="sway"
+  ;;
+hypr | hyprland | Hyprland | hyprland-uwsm)
+  cdesk="hypr"
+  ;;
+dwl | mango | mangowm)
+  cdesk="dwl"
+  ;;
+niri | niri:wlroots)
+  cdesk="niri"
+  ;;
+esac
+
+IFS=';' read -ra arrThemes <<<"$themestyle"
+echo "Theme: ${arrThemes[0]}"
+echo "Style: ${arrThemes[1]}"
+echo "WM/WC: $cdesk"
+
+# -----------------------------------------------------
+# Loading the configuration for Waybar
+# -----------------------------------------------------
+config_file="config_$cdesk.jsonc"
+style_file="style.css"
+
+echo "Starting Waybar..."
+echo "Config: $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file"
+echo "Style: $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file"
+eval "${PREFIX}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" >/dev/null 2>&1 &

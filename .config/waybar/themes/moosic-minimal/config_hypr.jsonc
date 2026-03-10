@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "name": "bar1",
+    "output": "eDP-1",
+    "type": "dock",
+    "position": "top",
+    "layer": "bottom",
+    "exclusive": true,
+    "start_hidden": false,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/appmenu",
+      "wlr/taskbar",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "sway/workspaces",
+      "hyprland/workspaces#roman",
+      "dwl/tags"
+    ],
+    "modules-right": [
+      "tray",
+      "clock#simple",
+      "custom/exit"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "bar2",
+    "output": "HDMI-A-1",
+    "type": "dock",
+    "position": "bottom",
+    "layer": "bottom",
+    "exclusive": true,
+    "start_hidden": false,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/appmenu",
+      "wlr/taskbar",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "sway/workspaces",
+      "hyprland/workspaces#roman",
+      "dwl/tags"
+    ],
+    "modules-right": [
+      "mpris#comp"
+    ]
+  }
+]

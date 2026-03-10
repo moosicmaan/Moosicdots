@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "position": "top",
+    "layer": "bottom",
+    "exclusive": true,
+    "height": 33,
+    "margin": "3, 5, 0, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/launcher",
+      "sway/workspaces",
+      "sway/scratchpad",
+      "cpu",
+      "memory",
+      "custom/updates",
+      "backlight",
+      "custom/keybindings"
+    ],
+    "modules-center": [
+      "custom/separator",
+      "sway/window",
+      "sway/mode",
+      "custom/separator"
+    ],
+    "modules-right": [
+      "custom/network_traffic",
+      "network",
+      "battery",
+      "tray",
+      "clock",
+      "idle_inhibitor",
+      "custom/power"
+    ]
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "position": "bottom",
+    "layer": "bottom",
+    "exclusive": true,
+    "height": 33,
+    "margin": "0, 5, 3, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/launcher",
+      "sway/workspaces",
+      "sway/scratchpad"
+    ],
+    "modules-center": [
+      "custom/separator",
+      "sway/window",
+      "sway/mode",
+      "custom/separator"
+    ],
+    "modules-right": [
+      "mpris",
+      "pulseaudio",
+      "custom/power"
+    ]
+  }
+]

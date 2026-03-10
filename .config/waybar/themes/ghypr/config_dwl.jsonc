@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "position": "top",
+    "layer": "bottom",
+    "exclusive": true,
+    "margin": "3, 5, 0, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/launcherg",
+      "dwl/tags",
+      "sway/workspaces",
+      "hyprland/workspaces",
+      "hyprland/window",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "custom/keybindings"
+    ],
+    "modules-right": [
+      "custom/network_traffic",
+      "custom/updates",
+      "backlight",
+      "memory",
+      "battery",
+      "idle_inhibitor",
+      "custom/weather",
+      "clock",
+      "tray",
+      "custom/power"
+    ]
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "position": "bottom",
+    "layer": "bottom",
+    "exclusive": true,
+    "margin": "0, 5, 3, 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "custom/launcherg",
+      "dwl/tags",
+      "sway/workspaces",
+      "hyprland/workspaces",
+      "hyprland/window",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "mpris"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "custom/power"
+    ]
+  }
+]

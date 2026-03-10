@@ -32,7 +32,7 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
 else
   # hyprctl keyword monitor "eDP-1, 1920x1080, 0x0, 1"
   swww-daemon &
-  "$my_scripts"/hypr-barlaunch &
+  "$my_scripts"/wb-launch &
   # cat "$hypr_conf"/conf/options/main/moosic.hyprland.conf >"$hypr_conf"/hyprland.conf
   notify-send -i "nudity-none-symbolic" "GAME MODE" "OFF"
 fi

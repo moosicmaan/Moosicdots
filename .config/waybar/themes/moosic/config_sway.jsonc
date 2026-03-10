@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "type": "dock",
+    "position": "top",
+    "layer": "bottom",
+    "exclusive": true,
+    "start_hidden": false,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "group/appo",
+      "sway/window",
+      "sway/mode"
+    ],
+    "modules-center": [
+      "sway/workspaces",
+      "sway/scratchpad"
+    ],
+    "modules-right": [
+      "group/currents",
+      "group/hardware",
+      "tray",
+      "custom/exit"
+    ]
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "type": "dock",
+    "position": "bottom",
+    "layer": "bottom",
+    "exclusive": true,
+    "start_hidden": false,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "include": [
+      "~/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+      "group/appo",
+      "sway/window",
+      "sway/mode"
+    ],
+    "modules-center": [
+      "sway/workspaces",
+      "sway/scratchpad"
+    ],
+    "modules-right": [
+      "group/audios",
+      "custom/exit"
+    ]
+  }
+]

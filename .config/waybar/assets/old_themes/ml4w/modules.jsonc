@@ -86,7 +86,7 @@
   },
   "custom/waybarthemes": {
     "format": "",
-    "on-click": "~/.config/.scripts/hypr-barswitch",
+    "on-click": "~/.config/.scripts/wb-switch",
     "tooltip": false
   },
   "custom/settings": {

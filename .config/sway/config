@@ -89,9 +89,9 @@ set $menu_files   pkill rofi || rofi -config $my_config/rofi/config.rasi -show f
 # -----------------------------------------------------
 # ENVIRONMENT ACTIONS
 # -----------------------------------------------------
-set $bartog       pkill waybar || $my_scripts/hypr-barlaunch
+set $bartog       pkill waybar || $my_scripts/wb-launch
 set $wallr        $my_scripts/ut-wallpaper --random
-set $barsel       $my_scripts/hypr-barswitch
+set $barsel       $my_scripts/wb-switch
 set $walls        $my_scripts/ut-wallpaper --select
 set $kmndext      $my_scripts/ut-kbd-350
 set $kmndlap      $my_scripts/ut-kbd-lap
@@ -360,9 +360,9 @@ bindsym F11      fullscreen toggle
 # -----------------------------------------------------
 # ENVIRONMENT ACTIONS
 # -----------------------------------------------------
-bindsym $mod+Ctrl+b exec $bartog       pkill waybar || $my_scripts/hypr-barlaunch
+bindsym $mod+Ctrl+b exec $bartog       pkill waybar || $my_scripts/wb-launch
 bindsym $mod+Ctrl+w exec $wallr        $my_scripts/ut-wallpaper --random
-bindsym $mod+Ctrl+t exec $barsel       $my_scripts/hypr-barswitch
+bindsym $mod+Ctrl+t exec $barsel       $my_scripts/wb-switch
 bindsym $mod+Ctrl+s exec $walls        $my_scripts/ut-wallpaper --select
 bindsym Ctrl+Alt+j exec $kmndext       $my_scripts/ut-kbd-350
 bindsym Ctrl+Alt+k exec $kmndlap       $my_scripts/ut-kbd-lap
@@ -384,7 +384,7 @@ bindsym $mod+Shift+q exec swaynag -t warning -m 'Do you really want to exit sway
 bindsym Mod1+Ctrl+Delete exec wlogout
 
 # Manage networking and bluetooth
-bindsym Ctrl+Alt+b exec $bluet
+bindsym $mod+Alt+b exec $bluet
 bindsym Ctrl+Alt+n exec networkmanager_dmenu
 
 # -----------------------------------------------------
@@ -593,11 +593,12 @@ bindsym $mod+r mode "resize"
 # Idle configuration
 # Example configuration:
 # -----------------------------------------------------
-exec swayidle -w \
-      timeout 600 'swaylock -f -c 000000' \
-      timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-      before-sleep 'swaylock -f -c 000000'
-
+# In autostart.conf
+# exec swayidle -w \
+#       timeout 600 'swaylock -f -c 000000' \
+#       timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#       before-sleep 'swaylock -f -c 000000'
+#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.

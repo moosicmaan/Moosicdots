@@ -93,7 +93,7 @@ swww img "$wallpaper" \
 # -----------------------------------------------------
 # Reload waybar with new colors
 # -----------------------------------------------------
-"$HOME/.config/.scripts/hypr-barlaunch"
+"$HOME/.config/.scripts/wb-launch"
 
 # -----------------------------------------------------
 # Send notification

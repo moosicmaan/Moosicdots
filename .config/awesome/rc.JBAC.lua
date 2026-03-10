@@ -168,11 +168,9 @@ local my_calc = "pkill galculator || galculator" -- Toggle calculator
 -- local my_radio = "pkill rofi || $my_scripts/rofi-beats" -- Rofi Media and Radio Selector
 
 -- ENVIRONMENT ACTIONS
--- local bartog = "pkill waybar || $my_scripts/hypr-barlaunch" -- Toggle status bar
 -- local zoomscrn = "pypr zoom" --"#Zoom the screen toggle
 -- local rload = "hyprctl reload && $my_scripts/hypr-mon-reload && $my_scripts/ut-wallpaper init" --"#Reload gui environment
 -- local wallr = "$my_scripts/ut-wallpaper --random" --"#Select random wallpaper
--- local barsel = "$my_scripts/hypr-barswitch" --"#Select status bar theme
 -- local walls = "$my_scripts/ut-wallpaper --select" --"# Select wallpaper
 local kmndext = "$my_scripts/ut-kbd-350" --"#Toggle external keyboard
 local kmndlap = "$my_scripts/ut-kbd-lap" --"#Toggle laptop keyboard

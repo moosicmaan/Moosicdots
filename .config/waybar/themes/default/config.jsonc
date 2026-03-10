@@ -5,6 +5,7 @@
     "dwl/tags",
     "sway/workspaces",
     "hyprland/workspaces",
+    "niri/workspaces",
     "custom/waybarthemes"
   ],
   "modules-center": [

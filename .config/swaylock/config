@@ -1,64 +1,107 @@
+# debug
+# Enable debugging output.
 ignore-empty-password
-fade-in=2.2
-grace=60
-grace-no-mouse
-grace-no-touch
-
-font=JetBrainsMonoNL NFP ExtraLight
-
-clock
-timestr=%R
-datestr=%A
-
-# screenshots
-image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
-scaling=fit
-
-# effect-blur=2x2
-# effect-pixelate=16
-# effect-vignette=0.4:0.1
-# effect-greyscale
-effect-scale=0.3
-
-indicator
-indicator-image=/home/moosicmaan/Pictures/Backgrounds/dark-red-wallpaper.jpg
-# indicator-radius=240
-indicator-radius=200
-indicator-thickness=5
-indicator-caps-lock
-
-key-hl-color=eab676
-
-separator-color=dddddd44
-
-inside-color=00000099
-inside-clear-color=ffd20400
-inside-caps-lock-color=009ddc00
-inside-ver-color=d9d8d800
-inside-wrong-color=ee2e2400
-
-# ring-color=231f20D9
-ring-color=eab67611
-ring-clear-color=231f20D9
-ring-caps-lock-color=231f20D9
-ring-ver-color=231f20D9
-ring-wrong-color=231f20D9
-
-line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
-line-wrong-color=ee2e24FF
-
-text-color=eab77655
-text-clear-color=ffd20400
-text-ver-color=d9d8d800
-text-wrong-color=ee2e2400
-
-bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=ffd204FF
-caps-lock-bs-hl-color=ee2e24FF
-disable-caps-lock-text
-text-caps-lock-color=009ddc
-
+# When an empty password is provided, do not validate it.
 show-failed-attempts
+# Show current count of failed authentication attempts.
+daemonize
+# Detach from the controlling terminal after locking.
+# Note: this is the default behavior of i3lock.
+# ready-fd = /home/moosicmaan/swaylock.log 
+# File descriptor to send readiness notifications to.
+# When the session has been locked, a single newline is written to the FD. At this point, the compositor guarantees that no security sensitive content is visible on-screen.
+# APPEARANCE
+# no-unlock-indicator
+# Disable the unlock indicator.
+image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
+# image [[<output>]:]<path>
+# Display the given image, optionally only on the given output. Use -c to set a background color. If the path potentially contains a ':', prefix it with another ':' to prevent interpreting part of it as <output>.
+# show-keyboard-layout
+# Display the current xkb layout while typing.
+# hide-keyboard-layout
+# Force hiding the current xkb layout while typing, even if more than one layout is configured or the show-keyboard-layout option is set.
+# disable-caps-lock-text
+# Disable the Caps Lock text.
+indicator-caps-lock
+# Show the current Caps Lock state also on the indicator.
+scaling=fit
+# Image scaling mode: stretch, fill, fit, center, tile, solid_color. Use solid_color to display only the background color, even if a background image is specified.
+# tiling
+# Same as --scaling=tile.
+color=FFFF0055
+# Turn the screen into the given color instead of light gray. If -i is used, this sets the background of the image to the given color. Defaults to light gray (A3A3A3).
+bs-hl-color=ee2e24FF
+# Sets the color of backspace highlight segments.
+caps-lock-bs-hl-color=ee2e24FF
+# Sets the color of backspace highlight segments when Caps Lock is active.
+caps-lock-key-hl-color=ffd204FF
+# Sets the color of the key press highlight segments when Caps Lock is active.
+font=JetBrainsMonoNL NFP ExtraLight
+# Sets the font of the text.
+# font-size <size>
+# Sets a fixed font size for the indicator text.
+# indicator-idle-visible
+# Sets the indicator to show even if idle.
+indicator-radius=200
+# Sets the indicator radius. The default value is 50.
+indicator-thickness=10
+# Sets the indicator thickness. The default value is 10.
+# indicator-x-position <x>
+# Sets the horizontal position of the indicator.
+# indicator-y-position <y>
+# Sets the vertical position of the indicator.
+inside-color=00000099
+# Sets the color of the inside of the indicator.
+inside-clear-color=ffd20400
+# Sets the color of the inside of the indicator when cleared.
+inside-caps-lock-color=009ddc00
+# Sets the color of the inside of the indicator when Caps Lock is active.
+inside-ver-color=d9d8d800
+# Sets the color of the inside of the indicator when verifying.
+inside-wrong-color=ee2e2400
+# Sets the color of the inside of the indicator when invalid.
+key-hl-color=eab676
+#Sets the color of the key press highlight segments.
+layout-bg-color=FFFFFF
+# Sets the background color of the box containing the layout text.
+layout-border-color=00FF00
+# Sets the color of the border of the box containing the layout text.
+layout-text-color=0000FF
+# Sets the color of the layout text.
+line-color=00000000
+# Sets the color of the line between the inside and ring.
+line-clear-color=ffd204FF
+# Sets the color of the line between the inside and ring when cleared.
+line-caps-lock-color=009ddcFF
+# Sets the color of the line between the inside and ring when Caps Lock is active.
+line-ver-color=d9d8d8FF
+# Sets the color of the line between the inside and ring when verifying.
+line-wrong-color=ee2e24FF
+# Sets the color of the line between the inside and ring when invalid.
+line-uses-inside
+# Use the inside color for the line between the inside and ring.
+line-uses-ring
+# Use the ring color for the line between the inside and ring.
+ring-color=eab67611
+# Sets the color of the ring of the indicator when typing or idle.
+ring-clear-color=231f20D9
+# Sets the color of the ring of the indicator when cleared.
+ring-caps-lock-color=231f20D9
+# Sets the color of the ring of the indicator when Caps Lock is active.
+ring-ver-color=231f20D9
+# Sets the color of the ring of the indicator when verifying.
+ring-wrong-color=231f20D9
+# Sets the color of the ring of the indicator when invalid.
+separator-color=dddddd44
+# Sets the color of the lines that separate highlight segments.
+text-color=eab77655
+# Sets the color of the text.
+text-clear-color=ffd20400
+# Sets the color of the text when cleared.
+# --text-caps-lock-color <rrggbb[aa]>
+# Sets the color of the text when Caps Lock is active.
+text-ver-color=d9d8d800
+# Sets the color of the text when verifying.
+text-wrong-color=ee2e2400
+# Sets the color of the text when invalid.
+

@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "output": "eDP-1",
+    "include": "~/.config/waybar/modules.jsonc",
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "margin-top": 4,
+    "margin-bottom": 0,
+    "margin-left": 4,
+    "margin-right": 4,
+    // "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "modules-left": [
+      "dwl/tags",
+      "sway/workspaces",
+      "hyprland/workspaces#roman",
+      "custom/separator#line",
+      "tray",
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "hyprland/window",
+      "hyprland/submap"
+    ],
+    "modules-right": [
+      "custom/backlight",
+      "backlight/slider",
+      "pulseaudio/slider",
+      "battery",
+      "network",
+      "clock#cam"
+    ]
+  },
+  {
+    "id": 2,
+    "output": "HDMI-A-1",
+    "include": "~/.config/waybar/modules.jsonc",
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "bottom",
+    // "spacing": 4,
+    "margin-top": 0,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "fixed-center": true,
+    "ipc": true,
+    "modules-left": [
+      "dwl/tags",
+      "sway/workspaces",
+      "hyprland/workspaces#roman",
+      "custom/separator#line",
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "hyprland/window",
+      "hyprland/submap"
+    ],
+    "modules-right": [
+      "mpris",
+      "pulseaudio/slider",
+      "clock#cam"
+    ]
+  }
+]

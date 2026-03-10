@@ -1,8 +1,8 @@
 {
-    "label" : "lock",
-    "action" : "sleep 1; swaylock",
-    "text" : "Lock",
-    "keybind" : "l"
+   "label" : "lock",
+   "action" : "sleep 1; swaylock",
+   "text" : "Lock",
+   "keybind" : "l"
 }
 {
     "label" : "hibernate",

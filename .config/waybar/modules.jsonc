@@ -89,6 +89,50 @@
       ]
     }
   },
+  "niri/workspaces": {
+    // "persistent-workspaces": {
+    //   "eDP-1": [
+    //     1,
+    //     2,
+    //     3
+    //   ],
+    //   "HDMI-A-1": [
+    //     // 4,
+    //     // 5,
+    //     // 6,
+    //     7,
+    //     8,
+    //     9
+    //   ]
+    // },
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      // "10": "10",
+      "default": "",
+      "empty": "",
+      "visible": "󰹑 ",
+      "urgent": " ",
+      "S-term": " ",
+      "S-mon": "⚙ ",
+      "S-files": " ",
+      "S-vol": " ",
+      "S-moosic": "󰝚 "
+    },
+    "disable-click": false,
+    "disable-markup": false,
+    "current-only": false
+    // "on-update": false
+  },
   "hyprland/workspaces": {
     "persistent-workspaces": {
       "eDP-1": [
@@ -606,7 +650,7 @@
   },
   "custom/waybarthemes": {
     "format": "󰁱",
-    "on-click": "~/.config/.scripts/hypr-barswitch",
+    "on-click": "~/.config/.scripts/wb-switch",
     "tooltip": true,
     "tooltip-format": "Status Bar Selector"
   },

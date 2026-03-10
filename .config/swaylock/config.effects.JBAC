@@ -1,0 +1,63 @@
+ignore-empty-password
+fade-in=2.2
+grace=10
+grace-no-mouse
+grace-no-touch
+
+font=JetBrainsMonoNL NFP ExtraLight
+
+clock
+timestr=%R
+datestr=%A
+
+# screenshots
+image=/home/moosicmaan/Pictures/Backgrounds/steampunk-lockscreen.png
+scaling=fit
+
+# effect-blur=2x2
+# effect-pixelate=16
+# effect-vignette=0.4:0.1
+# effect-greyscale
+effect-scale=0.3
+
+indicator
+indicator-image=/home/moosicmaan/Pictures/Backgrounds/dark-red-wallpaper.jpg
+indicator-radius=200
+indicator-thickness=5
+indicator-caps-lock
+
+key-hl-color=eab676
+
+separator-color=dddddd44
+
+inside-color=00000099
+inside-clear-color=ffd20400
+inside-caps-lock-color=009ddc00
+inside-ver-color=d9d8d800
+inside-wrong-color=ee2e2400
+
+# ring-color=231f20D9
+ring-color=eab67611
+ring-clear-color=231f20D9
+ring-caps-lock-color=231f20D9
+ring-ver-color=231f20D9
+ring-wrong-color=231f20D9
+
+line-color=00000000
+line-clear-color=ffd204FF
+line-caps-lock-color=009ddcFF
+line-ver-color=d9d8d8FF
+line-wrong-color=ee2e24FF
+
+text-color=eab77655
+text-clear-color=ffd20400
+text-ver-color=d9d8d800
+text-wrong-color=ee2e2400
+
+bs-hl-color=ee2e24FF
+caps-lock-key-hl-color=ffd204FF
+caps-lock-bs-hl-color=ee2e24FF
+disable-caps-lock-text
+text-caps-lock-color=009ddc
+
+show-failed-attempts

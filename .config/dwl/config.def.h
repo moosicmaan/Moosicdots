@@ -171,8 +171,8 @@ static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screen
 /*   BACKGROUND/WAYBAR   */
 static const char *wallr[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--random", NULL };
 static const char *walls[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--select", NULL };
-static const char *bars[] = { "/home/moosicmaan/.config/.scripts/hypr-barswitch",  NULL };
-static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/hypr-barlaunch", NULL };
+static const char *bars[] = { "/home/moosicmaan/.config/.scripts/wb-switch",  NULL };
+static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/wb-launch", NULL };
 static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/start-dwl",  NULL };
 
 
