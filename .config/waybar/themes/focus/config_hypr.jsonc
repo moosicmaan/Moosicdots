@@ -13,12 +13,8 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "dwl/tags",
-      "sway/mode",
-      "sway/scratchpad",
-      "sway/workspaces",
-      "sway/window",
       "hyprland/workspaces",
+      "custom/session",
       "hyprland/submap",
       "hyprland/window"
     ],
@@ -50,12 +46,8 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "dwl/tags",
-      "sway/mode",
-      "sway/scratchpad",
-      "sway/workspaces",
-      "sway/window",
       "hyprland/workspaces",
+      "custom/session",
       "hyprland/submap",
       "hyprland/window"
     ],

@@ -11,21 +11,21 @@
 # =====================================================
 
 # Directory local music folder
-mDIR="$HOME/Music/Offline/"
-pDIR="$HOME/Music/Playlists/"
+mdir="$HOME/Music/Offline/"
+pdir="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/actions"
+idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/actions"
 
 # Prefix to run commands in wayland using uwsm.
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+prefix=$("$HOME/.config/.scripts/wayland-prefix")
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
   echo "Wayland session"
-  ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
+  rofi_c="$HOME/.config/rofi/config-wide.rasi"
 else
   echo "X11 session"
-  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+  rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 
 # Online Stations. Edit as required
@@ -55,14 +55,14 @@ populate_local_music() {
   while IFS= read -r file; do
     local_music+=("$file")
     filenames+=("$(basename "$file")")
-  done < <(find "$mDIR" -type f \( -iname "*.mp3" -o -iname "*.m4a" -o -iname "*.flac" -o -iname "*.wav" -o -iname "*.ogg" -o -iname "*.mp4" \))
+  done < <(find "$mdir" -type f \( -iname "*.mp3" -o -iname "*.m4a" -o -iname "*.flac" -o -iname "*.wav" -o -iname "*.ogg" -o -iname "*.mp4" \))
 }
 
 # Function for displaying notifications
 notification() {
-  # notify-send -u normal -i "$iDIR/media-playback-playing.svg" "Playing: $@"
-  # echo "$iDIR/media-playback-playing.svg" "Playing: $@"
-  echo "$iDIR/media-playback-start-symbolic.svg" "Playing..."
+  # notify-send -u normal -i "$idir/media-playback-playing.svg" "Playing: $@"
+  # echo "$idir/media-playback-playing.svg" "Playing: $@"
+  echo "$idir/media-playback-start-symbolic.svg" "Playing..."
 }
 
 # Main function for playing local music
@@ -70,7 +70,7 @@ play_local_music() {
   populate_local_music
 
   # Prompt the user to select a song
-  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Select Song:")
+  choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$rofi_c" -p "Select Song:")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -83,7 +83,7 @@ play_local_music() {
       notification "$choice"
 
       # Play the selected local music file using mpv
-      "${PREFIX}mpv" --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+      "${prefix}mpv" --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
 
       break
     fi
@@ -94,27 +94,27 @@ play_local_music() {
 shuffle_local_music() {
   notification "Shuffle local music"
 
-  # Play music in $mDIR on shuffle
-  eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no $mDIR"
+  # Play music in $mdir on shuffle
+  eval "${prefix}mpv --shuffle --loop-playlist --vid=no $mdir"
 }
 
 shuffle_playlist() {
   # Get the list of full directories into an array
-  mapfile -t LISTS < <(find "$pDIR" -mindepth 1 -maxdepth 1 -type d | sort)
+  mapfile -t lists < <(find "$pdir" -mindepth 1 -maxdepth 1 -type d | sort)
 
   # Get just the folder names (basename) into a second array
-  NAMES=()
-  for path in "${LISTS[@]}"; do
-    NAMES+=("$(basename "$path")")
+  names=()
+  for path in "${lists[@]}"; do
+    names+=("$(basename "$path")")
   done
 
   # Let the user pick a name
-  pNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Playlists:")
+  pname=$(printf "%s\n" "${names[@]}" | rofi -i -dmenu -config "$rofi_c" -p "Playlists:")
 
   # Convert selected name back to full path
-  for i in "${!NAMES[@]}"; do
-    if [[ "${NAMES[$i]}" == "$pNAME" ]]; then
-      pLIST="${LISTS[$i]}"
+  for i in "${!names[@]}"; do
+    if [[ "${names[$i]}" == "$pname" ]]; then
+      pLIST="${lists[$i]}"
       break
     fi
   done
@@ -123,7 +123,7 @@ shuffle_playlist() {
 
   # Run the player
   if [[ -n "$pLIST" && -d "$pLIST" ]]; then
-    eval "${PREFIX}mpv --shuffle --loop-playlist --vid=no \"$pLIST\""
+    eval "${prefix}mpv --shuffle --loop-playlist --vid=no \"$pLIST\""
   else
     exit 1
   fi
@@ -131,41 +131,41 @@ shuffle_playlist() {
 
 play_artist() {
   # Get the list of full directories into an array
-  mapfile -t ARTS < <(find "$mDIR" -mindepth 1 -maxdepth 1 -type d | sort)
+  mapfile -t ARTS < <(find "$mdir" -mindepth 1 -maxdepth 1 -type d | sort)
   echo "in play_artist function"
   # Get just the folder names (basename) into a second array
-  NAMES=()
+  names=()
   for path in "${ARTS[@]}"; do
-    NAMES+=("$(basename "$path")")
+    names+=("$(basename "$path")")
   done
 
   # Let the user pick a name
-  aNAME=$(printf "%s\n" "${NAMES[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Artists:")
+  aname=$(printf "%s\n" "${names[@]}" | rofi -i -dmenu -config "$rofi_c" -p "Artists:")
 
   # Convert selected name back to full path
-  for i in "${!NAMES[@]}"; do
-    echo [Debug] "NAMES[$i]: ${NAMES[$i]} aNAME: $aNAME"
-    if [[ "${NAMES[$i]}" == "$aNAME" ]]; then
-      aLIST="${ARTS[$i]}"
+  for i in "${!names[@]}"; do
+    echo [Debug] "names[$i]: ${names[$i]} aname: $aname"
+    if [[ "${names[$i]}" == "$aname" ]]; then
+      alist="${ARTS[$i]}"
       break
     fi
   done
 
-  echo [Debug] "aLIST: $aLIST"
+  echo [Debug] "alist: $alist"
   notification "Play an Artist"
 
   # Run the player
-  if [[ -n "$aLIST" && -d "$aLIST" ]]; then
-    eval "${PREFIX}mpv --loop-playlist --vid=no \"$aLIST\""
+  if [[ -n "$alist" && -d "$alist" ]]; then
+    eval "${prefix}mpv --loop-playlist --vid=no \"$alist\""
   else
-    echo [Debug] "No such directory: $aLIST"
+    echo [Debug] "No such directory: $alist"
     exit 1
   fi
 }
 
 # Main function for playing online music
 play_online_music() {
-  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config "$ROFI_CONFIG" -p "Online Music:")
+  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config "$rofi_c" -p "Online Music:")
 
   if [ -z "$choice" ]; then
     exit 1
@@ -176,17 +176,17 @@ play_online_music() {
   notification "$choice"
 
   # Play the selected online music using mpv
-  eval "${PREFIX}mpv --shuffle --vid=no $link"
+  eval "${prefix}mpv --shuffle --vid=no $link"
 }
 
 # ------MAIN------
 if pkill mpv; then
-  notify-send -u low -i "$iDIR/media-playback-stop-symbolic.svg" "Music stopped"
+  notify-send -u low -i "$idir/media-playback-stop-symbolic.svg" "Music stopped"
 else
   # code to run if mpv was not already running
   # echo "mpv was not running"
   # Prompt the user to choose between local and online music
-  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nPlay an Artist-Ablum" | rofi -dmenu -config "$ROFI_CONFIG" -p "Select source:")
+  user_choice=$(printf "Play from Online Stations\nChoose a Song From the Music Folder\nShuffle Play the Music Folder\nShuffle-play a Playlist\nPlay an Artist-Ablum" | rofi -dmenu -config "$rofi_c" -p "Select source:")
 
   case "$user_choice" in
   "Play from Online Stations")

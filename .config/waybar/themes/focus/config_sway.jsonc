@@ -13,14 +13,11 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "dwl/tags",
       "sway/mode",
       "sway/scratchpad",
       "sway/workspaces",
-      "sway/window",
-      "hyprland/workspaces",
-      "hyprland/submap",
-      "hyprland/window"
+      "custom/session",
+      "sway/window"
     ],
     "modules-center": [
       "network",
@@ -50,14 +47,11 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "dwl/tags",
       "sway/mode",
       "sway/scratchpad",
       "sway/workspaces",
-      "sway/window",
-      "hyprland/workspaces",
-      "hyprland/submap",
-      "hyprland/window"
+      "custom/session",
+      "sway/window"
     ],
     "modules-center": [
       "mpris"

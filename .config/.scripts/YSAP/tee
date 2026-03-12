@@ -1,0 +1,12 @@
+The size of "a" is greater than zero and readable
+The size of "array" is greater than zero and readable
+The size of "file.txt" is NOT greater than zero and/or is not readable
+The size of "greeter" is greater than zero and readable
+The size of "hello" is greater than zero and readable
+The size of "looping" is greater than zero and readable
+The size of "outfile.txt" is greater than zero and readable
+The size of "playground" is greater than zero and readable
+The size of "script" is greater than zero and readable
+The size of "scriptOUT" is greater than zero and readable
+The size of "styleguide" is greater than zero and readable
+The size of "tee" is greater than zero and readable

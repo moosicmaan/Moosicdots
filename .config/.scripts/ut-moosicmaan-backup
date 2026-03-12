@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SRC="/mnt/data/moosicmaan/"
-DEST="/mnt/backup/MoosicmaanBackup"
-LOGFILE="$HOME/.config/.logs/ut-moosicmaan-backup.log"
-LOCKFILE="/tmp/ut-moosicmaan-backup.lock"
+src="/mnt/data/moosicmaan/"
+dest="/mnt/backup/MoosicmaanBackup"
+logfile="$HOME/.config/.logs/ut-moosicmaan-backup.log"
+lockfile="/tmp/ut-moosicmaan-backup.lock"
 
-exec 9>"$LOCKFILE" || exit 1
+exec 9>"$lockfile" || exit 1
 flock -n 9 || exit 0 # silently exit if already running
 
 timestamp() {
@@ -14,18 +14,18 @@ timestamp() {
 }
 
 log() {
-  echo "$(timestamp) - $1" | tee -a "$LOGFILE"
+  echo "$(timestamp) - $1" | tee -a "$logfile"
 }
 
 cleanup() {
   # log "Backup ended"
-  echo "-----------------------------------------------------------" | tee -a "$LOGFILE"
-  echo "" | tee -a "$LOGFILE"
-  rm -f "$LOCKFILE"
+  echo "-----------------------------------------------------------" | tee -a "$logfile"
+  echo "" | tee -a "$logfile"
+  rm -f "$lockfile"
 }
 trap cleanup EXIT
 
-echo "===========================================================" | tee -a "$LOGFILE"
+echo "===========================================================" | tee -a "$logfile"
 log "Backup started"
 
 # ---- Verify destination is mounted ----
@@ -35,9 +35,9 @@ if ! mountpoint -q /mnt/backup; then
 fi
 
 # ---- Run rsync ----
-if rsync -av --delete "$SRC" "$DEST" 2>&1 |
+if rsync -av --delete "$src" "$dest" 2>&1 |
   grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
-  tee -a "$LOGFILE"; then
+  tee -a "$logfile"; then
   log "Backup completed successfully"
 else
   log "ERROR: rsync failed"

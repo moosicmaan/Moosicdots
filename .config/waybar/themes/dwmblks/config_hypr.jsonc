@@ -21,14 +21,10 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-      "sway/workspaces",
-      "sway/scratchpad",
-      "sway/window",
-      "sway/mode",
-      "dwl/tags",
       "hyprland/workspaces",
-      "hyprland/window",
-      "hyprland/submap"
+      "custom/session",
+      "hyprland/submap",
+      "hyprland/window"
     ],
     // "modules-center": ["sway/window"],
     "modules-right": [
@@ -76,13 +72,10 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "sway/workspaces",
-      "sway/scratchpad",
-      "sway/window",
-      "sway/mode",
-      "dwl/tags",
       "hyprland/workspaces",
-      "hyprland/submap"
+      "custom/session",
+      "hyprland/submap",
+      "hyprland/window"
     ],
     "modules-center": [
       "mpris"

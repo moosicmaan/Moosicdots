@@ -6,6 +6,6 @@
 # -----------------------------------------------------
 # =====================================================
 
-NEWWALL=$1
+new_wallp=$1
 
-"$HOME"/.config/.scripts/ut-wallpaper --file "$NEWWALL"
+"$HOME"/.config/.scripts/ut-wallpaper --file "$new_wallp"

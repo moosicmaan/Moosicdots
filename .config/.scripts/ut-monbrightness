@@ -8,8 +8,8 @@
 # -----------------------------------------------------
 # =====================================================
 
-# iDIR="/usr/share/icons/Papirus-Dark/symbolic/status"
-iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
+# idir="/usr/share/icons/Papirus-Dark/symbolic/status"
+idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
 # notification_timeout=1000
 step=5 # INCREASE/DECREASE BY THIS VALUE
 
@@ -23,15 +23,15 @@ get_icon() {
   current=$(get_backlight)
   echo "Current brightness: $current"
   if [ "$current" -le 10 ]; then
-    icon="$iDIR/display-brightness-off-symbolic.svg"
+    icon="$idir/display-brightness-off-symbolic.svg"
   elif [ "$current" -le 30 ]; then
-    icon="$iDIR/display-brightness-low-symbolic.svg"
+    icon="$idir/display-brightness-low-symbolic.svg"
   elif [ "$current" -le 60 ]; then
-    icon="$iDIR/display-brightness-medium-symbolic.svg"
+    icon="$idir/display-brightness-medium-symbolic.svg"
   elif [ "$current" -gt 75 ]; then
-    icon="$iDIR/display-brightness-high-symbolic.svg"
+    icon="$idir/display-brightness-high-symbolic.svg"
   else
-    icon="$iDIR/display-brightness-symbolic.svg"
+    icon="$idir/display-brightness-symbolic.svg"
   fi
   echo "icon path in get_icon: $icon"
 }

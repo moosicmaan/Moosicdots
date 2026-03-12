@@ -209,6 +209,7 @@ else
 end
 # list the types of files in a directory or list
 alias types '~/.config/.scripts/ut-filetypes'
+alias lt '~/.config/.scripts/ut-filetypes'
 
 # Replace some more things with better alternatives
 if [ -f /usr/bin/bat ]

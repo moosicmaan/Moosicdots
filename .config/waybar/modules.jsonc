@@ -701,6 +701,11 @@
     "tooltip": true,
     "tooltip-format": "System Status"
   },
+  "custom/session": {
+    "format": "{text}",
+    "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'",
+    "interval": 5
+  },
   "custom/updates": {
     "format": "{} {icon}",
     "return-type": "json",

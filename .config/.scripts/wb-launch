@@ -7,7 +7,7 @@
 # =====================================================
 
 # Prefix to run commands in wayland using uwsm.
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+prefix=$("$HOME/.config/.scripts/wayland-prefix")
 themecache="$HOME/.cache/themestyle"
 # Default theme: THEMEFOLDER;VARIATION
 defaulttheme="moosic;moosic/mixed"
@@ -62,4 +62,4 @@ style_file="style.css"
 echo "Starting Waybar..."
 echo "Config: $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file"
 echo "Style: $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file"
-eval "${PREFIX}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" >/dev/null 2>&1 &
+eval "${prefix}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" >/dev/null 2>&1 &

@@ -6,9 +6,9 @@
 # -----------------------------------------------------
 # =====================================================
 
-PREFIX=$("$HOME/.config/.scripts/wayland-prefix")
+prifix=$("$HOME/.config/.scripts/wayland-prefix")
 
-CONTENT=$(curl -s http://ip-api.com/json/)
-LONGITUDE=$(echo "$CONTENT" | jq .lon)
-LATITUDE=$(echo "$CONTENT" | jq .lat)
-${PREFIX}wlsunset -l "$LATITUDE" -L "$LONGITUDE"
+content=$(curl -s http://ip-api.com/json/)
+longitude=$(echo "$content" | jq .lon)
+latitude=$(echo "$content" | jq .lat)
+"${prifix}"wlsunset -l "$latitude" -l "$longitude"

@@ -16,6 +16,7 @@
     ],
     "modules-left": [
       "group/appo",
+      "custom/session",
       "sway/window",
       "sway/mode"
     ],
@@ -47,6 +48,7 @@
     ],
     "modules-left": [
       "group/appo",
+      "custom/session",
       "sway/window",
       "sway/mode"
     ],

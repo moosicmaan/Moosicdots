@@ -40,8 +40,8 @@ set -o vi
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
 
-if [ -f "$HOME/.bash_prompt.sh" ]; then
-  source "$HOME/.bash_prompt.sh"
+if [ -f "$HOME/.bash_prompt" ]; then
+  source "$HOME/.bash_prompt"
 fi
 
 # -----------------------------------------------------
@@ -101,6 +101,7 @@ alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 # list the types of files in a directory or list
 alias types='~/.config/.scripts/ut-filetypes'
+alias lt='~/.config/.scripts/ut-filetypes'
 
 # Replace some more things with better alternatives
 if [ -f /usr/bin/bat ]; then

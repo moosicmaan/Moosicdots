@@ -146,6 +146,7 @@ window#waybar.empty #window {
   background-color: @tooltipbackground;
   opacity: 1;
 }
+#sway-scratchpads,
 #scratchpad,
 #scratchpad.empty {
   padding: 0px 0px 0px 8px;
@@ -220,6 +221,9 @@ tooltip label {
 /* CHATGPT */
 #custom-chatgpt {
   margin: 0px 0px 0px 0px;
+}
+#custom-session {
+  margin: 0px 0px 0px 8px;
 }
 
 /* -----------------------------------------------------

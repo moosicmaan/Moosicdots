@@ -8,7 +8,7 @@
 # -----------------------------------------------------
 # =====================================================
 
-iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
+idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
 
 # Get Volume
 get_volume() {
@@ -34,15 +34,15 @@ get_mic_volume() {
 get_icon() {
   current=$(get_volume)
   if [[ "$current" == "Muted" ]]; then
-    echo "$iDIR/audio-volume-muted-symbolic.svg"
+    echo "$idir/audio-volume-muted-symbolic.svg"
   elif [[ "$current" -le 33 ]]; then
-    echo "$iDIR/audio-volume-low-symbolic.svg"
+    echo "$idir/audio-volume-low-symbolic.svg"
   elif [[ "$current" -le 66 ]]; then
-    echo "$iDIR/audio-volume-medium-symbolic.svg"
+    echo "$idir/audio-volume-medium-symbolic.svg"
   elif [[ "$current" -le 100 ]]; then
-    echo "$iDIR/audio-volume-high-symbolic.svg"
+    echo "$idir/audio-volume-high-symbolic.svg"
   else
-    echo "$iDIR/audio-volume-overamplified-symbolic.svg"
+    echo "$idir/audio-volume-overamplified-symbolic.svg"
   fi
 }
 
@@ -50,15 +50,15 @@ get_icon() {
 get_mic_icon() {
   current=$(get_mic_volume)
   if [[ "$current" == "Muted" ]]; then
-    echo "$iDIR/audio-input-microphone-muted-symbolic.svg"
+    echo "$idir/audio-input-microphone-muted-symbolic.svg"
   elif [[ "$current" -le "33" ]]; then
-    echo "$iDIR/audio-input-microphone-low-symbolic.svg"
+    echo "$idir/audio-input-microphone-low-symbolic.svg"
   elif [[ "$current" -le "66" ]]; then
-    echo "$iDIR/audio-input-microphone-medium-symbolic.svg"
+    echo "$idir/audio-input-microphone-medium-symbolic.svg"
   elif [[ "$current" -le "100" ]]; then
-    echo "$iDIR/audio-input-microphone-high-symbolic.svg"
+    echo "$idir/audio-input-microphone-high-symbolic.svg"
   else
-    echo "$iDIR/arch-error-symbolic.svg"
+    echo "$idir/arch-error-symbolic.svg"
   fi
 }
 
@@ -101,7 +101,7 @@ dec_mic_volume() {
 # Toggle Mute
 toggle_mute() {
   if [ "$(pamixer --get-mute)" == "false" ]; then
-    pamixer -m && notify-send -e -u normal -i "$iDIR/audio-volume-muted-symbolic.svg" "Volume Switched OFF"
+    pamixer -m && notify-send -e -u normal -i "$idir/audio-volume-muted-symbolic.svg" "Volume Switched OFF"
   elif [ "$(pamixer --get-mute)" == "true" ]; then
     pamixer -u && notify-send -e -u normal -i "$(get_icon)" "Volume Switched ON" "$(get_volume)%"
   fi
@@ -110,7 +110,7 @@ toggle_mute() {
 # Toggle Mic
 toggle_mic() {
   if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-    pamixer --default-source -m && notify-send -e -u normal -i "$iDIR/audio-input-microphone-muted-symbolic.svg" "Microphone Switched OFF"
+    pamixer --default-source -m && notify-send -e -u normal -i "$idir/audio-input-microphone-muted-symbolic.svg" "Microphone Switched OFF"
   elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
     pamixer --default-source -u && notify-send -e -u normal -i "$(get_mic_icon)" "Microphone Switched ON" "$(get_mic_volume)%"
   fi

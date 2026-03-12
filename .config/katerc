@@ -170,7 +170,6 @@ SetEditor=false
 [MainWindow]
 2 screens: Height=1047
 2 screens: Width=950
-2 screens: Window-Maximized=true
 
 [UiSettings]
 ColorScheme=Mokka

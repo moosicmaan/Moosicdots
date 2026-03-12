@@ -23,9 +23,9 @@
     "modules-left": [
       "sway/workspaces",
       "sway/scratchpad",
+      "custom/session",
       "sway/window",
-      "sway/mode",
-      "dwl/tags"
+      "sway/mode"
     ],
     // "modules-center": ["sway/window"],
     "modules-right": [
@@ -75,6 +75,7 @@
     "modules-left": [
       "sway/workspaces",
       "sway/scratchpad",
+      "custom/session",
       "sway/window",
       "sway/mode"
     ],

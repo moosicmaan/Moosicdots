@@ -9,78 +9,78 @@
 # =====================================================
 
 # Directory local music folder
-pDIR="$HOME/Music/Playlists/"
+playlsts="$HOME/Music/Playlists/"
 
 # Directory for icons
-iDIR="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
+idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
   echo "Wayland session"
-  ROFI_CONFIG="$HOME/.config/rofi/config-wide.rasi"
+  rofi_c="$HOME/.config/rofi/config-wide.rasi"
 else
   echo "X11 session"
-  ROFI_CONFIG="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+  rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 
 # get current song
 # song=$(playerctl -p mpv metadata xesam:url | sed 's|file://||')
-PLAYER="elisa,mpv,vlc"
+player="elisa,mpv,vlc"
 
-nSONG=$(playerctl -p "$PLAYER" metadata xesam:title 2>/dev/null)
-pSONG=$(playerctl -p "$PLAYER" metadata xesam:url 2>/dev/null)
+nsong=$(playerctl -p "$player" metadata xesam:title 2>/dev/null)
+psong=$(playerctl -p "$player" metadata xesam:url 2>/dev/null)
 
-nSONG=$(printf '%b' "${nSONG//%/\\x}")
-pSONG=$(printf '%b' "${pSONG//%/\\x}")
+nsong=$(printf '%b' "${nsong//%/\\x}")
+psong=$(printf '%b' "${psong//%/\\x}")
 
 # Check for empty URL
-if [[ -z "$pSONG" ]]; then
-  notify-send -i "$iDIR/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
+if [[ -z "$psong" ]]; then
+  notify-send -i "$idir/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
   exit 1
 fi
 
 # Check that the URL starts with 'file://'
-if [[ "$pSONG" != file://* ]]; then
-  notify-send -i "$iDIR/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
+if [[ "$psong" != file://* ]]; then
+  notify-send -i "$idir/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
   exit 1
 fi
 
 # Strip 'file://' prefix safely
-pSONG=${pSONG#file://}
+psong=${psong#file://}
 
 # Check if the local file actually exists
-if [[ ! -f "$pSONG" ]]; then
-  notify-send -i "$iDIR/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $pSONG"
+if [[ ! -f "$psong" ]]; then
+  notify-send -i "$idir/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $psong"
   exit 1
 fi
 
 # (optional) log success or continue your logic here
-echo "Local song detected: $nSONG ($pSONG)"
+echo "Local song detected: $nsong ($psong)"
 
 # Generate the list (directories + management options)
-# sCHOICES=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
-# "$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
-sCHOICES="$(
-  find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+# schoices=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
+# "$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
+schoices="$(
+  find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
   printf "🎵 New Playlist\n🗑️ Delete Playlist\n"
 )"
 
 # Show in rofi
-sCHOICE=$(echo "$sCHOICES" | rofi -dmenu -config "$ROFI_CONFIG" -mesg "Add Current Song To or Manage Playlists:")
+schoice=$(echo "$schoices" | rofi -dmenu -config "$rofi_c" -mesg "Add Current Song To or Manage Playlists:")
 
 # Handle selection
-case "$sCHOICE" in
+case "$schoice" in
 "🎵 New Playlist")
-  NEWNAME=$(rofi -dmenu -config "$ROFI_CONFIG" -p "Enter new playlist name:")
-  if [[ -n "$NEWNAME" ]]; then
-    mkdir -p "$pDIR/$NEWNAME"
-    notify-send -i "$iDIR/face-smile-symbolic.svg" "Playlist created" "$NEWNAME"
+  newname=$(rofi -dmenu -config "$rofi_c" -p "Enter new playlist name:")
+  if [[ -n "$newname" ]]; then
+    mkdir -p "$playlsts/$newname"
+    notify-send -i "$idir/face-smile-symbolic.svg" "Playlist created" "$newname"
   fi
   ;;
 "🗑️ Delete Playlist")
-  TODEL=$(find "$pDIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$ROFI_CONFIG" -p "Delete which playlist?")
-  if [[ -n "$TODEL" ]]; then
-    rm -rf "${pDIR:?}/${TODEL:?}"
-    notify-send -i "$iDIR/face-devilish-symbolic.svg" "Playlist deleted" "$TODEL"
+  todel=$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$rofi_c" -p "Delete which playlist?")
+  if [[ -n "$todel" ]]; then
+    rm -rf "${playlsts:?}/${todel:?}"
+    notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
   fi
   ;;
 "")
@@ -90,8 +90,8 @@ case "$sCHOICE" in
 *)
   # Otherwise, assume they picked an existing playlist — add song
   # create symlink
-  ln -s "$pSONG" "$pDIR/$sCHOICE/"
-  ln -s "$pSONG" "$pDIR/favorites/"
-  notify-send -i "$iDIR/emote-love-symbolic.svg" "Adding \"$nSONG\" to:" "$sCHOICE"
+  ln -s "$psong" "$playlsts/$schoice/"
+  ln -s "$psong" "$playlsts/favorites/"
+  notify-send -i "$idir/emote-love-symbolic.svg" "Adding \"$nsong\" to:" "$schoice"
   ;;
 esac

@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# for thing in foo bar baz bat; do
+#    echo "thing = $thing"
+# done
+
+# a=6
+# b=2
+#
+# if [[ "$a" == "$b" ]]; then
+#   echo "they match"
+# else
+#   echo "no match"
+# fi
+
+# a=6
+# b=2
+#
+# if (("$a" == "$b")); then
+#   echo "they match"
+# else
+#   echo "no match"
+# fi
+
+# touch file.
+# while [[ -f file.txt ]]; do
+#   echo 'file.txt exists and is a file'
+#   sleep 1
+# done
+# echo 'file.txt no longer exists'
+
+# if paru -Syu; then
+#   echo "...if program finished true..."
+# else
+#   echo "...if program finished false..."
+# fi
+
+# for thing in {a..i}; do
+#   for num in {1..9}; do
+#     echo -e "$num$thing\t\c"
+#   done
+#   echo -e "\n"
+# done
+
+# maxx=10
+# maxy=10
+# for ((i = 0; i < maxx; i++)); do
+#   for ((u = 0; u < maxy; u++)); do
+#     echo -e "-$i$u-\t\c"
+#   done
+#   echo -e "\n"
+# done
+
+# while read -r line; do
+#   echo ": $line"
+# done
+
+# for directory in "$@"; do
+#   echo -e "\n------------\nlisting files in $directory: "
+#   ls -l "$directory"
+# done
+
+while IFS=: read -r user _ _ _ name _; do
+  echo "$user is $name"
+done </etc/passwd

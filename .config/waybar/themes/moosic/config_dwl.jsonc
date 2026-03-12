@@ -16,6 +16,7 @@
     ],
     "modules-left": [
       "group/appo",
+      "custom/session",
       "dwl/window"
     ],
     "modules-center": [
