@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script to toggle a ter/class combination like a
+# scratpad
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
 
 # pgrep -f "kitty --class bluet" \
 #   && pkill -f "kitty--class bluet" \

@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script for setting the virtual mic and sink for OBS and Zoom
+#     Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 # Cleanup old modules
 pactl unload-module module-null-sink 2>/dev/null

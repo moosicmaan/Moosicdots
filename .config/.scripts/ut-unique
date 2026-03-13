@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script that will find and delete (with permission)
+# files in the folder program is run in.
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+declare -A arr
+shopt -s globstar
+
+for file in **; do
+  [[ -f "$file" ]] || continue
+
+  read -r cksm _ < <(md5sum "$file")
+  if ((arr[$cksm]++)); then
+    # echo "Removing $file"
+    rm -i "$file"
+  fi
+done

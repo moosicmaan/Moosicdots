@@ -60,6 +60,100 @@
 #   ls -l "$directory"
 # done
 
-while IFS=: read -r user _ _ _ name _; do
-  echo "$user is $name"
-done </etc/passwd
+# while IFS=: read -r user _ _ _ name _; do
+#   echo "$user is $name"
+# done </etc/passwd
+
+# greet() {
+#   local name=$1
+#   echo "hello $name (from junc)"
+#   return 5
+# }
+#
+# for name in "$@"; do
+#   greet "$name"
+#   if [[ $? -gt 0 ]]; then
+#     echo "too shy to finish..."
+#     exit 1
+#   fi
+# done
+
+# i=5
+#
+# my-func() {
+# i=6
+# echo hi
+# }
+#
+# thing=${my-func}
+# echo "thing is $thing"
+# echo "i is $i"
+
+# i=0x11
+# echo "$i"    # 0x11
+# echo $((i))  # 17 - one sixteen and one one
+# i=011
+# echo "$i"       # 011
+# echo $((i))     # 9 - one eight and one one
+# echo $((10#$i)) # 11 - forced base 10
+
+# Process substitution
+# <(..)
+
+# dict="/usr/share/myspell/dicts/en_US.dic"
+# read -rp 'What letter to search? ' let
+# words=$(grep "$let" "$dict")
+# for word in $words; do # bad code because it does not work if not quoting variables
+#   echo "$word"
+#   ((i++))
+# done
+# if ((i == 1)); then
+#   thing="word"
+# else
+#   thing="words"
+# fi
+# echo "found $i $thing"
+
+# dict="/usr/share/myspell/dicts/en_US.dic"
+# read -rp 'What letter to search? ' let
+# words=$(grep "$let" "$dict")
+# # for word in $words; do
+# while read -r word; do
+#   echo "$word"
+#   ((i++))
+# done <<<"$words"
+# if ((i == 1)); then
+#   thing="word"
+# else
+#   thing="words"
+# fi
+# echo "found $i $thing"
+
+# dict="/usr/share/myspell/dicts/en_US.dic"
+# i=0
+# read -rp 'What letter to search? ' let
+# grep "$let" "$dict" | while read -r word; do
+#   echo "$word"
+#   ((i++))
+# done
+# if ((i == 1)); then
+#   thing="word"
+# else
+#   thing="words"
+# fi
+# echo "found $i $thing" # doesn't work because i is only modified in a subshell, so it is still 0 as at the beginning
+
+dict="/usr/share/myspell/dicts/en_US.dic"
+i=0
+read -rp 'What string for which to search? ' let
+while read -r word; do
+  echo "$word"
+  ((i++))
+done < <(grep "$let" "$dict") # <(..) is process substitution. the <(grep ...ct") is thought of as as a file ( thus, the space between it and the redirection. Better than <<<$words because it does not have to have the entire $words in memory, and is reading and counting each line as it comes --> better on memory. the bad is that grep does not give a return code, as the program is processing before grep finishes.
+if ((i == 1)); then
+  thing="word"
+else
+  thing="words"
+fi
+echo -e "\nfound $i $thing"
+echo "verified by raw grep -c: $(grep -c "$let" "$dict")"

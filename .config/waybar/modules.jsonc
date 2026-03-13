@@ -1195,7 +1195,7 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
-    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weatherD": {
@@ -1203,7 +1203,7 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar --date-format %m/%d  --fahrenheit --mph --location 'Davao+City'",
-    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weatherC": {
@@ -1212,13 +1212,13 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar  --date-format %m/%d --fahrenheit --mph --location 'Walsenburg'",
-    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom",
     "return-type": "json"
   },
   "custom/weather#leg": {
     "exec": "curl 'https://wttr.in/Walsenburg?format=3'",
     "interval": 900,
-    "on-click": "yad --html --website='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom"
+    "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom"
   },
   "clock": {
     "format-alt": "{:%H:%M}",

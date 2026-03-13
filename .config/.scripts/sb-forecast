@@ -43,9 +43,9 @@ readfile() { weatherdata="$(cat "$weatherreport")"; }
 
 showweather() {
   readfile
-  printf " ☔%s 🥶%s° 🌞%s°\n" $(getprecipchance) $(getdailyhighlow)
-  # corrected ?
   # printf "☔%s🥶%s°🌞%s°\n" "$(getprecipchance)" "$(getdailyhighlow)" "$(checkforecast)"
+  printf " ☔%s 🥶%s° 🌞°\n" "$(getprecipchance)" "$(getdailyhighlow)"
+  # corrected ?
 }
 
 case $BLOCK_BUTTON in

@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script using fzf to search throug the blackarch
+# repository and install those programs, if desired
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 # Ensure pacman is accessible
 if ! command -v pacman &>/dev/null; then
   echo "Error: pacman not found. Make sure you're running this on an Arch-based system."

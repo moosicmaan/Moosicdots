@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Simple script to backup the $HOME to an external
+# hard drive using rsync
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
 set -euo pipefail
 
 src="/mnt/data/moosicmaan/"

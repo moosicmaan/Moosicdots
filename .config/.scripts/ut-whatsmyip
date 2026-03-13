@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# A quick script to display the current ip addresses of
+# the current user
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 
 get_ip() {
   # echo "from get_ip using $1"
@@ -7,22 +14,22 @@ get_ip() {
     END {if (!found) print "No Address"}'
 }
 
-  echo "Local Interfaces:"
+echo "Local Interfaces:"
 
-  # List all non-loopback interfaces
-  for iface in $(ip -o link show | awk -F': ' '{print $2}' | grep -v lo | cut -d@ -f1); do
-    printf "  %-12s %s\n" "$iface:" "$(get_ip "$iface")"
-  done
+# List all non-loopback interfaces
+for iface in $(ip -o link show | awk -F': ' '{print $2}' | grep -v lo | cut -d@ -f1); do
+  printf "  %-12s %s\n" "$iface:" "$(get_ip "$iface")"
+done
 
-  # Default route interface (the one actually being used)
-  default_iface=$(ip route get 1 2>/dev/null | awk '{print $5; exit}')
-  if [ -n "$default_iface" ]; then
-    echo
-    echo "Primary Interface: $default_iface"
-    echo "Primary IP: " "$(get_ip "$default_iface")"
-  fi
-
+# Default route interface (the one actually being used)
+default_iface=$(ip route get 1 2>/dev/null | awk '{print $5; exit}')
+if [ -n "$default_iface" ]; then
   echo
-  echo -n "External IP: "
-  curl -4 -s ifconfig.me || echo "No Address"
-  echo
+  echo "Primary Interface: $default_iface"
+  echo "Primary IP: " "$(get_ip "$default_iface")"
+fi
+
+echo
+echo -n "External IP: "
+curl -4 -s ifconfig.me || echo "No Address"
+echo

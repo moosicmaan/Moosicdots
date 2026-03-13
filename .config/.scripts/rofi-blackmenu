@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script using rofi dialog to search through the
+# blackarch repository and install those programs,
+# if desired
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
 
 # Ensure pacman is accessible
 if ! command -v pacman &>/dev/null; then
