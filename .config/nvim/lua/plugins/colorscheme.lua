@@ -16,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "nord",
+      colorscheme = "nord",
       -- colorscheme = "dracula",
       -- colorscheme = "tokyonight-day",
       -- colorscheme = "tokyonight-night",
@@ -24,7 +24,7 @@ return {
       -- colorscheme = "tokyonight-moon",
       -- colorscheme = "github_dark_high_contrast",
       -- colorscheme = "github_dark_tritanopia",
-      colorscheme = "moonfly",
+      -- colorscheme = "moonfly",
       -- colorscheme = "cyberdream",
       -- colorscheme = "cyberpunk",
       -- colorscheme = "abscs",
