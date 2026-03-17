@@ -21,7 +21,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
-      "hyprland/workspaces"
+      "hyprland/workspaces#roman"
     ],
     "modules-right": [
       "group/currents",
@@ -52,7 +52,7 @@
       "hyprland/submap"
     ],
     "modules-center": [
-      "hyprland/workspaces"
+      "hyprland/workspaces#roman"
     ],
     "modules-right": [
       "group/audios",

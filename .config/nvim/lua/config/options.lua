@@ -4,10 +4,11 @@
 
 -- JDB --> my changes/additions
 local opt = vim.opt
-opt.wrap = true -- Disable line wrap
+opt.wrap = true -- want line wrap?
 opt.scrolloff = 14 -- Lines of context-put cursor in the middle of the screen
 opt.termguicolors = true
 opt.breakindent = true -- wrapped line repeats indent
+opt.colorcolumn = "80"
 -- opt.colorcolumn = "120"
 opt.lisp = true -- automatic indenting for Lisp
 opt.mousehide = true -- hide mouse pointer while typing
@@ -26,6 +27,7 @@ vim.filetype.add({
     [".*/.config/.settings/.*%.conf"] = "hyprlang",
     [".*/.config/.scripts/.*%.conf"] = "hyprlang",
     [".*/.local/bin/.*%.conf"] = "hyprlang",
+    [".*/.config/sway/.*%.conf"] = "swayconfig",
   },
 })
 -- NEOVIDE CONFIGURE
@@ -40,7 +42,7 @@ if vim.g.neovide then
   vim.g.neovide_window_blurred = true
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
-  -- vim.g.neovide_transparency = 0.2
+  vim.g.neovide_opacity = 0.5
   vim.g.neovide_position_animation_length = 0.15
   vim.g.neovide_scroll_animation_length = 0.2
   vim.g.neovide_hide_mouse_when_typing = true

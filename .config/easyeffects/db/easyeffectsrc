@@ -1,3 +1,9 @@
+[NativePluginWindow]
+showNativePluginUi=true
+
+[Spectrum]
+spectrumShape=lines
+
 [StreamInputs]
 inputDevice=alsa_input.usb-046d_Logitech_BRIO_B8573016-03.analog-stereo
 
@@ -11,6 +17,8 @@ visiblePlugin=pitch#0
 forceBreezeTheme=false
 
 [Window]
-height=1043
+height=516
 visiblePresetSheetPage=communityPage
-width=1910
+width=950
+xdgGlobalShortcuts=true
+xdgGlobalShortcutsBound=true
