@@ -21,6 +21,7 @@ play_next() {
   playerctl next
   sleep 1
   show_music_notification
+  echo -n 'n' >.config/pianobar/ctl
 }
 
 # Play the previous track
@@ -35,6 +36,7 @@ toggle_play_pause() {
   playerctl play-pause
   sleep 1
   show_music_notification
+  echo -n 'p' >.config/pianobar/ctl
 }
 
 # Stop playback
@@ -44,6 +46,7 @@ stop_playback() {
   playerctl stop
   sleep 1
   notify-send -e -u low -i "$music_icon" "Playback Stopped" "$player_name"
+  echo -n 'q' >.config/pianobar/ctl
 }
 
 # Display notification with song information

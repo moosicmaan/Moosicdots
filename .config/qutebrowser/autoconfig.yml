@@ -18,6 +18,8 @@ settings:
     global: dark
   content.cache.size:
     global: null
+  content.javascript.clipboard:
+    https://www.hyprflux.dev: access-paste
   editor.command:
     global:
     - neovide

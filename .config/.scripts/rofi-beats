@@ -21,7 +21,7 @@ idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/actions"
 prefix=$("$HOME/.config/.scripts/wayland-prefix")
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
-  echo "Wayland session"
+  echo "Wayland session rofi config"
   rofi_c="$HOME/.config/rofi/config-wide.rasi"
 else
   echo "X11 session"
@@ -71,7 +71,6 @@ play_local_music() {
 
   # Prompt the user to select a song
   choice=$(printf "%s\n" "${filenames[@]}" | rofi -i -dmenu -config "$rofi_c" -p "Select Song:")
-
   if [ -z "$choice" ]; then
     exit 1
   fi
@@ -81,10 +80,10 @@ play_local_music() {
     if [ "${filenames[$i]}" = "$choice" ]; then
 
       notification "$choice"
-
       # Play the selected local music file using mpv
-      "${prefix}mpv" --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
-
+      # echo "$prefix"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+      # "$prefix"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+      mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
       break
     fi
   done
@@ -193,7 +192,7 @@ else
     play_online_music
     ;;
   "Choose a Song From the Music Folder")
-    play_local_music
+    play_local_music "$@"
     ;;
   "Shuffle Play the Music Folder")
     shuffle_local_music

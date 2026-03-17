@@ -2,11 +2,15 @@
 inputDevice=alsa_input.usb-046d_Logitech_BRIO_B8573016-03.analog-stereo
 
 [StreamOutputs]
-outputDevice=alsa_output.pci-0000_00_1f.3.analog-stereo
+outputDevice=bluez_output.00:12:6F:DB:0A:DD
+plugins=bass_enhancer#0,stereo_tools#0,reverb#0,pitch#0
+visiblePage=pluginsPage
+visiblePlugin=pitch#0
 
 [Style]
 forceBreezeTheme=false
 
 [Window]
-height=1041
-width=1908
+height=1043
+visiblePresetSheetPage=communityPage
+width=1910
