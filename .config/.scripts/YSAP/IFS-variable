@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+array=(
+    foo
+    bar
+    baz
+)
+# create a subshell - all variables only last in the subshell no neeed to reset IFS
+(
+    IFS="/"
+    echo "array is: ${!array[*]}"
+    IFS='^'
+    echo "array is: ${!array[*]}"
+    IFS='!'
+    echo "array is: ${array[*]}"
+    IFS='%'
+    echo "array is: ${array[*]}"
+)

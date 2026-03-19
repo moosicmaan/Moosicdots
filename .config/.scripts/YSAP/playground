@@ -147,13 +147,13 @@ dict="/usr/share/myspell/dicts/en_US.dic"
 i=0
 read -rp 'What string for which to search? ' let
 while read -r word; do
-  echo "$word"
-  ((i++))
+    echo "$word"
+    ((i++))
 done < <(grep "$let" "$dict") # <(..) is process substitution. the <(grep ...ct") is thought of as as a file ( thus, the space between it and the redirection. Better than <<<$words because it does not have to have the entire $words in memory, and is reading and counting each line as it comes --> better on memory. the bad is that grep does not give a return code, as the program is processing before grep finishes.
 if ((i == 1)); then
-  thing="word"
+    thing="word"
 else
-  thing="words"
+    thing="words"
 fi
 echo -e "\nfound $i $thing"
 echo "verified by raw grep -c: $(grep -c "$let" "$dict")"

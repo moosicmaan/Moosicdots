@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# array=(foo bar baz)
+# -or- note capital A [key]=value
+declare -A array=(
+    [Jerry]=foo
+    [Paul]=bar
+    [Todd]=baz
+)
+
+echo "Jerry is ${array[Jerry]}"
+echo "Paul is ${array[Paul]}"
+echo -e "Todd is ${array[Todd]}\n"
+declare -p array
+# loop (and strinify - *) over the keys with an !
+echo "keys: ${!array[*]}"
+# loop (the values - @)
+echo "values:" "${array[@]}"
+
+echo -e "\nOnce Again..."
+
+for key in "${!array[@]}"; do
+    value=${array[$key]}
+    echo "$key=$value"
+done

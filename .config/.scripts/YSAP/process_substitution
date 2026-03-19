@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# # good, but we have to load the entire file into memory (words) - possible problem
+# words=$(grep d /usr/share/hunspell/en_US-large.dic)
+#
+# i=0
+#
+# while read -r word; do
+#     echo "$word"
+#     ((i++))
+# done <<<"$words"
+#
+# echo "found $i words"
+
+# # better, because it reads the file line by line and does not load results into memory
+# # streaming data is happening here, but i is modified in a subshell, so the count does
+# # not work
+# i=0
+#
+# grep d /usr/share/hunspell/en_US-large.dic | while read -r word; do
+#     echo "$word"
+#     ((i++))
+# done
+#
+# echo "found $i words"
+
+# best, because it reads the file line by line and does not load results into memory
+# and we fixed the problem of i being modified in a subshell
+# streaming data is happening here, as is process substitution = <(...) making a process
+# readable like a file e.g. echo <(uname)
+# carefule, bucause grep does not return a code here, so will not indicate a problem
+# make sure one checks the grep statement first
+i=0
+
+while read -r word; do
+    echo "$word"
+    ((i++))
+done < <(grep d /usr/share/hunspell/en_US-large.dic)
+
+echo "found $i words"

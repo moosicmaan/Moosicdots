@@ -12,50 +12,50 @@ pic_folder="$HOME/Pictures/Backgrounds"
 
 # Create cache file if none exists
 if [ ! -f "$cache_file" ]; then
-  echo "$pic_folder/default.png" >"$cache_file"
+    echo "$pic_folder/default.png" >"$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f "$rasi_file" ]; then
-  echo "* { current-image: url(\"$pic_folder/default.png\", height); }" >"$rasi_file"
+    echo "* { current-image: url(\"$pic_folder/default.png\", height); }" >"$rasi_file"
 fi
 
 case $1 in
 # Load wallpaper from .cache of last session
 "--init")
-  # if [ -f "$cache_file" ]; then
-  cwall=$(cat "$cache_file") >/dev/null 2>&1
-  echo "Debug in --init: cwall = $cwall"
-  wal -q -i "$cwall"
-  # else
-  # wal -q -i ~/Pictures/
-  # fi
-  ;;
+    # if [ -f "$cache_file" ]; then
+    cwall=$(cat "$cache_file") >/dev/null 2>&1
+    echo "Debug in --init: cwall = $cwall"
+    wal -q -i "$cwall"
+    # else
+    # wal -q -i ~/Pictures/
+    # fi
+    ;;
 
 # Select wallpaper with rofi
 "--select")
-  selected=$(find "$pic_folder" \
-    -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) \
-    -exec basename {} \; | sort -R | while read -r rfile; do
-    echo -en "$rfile\x00icon\x1f$pic_folder/${rfile}\n"
-  done | rofi -dmenu -replace -config ~/.config/rofi/config-wall.rasi -p " > ")
-  if [ ! "$selected" ]; then
-    echo "No wallpaper selected"
-    exit
-  fi
-  echo "Debug in --select: selected = $selected"
-  wal -q -i "$pic_folder/$selected" >/dev/null 2>&1
-  ;;
+    selected=$(find "$pic_folder" \
+        -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) \
+        -exec basename {} \; | sort -R | while read -r rfile; do
+        echo -en "$rfile\x00icon\x1f$pic_folder/${rfile}\n"
+    done | rofi -dmenu -replace -config ~/.config/rofi/config-wall.rasi -p " > ")
+    if [ ! "$selected" ]; then
+        echo "No wallpaper selected"
+        exit
+    fi
+    echo "Debug in --select: selected = $selected"
+    wal -q -i "$pic_folder/$selected" >/dev/null 2>&1
+    ;;
 # Use the file they sent
 "--file")
-  echo "Debugin --file: 2 = $2"
-  wal -q -i "$2" >/dev/null 2>&1
-  ;;
+    echo "Debugin --file: 2 = $2"
+    wal -q -i "$2" >/dev/null 2>&1
+    ;;
 
 # Randomly select wallpaper for everything else
 *)
-  wal -q -i "$pic_folder/" >/dev/null 2>&1
-  ;;
+    wal -q -i "$pic_folder/" >/dev/null 2>&1
+    ;;
 esac
 
 # -----------------------------------------------------
@@ -82,7 +82,7 @@ newwall=$(echo "$wallpaper" | sed "s|$pic_folder/||g")
 transition_type="any"
 
 swww img "$wallpaper" \
-  --transition-type=$transition_type
+    --transition-type=$transition_type
 # --transition-pos "$(hyprctl cursorpos)"
 
 # swww img "$wallpaper"
@@ -102,10 +102,10 @@ swww img "$wallpaper" \
 # -----------------------------------------------------
 
 if [ "$1" == "init" ]; then
-  echo ":: Init"
+    echo ":: Init"
 else
-  sleep 1
-  notify-send --icon=preferences "Colors and Wallpaper updated" "with image $newwall"
+    sleep 1
+    notify-send --icon=preferences "Colors and Wallpaper updated" "with image $newwall"
 fi
 
 echo "DONE"

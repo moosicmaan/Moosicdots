@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# hello() {
+#     local s=$1
+#     echo "hello $s!"
+# }
+#
+# goodbye() {
+#     local s=$1
+#     echo "goodbye $s!"
+# }
+#
+# if (($# == 0)); then
+#     echo 'name(s) required' >&2
+#     exit 1
+# fi
+#
+# for name in "$@"; do
+#     case "$name" in
+#     [Dd]* | [Bb]* | [Cc]*) hello "$name" ;;
+#     Alice) hello "$name" ;;
+#     *) goodbye "$name" ;;
+#     esac
+# done
+
+# note the &
+s='dave'
+
+# case "$s" in
+# d*) echo 'matched d*' ;&
+# dave) echo 'matched dave' ;&
+# f*) echo 'matched f*' ;&
+# foo) echo 'matched foo' ;&
+# *) echo 'matched nothing/everythig *' ;&
+# esac
+case "$s" in
+d*) echo 'matched d*' ;;&
+dave) echo 'matched dave' ;;&
+f*) echo 'matched f*' ;;&
+foo) echo 'matched foo' ;;&
+*) echo 'matched nothing/everythig *' ;;&
+esac

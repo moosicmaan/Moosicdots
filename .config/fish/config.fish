@@ -167,7 +167,7 @@ end
 # USEFUL ALIASES
 # -----------------------------------------------------
 # Replace ls with eza
-if [ -f /usr/bin/exa ]
+if command -q exa
     alias ls 'exa -ah -F --color=always --group-directories-first --icons' # add colors and file type extensions
     alias lw 'exa -xah -F --color=always --group-directories-first --icons' # wide listing format
     alias ll 'exa -lh -F --color=always --group-directories-first --icons' # long listing format
@@ -189,6 +189,7 @@ if [ -f /usr/bin/exa ]
 else
     alias la 'ls -Alh' # show hidden files
     alias ls 'ls -aFh --color=always' # add colors and file type extensions
+    # alias ls 'ls -l' # add colors and file type extensions
     alias lx 'ls -lXBh' # sort by extension
     alias lk 'ls -lSrh' # sort by size
     alias lc 'ls -ltcrh' # sort by change time
@@ -212,7 +213,7 @@ alias types '~/.config/.scripts/ut-filetypes'
 alias lt '~/.config/.scripts/ut-filetypes'
 
 # Replace some more things with better alternatives
-if [ -f /usr/bin/bat ]
+if command -q bat
     abbr cat 'bat --style header,snip,changes'
 end
 
@@ -302,9 +303,6 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 # Making sure sudoedit from term is done with (n)vim 
 alias suedit "VISUAL= sudoedit"
 alias vi vim
-# alias vim 'kitty @ set-spacing padding=0 && nvim'
-# alias config "cd /mnt/data/moosicmaan/CONFIG/ && kitty @ set-spacing padding=0 && nvim"
-# alias mux 'kitty @ set-spacing padding=0 && tmux'
 alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 
 # play local music and net radio
@@ -313,71 +311,12 @@ alias jam rofi-beats
 # search/install/run blackarch packages - cli
 alias black "$HOME/.config/.scripts/ut-blackmenu"
 
-# add the scripts folder to the path
-# set -x PATH $HOME/.config/.scripts $PATH
-
 # -------------------------------------------------------------------------------
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------
 
 # IP address lookup
 alias whatsmyip "~/.config/.scripts/ut-whatsmyip"
-
-# # Extracts any archive(s) (if unp isn't installed)
-# extract() {
-#   for archive in "$@"; do
-#     if [ -f "$archive" ]; then
-#       case $archive in
-#       *.tar.bz2) tar xvjf "$archive" 
-# ;
-#       *.tar.gz) tar xvzf "$archive" 
-# ;
-#       *.bz2) bunzip2 "$archive" 
-# ;
-#       *.rar) rar x "$archive" 
-# ;
-#       *.gz) gunzip "$archive" 
-# ;
-#       *.tar) tar xvf "$archive" 
-# ;
-#       *.tbz2) tar xvjf "$archive" 
-# ;
-#       *.tgz) tar xvzf "$archive" 
-# ;
-#       *.zip) unzip "$archive" 
-# ;
-#       *.Z) uncompress "$archive" 
-# ;
-#       *.7z) 7z x "$archive" 
-# ;
-#       *) echo "don't know how to extract '$archive'..." 
-# ;
-#       esac
-#     else
-#       echo "'$archive' is not a valid file!"
-#     fi
-#   done
-# }
-
-# # Copy file with a progress bar
-# cpp() {
-#   set -e
-#   strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
-#     awk '{
-#         count += $NF
-#         if (count % 10 == 0) {
-#             percent = count / total_size * 100
-#             printf "%3d%% [", percent
-#             for (i=0;i<=percent;i++)
-#                 printf "="
-#             printf ">"
-#             for (i=percent;i<100;i++)
-#                 printf " "
-#             printf "]\r"
-#         }
-#     }
-#     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
-# }
 
 # check the current interfaces
 alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
@@ -417,37 +356,6 @@ alias cdi="__zoxide_zi"
 # -------------------------------------------------------------------------------
 # Setup fzf
 set -gx FZF_DEFAULT_OPTS_FILE $HOME/.config/fzf/fzf.conf
-# fzf_configure_bindings --directory=\ct --git_log=\cg --git_status=\cs --git_history=\cr --processes=\cp --variables=\cv
-# \$ fzf_configure_bindings --directory=\ct --git_log=\cg --git_status=\cs --git_history=\cr --processes=\cp --variables=\cv
-# set -gx FZF_CTRL_R_OPTS_FILE $HOME/.config/fzf/fzf_R.conf
-# set -gx FZF_CTRL_T_OPTS "--border rounded \
-# --layout reverse \
-# --border-label '╢ FZF Find ╟' \
-# --marker '✓'"
-#
-# set -gx FZF_CTRL_R_OPTS "--border rounded \
-# --layout reverse \
-# --border-label '╢ FZF History ╟' \
-# --marker '✓'"
-#
-# set -gx FZF_ALT_C_OPTS "--border rounded \
-# --layout reverse \
-# --border-label '╢ FZF CD ╟' \
-# --marker '✓'"
-#
-# set -gx FZF_TMUX_OPTS "--tmux 75% \
-# --border rounded \
-# --layout reverse \
-# --border-label '╢ FZF TMUX ╟' \
-# --marker '✓'"
-#
-# set -gx FZF_DEFAULT_OPTS "--border rounded \
-# --layout reverse \
-# --border-label '╢ FZF Default ╟' \
-# --marker '✓'"
-
-# insert fzf keybinding
-# fzf --fish | source
 
 # used in functions below - basic fzf search
 alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat -n --color=always {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
@@ -455,6 +363,7 @@ alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --bor
 function nf
     nvim (ff)
 end
+
 # -------------------------------------------------------------------------------
 # <--- JDB
 # ===============================================================================

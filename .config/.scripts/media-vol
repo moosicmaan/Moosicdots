@@ -8,180 +8,186 @@
 # -----------------------------------------------------
 # =====================================================
 
-idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
+icon_dir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/status"
 
 # Get Volume
 get_volume() {
-  volume=$(pamixer --get-volume)
-  if [[ "$volume" -eq "0" ]]; then
-    echo "Muted"
-  else
-    echo "$volume"
-  fi
+    volume=$(pamixer --get-volume)
+    if [[ "$volume" -eq "0" ]]; then
+        echo "Muted"
+    else
+        echo "$volume"
+    fi
 }
 
 # Get Microphone Volume
 get_mic_volume() {
-  volume=$(pamixer --default-source --get-volume)
-  if [[ "$volume" -eq "0" ]]; then
-    echo "Muted"
-  else
-    echo "$volume"
-  fi
+    volume=$(pamixer --default-source --get-volume)
+    if [[ "$volume" -eq "0" ]]; then
+        echo "Muted"
+    else
+        echo "$volume"
+    fi
 }
 
 # Get Mic Icon relative to sound %
 get_icon() {
-  current=$(get_volume)
-  if [[ "$current" == "Muted" ]]; then
-    echo "$idir/audio-volume-muted-symbolic.svg"
-  elif [[ "$current" -le 33 ]]; then
-    echo "$idir/audio-volume-low-symbolic.svg"
-  elif [[ "$current" -le 66 ]]; then
-    echo "$idir/audio-volume-medium-symbolic.svg"
-  elif [[ "$current" -le 100 ]]; then
-    echo "$idir/audio-volume-high-symbolic.svg"
-  else
-    echo "$idir/audio-volume-overamplified-symbolic.svg"
-  fi
+    current=$(get_volume)
+    if [[ "$current" == "Muted" ]]; then
+        echo "$icon_dir/audio-volume-muted-symbolic.svg"
+    elif [[ "$current" -le 33 ]]; then
+        echo "$icon_dir/audio-volume-low-symbolic.svg"
+    elif [[ "$current" -le 66 ]]; then
+        echo "$icon_dir/audio-volume-medium-symbolic.svg"
+    elif [[ "$current" -le 100 ]]; then
+        echo "$icon_dir/audio-volume-high-symbolic.svg"
+    else
+        echo "$icon_dir/audio-volume-overamplified-symbolic.svg"
+    fi
 }
 
 # Get Mic Icon relative to sound %
 get_mic_icon() {
-  current=$(get_mic_volume)
-  if [[ "$current" == "Muted" ]]; then
-    echo "$idir/audio-input-microphone-muted-symbolic.svg"
-  elif [[ "$current" -le "33" ]]; then
-    echo "$idir/audio-input-microphone-low-symbolic.svg"
-  elif [[ "$current" -le "66" ]]; then
-    echo "$idir/audio-input-microphone-medium-symbolic.svg"
-  elif [[ "$current" -le "100" ]]; then
-    echo "$idir/audio-input-microphone-high-symbolic.svg"
-  else
-    echo "$idir/arch-error-symbolic.svg"
-  fi
+    current=$(get_mic_volume)
+    if [[ "$current" == "Muted" ]]; then
+        echo "$icon_dir/audio-input-microphone-muted-symbolic.svg"
+    elif [[ "$current" -le "33" ]]; then
+        echo "$icon_dir/audio-input-microphone-low-symbolic.svg"
+    elif [[ "$current" -le "66" ]]; then
+        echo "$icon_dir/audio-input-microphone-medium-symbolic.svg"
+    elif [[ "$current" -le "100" ]]; then
+        echo "$icon_dir/audio-input-microphone-high-symbolic.svg"
+    else
+        echo "$icon_dir/arch-error-symbolic.svg"
+    fi
 }
 
 # Increase Volume or turn off mute
 inc_volume() {
-  if [ "$(pamixer --get-mute)" == "true" ]; then
-    toggle_mute
-  else
-    pamixer -i 5 --allow-boost --set-limit 150 && notify_volume
-  fi
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -i 5 --allow-boost --set-limit 150 && notify_volume
+    fi
 }
 
 # Increase MIC Volume or turn mic on
 inc_mic_volume() {
-  if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-    toggle_mic
-  else
-    pamixer --default-source -i 5 && notify_mic_user
-  fi
+    if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
+        toggle_mic
+    else
+        pamixer --default-source -i 5 && notify_mic_user
+    fi
 }
 
 # Decrease Volume or turn mute on
 dec_volume() {
-  if [ "$(pamixer --get-mute)" == "true" ]; then
-    toggle_mute
-  else
-    pamixer -d 5 && notify_volume
-  fi
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -d 5 && notify_volume
+    fi
 }
 
 # Decrease MIC Volume or turn off mic
 dec_mic_volume() {
-  if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-    toggle-mic
-  else
-    pamixer --default-source -d 5 && notify_mic_user
-  fi
+    if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
+        toggle-mic
+    else
+        pamixer --default-source -d 5 && notify_mic_user
+    fi
 }
 
 # Toggle Mute
 toggle_mute() {
-  if [ "$(pamixer --get-mute)" == "false" ]; then
-    pamixer -m && notify-send -e -u normal -i "$idir/audio-volume-muted-symbolic.svg" "Volume Switched OFF"
-  elif [ "$(pamixer --get-mute)" == "true" ]; then
-    pamixer -u && notify-send -e -u normal -i "$(get_icon)" "Volume Switched ON" "$(get_volume)%"
-  fi
+    if [ "$(pamixer --get-mute)" == "false" ]; then
+        pamixer -m && notify-send -e -u normal -i \
+            "$icon_dir/audio-volume-muted-symbolic.svg" "Volume Switched OFF"
+    elif [ "$(pamixer --get-mute)" == "true" ]; then
+        pamixer -u && notify-send -e -u normal -i "$(get_icon)" \
+            "Volume Switched ON" "$(get_volume)%"
+    fi
 }
 
 # Toggle Mic
 toggle_mic() {
-  if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-    pamixer --default-source -m && notify-send -e -u normal -i "$idir/audio-input-microphone-muted-symbolic.svg" "Microphone Switched OFF"
-  elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-    pamixer --default-source -u && notify-send -e -u normal -i "$(get_mic_icon)" "Microphone Switched ON" "$(get_mic_volume)%"
-  fi
+    if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
+        pamixer --default-source -m && notify-send -e -u normal -i \
+            "$icon_dir/audio-input-microphone-muted-symbolic.svg" \
+            "Microphone Switched OFF"
+    elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
+        pamixer --default-source -u &&
+            notify-send -e -u normal -i "$(get_mic_icon)" \
+                "Microphone Switched ON" "$(get_mic_volume)%"
+    fi
 }
 
 # Send notification
 notify_volume() {
-  /home/moosicmaan/.config/.scripts/media-sounds --volume
-  volume=$(get_volume)
-  icon=$(get_icon)
-  id_file="/tmp/volume_notify_id"
-  [[ -f $id_file ]] && id=$(<"$id_file") || id=0
+    /home/moosicmaan/.config/.scripts/media-sounds --volume
+    volume=$(get_volume)
+    icon=$(get_icon)
+    id_file="/tmp/volume_notify_id"
+    [[ -f $id_file ]] && id=$(<"$id_file") || id=0
 
-  if [[ "$volume" == "Muted" ]]; then
-    id=$(notify-send -p -r "$id" \
-      -u normal \
-      -i "$icon" \
-      "Volume: Muted")
-  else
-    id=$(notify-send -p -r "$id" \
-      -h int:value:"$volume" \
-      -u normal \
-      -i "$icon" \
-      "Volume: ${volume}%")
-  fi
+    if [[ "$volume" == "Muted" ]]; then
+        id=$(notify-send -p -r "$id" \
+            -u normal \
+            -i "$icon" \
+            "Volume: Muted")
+    else
+        id=$(notify-send -p -r "$id" \
+            -h int:value:"$volume" \
+            -u normal \
+            -i "$icon" \
+            "Volume: ${volume}%")
+    fi
 
-  echo "$id" >"$id_file"
+    echo "$id" >"$id_file"
 }
 
 # Notify for Microphone
 notify_mic_user() {
-  volume=$(get_mic_volume)
-  icon=$(get_mic_icon)
-  id_file="/tmp/volume_mic_notify_id"
-  [[ -f $id_file ]] && id=$(<"$id_file") || id=0
+    volume=$(get_mic_volume)
+    icon=$(get_mic_icon)
+    id_file="/tmp/volume_mic_notify_id"
+    [[ -f $id_file ]] && id=$(<"$id_file") || id=0
 
-  if [[ "$volume" == "Muted" ]]; then
-    id=$(notify-send -p -r "$id" \
-      -u normal \
-      -i "$icon" \
-      "Volume: Muted")
-  else
-    id=$(notify-send -p -r "$id" \
-      -h int:value:"$volume" \
-      -u normal \
-      -i "$icon" \
-      "Volume: ${volume}%")
-  fi
+    if [[ "$volume" == "Muted" ]]; then
+        id=$(notify-send -p -r "$id" \
+            -u normal \
+            -i "$icon" \
+            "Volume: Muted")
+    else
+        id=$(notify-send -p -r "$id" \
+            -h int:value:"$volume" \
+            -u normal \
+            -i "$icon" \
+            "Volume: ${volume}%")
+    fi
 
-  echo "$id" >"$id_file"
+    echo "$id" >"$id_file"
 }
 
 # Execute accordingly
 if [[ "$1" == "--get" ]]; then
-  get_volume
+    get_volume
 elif [[ "$1" == "--inc" ]]; then
-  inc_volume
+    inc_volume
 elif [[ "$1" == "--dec" ]]; then
-  dec_volume
+    dec_volume
 elif [[ "$1" == "--toggle" ]]; then
-  toggle_mute
+    toggle_mute
 elif [[ "$1" == "--mic-toggle" ]]; then
-  toggle_mic
+    toggle_mic
 elif [[ "$1" == "--get-icon" ]]; then
-  get_icon
+    get_icon
 elif [[ "$1" == "--get-mic-icon" ]]; then
-  get_mic_icon
+    get_mic_icon
 elif [[ "$1" == "--mic-inc" ]]; then
-  inc_mic_volume
+    inc_mic_volume
 elif [[ "$1" == "--mic-dec" ]]; then
-  dec_mic_volume
+    dec_mic_volume
 else
-  get_volume
+    get_volume
 fi

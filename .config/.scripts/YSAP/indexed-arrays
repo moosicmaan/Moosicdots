@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# array=(foo bar baz)
+# -or-
+declare -a array=(
+    foo
+    bar
+    baz
+)
+echo "0: ${array[0]}"
+echo "1: ${array[1]}"
+echo "2: ${array[2]}"
+echo "3: ${array[3]}"
+echo "4: ${array[4]}"
+
+echo
+echo "-1: ${array[-1]}"
+echo "-2: ${array[-2]}"
+
+echo
+idx=2
+echo "idx: ${array[$idx]}"
+
+echo
+for item in "${array[@]}"; do
+    echo "item is : $item"
+done
+
+# loaded array into newarray and added buddy and guy
+echo
+newarray=("${array[@]}" buddy guy)
+newarray+=(added on again)
+newarray+=([50]="item with idex of 50")
+
+for item in "${newarray[@]}"; do
+    echo "item(${#newarray[@]}) is : $item"
+done
+declare -p newarray

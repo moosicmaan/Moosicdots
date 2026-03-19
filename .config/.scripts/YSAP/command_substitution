@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+my-func() {
+    echo 'hi'
+    ((i++)) # only changes i in the scope of this function, unless bypassed
+}
+
+i=5
+
+# both are valid ways of writing command_substitution, but the second will not create a new subshell - i ends up as 6
+thing=$(my-func)
+# thing=${ my-func; } # bypass creating new subshell
+
+echo "thing is $thing"
+echo "i is $i"

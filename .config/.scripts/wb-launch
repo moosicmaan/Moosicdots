@@ -22,9 +22,9 @@ sleep 0.2
 # Get current theme information from .cache/themestyle
 # -----------------------------------------------------
 if [ ! -f "$themecache" ]; then
-  echo -e "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
-  touch "$themecache"
-  echo "$defaulttheme" >"$themecache"
+    echo -e "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
+    touch "$themecache"
+    echo "$defaulttheme" >"$themecache"
 fi
 
 themestyle=$(cat "$themecache")
@@ -35,17 +35,17 @@ echo "Using the following to open the bar(s): $themestyle"
 # -----------------------------------------------------
 case "$DESKTOP_SESSION" in
 sway | sway:wlroots)
-  cdesk="sway"
-  ;;
+    cdesk="sway"
+    ;;
 hypr | hyprland | Hyprland | hyprland-uwsm)
-  cdesk="hypr"
-  ;;
+    cdesk="hypr"
+    ;;
 dwl | mango | mangowm)
-  cdesk="dwl"
-  ;;
+    cdesk="dwl"
+    ;;
 niri | niri:wlroots)
-  cdesk="niri"
-  ;;
+    cdesk="niri"
+    ;;
 esac
 
 IFS=';' read -ra arrThemes <<<"$themestyle"

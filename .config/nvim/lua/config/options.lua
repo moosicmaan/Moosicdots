@@ -12,7 +12,12 @@ opt.colorcolumn = "80"
 -- opt.colorcolumn = "120"
 opt.lisp = true -- automatic indenting for Lisp
 opt.mousehide = true -- hide mouse pointer while typing
+-- opt.autoindent = true -- automatically indent based on previous line
+opt.smartindent = true -- automatically indent based on structure and keywords
 opt.softtabstop = 4 -- see multiple spaces as tabstops so <BS> does the right thing
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.expandtab = true
 opt.ttyfast = true -- speeds up scrolling in vim
 -- opt.guicursor = "n-v-c:block,o:hor50,i-ci:ver25,r-cr:hor50,n-v:r-v:blinkon0,i:ver25"
 -- for orgmode
@@ -20,53 +25,52 @@ opt.conceallevel = 2
 opt.concealcursor = "nc"
 -- for hyprlang and other files/types not natively recognized
 vim.filetype.add({
-  extension = { rasi = "rasi" },
-  pattern = {
-    [".*/.config/kmonad/.*%.kbd"] = "lisp",
-    [".*/.config/hypr/.*%.conf"] = "hyprlang",
-    [".*/.config/.settings/.*%.conf"] = "hyprlang",
-    [".*/.config/.scripts/.*%.conf"] = "hyprlang",
-    [".*/.local/bin/.*%.conf"] = "hyprlang",
-    [".*/.config/sway/.*%.conf"] = "swayconfig",
-  },
+    extension = { rasi = "rasi" },
+    pattern = {
+        [".*/.config/kmonad/.*%.kbd"] = "lisp",
+        [".*/.config/hypr/.*%.conf"] = "hyprlang",
+        [".*/.config/.settings/.*%.conf"] = "hyprlang",
+        [".*/.config/.scripts/.*%.conf"] = "hyprlang",
+        [".*/.local/bin/.*%.conf"] = "hyprlang",
+        [".*/.config/sway/.*%.conf"] = "swayconfig",
+    },
 })
 -- NEOVIDE CONFIGURE
 if vim.g.neovide then
-  -- Put anything you want to happen only in Neovide here
-  vim.g.neovide_text_gamma = 0.9
-  vim.g.neovide_text_contrast = 0.1
-  vim.g.neovide_padding_top = 0
-  vim.g.neovide_padding_bottom = 0
-  vim.g.neovide_padding_right = 0
-  vim.g.neovide_padding_left = 0
-  vim.g.neovide_window_blurred = true
-  vim.g.neovide_floating_blur_amount_x = 2.0
-  vim.g.neovide_floating_blur_amount_y = 2.0
-  vim.g.neovide_opacity = 0.5
-  vim.g.neovide_position_animation_length = 0.15
-  vim.g.neovide_scroll_animation_length = 0.2
-  vim.g.neovide_hide_mouse_when_typing = true
-  vim.g.neovide_theme = "auto"
-  vim.g.neovide_fullscreen = false
-  vim.g.neovide_cursor_animation_length = 0.11
-  vim.g.neovide_cursor_trail_size = 0.5
-  vim.g.neovide_cursor_antialiasing = true
-  vim.g.neovide_cursor_animate_in_insert_mode = true
-  vim.g.neovide_cursor_animate_command_line = true
-  vim.g.neovide_cursor_smooth_blink = false
-  -- vim.g.neovide_cursor_vfx_particle_curl = 1.5 -- only for railgun
-  -- vim.g.neovide_cursor_vfx_particle_phase = 1.5 -- only for railgun
-  -- vim.g.neovide_cursor_vfx_mode = ""
-  -- vim.g.neovide_cursor_vfx_mode = "railgun"
-  -- vim.g.neovide_cursor_vfx_mode = "torpedo"
-  vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
-  -- vim.g.neovide_cursor_vfx_mode = "ripple"
-  -- vim.g.neovide_cursor_vfx_mode = "wireframe"
-  vim.g.neovide_cursor_vfx_opacity = 200.0
-  vim.g.neovide_cursor_vfx_particle_lifetime = 1.0
-  vim.g.neovide_cursor_vfx_particle_density = 7.0
-  vim.g.neovide_cursor_vfx_particle_speed = 10.0
+    -- Put anything you want to happen only in Neovide here
+    vim.g.neovide_text_gamma = 0.9
+    vim.g.neovide_text_contrast = 0.1
+    vim.g.neovide_padding_top = 0
+    vim.g.neovide_padding_bottom = 0
+    vim.g.neovide_padding_right = 0
+    vim.g.neovide_padding_left = 0
+    vim.g.neovide_window_blurred = true
+    vim.g.neovide_floating_blur_amount_x = 2.0
+    vim.g.neovide_floating_blur_amount_y = 2.0
+    vim.g.neovide_opacity = 0.5
+    vim.g.neovide_position_animation_length = 0.15
+    vim.g.neovide_scroll_animation_length = 0.2
+    vim.g.neovide_hide_mouse_when_typing = true
+    vim.g.neovide_theme = "auto"
+    vim.g.neovide_fullscreen = false
+    vim.g.neovide_cursor_animation_length = 0.11
+    vim.g.neovide_cursor_trail_size = 0.5
+    vim.g.neovide_cursor_antialiasing = true
+    vim.g.neovide_cursor_animate_in_insert_mode = true
+    vim.g.neovide_cursor_animate_command_line = true
+    vim.g.neovide_cursor_smooth_blink = false
+    -- vim.g.neovide_cursor_vfx_particle_curl = 1.5 -- only for railgun
+    -- vim.g.neovide_cursor_vfx_particle_phase = 1.5 -- only for railgun
+    -- vim.g.neovide_cursor_vfx_mode = ""
+    -- vim.g.neovide_cursor_vfx_mode = "railgun"
+    -- vim.g.neovide_cursor_vfx_mode = "torpedo"
+    vim.g.neovide_cursor_vfx_mode = "pixiedust"
+    -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
+    -- vim.g.neovide_cursor_vfx_mode = "ripple" vim.g.neovide_cursor_vfx_mode = "wireframe"
+    vim.g.neovide_cursor_vfx_opacity = 200.0
+    vim.g.neovide_cursor_vfx_particle_lifetime = 1.0
+    vim.g.neovide_cursor_vfx_particle_density = 7.0
+    vim.g.neovide_cursor_vfx_particle_speed = 10.0
 end
 
 -- LAZYVIM DEFAULTS (commented out but here for reference)-->
