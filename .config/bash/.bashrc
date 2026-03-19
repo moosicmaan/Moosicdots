@@ -1,7 +1,7 @@
 # =====================================================
 # -----------------------------------------------------
 # BASH SHELL CONFIGURATION
-#    Jason Bradberry (2024)
+#    Jason Bradberry (2024, 2026)
 # -----------------------------------------------------
 # =====================================================
 
@@ -146,13 +146,16 @@ fi
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"
 alias folders='du -h --max-depth=1'
-alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+alias folderssort='find . -maxdepth 1 -type d -print0 | \
+                   xargs -0 du -sk | sort -rn'
 alias tree='tree -CAhF --dirsfirst'
 alias treed='tree -CAFd'
 alias mountedinfo='df -hT'
 
 # Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias logs="sudo find /var/log -type f -exec file {} \; | \
+            grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | \
+            grep -v '[0-9]$' | xargs tail -f"
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -163,13 +166,12 @@ alias upd='/usr/bin/garuda-update' # Basically pacman -Syu with additional check
 alias apt='man pacman'
 alias apt-get='man pacman'
 alias please='sudo'
+
 alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-# Recent installed packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-alias big="expac -H M '%m\t%n' | sort -h | nl"      # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'                              # Cleanup orphaned packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" # Recent installed packages
+alias big="expac -H M '%m\t%n' | sort -h | nl"                                # Sort installed packages according to size in MB (expac must be installed)
+alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'                           # List amount of -git packages
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias rmpkg="sudo pacman -Rsv"
 
@@ -291,9 +293,14 @@ bind -x '"\C-\A-y":yy'
 if command -v yazi >/dev/null 2>&1; then
     # Set up fzf key bindings and fuzzy completion
     eval "$(fzf --bash)"
-    alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
+    alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded \
+          --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% \
+          --preview "bat {}" --info=hidden --header="<TAB> for MULTI" \
+          --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" \
+          --preview-window="right,border-double,50%" \
+          --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " \
+          --pointer="→" --marker="*"'
     alias nf='nvim $(ff)'
-    # alias np='nvim $(ft)'
 fi
 
 # -----------------------------------------------

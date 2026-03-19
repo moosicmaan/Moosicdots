@@ -237,7 +237,7 @@ disabled = false
 
 # ------
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
