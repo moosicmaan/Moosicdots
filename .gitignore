@@ -108,7 +108,8 @@ moosictoken
 *.strace
 
 # Miscellaneous
-.config/engrammer*
+.config/easyeffects/*
+.config/engrammer/*
 .local/bin/{pt*,pip*}
 .mozilla/*
 .zen/*
