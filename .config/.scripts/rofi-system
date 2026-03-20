@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Simple partner scripts with rofi-power to give WMs
+# a simple way to have a logout/power menu
+#     By: Jason Bradberry (2024)
+# -----------------------------------------------------
+# =====================================================
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
-  echo "Wayland session"
-  rofi_c="$HOME/.config/rofi/config-narrow.rasi"
+    echo "Wayland session"
+    rofi_c="$HOME/.config/rofi/config-narrow.rasi"
 else
-  echo "X11 session"
-  rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+    echo "X11 session"
+    rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 rofi -config "$rofi_c" -show powermenu -modi powermenu:~/.config/.scripts/rofi-power

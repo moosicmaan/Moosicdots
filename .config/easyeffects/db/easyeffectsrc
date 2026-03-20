@@ -8,7 +8,7 @@ spectrumShape=lines
 inputDevice=alsa_input.usb-046d_Logitech_BRIO_B8573016-03.analog-stereo
 
 [StreamOutputs]
-outputDevice=bluez_output.E4:61:F4:0C:2A:7F
+outputDevice=bluez_output.00:12:6F:DB:0A:DD
 plugins=bass_enhancer#0,stereo_tools#0,reverb#0,pitch#0
 visiblePage=pluginsPage
 visiblePlugin=pitch#0
@@ -17,8 +17,8 @@ visiblePlugin=pitch#0
 forceBreezeTheme=false
 
 [Window]
-height=540
+height=516
 visiblePresetSheetPage=communityPage
-width=960
+width=1250
 xdgGlobalShortcuts=true
 xdgGlobalShortcutsBound=true
