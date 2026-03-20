@@ -1,1 +1,0 @@
-ACTION=="add", SUBSYSTEM=="block", ENV{ID_USB_VENDOR_ID}=="0480", ENV{ID_USB_MODEL_ID}=="0200", RUN+="/usr/local/bin/mount-toshiba.sh %k"

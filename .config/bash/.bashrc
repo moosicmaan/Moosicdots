@@ -12,7 +12,7 @@
 [[ $- != *i* ]] && return
 
 HISTSIZE=5000
-export HISTIGNORE="ls:pwd:exit:clear"
+export HISTIGNORE="ls:la:pwd:exit:clear"
 export HISTCONTROL=ignoredups:erasedups
 
 # set vim editing
@@ -55,26 +55,26 @@ fi
 # -----------------------------------------------------
 # USEFUL ALIASES
 # -----------------------------------------------------
-# Replace ls with exa (eza)
-if command -v exa >/dev/null 2>&1; then
-    alias ls='exa -ah -F --color=always --group-directories-first --icons'       # add colors and file type extensions
-    alias lw='exa -xah -F --color=always --group-directories-first --icons'      # wide listing format
-    alias ll='exa -lh -F --color=always --group-directories-first --icons'       # long listing format
-    alias la='exa -Alh --color=always --group-directories-first --icons'         # show hidden files long format
-    alias lm='exa -alh --color=always --group-directories-first --icons | more'  # pipe through 'more'
-    alias lT='exa -aTh  --color=always --group-directories-first --icons | more' # tree listing
-    alias lr='exa -lRh --color=always --group-directories-first --icons | more'  # recursive ls
-    alias labc='exa -lah --color=always --sort=name --icons'                     # sort by alphabetical
-    alias lx='exa -lXBh --color=always --sort=extension --icons'                 # sort by extension
-    alias lk='exa -lSrh --color=always --sort=size --icons '                     # sort by size
-    alias lc='exa -Alh --color=always --changed --sort=changed --icons'          # sort by change time
-    alias lu='exa -Alh --color=always --accessed --sort=accessed --icons'        # sort by access time
-    alias ld='exa -Alh --color=always --sort=date --icons'                       # sort by date
-    alias lf="exa -ah --color=always --follow-symlinks --only-files --icons"     # only files
-    alias ldir="exa -ah --color=always --follow-symlinks --only-dirs --icons"    # only directories
-    alias lla='exa -aAlh --color=always --group-directories-first --icons .*'    # only Hidden Files recursive long
-    alias lls='exa -aAh --color=always --group-directories-first --icons .*'     # Only Hidden Files recursive
-    alias l.='exa -aldh --color=always --group-directories-first --icons .*'     # only Dotfiles/dirs
+# Replace ls with eza (eza)
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza -ah -F --color=always --group-directories-first --icons'       # add colors and file type extensions
+    alias lw='eza -xah -F --color=always --group-directories-first --icons'      # wide listing format
+    alias ll='eza -lh -F --color=always --group-directories-first --icons'       # long listing format
+    alias la='eza -Alh  --color=always --group-directories-first --icons'        # show hidden files long format
+    alias lm='eza -alh --color=always --group-directories-first --icons | more'  # pipe through 'more'
+    alias lT='eza -aTh  --color=always --group-directories-first --icons | more' # tree listing
+    alias lr='eza -lRh --color=always --group-directories-first --icons | more'  # recursive ls
+    alias labc='eza -lah --color=always --sort=name --icons'                     # sort by alphabetical
+    alias lx='eza -lXBh --color=always --sort=extension --icons'                 # sort by extension
+    alias lk='eza -lSrh --color=always --sort=size --icons '                     # sort by size
+    alias lc='eza -Alh --color=always --changed --sort=changed --icons'          # sort by change time
+    alias lu='eza -Alh --color=always --accessed --sort=accessed --icons'        # sort by access time
+    alias ld='eza -Alh --color=always --sort=date --icons'                       # sort by date
+    alias lf="eza -ah --color=always --follow-symlinks --only-files --icons"     # only files
+    alias ldir="eza -ah --color=always --follow-symlinks --only-dirs --icons"    # only directories
+    alias lla='eza -aAlh --color=always --group-directories-first --icons .*'    # only Hidden Files recursive long
+    alias lls='eza -aAh --color=always --group-directories-first --icons .*'     # Only Hidden Files recursive
+    alias l.='eza -aldh --color=always --group-directories-first --icons .*'     # only Dotfiles/dirs
 else
     alias la='ls -Alh'                # show hidden files
     alias ls='ls -aFh --color=always' # add colors and file type extensions
