@@ -15,9 +15,6 @@ HISTSIZE=5000
 export HISTIGNORE="ls:la:pwd:exit:clear"
 export HISTCONTROL=ignoredups:erasedups
 
-# set vim editing
-set -o vi
-
 # -----------------------------------------------------
 # PROMPT
 # -----------------------------------------------------
@@ -39,10 +36,11 @@ set -o vi
 
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
-
 if [ -f "$HOME/.bash_prompt" ]; then
     source "$HOME/.bash_prompt"
 fi
+# set vim editing
+set -o vi
 
 # -----------------------------------------------------
 # FUNCTIONS AND HELPER PROGRAMS
@@ -50,6 +48,11 @@ fi
 # Advanced command-not-found hook
 if [ -f /usr/share/doc/find-the-command/ftc.bash ]; then
     source /usr/share/doc/find-the-command/ftc.bash noupdate info
+fi
+
+# Enable bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
 fi
 
 # -----------------------------------------------------
@@ -99,10 +102,6 @@ fi
 # dir
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-# list the types of files in a directory or list
-alias types='~/.config/.scripts/ut-filetypes'
-alias lt='~/.config/.scripts/ut-filetypes'
-
 # Replace some more things with better alternatives
 if command -v bat >/dev/null 2>&1; then
     alias cat='bat --style header --style snip --style changes --style header'
@@ -175,12 +174,47 @@ alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'                           # 
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias rmpkg="sudo pacman -Rsv"
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # JDB --->
-# -----------------------------------------------
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# Binds
+# -----------------------------------------------------
+# bind '"<key>": <command>'
+bind -x '"\C-n":nf'
+bind -x '"\C-\A-n":nf'
+bind -x '"\C-l":clear'
+bind -x '"\C-A-l":clear'
+# bind \co yasi cd
+bind -x '"\C-y":yy'
+bind -x '"\C-\A-y":yy'
+
+# -----------------------------------------------------
+# Aliases
+# -----------------------------------------------------
+# My aliases and prompts - not using starship in bash.
 # IP address lookup
 alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
+# The new way to start hyprland in a tty,,,,I think...
+alias hypr="start hyprland"
+# alias vim="nvim"
+alias vi="vim"
+# alias ec="emacsclient -c -a 'emacs' &"
+alias config="cd /mnt/data/moosicmaan/CONFIG/ && bash -c 'nvim'"
+# play local music and net radio
+alias jam="~/.config/.scripts/rofi-beats"
+# search/install/run blackarch packages - cli
+alias black="~/.config/.scripts/ut-blackmenu"
+# to help when system is opening sudoedit with graphical program
+alias suedit="VISUAL= sudoedit"
+# list the types of files in a directory or list
+alias types='~/.config/.scripts/ut-filetypes'
+alias lt='~/.config/.scripts/ut-filetypes'
 
+# -----------------------------------------------------
+# Functions
+# -----------------------------------------------------
 # Extracts any archive(s) (if unp isn't installed)
 extract() {
     for archive in "$@"; do
@@ -225,6 +259,9 @@ cpp() {
     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
 }
 
+# -----------------------------------------------------
+# Helper Applications
+# -----------------------------------------------------
 # Changing the font if in TTY session
 my_font=ter-u22b.psf.gz
 font_directory=/usr/share/kbd/consolefonts
@@ -235,19 +272,6 @@ if [[ $DISPLAY == "" ]]; then
     fastfetch
 fi
 
-# My aliases and prompts - not using starship in bash.
-alias hypr="start hyprland"
-# alias vim="nvim"
-alias vi="vim"
-# alias ec="emacsclient -c -a 'emacs' &"
-alias config="cd /mnt/data/moosicmaan/CONFIG/ && bash -c 'nvim'"
-# play local music and net radio
-alias jam="~/.config/.scripts/rofi-beats"
-# search/install/run blackarch packages - cli
-alias black="~/.config/.scripts/ut-blackmenu"
-# to help when system is opening sudoedit with graphical program
-alias suedit="VISUAL= sudoedit"
-
 # Zoxide, a better cd
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init bash)"
@@ -255,11 +279,6 @@ if command -v zoxide >/dev/null 2>&1; then
     # alias cdi='__zoxide_zi;pwd;ls'
     alias cd='__zoxide_z'
     alias cdi='__zoxide_zi'
-fi
-
-# Enable bash completion
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
 fi
 
 if command -v yazi >/dev/null 2>&1; then
@@ -281,16 +300,7 @@ if command -v yazi >/dev/null 2>&1; then
     }
 fi
 
-# bind '"<key>": <command>'
-bind -x '"\C-n":nf'
-bind -x '"\C-\A-n":nf'
-bind -x '"\C-l":clear'
-bind -x '"\C-A-l":clear'
-# bind \co yasi cd
-bind -x '"\C-y":yy'
-bind -x '"\C-\A-y":yy'
-
-if command -v yazi >/dev/null 2>&1; then
+if command -v fzf >/dev/null 2>&1; then
     # Set up fzf key bindings and fuzzy completion
     eval "$(fzf --bash)"
     alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded \
@@ -303,6 +313,6 @@ if command -v yazi >/dev/null 2>&1; then
     alias nf='nvim $(ff)'
 fi
 
-# -----------------------------------------------
+# -----------------------------------------------------
 # <--- JDB
-# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

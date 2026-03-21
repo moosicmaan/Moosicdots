@@ -317,6 +317,14 @@ alias black "$HOME/.config/.scripts/ut-blackmenu"
 # KEYBINDINGS, HELPER PROGRAMS, AND FUNCTIONS
 # -------------------------------------------------------------------------------
 
+# KEYBINDINGS
+bind --mode insert ctrl-alt-y yy
+bind --mode insert ctrl-y yy
+bind --mode insert ctrl-alt-n nf
+bind --mode insert ctrl-n nf
+bind --mode insert ctrl-alt-l clear
+bind --mode insert ctrl-l clear
+
 # IP address lookup
 alias whatsmyip "~/.config/.scripts/ut-whatsmyip"
 
@@ -325,14 +333,6 @@ alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
 
 # set vi mode
 fish_vi_key_bindings
-
-# KEYBINDINGS
-bind --mode insert ctrl-alt-y yy
-bind --mode insert ctrl-y yy
-bind --mode insert ctrl-alt-n nf
-bind --mode insert ctrl-n nf
-bind --mode insert ctrl-alt-l clear
-bind --mode insert ctrl-l clear
 
 # change the working directory using yazi
 function yy

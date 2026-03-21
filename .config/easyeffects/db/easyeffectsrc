@@ -17,8 +17,8 @@ visiblePlugin=pitch#0
 forceBreezeTheme=false
 
 [Window]
-height=443
+height=485
 visiblePresetSheetPage=communityPage
-width=718
+width=624
 xdgGlobalShortcuts=true
 xdgGlobalShortcutsBound=true
