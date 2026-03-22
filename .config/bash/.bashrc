@@ -19,26 +19,26 @@ export HISTCONTROL=ignoredups:erasedups
 # PROMPT
 # -----------------------------------------------------
 # # Load starship prompt if starship is installed
-# if [ -x /usr/bin/starship ]; then
-#   __main() {
-#     local major="${BASH_VERSINFO[0]}"
-#     local minor="${BASH_VERSINFO[1]}"
-#
-#     if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
-#       source <("/usr/bin/starship" init bash --print-full-init)
-#     else
-#       source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
-#     fi
-#   }
-#   __main
-#   unset -f __main
-# fi
+if [ -x /usr/bin/starship ]; then
+    __main() {
+        local major="${BASH_VERSINFO[0]}"
+        local minor="${BASH_VERSINFO[1]}"
+
+        if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+            source <("/usr/bin/starship" init bash --print-full-init)
+        else
+            source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+        fi
+    }
+    __main
+    unset -f __main
+fi
 
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
-if [ -f "$HOME/.bash_prompt" ]; then
-    source "$HOME/.bash_prompt"
-fi
+# if [ -f "$HOME/.bash_prompt" ]; then
+#     source "$HOME/.bash_prompt"
+# fi
 # set vim editing
 set -o vi
 
@@ -167,10 +167,11 @@ alias apt-get='man pacman'
 alias please='sudo'
 
 alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'                              # Cleanup orphaned packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" # Recent installed packages
-alias big="expac -H M '%m\t%n' | sort -h | nl"                                # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'                           # List amount of -git packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # Cleanup orphaned packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' \
+    | sort | tail -200 |sort -r | nl | less"           # Recent installed packages
+alias big="expac -H M '%m\t%n' | sort -rh | nl | less" # Sort installed packages according to size in MB (expac must be installed)
+alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'    # List amount of -git packages
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias rmpkg="sudo pacman -Rsv"
 
@@ -211,6 +212,8 @@ alias suedit="VISUAL= sudoedit"
 # list the types of files in a directory or list
 alias types='~/.config/.scripts/ut-filetypes'
 alias lt='~/.config/.scripts/ut-filetypes'
+# get the return codes for all parts of a pipe operation
+alias pipes='echo "${PIPESTATUS[*]}"'
 
 # -----------------------------------------------------
 # Functions

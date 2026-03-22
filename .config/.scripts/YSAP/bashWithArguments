@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# instead of running the program with 'bash -x ' one can set and unset displaying every command
+set -x
+
+fist_name='jason'
+# instead of running the program with 'bash -x ' one can set and unset displaying every command
+set +x
+last_name='eddy'
+full_name="$fist_name $last_name"
+
+if [[ $fist_name == 'dave' ]]; then
+    echo "oh! Hey! It's dave"
+fi
+
+echo "Hello $full_name!"
+
+echo hello
+if true; then
+    echo goodbye
+fii
+# fi
+
+# run this as 'bash -n xxxxx' and it will check syntax befor you run
+
+foo=1
+bar=2
+
+echo "foo is $foo"
+echo "bar is $bar"
+echo "baz is $baz"
+
+# run with 'bash -u xxxxx' to pick up unset variables
+
+# or...use 'shellcheck xxxxx'

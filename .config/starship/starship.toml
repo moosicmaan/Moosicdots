@@ -1,4 +1,4 @@
-format = '$username$os$hostname$jobs$directory$sudo$git_status$git_state$git_metrics$fill$cmd_duration$all'
+format = '$username$hostname$shell$jobs$os$directory$sudo$git_status$git_state$git_metrics$fill$cmd_duration$all'
 # format = '$username$hostname$jobs$directory$sudo$git_status$all'
 right_format = "$battery$time"
 add_newline = true
@@ -50,11 +50,19 @@ style_user = "white"
 # aliases = { "moosicmaan" = "me" }
 disabled = false
 
+[shell]
+fish_indicator = ' 󰈺'
+powershell_indicator = ' _'
+bash_indicator = ' _'
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
+
 [os]
 format = "[$symbol]($style)"
 # style = "bold white"
 style = "bold blue"
-disabled = false
+disabled = true
 
 [hostname]
 ssh_only = true
@@ -73,7 +81,7 @@ threshold = 1
 symbol_threshold = 1
 number_threshold = 1
 format = "[$symbol$number]($style)"
-symbol = " ✦"
+symbol = "✦"
 # style = "bold blue"
 style = "blue"
 disabled = false
@@ -81,9 +89,9 @@ disabled = false
 # Third param
 [directory]
 style = "italic bold blue"
-format = ' in [$path]($style) [$read_only]($read_only_style)'
+format = 'in [$path]($style) [$read_only]($read_only_style)'
 truncate_to_repo = true
-read_only = " 󰌾"
+read_only = "󰌾"
 truncation_length = 0
 truncation_symbol = "repo: "
 
