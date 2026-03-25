@@ -5,7 +5,7 @@ add_newline = true
 command_timeout = 2000
 scan_timeout = 60
 
-palette = "catppuccin_mocha"
+# palette = "catppuccin_mocha"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -40,6 +40,7 @@ crust = "#11111b"
 # First param ─┌
 [username]
 # format = " [╭─$user]($style)@"
+# format = " [╭─](white)[$user]($style)"
 format = " [╭─](white)[$user]($style)"
 # format = " ╔══ [$user]($style)"
 show_always = true
@@ -52,9 +53,9 @@ disabled = false
 
 [shell]
 fish_indicator = ' 󰈺'
-powershell_indicator = ' _'
-bash_indicator = ' _'
-unknown_indicator = 'mystery shell'
+powershell_indicator = ' '
+bash_indicator = ' '
+unknown_indicator = ' '
 style = 'cyan bold'
 disabled = false
 
@@ -70,7 +71,7 @@ ssh_only = true
 ssh_symbol = " "
 trim_at = "."
 detect_env_vars = []
-format = "[$ssh_symbol$hostname]($style) in "
+format = "[$ssh_symbol$hostname]($style)"
 # style = "green dimmed bold"
 style = "green"
 disabled = false
@@ -89,7 +90,7 @@ disabled = false
 # Third param
 [directory]
 style = "italic bold blue"
-format = 'in [$path]($style) [$read_only]($read_only_style)'
+format = ' [$path]($style) [$read_only]($read_only_style)'
 truncate_to_repo = true
 read_only = "󰌾"
 truncation_length = 0

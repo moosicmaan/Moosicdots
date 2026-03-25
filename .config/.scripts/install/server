@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
+cd ~ || exit 2
+
+if [[ -f ~/.bashrc ]]; then
+    mv ~/.bashrc ~/.bashrc.JBAC
+fi
+
 cat >.bashrc <<"EOF"
 # =====================================================
 # -----------------------------------------------------
 # BASH SHELL CONFIGURATION
-#    Jason Bradberry (2024)
+#    Jason Bradberry (2024, 2026)
 # -----------------------------------------------------
 # =====================================================
 
@@ -15,100 +21,102 @@ cat >.bashrc <<"EOF"
 [[ $- != *i* ]] && return
 
 HISTSIZE=5000
-export HISTIGNORE="ls:pwd:exit:clear"
+export HISTIGNORE="ls:la:pwd:exit:clear"
 export HISTCONTROL=ignoredups:erasedups
-
-# set vim editing
-set -o vi
 
 # -----------------------------------------------------
 # PROMPT
 # -----------------------------------------------------
 # # Load starship prompt if starship is installed
 # if [ -x /usr/bin/starship ]; then
-#   __main() {
-#     local major="${BASH_VERSINFO[0]}"
-#     local minor="${BASH_VERSINFO[1]}"
+#     __main() {
+#         local major="${BASH_VERSINFO[0]}"
+#         local minor="${BASH_VERSINFO[1]}"
 #
-#     if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
-#       source <("/usr/bin/starship" init bash --print-full-init)
-#     else
-#       source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
-#     fi
-#   }
-#   __main
-#   unset -f __main
+#         if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+#             source <("/usr/bin/starship" init bash --print-full-init)
+#         else
+#             source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+#         fi
+#     }
+#     __main
+#     unset -f __main
 # fi
-
+#
 # My prompt - not using starship in bash - bash_prompt and ~/.initrc.
 # Setting VIM mode for the commandline
-
-if [ -f "$HOME/.bash_prompt.sh" ]; then
-  source "$HOME/.bash_prompt.sh"
+if [ -f "$HOME/.bash_prompt" ]; then
+    source "$HOME/.bash_prompt"
 fi
+# set vim editing - set in .inputrc
+set -o vi
 
 # -----------------------------------------------------
 # FUNCTIONS AND HELPER PROGRAMS
 # -----------------------------------------------------
 # Advanced command-not-found hook
 if [ -f /usr/share/doc/find-the-command/ftc.bash ]; then
-  source /usr/share/doc/find-the-command/ftc.bash noupdate info
+    source /usr/share/doc/find-the-command/ftc.bash noupdate info
+fi
+
+# Enable bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
 fi
 
 # -----------------------------------------------------
 # USEFUL ALIASES
 # -----------------------------------------------------
-# Replace ls with exa (eza)
-if [ -f /usr/bin/exa ]; then
-  alias ls='exa -ah -F --color=always --group-directories-first --icons'       # add colors and file type extensions
-  alias lw='exa -xah -F --color=always --group-directories-first --icons'      # wide listing format
-  alias ll='exa -lh -F --color=always --group-directories-first --icons'       # long listing format
-  alias la='exa -Alh --color=always --group-directories-first --icons'         # show hidden files long format
-  alias lm='exa -alh --color=always --group-directories-first --icons | more'  # pipe through 'more'
-  alias lT='exa -aTh  --color=always --group-directories-first --icons | less' # tree listing
-  alias lr='exa -lRh --color=always --group-directories-first --icons | less'  # recursive ls
-  alias labc='exa -lah --color=always --sort=name --icons'                     # sort by alphabetical
-  alias lx='exa -lXBh --color=always --sort=extension --icons'                 # sort by extension
-  alias lk='exa -lSrh --color=always --sort=size --icons '                     # sort by size
-  alias lc='exa -Alh --color=always --changed --sort=changed --icons'          # sort by change time
-  alias lu='exa -Alh --color=always --accessed --sort=accessed --icons'        # sort by access time
-  alias ld='exa -Alh --color=always --sort=date --icons'                       # sort by date
-  alias lf="exa -ah --color=always --follow-symlinks --only-files --icons"     # only files
-  alias ldir="exa -ah --color=always --follow-symlinks --only-dirs --icons"    # only directories
-  alias lla='exa -aAlh --color=always --group-directories-first --icons .*'    # only Hidden Files recursive long
-  alias lls='exa -aAh --color=always --group-directories-first --icons .*'     # Only Hidden Files recursive
-  alias l.='exa -aldh --color=always --group-directories-first --icons .*'     # only Dotfiles/dirs
+# Replace ls with eza (eza)
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza -ah -F --color=always --group-directories-first --icons'       # add colors and file type extensions
+    alias lw='eza -xah -F --color=always --group-directories-first --icons'      # wide listing format
+    alias ll='eza -lh -F --color=always --group-directories-first --icons'       # long listing format
+    alias la='eza -Alh  --color=always --group-directories-first --icons'        # show hidden files long format
+    alias lm='eza -alh --color=always --group-directories-first --icons | more'  # pipe through 'more'
+    alias lT='eza -aTh  --color=always --group-directories-first --icons | more' # tree listing
+    alias lr='eza -lRh --color=always --group-directories-first --icons | more'  # recursive ls
+    alias labc='eza -lah --color=always --sort=name --icons'                     # sort by alphabetical
+    alias lx='eza -lXBh --color=always --sort=extension --icons'                 # sort by extension
+    alias lk='eza -lSrh --color=always --sort=size --icons '                     # sort by size
+    alias lc='eza -Alh --color=always --changed --sort=changed --icons'          # sort by change time
+    alias lu='eza -Alh --color=always --accessed --sort=accessed --icons'        # sort by access time
+    alias ld='eza -Alh --color=always --sort=date --icons'                       # sort by date
+    alias lf="eza -ah --color=always --follow-symlinks --only-files --icons"     # only files
+    alias ldir="eza -ah --color=always --follow-symlinks --only-dirs --icons"    # only directories
+    alias lla='eza -aAlh --color=always --group-directories-first --icons .*'    # only Hidden Files recursive long
+    alias lls='eza -aAh --color=always --group-directories-first --icons .*'     # Only Hidden Files recursive
+    alias l.='eza -aldh --color=always --group-directories-first --icons .*'     # only Dotfiles/dirs
 else
-  alias la='ls -Alh'                # show hidden files
-  alias ls='ls -aFh --color=always' # add colors and file type extensions
-  alias lx='ls -lXBh'               # sort by extension
-  alias lk='ls -lSrh'               # sort by size
-  alias lc='ls -ltcrh'              # sort by change time
-  alias lu='ls -lturh'              # sort by access time
-  alias lr='ls -lRh'                # recursive ls
-  alias ld='ls -ltrh'               # sort by date
-  alias lm='ls -alh |more'          # pipe through 'more'
-  alias lw='ls -xAh'                # wide listing format
-  alias ll='ls -Fls'                # long listing format
-  alias labc='ls -lap'              # alphabetical sort
-  alias lf="ls -l | egrep -v '^d'"  # files only
-  alias ldir="ls -l | egrep '^d'"   # directories only
-  alias lla='ls -Al'                # List and Hidden Files
-  alias las='ls -A'                 # Hidden Files
-  alias lls='ls -l'                 # List
-  alias le='tree -aC'               # tree listing
-  alias l.='ls -ald .*'             # show only dotfiles
+    alias la='ls -Alh'                # show hidden files
+    alias ls='ls -aFh --color=always' # add colors and file type extensions
+    alias lx='ls -lXBh'               # sort by extension
+    alias lk='ls -lSrh'               # sort by size
+    alias lc='ls -ltcrh'              # sort by change time
+    alias lu='ls -lturh'              # sort by access time
+    alias lr='ls -lRh'                # recursive ls
+    alias ld='ls -ltrh'               # sort by date
+    alias lm='ls -alh |more'          # pipe through 'more'
+    alias lw='ls -xAh'                # wide listing format
+    alias ll='ls -Fls'                # long listing format
+    alias labc='ls -lap'              # alphabetical sort
+    alias lf="ls -l | egrep -v '^d'"  # files only
+    alias ldir="ls -l | egrep '^d'"   # directories only
+    alias lla='ls -Al'                # List and Hidden Files
+    alias las='ls -A'                 # Hidden Files
+    alias lls='ls -l'                 # List
+    alias le='tree -aC'               # tree listing
+    alias l.='ls -ald .*'             # show only dotfiles
 fi
 # dir
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-
 # Replace some more things with better alternatives
-if [ -f /usr/bin/bat ]; then
-  alias cat='bat --style header --style snip --style changes --style header'
-  # Use bat for man pages
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-  export MANROFFOPT=-c
+if command -v bat >/dev/null 2>&1; then
+    alias cat='bat --style header --style snip --style changes --style header'
+    # Use bat for man pages
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    # export MANROFFOPT=-c
 fi
 # use paru instead of yay to as a aur-helper
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
@@ -120,94 +128,134 @@ alias less='less -R -C'
 alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
-alias rv='rv -i'
+alias rm='rm -i'
 alias grubup="sudo update-grub"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
 alias wget='wget -c '
-alias rmpkg="sudo pacman -Rsv"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias upd='/usr/bin/garuda-update'
-alias ..='cd ..;pwd;ls'
-alias ...='cd ../..;pwd;ls'
-alias ....='cd ../../..;pwd;ls'
-alias .....='cd ../../../..;pwd;ls'
-alias ......='cd ../../../../..;pwd;ls'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 # cd into the old directory
 alias bd='cd "$OLDPWD"'
 alias hw='hwinfo --short' # Hardware Info
 alias ip='ip -color'
 
-if [ -f /usr/bin/ugrep ]; then
-  alias grep='ugrep --color=auto'
-  alias fgrep='ugrep -F --color=auto'
-  alias egrep='ugrep -E --color=auto'
+if command -v ugrep >/dev/null 2>&1; then
+    alias grep='ugrep --color=auto'
+    alias fgrep='ugrep -F --color=auto'
+    alias egrep='ugrep -E --color=auto'
 fi
 
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"
 alias folders='du -h --max-depth=1'
-alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+alias folderssort='find . -maxdepth 1 -type d -print0 | \
+                   xargs -0 du -sk | sort -rn'
 alias tree='tree -CAhF --dirsfirst'
 alias treed='tree -CAFd'
 alias mountedinfo='df -hT'
 
 # Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias logs="sudo find /var/log -type f -exec file {} \; | \
+            grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | \
+            grep -v '[0-9]$' | xargs tail -f"
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
 ## PACMAN
+alias upd='/usr/bin/garuda-update' # Basically pacman -Syu with additional checks
 # Help people new to Arch
 alias apt='man pacman'
 alias apt-get='man pacman'
 alias please='sudo'
-alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-# Recent installed packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-alias big="expac -H M '%m\t%n' | sort -h | nl"      # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # Cleanup orphaned packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' \
+    | sort | tail -200 |sort -r | nl | less"           # Recent installed packages
+alias big="expac -H M '%m\t%n' | sort -rh | nl | less" # Sort installed packages according to size in MB (expac must be installed)
+alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'    # List amount of -git packages
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias rmpkg="sudo pacman -Rsv"
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # JDB --->
-# -----------------------------------------------
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# Binds
+# -----------------------------------------------------
+# bind '"<key>": <command>'
+bind -x '"\C-n":nf'
+bind -x '"\C-\A-n":nf'
+bind -x '"\C-l":clear'
+bind -x '"\C-A-l":clear'
+# bind \co yasi cd
+bind -x '"\C-y":yy'
+bind -x '"\C-\A-y":yy'
+
+# -----------------------------------------------------
+# Aliases
+# -----------------------------------------------------
+# My aliases and prompts - not using starship in bash.
 # IP address lookup
 alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
+# The new way to start hyprland in a tty,,,,I think...
+alias hypr="start hyprland"
+# alias vim="nvim"
+alias vi="vim"
+# alias ec="emacsclient -c -a 'emacs' &"
+alias config="cd /mnt/data/moosicmaan/CONFIG/ && bash -c 'nvim'"
+# play local music and net radio
+alias jam="~/.config/.scripts/rofi-beats"
+# search/install/run blackarch packages - cli
+alias black="~/.config/.scripts/ut-blackmenu"
+# to help when system is opening sudoedit with graphical program
+alias suedit="VISUAL= sudoedit"
+# list the types of files in a directory or list
+alias types='~/.config/.scripts/ut-filetypes'
+alias lt='~/.config/.scripts/ut-filetypes'
+# get the return codes for all parts of a pipe operation
+alias pipes='echo "${PIPESTATUS[*]}"'
 
+# -----------------------------------------------------
+# Functions
+# -----------------------------------------------------
 # Extracts any archive(s) (if unp isn't installed)
 extract() {
-  for archive in "$@"; do
-    if [ -f "$archive" ]; then
-      case $archive in
-      *.tar.bz2) tar xvjf "$archive" ;;
-      *.tar.gz) tar xvzf "$archive" ;;
-      *.bz2) bunzip2 "$archive" ;;
-      *.rar) rar x "$archive" ;;
-      *.gz) gunzip "$archive" ;;
-      *.tar) tar xvf "$archive" ;;
-      *.tbz2) tar xvjf "$archive" ;;
-      *.tgz) tar xvzf "$archive" ;;
-      *.zip) unzip "$archive" ;;
-      *.Z) uncompress "$archive" ;;
-      *.7z) 7z x "$archive" ;;
-      *) echo "don't know how to extract '$archive'..." ;;
-      esac
-    else
-      echo "'$archive' is not a valid file!"
-    fi
-  done
+    for archive in "$@"; do
+        if [ -f "$archive" ]; then
+            case $archive in
+            *.tar.bz2) tar xvjf "$archive" ;;
+            *.tar.gz) tar xvzf "$archive" ;;
+            *.bz2) bunzip2 "$archive" ;;
+            *.rar) rar x "$archive" ;;
+            *.gz) gunzip "$archive" ;;
+            *.tar) tar xvf "$archive" ;;
+            *.tbz2) tar xvjf "$archive" ;;
+            *.tgz) tar xvzf "$archive" ;;
+            *.zip) unzip "$archive" ;;
+            *.Z) uncompress "$archive" ;;
+            *.7z) 7z x "$archive" ;;
+            *) echo "don't know how to extract '$archive'..." ;;
+            esac
+        else
+            echo "'$archive' is not a valid file!"
+        fi
+    done
 }
 
 # Copy file with a progress bar
 cpp() {
-  set -e
-  strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
-    awk '{
+    set -e
+    strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
+        awk '{
         count += $NF
         if (count % 10 == 0) {
             percent = count / total_size * 100
@@ -223,160 +271,823 @@ cpp() {
     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
 }
 
+# -----------------------------------------------------
+# Helper Applications
+# -----------------------------------------------------
 # Changing the font if in TTY session
 my_font=ter-u22b.psf.gz
 font_directory=/usr/share/kbd/consolefonts
 if [[ $DISPLAY == "" ]]; then
-  setfont $font_directory/$my_font
-  echo " > Font set to: $font_directory/$my_font"
-  clear
-  fastfetch
+    setfont $font_directory/$my_font
+    echo " > Font set to: $font_directory/$my_font"
+    clear
+    fastfetch
 fi
-
-# My aliases and prompts - not using starship in bash.
-alias hypr="start hyprland"
-# alias vim="nvim"
-alias vi="vim"
-# alias ec="emacsclient -c -a 'emacs' &"
-alias config="cd /mnt/data/moosicmaan/CONFIG/ && bash -c 'nvim'"
-# play local music and net radio
-alias jam="~/.config/.scripts/rofi-beats"
-# search/install/run blackarch packages - cli
-alias black="~/.config/.scripts/ut-blackmenu"
-# to help when system is opening sudoedit with graphical program
-alias suedit="VISUAL= sudoedit"
 
 # Zoxide, a better cd
-if [ -f /usr/bin/zoxide ]; then
-  eval "$(zoxide init bash)"
-  alias cd='__zoxide_z;pwd;ls'
-  alias cdi='__zoxide_zi;pwd;ls'
-  # alias cd='__zoxide_z'
-  # alias cdi='__zoxide_zi'
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init bash)"
+    # alias cd='__zoxide_z;pwd;ls'
+    # alias cdi='__zoxide_zi;pwd;ls'
+    alias cd='__zoxide_z'
+    alias cdi='__zoxide_zi'
 fi
 
-# Enable bash completion
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  source /usr/share/bash-completion/bash_completion
+if command -v yazi >/dev/null 2>&1; then
+    function yy() {
+        local tmp
+        local cwd
+
+        tmp="$(mktemp -t yazi-cwd.XXXXXX)" || return
+
+        command yazi "$@" --cwd-file="$tmp"
+
+        IFS= read -r -d '' cwd <"$tmp"
+
+        if [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
+            builtin cd -- "$cwd"
+        fi
+
+        rm -f -- "$tmp"
+    }
 fi
 
-# if [ -f /usr/bin/yazi ]; then
-function yy() {
-  local tmp
-  local cwd
-
-  tmp="$(mktemp -t yazi-cwd.XXXXXX)" || return
-
-  command yazi "$@" --cwd-file="$tmp"
-
-  IFS= read -r -d '' cwd <"$tmp"
-
-  if [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
-    builtin cd -- "$cwd"
-  fi
-
-  rm -f -- "$tmp"
-}
-# fi
-
-# bind '"<key>": <command>'
-bind -x '"\C-n":nf'
-bind -x '"\C-\A-n":nf'
-bind -x '"\C-l":clear'
-bind -x '"\C-A-l":clear'
-# bind \co yasi cd
-bind -x '"\C-y":yy'
-bind -x '"\C-\A-y":yy'
-
-if [ -f /usr/bin/fzf ]; then
-  # Set up fzf key bindings and fuzzy completion
-  eval "$(fzf --bash)"
-
-  alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% --preview "bat {}" --info=hidden --header="<TAB> for MULTI" --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" --preview-window="right,border-double,50%" --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " --pointer="→" --marker="*"'
-
-  alias nf='nvim $(ff)'
-  # alias np='nvim $(ft)'
-
-  export FZF_CTRL_T_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF Find ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---header '<TAB> for MULTI' \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_CTRL_R_OPTS="--height 85% \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---preview 'echo {}' \
---preview-window 'right,40%,wrap' \
---border rounded \
---layout reverse \
---border-label '╢ FZF History ╟' \
---info hidden \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_ALT_C_OPTS="--height 85% \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF CD ╟' \
---walker-skip .git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
---preview 'tree -C {}' \
---info hidden \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_DEFAULT_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---header '<TAB> for MULTI' \
---color 'dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
-
-  export FZF_TMUX_OPTS="-m \
---tmux 75% \
---margin 2%,2% \
---scroll-off 3 \
---border rounded \
---layout reverse \
---border-label '╢ FZF ╟' \
---preview 'bat -n --color=always {}' \
---info hidden \
---color 'dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
---header '<TAB> for MULTI' \
---preview-label ' ~ Preview ~ ' \
---prompt 'FIND ▶ ' \
---pointer '→' \
---marker '*'"
+if command -v fzf >/dev/null 2>&1; then
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --bash)"
+    alias ff='fzf-tmux -w 75% -h 75% --reverse --scroll-off=3 --border=rounded \
+          --border-label="╢ FZF Select ╟" --height=75% --margin=10%,5% \
+          --preview "bat {}" --info=hidden --header="<TAB> for MULTI" \
+          --color="dark,border:bright-cyan,header:italic:yellow,prompt:yellow" \
+          --preview-window="right,border-double,50%" \
+          --preview-label=" ~ Preview ~ " --prompt="FIND ▶ " \
+          --pointer="→" --marker="*"'
+    alias nf='nvim $(ff)'
 fi
+
 # -----------------------------------------------
 # <--- JDB
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+EOF
+
+if [[ -f .bash_prompt ]]; then
+    mv .bash_prompt .bash_prompt.JBAC
+fi
+
+cat >.bash_prompt <<"EOF"
+# Colors (non-printing wrapped)
+BRACKET_COLOR="\[\e[38;5;41m\]"
+CLOCK_COLOR="\[\e[38;5;33m\]"
+JOB_COLOR="\[\e[38;5;33m\]"
+PATH_COLOR="\[\e[38;5;33m\]"
+LINE_COLOR="\[\e[1;0m\]"
+CLEAR_COLOR="\[\e[1;0m\]"
+HL_COLOR="\[\e[1;53m\]"
+
+# Unicode
+LINE_STRAIGHT="─"
+LINE_UPPER_CORNER="┌"
+LINE_LOWER_CORNER="└"
+
+PS1=" \
+$LINE_COLOR$LINE_UPPER_CORNER$LINE_STRAIGHT\
+$BRACKET_COLOR[$CLOCK_COLOR\t$BRACKET_COLOR]\
+$LINE_COLOR$LINE_STRAIGHT\
+$BRACKET_COLOR[$JOB_COLOR\$?$BRACKET_COLOR]\
+$LINE_COLOR$LINE_STRAIGHT\
+$BRACKET_COLOR[$JOB_COLOR\H$LINE_COLOR:$JOB_COLOR\w$BRACKET_COLOR]\
+$LINE_COLOR$LINE_STRAIGHT\
+$BRACKET_COLOR[$JOB_COLOR\j$BRACKET_COLOR]\
+$LINE_COLOR$LINE_STRAIGHT\
+$BRACKET_COLOR[$HL_COLOR!$LINE_COLOR:$JOB_COLOR\!$BRACKET_COLOR, $HL_COLOR#$LINE_COLOR:$JOB_COLOR\#$BRACKET_COLOR]\
+\n \
+$LINE_COLOR$LINE_LOWER_CORNER$LINE_STRAIGHT$JOB_COLOR\$ $CLEAR_COLOR"
+EOF
+
+if [[ -f .inputrc ]]; then
+    mv .inputrc .inputrc.JBAC
+fi
+
+cat >.inputrc <<"EOF"
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string "\1\e[5 q\2"
+set vi-cmd-mode-string "\1\e[1 q\2"
+# # set vi-ins-mode-string " └─\1\e[0;37m\$\e[0m\2\1\e[5 q\2"
+# # set vi-cmd-mode-string " └─\1\e[1;31mV\e[0m\2\1\e[6 q\2"
+set blink-matching-paren on set colored-stats on
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set menu-complete-display-prefix on
+set completion-prefix-display-length 5
+set bell-style none
+
+$if mode=vi
+#vi mode settings
+    set keymap vi-command
+
+    # go into insert mode, re run last command with !! and press enter
+    ".": "i!!\r"
+    "|": "A | "
+
+    # delete rest of the line (vi "D" behavior)
+    "D": kill-line
+    # change line -> delete then go in insert mode
+    "C":  "Da"
+    "dw": kill-word
+    "dd": kill-whole-line
+    "db": backward-kill-word
+    # delete and change line
+    "cc": "ddi"
+    # change word
+    "cw": "dwi"
+    # change backward word
+    "cb": "dbi"
+    # vi equivalent of delete all word i.e delete the current word entirely
+    "daw": "lbdW"
+    "yaw": "lbyW"
+
+    # change all word, delete and edit the current word
+    "caw": "lbcW"
+
+    # delete inner word (word under the cursor without the surrounding whitespaces)
+    "diw": "lbdw"
+    # yank inner word
+    "yiw": "lbyw"
+    # change inner word
+    "ciw": "lbcw"
+
+    # delete around double quoted string -> delete the text in double quoted strings and the quotes themselves
+    # F search backward for a double quote, then delete till first forward search of double quotes
+    "da\"": "lF\"df\""
+
+    # delete inside double quoted string -> delete the text inside the double quoted strings but not the quotes
+    "di\"": "lF\"lmtf\"d`t"
+    # change inside double quoted string basically delete inside double quoted string and go in insert mode
+    "ci\"": "di\"i"
+
+    # change around double quoted string
+    "ca\"": "da\"i"
+
+    # delete around single quoted string
+    "da'": "lF'df'"
+    "di'": "lF'lmtf'd`t"
+    "ci'": "di'i"
+    "ca'": "da'i"
+
+    # delete around tilde
+    "da`": "lF\`df\`"
+    "di`": "lF\`lmtf\`d`t"
+    "ci`": "di`i"
+    "ca`": "da`i"
+
+    # delete around parenthesis
+    "da(": "lF(df)"
+    "di(": "lF(lmtf)d`t"
+    "ci(": "di(i"
+    "ca(": "da(i"
+    "da)": "lF(df)"
+    "di)": "lF(lmtf)d`t"
+    "ci)": "di(i"
+    "ca)": "da(i"
+
+    # delete around curly
+    "da{": "lF{df}"
+    "di{": "lF{lmtf}d`t"
+    "ci{": "di{i"
+    "ca{": "da{i"
+    "da}": "lF{df}"
+    "di}": "lF{lmtf}d`t"
+    "ci}": "di}i"
+    "ca}": "da}i"
+
+    # delete around square brackets
+    "da[": "lF[df]"
+    "di[": "lF[lmtf]d`t"
+    "ci[": "di[i"
+    "ca[": "da[i"
+    "da]": "lF[df]"
+    "di]": "lF[lmtf]d`t"
+    "ci]": "di]i"
+    "ca]": "da]i"
+
+    # delete around angled brackets
+    "da<": "lF<df>"
+    "di<": "lF<lmtf>d`t"
+    "ci<": "di<i"
+    "ca<": "da<i"
+    "da>": "lF<df>"
+    "di>": "lF<lmtf>d`t"
+    "ci>": "di>i"
+    "ca>": "da>i"
+
+    # delete around forward slash
+    "da/": "lF/df/"
+    "di/": "lF/lmtf/d`t"
+    "ci/": "di/i"
+    "ca/": "da/i"
+
+    # delete around colon
+    "da:": "lF:df:"
+    "di:": "lF:lmtf:d`t"
+    "ci:": "di:i"
+    "ca:": "da:i"
+
+    "gg": beginning-of-history
+    "G" : end-of-history
+
+
+    # backward history search on up arrow
+    "\e\e[A": history-search-backward
+    # forward history search on down arrow
+    "\e\e[B": history-search-forward
+
+    # settings to be changed in insert mode
+    set keymap vi-insert
+    ";;": vi-movement-mode
+	# using ;; to easily move to command mode from insert mode instead of going to press Escape key each time
+	# ;; as I find it relatively easily on the home row and it doesnt interfere with typing in insert mode
+	# as commands to come by with ;; are rare?
+    TAB: menu-complete
+    # shift tab to menu complete backward
+    "\e[Z": menu-complete-backward
+
+# end vi mode settingss
+$endif
+EOF
+
+if [[ -f .bash_profile ]]; then
+    mv .bash_profile .bash_profile.JBAC
+fi
+
+cat >.bash_profile <<"EOF"
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+[[ -f ~/.profile ]] && . ~/.profile
+EOF
+
+if [[ -f .profile ]]; then
+    mv .profile .profile.JBAC
+fi
+
+cat >.profile <<"EOF"
+export PATH="$HOME/.config/.scripts:$PATH"
+export JBSTARTSCRIPT=".profile"
+
+# export TERM=xterm-256color
+# export TERMINAL=kitty
+# export TERMINAL_EMULATOR=kitty
+# export BROWSER=zen-browser
+# export EDITOR=nvim
+# export VISUAL=kate
+# export SUDO_EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
+# export EMAIL=thunderbird
+export WHAT="Jason is a turnip"
+# export WLR_NO_HARDWARE_CURSORS=1
+# export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+# export XDG_CONFIG_HOME=$HOME/.config
+# export MOZ_DBUS_REMOTE=1 # fixes firefox is already running, but is not responding
+# export MOZ_WAYLAND_USE_VAAPI=1
+# export NO_AT_BRIDGE=1
+# export QT_QPA_PLATFORMTHEME=qt6ct
+# export XDG_MENU_PREFIX=arch-
+# export AMD_VULKAN_ICD=RADV
+
+# Setup fzf
+export FZF_CTRL_T_OPTS="-m \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF Find ╟' \
+--preview='bat -n --color=always {}' \
+--info=hidden \
+--header='<TAB> for MULTI' \
+--color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--walker-skip=.git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview-label=' ~ Preview ~ ' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker='✓'"
+
+export FZF_CTRL_R_OPTS="--height 85% \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--preview='echo {}' \
+--preview-window='right,40%,wrap' \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF History ╟' \
+--info=hidden \
+--color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker '✓'"
+
+export FZF_ALT_C_OPTS="--height 85% \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF CD ╟' \
+--walker-skip=.git,node_modules,target,.bluemail,.thunderbird,.firedragon,.mozilla,BraveSoftware,.steam,.rustup,.cache,.local,emacs,heroic,.npm,.nuget,Heroic \
+--preview='tree -C {}' \
+--info=hidden \
+--color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker='✓'"
+
+export FZF_DEFAULT_OPTS="-m \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF ╟' \
+--preview='bat -n --color=always {}' \
+--info=hidden \
+--header='<TAB> for MULTI' \
+--color='dark,border:bright-cyan,header:italic:yellow,prompt:yellow' \
+--preview-label=' ~ Preview ~ ' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker='✓'"
+
+export FZF_TMUX_OPTS="-m \
+--tmux=75% \
+--margin=2%,2% \
+--scroll-off=3 \
+--border=rounded \
+--layout=reverse \
+--border-label='╢ FZF ╟' \
+--preview='bat -n --color=always {}' \
+--info=hidden \
+--color='dark,border:bright-cyan,header:bold:yellow,prompt:yellow' \
+--header='<TAB> for MULTI' \
+--preview-label=' ~ Preview ~ ' \
+--prompt='FIND ▶ ' \
+--pointer='→' \
+--marker='✓'"
+EOF
+
+if [[ -f .vimrc ]]; then
+    mv .vimrc .vimrc.JBAC
+fi
+
+cat >.vimrc <<"EOF"
+#!/usr/bin/env vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer:
+"       borrowed from Amir Salihefendic - @amix3k
+"       modified by Jason Bradberry, 2025
+"
+" Awesome_version:
+"       Get this config, nice color schemes and lots of plugins!
+"       Install the awesome version from:
+"           https://github.com/amix/vimrc
+"
+" Sections:
+"    -> General
+"    -> VIM user interface
+"    -> Colors and Fonts
+"    -> Files and backups
+"    -> Text, tab and indent related
+"    -> Visual mode related
+"    -> Moving around, tabs and buffers
+"    -> Status line
+"    -> Editing mappings
+"    -> vimgrep searching and cope displaying
+"    -> Spell checking
+"    -> Misc
+"    -> Helper functions
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets compatibility to vi, which can cause some issues
+set nocompatible
+
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * silent! checktime
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+" let mapleader = ","
+let mapleader = " "
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets the line numbers on the left side and enables relative line numbers
+set number
+set relativenumber
+
+"Show what mode you are currently editing in
+set showmode
+
+"Shows partial commands in the last line of the screen
+set showcmd
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Set auto indent
+set autoindent
+
+" Set the cursor shape(s)
+let &t_SI = "\e[6 q"  " Insert mode: vertical bar
+let &t_EI = "\e[2 q"  " Normal mode: block
+
+" Set the cursor line
+" set cursorline
+
+" Avoid garbled characters in Chinese language windows OS
+let $LANG='en'
+set langmenu=en
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+" Turn on the Wild menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+" Always show current position
+set ruler
+
+" Height of the command bar
+set cmdheight=1
+
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Properly disable sound on errors on MacVim
+if has("gui_macvim")
+    autocmd GUIEnter * set vb t_vb=
+endif
+
+" Add a bit extra margin to the left
+set foldcolumn=0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
+
+" Set regular expression engine automatically
+set regexpengine=0
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+try
+    colorscheme dracula
+catch
+endtry
+
+set background=dark
+" set tabline=
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git etc. anyway...
+set nobackup
+set nowb
+set noswapfile
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around, tabs, windows and buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+" map <space> /
+" map <C-space> ?
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>td :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext<cr>
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <C-r>=escape(expand("%:p:h"), " ")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Specify the behavior when switching between buffers
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+""""""""""""""""""""""""""""""
+" NETRW
+""""""""""""""""""""""""""""""
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 30
+let g:netrw_banner = 0
+let g:netrw_localcopydircmd = 'cp -r'
+hi! link netrwMarkFile Search
+" Open Netrw Directory (Explorer) full window
+map <leader>; :Explore<cr>
+" Open Netrw Directory (Explorer) l side current working directory
+nmap <leader>e :Lexplore %:p:h<CR>
+" Open Netrw Directory (Explorer) current file directory
+nmap <Leader>d :Lexplore<CR>
+
+
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+" Always show the status line
+set laststatus=1
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
+
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Quickly open a buffer for scribble
+map <leader>q :e ~/buffer<cr>
+
+" Quickly open a markdown buffer for scribble
+map <leader>x :e ~/buffer.md<cr>
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
+
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
+
+    if buflisted(l:alternateBufNum)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == l:currentBufNum
+        new
+    endif
+
+    if buflisted(l:currentBufNum)
+        execute("bdelete! ".l:currentBufNum)
+    endif
+endfunction
+
+function! CmdLine(str)
+    call feedkeys(":" . a:str)
+endfunction
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+EOF
+
+mkdir -p ~/.config/.scripts
+
+cd ~/.config/.scripts || exit 3
+
+if [[ ! -f advice ]]; then
+    touch advice
+    chmod +x advice
+fi
+if [[ ! -f manf ]]; then
+    touch manf
+    chmod +x manf
+fi
+if [[ ! -f ut-filetypes ]]; then
+    touch ut-filetypes
+    chmod +x ut-filetypes
+fi
+
+cat >advice <<"EOF"
+EOF
+cat >advice <<"EOF"
+EOF
+cat >advice <<"EOF"
 EOF

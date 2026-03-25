@@ -19,6 +19,6 @@ wsl = false
 
 [font]
 # normal = ["ComicShannsMono Nerd Font Mono"]
-normal = ["Hack Nerd Font Mono"]
+ormal = ["Hack Nerd Font Mono"]
 # normal = ["HeavyData Nerd Font"]
 size = 24
