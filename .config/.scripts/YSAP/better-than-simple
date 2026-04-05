@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+declare -A shells
+while IFS=: read -r name _ _ _ _ _ shell; do
+    # skip comments
+    if [[ $name == '#'* ]]; then
+        continue
+    fi
+    shells[$name]=$shell
+done </etc/passwd
+
+echo "moosicmaan has the shell: ${shells[moosicmaan]}"

@@ -81,11 +81,11 @@ newwall=$(echo "$wallpaper" | sed "s|$pic_folder/||g")
 # transition_type="outer"
 transition_type="any"
 
-swww img "$wallpaper" \
+awww img "$wallpaper" \
     --transition-type=$transition_type
 # --transition-pos "$(hyprctl cursorpos)"
 
-# swww img "$wallpaper"
+# awww img "$wallpaper"
 # --transition-bezier .43,1.19,1,.4 \
 # --transition-fps=60 \
 # --transition-type=$transition_type \

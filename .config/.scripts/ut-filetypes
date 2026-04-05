@@ -7,11 +7,13 @@
 # =====================================================
 
 if (($# > 0)); then
-  fname_array=("$@")
+    fname_array=("$@")
 else
-  fname_array=(* .*)
+    shopt -s nullglob
+    fname_array=(* .*)
+    shopt -u nullglob
 fi
 
 file "${fname_array[@]}" 2>/dev/null |
-  awk 'NR % 2 == 1 {print "\033[1;36m" $0 "\033[0m"} NR % 2 == 0 {print $0}' |
-  bat --force-colorization
+    awk 'NR % 2 == 1 {print "\033[1;36m" $0 "\033[0m"} NR % 2 == 0 {print $0}' |
+    bat --force-colorization

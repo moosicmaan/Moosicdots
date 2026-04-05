@@ -25,13 +25,13 @@ if [ "$hyprgamemode" = 1 ]; then
         keyword decoration:inactive_opacity 1;\
         keyword decoration:fullscreen_opacity 1"
     # hyprctl keyword monitor "eDP-1, disable"
-    pkill swww-daemon
+    pkill awww-daemon
     pkill waybar
     notify-send -i "nudity-symbolic" "GAME MODE" "ON"
     exit
 else
     # hyprctl keyword monitor "eDP-1, 1920x1080, 0x0, 1"
-    swww-daemon &
+    awww-daemon &
     "$my_scripts"/wb-launch &
     # cat "$hypr_conf"/conf/options/main/moosic.hyprland.conf >"$hypr_conf"/hyprland.conf
     notify-send -i "nudity-none-symbolic" "GAME MODE" "OFF"

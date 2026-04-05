@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+which bash
+shopt -s extglob
+echo '-'
+# Extended globbing loosly follows regex
+# +(thing) => /(thing)+/ - match one or many timnes
+# ?(thing) => /(thing)?/ - match zero or one timne
+# *(thing) => /(thing)*/ - match zero or many timnes
+ls -l files/*.txt
+echo '-'
+# find files that do not have the .txt
+ls -l files/!(*.txt)
+echo '-'
+# finding all the foo and bar text files
+ls -l files/+(foo|bar).txt
+echo '-'
+# extended globbing also has the @ symbol - must match exactly
+touch files/foofoo.txt files/barbar.txt
+ls -l files/+(foo).*
+echo '-'
+ls -l files/@(foo).*
+echo '-'
+ls -l files/+(foo|bar).*
+echo '-'
+ls -l files/@(foo|bar).*

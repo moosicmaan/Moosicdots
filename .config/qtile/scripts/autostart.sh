@@ -23,8 +23,8 @@ swayidle -w timeout 600 'swaylock -f -i /home/moosicmaan/Pictures/Backgrounds/wa
 # Load cliphist history
 wl-paste --watch cliphist store &
 
-# Initialize swww
-swww query || swww-daemon &
+# Initialize awww
+awww query || awww-daemon &
 
 # Load last wallpaper and waybar with pywal colors
 # $HOME/.config/.scripts/wallpaper.sh init &

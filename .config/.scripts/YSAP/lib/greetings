@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+greet() {
+    echo "hello $1"
+}
+goodbye() {
+    echo "goodbye $1"
+}
+
+# creating a sub shell using the return keyword
+# for testing purposes that will only
+# run in this code is called directly.
+if ! (returen 2>/dev/null); then
+    greet it
+    goodbye works
+fi

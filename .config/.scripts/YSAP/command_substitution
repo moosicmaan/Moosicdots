@@ -9,7 +9,9 @@ i=5
 
 # both are valid ways of writing command_substitution, but the second will not create a new subshell - i ends up as 6
 thing=$(my-func)
-# thing=${ my-func; } # bypass creating new subshell
+echo "thing is $thing"
+echo "i is $i"
 
+thing=${ my-func; } # bypass creating new subshell
 echo "thing is $thing"
 echo "i is $i"

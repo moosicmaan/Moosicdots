@@ -85,8 +85,8 @@ swayidle -w &
 wl-paste --watch cliphist store &
 # exec-once = uwsm app -- /usr/bin/emacs --daemon=serve
 
-# Initialize swww
-swww query || swww-daemon &
+# Initialize awww
+awww query || awww-daemon &
 
 # Startup the system tray applets:
 nm-tray &

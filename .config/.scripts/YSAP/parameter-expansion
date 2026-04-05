@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# s='jason bradberry'
+#
+# echo "$s"
+# echo "${s}"
+# echo "${#s}"
+# echo "${s^}"
+# echo "${s^^}"
+# echo "${s^^b}"
+# echo "${s^b}"
+# echo "${s^^[jb]}"
+# echo "${s^[jb]}"
+# echo "${s^[bj]}"
+# echo "${s/a/@}"
+# echo "${s//a/@}"
+# echo -e "---------->\n"
+#
+# s='JASON BRADBERRY'
+#
+# echo "$s"
+# echo "${s}"
+# echo "${#s}"
+# echo "${s,}"
+# echo "${s,,}"
+# echo "${s,,B}"
+# echo "${s,B}"
+# echo "${s,,[JB]}"
+# echo "${s,[JB]}"
+# echo "${s,[BJ]}"
+
+name=${1:-$USER}
+# name=${1?'You must suppy a name'}
+echo "hello $name!"
+
+path='/home/weird/stuff.txt'
+echo "$path"
+echo "${path/e/!}"
+echo "${path//e/!}"
+echo "${path#*/}"
+echo "${path##*/}"
+echo "${path%*}"
+echo "${path%%/*}"
+echo 'done'

@@ -33,6 +33,6 @@ newarray+=(added on again)
 newarray+=([50]="item with idex of 50")
 
 for item in "${newarray[@]}"; do
-    echo "item(${#newarray[@]}) is : $item"
+    echo "item(${#newarray[!item]}) is : $item"
 done
 declare -p newarray

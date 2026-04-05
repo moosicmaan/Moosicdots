@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+printf '1- %s %s\n' hello world
+printf '2- %s      %s\n' hello world
+printf '3- %5s %5s\n' hello world
+printf '4- %10s %10s\n' hello world
+printf '5- %5s %5s\n' a b
+printf '6- <%-5s %-5s>\n' a b
+printf '7- <%5s %5s>\n' a b
+printf '8- <%*s %-5s>\n' 5 a b
+printf '9- <%*s %-5s>\n' -10 a b
+printf '10- <%10s>\n' hello
+printf '11- <%-*s>\n' 10 hello
+printf '12- <%-*s>\n' 25 hello
+printf '13- <%d>\n' 25
+printf("<%*d>\n" 25 100 3 65)
+
+echo "1- printf '%s %s\n' hello world"
+echo "2- printf '%s      %s\n' hello world"
+echo "3- printf '%5s %5s\n' hello world"
+echo "4- printf '%10s %10s\n' hello world"
+echo "5- printf '%5s %5s\n' a b"
+echo "6- printf '%-5s %-5s\n' a b"
+echo "7- printf '<%5s %5s>\n' a b"
+echo "8- printf '<%*s %-5s>\n' 5 a b"
+echo "9- printf '<%*s %-5s>\n' -10 a b"
+echo "10- printf '<%05s>\n' hello"
+echo "11- printf '<%-*s>\n' 10hello"
+echo "12- printf '<%-*s>\n' 25hello"
+echo "13- printf '<%d>\n' 25"

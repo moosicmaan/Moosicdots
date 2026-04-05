@@ -21,7 +21,7 @@
 # i=0
 #
 # "$words" | while read -r word; do
-#     echo "$word"
+#     echo "$word"jjjjjjjjjjjjjjjjjjjjjjjj
 #     ((i++))
 # done
 #
@@ -49,7 +49,7 @@
 i=0
 
 while read -r word; do
-    echo "$word"
+    echo -e "$word\t\b"
     ((i++))
 done < <(grep d /usr/share/hunspell/en_US-large.dic)
 

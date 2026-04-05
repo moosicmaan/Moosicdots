@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# get shell
+echo "moosicmaan uses \
+$(grep moosicmaan /etc/passwd | cut -d : -f 7)"

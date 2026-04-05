@@ -18,7 +18,7 @@ echo "Hello $full_name!"
 echo hello
 if true; then
     echo goodbye
-fii
+fi
 # fi
 
 # run this as 'bash -n xxxxx' and it will check syntax befor you run

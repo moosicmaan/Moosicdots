@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# . ./lib/greetings || exit 1
+libdirs=./lib
+. -p "$libdirs" greetings || exit 1
+
+greet jason
+greet john
+goodbye buddy
