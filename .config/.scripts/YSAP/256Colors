@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+echo '256 Colors...'
+for i in {255..0}; do
+    # printf '\e[38;5;%dmColor%d \e[0m' "$i" "$i"
+    printf '\e[38;5;%dmX\e[0m' "$i" "$i"
+done
+
+echo ''
+echo '16M Colors...'
+for b in {0..255..15}; do
+    for g in {0..255..15}; do
+        for r in {0..255..15}; do
+            # printf '\e[38;2;%d;%d;%dmColor%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
+            printf '\e[38;2;%d;%d;%dmX\e[0m' "$r" "$g" "$b"
+            # printf '\e[38;2;%d;%d;%dm|%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
+        done
+    done
+    printf '\n'
+done

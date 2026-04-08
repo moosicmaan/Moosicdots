@@ -195,7 +195,7 @@
     "catch_all": false,
     "description": "open the music player",
     "dispatcher": "exec",
-    "arg": "uwsm app -- org.kde.elisa"
+    "arg": "uwsm app -- elisa"
   },
   {
     "locked": false,

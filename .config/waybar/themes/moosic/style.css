@@ -20,13 +20,14 @@
   font-family: ComicShannsMono Nerd Font Propo;
   font-family: Iosevka Nerd font Propo;
   font-family: OpenDyslexicM Nerd Font Propo;
+  font-family: Hack Nerd Font Propo Bold;
   font-family: SpaceMono Nerd Font Propo;
 background-color: @backgroundlight;
 background-color: #ffffff;
  */
 * {
   
-  font-family: Hack Nerd Font Propo Bold;
+  font-family: JetBrainsMono NFP ExtraBold;
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
@@ -34,7 +35,8 @@ background-color: #ffffff;
   padding: 0px 0px 0px 0px;
   font-size: 13px;
   color: @textcolor1;
-  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.7);
+  /* text-shadow: 1px 1px 1px rgba(254, 0, 0, 0.9); */
+  text-shadow: 1px 2px @color13;
 }
 
 /* -----------------------------------------------------
@@ -240,7 +242,6 @@ tooltip label {
   background-color: @backgrounddark;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   */
-  font-size: 14px;
   font-weight: bold;
   padding: 0px 4px 0px 4px;
 }
