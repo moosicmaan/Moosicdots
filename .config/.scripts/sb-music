@@ -8,9 +8,9 @@
 # =====================================================
 
 case "$BLOCK_BUTTON" in
-1) "$HOME"/.config/.scripts/media-ctrl --prv ;;
+1) "$HOME"/.config/.scripts/media-ctrl --nxt ;;
 2) "$HOME"/.config/.scripts/media-ctrl --pause ;;
-3) "$HOME"/.config/.scripts/media-ctrl --nxt ;;
+3) "$HOME"/.config/.scripts/media-ctrl --prv ;;
 4) "$HOME"/.config/.scripts/media-ctrl --stop ;;
 esac
 
@@ -20,10 +20,10 @@ paused_icon="󰏤"
 # icon="▶️"
 # paused_icon="⏸️"
 if status="$(playerctl "$@" status 2>&1)" && [ "$status" != "Stopped" ]; then
-  [ "$status" = "Paused" ] && icon="$paused_icon"
+    [ "$status" = "Paused" ] && icon="$paused_icon"
 
-  # song="$(playerctl "$@" metadata --format "{{playerName}} {{duration(position)}}:{{duration(mpris:length)}}: {{title}}, {{artist}}")"
-  song="$(playerctl "$@" metadata --format "{{duration(position)}}/{{duration(mpris:length)}} {{title}},{{artist}}")"
+    # song="$(playerctl "$@" metadata --format "{{playerName}} {{duration(position)}}:{{duration(mpris:length)}}: {{title}}, {{artist}}")"
+    song="$(playerctl "$@" metadata --format "{{duration(position)}}/{{duration(mpris:length)}} {{title}},{{artist}}")"
 fi
 
 [ -z "$song" ] && exit

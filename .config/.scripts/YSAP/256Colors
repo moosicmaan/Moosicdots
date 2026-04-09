@@ -1,20 +1,59 @@
 #!/usr/bin/env bash
 
-echo '256 Colors...'
-for i in {255..0}; do
-    # printf '\e[38;5;%dmColor%d \e[0m' "$i" "$i"
-    printf '\e[38;5;%dmX\e[0m' "$i" "$i"
-done
+simple_codes() {
+    local i
+    echo '8 Colors/ Basic Codes...'
+    for i in {0..255}; do
+        printf '\e[%dmCode %d \e[0m\n' "$i" "$i"
+    done
+}
 
-echo ''
-echo '16M Colors...'
-for b in {0..255..15}; do
-    for g in {0..255..15}; do
-        for r in {0..255..15}; do
-            # printf '\e[38;2;%d;%d;%dmColor%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
-            printf '\e[38;2;%d;%d;%dmX\e[0m' "$r" "$g" "$b"
-            # printf '\e[38;2;%d;%d;%dm|%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
+256_colors() {
+    local i
+    # echo '256 Colors...'
+    # for i in {255..0}; do
+    #     # printf '\e[38;5;%dmColor%d \e[0m' "$i" "$i"
+    #     printf '\e[38;5;%dmX\e[0m' "$i" "$i"
+    # done
+
+    for i in {0..255}; do
+        printf "\x1b[38;5;${i}mcolor %d\n" "$i"
+    done
+    tput sgr0
+}
+
+RGB_colors() {
+    local r
+    local g
+    local b
+    echo '16M Colors...'
+    for b in {0..255..25}; do
+        for g in {0..255..1}; do
+            for r in {0..255..1}; do
+                # printf '\e[38;2;%d;%d;%dmColor%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
+                printf '\e[38;2;%d;%d;%dmX\e[0m' "$r" "$g" "$b"
+                # printf '\e[38;2;%d;%d;%dm|%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
+            done
+            printf '\n'
         done
     done
-    printf '\n'
-done
+}
+
+#print a rainbow if fruecolor is available to the terminal
+truecolor-rainbow() {
+    local i r g b
+    for ((i = 0; i < 77; i++)); do
+        r=$((255 - (i * 255 / 76)))
+        g=$((i * 510 / 76))
+        b=$((i * 255 / 76))
+        ((g > 255)) && g=$((510 - g))
+        printf '\033[48;2;%d;%d;%dm ' "$r" "$g" "$b"
+    done
+    tput sgr0
+    echo
+}
+
+simple_codes
+256_colors
+RGB_colors
+truecolor-rainbow

@@ -46,6 +46,10 @@ dwl | mango | mangowm)
 niri | niri:wlroots)
     cdesk="niri"
     ;;
+*)
+    cdesk="hypr"
+    printf 'DESKTOP_SESSION not recognizable: %s\n\n' "$DESKTOP_SESSION"
+    ;;
 esac
 
 IFS=';' read -ra arrThemes <<<"$themestyle"

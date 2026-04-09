@@ -40,7 +40,7 @@ if [ -f "$HOME/.bash_prompt" ]; then
     source "$HOME/.bash_prompt"
 fi
 # set vim editing - set in .inputrc
-set -o vi
+# set -o vi
 
 # -----------------------------------------------------
 # FUNCTIONS AND HELPER PROGRAMS
@@ -120,6 +120,7 @@ alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias hl='rg --passthru'
 alias grubup="sudo update-grub"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
@@ -198,7 +199,7 @@ bind -x '"\C-\A-y":yy'
 # IP address lookup
 alias whatsmyip="~/.config/.scripts/ut-whatsmyip"
 # The new way to start hyprland in a tty,,,,I think...
-alias hypr="start hyprland"
+alias hypr="start-hyprland"
 # alias vim="nvim"
 alias vi="vim"
 # alias ec="emacsclient -c -a 'emacs' &"
@@ -262,9 +263,6 @@ cpp() {
     END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
 }
 
-# -----------------------------------------------------
-# Helper Applications
-# -----------------------------------------------------
 # Changing the font if in TTY session
 my_font=ter-u22b.psf.gz
 font_directory=/usr/share/kbd/consolefonts
@@ -275,6 +273,9 @@ if [[ $DISPLAY == "" ]]; then
     fastfetch
 fi
 
+# -----------------------------------------------------
+# Helper Applications
+# -----------------------------------------------------
 # Zoxide, a better cd
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init bash)"
