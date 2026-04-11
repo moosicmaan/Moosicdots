@@ -10,3 +10,4 @@ while IFS=: read -r name _ _ _ _ _ shell; do
 done </etc/passwd
 
 echo "moosicmaan has the shell: ${shells[moosicmaan]}"
+# echo "shells: ${shells[*]}"

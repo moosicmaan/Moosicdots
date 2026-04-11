@@ -39,6 +39,7 @@ echo "${path/e/!}"
 echo "${path//e/!}"
 echo "${path#*/}"
 echo "${path##*/}"
+echo "${path##/*}"
 echo "${path%*}"
 echo "${path%%/*}"
 echo 'done'

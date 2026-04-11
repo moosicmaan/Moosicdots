@@ -12,6 +12,6 @@ thing=$(my-func)
 echo "thing is $thing"
 echo "i is $i"
 
-thing=${ my-func; } # bypass creating new subshell
+thing=${ my-func;} # bypass creating new subshell
 echo "thing is $thing"
 echo "i is $i"

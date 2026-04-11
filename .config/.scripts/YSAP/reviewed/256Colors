@@ -27,7 +27,7 @@ RGB_colors() {
     local g
     local b
     echo '16M Colors...'
-    for b in {0..255..25}; do
+    for b in {0..255..1}; do
         for g in {0..255..1}; do
             for r in {0..255..1}; do
                 # printf '\e[38;2;%d;%d;%dmColor%d%d%d\e[0m' "$r" "$g" "$b" "$r" "$g" "$b"
