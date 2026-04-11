@@ -74,7 +74,7 @@ echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
 # -----------------------------------------------------
 # get wallpaper image name
 # -----------------------------------------------------
-newwall=$(echo "$wallpaper" | sed "s|$pic_folder/||g")
+newwall=$(basename "$wallpaper")
 
 # -----------------------------------------------------
 # transition_type="wipe"

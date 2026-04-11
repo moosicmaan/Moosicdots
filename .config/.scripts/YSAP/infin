@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+i=0
+while true; do
+    echo "i is $i at $(date)"
+    sleep 1
+    ((i++))
+done

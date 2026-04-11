@@ -11,55 +11,51 @@
 # hourglass.sh stop
 
 case $1 in
-   start)
-    $0 privatestart & 2> /dev/null
+start)
+    $0 privatestart 2>/dev/null
     ;;
-   stop)
-    $0 privatestop > /dev/null 2>&1
+stop)
+    $0 privatestop >/dev/null 2>&1
     ;;
-   privatestart)
+privatestart)
     CURSOR_MOVE="\033[1D"
     #"\r"
     #seq 1 100 | while read num2; do
     num="0"
 
-    while [ true ]
-    do
-      num=$[$num+1]
+    while true; do
+        ((num++))
 
-
-      if (( num % 4 == 0 )); then
-        echo -ne $CURSOR_MOVE
-        printf "|";
-      else
-        if (( num % 4 == 1 )); then
-          echo -ne $CURSOR_MOVE
-          printf "/";
+        if ((num % 4 == 0)); then
+            echo -ne "$CURSOR_MOVE"
+            printf "|"
         else
-          if (( num % 4 == 2 )); then
-            echo -ne $CURSOR_MOVE
-            printf "-";
-          else
-            echo -ne $CURSOR_MOVE
-            printf "\\"
-          fi
+            if ((num % 4 == 1)); then
+                echo -ne "$CURSOR_MOVE"
+                printf "/"
+            else
+                if ((num % 4 == 2)); then
+                    echo -ne "$CURSOR_MOVE"
+                    printf "-"
+                else
+                    echo -ne "$CURSOR_MOVE"
+                    printf "\\"
+                fi
+            fi
         fi
-      fi
-      sleep 0.1;
-      num=$(($num % 400));
-    done;
-    echo -ne $CURSOR_MOVE
-
+        sleep 0.1
+        ((num % 400))
+    done
+    echo -ne "$CURSOR_MOVE"
 
     ;;
-   privatestop)
+privatestop)
     scriptName=$(basename "$0")
-    for x in `pgrep -f "$scriptName privatestart"`;
-    do
-        kill $x > /dev/null 2>&1
-    done;
+    for x in $(pgrep -f "$scriptName privatestart"); do
+        kill "$x" >/dev/null 2>&1
+    done
     ;;
-   *)
+*)
     echo "::::::::::::::::: Help :::::::::::::::::::::::"
     echo Call script with argument \"start\" or \"stop\"
     echo Best usage first call it with argument \"start\"

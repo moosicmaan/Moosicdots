@@ -90,7 +90,7 @@ Font=FiraCode Nerd Font Mono,11,-1,5,50,0,0,0,0,0
 Line Height Multiplier=1
 Show Indentation Lines=true
 Show Whole Bracket Expression=false
-Text Font=Liberation Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Text Font=Liberation Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
 Text Font Features=
 Word Wrap Marker=false
 
@@ -168,8 +168,8 @@ RunPrefix=
 SetEditor=false
 
 [MainWindow]
-2 screens: Height=1039
-2 screens: Width=950
+2 screens: Height=1041
+2 screens: Width=946
 
 [UiSettings]
 ColorScheme=Mokka
