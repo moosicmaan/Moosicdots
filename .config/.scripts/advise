@@ -1,7 +1,12 @@
 #!/usr/bin/awk -f
-
+# =====================================================
+# -----------------------------------------------------
 # This program prints a nice, friendly message.  It helps
 # keep novice users from being afraid of the computer.
+# awk practice script
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
 BEGIN { print "\nDon't Panic!\n\tDon't forget your towel.\n\t47" }
 
 

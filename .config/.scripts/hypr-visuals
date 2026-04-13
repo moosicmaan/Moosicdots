@@ -11,36 +11,36 @@ prefix=$("$HOME/.config/.scripts/wayland-prefix")
 # Check if nwg-dock-hyprland is running
 if pgrep -fl "nwg-dock-hyprland" | grep -v "grep" >/dev/null; then
 
-  # Kill garuda elements
-  echo "killing garuda visuals"
-  notify-send --icon=emblem-system-symbolic "killing garuda visuals"
-  pkill -f "nwg-dock-hyprland" &
-  pkill -f "wlsunset" &
+    # Kill garuda elements
+    echo "killing garuda visuals"
+    notify-send --icon=emblem-system-symbolic "killing garuda visuals"
+    pkill -f "nwg-dock-hyprland" &
+    pkill -f "wlsunset" &
 
-  # Apply hyprland elements from normal config
-  cat ~/.config/hypr/conf/options/main/moosic.hyprland.conf >~/.config/hypr/hyprland.conf &
-  echo "moosic;moosic/mixed" >"$HOME/.cache/themestyle" &
+    # Apply hyprland elements from normal config
+    cat ~/.config/hypr/conf/options/main/moosic.hyprland.conf >~/.config/hypr/hyprland.conf &
+    echo "moosic;moosic/mixed" >"$HOME/.cache/themestyle" &
 
-  # Load background and status bar
-  # eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --init &"
-  eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --random &"
-  notify-send "...dead..." || notify-send --icon=emblem-system-symbolic "Failed to stop garuda visuals"
+    # Load background and status bar
+    # eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --init &"
+    eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --random &"
+    notify-send "...dead..." || notify-send --icon=emblem-system-symbolic "Failed to stop garuda visuals"
 
 else
 
-  # Start garuda elements
-  echo "Starting the garuda visuals"
-  notify-send --icon=emblem-system-symbolic "Starting the garuda visuals"
-  eval "${prefix}nwg-dock-hyprland -x -p 'left' -i 24 -mt 10 -mb 10 -ml 5 -f &"
-  eval "${prefix}wlsunset -t 2000 -T 2300 &"
+    # Start garuda elements
+    echo "Starting the garuda visuals"
+    notify-send --icon=emblem-system-symbolic "Starting the garuda visuals"
+    eval "${prefix}nwg-dock-hyprland -x -p 'left' -i 24 -mt 10 -mb 10 -ml 5 -f &"
+    eval "${prefix}wlsunset -t 2000 -T 2300 &"
 
-  # Apply hyprland elements from garuda config
-  cat ~/.config/hypr/conf/options/main/garuda.hyprland.conf >~/.config/hypr/hyprland.conf &
-  eval "${prefix}waypaper --wallpaper $HOME/Pictures/Backgrounds/wal86.jpg &"
-  echo "gdefault;gdefault/conf" >"$HOME/.cache/themestyle" &
+    # Apply hyprland elements from garuda config
+    cat ~/.config/hypr/conf/options/main/garuda.hyprland.conf >~/.config/hypr/hyprland.conf &
+    eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --file $HOME/Pictures/Backgrounds/garuda-dragon.jpg &"
+    echo "gdefault;gdefault/conf" >"$HOME/.cache/themestyle" &
 
-  # Load background and status bar
-  eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --init &"
-  notify-send "Garuda visuals applied."
+    # Load background and status bar
+    # eval "${prefix}$HOME/.config/.scripts/ut-wallpaper --init &"
+    notify-send "Garuda visuals applied."
 
 fi
