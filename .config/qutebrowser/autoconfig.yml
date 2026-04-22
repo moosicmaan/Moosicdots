@@ -19,6 +19,7 @@ settings:
   content.cache.size:
     global: null
   content.javascript.clipboard:
+    https://duck.ai: access-paste
     https://duckduckgo.com: access-paste
     https://www.hyprflux.dev: access-paste
   editor.command:

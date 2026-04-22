@@ -1,0 +1,76 @@
+﻿id,name,type,temp,desc
+1,MOD,command,mod4,Super key
+2,HYPER,command,$MOD CTRL ALT SHIFT,All mods
+3,MEH,command,CTRL ALT SHIFT,All mods except Super
+4,reset,command,hyprctl dispatch submap reset,Hyprland submap reset
+5,ex,command,uwsm app --,Hyprland SystemD prefix
+6,my_dots,file,/mnt/data/moosicmaan/CONFIG,dotfiles
+7,my_config,file,$my_dots/.config,config files
+8,my_scripts,file,$my_dots/.config/.scripts,scripti directory
+9,my_term,command,foot,Launch default terminal
+10,my_term2,command,kitty,Launch alternate terminal
+11,my_brows,command,brave,Launch default browser
+12,my_brows2,command,qutebrowser,Launch alternate browser
+13,my_browsv,command,zen-browser,Launch VIM-based browser
+14,my_email,command,thunderbird,Launch default email client
+15,my_email2,command,thunderbird,Launch alternate email client
+16,my_editg,command,kate,Launch GUI text editor
+17,my_editc,command,neovide,Launch terminal or console-like text editor
+18,my_filesg,command,dolphin,Launch GUI file browser
+19,my_filesc,command,$my_term -e yazi,Launch console file browser
+20,my_music,command,elisa,Launch music player
+21,my_media,command,mpv --player-operation-mode=pseudo-gui,Launch media player
+22,my_office,command,org.onlyoffice.desktopeditors,Launch office suite
+23,my_image,command,gimp,Launch GUI image editor
+24,emacsd,command,emacs --daemon=serve,EMACS daemon
+25,emacsc,command,emacsclient -c -a 'emacs',EMACS client
+26,emojis,command,emote,Launch emoji browser
+27,my_stream,command,obs,Launch streaming software
+28,aiassist,command,brave --app=https://chat.openai.com,Launch OpenAI web app
+29,my_mux,command,$my_term2 -e tmux,(alt) kitty -e sh -c 'kitty @ set-spacing padding=0; tmux' Launch TMUX in kitty
+30,lockscr,command,swaylock -c 000000,Lock screen
+31,prntscrn,command,$my_scripts/ut-screenshot,Take a screenshot
+32,my_calc,command,pkill galculator || $ex galculator,Toggle calculator
+33,my_notes,command,$ex obsidian,#Open note taking software
+34,videdit,command,$ex org.kde.kdenlive,Video editing software
+35,zoomclient,command,$ex zoom,Conferencing software
+36,logot,command,wlogout,Launch power menu
+37,menu_full,command,nwg-drawer -c 7 -is 70 -spacing 20 -ovl,#Full screen app drawer
+38,bsearch,command,pkill rofi || $my_scripts/rofi-search,Start a online search
+39,clips,command,pkill rofi || $my_scripts/rofi-cliphist,Search clipboard history
+40,keybs,command,pkill rofi || $my_scripts/hypr-keybinds,Search keybindings
+41,bbooks,command,pkill rofi || $my_scripts/rofi-bookmarks,Search browser bookmarks
+42,my_beats,command,pkill rofi || $my_scripts/rofi-beats,Rofi Media and Radio Selector
+43,my_favs,command,pkill rofi || $my_scripts/rofi-beat-favs,Rofi Playlist Manager
+44,menu_run,command,pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '$ex {cmd}',Rofi/Dmenu menu
+45,menu_drun,command,pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '$ex {cmd}',Rofi application menu
+46,menu_win,command,pkill rofi || rofi -config $my_config/rofi/config.rasi -show window,Rofi open application menu
+47,menu_files,command,pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser,Rofi filebrowser
+48,bartog,command, pkill waybar || $my_scripts/wb-launch,Toggle status bar
+49,zoomscrn,command,pypr zoom,Zoom the screen toggle
+50,zoomscrnu,command,pypr zoom ++0.5,Zoom the screen up
+51,zoomscrnd,command,pypr zoom --0.5,Zoom the screen down
+52,wallr,command,$my_scripts/ut-wallpaper --random,Select random wallpaper
+53,barsel,command,$my_scripts/wb-switch,Select status bar theme
+54,walls,command,$my_scripts/ut-wallpaper --select,Select wallpaper
+55,kmndext,command,$my_scripts/ut-kbd-350,Toggle external keyboard
+56,kmndlap,command,$my_scripts/ut-kbd-lap,Toggle laptop keyboard
+57,visualh,command,$my_scripts/hypr-visuals,Toggle visual element themes
+58,gamemode,command,$my_scripts/hypr-gamemode,Toggle game mode for hyprland
+59,bluet,command,$my_scripts/ut-tog-termclass kitty bluet bluetui,Bluetooth tui popup
+60,rload,command,hyprctl reload && $my_scripts/hypr-mon-reload && $my_scripts/ut-wallpaper --init,Hyprland reset
+61,volu,command,$my_scripts/media-vol --inc,Increase volume
+62,vold,command,$my_scripts/media-vol --dec,Decrease volume
+63,volt,command,$my_scripts/media-vol --toggle,Toggle mute
+64,micu,command,$my_scripts/media-vol --mic-inc,Increase mic volume
+65,micd,command,$my_scripts/media-vol --mic-dec,Decrease mic volume
+66,mict,command,$my_scripts/media-vol --mic-toggle,Toggle mic
+67,mpp,command,$my_scripts/media-ctrl --pause,Play/Pause media
+68,mstop,command,$my_scripts/media-ctrl --stop,Stop meda
+69,mnxt,command,$my_scripts/media-ctrl --nxt,Next track
+70,mprv,command,$my_scripts/media-ctrl --prv,Previous track
+71,mnow,command,$my_scripts/media-ctrl --show,Show current track info
+72,brightu,command,$my_scripts/ut-monbrightness --inc,Increase brightness of laptop monitor
+73,brightd,command,$my_scripts/ut-monbrightness --dec,#Decrease brightness of laptop monitor
+74,brightmu,command,$my_scripts/ut-exmon-brightness --inc,Increase brightness of external monitor
+75,brightmd,command,$my_scripts/ut-exmon-brightness --dec,Iecrease brightness of external monitor
