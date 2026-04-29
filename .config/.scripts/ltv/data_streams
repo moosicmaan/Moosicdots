@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# comment
+
+echo "Please enter your name: "
+read -r name
+echo "Welcome $name"

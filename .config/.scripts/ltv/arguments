@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# comment
+
+printf 'You passed in %s arguments\n' "$#"
+printf '%s ' "$@"
+printf '\n'

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# comment
+
+release_file=/etc/os-release
+logfile=$HOME/.config/.scripts/ltv/update.log
+errorfile=$HOME/.config/.scripts/ltv/errupdato.log
+
+check_exit_status() {
+    if [[ $? != 0 ]]; then
+        printf '!!!!!!!!\nSomething went wrong. Exiting\n'
+        exit 8
+    fi
+}
+if grep -q -i "arch" $release_file; then
+    # The host is based on Arch, run the pacman update command
+    # sudo pacman -Syu 1>>"$logfile" 2>>"$errorfile"
+    yes | sudo garuda-update 1>>"$logfile" 2>>"$errorfile"
+    check_exit_status
+fi
+
+if grep -q -i "debian|pop|ubuntu" $release_file; then
+    # The host is based on Debian, run the apt update command
+    sudo apt update 1>>"$logfile" 2>>"$errorfile"
+    check_exit_status
+    sudo apt dist-upgrade -y 1>>"$logfile" 2>>"$errorfile"
+    check_exit_status
+fi

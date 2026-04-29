@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# comment
+
+package=htop
+
+# sudo pacman -S $package
+
+# if [[ $? == 0 ]]; then
+if sudo pacman -S $package; then
+    printf "\nThe installation of %s was succossful.\n" $package
+    printf 'The new command is available here: %s\n' "$(which $package)"
+else
+    printf '\nThe exit code was %s\n' $?
+    echo "The package, $package, failed to install"
+fi

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# comment
+finished=0
+
+while [[ $finished != 1 ]]; do
+    clear
+    cat <<"EOF"
+What is your favorite Linux distribution?
+
+1 - Arch
+2 - CentOS
+3 - Debian
+4 - Mint
+5 - Ubuntu
+6 - Something else
+7 - Exit
+
+EOF
+
+    read -r distro
+
+    case $distro in
+    1) echo "Arch is rollin' along" ;;
+    2) echo "CentOS is a favorite server distro" ;;
+    3) echo "Debian is a trustworthy choice" ;;
+    4) echo "Mint is popular for home use" ;;
+    5) echo "Ubuntu is popular on servers and PCs" ;;
+    6) echo "There are many distributions out there" ;;
+    7)
+        echo "Thank you for playing"
+        finished=1
+        ;;
+    *) echo "You didn't enter an appronriate choice" ;;
+    esac
+    sleep 3
+done

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# comment
+
+for current_number in {1..10}; do
+    echo "$current_number"
+    sleep 0.25
+done
+
+echo "This is outside the for loop."
+
+for ((c = 1; c < 11; c++)); do
+    echo $c
+    sleep 0.25
+done
+
+for file in logfiles/*.log; do
+    tar -czvf "$file.tar.gz" "$file"
+done

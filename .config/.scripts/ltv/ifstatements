@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# comment
+
+command=htop
+
+if command -v $command; then
+    echo "$command is available, set's run it..."
+else
+    echo "$command is unavaille, installing it..."
+    sudo pacman -S $command
+fi
+
+$command
