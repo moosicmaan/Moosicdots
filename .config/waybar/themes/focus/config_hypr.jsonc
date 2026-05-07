@@ -1,62 +1,62 @@
 [
-  {
-    "id": 1,
-    "output": "eDP-1",
-    "type": "dock",
-    "layer": "bottom",
-    "exclusive": true,
-    "position": "bottom",
-    "name": "main",
-    "height": 0,
-    "reload_style_on_change": true,
-    "include": [
-      "~/.config/waybar/modules.jsonc"
-    ],
-    "modules-left": [
-      "hyprland/workspaces",
-      "custom/session",
-      "hyprland/submap",
-      "hyprland/window"
-    ],
-    "modules-center": [
-      "network",
-      "cpu",
-      "memory#ram",
-      "memory#swap",
-      "battery"
-    ],
-    "modules-right": [
-      "tray",
-      "custom/weather",
-      "clock#simple"
-    ]
-  },
-  {
-    // SECONDARY BAR //
-    "id": 2,
-    "type": "dock",
-    "layer": "bottom",
-    "exclusive": true,
-    "position": "bottom",
-    "output": "HDMI-A-1",
-    "name": "secondary",
-    "height": 0,
-    "reload_style_on_change": true,
-    "include": [
-      "~/.config/waybar/modules.jsonc"
-    ],
-    "modules-left": [
-      "hyprland/workspaces",
-      "custom/session",
-      "hyprland/submap",
-      "hyprland/window"
-    ],
-    "modules-center": [
-      "mpris"
-    ],
-    "modules-right": [
-      "pulseaudio",
-      "clock#simple"
-    ]
-  }
+    {
+        "id": 1,
+        "output": "eDP-1",
+        "type": "dock",
+        "layer": "bottom",
+        "exclusive": true,
+        "position": "top",
+        "name": "main",
+        "height": 0,
+        "reload_style_on_change": true,
+        "include": [
+            "~/.config/waybar/modules.jsonc"
+        ],
+        "modules-left": [
+            "hyprland/workspaces",
+            "custom/session",
+            "hyprland/submap",
+            "hyprland/window"
+        ],
+        "modules-center": [
+            "network",
+            "cpu",
+            "memory#ram",
+            "memory#swap",
+            "battery"
+        ],
+        "modules-right": [
+            "tray",
+            "custom/weather",
+            "clock#simple"
+        ]
+    },
+    {
+        // SECONDARY BAR //
+        "id": 2,
+        "type": "dock",
+        "layer": "bottom",
+        "exclusive": true,
+        "position": "bottom",
+        "output": "HDMI-A-1",
+        "name": "secondary",
+        "height": 0,
+        "reload_style_on_change": true,
+        "include": [
+            "~/.config/waybar/modules.jsonc"
+        ],
+        "modules-left": [
+            "hyprland/workspaces",
+            "custom/session",
+            "hyprland/submap",
+            "hyprland/window"
+        ],
+        "modules-center": [
+            "mpris"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "clock#simple"
+        ]
+    }
 ]
