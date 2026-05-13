@@ -1,34 +1,34 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "398796d"
-hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+rev = "1db18bb"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "398796d"
-hash = "73788c7dc5827ef4677c502c3ea8fa19"
+rev = "1db18bb"
+hash = "c8d30a70659f1b880407e61c564ab4e8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "398796d"
+rev = "1db18bb"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "398796d"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "1db18bb"
+hash = "eff8ff12fa4e5f035a10d8aeeb4c258d"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:dracula"
-rev = "9276ffa"
-hash = "7a870f143a4026a893ea3123be711e7a"
+rev = "0670801"
+hash = "20624fcdfcf7e4e912de05e348065e5e"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-dark"
-rev = "28e1977"
-hash = "bc4620db89cf55bd91906c239f8fa1a8"
+rev = "25d28ce"
+hash = "8e6dd7e42a127173e4535993d3e0e393"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-light"
-rev = "45eb0a0"
-hash = "80ba3eec4bf0b9770b1558c26b5b4a72"
+rev = "1b1e677"
+hash = "a80630a255909a511aba8a98d115bc15"
