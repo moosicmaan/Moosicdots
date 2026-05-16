@@ -1,0 +1,137 @@
+# =====================================================
+# -----------------------------------------------------
+# WINDOW RULES
+# -----------------------------------------------------
+# =====================================================
+#
+# https://wiki.hyprland.org/0.26.0/Configuring/Window-Rules/
+#
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+#SCRATCHPADS
+# -----------------------------------------------------
+windowrule = match:class Dropterm,                       dim_around 1, float 1, center 1
+windowrule = match:class Sfiles,                         dim_around 1, float 1, center 1
+windowrule = match:class Smonitor,                       dim_around 1, float 1, center 1
+windowrule = match:class Smoosic,                        dim_around 1, float 1, center 1
+windowrule = match:class Saudio,                         dim_around 1, float 1, center 1
+
+windowrule = match:class bluet,                          float 1, size 800 600, center 1
+# -----------------------------------------------------
+# XWAYLAND
+# -----------------------------------------------------
+windowrule = match:xwayland true,                        border_size 3
+
+# -----------------------------------------------------
+# MPV
+# -----------------------------------------------------
+windowrule = match:class mpv,                            float 1
+windowrule = match:class mpv,                            center 1
+windowrule = match:class mpv,                            rounding 0
+windowrule = match:class mpv,                            dim_around 0
+# windowrule = match:class mpv,                            border_size 1
+windowrule = match:class mpv,                            suppress_event fullscreen
+windowrule = match:class mpv,                            size 800 450
+windowrule = match:class mpv,                            opacity 1.0 override 1.0 override 1.0 override
+
+# -----------------------------------------------------
+# VLC
+# -----------------------------------------------------
+windowrule = match:class vlc,                            float 1
+windowrule = match:class vlc,                            center 1
+windowrule = match:class vlc,                            rounding 0
+windowrule = match:class vlc,                            dim_around 0
+# windowrule = match:class vlc,                            border_size 0
+windowrule = match:class vlc,                            suppress_event fullscreen
+windowrule = match:class vlc,                            size 800 450
+windowrule = match:class vlc,                            opacity 1.0 override 1.0 override 1.0 override
+
+# -----------------------------------------------------
+# WAYPAPER
+# -----------------------------------------------------
+windowrule = match:class waypaper,                       float 1
+windowrule = match:class waypaper,                       rounding 30
+windowrule = match:class waypaper,                       stay_focused 1
+windowrule = match:class waypaper,                       size 1530 726
+
+# -----------------------------------------------------
+# GALCULATOR
+# -----------------------------------------------------
+windowrule = match:class galculator,                     float 1
+windowrule = match:class galculator,                     size 500 300
+windowrule = match:class galculator,                     center 1
+# -----------------------------------------------------
+# MOVIE WATCHING
+# -----------------------------------------------------
+windowrule = match:title (.*Watch.*|.*Picture-in-Picture.*|.*Tubi.*|.*Prime Video.*|.*amazon.com.*|.*Crackle.*|.*Pluto.*|.*Freevie.*|.*Netflix.*|.*Disney.*|.*Peacock.*|.*Paramount.*|.*Vimeo.*|.*Vudu.*|.*Fandango.*|.*IMDb.*|.*YouTube.*|.*Popcornflix.*),         opacity 1.0 override
+# windowrule = match:title (.*Watch.*|.*Picture-in-Picture.*|.*Tubi.*|.*Prime Video.*|.*amazon.com.*|.*Crackle.*|.*Pluto.*|.*Freevie.*|.*Netflix.*|.*Disney.*|.*Peacock.*|.*Paramount.*|.*Vimeo.*|.*Vudu.*|.*Fandango.*|.*IMDb.*|.*YouTube.*|.*Popcornflix.*),         idle_inhibit false
+
+# -----------------------------------------------------
+# GENERAL/FLOATS
+# -----------------------------------------------------
+windowrule = match:class clamtk,                         float 1
+windowrule = match:class org.kde.elisa,                  float 1
+windowrule = match:class elisa,                          float 1
+windowrule = match:class setup-assistant,                float 1
+windowrule = match:class btrfs-assistant,                float 1
+windowrule = match:class org.pulseaudio.pavucontrol,     float 1
+windowrule = match:class AppImageLauncherSettings,       float 1
+windowrule = match:class BlackmagicDesktopVideoSetup,    float 1
+windowrule = match:class wdisplays,                      float 1
+windowrule = match:class fsearch,                        float 1
+windowrule = match:class gestures,                       float 1
+windowrule = match:class yad-icon-browser,               float 1
+windowrule = match:class modem-manager-gui,              float 1
+windowrule = match:class pace,                           float 1
+windowrule = match:class qvidcap,                        float 1
+windowrule = match:class Yad,                            float 1
+windowrule = match:class wihotspot,                      float 1
+windowrule = match:class wihotspot,                      float 1
+windowrule = match:class org.gnome.FileRoller,           float 1
+windowrule = match:class nm-connection-editor,           float 1
+windowrule = match:class garuda-assistant,               float 1
+windowrule = match:class garuda-welcome,                 float 1
+windowrule = match:class garuda-boot-options,            float 1
+windowrule = match:class garuda-system-maintenance,      float 1
+windowrule = match:class garuda-boot-options,            float 1
+windowrule = match:class garuda-network-assistant,       float 1
+windowrule = match:class garuda-network-assistant,       size 500 300
+windowrule = match:class garuda-network-assistant,       center 1
+windowrule = match:class Garuda.garuda-settings-manager, float 1
+
+windowrule = match:class Garuda.garuda-settings-manager, size 800 600
+windowrule = match:class Brave-browser,                  tile 1
+windowrule = match:class floating,                       float 1
+windowrule = match:class floating,                       center 1
+
+# FROM DEFAULT HYPRLAND CONFIG
+# Ignore maximize requests from apps. You'll probably like this.
+windowrule = match:class .*,                             suppress_event maximize
+# Fix some dragging issues with XWayland
+windowrule = match:class xwayland, match:class floating, match:class fullscreen, match:class pinned, no_initial_focus 1
+
+# CAVA
+windowrule {
+  name = cava_fun
+  match:class = cava
+  opacity = 0.8
+  fullscreen = 1
+  monitor = eDP-1
+  xray = false
+  suppress_event = activatefocus
+  border_size = 0
+}
+
+
+# -----------------------------------------------------
+# LAYERS
+# -----------------------------------------------------
+layerrule = match:class gtk-layer-shell,                 blur 1
+layerrule = match:class nwg-drawer,                      blur 1
+layerrule = match:class waybar,                          blur 0
+layerrule = match:class Rofi,                            dim_around 1
+layerrule = match:namespace notifications,               dim_around 0
+layerrule = match:namespace waybar,                      dim_around 0
+layerrule = match:namespace logout_dialog,               blur 1
+layerrule = match:namespace logout_dialog,               xray 1

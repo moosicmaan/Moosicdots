@@ -1,0 +1,112 @@
+# =====================================================
+# -----------------------------------------------------
+# VARS.CONF - DEFAULT APPLICATIONS AND DIRECTORIES
+# TO BE USED IN keybindings.conf
+# -----------------------------------------------------
+# =====================================================
+
+# -----------------------------------------------------
+# KEYS AND CODES
+# -----------------------------------------------------
+# $MOD = SUPER
+$MOD        = mod4
+$HYPER      = $MOD CTRL ALT SHIFT
+$MEH        = CTRL ALT SHIFT
+$reset      = hyprctl dispatch submap reset
+$ex         = uwsm app --
+
+# -----------------------------------------------------
+# DIRECTORIES
+# -----------------------------------------------------
+$my_dots    = /mnt/data/moosicmaan/CONFIG
+$my_config  = $my_dots/.config
+$my_scripts = $my_dots/.config/.scripts
+
+# -----------------------------------------------------
+# APPLICATIONS
+# -----------------------------------------------------
+$my_term    = $ex foot                                     #Launch default terminal
+$my_term2   = $ex kitty                                    #Launch alternate terminal
+$my_brows   = $ex brave                                    #Launch default browser
+$my_brows2  = $ex qutebrowser                              #Launch alternate browser
+$my_browsv  = $ex zen-browser                              #Launch VIM-based browser
+$my_email   = $ex thunderbird                              #Launch default email client
+$my_email2  = $ex thunderbird                              #Launch alternate email client
+$my_editg   = $ex kate                                     #Launch GUI text editor
+$my_editc   = $ex neovide                                  #Launch terminal or console-like text editor
+$my_filesg  = $ex dolphin                                  #Launch GUI file browser
+$my_filesc  = $ex $my_term -e yazi                         #Launch console file browser
+$my_music   = $ex elisa                                    #Launch music player
+$my_media   = $ex mpv --player-operation-mode=pseudo-gui   #Launch media player
+$my_office  = $ex org.onlyoffice.desktopeditors                               #Launch office suite
+$my_image   = $ex gimp                                     #Launch GUI image editor
+$emacsd     = $ex emacs --daemon=serve                     #EMACS daemon
+$emacsc     = $ex emacsclient -c -a 'emacs'                #EMACS client
+$emojis     = $ex emote                                    #Launch emoji browser
+$my_stream  = $ex obs                                      #Launch streaming software
+$aiassist   = $ex brave --app=https://chat.openai.com      #Launch OpenAI web app
+$my_mux     = $ex $my_term2 -e tmux                        #(alt) kitty -e sh -c 'kitty @ set-spacing padding=0; tmux' Launch TMUX in kitty
+$lockscr    = $ex swaylock -c 000000                       #Lock screen
+$prntscrn   = $my_scripts/ut-screenshot                    #Take a screenshot
+$my_calc    = pkill galculator || $ex galculator           #Toggle calculator
+$my_notes   = $ex obsidian                                 #Open note taking software
+$videdit    = $ex org.kde.kdenlive                         #Video editing software
+$zoomclient = $ex zoom                                     #Conferencing software
+
+# -----------------------------------------------------
+# APPLICATION LAUNCHERS AND MENUS
+# -----------------------------------------------------
+$logot      = wlogout                                      #Launch power menu
+$menu_full  = nwg-drawer -c 7 -is 70 -spacing 20 -ovl      #Full screen app drawer
+$bsearch    = pkill rofi || $my_scripts/rofi-search        #Start a online search
+$clips      = pkill rofi || $my_scripts/rofi-cliphist      #Search clipboard history
+$keybs      = pkill rofi || $my_scripts/hypr-keybinds      #Search keybindings
+$bbooks     = pkill rofi || $my_scripts/rofi-bookmarks     #Search browser bookmarks
+$my_beats   = pkill rofi || $my_scripts/rofi-beats         #Rofi Media and Radio Selector
+$my_favs    = pkill rofi || $my_scripts/rofi-beat-favs     #Rofi Playlist Manager
+$menu_run   = pkill rofi || rofi -config $my_config/rofi/dmenu.rasi -show run -run-command '$ex {cmd}'
+                                                           #Launch RUN menu
+$menu_drun  = pkill rofi || rofi -config $my_config/rofi/config.rasi -show drun -run-command '$ex {cmd}'
+                                                           #Launch DRUN menu
+$menu_win   = pkill rofi || rofi -config $my_config/rofi/config.rasi -show window 
+                                                           #Launch active window selector
+$menu_files = pkill rofi || rofi -config $my_config/rofi/config.rasi -show filebrowser 
+                                                           #Launch FILEbrowser selector
+
+# -----------------------------------------------------
+# ENVIRONMENT ACTIONS
+# -----------------------------------------------------
+$bartog     = pkill waybar || $my_scripts/wb-launch        #Toggle status bar
+$zoomscrn   = pypr zoom                                    #Zoom the screen toggle
+$zoomscrnu  = pypr zoom ++0.5                              #Zoom the screen up
+$zoomscrnd  = pypr zoom --0.5                              #Zoom the screen down
+$wallr      = $my_scripts/ut-wallpaper --random            #Select random wallpaper
+$barsel     = $my_scripts/wb-switch                        #Select status bar theme
+$walls      = $my_scripts/ut-wallpaper --select            #Select wallpaper
+$kmndext    = $my_scripts/ut-kbd-350                       #Toggle external keyboard
+$kmndlap    = $my_scripts/ut-kbd-lap                       #Toggle laptop keyboard
+$visualh    = $my_scripts/hypr-visuals                     #Toggle visual element themes
+$gamemode   = $my_scripts/hypr-gamemode                    #Toggle game mode for hyprland
+$bluet      = $my_scripts/ut-tog-termclass kitty bluet bluetui
+                                                           #Tui frontend for bluetooth
+$rload      = hyprctl reload && $my_scripts/hypr-mon-reload && $my_scripts/ut-wallpaper --init
+                                                           #Reload gui environment
+
+# -----------------------------------------------------
+# MEDIA KEYS
+# -----------------------------------------------------
+$volu       = $my_scripts/media-vol --inc                  #Increase volume
+$vold       = $my_scripts/media-vol --dec                  #Decrease volume
+$volt       = $my_scripts/media-vol --toggle               #Toggle mute
+$micu       = $my_scripts/media-vol --mic-inc              #Increase mic volume
+$micd       = $my_scripts/media-vol --mic-dec              #Decrease mic volume
+$mict       = $my_scripts/media-vol --mic-toggle           #Toggle mic
+$mpp        = $my_scripts/media-ctrl --pause               #Play/Pause media
+$mstop      = $my_scripts/media-ctrl --stop                #Stop media
+$mnxt       = $my_scripts/media-ctrl --nxt                 #Next track
+$mprv       = $my_scripts/media-ctrl --prv                 #Previous track
+$mnow       = $my_scripts/media-ctrl --show                #Show current track info
+$brightu    = $my_scripts/ut-monbrightness --inc           #Increase brightness of laptop monitor
+$brightd    = $my_scripts/ut-monbrightness --dec           #Decrease brightness of laptop monitor
+$brightmu   = $my_scripts/ut-exmon-brightness --inc        #Increase brightness of external monitor
+$brightmd   = $my_scripts/ut-exmon-brightness --dec        #Decrease brightness of external monitor

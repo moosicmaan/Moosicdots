@@ -1,0 +1,42 @@
+# =====================================================
+# -----------------------------------------------------
+# KEYBOARD LAYOUT AND OTHER INPUTS SETTNGS
+# -----------------------------------------------------
+# =====================================================
+input {
+  # KEYBOARD
+  kb_layout = us
+  # kb_layout = us,us
+  kb_variant =
+  # kb_variant = engrammer
+  kb_model =
+  kb_options =
+  # kb_options = caps:escape_shifted_capslock
+  kb_rules =
+  kb_file =
+  repeat_rate=100
+  repeat_delay=300
+  numlock_by_default = true
+
+  # MOUSE
+  sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+  accel_profile =
+  force_no_accel = false
+  left_handed = false
+  mouse_refocus = true
+  follow_mouse = 1
+
+  # TOUCHPAD
+  touchpad {
+    disable_while_typing = true
+    natural_scroll = false
+    # scroll_factor = 1.25
+    tap-to-click = true
+  }
+}
+
+# depreciated in 5.1
+# gestures {
+#     workspace_swipe = true
+#     workspace_swipe_fingers = 3
+# }

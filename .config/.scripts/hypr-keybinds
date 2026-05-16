@@ -20,7 +20,7 @@ map_modmask() {
     5) echo "C-S" ;;
     8) echo "A" ;;
     12) echo "C-A" ;;
-    13*) echo "MEH(C-A-S)" ;;
+    13) echo "MEH(C-A-S)" ;;
     64) echo "M" ;;
     65) echo "M-S" ;;
     68) echo "M-C" ;;
