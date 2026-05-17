@@ -1,340 +1,179 @@
-# =====================================================
-# -----------------------------------------------------
-# KEY BINDINGS - USING VARS.CONF
-# https://wiki.hyprland.org/Configuring/Binds/
-# -----------------------------------------------------
-# =====================================================
-#
-# BINDS:
-# l -> locked, will also work when an input inhibitor (e.g. a lockscreen) is active.
-# r -> release, will trigger on release of a key.
-# e -> repeat, will repeat when held.
-# n -> non-consuming, key/mouse events will be passed to the active window in addition to triggering the dispatcher.
-# m -> mouse, see below.
-# t -> transparent, cannot be shadowed by other binds.
-# i -> ignore mods, will ignore modifiers.
-# s -> separate, will arbitrarily combine keys between each mod/key, see [Keysym combos](#keysym-combos) above.
-# d -> has description, will allow you to write a description for your bind.
-# BINDS
+--[[
+    -------------------------------------------------
+    KEYBINDINGS
+    -------------------------------------------------
+--]]
+require("vars")
+---- APPLICATIONS ----
+hl.bind(MOD .. " + T", hl.dsp.exec_cmd(my_term2))
+hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(my_term))
+hl.bind(MOD .. " + SHIFT + Return", hl.dsp.exec_cmd(my_filesg))
+hl.bind(MOD .. " + CTRL + Return", hl.dsp.exec_cmd(my_email))
+hl.bind(MOD .. " + B", hl.dsp.exec_cmd(my_brows))
+hl.bind(MOD .. " + O", hl.dsp.exec_cmd(my_browsv))
+hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd(aiassist))
+hl.bind(MOD .. " + I", hl.dsp.exec_cmd(emojis))
+hl.bind(MOD .. " + E", hl.dsp.exec_cmd(emacsc))
+hl.bind(MOD .. " + SHIFT + E", hl.dsp.exec_cmd(emacsd))
+hl.bind(MOD .. " + M", hl.dsp.exec_cmd(my_music))
+hl.bind(MOD .. " + SHIFT + M", hl.dsp.exec_cmd(my_media))
+hl.bind("CTRL + ALT + M", hl.dsp.exec_cmd(my_beats))
+hl.bind(HYPER .. " + U", hl.dsp.exec_cmd(mnow))
+hl.bind(HYPER .. " + I", hl.dsp.exec_cmd(my_favs))
+hl.bind("CTRL + ALT + T", hl.dsp.exec_cmd(my_mux))
+hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(prntscrn))
+hl.bind(" + Print", hl.dsp.exec_cmd(prntscrn))
+hl.bind(MOD .. " + N", hl.dsp.exec_cmd(my_editc))
 
-binds {
-  workspace_back_and_forth = false
-}
+hl.bind("ALT + N", hl.dsp.submap("text-edit"))
+hl.define_submap("text-edit", "reset", function()
+	hl.bind("m", hl.dsp.exec_cmd("cd " .. my_config .. " && " .. my_editc))
+	hl.bind("h", hl.dsp.exec_cmd(my_editc .. " " .. my_config .. "/hypr/"))
+	hl.bind("s", hl.dsp.exec_cmd(my_editc .. " " .. my_config .. "/sway/"))
+	hl.bind("d", hl.dsp.exec_cmd(my_editc .. " " .. my_config .. "/dwm/"))
+	hl.bind("x", hl.dsp.exec_cmd(my_editc .. " " .. my_config .. "/.scripts/"))
+	hl.bind("l", hl.dsp.exec_cmd(my_editc .. " " .. my_config .. "/nvim/"))
+	hl.bind("escape", hl.dsp.submap("reset"))
+end)
 
-# -----------------------------------------------------
-# VARIABLES
-# -----------------------------------------------------
-# LOAD DEFAULT VARS (KEYS APPLICATIONS DIRECTORIES)
-source = $HOME/.config/hypr/conf/vars.conf
+---- APPLICATION LAUNCHERS & MENUS ----
+hl.bind(MOD .. " + P", hl.dsp.exec_cmd(menu_run))
+hl.bind(MOD .. " + SHIFT + P", hl.dsp.exec_cmd(menu_drun))
+hl.bind(MOD .. " + CTRL + P", hl.dsp.exec_cmd(menu_files))
+hl.bind(MOD .. " + ALT + P", hl.dsp.exec_cmd(menu_win))
+hl.bind("CTRL + ALT + P", hl.dsp.exec_cmd(menu_full))
+hl.bind(MOD .. " + SHIFT + O", hl.dsp.exec_cmd(bbooks))
+hl.bind(MOD .. " + CTRL + C", hl.dsp.exec_cmd(clips))
+hl.bind(MOD .. " + CTRL + V", hl.dsp.exec_cmd(clips))
+hl.bind(MOD .. " + CTRL + Q", hl.dsp.exec_cmd(logot))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(logot))
+hl.bind(
+	MOD .. " + SHIFT + Q",
+	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+)
+hl.bind("CTRL + ALT + O", hl.dsp.exec_cmd(bsearch))
+hl.bind("CTRL + ALT + K", hl.dsp.exec_cmd(keybs)) --TODO
 
-# -----------------------------------------------------
-# APPLICATIONS
-# -----------------------------------------------------
-bindd   = $MOD, RETURN       ,open the default terminal, exec, $my_term
-bindd   = $MOD, t            ,open the alternate terminal, exec, $my_term2;
-bindd   = $MOD SHIFT, RETURN ,open the graphical file browser, exec, $my_filesg
-bindd   = $MOD CTRL, RETURN  ,open the default email, exec, $my_email
-bindd   = $MOD, b            ,open the default browser, exec, $my_brows
-bindd   = $MOD, o            ,open the vim-based browser, exec, $my_browsv
-bindd   = CTRL ALT, a        ,open ai assistant, exec, $aiassist
-bindd   = $MOD, i            ,open the emoticon browser, exec, $emojis
-bindd   = $MOD, e            ,start the emacs client, exec, $emacsc
-bindd   = $MOD SHIFT, e      ,start the emacs server/daemon, exec, $emacsd
-bindd   = $MOD, m            ,open the music player, exec, $my_music
-bindd   = $MOD SHIFT, m      ,open the media player, exec, $my_media
-bindd   = CTRL ALT, m        ,rofi music selector, exec, $my_beats
-bindd   = $HYPER, i          ,rofi playlist mangager, exec, $my_favs
-bindd   = CTRL ALT, t        ,open tmux in terminal with no padding, exec, $my_mux
-bindd   = $MOD, PRINT        ,screenshot, exec, $prntscrn
-bindd   = , PRINT            ,screenshot, exec, $prntscrn
+---- FUNCTION KEYS/HOTLIST ----
+hl.bind(MEH .. " + F1", hl.dsp.exec_cmd(my_brows2))
+hl.bind(MEH .. " + F2", hl.dsp.exec_cmd(my_email2))
+hl.bind(MEH .. " + F3", hl.dsp.exec_cmd(my_filesc))
+hl.bind(MEH .. " + F4", hl.dsp.exec_cmd(my_editg))
+hl.bind(MEH .. " + F5", hl.dsp.exec_cmd(my_image))
+hl.bind(MEH .. " + F6", hl.dsp.exec_cmd(my_office))
+hl.bind(MEH .. " + F7", hl.dsp.exec_cmd(zoomclient))
+hl.bind(MEH .. " + F8", hl.dsp.exec_cmd(videdit))
+hl.bind(MEH .. " + F9", hl.dsp.exec_cmd(my_stream))
+hl.bind(MEH .. " + F10", hl.dsp.exec_cmd(menu_run))
+hl.bind(MEH .. " + F11", hl.dsp.exec_cmd(menu_drun))
+hl.bind(MEH .. " + F12", hl.dsp.exec_cmd(menu_full))
 
-bindd   = $MOD, n            ,terminal/like text editor<sub-neo>, submap, text-edit
-  submap = text-edit
-    bindd = ,n               ,<sub-neo>open notes, exec, $reset && $my_notes
-    bindd = ,m               ,<sub-neo>open neovide, exec, $reset && cd $my_dots && $my_editc
-    bindd = ,c               ,<sub-neo>open .config folder, exec, $reset && $my_editc $my_config &&
-    bindd = ,h               ,<sub-neo>open hypr configs, exec, $reset && $my_editc $my_config/hypr/
-    bindd = ,d               ,<sub-neo>open dwm configs, exec, $reset && $my_editc $my_config/dwm/
-    bindd = ,a               ,<sub-neo>open awesomewm configs, exec, $reset && $my_editc $my_config/awesome/
-    bindd = ,w               ,<sub-neo>open waybar configs, exec, $reset && $my_editc $my_config/waybar/
-    bindd = ,s               ,<sub-neo>open scripts folder, exec, $reset && $my_editc $my_config/.scripts/
-    bindd = ,q               ,<sub-neo>open qtile configs, exec, $reset && $my_editc $my_config/qtile/
-    bindd = ,l               ,<sub-neo>open lazyvim configs, exec, $reset && $my_editc $my_config/nvim/
-    bind  = ,escape,submap,reset
-  submap = reset
+hl.bind(" + F11", hl.dsp.window.fullscreen({ action = "toggle" }))
 
-# -----------------------------------------------------
-# APPLICATION LAUNCHERS AND MENUS
-# -----------------------------------------------------
-bindd   = $MOD, p            ,run menu, exec, $menu_run
-bindd   = $MOD SHIFT, p      ,drun menu, exec, $menu_drun
-bindd   = $MOD CTRL, p       ,files menu, exec, $menu_files
-bindd   = $MOD ALT, p        ,windowS menu, exec, $menu_win
-bindd   = $MOD SHIFT, o      ,select brave bookmarks, exec, $bbooks
-bindd   = $MOD CTRL, c       ,show clipboard history, exec, $clips
-bindd   = $MOD CTRL, v       ,show clipboard history, exec, $clips
-bindd   = $MOD CTRL, q       ,logout menu, exec, $logot
-bindd   = CTRL ALT, DELETE   ,logout menu, exec, $logot
-# bindd   = CTRL ALT, p        ,open full-screen menu, exec, $menu_full
-bindd   = CTRL ALT, o        ,start an online search, exec, $bsearch
-bindd   = CTRL ALT, k        ,show keybinding selector, exec, $keybs
+---- ENVIRONMENT/THEME ACTIONS ----
+hl.bind(MOD .. " + CTRL + R", hl.dsp.exec_cmd(rload))
+hl.bind(MOD .. " + CTRL + T", hl.dsp.exec_cmd(barsel))
+hl.bind(MOD .. " + CTRL + B", hl.dsp.exec_cmd(bartog))
+hl.bind(MOD .. " + CTRL + S", hl.dsp.exec_cmd(walls))
+hl.bind(MOD .. " + CTRL + W", hl.dsp.exec_cmd(wallr))
+hl.bind(MEH .. "  + K", hl.dsp.exec_cmd(kmndext))
+hl.bind(MEH .. "  + J", hl.dsp.exec_cmd(kmndlap))
+hl.bind("CTRL + ALT + G", hl.dsp.exec_cmd(gamemode)) --TODO
+hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(visualh)) --TODO
+hl.bind("CTRL + ALT + n", hl.dsp.exec_cmd(netwrk))
 
-# -----------------------------------------------------
-# SCRATCHPADS
-# -----------------------------------------------------
-bindd   = $MOD ALT, j        ,scratchpad (files), exec, pypr toggle files
-bindd   = $MOD ALT, h        ,scratchpad (files), exec, pypr toggle files
-bindd   = $HYPER, 4          ,scratchpad (files), exec, pypr toggle files
-bindd   = $MOD ALT, j        ,scratchpad (files), exec, pypr toggle files
-bindd   = $MOD ALT, d        ,scratchpad (term), exec, pypr toggle term
-bindd   = $HYPER, 8          ,scratchpad (term), exec, pypr toggle term
-bindd   = $MOD ALT, l        ,scratchpad (monitor), exec, pypr toggle mon
-bindd   = $MOD ALT, s        ,scratchpad (monitor), exec, pypr toggle mon
-bindd   = $HYPER, 6          ,scratchpad (monitor), exec, pypr toggle mon
-bindd   = $MOD ALT, m        ,scratchpad (moosic), exec, pypr toggle moosic
-bindd   = $HYPER, 1          ,scratchpad (moosic), exec, pypr toggle moosic
-bindd   = $MOD ALT, x        ,scratchpad (audio), exec, pypr toggle vol
-bindd   = $HYPER, 2          ,scratchpad (audio), exec, pypr toggle vol
-bindd   = $MOD ALT, 0        ,scratchpad (special) full, togglespecialworkspace
-bindd   = $HYPER, 0          ,scratchpad (special) full, togglespecialworkspace
-bindd   = $MOD SHIFT, 0      ,move window to special workspace, movetoworkspace, special
-bindd   = $MEH, 0            ,move window to special workspace, movetoworkspace, special
+---- WINDOWS ----
+hl.bind(MOD .. " + Q", hl.dsp.window.close())
+hl.bind(MOD .. " + W", hl.dsp.window.pseudo())
+hl.bind("ALT + T", hl.dsp.layout("togglesplit"))
+hl.bind(MOD .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(MOD .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+-- Move focus with MOD +
+hl.bind(MOD .. " + left", hl.dsp.focus({ direction = "left" }))
+hl.bind(MOD .. " + right", hl.dsp.focus({ direction = "right" }))
+hl.bind(MOD .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(MOD .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind(MOD .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(MOD .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(MOD .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(MOD .. " + J", hl.dsp.focus({ direction = "down" }))
 
-# EXAMPLE TO SET UP WITHOUT PYPR
-# bind = $MOD, l, togglespecialworkspace, term
-# bind = $MOD SHIFT, l, exec, [workspace special term; float; move 15% 15%; size 70% 70%] kitty
+-- Move/resize windows with MOD + LMB/RMB and dragging
+hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-# -----------------------------------------------------
-# FUNCTION KEYS
-# -----------------------------------------------------
-bindd   = $MEH, F1           ,open alternate browser, exec, $my_brows2
-bindd   = $MOD, F1           ,open alternate browser, exec, $my_brows2
-bindd   = $MEH, F2           ,open alternate email, exec, $my_email2
-bindd   = $MOD, F2           ,open alternate email, exec, $my_email2
-bindd   = $MEH, F3           ,open terminal file browser, exec, $my_filesc
-bindd   = $MOD, F3           ,open terminal file browser, exec, $my_filesc
+hl.bind("ALT + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+	hl.bind("up", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+	hl.bind("down", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+	hl.bind("escape", hl.dsp.submap("reset"))
+end)
 
-bindd   = $MEH, F4           ,open graphical text editor, exec, $my_editg
-bindd   = $MOD, F4           ,open graphical text editor, exec, $my_editg
-bindd   = $MEH, F5           ,open image editor, exec, $my_image
-bindd   = $MOD, F5           ,open image editor, exec, $my_image
-bindd   = $MEH, F6           ,open office suite, exec, $my_office
-bindd   = $MOD, F6           ,open office suite, exec, $my_office
+---- WORKSPACES ----
+-- Switch workspaces with MOD + [0-9]
+-- Move active window to a workspace with MOD + SHIFT + [0-9]
+for i = 1, 10 do
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+end
 
-bindd   = $MEH, F7           ,open music player, exec, $zoomclient
-bindd   = $MOD, F7           ,open music player, exec, $zoomclient
-bindd   = $MEH, F8           ,open media playger, exec, $videoedit
-bindd   = $MOD, F8           ,open media playger, exec, $videoedit
-bindd   = $MEH, F9           ,open streaming software, exec, $my_stream
-bindd   = $MOD, F9           ,open streaming software, exec, $my_stream
+-- Scroll through existing workspaces with MOD + scroll
+hl.bind(MOD .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
-bindd   = $MEH, F10          ,run menu, exec, $menu_run
-bindd   = $MOD, F10          ,run menu, exec, $menu_run
-bindd   = $MEH, F11          ,drun menu, exec, $menu_drun
-bindd   = $MOD, F11          ,drun menu, exec, $menu_drun
-bindd   = $MEH, F12          ,full menu, exec, $menu_full
-bindd   = $MOD, F12          ,full menu, exec, $menu_full
+---- MONITORS ----
+hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }))
+hl.bind(MOD .. " + comma", hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }))
 
-bindd   = , F11              ,toggle fullscreen, fullscreen
+---- MEDIA & MEDIA KEYS ----
+hl.bind(
+	"XF86AudioRaiseVolume",
+	-- hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+	hl.dsp.exec_cmd(volu),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	-- hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+	hl.dsp.exec_cmd(vold),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMute",
+	-- hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	hl.dsp.exec_cmd(volt),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMicMute",
+	-- hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+	hl.dsp.exec_cmd(mict),
+	{ locked = true, repeating = true }
+)
+hl.bind(HYPER .. " + M", hl.dsp.exec_cmd(micd), { locked = true, repeating = true })
+hl.bind(HYPER .. " + comma", hl.dsp.exec_cmd(micu), { locked = true, repeating = true })
+hl.bind(HYPER .. " + period", hl.dsp.exec_cmd(mict), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86Calculator", hl.dsp.exec_cmd(my_calc), { locked = true, repeating = true })
+-- hl.bind("XF86Lock", hl.dsp.exec_cmd(lockscr), { locked = true, repeating = true })
+hl.bind("XF86AppSelect", hl.dsp.exec_cmd(menu_full), { locked = true, repeating = true })
 
-# -----------------------------------------------------
-# ENVIRONMENT ACTIONS
-# -----------------------------------------------------
-bindd   = $MOD ALT, b        ,tui frontend for bluetooth, exec, $bluet
-bindd   = $MOD ALT, z        ,zoom in, exec, $zoomscrnd
-bindd   = $MOD CTRL, z       ,zoom out, exec, $zoomscrnu
-bindd   = $MOD CTRL, r       ,reload hypr, exec, $rload
-bindd   = $MOD CTRL, t       ,switch waybar, exec, $barsel
-bindd   = $MOD CTRL, b       ,toggle waybar, exec, $bartog
-bindd   = $MOD CTRL, s       ,select wallpaper, exec, $walls
-bindd   = $MOD CTRL, w       ,select random wallpaper, exec, $wallr
-bindd   = $MOD, z            ,zoom toggle, exec, $zoomscrn
-bindd   = $MEH, k            ,toggle kmonad for external keyboard, exec, $kmndext
-bindd   = $MEH, j            ,toggle kmonad for laptop keyboard, exec, $kmndlap
-bindd   = CTRL ALT, g        ,toggle game mode, exec, $gamemode
-bindd   = CTRL ALT, h        ,toggle garuda visual elements, exec, $visualh
-bindd   = CTRL ALT, n        ,rofi frontend for networkmanager, exec, networkmanager_dmenu
+hl.bind("XF86ZoomIn", hl.dsp.exec_cmd(brightu), { locked = true, repeating = true })
+hl.bind("XF86ZoomOut", hl.dsp.exec_cmd(brightd), { locked = true, repeating = true })
+hl.bind("SHIFT + XF86ZoomIn", hl.dsp.exec_cmd(brightmu), { locked = true, repeating = true })
+hl.bind("SHIFT + XF86ZoomOut", hl.dsp.exec_cmd(brightmd), { locked = true, repeating = true })
+hl.bind(HYPER .. " + up", hl.dsp.exec_cmd(brightmu), { locked = true, repeating = true })
+hl.bind(HYPER .. " + down", hl.dsp.exec_cmd(brightmd), { locked = true, repeating = true })
+hl.bind(MEH .. " + up", hl.dsp.exec_cmd(brightu), { locked = true, repeating = true })
+hl.bind(MEH .. " + down", hl.dsp.exec_cmd(brightd), { locked = true, repeating = true })
 
-bindd   = $MOD CTRL, g       ,theme<sub-themes>, submap, themes
-  submap = themes
-    bindd = ,u               ,<sub-themes>Toggle game mode, exec, $gamemode
-    bindd = ,b               ,<sub-themes>Toggle Waybar, exec, $reset && $bartog
-    bindd = ,t               ,<sub-themes>Open waybar selector, exec, $reset && $barsel
-    bindd = ,s               ,<sub-themes>Select wallpaper, exec, $reset && $walls
-    bindd = ,w               ,<sub-themes>Choose random wallpaper, exec, $reset && $wallr
-    bindd = ,r               ,<sub-themes>Start/restart wallpaper and waybar, exec, $reset && $rload
-    bindd = ,g               ,<sub-themes>Toggle Garuda visual elements, exec, $reset && $visualh
-    bind  = ,escape,submap,reset
-  submap = reset
-
-# -----------------------------------------------------
-# WINDOWS
-# -----------------------------------------------------
-bindd   = $MOD, q            ,kill the active window, killactive
-bindd   = $MOD, c            ,centers the active (floating) window, centerwindow
-bindd   = $MOD, s            ,swaps the focused window with the next window, swapnext
-# bindd   = $MOD, w            ,toggle direction of split window, togglesplit
-bindd   = $MOD, f            ,toggle floating window, togglefloating
-bindd   = $MOD SHIFT, f      ,toggle fullscreen, fullscreen
-bindd   = $MOD CTRL, f       ,toggle float all windows, exec, hyprctl dispatch workspaceopt allfloat
-# bindd   = $MOD SHIFT, s      ,swaps the R and L side of the workspace, swapsplit
-bindd   = ALT, TAB           ,switch focus from current to previous window, focuscurrentorlast
-
-bindd   = $MOD, h            ,focus window (left), movefocus, l
-bindd   = $MOD, j            ,focus window (down), movefocus, d
-bindd   = $MOD, k            ,focus window (up), movefocus, u
-bindd   = $MOD, l            ,focus window (right), movefocus, r
-bindd   = $MOD, left         ,focus window (left), movefocus, l
-bindd   = $MOD, down         ,focus window (down), movefocus, d
-bindd   = $MOD, up           ,focus window (up), movefocus, u
-bindd   = $MOD, right        ,focus window (right), movefocus, r
-
-bindde  = $MOD SHIFT, h      ,resize window (left), resizeactive, -50 0
-bindde  = $MOD SHIFT, j      ,resize window (down), resizeactive, 0 50
-bindde  = $MOD SHIFT, k      ,resize window (up), resizeactive, 0 -50
-bindde  = $MOD SHIFT, l      ,resize window (right), resizeactive, 50 0
-bindde  = $MOD SHIFT, left   ,resize window (left), resizeactive, -50 0
-bindde  = $MOD SHIFT, down   ,resize window (down), resizeactive, 0 50
-bindde  = $MOD SHIFT, up     ,resize window (up), resizeactive, 0 -50
-bindde  = $MOD SHIFT, right  ,resize window (right), resizeactive, 50 0
-
-binddm  = $MOD, mouse:272    ,move window with mouse, movewindow
-binddm  = $MOD, mouse:273    ,resize window with mouse, resizewindow
-
-bindd   = $MOD, TAB          ,pypr - expose all current windows, exec, pypr expose
-
-# -----------------------------------------------------
-# Scrolling
-# -----------------------------------------------------
-bind = $MOD, left, layoutmsg, move +col
-bind = $MOD, right, layoutmsg, move -col
-
-# -----------------------------------------------------
-# GROUPS
-# -----------------------------------------------------
-bindd   = $MOD SHIFT, g      ,groups<sub-gsubs>, submap, gsubs
-  submap = gsubs
-    bindd = ,g               ,<sub-gsubs>toggles the current window into a group, exec, hyprctl dispatch togglegroup && $reset
-    bindd = ,h               ,<sub-gsubs>move window into/out of group (l), exec, hyprctl dispatch movewindoworgroup l && $reset
-    bindd = ,l               ,<sub-gsubs>move window into/out of group (r), exec, hyprctl dispatch movewindoworgroup r && $reset
-    bindd = ,x               ,<sub-gsubs>lock toggle for the group, exec, hyprctl dispatch lockactivegroup && $reset
-    bind  = ,escape,submap,reset
-  submap = reset
-
-bindd   = CTRL SHIFT, l      ,change the active window in a group +, changegroupactive, f
-bindd   = CTRL SHIFT, h      ,change the active window in a group -, changegroupactive, b
-
-# -----------------------------------------------------
-# WORKSPACES
-# -----------------------------------------------------
-bindd   = $MOD, 1            ,go to workspace 1, workspace, 1
-bindd   = $MOD, 2            ,go to workspace 2, workspace, 2
-bindd   = $MOD, 3            ,go to workspace 3, workspace, 3
-bindd   = $MOD, 4            ,go to workspace 4, workspace, 4
-bindd   = $MOD, 5            ,go to workspace 5, workspace, 5
-bindd   = $MOD, 6            ,go to workspace 6, workspace, 6
-bindd   = $MOD, 7            ,go to workspace 7, workspace, 7
-bindd   = $MOD, 8            ,go to workspace 8, workspace, 8
-bindd   = $MOD, 9            ,go to workspace 9, workspace, 9
-bindd   = $MOD, 0            ,go to workspace 9, workspace, 10
-
-bindd   = $MOD CTRL, 1       ,force ws 1 to act mon, focusworkspaceoncurrentmonitor, 1
-bindd   = $MOD CTRL, 2       ,force ws 2 to act mon, focusworkspaceoncurrentmonitor, 2
-bindd   = $MOD CTRL, 3       ,force ws 3 to act mon, focusworkspaceoncurrentmonitor, 3
-bindd   = $MOD CTRL, 4       ,force ws 4 to act mon, focusworkspaceoncurrentmonitor, 4
-bindd   = $MOD CTRL, 5       ,force ws 5 to act mon, focusworkspaceoncurrentmonitor, 5
-bindd   = $MOD CTRL, 6       ,force ws 6 to act mon, focusworkspaceoncurrentmonitor, 6
-bindd   = $MOD CTRL, 7       ,force ws 7 to act mon, focusworkspaceoncurrentmonitor, 7
-bindd   = $MOD CTRL, 8       ,force ws 8 to act mon, focusworkspaceoncurrentmonitor, 8
-bindd   = $MOD CTRL, 9       ,force ws 9 to act mon, focusworkspaceoncurrentmonitor, 9
-bindd   = $MOD CTRL, 0       ,force ws 9 to act mon, focusworkspaceoncurrentmonitor, 10
-
-bindd   = $MOD SHIFT, 1      ,move window to workspace 1, movetoworkspacesilent, 1
-bindd   = $MOD SHIFT, 2      ,move window to workspace 2, movetoworkspacesilent, 2
-bindd   = $MOD SHIFT, 3      ,move window to workspace 3, movetoworkspacesilent, 3
-bindd   = $MOD SHIFT, 4      ,move window to workspace 4, movetoworkspacesilent, 4
-bindd   = $MOD SHIFT, 5      ,move winkow to workspace 5, movetoworkspacesilent, 5
-bindd   = $MOD SHIFT, 6      ,move window to workspace 6, movetoworkspacesilent, 6
-bindd   = $MOD SHIFT, 7      ,move window to workspace 7, movetoworkspacesilent, 7
-bindd   = $MOD SHIFT, 8      ,move window to workspace 8, movetoworkspacesilent, 8
-bindd   = $MOD SHIFT, 9      ,move window to workspace 9, movetoworkspacesilent, 9
-bindd   = $MOD SHIFT, 0      ,move window to workspace 9, movetoworkspacesilent, 10
-
-bindd   = $MEH, 1            ,move window to workspace 1, movetoworkspacesilent, 1
-bindd   = $MEH, 2            ,move window to workspace 2, movetoworkspacesilent, 2
-bindd   = $MEH, 3            ,move window to workspace 3, movetoworkspacesilent, 3
-bindd   = $MEH, 4            ,move window to workspace 4, movetoworkspacesilent, 4
-bindd   = $MEH, 5            ,move window to workspace 5, movetoworkspacesilent, 5
-bindd   = $MEH, 6            ,move window to workspace 6, movetoworkspacesilent, 6
-bindd   = $MEH, 7            ,move window to workspace 7, movetoworkspacesilent, 7
-bindd   = $MEH, 8            ,move window to workspace 8, movetoworkspacesilent, 8
-bindd   = $MEH, 9            ,move window to workspace 9, movetoworkspacesilent, 9
-bindd   = $MEH, 0            ,move window to workspace 9, movetoworkspacesilent, 10
-
-bindd   = $MOD CTRL, down    ,go to first empty workspace, workspace, empty
-bindd   = $MOD CTRL, j       ,go to first empty workspace, workspace, empty
-bindd   = $MOD, mouse_down   ,scroll workspaces with mouse wheel +, workspace, e+1
-bindd   = $MOD, mouse_up     ,scroll workspaces with mouse wheel -, workspace, e-1
-bindd   = CTRL, TAB          ,advance one workspace, workspace, e+1
-bindd   = CTRL SHIFT, TAB    ,go back one workspace, workspace, e-1
-
-# -----------------------------------------------------
-# MONITORS
-# -----------------------------------------------------
-bindd   = $MOD, comma        ,go to previous monitor, focusmonitor, -1
-bindd   = $MOD, period       ,go to next monitor, focusmonitor, +1
-bindd   = $MOD SHIFT, comma  ,flip windows between monitors, exec, pypr shift_monitors -1
-bindd   = $MOD SHIFT, period ,flip windows between monitors, exec, pypr shift_monitors +1
-
-# -----------------------------------------------------
-# FN KEYS
-# -----------------------------------------------------
-#
-# Other examples **=on k350
-#
-# **XF86Images
-# bindde  = , XF86MonBrightnessUp   ,KBD brightness up, exec, brightnessctl -q s +10%
-# bindde  = , XF86MonBrightnessDown ,KBD brightness down, exec, brightnessctl -q s 10%-
-# binddl  = , XF86AudioMicMute      ,KBD toggle mute the mic, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
-# XF86HomePage, Navigates to the home page in a web browser
-# XF86Calendar, Opens a calendar application
-# XF86Mail, Opens an email application
-# XF86MyComputer, Opens a file manager or computer view
-# XF86WWW, Opens a web browser
-# XF86Back, Navigates back in a web browser or similar application
-# XF86Forward, Navigates forward in a web browser or similar application
-# XF86Search, Initiates a search in a web browser or similar application
-# XF86Launch0 to XF86Launch9, Launches applications or specific functions
-# XF86PowerDown, Initiates a system shutdown or sleep mode
-# XF86KbdBrightnessUp, Increases keyboard backlight brightness
-# XF86KbdBrightnessDown, Decreases keyboard backlight brightness
-binddle = , XF86AudioLowerVolume       ,kbd lower volume, exec, $vold
-binddle = , XF86AudioRaiseVolume       ,kbd raise volume, exec, $volu
-binddl  = , XF86AudioMute              ,kbd mute volume, exec, $volt
-binddle = $HYPER, m                    ,kbd lower mic volume, exec, $micd 
-binddle = $HYPER, comma                ,kbd raise mic volume, exec, $micu
-binddl  = $HYPER, period               ,kbd mute mic volume, exec, $mict
-binddl  = , XF86AudioPlay              ,kbd toggle toggle play music, exec, $mpp
-binddl  = , XF86AudioStop              ,kbd toggle stop music, exec, $mstop
-binddl  = , XF86AudioNext              ,kbd go to next song, exec, $mnxt
-binddl  = , XF86AudioForward           ,kbd go to next song, exec, $mnxt
-binddl  = , XF86AudioPrev              ,kbd go to previous song, exec, $mprv
-binddl  = , XF86AudioRewind            ,kbd go to previous song, exec, $mprv
-binddl  = , XF86AudioMedia             ,kbd display current media informantion, exec, $mnow
-binddl  = $HYPER, u                    ,kbd display current media informantion, exec, $mnow
-bindd   = , XF86Calculator             ,kbd toggle calculator, exec, $my_calc
-bindd   = , XF86Lock                   ,kbd toggle lock computer, exec, $lockscr
-bindd   = , XF86AppSelect              ,kbd select app menu, exec, $menu_full
-bindd   = , XF86Tools                  ,kbd open the media player, exec, $my_media
-bindde  = , XF86ZoomIn                 ,kbd brightness up, exec, $brightu
-bindde  = , XF86ZoomOut                ,kbd brightness down, exec, $brightd
-bindd   = SHIFT, XF86ZoomIn            ,kbd exmon brightness up, exec, $brightmu
-bindd   = SHIFT, XF86ZoomOut           ,kbd exmon brightness down, exec, $brightmd
-bindde  = , XF86KbdBrightnessUp        ,kbd brightness up, exec, $brightu
-bindde  = $MEH, up                     ,kbd brightness up, exec, $brightu
-bindde  = , XF86KbdBrightnessDown      ,kbd brightness down, exec, $brightd
-bindde  = $MEH, down                   ,kbd brightness down, exec, $brightd
-bindd   = SHIFT, XF86KbdBrightnessUp   ,kbd exmon brightness up, exec, $brightmu
-bindd   = $HYPER, up                   ,kbd exmon brightness up, exec, $brightmu
-bindd   = SHIFT, XF86KbdBrightnessDown ,kbd exmon brightness down, exec, $brightmd
-bindd   = $HYPER, down                 ,kbd exmon brightness down, exec, $brightmd
+-- Requires playerctl
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(mnxt), { locked = true })
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd(mstop), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(mpp), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(mprv), { locked = true })
+hl.bind("XF86AudioMedia", hl.dsp.exec_cmd(mnow), { locked = true })

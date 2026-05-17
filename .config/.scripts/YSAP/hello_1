@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# read -rp "Enter your name: " name
-if [[ -n $1 ]]; then
-  name=$1
-else
-  read -rp "Enter your name: " name
-fi
-echo "Hello $name"
