@@ -7,33 +7,32 @@
 # =====================================================
 
 my_scripts="$HOME/.config/.scripts"
-# /home/moosicmaan/.config/hypr/conf/winRules.conf
-# hypr_conf="$HOME/.config/hypr"
+tmpFile="/tmp/gamestatus"
 
-hyprgamemode=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-if [ "$hyprgamemode" = 1 ]; then
-    # cat "$hypr_conf"/conf/options/main/minimal.hyprland.conf >"$hypr_conf"/hyprland.conf
-    hyprctl --batch "\
-        keyword animations:enabled 0;\
-        keyword decoration:shadow:enabled 0;\
-        keyword decoration:blur:enabled 0;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0;\
-        keyword general:border_size 0;\
-        keyword decoration:rounding 0;\
-        keyword decoration:active_opacity 1;\
-        keyword decoration:inactive_opacity 1;\
-        keyword decoration:fullscreen_opacity 1"
-    hyprctl keyword monitor "eDP-1, disable"
-    pkill awww-daemon
-    pkill waybar
+: >>"$tmpFile"
+status="$(cat $tmpFile)"
+
+# echo "DEBUG: cat tmpFile = $status"
+
+case "$status" in 1 | true | TRUE) turnOn=0 ;; 0 | false | FALSE) turnOn=1 ;; *) turnOn=1 ;; esac
+
+if [ "$turnOn" -eq 1 ]; then
+    hyprctl eval 'hl.config({ animations = { enabled = false } })'
+    hyprctl eval 'hl.config({ general = { border_size = 0, gaps_in = 0, gaps_out = 0 } })'
+    hyprctl eval 'hl.config({ decoration = { active_opacity = 1.0, inactive_opacity = 1.0, fullscreen_opacity = 1, rounding = 15, blur = { enabled = false }, shadow = { enabled = false } } })'
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
+    hyprctl eval 'hl.window_rule({name = "foot override", match = { initial_title = "foot" }, opacity = "1.0 override 1.0 override 1.0 override",})'
+
+    pkill -x awww-daemon 2>/dev/null || true
+    pkill -x waybar 2>/dev/null || true
     notify-send -i "nudity-symbolic" "GAME MODE" "ON"
-    exit
+    echo true >$tmpFile
 else
-    hyprctl keyword monitor "eDP-1, 1920x1080, 0x0, 1"
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", disabled = false })'
+
     awww-daemon &
-    "$my_scripts"/wb-launch &
-    # cat "$hypr_conf"/conf/options/main/moosic.hyprland.conf >"$hypr_conf"/hyprland.conf
+    "$my_scripts/wb-launch" --init >/dev/null
+    hyprctl reload
     notify-send -i "nudity-none-symbolic" "GAME MODE" "OFF"
+    echo false >$tmpFile
 fi
-hyprctl reload
