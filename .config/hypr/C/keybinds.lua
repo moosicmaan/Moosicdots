@@ -1,3 +1,4 @@
+---- BIND CONFIGS ----
 hl.config({
 	binds = {
 		workspace_back_and_forth = false,
