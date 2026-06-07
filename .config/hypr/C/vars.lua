@@ -1,3 +1,4 @@
+---- VARIABLES TABLE ----
 local M = {}
 
 -- MODS

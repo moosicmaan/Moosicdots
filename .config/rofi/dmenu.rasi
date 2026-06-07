@@ -14,7 +14,6 @@ configuration {
 /*****----- Global Properties -----*****/
 @import "~/.cache/wal/colors-rofi-pywal.rasi"
 @import "~/.cache/current_wallpaper.rasi"
-@import "~/.config/.settings/rofi-border.rasi"
 @import "shared/fonts.rasi"
 * {
   /* properties for all widgets */
@@ -53,13 +52,13 @@ inputbar {
 }
 prompt {
   padding:                0px;
-  border:                 1px solid;
+  border:                 0px solid;
   border-color:           gray/25%;
 }
 entry {
   expand:                 false;
   width:                  360px;
-  background-color:       @color9;
+  background-color:       @color0;
   text-color:             @foreground;
   cursor:                 text;
   placeholder:            "Search...";

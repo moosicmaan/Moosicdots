@@ -9,7 +9,6 @@ configuration {
 /*****----- Global Properties -----*****/
 @import "~/.cache/wal/colors-rofi-pywal.rasi"
 @import "~/.cache/current_wallpaper.rasi"
-@import "~/.config/.settings/rofi-border.rasi"
 @import "shared/fonts.rasi"
 * {
     /* properties for all widgets */

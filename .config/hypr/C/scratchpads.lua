@@ -40,7 +40,7 @@ hl.window_rule({
 	dim_around = true,
 	float = true,
 	center = true,
-	size = { 1300, 900 },
+	size = { 1300, 1000 },
 })
 hl.window_rule({
 	match = {

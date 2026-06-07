@@ -149,13 +149,16 @@
                 9
             ]
         },
-        "on-click": "activate",
+        //"on-click": "activate",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = <id> })'",
         "active-only": false,
         "all-outputs": true,
         "show-special": true,
         "special-visible-only": false,
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.exec_raw(\"workspace e+1\")'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.exec_raw(\"workspace e-1\")'",
+        // "on-scroll-up": "hyprctl dispatch workspace e+1",
+        // "on-scroll-down": "hyprctl dispatch workspace e-1",
         "sort-by-number": true,
         "format": "{icon}",
         "format-icons": {

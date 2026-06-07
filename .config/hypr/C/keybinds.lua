@@ -86,9 +86,29 @@ hl.bind(MOD .. " + C", hl.dsp.window.center())
 hl.bind(MOD .. " + W", hl.dsp.window.pseudo())
 hl.bind(MOD .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(MOD .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind("ALT + T", hl.dsp.layout("togglesplit")) --only for dwindle
 hl.bind("ALT + Tab", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(MOD .. " + Tab", hl.dsp.window.swap({ direction = "left" }))
+
+hl.bind("ALT + W", hl.dsp.submap("windows"))
+hl.define_submap("windows", function()
+	hl.bind("left", hl.dsp.window.move({ direction = "left", group_aware = true }))
+	hl.bind("right", hl.dsp.window.move({ direction = "right", group_aware = true }))
+	hl.bind("up", hl.dsp.window.move({ direction = "up", group_aware = true }))
+	hl.bind("down", hl.dsp.window.move({ direction = "down", group_aware = true }))
+	hl.bind("H", hl.dsp.window.move({ direction = "left", group_aware = true }))
+	hl.bind("L", hl.dsp.window.move({ direction = "right", group_aware = true }))
+	hl.bind("K", hl.dsp.window.move({ direction = "up", group_aware = true }))
+	hl.bind("J", hl.dsp.window.move({ direction = "down", group_aware = true }))
+	hl.bind("F", hl.dsp.window.float({ action = "toggle" }))
+	hl.bind("SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+	--Dwindle
+	-- hl.bind("S", hl.dsp.layout("togglesplit"))
+	--Master
+	hl.bind("S", hl.dsp.layout("swapwithmaster"))
+	hl.bind("N", hl.dsp.layout("rollnext"))
+	hl.bind("P", hl.dsp.layout("rollprev"))
+	hl.bind("escape", hl.dsp.submap("reset"))
+end)
 
 -- Move focus with MOD +
 hl.bind(MOD .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -114,7 +134,7 @@ hl.bind(MOD .. " + SHIFT + J", hl.dsp.window.move({ direction = "down", group_aw
 hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("ALT + R", hl.dsp.submap("resize"))
+hl.bind("ALT + W", hl.dsp.submap("resize"))
 hl.define_submap("resize", function()
 	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
@@ -156,12 +176,20 @@ local function zoomfunction(value)
 		hl.config({ cursor = { zoom_factor = zoomvalue + value } })
 	end
 end
+
 hl.bind("ALT + mouse:272", function()
 	zoomfunction(-0.1)
 end, { mouse = true, repeating = true, description = "Misc: Zoom out" })
 hl.bind("ALT + mouse:273", function()
 	zoomfunction(0.1)
 end, { mouse = true, repeating = true, description = "Misc: Zoom in" })
+
+hl.bind(MOD .. " + SHIFT + Z", function()
+	zoomfunction(-0.1)
+end, { repeating = true, description = "Misc: Zoom out" })
+hl.bind(MOD .. " + Z", function()
+	zoomfunction(0.1)
+end, { repeating = true, description = "Misc: Zoom in" })
 
 ---- MEDIA & MEDIA KEYS ----
 -- monitor brightness

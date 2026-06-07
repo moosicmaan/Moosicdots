@@ -1,0 +1,28 @@
+---- WINDOW GROUP SETTINGS ----
+-- auto_group = true
+-- hl.config({
+-- 	group({
+-- 		auto_group = true,
+-- 		insert_after_current = true,
+-- 		focus_removed_window = true,
+-- 		drag_into_group = 1,
+-- 		border_active = 0xffffffff,
+-- 		border_inactive = 0x6600ffff,
+-- 		border_locked_active = 0x66ff5500,
+-- 		border_locked_inactive = 0x66775500,
+-- 		-- groupbar{
+-- 		-- 	enabled = true,
+-- 		-- 	font_size = 8,
+-- 		-- 	gradients = true,
+-- 		-- 	height = 9,
+-- 		-- 	stacked = false,
+-- 		-- 	text_color = 0xff000000,
+-- 		-- 	--# col.active = 0xff00ffff,
+-- 		-- 	active = 0xffffffff,
+-- 		-- 	--# col.inactive =  0xff0ff0ff,
+-- 		-- 	inactive = 0xccccccff,
+-- 		-- 	locked_active = 0x66ff5500,
+-- 		-- 	locked_inactive = 0x66775500,
+-- 		-- },
+-- 	}),
+-- })
