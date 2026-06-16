@@ -93,6 +93,15 @@ window#waybar.empty #window {
 #workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
  */
 #workspaces {
+/*
+   active 	Will be shown when workspace is active 
+   default 	Will be shown when no string matches is found.
+   empty 	Will be shown on active empty workspaces 
+   persistent 	Will be shown on non-active persistent workspaces
+   special 	Will be shown on non-active special workspaces 
+   urgent 	Will be shown on non-active urgent workspaces 
+   visible 	Will be shown when workspace is visible on any monitor 
+*/
   /* 
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
@@ -124,9 +133,15 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
+#workspaces button.visible {
+  color: @color5;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
 #workspaces button.active {
   color: @textcolor1;
   /* 
+  color: @color5;
   background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   */

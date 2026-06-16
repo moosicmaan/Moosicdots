@@ -149,16 +149,13 @@
                 9
             ]
         },
-        //"on-click": "activate",
-        "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = <id> })'",
+        // "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = <id> })'",
         "active-only": false,
         "all-outputs": true,
         "show-special": true,
         "special-visible-only": false,
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.exec_raw(\"workspace e+1\")'",
         "on-scroll-down": "hyprctl dispatch 'hl.dsp.exec_raw(\"workspace e-1\")'",
-        // "on-scroll-up": "hyprctl dispatch workspace e+1",
-        // "on-scroll-down": "hyprctl dispatch workspace e-1",
         "sort-by-number": true,
         "format": "{icon}",
         "format-icons": {
@@ -172,10 +169,20 @@
             "8": "8",
             "9": "9",
             "10": "0",
-            "default": "",
+            // active 	Will be shown when workspace is active 
+            // default 	Will be shown when no string matches is found.
+            // empty 	Will be shown on active empty workspaces 
+            // persistent 	Will be shown on non-active persistent workspaces
+            // special 	Will be shown on non-active special workspaces 
+            // urgent 	Will be shown on non-active urgent workspaces 
+            // visible 	Will be shown when workspace is visible on any monitor 
+            "active": "󰹑",
+            "default": "",
             "empty": "",
-            "visible": "󰹑 ",
+            "persistent": "",
+            // "special": "",
             "urgent": " ",
+            "visible": "",
             "magic": "󱡄 ",
             "S-term": " ",
             "S-monitor": " ",

@@ -5,13 +5,13 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -- /usr/lib/hyprpolkitagent/hyprpolkitagent")
 	-- hl.exec_cmd("uwsm app -- /usr/bin/pypr # --config $HOME/.config/hypr/plugins/pyprland.toml")
 	hl.exec_cmd("uwsm app -- dunst")
-	hl.exec_cmd("uwsm app -- foot --server")
+	-- hl.exec_cmd("uwsm app -- foot --server")
 	hl.exec_cmd("uwsm app -- wl-paste --watch cliphist store")
 	hl.exec_cmd("uwsm app -- garuda-system-maintenance")
 	hl.exec_cmd("/home/moosicmaan/.config/.scripts/ut-bluelight")
 	hl.exec_cmd("uwsm app -- awww query || uwsm app -- awww-daemon")
 	hl.exec_cmd("sleep 1 && $HOME/.config/.scripts/ut-wallpaper --init")
-	hl.exec_cmd("uwsm app -- hypridle")
+	-- hl.exec_cmd("uwsm app -- hypridle")
 	-- hl.exec_cmd(
 	-- "uwsm app -- swayidle - w timeout 900 'waylock' timeout 1600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'waylock'"
 	-- "uwsm app -- swayidle - w timeout 900 'swaylock -f' timeout 1600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f'"
