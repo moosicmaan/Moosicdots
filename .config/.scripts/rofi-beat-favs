@@ -15,11 +15,11 @@ playlsts="$HOME/Music/Playlists/"
 idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
 
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
-  echo "Wayland session"
-  rofi_c="$HOME/.config/rofi/config-wide.rasi"
+    echo "Wayland session"
+    rofi_c="$HOME/.config/rofi/config-wide.rasi"
 else
-  echo "X11 session"
-  rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+    echo "X11 session"
+    rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
 fi
 
 # get current song
@@ -34,14 +34,14 @@ psong=$(printf '%b' "${psong//%/\\x}")
 
 # Check for empty URL
 if [[ -z "$psong" ]]; then
-  notify-send -i "$idir/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
-  exit 1
+    notify-send -i "$idir/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
+    exit 1
 fi
 
 # Check that the URL starts with 'file://'
 if [[ "$psong" != file://* ]]; then
-  notify-send -i "$idir/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
-  exit 1
+    notify-send -i "$idir/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
+    exit 1
 fi
 
 # Strip 'file://' prefix safely
@@ -49,8 +49,8 @@ psong=${psong#file://}
 
 # Check if the local file actually exists
 if [[ ! -f "$psong" ]]; then
-  notify-send -i "$idir/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $psong"
-  exit 1
+    notify-send -i "$idir/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $psong"
+    exit 1
 fi
 
 # (optional) log success or continue your logic here
@@ -60,8 +60,8 @@ echo "Local song detected: $nsong ($psong)"
 # schoices=$(printf "🎵 New Playlist\n🗑️ Delete Playlist\n%s\n" \
 # "$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
 schoices="$(
-  find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
-  printf "🎵 New Playlist\n🗑️ Delete Playlist\n"
+    find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+    printf "🎵 New Playlist\n🗑️ Delete Playlist\n"
 )"
 
 # Show in rofi
@@ -70,28 +70,28 @@ schoice=$(echo "$schoices" | rofi -dmenu -config "$rofi_c" -mesg "Add Current So
 # Handle selection
 case "$schoice" in
 "🎵 New Playlist")
-  newname=$(rofi -dmenu -config "$rofi_c" -p "Enter new playlist name:")
-  if [[ -n "$newname" ]]; then
-    mkdir -p "$playlsts/$newname"
-    notify-send -i "$idir/face-smile-symbolic.svg" "Playlist created" "$newname"
-  fi
-  ;;
+    newname=$(rofi -dmenu -config "$rofi_c" -p "Enter new playlist name:")
+    if [[ -n "$newname" ]]; then
+        mkdir -p "$playlsts/$newname"
+        notify-send -i "$idir/face-smile-symbolic.svg" "Playlist created" "$newname"
+    fi
+    ;;
 "🗑️ Delete Playlist")
-  todel=$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$rofi_c" -p "Delete which playlist?")
-  if [[ -n "$todel" ]]; then
-    rm -rf "${playlsts:?}/${todel:?}"
-    notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
-  fi
-  ;;
+    todel=$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$rofi_c" -p "Delete which playlist?")
+    if [[ -n "$todel" ]]; then
+        rm -rf "${playlsts:?}/${todel:?}"
+        notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
+    fi
+    ;;
 "")
-  # user hit Escape
-  exit 0
-  ;;
+    # user hit Escape
+    exit 0
+    ;;
 *)
-  # Otherwise, assume they picked an existing playlist — add song
-  # create symlink
-  ln -s "$psong" "$playlsts/$schoice/"
-  ln -s "$psong" "$playlsts/favorites/"
-  notify-send -i "$idir/emote-love-symbolic.svg" "Adding \"$nsong\" to:" "$schoice"
-  ;;
+    # Otherwise, assume they picked an existing playlist — add song
+    # create symlink
+    ln -s "$psong" "$playlsts/$schoice/"
+    ln -s "$psong" "$playlsts/favorites/"
+    notify-send -i "$idir/emote-love-symbolic.svg" "Adding \"$nsong\" to:" "$schoice"
+    ;;
 esac
