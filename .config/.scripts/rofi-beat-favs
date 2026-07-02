@@ -10,6 +10,7 @@
 
 # Directory local music folder
 playlsts="$HOME/Music/Playlists/"
+deleteFile="$HOME/Music/Trash/"
 
 # Directory for icons
 idir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes"
@@ -31,6 +32,9 @@ psong=$(playerctl -p "$player" metadata xesam:url 2>/dev/null)
 
 nsong=$(printf '%b' "${nsong//%/\\x}")
 psong=$(printf '%b' "${psong//%/\\x}")
+
+echo "nsong=$nsong"
+echo "psonc=$psong"
 
 # Check for empty URL
 if [[ -z "$psong" ]]; then
@@ -61,7 +65,7 @@ echo "Local song detected: $nsong ($psong)"
 # "$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
 schoices="$(
     find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
-    printf "🎵 New Playlist\n🗑️ Delete Playlist\n"
+    printf "🎵 New Playlist\n🗑️ Delete Playlist\n󰈣 Delete Song\n"
 )"
 
 # Show in rofi
@@ -83,6 +87,10 @@ case "$schoice" in
         notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
     fi
     ;;
+"󰈣 Delete Song")
+    mv "$psong" "$deleteFile/$nsong"
+    ;;
+
 "")
     # user hit Escape
     exit 0
