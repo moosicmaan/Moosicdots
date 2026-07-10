@@ -833,7 +833,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "5"
+    "arg": "92"
   },
   {
     "locked": false,
@@ -852,7 +852,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "9"
+    "arg": "94"
   },
   {
     "locked": false,
@@ -871,7 +871,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "13"
+    "arg": "96"
   },
   {
     "locked": false,
@@ -890,7 +890,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "17"
+    "arg": "98"
   },
   {
     "locked": false,
@@ -909,7 +909,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "21"
+    "arg": "100"
   },
   {
     "locked": false,
@@ -928,7 +928,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "25"
+    "arg": "102"
   },
   {
     "locked": false,
@@ -947,7 +947,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "29"
+    "arg": "104"
   },
   {
     "locked": false,
@@ -966,7 +966,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "92"
+    "arg": "106"
   },
   {
     "locked": false,
@@ -985,7 +985,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "94"
+    "arg": "108"
   },
   {
     "locked": false,
@@ -1004,7 +1004,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "96"
+    "arg": "110"
   },
   {
     "locked": false,
@@ -1023,7 +1023,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "98"
+    "arg": "112"
   },
   {
     "locked": false,
@@ -1042,26 +1042,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "100"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "C-A",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "H",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "102"
+    "arg": "114"
   },
   {
     "locked": false,
@@ -1080,7 +1061,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "104"
+    "arg": "116"
   },
   {
     "locked": false,
@@ -1099,7 +1080,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "106"
+    "arg": "118"
   },
   {
     "locked": false,
@@ -1118,7 +1099,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "108"
+    "arg": "120"
   },
   {
     "locked": false,
@@ -1137,7 +1118,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "110"
+    "arg": "122"
   },
   {
     "locked": false,
@@ -1156,7 +1137,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "112"
+    "arg": "124"
   },
   {
     "locked": false,
@@ -1175,7 +1156,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "114"
+    "arg": "126"
   },
   {
     "locked": false,
@@ -1194,7 +1175,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "116"
+    "arg": "128"
   },
   {
     "locked": false,
@@ -1209,120 +1190,6 @@
     "submap": "",
     "submap_universal": "false",
     "key": "W",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "118"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "left",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "120"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "right",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "122"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "up",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "124"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "down",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "126"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "H",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "128"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "windows",
-    "submap_universal": "false",
-    "key": "L",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1341,7 +1208,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "K",
+    "key": "left",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1360,7 +1227,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "J",
+    "key": "right",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1379,7 +1246,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "F",
+    "key": "up",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1395,10 +1262,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "S",
+    "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "F",
+    "key": "down",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1417,7 +1284,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "S",
+    "key": "H",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1436,7 +1303,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "N",
+    "key": "L",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1455,7 +1322,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "P",
+    "key": "K",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1474,7 +1341,7 @@
     "modmask": "(NONE)",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "escape",
+    "key": "J",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1490,10 +1357,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "(NONE)",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "left",
+    "key": "F",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1509,10 +1376,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "S",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "right",
+    "key": "F",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1528,10 +1395,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "(NONE)",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "up",
+    "key": "S",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1547,10 +1414,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "(NONE)",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "down",
+    "key": "N",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1566,10 +1433,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "(NONE)",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "H",
+    "key": "P",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1585,10 +1452,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
-    "submap": "",
+    "modmask": "(NONE)",
+    "submap": "windows",
     "submap_universal": "false",
-    "key": "L",
+    "key": "escape",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1607,7 +1474,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "K",
+    "key": "left",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1626,7 +1493,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "J",
+    "key": "right",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1642,10 +1509,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "left",
+    "key": "up",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1661,10 +1528,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "right",
+    "key": "down",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1680,10 +1547,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "up",
+    "key": "H",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1699,10 +1566,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "down",
+    "key": "L",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1718,10 +1585,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "H",
+    "key": "K",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1737,10 +1604,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M-S",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "L",
+    "key": "J",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1759,7 +1626,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "K",
+    "key": "left",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1778,12 +1645,126 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "J",
+    "key": "right",
     "keycode": 0,
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
     "arg": "178"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "up",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "180"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "down",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "182"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "H",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "184"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "L",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "186"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "K",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "188"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "J",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "190"
   },
   {
     "locked": false,
@@ -1802,7 +1783,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "180"
+    "arg": "192"
   },
   {
     "locked": false,
@@ -1821,7 +1802,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "182"
+    "arg": "194"
   },
   {
     "locked": false,
@@ -1840,7 +1821,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "184"
+    "arg": "196"
   },
   {
     "locked": false,
@@ -1859,7 +1840,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "186"
+    "arg": "198"
   },
   {
     "locked": false,
@@ -1878,7 +1859,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "188"
+    "arg": "200"
   },
   {
     "locked": false,
@@ -1897,7 +1878,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "190"
+    "arg": "202"
   },
   {
     "locked": false,
@@ -1916,7 +1897,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "192"
+    "arg": "204"
   },
   {
     "locked": false,
@@ -1935,7 +1916,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "194"
+    "arg": "206"
   },
   {
     "locked": false,
@@ -1954,7 +1935,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "196"
+    "arg": "208"
   },
   {
     "locked": false,
@@ -1973,7 +1954,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "198"
+    "arg": "210"
   },
   {
     "locked": false,
@@ -1992,7 +1973,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "200"
+    "arg": "212"
   },
   {
     "locked": false,
@@ -2011,120 +1992,6 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "202"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "1",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "204"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M-S",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "1",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "206"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "2",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "208"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M-S",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "2",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "210"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "3",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "212"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "M-S",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "3",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
     "arg": "214"
   },
   {
@@ -2139,7 +2006,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "4",
+    "key": "1",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2158,7 +2025,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "4",
+    "key": "1",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2177,7 +2044,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "5",
+    "key": "2",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2196,7 +2063,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "5",
+    "key": "2",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2215,7 +2082,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "6",
+    "key": "3",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2234,7 +2101,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "6",
+    "key": "3",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2253,7 +2120,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "7",
+    "key": "4",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2272,7 +2139,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "7",
+    "key": "4",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2291,7 +2158,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "8",
+    "key": "5",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2310,7 +2177,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "8",
+    "key": "5",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2329,7 +2196,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "9",
+    "key": "6",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2348,7 +2215,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "9",
+    "key": "6",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2367,7 +2234,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "0",
+    "key": "7",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2386,7 +2253,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "0",
+    "key": "7",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2405,7 +2272,7 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "mouse_down",
+    "key": "8",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2421,10 +2288,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
+    "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "mouse_up",
+    "key": "8",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2440,10 +2307,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "C-A",
+    "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "E",
+    "key": "9",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2459,10 +2326,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "M",
+    "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "period",
+    "key": "9",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2481,12 +2348,126 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "comma",
+    "key": "0",
     "keycode": 0,
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
     "arg": "252"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M-S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "0",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "254"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "mouse_down",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "256"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "mouse_up",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "258"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "C-A",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "E",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "260"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "period",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "262"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "comma",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "264"
   },
   {
     "locked": false,
@@ -2505,7 +2486,7 @@
     "catch_all": false,
     "description": "Misc: Zoom out",
     "dispatcher": "__lua",
-    "arg": "253"
+    "arg": "265"
   },
   {
     "locked": false,
@@ -2524,7 +2505,7 @@
     "catch_all": false,
     "description": "Misc: Zoom in",
     "dispatcher": "__lua",
-    "arg": "254"
+    "arg": "266"
   },
   {
     "locked": false,
@@ -2543,7 +2524,7 @@
     "catch_all": false,
     "description": "Misc: Zoom out",
     "dispatcher": "__lua",
-    "arg": "255"
+    "arg": "267"
   },
   {
     "locked": false,
@@ -2562,7 +2543,7 @@
     "catch_all": false,
     "description": "Misc: Zoom in",
     "dispatcher": "__lua",
-    "arg": "256"
+    "arg": "268"
   },
   {
     "locked": true,
@@ -2581,7 +2562,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "258"
+    "arg": "270"
   },
   {
     "locked": true,
@@ -2600,120 +2581,6 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "260"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "XF86ZoomIn",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "262"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "(NONE)",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "XF86ZoomOut",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "264"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "S",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "XF86ZoomIn",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "266"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "S",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "XF86ZoomOut",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "268"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "Unknown: 77",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "up",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "270"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "Unknown: 77",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "down",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
     "arg": "272"
   },
   {
@@ -2725,10 +2592,10 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
-    "modmask": "MEH(C-A-S)",
+    "modmask": "(NONE)",
     "submap": "",
     "submap_universal": "false",
-    "key": "up",
+    "key": "XF86ZoomIn",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2744,6 +2611,120 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": false,
+    "modmask": "(NONE)",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "XF86ZoomOut",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "276"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "XF86ZoomIn",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "278"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "S",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "XF86ZoomOut",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "280"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "Unknown: 77",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "up",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "282"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "Unknown: 77",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "down",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "284"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "MEH(C-A-S)",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "up",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "dispatcher": "__lua",
+    "arg": "286"
+  },
+  {
+    "locked": true,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
     "modmask": "MEH(C-A-S)",
     "submap": "",
     "submap_universal": "false",
@@ -2752,7 +2733,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "276"
+    "arg": "288"
   },
   {
     "locked": true,
@@ -2771,7 +2752,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "278"
+    "arg": "290"
   },
   {
     "locked": true,
@@ -2790,7 +2771,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "280"
+    "arg": "292"
   },
   {
     "locked": true,
@@ -2809,7 +2790,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "282"
+    "arg": "294"
   },
   {
     "locked": true,
@@ -2828,7 +2809,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "284"
+    "arg": "296"
   },
   {
     "locked": true,
@@ -2847,7 +2828,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "286"
+    "arg": "298"
   },
   {
     "locked": true,
@@ -2866,7 +2847,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "288"
+    "arg": "300"
   },
   {
     "locked": true,
@@ -2885,7 +2866,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "290"
+    "arg": "302"
   },
   {
     "locked": true,
@@ -2904,7 +2885,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "292"
+    "arg": "304"
   },
   {
     "locked": true,
@@ -2923,7 +2904,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "294"
+    "arg": "306"
   },
   {
     "locked": true,
@@ -2942,7 +2923,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "296"
+    "arg": "308"
   },
   {
     "locked": true,
@@ -2961,7 +2942,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "298"
+    "arg": "310"
   },
   {
     "locked": true,
@@ -2980,7 +2961,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "300"
+    "arg": "312"
   },
   {
     "locked": true,
@@ -2999,7 +2980,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "302"
+    "arg": "314"
   },
   {
     "locked": true,
@@ -3018,7 +2999,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "304"
+    "arg": "316"
   },
   {
     "locked": false,
@@ -3037,7 +3018,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "306"
+    "arg": "318"
   },
   {
     "locked": false,
@@ -3056,7 +3037,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "308"
+    "arg": "320"
   },
   {
     "locked": false,
@@ -3075,7 +3056,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "310"
+    "arg": "322"
   },
   {
     "locked": false,
@@ -3094,7 +3075,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "312"
+    "arg": "324"
   },
   {
     "locked": false,
@@ -3113,7 +3094,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "314"
+    "arg": "326"
   },
   {
     "locked": false,
@@ -3132,7 +3113,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "316"
+    "arg": "328"
   },
   {
     "locked": false,
@@ -3151,7 +3132,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "318"
+    "arg": "330"
   },
   {
     "locked": false,
@@ -3170,7 +3151,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "320"
+    "arg": "332"
   },
   {
     "locked": false,
@@ -3189,7 +3170,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "322"
+    "arg": "334"
   },
   {
     "locked": false,
@@ -3208,7 +3189,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "324"
+    "arg": "336"
   },
   {
     "locked": false,
@@ -3227,7 +3208,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "326"
+    "arg": "338"
   },
   {
     "locked": false,
@@ -3246,7 +3227,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "328"
+    "arg": "340"
   },
   {
     "locked": false,
@@ -3265,7 +3246,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "330"
+    "arg": "342"
   },
   {
     "locked": false,
@@ -3284,7 +3265,7 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "332"
+    "arg": "344"
   },
   {
     "locked": false,
@@ -3303,6 +3284,6 @@
     "catch_all": false,
     "description": "",
     "dispatcher": "__lua",
-    "arg": "334"
+    "arg": "346"
   }
 ]

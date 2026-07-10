@@ -21,7 +21,7 @@ hl.bind(MOD .. " + B", hl.dsp.exec_cmd(vars.my_brows))
 hl.bind(MOD .. " + O", hl.dsp.exec_cmd(vars.my_browsv))
 hl.bind(MOD .. " + I", hl.dsp.exec_cmd(vars.emojis))
 hl.bind(MOD .. " + M", hl.dsp.exec_cmd(vars.my_music))
-hl.bind(MOD .. " + N", hl.dsp.exec_cmd(vars.my_editc))
+hl.bind(MOD .. " + N", hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc))
 hl.bind(MOD .. " + SHIFT + M", hl.dsp.exec_cmd(vars.my_media))
 hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(vars.prntscrn))
 hl.bind(" + Print", hl.dsp.exec_cmd(vars.prntscrn))
@@ -31,7 +31,8 @@ hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd(vars.aiassist))
 
 hl.bind("ALT + N", hl.dsp.submap("text-edit"))
 hl.define_submap("text-edit", "reset", function()
-	hl.bind("m", hl.dsp.exec_cmd("cd " .. vars.my_config .. " && " .. vars.my_editc))
+	hl.bind("n", hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc))
+	hl.bind("m", hl.dsp.exec_cmd(vars.my_editc .. " " .. vars.my_config))
 	hl.bind("h", hl.dsp.exec_cmd(vars.my_editc .. " " .. vars.my_config .. "/hypr/"))
 	hl.bind("s", hl.dsp.exec_cmd(vars.my_editc .. " " .. vars.my_config .. "/sway/"))
 	hl.bind("d", hl.dsp.exec_cmd(vars.my_editc .. " " .. vars.my_config .. "/dwm/"))
@@ -78,7 +79,7 @@ hl.bind(MOD .. " + CTRL + S", hl.dsp.exec_cmd(vars.walls))
 hl.bind(MOD .. " + CTRL + W", hl.dsp.exec_cmd(vars.wallr))
 hl.bind(MOD .. " + ALT + n", hl.dsp.exec_cmd(vars.netwrk))
 hl.bind("CTRL + ALT + G", hl.dsp.exec_cmd(vars.gamemode))
-hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(vars.visualh)) --TODO
+-- hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(vars.visualh)) --TODO
 
 ---- WINDOWS ----
 hl.bind(MOD .. " + Q", hl.dsp.window.close())
@@ -153,7 +154,7 @@ end)
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
 	hl.bind(MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- Scroll through existing workspaces with MOD + scroll

@@ -740,6 +740,7 @@
         "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
         "input_delay": 2,
         "format-icons": [
+            " ",
             "▁",
             "▂",
             "▃",

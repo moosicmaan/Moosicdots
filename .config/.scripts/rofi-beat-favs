@@ -65,7 +65,7 @@ echo "Local song detected: $nsong ($psong)"
 # "$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)")
 schoices="$(
     find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
-    printf "🎵 New Playlist\n🗑️ Delete Playlist\n󰈣 Delete Song\n"
+    printf "🎵 New Playlist\n🗑️ Delete Playlist\n✖️ Delete Song from Playlist\n"
 )"
 
 # Show in rofi
@@ -87,16 +87,18 @@ case "$schoice" in
         notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
     fi
     ;;
-"󰈣 Delete Song")
+"✖️ Delete Song from Playlist")
     mv "$psong" "$deleteFile/$nsong"
+    /home/moosicmaan/.config/.scripts/media-ctrl --nxt
+    sleep 1
+    notify-send -i /usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes/face-crying-symbolic.svg "$psong" "Moved to $deleteFile"
     ;;
-
 "")
     # user hit Escape
     exit 0
     ;;
 *)
-    # Otherwise, assume they picked an existing playlist — add song
+    # Otherwise, assume they chose to place the song into an existing playlist — add song
     # create symlink
     ln -s "$psong" "$playlsts/$schoice/"
     ln -s "$psong" "$playlsts/favorites/"
