@@ -168,24 +168,24 @@ end
 # -----------------------------------------------------
 # Replace ls with eza
 if command -q eza
-    alias ls 'eza -ah -F --color=always --group-directories-first --icons' # add colors and file type extensions
-    alias lw 'eza -xah -F --color=always --group-directories-first --icons' # wide listing format
-    alias ll 'eza -lh -F --color=always --group-directories-first --icons' # long listing format
-    alias la 'eza -Alh --color=always --group-directories-first --icons' # show hidden files long format
-    alias lm 'eza -alh --color=always --group-directories-first --icons | more' # pipe through 'more'
+    alias ls 'eza -ah -F --group-directories-first' # add colors and file type extensions
+    alias lw 'eza -xah -F --group-directories-first' # wide listing format
+    alias ll 'eza -lh -F --group-directories-first' # long listing format
+    alias la 'eza -Alh --group-directories-first' # show hidden files long format
+    alias lm 'eza -alh --group-directories-first | more' # pipe through 'more'
     alias lT 'eza -aTh  --color=always --group-directories-first --icons | more' # tree listing
-    alias lr 'eza -lRh --color=always --group-directories-first --icons | more' # recursive ls
-    alias labc 'eza -lah --color=always --sort=name --icons' # sort by alphabetical
-    alias lx 'eza -lXBh --color=always --sort=extension --icons' # sort by extension
-    alias lk 'eza -lSrh --color=always --sort=size --icons ' # sort by size
-    alias lc 'eza -Alh --color=always --changed --sort=changed --icons' # sort by change time
-    alias lu 'eza -Alh --color=always --accessed --sort=accessed --icons' # sort by access time
-    alias ld 'eza -Alh --color=always --sort=date --icons' # sort by date
-    alias lf "eza -ah --color=always --follow-symlinks --only-files --icons" # only files
-    alias ldir "eza -ah --color=always --follow-symlinks --only-dirs --icons" # only directories
-    alias lla 'eza -aAlh --color=always --group-directories-first --icons .*' # only Hidden Files recursive long
-    alias lls 'eza -aAh --color=always --group-directories-first --icons .*' # Only Hidden Files recursive
-    alias l. 'eza -aldh --color=always --group-directories-first --icons .*' # only Dotfiles/dirs
+    alias lr 'eza -lRh --group-directories-first | more' # recursive ls
+    alias labc 'eza -lah --sort=name' # sort by alphabetical
+    alias lx 'eza -lXBh --sort=extension' # sort by extension
+    alias lk 'eza -lSrh --sort=size ' # sort by size
+    alias lc 'eza -Alh --changed --sort=changed' # sort by change time
+    alias lu 'eza -Alh --accessed --sort=accessed' # sort by access time
+    alias ld 'eza -Alh --sort=date' # sort by date
+    alias lf "eza -ah --follow-symlinks --only-files --icons" # only files
+    alias ldir "eza -ah  --follow-symlinks --only-dirs --icons" # only directories
+    alias lla 'eza -aAlh --group-directories-first .*' # only Hidden Files recursive long
+    alias lls 'eza -aAh --group-directories-first .*' # Only Hidden Files recursive
+    alias l. 'eza -aldh --group-directories-first .*' # only Dotfiles/dirs
 else
     alias la 'ls -Alh' # show hidden files
     alias ls 'ls -aFh --color=always' # add colors and file type extensions
@@ -236,6 +236,7 @@ alias bd 'cd "$OLDPWD"'
 alias big 'expac -H M "%m\t%n" | sort -h | nl' # Sort installed packages according to size in MB (expac must be installed)
 alias dir 'dir --color=auto'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
+alias gitpkg 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 alias gitpkgs 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 alias grep 'ugrep --color=auto'
 alias egrep 'ugrep -E --color=auto'

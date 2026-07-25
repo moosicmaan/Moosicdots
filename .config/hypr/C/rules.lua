@@ -30,7 +30,7 @@ hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1", default = false })
 hl.window_rule({
 	name = "foot override",
 	match = { initial_title = "foot" },
-	opacity = "0.85 override 0.74 override 1.0 override",
+	opacity = "0.95 override 0.85 override 1.0 override",
 })
 hl.window_rule({
 	name = "MPV rules",

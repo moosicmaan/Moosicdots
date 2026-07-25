@@ -135,7 +135,7 @@ hl.bind(MOD .. " + SHIFT + J", hl.dsp.window.move({ direction = "down", group_aw
 hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("ALT + W", hl.dsp.submap("resize"))
+hl.bind("ALT + R", hl.dsp.submap("resize"))
 hl.define_submap("resize", function()
 	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })

@@ -13,8 +13,8 @@ M.my_config = M.my_dots .. "/.config"
 M.my_scripts = M.my_config .. "/.scripts"
 
 -- APPLICATIONS
-M.my_term = "foot"
-M.my_term2 = "kitty"
+M.my_term = "kitty"
+M.my_term2 = "alacrity"
 M.my_brows = M.prefix .. "brave"
 M.my_brows2 = M.prefix .. "qutebrowser"
 M.my_browsv = M.prefix .. "zen-browser"
