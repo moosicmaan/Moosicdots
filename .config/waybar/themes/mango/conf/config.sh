@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="mango"
+theme_name="Mango"

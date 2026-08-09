@@ -47,6 +47,10 @@
         },
         "disable-click": false
     },
+    // "sway/workspaces": {
+    //     "format": "{index} - {name}",
+    //     "format-for-negative-index": "{name}"
+    // },
     "sway/workspaces": {
         "on-click": "activate",
         "active-only": false,
@@ -717,7 +721,8 @@
     },
     "custom/session": {
         "format": "{text}",
-        "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'",
+        // "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'",
+        "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'",
         "interval": 5
     },
     "custom/updates": {

@@ -17,7 +17,7 @@
         "modules-left": [
             "group/appo",
             "custom/session",
-            // "hyprland/window",
+            "hyprland/window",
             "hyprland/submap"
         ],
         "modules-center": [
@@ -48,7 +48,7 @@
         "modules-left": [
             "group/appo",
             "custom/session",
-            // "hyprland/window",
+            "hyprland/window",
             "hyprland/submap"
         ],
         "modules-center": [

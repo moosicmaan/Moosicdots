@@ -2,15 +2,16 @@
   transition: none;
   box-shadow: none;
   font-family: JetBrainsMono;
-  font-size: 15px;
+  font-size: 10px;
   color: #FFFFFF;
 }
 
 #waybar {
   margin-top: 14px;
   background: rgba(0,0,0,0.65);
-  border-radius: 12px;
-  border: 2px solid #FFFFFF;
+  border-radius: 0px;
+  border-top: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
 }
 
 #workspaces {
@@ -27,13 +28,13 @@
 }
 
 #workspaces button.active {
-  border-radius: 10px;
+  border-radius: 1px;
   color : black;
   background-color: rgba(255,255,255,0.5);
 }
 
 #workspaces button.urgent {
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 #workspaces button.urgent * {
@@ -42,7 +43,7 @@
 
 #tray {
   margin: 3px 2px;
-  border-radius: 12px;
+  border-radius: 1px;
   background-color: rgba(0,0,0,0.5);
 }
 
@@ -58,7 +59,7 @@
 #mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight,#custom-updates,#custom-keyboard-layout,#custom-network_traffic ,#mpd, #clock, #temperature {
   margin: 4px 2px;
   padding: 0 6px;
-  border-radius: 20px;
+  border-radius: 1px;
   min-width: 10px;
   background-color: transparent;
 }
@@ -78,7 +79,7 @@
   padding: 0 6px;
   color : #000000;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 1px;
   min-width: 15px;
 }
 
@@ -92,7 +93,7 @@
   padding: 0 6px;
   color : #000000;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 1px;
   min-width: 15px;
 }
 

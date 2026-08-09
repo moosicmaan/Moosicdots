@@ -11,7 +11,8 @@
         "modules-left": [
             "hyprland/workspaces",
             "hyprland/taskbar",
-            "hyprland/window"
+            "hyprland/window",
+            "hyprland/submap"
         ],
         "modules-center": [],
         "modules-right": [
@@ -26,7 +27,7 @@
             "clock",
             "custom/power"
         ],
-        "dwl/window": {
+        "hyprland/window": {
             "format": "[{layout}]{title}",
             "on-click": "bash ~/.config/mango/scripts/screenshot.sh"
             // "max-length": 50
@@ -195,7 +196,8 @@
         "modules-left": [
             "hyprland/workspaces",
             "hyprland/taskbar",
-            "hyprland/window"
+            "hyprland/window",
+            "hyprland/submap"
         ],
         "modules-center": [
             "mpris"

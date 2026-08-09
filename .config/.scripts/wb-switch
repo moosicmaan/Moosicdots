@@ -30,13 +30,18 @@ while IFS= read -r theme_dir; do
     fi
     formatted_theme="$first_folder;$rel_path"
 
-    config_path="$theme_dir/config.sh"
+    # config_path="$theme_dir/config.sh"
+    config_path="$theme_dir/name.txt"
 
     if [[ -f "$config_path" ]]; then
-        source "$config_path"
+        theme_name=$(cat "$config_path")
+        # echo "debug config_path: $config_path"
+        # theme_names+=("$theme_name")
+        # echo "debug theme_name: $theme_name"
+        # source "$config_path"
         theme_names+=("$theme_name")
-        # echo "Sourcing config for $config_path - $formatted_theme"
-        printf '%s ' "$formatted_theme"
+        printf '\nSourcing config for %s - %s' "$config_path" "$formatted_theme"
+        # printf '\n%s ' "$formatted_theme"
     else
         theme_names+=("$formatted_theme")
     fi

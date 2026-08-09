@@ -34,20 +34,20 @@ echo "Using the following to open the bar(s): $themestyle"
 # Discover the current Wayland Compositor
 # -----------------------------------------------------
 case "$DESKTOP_SESSION" in
-sway | sway:wlroots)
+sway | sway:wlroots | /usr/share/wayland-sessions/sway.desktop)
     cdesk="sway"
     ;;
-hypr | hyprland | Hyprland | hyprland-uwsm)
+hypr | hyprland | Hyprland | hyprland-uwsm | /usr/share/wayland-sessions/hyprland.desktop | /usr/share/wayland-sessions/hyprland-uwsm.desktop)
     cdesk="hypr"
     ;;
-dwl | mango | mangowm)
+dwl | mango | mangowm | /usr/share/wayland-sessions/mango.desktop | mango:wlroots)
     cdesk="dwl"
     ;;
-niri | niri:wlroots)
+niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
     cdesk="niri"
     ;;
 *)
-    cdesk="hypr"
+    # cdesk="hypr"
     printf 'DESKTOP_SESSION not recognizable: %s\n\n' "$DESKTOP_SESSION"
     ;;
 esac

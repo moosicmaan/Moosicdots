@@ -163,6 +163,7 @@ hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 ---- MONITORS ----
 hl.bind("CTRL + ALT + E", hl.dsp.exec_cmd(vars.rlmon1))
+hl.bind("CTRL + ALT + SHIFT + E", hl.dsp.exec_cmd(vars.rlmon0))
 hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }))
 hl.bind(MOD .. " + comma", hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }))
 

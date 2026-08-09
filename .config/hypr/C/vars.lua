@@ -63,6 +63,7 @@ M.visualh = M.my_scripts .. "/hypr-visuals"
 M.gamemode = M.my_scripts .. "/hypr-gamemode"
 M.rload = "hyprctl reload && " .. M.my_scripts .. "/ut-wallpaper --init"
 M.rlmon1 = 'hyprctl eval \'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", disabled = false })\''
+M.rlmon0 = 'hyprctl eval \'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", disabled = true })\''
 
 -- MEDIA & MEDIA KEYS
 M.volu = M.my_scripts .. "/media-vol --inc"

@@ -6,6 +6,6 @@ gui:
     inactiveBorderColor:
       - white
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark
+      command: delta --dark
