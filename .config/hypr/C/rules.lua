@@ -27,11 +27,11 @@ hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1", default = false })
 
 ---- WINDOWS RULES ----
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
-hl.window_rule({
-	name = "foot override",
-	match = { initial_title = "foot" },
-	opacity = "0.95 override 0.85 override 1.0 override",
-})
+-- hl.window_rule({
+-- 	name = "foot override",
+-- 	match = { initial_title = "foot" },
+-- 	opacity = "0.95 override 0.85 override 1.0 override",
+-- })
 hl.window_rule({
 	name = "MPV rules",
 	match = {
@@ -58,20 +58,20 @@ hl.window_rule({
 	size = { 800, 450 },
 	opacity = "1.0 override 1.0 override 1.0 override",
 })
-hl.window_rule({
-	name = "waypaper rules",
-	match = {
-		class = "waypaper",
-	},
-	border_size = 1,
-	float = true,
-	dim_around = true,
-	center = true,
-	stay_focused = true,
-	suppress_event = "fullscreen",
-	size = { 1530, 726 },
-	opacity = "1.0 override 1.0 override 1.0 override",
-})
+-- hl.window_rule({
+-- 	name = "waypaper rules",
+-- 	match = {
+-- 		class = "waypaper",
+-- 	},
+-- 	border_size = 1,
+-- 	float = true,
+-- 	dim_around = true,
+-- 	center = true,
+-- 	stay_focused = true,
+-- 	suppress_event = "fullscreen",
+-- 	size = { 1530, 726 },
+-- 	opacity = "1.0 override 1.0 override 1.0 override",
+-- })
 hl.window_rule({
 	name = "galculator rules",
 	match = {

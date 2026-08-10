@@ -65,6 +65,36 @@
                 "wofi"
             ]
         },
+        "mpris": {
+            "format": "{player_icon}{dynamic}",
+            "format-paused": "{status_icon}<i>{dynamic}</i>",
+            "max-length": 150,
+            "interval": 10,
+            "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
+            "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
+            "on-click": "$HOME/.config/.scripts/media-ctrl --prv",
+            "on-click-middle": "$HOME/.config/.scripts/media-ctrl --pause",
+            "on-click-right": "$HOME/.config/.scripts/media-ctrl --nxt",
+            "player-icons": {
+                "default": "▶ ",
+                "mpv": "󰐹 ",
+                "spotube": "󰋋 ",
+                "spotify": " ",
+                "chromium": " ",
+                "firefox": " ",
+                "brave": "󰯰",
+                "qutebrowser": "",
+                "vlc": "󰕼 ",
+                "kdeconnect": " ",
+                "Zen Browser": "󰚀 ",
+                "youtube": " "
+            },
+            "status-icons": {
+                "paused": "󰐎 ",
+                "playing": " ",
+                "stopped": " "
+            }
+        },
         "network": {
             "interval": 2,
             "format-wifi": "{essid} ({signalStrength}%)\uf1eb",

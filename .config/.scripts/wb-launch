@@ -49,6 +49,7 @@ niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
 *)
     # cdesk="hypr"
     printf 'DESKTOP_SESSION not recognizable: %s\n\n' "$DESKTOP_SESSION"
+    exit 1
     ;;
 esac
 

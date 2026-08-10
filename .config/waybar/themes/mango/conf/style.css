@@ -73,7 +73,7 @@
 
 * {
     font-family: "Maple Mono NF CN", monospace;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 100px;
@@ -250,6 +250,10 @@ window#waybar.empty #window {
     background: none;
     margin: 0px;
     padding: 0px;
+}
+
+#mpris {
+    font-size: 10px;
 }
 
 #clock {

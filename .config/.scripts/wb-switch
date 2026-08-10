@@ -40,8 +40,8 @@ while IFS= read -r theme_dir; do
         # echo "debug theme_name: $theme_name"
         # source "$config_path"
         theme_names+=("$theme_name")
-        printf '\nSourcing config for %s - %s' "$config_path" "$formatted_theme"
-        # printf '\n%s ' "$formatted_theme"
+        # printf '\nSourcing config for %s - %s' "$config_path" "$formatted_theme"
+        printf '\n%s ' "$formatted_theme"
     else
         theme_names+=("$formatted_theme")
     fi
@@ -53,7 +53,7 @@ done < <(find -L "$themes_path" -maxdepth 2 -type d)
 # Show selection menu with rofi
 # -----------------------------------------------------
 choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
-    -config ~/.config/rofi/config-narrow.rasi -no-show-icons -width 30 -p "Themes" -format i)
+    -config ~/.config/rofi/config-narrow.rasi -width 30 -p "Themes" -format i)
 
 # -----------------------------------------------------
 # Apply selected theme
