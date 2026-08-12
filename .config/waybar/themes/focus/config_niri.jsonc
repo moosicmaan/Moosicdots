@@ -14,8 +14,8 @@
         ],
         "modules-left": [
             "niri/tags",
-            "custom/session",
-            "niri/window"
+            "custom/session"
+            // "niri/window"
         ],
         "modules-center": [
             "network",
@@ -46,8 +46,8 @@
         ],
         "modules-left": [
             "niri/tags",
-            "custom/session",
-            "niri/window"
+            "custom/session"
+            // "niri/window"
         ],
         "modules-center": [
             "mpris"

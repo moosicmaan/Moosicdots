@@ -54,11 +54,11 @@ window#waybar {
 #tags button,
 #workspaces button {
 	padding: 0 2px;
-	color: @color5;
+	color: @color15;
 }
 #tags button,focused,
 #workspaces button.focused {
-	color: @color14;
+	color: @color15;
 }
 #tags button:hover,
 #workspaces button:hover {
@@ -74,16 +74,16 @@ window#waybar {
 }
 
 #pulseaudio {
-	color: @color11;
+	color: @color15;
 }
 #memory {
-	color: @color12;
+	color: @color15;
 }
 #cpu {
-	color: @color13;
+	color: @color15;
 }
 #battery {
-	color: @color14;
+	color: @color15;
 }
 #disk {
 	color: @color15;

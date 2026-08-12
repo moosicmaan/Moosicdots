@@ -16,8 +16,8 @@
             "sway/mode",
             "sway/scratchpad",
             "sway/workspaces",
-            "custom/session",
-            "sway/window"
+            "custom/session"
+            // "sway/window"
         ],
         "modules-center": [
             "network",
@@ -50,8 +50,8 @@
             "sway/mode",
             "sway/scratchpad",
             "sway/workspaces",
-            "custom/session",
-            "sway/window"
+            "custom/session"
+            // "sway/window"
         ],
         "modules-center": [
             "mpris"

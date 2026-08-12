@@ -175,6 +175,7 @@ alias big="expac -H M '%m\t%n' | sort -rh | nl | less" # Sort installed packages
 alias gitpkgs='pacman -Q | grep -i "\-git" | wc -l'    # List amount of -git packages
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias rmpkg="sudo pacman -Rsv"
+alias sway="sway --unsupported-gpu"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # JDB --->

@@ -15,8 +15,8 @@
         "modules-left": [
             "hyprland/workspaces",
             "custom/session",
-            "hyprland/submap",
-            "hyprland/window"
+            "hyprland/submap"
+            // "hyprland/window"
         ],
         "modules-center": [
             "network",
@@ -48,8 +48,8 @@
         "modules-left": [
             "hyprland/workspaces",
             "custom/session",
-            "hyprland/submap",
-            "hyprland/window"
+            "hyprland/submap"
+            // "hyprland/window"
         ],
         "modules-center": [
             "mpris"

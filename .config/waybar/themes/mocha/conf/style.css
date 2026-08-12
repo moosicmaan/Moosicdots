@@ -144,7 +144,8 @@
 }
 
 #mpris {
-padding-left: 8px;
+  padding-left: 8px;
+  font-size: 11px;
 }
 
 #cava {
