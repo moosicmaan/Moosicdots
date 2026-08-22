@@ -1,6 +1,6 @@
 @import "/home/moosicmaan/.cache/wal/colors-waybar.css";
 * {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: monospace;
 }
 
@@ -41,15 +41,22 @@ window#waybar {
 	background: @color1;
 }
 
-#custom-launcher,
 #custom-power {
 	color: @color15;
+    padding: 0 8px 0 0;
+}
+#custom-launcher {
+	color: @color15;
+    padding: 0 0 0 4px;
 }
 #clock.1,
 #clock.2,
 #clock.3,
 #mpris {
 	color: @color15;
+}
+#mpris {
+    font-size: 12px;
 }
 #tags button,
 #workspaces button {

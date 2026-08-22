@@ -4,13 +4,12 @@
         "layer": "top", // Waybar at top layer
         "output": "eDP-1",
         "position": "top", // Waybar position (top|bottom|left|right)
-        "height": 42, // Waybar height (to be removed for auto height)
+        // "height": 42, // Waybar height (to be removed for auto height)
         // "width": 1280, // Waybar width
         "spacing": 4, // Gaps between modules (4px)
         // Choose the order of the modules
         "modules-left": [
             "hyprland/workspaces",
-            "hyprland/taskbar",
             "hyprland/window",
             "hyprland/submap"
         ],
@@ -28,8 +27,8 @@
             "custom/power"
         ],
         "hyprland/window": {
-            "format": "[{layout}]{title}",
-            "on-click": "bash ~/.config/mango/scripts/screenshot.sh"
+            "format": "[{layout}]{title}"
+            // "on-click": "bash ~/.config/mango/scripts/screenshot.sh"
             // "max-length": 50
         },
         "ext/workspaces": {
@@ -219,13 +218,12 @@
         "output": "HDMI-A-1",
         "layer": "top", // Waybar at top layer
         "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 42, // Waybar height (to be removed for auto height)
+        // "height": 42, // Waybar height (to be removed for auto height)
         // "width": 1280, // Waybar width
         "spacing": 4, // Gaps between modules (4px)
         // Choose the order of the modules
         "modules-left": [
             "hyprland/workspaces",
-            "hyprland/taskbar",
             "hyprland/window",
             "hyprland/submap"
         ],
@@ -239,9 +237,9 @@
             "clock",
             "custom/power"
         ],
-        "dwl/window": {
-            "format": "[{layout}]{title}",
-            "on-click": "bash ~/.config/mango/scripts/screenshot.sh"
+        "hynrland/window": {
+            "format": "[{layout}]{title}"
+            // "on-click": "bash ~/.config/mango/scripts/screenshot.sh"
             // "max-length": 50
         },
         "ext/workspaces": {

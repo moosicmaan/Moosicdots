@@ -14,10 +14,6 @@ window#waybar {
   background: transparent;
 }
 
-/*window#waybar.empty {*/
-/*  background-color: transparent;*/
-/*}*/
-
 window#waybar.empty #window {
   background-color: transparent;
 }
