@@ -130,7 +130,13 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
--- Example window rules that are useful
+-- float = true,
+hl.window_rule({
+	name = "steam_full",
+	match = { class = "steam_app_0" },
+	fullscreen = true,
+	border_size = 0,
+})
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
 	name = "suppress-maximize-events",

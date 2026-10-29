@@ -15,6 +15,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "6"
   },
@@ -34,6 +35,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "8"
   },
@@ -53,6 +55,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "10"
   },
@@ -72,6 +75,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "12"
   },
@@ -91,6 +95,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "14"
   },
@@ -110,6 +115,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "16"
   },
@@ -129,6 +135,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "18"
   },
@@ -148,6 +155,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "20"
   },
@@ -167,6 +175,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "22"
   },
@@ -186,6 +195,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "24"
   },
@@ -205,6 +215,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "26"
   },
@@ -224,6 +235,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "28"
   },
@@ -243,6 +255,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "30"
   },
@@ -262,6 +275,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "32"
   },
@@ -281,6 +295,7 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "34"
   },
@@ -300,8 +315,29 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
     "arg": "36"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "(NONE)",
+    "submap": "text-edit",
+    "submap_universal": "false",
+    "key": "n",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "__lua",
+    "arg": "38"
   },
   {
     "locked": false,
@@ -319,8 +355,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "38"
+    "arg": "40"
   },
   {
     "locked": false,
@@ -338,8 +375,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "40"
+    "arg": "42"
   },
   {
     "locked": false,
@@ -357,8 +395,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "42"
+    "arg": "44"
   },
   {
     "locked": false,
@@ -376,8 +415,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "44"
+    "arg": "46"
   },
   {
     "locked": false,
@@ -395,8 +435,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "46"
+    "arg": "48"
   },
   {
     "locked": false,
@@ -414,8 +455,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "48"
+    "arg": "50"
   },
   {
     "locked": false,
@@ -433,8 +475,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "50"
+    "arg": "52"
   },
   {
     "locked": false,
@@ -452,8 +495,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "52"
+    "arg": "54"
   },
   {
     "locked": false,
@@ -471,8 +515,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "54"
+    "arg": "56"
   },
   {
     "locked": false,
@@ -490,8 +535,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "56"
+    "arg": "58"
   },
   {
     "locked": false,
@@ -509,8 +555,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "58"
+    "arg": "60"
   },
   {
     "locked": false,
@@ -528,8 +575,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "60"
+    "arg": "62"
   },
   {
     "locked": false,
@@ -547,8 +595,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "62"
+    "arg": "64"
   },
   {
     "locked": false,
@@ -566,8 +615,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "64"
+    "arg": "66"
   },
   {
     "locked": false,
@@ -585,8 +635,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "66"
+    "arg": "68"
   },
   {
     "locked": false,
@@ -604,8 +655,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "68"
+    "arg": "70"
   },
   {
     "locked": false,
@@ -623,8 +675,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "70"
+    "arg": "72"
   },
   {
     "locked": false,
@@ -642,8 +695,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "72"
+    "arg": "74"
   },
   {
     "locked": false,
@@ -661,8 +715,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "74"
+    "arg": "76"
   },
   {
     "locked": false,
@@ -680,8 +735,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "76"
+    "arg": "78"
   },
   {
     "locked": false,
@@ -699,8 +755,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "78"
+    "arg": "80"
   },
   {
     "locked": false,
@@ -718,8 +775,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "80"
+    "arg": "7"
   },
   {
     "locked": false,
@@ -737,8 +795,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "82"
+    "arg": "11"
   },
   {
     "locked": false,
@@ -756,8 +815,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "84"
+    "arg": "15"
   },
   {
     "locked": false,
@@ -775,8 +835,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "86"
+    "arg": "19"
   },
   {
     "locked": false,
@@ -794,8 +855,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "88"
+    "arg": "23"
   },
   {
     "locked": false,
@@ -813,8 +875,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "90"
+    "arg": "81"
   },
   {
     "locked": false,
@@ -832,8 +895,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "92"
+    "arg": "83"
   },
   {
     "locked": false,
@@ -851,8 +915,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "94"
+    "arg": "85"
   },
   {
     "locked": false,
@@ -870,8 +935,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "96"
+    "arg": "87"
   },
   {
     "locked": false,
@@ -889,8 +955,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "98"
+    "arg": "89"
   },
   {
     "locked": false,
@@ -908,8 +975,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "100"
+    "arg": "91"
   },
   {
     "locked": false,
@@ -927,8 +995,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "102"
+    "arg": "93"
   },
   {
     "locked": false,
@@ -946,8 +1015,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "104"
+    "arg": "95"
   },
   {
     "locked": false,
@@ -965,8 +1035,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "106"
+    "arg": "97"
   },
   {
     "locked": false,
@@ -984,8 +1055,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "108"
+    "arg": "99"
   },
   {
     "locked": false,
@@ -1003,8 +1075,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "110"
+    "arg": "101"
   },
   {
     "locked": false,
@@ -1022,8 +1095,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "112"
+    "arg": "103"
   },
   {
     "locked": false,
@@ -1041,8 +1115,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "114"
+    "arg": "105"
   },
   {
     "locked": false,
@@ -1060,8 +1135,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "116"
+    "arg": "107"
   },
   {
     "locked": false,
@@ -1079,8 +1155,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "118"
+    "arg": "109"
   },
   {
     "locked": false,
@@ -1098,8 +1175,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "120"
+    "arg": "111"
   },
   {
     "locked": false,
@@ -1117,8 +1195,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "122"
+    "arg": "113"
   },
   {
     "locked": false,
@@ -1136,27 +1215,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "124"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "A",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "Tab",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "dispatcher": "__lua",
-    "arg": "126"
+    "arg": "115"
   },
   {
     "locked": false,
@@ -1174,8 +1235,29 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "128"
+    "arg": "117"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "A",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "Tab",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "__lua",
+    "arg": "119"
   },
   {
     "locked": false,
@@ -1193,8 +1275,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "130"
+    "arg": "121"
   },
   {
     "locked": false,
@@ -1212,8 +1295,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "132"
+    "arg": "123"
   },
   {
     "locked": false,
@@ -1231,8 +1315,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "134"
+    "arg": "125"
   },
   {
     "locked": false,
@@ -1250,8 +1335,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "136"
+    "arg": "127"
   },
   {
     "locked": false,
@@ -1269,8 +1355,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "138"
+    "arg": "129"
   },
   {
     "locked": false,
@@ -1288,8 +1375,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "140"
+    "arg": "131"
   },
   {
     "locked": false,
@@ -1307,8 +1395,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "142"
+    "arg": "133"
   },
   {
     "locked": false,
@@ -1326,8 +1415,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "144"
+    "arg": "135"
   },
   {
     "locked": false,
@@ -1345,8 +1435,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "146"
+    "arg": "137"
   },
   {
     "locked": false,
@@ -1364,8 +1455,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "148"
+    "arg": "139"
   },
   {
     "locked": false,
@@ -1383,8 +1475,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "150"
+    "arg": "141"
   },
   {
     "locked": false,
@@ -1402,8 +1495,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "152"
+    "arg": "143"
   },
   {
     "locked": false,
@@ -1421,8 +1515,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "154"
+    "arg": "145"
   },
   {
     "locked": false,
@@ -1440,8 +1535,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "156"
+    "arg": "147"
   },
   {
     "locked": false,
@@ -1459,8 +1555,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "158"
+    "arg": "149"
   },
   {
     "locked": false,
@@ -1478,8 +1575,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "160"
+    "arg": "151"
   },
   {
     "locked": false,
@@ -1497,8 +1595,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "162"
+    "arg": "153"
   },
   {
     "locked": false,
@@ -1516,8 +1615,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "164"
+    "arg": "155"
   },
   {
     "locked": false,
@@ -1535,8 +1635,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "166"
+    "arg": "157"
   },
   {
     "locked": false,
@@ -1554,8 +1655,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "168"
+    "arg": "159"
   },
   {
     "locked": false,
@@ -1573,8 +1675,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "170"
+    "arg": "161"
   },
   {
     "locked": false,
@@ -1592,8 +1695,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "172"
+    "arg": "163"
   },
   {
     "locked": false,
@@ -1611,8 +1715,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "174"
+    "arg": "165"
   },
   {
     "locked": false,
@@ -1630,8 +1735,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "176"
+    "arg": "167"
   },
   {
     "locked": false,
@@ -1649,8 +1755,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "178"
+    "arg": "169"
   },
   {
     "locked": false,
@@ -1668,8 +1775,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "180"
+    "arg": "171"
   },
   {
     "locked": false,
@@ -1687,8 +1795,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "182"
+    "arg": "173"
   },
   {
     "locked": false,
@@ -1706,8 +1815,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "184"
+    "arg": "175"
   },
   {
     "locked": false,
@@ -1725,8 +1835,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "186"
+    "arg": "177"
   },
   {
     "locked": false,
@@ -1744,8 +1855,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "188"
+    "arg": "179"
   },
   {
     "locked": false,
@@ -1763,8 +1875,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "190"
+    "arg": "181"
   },
   {
     "locked": false,
@@ -1782,8 +1895,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "192"
+    "arg": "183"
   },
   {
     "locked": false,
@@ -1801,8 +1915,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "194"
+    "arg": "185"
   },
   {
     "locked": false,
@@ -1816,12 +1931,13 @@
     "modmask": "A",
     "submap": "",
     "submap_universal": "false",
-    "key": "W",
+    "key": "R",
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "196"
+    "arg": "187"
   },
   {
     "locked": false,
@@ -1839,8 +1955,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "198"
+    "arg": "189"
   },
   {
     "locked": false,
@@ -1858,8 +1975,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "200"
+    "arg": "191"
   },
   {
     "locked": false,
@@ -1877,8 +1995,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "202"
+    "arg": "193"
   },
   {
     "locked": false,
@@ -1896,8 +2015,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "204"
+    "arg": "195"
   },
   {
     "locked": false,
@@ -1915,8 +2035,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "206"
+    "arg": "197"
   },
   {
     "locked": false,
@@ -1934,8 +2055,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "208"
+    "arg": "199"
   },
   {
     "locked": false,
@@ -1953,8 +2075,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "210"
+    "arg": "201"
   },
   {
     "locked": false,
@@ -1972,8 +2095,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "212"
+    "arg": "203"
   },
   {
     "locked": false,
@@ -1991,8 +2115,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "214"
+    "arg": "205"
   },
   {
     "locked": false,
@@ -2010,8 +2135,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "216"
+    "arg": "207"
   },
   {
     "locked": false,
@@ -2029,8 +2155,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "218"
+    "arg": "209"
   },
   {
     "locked": false,
@@ -2048,8 +2175,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "220"
+    "arg": "211"
   },
   {
     "locked": false,
@@ -2067,8 +2195,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "222"
+    "arg": "213"
   },
   {
     "locked": false,
@@ -2086,8 +2215,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "224"
+    "arg": "215"
   },
   {
     "locked": false,
@@ -2105,8 +2235,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "226"
+    "arg": "217"
   },
   {
     "locked": false,
@@ -2124,8 +2255,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "228"
+    "arg": "219"
   },
   {
     "locked": false,
@@ -2143,8 +2275,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "230"
+    "arg": "221"
   },
   {
     "locked": false,
@@ -2162,8 +2295,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "232"
+    "arg": "223"
   },
   {
     "locked": false,
@@ -2181,8 +2315,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "234"
+    "arg": "225"
   },
   {
     "locked": false,
@@ -2200,8 +2335,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "236"
+    "arg": "227"
   },
   {
     "locked": false,
@@ -2219,8 +2355,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "238"
+    "arg": "229"
   },
   {
     "locked": false,
@@ -2238,8 +2375,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "240"
+    "arg": "231"
   },
   {
     "locked": false,
@@ -2257,8 +2395,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "242"
+    "arg": "233"
   },
   {
     "locked": false,
@@ -2276,8 +2415,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "244"
+    "arg": "235"
   },
   {
     "locked": false,
@@ -2295,8 +2435,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "246"
+    "arg": "237"
   },
   {
     "locked": false,
@@ -2314,8 +2455,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "248"
+    "arg": "239"
   },
   {
     "locked": false,
@@ -2333,8 +2475,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "250"
+    "arg": "241"
   },
   {
     "locked": false,
@@ -2352,8 +2495,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "252"
+    "arg": "243"
   },
   {
     "locked": false,
@@ -2371,8 +2515,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "254"
+    "arg": "245"
   },
   {
     "locked": false,
@@ -2390,8 +2535,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "256"
+    "arg": "247"
   },
   {
     "locked": false,
@@ -2409,8 +2555,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "258"
+    "arg": "249"
   },
   {
     "locked": false,
@@ -2428,8 +2575,29 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "260"
+    "arg": "251"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "MEH(C-A-S)",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "E",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "__lua",
+    "arg": "253"
   },
   {
     "locked": false,
@@ -2447,8 +2615,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "262"
+    "arg": "255"
   },
   {
     "locked": false,
@@ -2466,8 +2635,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "264"
+    "arg": "257"
   },
   {
     "locked": false,
@@ -2485,8 +2655,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "Misc: Zoom out",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "265"
+    "arg": "258"
   },
   {
     "locked": false,
@@ -2504,8 +2675,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "Misc: Zoom in",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "266"
+    "arg": "259"
   },
   {
     "locked": false,
@@ -2523,8 +2695,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "Misc: Zoom out",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "267"
+    "arg": "260"
   },
   {
     "locked": false,
@@ -2542,8 +2715,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "Misc: Zoom in",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "268"
+    "arg": "261"
   },
   {
     "locked": true,
@@ -2561,8 +2735,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "270"
+    "arg": "263"
   },
   {
     "locked": true,
@@ -2580,8 +2755,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "272"
+    "arg": "265"
   },
   {
     "locked": true,
@@ -2599,8 +2775,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "274"
+    "arg": "267"
   },
   {
     "locked": true,
@@ -2618,8 +2795,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "276"
+    "arg": "269"
   },
   {
     "locked": true,
@@ -2637,8 +2815,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "278"
+    "arg": "271"
   },
   {
     "locked": true,
@@ -2656,8 +2835,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "280"
+    "arg": "273"
   },
   {
     "locked": true,
@@ -2675,8 +2855,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "282"
+    "arg": "275"
   },
   {
     "locked": true,
@@ -2694,8 +2875,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "284"
+    "arg": "277"
   },
   {
     "locked": true,
@@ -2713,8 +2895,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "286"
+    "arg": "279"
   },
   {
     "locked": true,
@@ -2732,8 +2915,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "288"
+    "arg": "281"
   },
   {
     "locked": true,
@@ -2751,8 +2935,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "290"
+    "arg": "283"
   },
   {
     "locked": true,
@@ -2770,8 +2955,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "292"
+    "arg": "285"
   },
   {
     "locked": true,
@@ -2789,8 +2975,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "294"
+    "arg": "287"
   },
   {
     "locked": true,
@@ -2808,8 +2995,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "296"
+    "arg": "289"
   },
   {
     "locked": true,
@@ -2827,8 +3015,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "298"
+    "arg": "291"
   },
   {
     "locked": true,
@@ -2846,8 +3035,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "300"
+    "arg": "293"
   },
   {
     "locked": true,
@@ -2865,8 +3055,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "302"
+    "arg": "295"
   },
   {
     "locked": true,
@@ -2884,8 +3075,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "304"
+    "arg": "297"
   },
   {
     "locked": true,
@@ -2903,8 +3095,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "306"
+    "arg": "299"
   },
   {
     "locked": true,
@@ -2922,8 +3115,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "308"
+    "arg": "301"
   },
   {
     "locked": true,
@@ -2941,8 +3135,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "310"
+    "arg": "303"
   },
   {
     "locked": true,
@@ -2960,8 +3155,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "312"
+    "arg": "305"
   },
   {
     "locked": true,
@@ -2979,8 +3175,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "314"
+    "arg": "307"
   },
   {
     "locked": true,
@@ -2998,8 +3195,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "316"
+    "arg": "309"
   },
   {
     "locked": false,
@@ -3017,8 +3215,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "318"
+    "arg": "311"
   },
   {
     "locked": false,
@@ -3036,8 +3235,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "320"
+    "arg": "313"
   },
   {
     "locked": false,
@@ -3055,8 +3255,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "322"
+    "arg": "315"
   },
   {
     "locked": false,
@@ -3074,8 +3275,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "324"
+    "arg": "317"
   },
   {
     "locked": false,
@@ -3093,8 +3295,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "326"
+    "arg": "319"
   },
   {
     "locked": false,
@@ -3112,8 +3315,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "328"
+    "arg": "321"
   },
   {
     "locked": false,
@@ -3131,8 +3335,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "330"
+    "arg": "323"
   },
   {
     "locked": false,
@@ -3150,8 +3355,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "332"
+    "arg": "325"
   },
   {
     "locked": false,
@@ -3169,8 +3375,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "334"
+    "arg": "327"
   },
   {
     "locked": false,
@@ -3188,8 +3395,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "336"
+    "arg": "329"
   },
   {
     "locked": false,
@@ -3207,8 +3415,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "338"
+    "arg": "331"
   },
   {
     "locked": false,
@@ -3226,8 +3435,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "340"
+    "arg": "333"
   },
   {
     "locked": false,
@@ -3245,8 +3455,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "342"
+    "arg": "335"
   },
   {
     "locked": false,
@@ -3264,8 +3475,9 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "344"
+    "arg": "337"
   },
   {
     "locked": false,
@@ -3283,7 +3495,8 @@
     "keycode": 0,
     "catch_all": false,
     "description": "",
+    "allow_input_capture": false,
     "dispatcher": "__lua",
-    "arg": "346"
+    "arg": "339"
   }
 ]

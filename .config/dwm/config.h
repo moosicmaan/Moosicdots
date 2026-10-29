@@ -208,9 +208,9 @@ static const char *mpp[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--
 static const char *volu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
 static const char *vold[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
 static const char *volt[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--toggle", NULL };
-static const char *micu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--inc", NULL };
-static const char *micd[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--dec", NULL };
-static const char *mict[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--toggle", NULL };
+static const char *micu[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--mic-inc", NULL };
+static const char *micd[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--mic-dec", NULL };
+static const char *mict[] = { "/home/moosicmaan/.config/.scripts/media-vol", "--mic-toggle", NULL };
 static const char *mnxt[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--nxt", NULL };
 static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--prv", NULL };
 static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--show", NULL };
@@ -227,11 +227,18 @@ static const char *moosic_scratch[] = {
     "-e", "/home/moosicmaan/.config/.scripts/rofi-beats",
     NULL
 };
+// static const char *blue_scratch[] = {
+//     "m", "kitty",
+//     "-T", "bluedrop",
+//     "-e", "bluetui",
+//     NULL
+// };
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
   /*                Keys                                  function         argument */
   /*   SCRATCHPADS   */
+  // &((Keychord){1, {{MODKEY|AltMask,               XK_b}}, togglescratch,  {.v = blue_scratch } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_d}}, togglescratch,  {.v = ter_scratch } }),
   &((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),

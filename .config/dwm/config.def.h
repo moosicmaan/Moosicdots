@@ -227,11 +227,18 @@ static const char *moosic_scratch[] = {
     "-e", "/home/moosicmaan/.config/.scripts/rofi-beats",
     NULL
 };
+// static const char *blue_scratch[] = {
+//     "m", "kitty",
+//     "-T", "bluedrop",
+//     "-e", "bluetui",
+//     NULL
+// };
 
 /****KEYCHORDS/KEY BINDINGS****/
 static Keychord *keychords[] = {
   /*                Keys                                  function         argument */
   /*   SCRATCHPADS   */
+  // &((Keychord){1, {{MODKEY|AltMask,               XK_b}}, togglescratch,  {.v = blue_scratch } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_i}}, togglescratch,  {.v = ter_scratch } }),
   &((Keychord){1, {{MODKEY|AltMask,               XK_d}}, togglescratch,  {.v = ter_scratch } }),
   &((Keychord){1, {{HYPER,                        XK_8}}, togglescratch,  {.v = ter_scratch } }),

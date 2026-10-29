@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+src="/home/moosicmaan/Videos/Captures"
+dest="/home/moosicmaan/Videos/Captures_compressed_crf20"
+logfile="$dest/encode.log"
+
+# Verify source and tools
+if [[ ! -d "$src" ]]; then
+    echo "ERROR: Source directory not found: $src" >&2
+    exit 1
+fi
+
+command -v ffmpeg >/dev/null || {
+    echo "ERROR: ffmpeg is not installed" >&2
+    exit 1
+}
+
+mkdir -p "$dest" || exit 1
+
+# Check available space before starting
+df -h "$dest"
+
+printf 'Source:      %s\n' "$src"
+printf 'Destination: %s\n' "$dest"
+printf 'Quality:     HEVC CRF 20\n'
+printf 'Originals will not be modified.\n'
+
+read -r -p "Start batch encoding? [y/N] " answer
+[[ "$answer" == [yY] ]] || exit 0
+
+count=0
+failed=0
+skipped=0
+
+echo "Starting compression"
+while IFS= read -r -d '' file; do
+    rel="${file#"$src"/}"
+    out="$dest/$rel"
+
+    mkdir -p "$(dirname "$out")" || {
+        ((failed += 1))
+        continue
+    }
+
+    # Never overwrite an existing result
+    if [[ -e "$out" ]]; then
+        echo "SKIP (already exists): $rel"
+        ((skipped += 1))
+        continue
+    fi
+
+    echo "Encoding: $rel"
+
+    if nice -n 10 ionice -c 2 -n 7 \
+        ffmpeg -hide_banner -nostdin -n \
+        -i "$file" \
+        -map 0:v:0 -map '0:a?' \
+        -map_metadata 0 -map_chapters 0 \
+        -c:v libx265 -preset medium -crf 20 \
+        -x265-params 'pools=2:frame-threads=1' \
+        -c:a copy \
+        -movflags +faststart \
+        "$out" >>"$logfile" 2>&1; then
+        echo "OK: $rel"
+        ((count += 1))
+    else
+        echo "FAILED: $rel (see $logfile)" >&2
+        rm -f -- "$out"
+        ((failed += 1))
+    fi
+done < <(find "$src" -type f -iname '*.mp4' -print0)
+
+echo
+echo "Batch finished."
+echo "Encoded: $count"
+echo "Skipped: $skipped"
+echo "Failed:  $failed"
+echo "Log:     $logfile"
+echo
+echo "Compare original and compressed sizes with:"
+du -sh "$src" "$dest"
