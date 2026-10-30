@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-src="/home/moosicmaan/Videos/Captures"
-dest="/home/moosicmaan/Videos/Captures_compressed_crf20"
+src="/home/moosicmaan/Videos/Full"
+dest="/home/moosicmaan/Videos/Compressed_crf20"
 logfile="$dest/encode.log"
 
 # Verify source and tools
@@ -68,8 +68,11 @@ while IFS= read -r -d '' file; do
         rm -f -- "$out"
         ((failed += 1))
     fi
-done < <(find "$src" -type f -iname '*.mp4' -print0)
-
+done < <(
+    find "$src" -type f \
+        \( -iname '*.mp4' -o -iname '*.mov' \) \
+        -print0
+)
 echo
 echo "Batch finished."
 echo "Encoded: $count"

@@ -1,0 +1,8 @@
+[Unit]
+Description=Weekly ClamAV scan of home directory
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/clamscan -r -i --log=%h/.config/.logs/clamav-scan.log %h
+Nice=19
+IOSchedulingClass=idle

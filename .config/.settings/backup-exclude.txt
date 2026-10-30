@@ -1,0 +1,2 @@
+FILES/Videos/Full/*
+OSISO/*:

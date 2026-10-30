@@ -179,12 +179,18 @@ local function zoomfunction(value)
 	end
 end
 
-hl.bind("ALT + mouse:272", function()
+-- hl.bind("ALT + mouse:272", function()
+-- 	zoomfunction(-0.1)
+-- end, { mouse = true, repeating = true, description = "Misc: Zoom out" })
+-- hl.bind("ALT + mouse:273", function()
+-- 	zoomfunction(0.1)
+-- end, { mouse = true, repeating = true, description = "Misc: Zoom in" })
+hl.bind("ALT + up", function()
 	zoomfunction(-0.1)
-end, { mouse = true, repeating = true, description = "Misc: Zoom out" })
-hl.bind("ALT + mouse:273", function()
+end, { repeating = true, description = "Misc: Zoom out" })
+hl.bind("ALT + down", function()
 	zoomfunction(0.1)
-end, { mouse = true, repeating = true, description = "Misc: Zoom in" })
+end, { repeating = true, description = "Misc: Zoom in" })
 
 hl.bind(MOD .. " + SHIFT + Z", function()
 	zoomfunction(-0.1)

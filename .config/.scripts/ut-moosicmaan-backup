@@ -12,23 +12,24 @@ src="/mnt/data/moosicmaan/"
 dest="/mnt/backup/MoosicmaanBackup"
 logfile="$HOME/.config/.logs/ut-moosicmaan-backup.log"
 lockfile="/tmp/ut-moosicmaan-backup.lock"
+excludefile="$HOME/.config/.settings/backup-exclude.txt"
 
 exec 9>"$lockfile" || exit 1
 flock -n 9 || exit 0 # silently exit if already running
 
 timestamp() {
-  date '+%Y-%m-%d %H:%M:%S'
+    date '+%Y-%m-%d %H:%M:%S'
 }
 
 log() {
-  echo "$(timestamp) - $1" | tee -a "$logfile"
+    echo "$(timestamp) - $1" | tee -a "$logfile"
 }
 
 cleanup() {
-  # log "Backup ended"
-  echo "-----------------------------------------------------------" | tee -a "$logfile"
-  echo "" | tee -a "$logfile"
-  rm -f "$lockfile"
+    # log "Backup ended"
+    echo "-----------------------------------------------------------" | tee -a "$logfile"
+    echo "" | tee -a "$logfile"
+    rm -f "$lockfile"
 }
 trap cleanup EXIT
 
@@ -37,16 +38,16 @@ log "Backup started"
 
 # ---- Verify destination is mounted ----
 if ! mountpoint -q /mnt/backup; then
-  log "ERROR: /mnt/backup is NOT mounted. Aborting."
-  exit 1
+    log "ERROR: /mnt/backup is NOT mounted. Aborting."
+    exit 1
 fi
 
 # ---- Run rsync ----
-if rsync -av --delete "$src" "$dest" 2>&1 |
-  grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
-  tee -a "$logfile"; then
-  log "Backup completed successfully"
+if rsync -av --delete --exclude-from="$excludefile" --delete-excluded "$src" "$dest" 2>&1 |
+    grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
+    tee -a "$logfile"; then
+    log "Backup completed successfully"
 else
-  log "ERROR: rsync failed"
-  # exit 1
+    log "ERROR: rsync failed"
+    # exit 1
 fi
