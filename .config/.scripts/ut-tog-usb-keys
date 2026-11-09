@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Utility to toggle the external-keyboard in hyprland
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+icon_dir="/usr/share/icons/Tela-circle-dracula-dark/symbolic/emblems"
+
+DEVICE="foostan-moosiccorne-4_1"
+STATE_FILE="/tmp/external-keyboard.state"
+
+if [[ -f "$STATE_FILE" ]]; then
+    # Currently disabled: enable it
+    hyprctl eval "hl.device({name = '$DEVICE', enabled = true})"
+    rm -f "$STATE_FILE"
+    notify-send -e -u normal -i \
+        "$icon_dir/xsi-emblem-default-symbolic.svg" "External keyboard enabled"
+else
+    sleep 0.5
+    # Currently enabled: disable it
+    hyprctl eval "hl.device({name = '$DEVICE', enabled = false})"
+    touch "$STATE_FILE"
+    notify-send -e -u normal -i \
+        "$icon_dir/emblem-important-symbolic.svg" "External keyboard disabled"
+fi

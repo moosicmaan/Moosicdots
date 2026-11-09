@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# remove the text files from the zoom folders and put
+# them in a seperate directory
+#     Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+src="/home/moosicmaan/Videos/Full"
+dest="/home/moosicmaan/Videos/Audio"
+logfile="$dest/moved.log"
+
+# Verify source and tools
+if [[ ! -d "$src" ]]; then
+    echo "ERROR: Source directory not found: $src" >&2
+    exit 1
+fi
+
+mkdir -p "$dest" || exit 1
+
+printf 'Source:      %s\n' "$src"
+printf 'Destination: %s\n' "$dest"
+printf 'Originals will not be modified.\n'
+
+count=0
+failed=0
+skipped=0
+
+while IFS= read -r -d '' file; do
+    rel="${file#"$src"/}"
+    out="$dest/$rel"
+
+    mkdir -p "$(dirname "$out")" || {
+        ((failed += 1))
+        continue
+    }
+
+    # Never overwrite an existing result
+    if [[ -e "$out" ]]; then
+        echo "SKIP (already exists): $rel"
+        ((skipped += 1))
+        continue
+    fi
+
+    echo "Scanning: $rel"
+
+    echo "=========================================="
+    echo "in = $file"
+    echo "out = $out"
+    if cp -r -- "$file" "$out"; then
+        echo "OK: $rel"
+        ((count += 1))
+    else
+        echo "FAILED: $rel (see $logfile)" >&2
+        rm -f -- "$out"
+        ((failed += 1))
+    fi
+done < <(
+    find "$src" -type f \
+        \( -iname '*.m4a' -o -iname '*.m3u' \) \
+        -print0
+)
+echo
+echo "Batch finished."
+echo "Moved: $count"
+echo "Skipped: $skipped"
+echo "Failed:  $failed"
+echo "Log:     $logfile"
+echo

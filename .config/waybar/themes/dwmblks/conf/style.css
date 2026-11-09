@@ -80,6 +80,10 @@ window#waybar {
   background: @color1;
 }
 
+#custom-power {
+  padding: 0px 10px 0px 6px;
+}
+
 #mode {
 	background: #af005f;
 	color: #1b1d1e;

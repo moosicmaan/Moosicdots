@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Compresses MP4 and MOV files.  Try to stay in the
+# range of 20(bigger) - 24(smaller)
+#     Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+src="/home/moosicmaan/Videos/Audio/"
+dest="/home/moosicmaan/Videos/Compressed_Audio"
+logfile="$dest/compressed.log"
+
+# Verify source and tools
+if [[ ! -d "$src" ]]; then
+    echo "ERROR: Source directory not found: $src" >&2
+    exit 1
+fi
+
+command -v ffmpeg >/dev/null || {
+    echo "ERROR: ffmpeg is not installed" >&2
+    exit 1
+}
+
+mkdir -p "$dest" || exit 1
+
+# Check available space before starting
+df -h "$dest"
+
+printf 'Source:      %s\n' "$src"
+printf 'Destination: %s\n' "$dest"
+printf 'Codec:     aac\n'
+printf 'Originals will not be modified.\n'
+
+read -r -p "Start batch encoding? [y/N] " answer
+[[ "$answer" == [yY] ]] || exit 0
+
+count=0
+failed=0
+skipped=0
+
+while IFS= read -r -d '' file; do
+    rel="${file#"$src"/}"
+    out="$dest/$rel"
+
+    mkdir -p "$(dirname "$out")" || {
+        ((failed += 1))
+        continue
+    }
+
+    # Never overwrite an existing result
+    if [[ -e "$out" ]]; then
+        echo "SKIP (already exists): $rel"
+        ((skipped += 1))
+        continue
+    fi
+
+    echo "Encoding: $rel"
+
+    if systemd-run --user --scope --quiet \
+        -p CPUQuota=200% -- \
+        nice -n 10 ionice -c 2 -n 7 \
+        ffmpeg -hide_banner -nostdin -n \
+        -i "$file" \
+        -c:a aac \
+        -b:a 128k \
+        "$out" >>"$logfile" 2>&1; then
+        echo "OK: $rel"
+        ((count += 1))
+    else
+        echo "FAILED: $rel (see $logfile)" >&2
+        rm -f -- "$out"
+        ((failed += 1))
+    fi
+done < <(
+    find "$src" -type f \
+        \( -iname '*.m4a' -o -iname '*.wav' \) \
+        -print0
+)
+echo
+echo "Batch finished."
+echo "Encoded: $count"
+echo "Skipped: $skipped"
+echo "Failed:  $failed"
+echo "Log:     $logfile"
+echo
+echo "Compare original and compressed sizes with:"
+du -sh "$src" "$dest"

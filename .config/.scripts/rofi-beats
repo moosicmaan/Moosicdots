@@ -84,7 +84,9 @@ play_local_music() {
             # Play the selected local music file using mpv
             # echo "$prefix"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
             # "$prefix"mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
-            mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}"
+            mpv --playlist-start="$i" --loop-playlist --vid=no "${local_music[@]}" &
+            sleep 1
+            media-ctrl --show
             break
         fi
     done
@@ -95,7 +97,9 @@ shuffle_local_music() {
     notification "Shuffle local music"
 
     # Play music in $mdir on shuffle
-    eval "${prefix}mpv --shuffle --loop-playlist --vid=no $mdir"
+    eval "${prefix}mpv --shuffle --loop-playlist --vid=no $mdir" &
+    sleep 1
+    media-ctrl --show
 }
 
 shuffle_playlist() {
@@ -123,7 +127,9 @@ shuffle_playlist() {
 
     # Run the player
     if [[ -n "$pLIST" && -d "$pLIST" ]]; then
-        eval "${prefix}mpv --shuffle --loop-playlist --vid=no \"$pLIST\""
+        eval "${prefix}mpv --shuffle --loop-playlist --vid=no \"$pLIST\"" &
+        sleep 1
+        media-ctrl --show
     else
         exit 1
     fi
@@ -156,7 +162,9 @@ play_artist() {
 
     # Run the player
     if [[ -n "$alist" && -d "$alist" ]]; then
-        eval "${prefix}mpv --loop-playlist --vid=no \"$alist\""
+        eval "${prefix}mpv --loop-playlist --vid=no \"$alist\"" &
+        sleep 1
+        media-ctrl --show
     else
         echo [Debug] "No such directory: $alist"
         exit 1
@@ -176,7 +184,9 @@ play_online_music() {
     notification "$choice"
 
     # Play the selected online music using mpv
-    eval "${prefix}mpv --shuffle --vid=no $link"
+    eval "${prefix}mpv --shuffle --vid=no $link" &
+    sleep 1
+    media-ctrl --show
 }
 
 # ------MAIN------

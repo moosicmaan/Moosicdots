@@ -13,23 +13,31 @@ local HYPER = vars.HYPER
 local MEH = vars.MEH
 
 ---- APPLICATIONS ----
-hl.bind(MOD .. " + T", hl.dsp.exec_cmd(vars.my_term2))
-hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(vars.my_term))
-hl.bind(MOD .. " + SHIFT + Return", hl.dsp.exec_cmd(vars.my_filesg))
-hl.bind(MOD .. " + CTRL + Return", hl.dsp.exec_cmd(vars.my_email))
-hl.bind(MOD .. " + B", hl.dsp.exec_cmd(vars.my_brows))
-hl.bind(MOD .. " + O", hl.dsp.exec_cmd(vars.my_browsv))
-hl.bind(MOD .. " + I", hl.dsp.exec_cmd(vars.emojis))
-hl.bind(MOD .. " + M", hl.dsp.exec_cmd(vars.my_music))
-hl.bind(MOD .. " + N", hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc))
-hl.bind(MOD .. " + SHIFT + M", hl.dsp.exec_cmd(vars.my_media))
-hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(vars.prntscrn))
-hl.bind(" + Print", hl.dsp.exec_cmd(vars.prntscrn))
-hl.bind("CTRL + ALT + T", hl.dsp.exec_cmd(vars.my_mux))
-hl.bind("CTRL + ALT + M", hl.dsp.exec_cmd(vars.my_beats))
-hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd(vars.aiassist))
+hl.bind(MOD .. " + T", hl.dsp.exec_cmd(vars.my_term2), { description = "Open the alterate terminal emulator" })
+hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(vars.my_term), { description = "Open the default terminal emulator" })
+hl.bind(
+	MOD .. " + SHIFT + Return",
+	hl.dsp.exec_cmd(vars.my_filesg),
+	{ description = "Open the graphical file explorer" }
+)
+hl.bind(MOD .. " + CTRL + Return", hl.dsp.exec_cmd(vars.my_email), { description = "Open the email program" })
+hl.bind(MOD .. " + B", hl.dsp.exec_cmd(vars.my_brows), { description = "Open internet browser" })
+hl.bind(MOD .. " + O", hl.dsp.exec_cmd(vars.my_browsv), { description = "Open vim-like internet browser" })
+hl.bind(MOD .. " + I", hl.dsp.exec_cmd(vars.emojis), { description = "Toggle emojis browser" })
+hl.bind(MOD .. " + M", hl.dsp.exec_cmd(vars.my_music), { description = "Open music player" })
+hl.bind(
+	MOD .. " + N",
+	hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc),
+	{ description = "Edit .config" }
+)
+hl.bind(MOD .. " + SHIFT + M", hl.dsp.exec_cmd(vars.my_media), { description = "Open video player" })
+hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })
+hl.bind("Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })
+hl.bind("CTRL + ALT + T", hl.dsp.exec_cmd(vars.my_mux), { description = "Start a TMUX session" })
+hl.bind("CTRL + ALT + M", hl.dsp.exec_cmd(vars.my_beats), { description = "Rofi Jams - play Music" })
+hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd(vars.aiassist), { description = "Get AI help" })
 
-hl.bind("ALT + N", hl.dsp.submap("text-edit"))
+hl.bind("ALT + N", hl.dsp.submap("text-edit"), { description = "Start text-edit submap" })
 hl.define_submap("text-edit", "reset", function()
 	hl.bind("n", hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc))
 	hl.bind("m", hl.dsp.exec_cmd(vars.my_editc .. " " .. vars.my_config))
@@ -42,55 +50,60 @@ hl.define_submap("text-edit", "reset", function()
 end)
 
 ---- APPLICATION LAUNCHERS & MENUS ----
-hl.bind(MOD .. " + P", hl.dsp.exec_cmd(vars.menu_run))
-hl.bind(MOD .. " + SHIFT + P", hl.dsp.exec_cmd(vars.menu_drun))
-hl.bind(MOD .. " + CTRL + P", hl.dsp.exec_cmd(vars.menu_files))
-hl.bind(MOD .. " + ALT + P", hl.dsp.exec_cmd(vars.menu_win))
-hl.bind(MOD .. " + SHIFT + O", hl.dsp.exec_cmd(vars.bbooks))
-hl.bind(MOD .. " + CTRL + C", hl.dsp.exec_cmd(vars.clips))
-hl.bind(MOD .. " + CTRL + V", hl.dsp.exec_cmd(vars.clips))
-hl.bind(MOD .. " + CTRL + Q", hl.dsp.exec_cmd(vars.logot))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(vars.logot))
-hl.bind("CTRL + ALT + O", hl.dsp.exec_cmd(vars.bsearch))
-hl.bind("CTRL + ALT + K", hl.dsp.exec_cmd(vars.keybs)) --TODO
-hl.bind("CTRL + ALT + P", hl.dsp.exec_cmd(vars.menu_full))
+hl.bind(MOD .. " + P", hl.dsp.exec_cmd(vars.menu_run), { description = "Dmenu-like app selector" })
+hl.bind(MOD .. " + SHIFT + P", hl.dsp.exec_cmd(vars.menu_drun), { description = "Rofi app selector" })
+hl.bind(MOD .. " + CTRL + P", hl.dsp.exec_cmd(vars.menu_files), { description = "Rofi file selector" })
+hl.bind(MOD .. " + ALT + P", hl.dsp.exec_cmd(vars.menu_win), { description = "Rofi current window selector" })
+hl.bind(MOD .. " + SHIFT + O", hl.dsp.exec_cmd(vars.bbooks), { description = "Bookmark selector" })
+hl.bind(MOD .. " + CTRL + C", hl.dsp.exec_cmd(vars.clips), { description = "Rofi clipboard copy selector" })
+hl.bind(MOD .. " + CTRL + V", hl.dsp.exec_cmd(vars.clips), { description = "Rofi clipboard paste selector" })
+hl.bind(MOD .. " + CTRL + Q", hl.dsp.exec_cmd(vars.logot), { description = "System menu" })
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(vars.logot), { description = "System menu" })
+hl.bind("CTRL + ALT + O", hl.dsp.exec_cmd(vars.bsearch), { description = "Online search" })
+hl.bind("CTRL + ALT + K", hl.dsp.exec_cmd(vars.keybs), { description = "Keybind search and execute" })
+hl.bind("CTRL + ALT + P", hl.dsp.exec_cmd(vars.menu_full), { description = "Apple-like menu" })
 
 ---- FUNCTION KEYS/HOTLIST ----
-hl.bind(MEH .. " + F1", hl.dsp.exec_cmd(vars.my_brows2))
-hl.bind(MEH .. " + F2", hl.dsp.exec_cmd(vars.my_email2))
-hl.bind(MEH .. " + F3", hl.dsp.exec_cmd(vars.my_filesc))
-hl.bind(MEH .. " + F4", hl.dsp.exec_cmd(vars.my_editg))
-hl.bind(MEH .. " + F5", hl.dsp.exec_cmd(vars.my_image))
-hl.bind(MEH .. " + F6", hl.dsp.exec_cmd(vars.my_office))
-hl.bind(MEH .. " + F7", hl.dsp.exec_cmd(vars.zoomclient))
-hl.bind(MEH .. " + F8", hl.dsp.exec_cmd(vars.videdit))
-hl.bind(MEH .. " + F9", hl.dsp.exec_cmd(vars.my_stream))
-hl.bind(MEH .. " + F10", hl.dsp.exec_cmd(vars.menu_run))
-hl.bind(MEH .. " + F11", hl.dsp.exec_cmd(vars.menu_drun))
-hl.bind(MEH .. " + F12", hl.dsp.exec_cmd(vars.menu_full))
+hl.bind(MEH .. " + F1", hl.dsp.exec_cmd(vars.my_brows2), { description = "Open alt internet browser" })
+hl.bind(MEH .. " + F2", hl.dsp.exec_cmd(vars.my_email2), { description = "Open alt email" })
+hl.bind(MEH .. " + F3", hl.dsp.exec_cmd(vars.my_filesc), { description = "Open cli file browesr" })
+hl.bind(MEH .. " + F4", hl.dsp.exec_cmd(vars.my_editg), { description = "Open graphical editor" })
+hl.bind(MEH .. " + F5", hl.dsp.exec_cmd(vars.my_image), { description = "Open image editor" })
+hl.bind(MEH .. " + F6", hl.dsp.exec_cmd(vars.my_office), { description = "Open Office suite" })
+hl.bind(MEH .. " + F7", hl.dsp.exec_cmd(vars.zoomclient), { description = "Open Zoom client" })
+hl.bind(MEH .. " + F8", hl.dsp.exec_cmd(vars.videdit), { description = "Open video editor" })
+hl.bind(MEH .. " + F9", hl.dsp.exec_cmd(vars.my_stream), { description = "Open streaming software" })
+hl.bind(MEH .. " + F10", hl.dsp.exec_cmd(vars.menu_run), { description = "Dmenu-like app selector" })
+hl.bind(MEH .. " + F11", hl.dsp.exec_cmd(vars.menu_drun), { description = "Rofi app selector" })
+hl.bind(MEH .. " + F12", hl.dsp.exec_cmd(vars.menu_full), { description = "Apple-like app selector" })
 
-hl.bind(" + F11", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(" + F11", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 
 ---- ENVIRONMENT/THEME ACTIONS ----
-hl.bind(MOD .. " + CTRL + R", hl.dsp.exec_cmd(vars.rload))
-hl.bind(MOD .. " + CTRL + T", hl.dsp.exec_cmd(vars.barsel))
-hl.bind(MOD .. " + CTRL + B", hl.dsp.exec_cmd(vars.bartog))
-hl.bind(MOD .. " + CTRL + S", hl.dsp.exec_cmd(vars.walls))
-hl.bind(MOD .. " + CTRL + W", hl.dsp.exec_cmd(vars.wallr))
-hl.bind(MOD .. " + ALT + n", hl.dsp.exec_cmd(vars.netwrk))
-hl.bind("CTRL + ALT + G", hl.dsp.exec_cmd(vars.gamemode))
--- hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(vars.visualh)) --TODO
+hl.bind(MOD .. " + CTRL + R", hl.dsp.exec_cmd(vars.rload), { description = "Reload config" })
+hl.bind(MOD .. " + CTRL + u", hl.dsp.exec_cmd(vars.keytog), { release = true, description = "Toggle USB keyboard" })
+hl.bind(MOD .. " + CTRL + T", hl.dsp.exec_cmd(vars.barsel), { description = "Select statusbar" })
+hl.bind(MOD .. " + CTRL + B", hl.dsp.exec_cmd(vars.bartog), { description = "Toggle statusbar" })
+hl.bind(MOD .. " + CTRL + S", hl.dsp.exec_cmd(vars.walls), { description = "Select wallpaper" })
+hl.bind(MOD .. " + CTRL + W", hl.dsp.exec_cmd(vars.wallr), { description = "Random wallpaper" })
+hl.bind(MOD .. " + ALT + n", hl.dsp.exec_cmd(vars.netwrk), { description = "Select WiFi" })
+hl.bind("CTRL + ALT + G", hl.dsp.exec_cmd(vars.gamemode), { description = "Toggle gamemode" })
+-- hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(vars.visualh), { description = "Garuda visuals" }) --TODO
 
 ---- WINDOWS ----
-hl.bind(MOD .. " + Q", hl.dsp.window.close())
-hl.bind(MOD .. " + C", hl.dsp.window.center())
-hl.bind(MOD .. " + W", hl.dsp.window.pseudo())
-hl.bind(MOD .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MOD .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(MOD .. " + Tab", hl.dsp.window.swap({ direction = "left" }))
-hl.bind("ALT + Tab", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(MOD .. " + Q", hl.dsp.window.close(), { description = "Close a window" })
+hl.bind(MOD .. " + C", hl.dsp.window.center(), { description = "Center a window" })
+hl.bind(MOD .. " + W", hl.dsp.window.pseudo(), { description = "Pseudo tile a window" })
+hl.bind(MOD .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle window float" })
+hl.bind(
+	MOD .. " + SHIFT + F",
+	hl.dsp.window.fullscreen({ action = "toggle" }),
+	{ description = "Toggle window fullscreen" }
+)
+hl.bind(MOD .. " + Tab", hl.dsp.window.swap({ direction = "left" }), { description = "Swap window next" })
+hl.bind("ALT + Tab", hl.dsp.window.swap({ direction = "right" }), { description = "Swap window prev" })
 
-hl.bind("ALT + W", hl.dsp.submap("windows"))
+hl.bind("ALT + W", hl.dsp.submap("windows"), { description = "Start windows submap" })
 hl.define_submap("windows", function()
 	hl.bind("left", hl.dsp.window.move({ direction = "left", group_aware = true }))
 	hl.bind("right", hl.dsp.window.move({ direction = "right", group_aware = true }))
@@ -112,30 +125,62 @@ hl.define_submap("windows", function()
 end)
 
 -- Move focus with MOD +
-hl.bind(MOD .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(MOD .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(MOD .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(MOD .. " + down", hl.dsp.focus({ direction = "down" }))
-hl.bind(MOD .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(MOD .. " + L", hl.dsp.focus({ direction = "right" }))
-hl.bind(MOD .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(MOD .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(MOD .. " + left", hl.dsp.focus({ direction = "left" }), { description = "Focus window left" })
+hl.bind(MOD .. " + right", hl.dsp.focus({ direction = "right" }), { description = "Focus window right" })
+hl.bind(MOD .. " + up", hl.dsp.focus({ direction = "up" }), { description = "Focus window up" })
+hl.bind(MOD .. " + down", hl.dsp.focus({ direction = "down" }), { description = "Focus window down" })
+hl.bind(MOD .. " + H", hl.dsp.focus({ direction = "left" }), { description = "Focus window left" })
+hl.bind(MOD .. " + L", hl.dsp.focus({ direction = "right" }), { description = "Focus window right" })
+hl.bind(MOD .. " + K", hl.dsp.focus({ direction = "up" }), { description = "Focus window up" })
+hl.bind(MOD .. " + J", hl.dsp.focus({ direction = "down" }), { description = "Focus window down" })
 
 -- Move window with MOD + SHIFT +
-hl.bind(MOD .. " + SHIFT + left", hl.dsp.window.move({ direction = "left", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + right", hl.dsp.window.move({ direction = "right", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + up", hl.dsp.window.move({ direction = "up", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + down", hl.dsp.window.move({ direction = "down", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + H", hl.dsp.window.move({ direction = "left", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + L", hl.dsp.window.move({ direction = "right", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + K", hl.dsp.window.move({ direction = "up", group_aware = true }))
-hl.bind(MOD .. " + SHIFT + J", hl.dsp.window.move({ direction = "down", group_aware = true }))
+hl.bind(
+	MOD .. " + SHIFT + left",
+	hl.dsp.window.move({ direction = "left", group_aware = true }),
+	{ description = "Swap window to the left" }
+)
+hl.bind(
+	MOD .. " + SHIFT + right",
+	hl.dsp.window.move({ direction = "right", group_aware = true }),
+	{ description = "Swap window to the right" }
+)
+hl.bind(
+	MOD .. " + SHIFT + up",
+	hl.dsp.window.move({ direction = "up", group_aware = true }),
+	{ description = "Swap window up" }
+)
+hl.bind(
+	MOD .. " + SHIFT + down",
+	hl.dsp.window.move({ direction = "down", group_aware = true }),
+	{ description = "Swap window down" }
+)
+hl.bind(
+	MOD .. " + SHIFT + H",
+	hl.dsp.window.move({ direction = "left", group_aware = true }),
+	{ description = "Swap window to the left" }
+)
+hl.bind(
+	MOD .. " + SHIFT + L",
+	hl.dsp.window.move({ direction = "right", group_aware = true }),
+	{ description = "Swap window to the right" }
+)
+hl.bind(
+	MOD .. " + SHIFT + K",
+	hl.dsp.window.move({ direction = "up", group_aware = true }),
+	{ description = "Swap window up" }
+)
+hl.bind(
+	MOD .. " + SHIFT + J",
+	hl.dsp.window.move({ direction = "down", group_aware = true }),
+	{ description = "Swap window down" }
+)
 
 -- Move/resize windows with MOD + LMB/RMB and dragging
-hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Drag the window" })
+hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "Resize the window" })
 
-hl.bind("ALT + R", hl.dsp.submap("resize"))
+hl.bind("ALT + R", hl.dsp.submap("resize"), { description = "Start resize submap" })
 hl.define_submap("resize", function()
 	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
@@ -153,19 +198,27 @@ end)
 -- Move active window to a workspace with MOD + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+	hl.bind(MOD .. " + " .. key, hl.dsp.focus({ workspace = i }), { description = "Go to workspace" .. i })
+	hl.bind(
+		MOD .. " + SHIFT + " .. key,
+		hl.dsp.window.move({ workspace = i, follow = false }),
+		{ description = "Move window to workspace" .. i }
+	)
 end
 
 -- Scroll through existing workspaces with MOD + scroll
-hl.bind(MOD .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(MOD .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { description = "Go to next workspace" })
+hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { description = "Go to previous workspace" })
 
 ---- MONITORS ----
-hl.bind("CTRL + ALT + E", hl.dsp.exec_cmd(vars.rlmon1))
-hl.bind("CTRL + ALT + SHIFT + E", hl.dsp.exec_cmd(vars.rlmon0))
-hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }))
-hl.bind(MOD .. " + comma", hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }))
+hl.bind("CTRL + ALT + E", hl.dsp.exec_cmd(vars.rlmon1), { description = "Show Mon0" })
+hl.bind("CTRL + ALT + SHIFT + E", hl.dsp.exec_cmd(vars.rlmon0), { description = "Hide Mon0" })
+hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }), { description = "Focus on the next monitor" })
+hl.bind(
+	MOD .. " + comma",
+	hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }),
+	{ description = "Swap the two main monitors" }
+)
 
 --# Zoom
 local function zoomfunction(value)
@@ -179,63 +232,103 @@ local function zoomfunction(value)
 	end
 end
 
--- hl.bind("ALT + mouse:272", function()
--- 	zoomfunction(-0.1)
--- end, { mouse = true, repeating = true, description = "Misc: Zoom out" })
--- hl.bind("ALT + mouse:273", function()
--- 	zoomfunction(0.1)
--- end, { mouse = true, repeating = true, description = "Misc: Zoom in" })
 hl.bind("ALT + up", function()
 	zoomfunction(-0.1)
-end, { repeating = true, description = "Misc: Zoom out" })
+end, { repeating = true, description = "Zoom out" })
 hl.bind("ALT + down", function()
 	zoomfunction(0.1)
-end, { repeating = true, description = "Misc: Zoom in" })
+end, { repeating = true, description = "Zoom in" })
 
 hl.bind(MOD .. " + SHIFT + Z", function()
 	zoomfunction(-0.1)
-end, { repeating = true, description = "Misc: Zoom out" })
+end, { repeating = true, description = "Zoom out" })
 hl.bind(MOD .. " + Z", function()
 	zoomfunction(0.1)
-end, { repeating = true, description = "Misc: Zoom in" })
+end, { repeating = true, description = "Zoom in" })
 
 ---- MEDIA & MEDIA KEYS ----
+-- zoom
+hl.bind("XF86ZoomIn", function()
+	zoomfunction(0.1)
+end, { locked = true, repeating = true, description = "Zoom in" })
+hl.bind("XF86ZoomOut", function()
+	zoomfunction(-0.1)
+end, { locked = true, repeating = true, description = "Zoom out" })
+
 -- monitor brightness
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
-hl.bind("XF86ZoomIn", hl.dsp.exec_cmd(vars.brightu), { locked = true, repeating = true })
-hl.bind("XF86ZoomOut", hl.dsp.exec_cmd(vars.brightd), { locked = true, repeating = true })
-hl.bind("SHIFT + XF86ZoomIn", hl.dsp.exec_cmd(vars.brightmu), { locked = true })
-hl.bind("SHIFT + XF86ZoomOut", hl.dsp.exec_cmd(vars.brightmd), { locked = true })
-hl.bind(HYPER .. " + up", hl.dsp.exec_cmd(vars.brightmu), { locked = true })
-hl.bind(HYPER .. " + down", hl.dsp.exec_cmd(vars.brightmd), { locked = true })
-hl.bind(MEH .. " + up", hl.dsp.exec_cmd(vars.brightu), { locked = true, repeating = true })
-hl.bind(MEH .. " + down", hl.dsp.exec_cmd(vars.brightd), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
+	{ locked = true, repeating = true, description = "Brightness up" }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
+	{ locked = true, repeating = true, description = "Brightness down" }
+)
+hl.bind(HYPER .. " + b", hl.dsp.exec_cmd(vars.brightmu), { locked = true, description = "Monitor brightness up" })
+hl.bind(HYPER .. " + d", hl.dsp.exec_cmd(vars.brightmd), { locked = true, description = "Monitor brightness down" })
+hl.bind(
+	MEH .. " + b",
+	hl.dsp.exec_cmd(vars.brightu),
+	{ locked = true, repeating = true, description = "Screen brightness up" }
+)
+hl.bind(
+	MEH .. " + d",
+	hl.dsp.exec_cmd(vars.brightd),
+	{ locked = true, repeating = true, description = "Screen brightncss down" }
+)
 
 -- volume control
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(vars.volu), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(vars.vold), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(vars.volt), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(vars.mict), { locked = true })
-hl.bind("XF86Calculator", hl.dsp.exec_cmd(vars.my_calc), { locked = true })
-hl.bind("XF86AppSelect", hl.dsp.exec_cmd(vars.menu_full), { locked = true })
-hl.bind(HYPER .. " + M", hl.dsp.exec_cmd(vars.micd), { locked = true, repeating = true })
-hl.bind(HYPER .. " + comma", hl.dsp.exec_cmd(vars.micu), { locked = true, repeating = true })
-hl.bind(HYPER .. " + period", hl.dsp.exec_cmd(vars.mict), { locked = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd(vars.volu),
+	{ locked = true, repeating = true, description = "Audio up" }
+)
+hl.bind(HYPER .. " + up", hl.dsp.exec_cmd(vars.volu), { locked = true, repeating = true, description = "Audio up" })
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd(vars.vold),
+	{ locked = true, repeating = true, description = "Audio down" }
+)
+hl.bind(HYPER .. " + down", hl.dsp.exec_cmd(vars.vold), { locked = true, repeating = true, description = "Audio down" })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(vars.volt), { locked = true, description = "Mute audio" })
+hl.bind(HYPER .. " + t", hl.dsp.exec_cmd(vars.volt), { locked = true, description = "Mute audio" })
+hl.bind(
+	HYPER .. " + m",
+	hl.dsp.exec_cmd(vars.micd),
+	{ locked = true, repeating = true, description = "Mic volume down" }
+)
+hl.bind(
+	HYPER .. " + comma",
+	hl.dsp.exec_cmd(vars.micu),
+	{ locked = true, repeating = true, description = "Mic volume up" }
+)
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(vars.mict), { locked = true, description = "Mic mute" })
+hl.bind(HYPER .. " + period", hl.dsp.exec_cmd(vars.mict), { locked = true, description = "Mic toggle" })
 
 -- Player control
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(vars.mnxt), { locked = true })
-hl.bind("XF86AudioStop", hl.dsp.exec_cmd(vars.mstop), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(vars.mpp), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(vars.mprv), { locked = true })
-hl.bind("XF86AudioMedia", hl.dsp.exec_cmd(vars.mnow), { locked = true })
-hl.bind(HYPER .. " + U", hl.dsp.exec_cmd(vars.mnow))
-hl.bind(HYPER .. " + I", hl.dsp.exec_cmd(vars.my_favs))
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(vars.mnxt), { locked = true, description = "Media next" })
+hl.bind(HYPER .. " + n", hl.dsp.exec_cmd(vars.mnxt), { locked = true, description = "Media next" })
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd(vars.mstop), { locked = true, description = "Media stop" })
+hl.bind(HYPER .. " + x", hl.dsp.exec_cmd(vars.mstop), { locked = true, description = "Media stop" })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(vars.mpp), { locked = true, description = "Media play/pause" })
+hl.bind(HYPER .. " + y", hl.dsp.exec_cmd(vars.mpp), { locked = true, description = "Media play/pause" })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(vars.mprv), { locked = true, description = "Media previous" })
+hl.bind(HYPER .. " + p", hl.dsp.exec_cmd(vars.mprv), { locked = true, description = "Media previous" })
+hl.bind("XF86AudioMedia", hl.dsp.exec_cmd(vars.mnow), { locked = true, description = "Display currently playing" })
+hl.bind(HYPER .. " + u", hl.dsp.exec_cmd(vars.mnow), { description = "Display currently playing" })
+hl.bind(HYPER .. " + i", hl.dsp.exec_cmd(vars.my_favs), { description = "Manage audio playlists" })
+
+-- Other
+hl.bind("XF86Calculator", hl.dsp.exec_cmd(vars.my_calc), { locked = true, description = "Toggle calculator" })
+hl.bind(HYPER .. " + c", hl.dsp.exec_cmd(vars.my_calc), { locked = true, description = "Toggle calculator" })
 
 ---- System ----
-hl.bind(MEH .. "  + K", hl.dsp.exec_cmd(vars.kmndext))
-hl.bind(MEH .. "  + J", hl.dsp.exec_cmd(vars.kmndlap))
+hl.bind(MEH .. "  + K", hl.dsp.exec_cmd(vars.kmndext), { description = "kmonad for external keyboard" })
+hl.bind(MEH .. "  + J", hl.dsp.exec_cmd(vars.kmndlap), { description = "kmoned for laptop keybaurd" })
 hl.bind(
 	MOD .. " + SHIFT + Q",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
+	{ description = "Quit hyprland" }
 )

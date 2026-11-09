@@ -311,6 +311,10 @@ alias config "cd /mnt/data/moosicmaan/CONFIG/ && fish -c 'nvim'"
 # play local music and net radio
 alias jam rofi-beats
 
+function nmtui
+    env NEWT_COLORS_FILE="$HOME/.config/nmtui/palette" nmtui $argv
+end
+
 # search/install/run blackarch packages - cli
 alias black "$HOME/.config/.scripts/ut-blackmenu"
 

@@ -44,6 +44,7 @@ fi
 
 # ---- Run rsync ----
 if rsync -av --delete --exclude-from="$excludefile" --delete-excluded "$src" "$dest" 2>&1 |
+    # if rsync -av --delete --exclude-from="$excludefile" "$src" "$dest" 2>&1 |
     grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
     tee -a "$logfile"; then
     log "Backup completed successfully"

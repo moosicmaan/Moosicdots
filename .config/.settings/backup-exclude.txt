@@ -1,2 +1,3 @@
 FILES/Videos/Full/*
-OSISO/*:
+OSISO/*
+gameinprogress/*

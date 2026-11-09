@@ -143,6 +143,17 @@ local suppressMaximizeRule = hl.window_rule({
 	match = { class = ".*" },
 	suppress_event = "maximize",
 })
+hl.window_rule({
+	match = {
+		class = "kitty",
+		title = "nmtui",
+	},
+	-- border_size = 4,
+	dim_around = true,
+	float = true,
+	center = true,
+	size = { 800, 700 },
+})
 suppressMaximizeRule:set_enabled(true)
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
