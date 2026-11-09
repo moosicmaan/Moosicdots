@@ -27,16 +27,9 @@
 }
  
 .notification {
-    background: transparent;
-    border-radius: 15px;
-    margin: 0px;
-}
- 
-.notification-content {
     background: @cc-bg;
-    padding: 7px;
     border-radius: 15px;
-    border: 2px solid #85796f;
+    border: 3px solid #85796f;
     margin: 0;
 }
  
@@ -102,7 +95,7 @@
     opacity: .5
 }
  
-.floating-notifications {
+.floating-notification {
     background: transparent
 }
  

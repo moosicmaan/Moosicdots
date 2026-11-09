@@ -3,8 +3,11 @@
 
 set +e
 
+# ensure xdg-desktop-portal running without last dirty state
+systemctl --user restart xdg-desktop-portal &
+
 # some env can't auto run the portal, so need this
-/usr/lib/xdg-desktop-portal-wlr >/dev/null 2>&1 &
+/usr/lib/xdg-desktop-portal-wlr  >/dev/null 2>&1 &
 
 # notify
 swaync -c ~/.config/mango/swaync/config.jsonc -s ~/.config/mango/swaync/style.css >/dev/null 2>&1 &
@@ -16,7 +19,7 @@ wlsunset -T 3501 -t 3500 >/dev/null 2>&1 &
 swaybg -i ~/.config/mango/wallpaper/wallpaper.png >/dev/null 2>&1 &
 
 # top bar
-waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &
+mangobar -c ~/.config/mango/mangobar/config.jsonc -s ~/.config/mango/mangobar/style.css 2>&1 &
 
 # xwayland dpi scale
 echo "Xft.dpi: 140" | xrdb -merge #dpi缩放
@@ -31,7 +34,7 @@ wl-clip-persist --clipboard regular --reconnect-tries 0 >/dev/null 2>&1 &
 # clipboard content manager
 wl-paste --type text --watch cliphist store >/dev/null 2>&1 &
 
-# bluetooth
+# bluetooth 
 blueman-applet >/dev/null 2>&1 &
 
 # network
