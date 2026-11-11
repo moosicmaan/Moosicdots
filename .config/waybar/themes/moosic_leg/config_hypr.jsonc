@@ -12,7 +12,7 @@
             "group/appo#leg",
             "dwl/tags",
             "sway/workspaces",
-            "hyprland/workspaces",
+            "hyprland/workspaces#short",
             "hyprland/window",
             "hyprland/submap"
             // "dwl/window"
@@ -46,7 +46,7 @@
             "group/appo#leg",
             "dwl/tags",
             "sway/workspaces",
-            "hyprland/workspaces",
+            "hyprland/workspaces#short",
             "hyprland/window",
             "hyprland/submap"
             // "dwl/window"

@@ -13,8 +13,7 @@
 --  LOAD REQUIREO FILES
 --  -------------------------------------------------
 -- Internal stuff --
--- require("C.lib")
--- require("C.scripts")
+require("C.lib")
 
 --  -------------------------------------------------
 --  EXEC COMMANDS

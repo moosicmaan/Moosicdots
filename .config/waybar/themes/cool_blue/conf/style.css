@@ -15,7 +15,7 @@ tooltip, .tooltip {
   background: linear-gradient(180deg, #55aaff 0%,  rgba(0, 60, 200, 1) 30%, rgba(10, 20, 128, 1) 70%);
   color: #fff;
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 1px 8px;
   box-shadow: none;
 }
 
@@ -55,7 +55,7 @@ window#waybar {
 
   #clock {
     border-radius: 24px;
-  padding: 0 10px;
+    padding: 0 10px;
 }
 
 /* ============================================================
@@ -163,8 +163,8 @@ window#waybar {
  * ============================================================ */
 #tags button,
 #workspaces button {
-  padding: 0;
-  margin: 0 3px;
+  padding: 3px 0px 0px 0px;
+  margin: 0 2px;
   background: transparent;
   border: none;
   color: #fff;

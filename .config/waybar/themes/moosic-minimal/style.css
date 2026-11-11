@@ -98,7 +98,7 @@ window#waybar.empty #window {
 }
 #tags button.empty,
 #workspaces button.empty {
-  background-color: alpha (@barbackground, 0.1);
+  background-color: alpha (@barbackground, 0.9);
   transition: all 0.3s ease-in-out;
   color: @textcolor1;
   transition: all 0.3s ease-in-out;
@@ -112,7 +112,7 @@ window#waybar.empty #window {
 #workspaces button.visible {
   color: @textcolor2;
   transition: all 0.3s ease-in-out;
-  background-color: @tooltipbackground;
+  /* background-color: @tooltipbackground; */
   /* background-color: @color5; */
   opacity: 0.9;
 }
@@ -125,9 +125,9 @@ window#waybar.empty #window {
   /* border-top: 2px solid @bordercolor; */
   /* border-right: 1px solid @bordercolorb; */
   /* border-left: 3px solid @bordercolorb; */
-     border-top: 3px solid #FFFFFF;
-     border-right: 3px solid #FFFFFF;
-     border-left: 3px solid #FFFFFF;
+     border-top: 6px solid #FFFFFF;
+     border-right: 6px solid #FFFFFF;
+     border-left: 6px solid #FFFFFF;
 }
 #tags button:hover,
 #workspaces button:hover {

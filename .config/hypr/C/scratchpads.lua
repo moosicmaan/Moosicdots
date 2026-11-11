@@ -132,9 +132,9 @@ hl.bind(MOD .. " + ALT + X", hl.dsp.workspace.toggle_special("S-audio"), { descr
 hl.bind(MOD .. " + ALT + B", hl.dsp.workspace.toggle_special("S-bluet"), { description = "Bluetooth scratchped" })
 hl.bind(MOD .. " + ALT + V", hl.dsp.workspace.toggle_special("S-kbd"), { description = "Keyboard config scratchpad" })
 hl.bind(MOD .. " + ALT + O", hl.dsp.workspace.toggle_special("S-notes"), { description = "Notetaking scratchpad" })
-hl.bind(MOD .. " + ALT + T", hl.dsp.workspace.toggle_special("magic"), { description = "Toggle magic scratchped" })
+hl.bind(MOD .. " + ALT + J", hl.dsp.workspace.toggle_special("magic"), { description = "Toggle magic scratchped" })
 hl.bind(
-	MOD .. " + SHIFT + T",
+	MOD .. " + SHIFT + J",
 	hl.dsp.window.move({ workspace = "special:magic" }),
 	{ description = "Move window to magic scratchpad" }
 )

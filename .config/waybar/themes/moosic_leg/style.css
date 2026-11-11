@@ -58,7 +58,7 @@ window#waybar {
  * Workspaces
  * ----------------------------------------------------- */
 #workspaces {
-  margin: 0px 7px 0px 5px;
+  margin: 0px 3px 0px 3px;
 }
 
 #workspaces button {
@@ -70,7 +70,7 @@ window#waybar {
   border-color: @color5;
   border-style: solid;
   margin: 0px 3px 0px 3px;
-  padding: 1px 6px 1px 2px;
+  padding: 0px 4px 0px 4px;
   opacity: 0.8;
 }
 
@@ -157,6 +157,7 @@ window#waybar {
   );
   border-radius: 15px;
   font-size: 14px;
+  padding-left: 12px;
 }
 
 #custom-chatgpt {
@@ -174,7 +175,7 @@ window#waybar {
   border-color: #ffffff;
   border-style: solid;
   border-radius: 15px;
-  padding: 0px 5px 0px 12px;
+  padding: 0px 12px 0px 12px;
 }
 
 #wlr-taskbar {
@@ -229,4 +230,8 @@ window#waybar {
 #custom-lefty {
   font-size: 13px;
   padding: 0px 4px 0px 4px;
+}
+
+#user {
+  margin: 0px 120px 0px 0px;
 }

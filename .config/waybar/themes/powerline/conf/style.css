@@ -1,6 +1,6 @@
 @import "/home/moosicmaan/.cache/wal/colors-waybar.css";
 * {
-	font-size: 14px;
+	font-size: 16px;
 	font-family: monospace;
 }
 
@@ -55,9 +55,9 @@ window#waybar {
 #mpris {
 	color: @color15;
 }
-#mpris {
-    font-size: 12px;
-}
+/* #mpris { */
+/*     font-size: 12px; */
+/* } */
 #tags button,
 #workspaces button {
 	padding: 0 2px;
@@ -75,7 +75,7 @@ window#waybar {
 #tags button:hover,
 #workspaces button:hover {
 	background: @color2;
-  color: @color15;
+    color: @color15;
 	border: @color13;
 	padding: 0 3px;
 }

@@ -35,7 +35,8 @@ case $1 in
 # Select wallpaper with rofi
 "--select")
     selected=$(find "$pic_folder" \
-        -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) \
+        -type f \( -iname "*.jpg" \
+        -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.mp4" \) \
         -exec basename {} \; | sort -R | while read -r rfile; do
         echo -en "$rfile\x00icon\x1f$pic_folder/${rfile}\n"
     done | rofi -dmenu -replace -config ~/.config/rofi/config-wall.rasi -p " > ")
@@ -79,7 +80,7 @@ newwall=$(basename "$wallpaper")
 # -----------------------------------------------------
 # transition_type="wipe"
 # transition_type="outer"
-transition_type="any"
+transition_type="random"
 
 awww img "$wallpaper" \
     --transition-type=$transition_type

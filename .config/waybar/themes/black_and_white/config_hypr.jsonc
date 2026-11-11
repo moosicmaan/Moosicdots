@@ -24,10 +24,8 @@
             "custom/keybindings"
         ],
         "modules-center": [
-            "custom/separator",
             "hyprland/window",
-            "hyprland/submap",
-            "custom/separator"
+            "hyprland/submap"
         ],
         "modules-right": [
             "custom/network_traffic",
@@ -59,10 +57,8 @@
             "hyprland/workspaces"
         ],
         "modules-center": [
-            "custom/separator",
             "hyprland/window",
-            "hyprland/submap",
-            "custom/separator"
+            "hyprland/submap"
         ],
         "modules-right": [
             "mpris",

@@ -2676,7 +2676,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a06cd0d30",
+    "dispatcher": "function: 0x5638b77886c0",
     "arg": "404"
   },
   {
@@ -2696,7 +2696,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a07a47d50",
+    "dispatcher": "function: 0x5638b77452b0",
     "arg": "405"
   },
   {
@@ -2716,7 +2716,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a08736960",
+    "dispatcher": "function: 0x5638b667c810",
     "arg": "406"
   },
   {
@@ -2736,7 +2736,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a07d71c40",
+    "dispatcher": "function: 0x5638b63e6790",
     "arg": "407"
   },
   {
@@ -2756,7 +2756,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a08a4a350",
+    "dispatcher": "function: 0x5638b7d97a60",
     "arg": "408"
   },
   {
@@ -2776,7 +2776,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x563a06ce65a0",
+    "dispatcher": "function: 0x5638b77e3b50",
     "arg": "409"
   },
   {
@@ -3591,7 +3591,7 @@
     "modmask": "M-A",
     "submap": "",
     "submap_universal": "false",
-    "key": "T",
+    "key": "J",
     "keycode": 0,
     "catch_all": false,
     "description": "Toggle magic scratchped",
@@ -3611,7 +3611,7 @@
     "modmask": "M-S",
     "submap": "",
     "submap_universal": "false",
-    "key": "T",
+    "key": "J",
     "keycode": 0,
     "catch_all": false,
     "description": "Move window to magic scratchpad",

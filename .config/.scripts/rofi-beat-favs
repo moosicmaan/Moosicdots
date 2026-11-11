@@ -101,7 +101,7 @@ case "$schoice" in
     # Otherwise, assume they chose to place the song into an existing playlist — add song
     # create symlink
     ln -s "$psong" "$playlsts/$schoice/"
-    ln -s "$psong" "$playlsts/favorites/"
+    # ln -s "$psong" "$playlsts/favorites/"
     notify-send -i "$idir/emote-love-symbolic.svg" "Adding \"$nsong\" to:" "$schoice"
     ;;
 esac

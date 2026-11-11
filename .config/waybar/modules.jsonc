@@ -47,10 +47,6 @@
         },
         "disable-click": false
     },
-    // "sway/workspaces": {
-    //     "format": "{index} - {name}",
-    //     "format-for-negative-index": "{name}"
-    // },
     "sway/workspaces": {
         "on-click": "activate",
         "active-only": false,
@@ -61,7 +57,16 @@
             "default": "",
             "persistent": "",
             "urgent": "",
-            "focused": "󰹑"
+            "focused": "󰹑",
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         },
         "persistent-workspaces": {
             "1": [
@@ -126,10 +131,14 @@
             "empty": "",
             "visible": "󰹑 ",
             "urgent": " ",
+            "magic": "󱡄 ",
             "S-term": " ",
-            "S-mon": "⚙ ",
-            "S-files": " ",
-            "S-vol": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
             "S-moosic": "󰝚 "
         },
         "disable-click": false,
@@ -208,10 +217,14 @@
         "show-special": true,
         "special-visible-only": false,
         "format-icons": {
-            "S-term": "  ",
-            "S-mon": "⚙ ",
-            "S-files": " ",
-            "S-vol": " ",
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
             "S-moosic": "󰝚 "
         }
     },
@@ -245,10 +258,14 @@
             "empty": "",
             "visible": "󰹑",
             "urgent": "",
+            "magic": "󱡄 ",
             "S-term": " ",
-            "S-mon": "⚙",
-            "S-files": " ",
-            "S-vol": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
             "S-moosic": "󰝚 "
         }
     },
@@ -288,11 +305,15 @@
             "8": "😻",
             "9": "😺",
             "urgent": "",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#moony": {
@@ -331,12 +352,15 @@
             "8": "🌔",
             "9": "🌕",
             "active": "🌏",
-            "special": "😍",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#roman": {
@@ -374,11 +398,15 @@
             "7": "VII",
             "8": "VIII",
             "9": "IX",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#pacman": {
@@ -411,12 +439,15 @@
             "visible": "󰮯",
             "persistent": "󰊠",
             "default": "󱎓",
-            //"special": "😍",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#symbols": {
@@ -453,11 +484,15 @@
             "7": "",
             "8": "",
             "9": "",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#music": {
@@ -496,11 +531,15 @@
             "7": "󰝱",
             "8": "󰽩",
             "9": "󰝚",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/workspaces#numberblocks": {
@@ -538,11 +577,15 @@
             "7": "󰎶",
             "8": "󰎹",
             "9": "󰎼",
-            "S-term": "( )",
-            "S-mon": "(⚙)",
-            "S-files": "( )",
-            "S-vol": "( )",
-            "S-moosic": "(󰝚 )"
+            "magic": "󱡄 ",
+            "S-term": " ",
+            "S-monitor": " ",
+            "S-files": " ",
+            "S-audio": " ",
+            "S-bluet": "󰂯 ",
+            "S-vial": " ",
+            "S-notes": " ",
+            "S-moosic": "󰝚 "
         }
     },
     "hyprland/submap": {
@@ -584,7 +627,7 @@
         "offscreen-css": true,
         "offscreen-css-text": "(inactive)",
         "icon": true,
-        "icon-size": 12
+        "icon-size": 11
     },
     "hyprland/window": {
         "rewrite": {
@@ -877,10 +920,10 @@
             "chromium": " ",
             "firefox": " ",
             "brave": "󰯰",
-            "qutebrowser": "",
+            "qutebrowser": " ",
             "vlc": "󰕼 ",
             "kdeconnect": " ",
-            "Zen Browser": "󰚀 ",
+            "Zen Browser": "󰟞 ",
             "youtube": " "
         },
         "status-icons": {
@@ -927,8 +970,9 @@
         "spacing": 6
     },
     "wlr/taskbar": {
-        "format": "{icon}{short_state}",
-        "icon-size": 11,
+        // "format": "{icon}{short_state}",
+        "format": "{icon}",
+        // "icon-size": 11,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
@@ -947,6 +991,7 @@
     },
     "user": {
         "format": " {user}(up {work_d} days ↑) ",
+        "tooltip": "true",
         "tooltip-format": "{user}(up {work_d} days ↑)",
         "interval": 60,
         "height": 12,
