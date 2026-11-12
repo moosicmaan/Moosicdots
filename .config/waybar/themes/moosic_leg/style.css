@@ -36,8 +36,8 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #taskbar {
-  margin: 0px 5px 0px 5px;
-  padding: 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px;
   font-weight: normal;
   font-style: normal;
   opacity: 0.8;
@@ -46,7 +46,7 @@ window#waybar {
 #taskbar button {
   margin: 0;
   border-radius: 15px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 0px 0px 6px;
 }
 
 #taskbar button:hover {
@@ -134,6 +134,10 @@ window#waybar {
   padding: 0px 12px 0px 8px;
 }
 
+#custom-launcher.button {
+padding: 0px 20px;
+}
+
 #custom-power {
   color: #ffffff;
   margin-right: 0px;
@@ -161,12 +165,12 @@ window#waybar {
 }
 
 #custom-chatgpt {
-  background-image: url("../../assets/ai-icon-20.png");
-  background-repeat: no-repeat;
+  /* background-image: url("../../assets/ai-icon-20.png"); */
+  /* background-repeat: no-repeat; */
   background-position: center;
-  padding-right: 0px;
-  padding-left: 15px;
-  margin: 0px 3px 0px 15px;
+  padding-right: 8px;
+  padding-left: 8px;
+  /* margin: 0px 3px 0px 8px; */
 }
 
 #pulseaudio {
@@ -176,10 +180,6 @@ window#waybar {
   border-style: solid;
   border-radius: 15px;
   padding: 0px 12px 0px 12px;
-}
-
-#wlr-taskbar {
-  padding: 0px 0px 0px 0px;
 }
 
 #clock {
@@ -218,7 +218,7 @@ window#waybar {
 }
 
 #temperature.critical {
-  color: #bf616a;
+  color: #ff0000;
 }
 
 #tray {
@@ -226,10 +226,14 @@ window#waybar {
   padding: 0px 8px 0px 8px;
 }
 
-#custom-righty,
 #custom-lefty {
   font-size: 13px;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 1px 0px 12px;
+}
+
+#custom-righty {
+  font-size: 13px;
+  padding: 0px 12px 0px 1px;
 }
 
 #user {

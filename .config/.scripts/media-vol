@@ -102,7 +102,7 @@ dec_mic_volume() {
 toggle_mute() {
     if [ "$(pamixer --get-mute)" == "false" ]; then
         pamixer -m && notify-send -e -u normal -i \
-            "$icon_dir/audio-volume-muted-symbolic.svg" "Volume Switched OFF"
+            "$icon_dir/audio-volume-muted-symbolic.svg" "Volume MUTED"
     elif [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify-send -e -u normal -i "$(get_icon)" \
             "Volume Switched ON" "$(get_volume)%"

@@ -94,7 +94,7 @@ hl.window_rule({
 	fullscreen = false,
 	xray = true,
 	suppress_event = "activatefocus",
-	border_size = 10,
+	border_size = 0,
 })
 local streaming_titles = ".*Watch.*|.*Picture%-in%-Picture.*|.*Tubi.*|.*Prime Video.*|"
 	.. ".*amazon%.com.*|.*Crackle.*|.*Pluto.*|.*Freevie.*|.*Netflix.*|"
@@ -135,7 +135,7 @@ hl.window_rule({
 	name = "steam_full",
 	match = { class = "steam_app_0" },
 	fullscreen = true,
-	border_size = 0,
+	-- border_size = 0,
 })
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.

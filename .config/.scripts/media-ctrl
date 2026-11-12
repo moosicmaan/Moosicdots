@@ -43,7 +43,7 @@ stop_playback() {
     music_icon="$music_dir/media-playback-stop-symbolic.svg"
     playerctl stop
     sleep 1
-    notify-send -e -u low -i "$music_icon" "Playback Stopped" "$player_name"
+    notify-send -e -u low -i "$music_icon" "Playback Stopped:" "$player_name"
     echo -n 'q' >.config/pianobar/ctl
 }
 
@@ -61,7 +61,9 @@ show_music_notification() {
         music_icon="$music_dir/media-playback-start-symbolic.svg"
         if [[ "$player" == "MPV" ]]; then
             echo "Testing: this is an mpv player"
-            music_icon="/tmp/mpv-cover-art.jpg"
+            if [[ -f "/tmp/mpv-cover-art.jpg" ]]; then
+                music_icon="/tmp/mpv-cover-art.jpg"
+            fi
             # if [[ "$1" != "i" ]]; then
             # notify-send -e -u low -i "$music_icon" "MPV PLAYER without i(info requested) flag"
             # exit 1
@@ -71,15 +73,13 @@ show_music_notification() {
         song_artist=$(playerctl metadata artist)
         song_pos=$(playerctl metadata \
             --format "$player\n"'{{duration(position)}} | {{duration(mpris:length)}}')
-        # --format '{{uc(playerName)}} - {{duration(position)}} | {{duration(mpris:length)}}')
         notify-send -e -u normal -i "$music_icon" \
             "Now Playing:" "$song_title ($song_artist)\non $song_pos"
     elif [[ "$status" == "Paused" ]]; then
         music_icon="$music_dir/media-playback-pause-symbolic.svg"
-        # player_name=$(playerctl metadata --format '{{uc(playerName)}}')
         player_name=$(playerctl metadata --format "$player")
         notify-send -e -u normal -i "$music_icon" \
-            "Playback Paused" "$player_name"
+            "Playback Paused:" "$player_name"
     fi
 }
 

@@ -38,13 +38,13 @@ echo "psonc=$psong"
 
 # Check for empty URL
 if [[ -z "$psong" ]]; then
-    notify-send -i "$idir/face-surprise-symbolic.svg" "Must be playing in elisa, vlc, or mpd from disk" "Cannot add to playlist."
+    notify-send -i "$idir/face-surprise-symbolic.svg" "Error:" "Player not found.\nMust be playing in elisa, vlc, or mpd from disk\nCannot add to playlist."
     exit 1
 fi
 
 # Check that the URL starts with 'file://'
 if [[ "$psong" != file://* ]]; then
-    notify-send -i "$idir/face-sad-symbolic.svg" "Not a local file!" "Current track is from the internet or an unsupported source."
+    notify-send -i "$idir/face-sad-symbolic.svg" "Error:" "Not a local file!\nCurrent track is from the internet or an unsupported source."
     exit 1
 fi
 
@@ -53,7 +53,7 @@ psong=${psong#file://}
 
 # Check if the local file actually exists
 if [[ ! -f "$psong" ]]; then
-    notify-send -i "$idir/face-embarrassed-symbolic.svg" "File not found!" "Local file could not be accessed: $psong"
+    notify-send -i "$idir/face-embarrassed-symbolic.svg" "Error:" "File not found!\nLocal file could not be accessed:\n$psong"
     exit 1
 fi
 
@@ -77,21 +77,21 @@ case "$schoice" in
     newname=$(rofi -dmenu -config "$rofi_c" -p "Enter new playlist name:")
     if [[ -n "$newname" ]]; then
         mkdir -p "$playlsts/$newname"
-        notify-send -i "$idir/face-smile-symbolic.svg" "Playlist created" "$newname"
+        notify-send -i "$idir/face-smile-symbolic.svg" "Playlist created:" "$newname"
     fi
     ;;
 "🗑️ Delete Playlist")
     todel=$(find "$playlsts" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | rofi -dmenu -config "$rofi_c" -p "Delete which playlist?")
     if [[ -n "$todel" ]]; then
         rm -rf "${playlsts:?}/${todel:?}"
-        notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted" "$todel"
+        notify-send -i "$idir/face-devilish-symbolic.svg" "Playlist deleted:" "$todel"
     fi
     ;;
 "✖️ Delete Song from Playlist")
     mv "$psong" "$deleteFile/$nsong"
-    /home/moosicmaan/.config/.scripts/media-ctrl --nxt
     sleep 1
-    notify-send -i /usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes/face-crying-symbolic.svg "$psong" "Moved to $deleteFile"
+    notify-send -i /usr/share/icons/Tela-circle-dracula-dark/symbolic/emotes/face-crying-symbolic.svg "$nsong" "Moved to the trash -->\n$deleteFile"
+    /home/moosicmaan/.config/.scripts/media-ctrl --nxt
     ;;
 "")
     # user hit Escape
@@ -102,6 +102,6 @@ case "$schoice" in
     # create symlink
     ln -s "$psong" "$playlsts/$schoice/"
     # ln -s "$psong" "$playlsts/favorites/"
-    notify-send -i "$idir/emote-love-symbolic.svg" "Adding \"$nsong\" to:" "$schoice"
+    notify-send -i "$idir/emote-love-symbolic.svg" "Song added:" "\"$nsong\" added to\n $schoice"
     ;;
 esac

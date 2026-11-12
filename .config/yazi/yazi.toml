@@ -16,7 +16,7 @@ show_hidden = true
 show_symlink = true
 scrolloff = 5
 mouse_events = ["click", "scroll", "drag"]
-title_format = "Yazi: {cwd}"
+# title_format = "Yazi: {cwd}"
 
 [preview]
 wrap = "no"
@@ -32,27 +32,27 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 yazi-setwall = [
-    { run = '/home/moosicmaan/.config/.scripts/yazi-setwall "$@"', desc = "Set wallpaper", for = "linux" },
-    { run = 'awww img "$@"', desc = "Set wallpaper", for = "macos" },
+    { run = '/home/moosicmaan/.config/.scripts/yazi-setwall "%s"', desc = "Set wallpaper", for = "linux" },
+    { run = 'awww img "%s"', desc = "Set wallpaper", for = "macos" },
     { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 edit = [
-    { run = '${EDITOR:-nvim} "$@"', desc = "nvim", block = true, for = "unix" },
-    { run = '${EDITOR:-vim} "$@"', desc = "vim", block = true, for = "unix" },
-    { run = '${EDITOR:-kate} "$@"', desc = "kate", block = true, for = "unix" },
-    { run = '${EDITOR:-okular} "$@"', desc = "okular", block = true, for = "unix" },
+    { run = '${EDITOR:-nvim} "%s"', desc = "nvim", block = true, for = "unix" },
+    { run = '${EDITOR:-vim} "%s"', desc = "vim", block = true, for = "unix" },
+    { run = '${EDITOR:-kate} "%s"', desc = "kate", block = true, for = "unix" },
+    { run = '${EDITOR:-okular} "%s"', desc = "okular", block = true, for = "unix" },
     { run = 'code %*', orphan = true, desc = "code", for = "windows" },
     { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
 pics = [
-    { run = 'gimp "$@"', desc = "gimp", block = true, for = "unix" },
-    { run = 'org.kde.gwenview "$@"', desc = "gwenview", block = true, for = "unix" },
+    { run = 'gimp "%s"', desc = "gimp", block = true, for = "unix" },
+    { run = 'org.kde.gwenview "%s"', desc = "gwenview", block = true, for = "unix" },
     { run = 'code %*', orphan = true, desc = "code", for = "windows" },
     { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
 play = [
-    { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-    { run = 'vlc "$@"', orphan = true, for = "unix" },
+    { run = 'mpv --force-window "%s"', orphan = true, for = "unix" },
+    { run = 'vlc "%s"', orphan = true, for = "unix" },
     { run = 'mpv --force-window %*', orphan = true, for = "windows" },
     { run = "open %s", desc = "Play", for = "macos" },
     { run = 'start "" %s1', orphan = true, desc = "Play", for = "windows" },

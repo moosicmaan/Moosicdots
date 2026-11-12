@@ -106,7 +106,7 @@ if [ "$1" == "init" ]; then
     echo ":: Init"
 else
     sleep 1
-    notify-send --icon=preferences "Colors and Wallpaper updated" "with image $newwall"
+    notify-send --icon=preferences "Colors and Wallpaper" "Updated with image\n$newwall"
 fi
 
 echo "DONE"
