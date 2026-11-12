@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Script for logging out of a wayland compositor
+#     Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+case "${XDG_CURRENT_DESKTOP:-}" in
+Hyprland) hyprctl dispatch exit ;;
+sway) swaymsg exit ;;
+*)
+    echo "No logout command configured for this desktop" >&2
+    exit 1
+    ;;
+esac

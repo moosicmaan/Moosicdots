@@ -1,6 +1,6 @@
 {
    "label" : "lock",
-   "action" : "sleep 1; pkill hyprlock; hyprlock",
+   "action" : "sleep 1; pkill hyprlock; hyprlock -c /home/moosicmaan/.config/hypr/C/options/hyprlock.conf",
    "text" : "Lock",
    "keybind" : "l"
 }
@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "killall -9 -u $USER",
+    "action" : "loginctl terminate-session $XDG_SESSION_ID",
     "text" : "Exit",
     "keybind" : "e"
 }
