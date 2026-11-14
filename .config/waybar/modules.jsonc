@@ -770,6 +770,12 @@
         "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'",
         "interval": 5
     },
+    "custom/musicprogress": {
+        "format": "{text}",
+        "hide-empty-text": true,
+        "exec": "echo $($HOME/.config/.scripts/music-progress)",
+        "interval": 5
+    },
     "custom/updates": {
         "format": "{} {icon}",
         "return-type": "json",
@@ -903,10 +909,10 @@
         ]
     },
     "mpris": {
-        "format": "{player_icon}{dynamic}",
+        "format": "{player_icon}{artist} <i>\"{title}\"</i> from {album}",
         "format-paused": "{status_icon}<i>{dynamic}</i>",
         "max-length": 150,
-        "interval": 10,
+        // "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
         "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
         "on-click": "$HOME/.config/.scripts/media-ctrl --prv",
@@ -1753,6 +1759,7 @@
         "orientation": "horizontal",
         "modules": [
             "mpris",
+            "custom/musicprogress",
             // "cava",
             "pulseaudio"
         ]

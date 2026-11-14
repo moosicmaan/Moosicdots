@@ -51,6 +51,9 @@ stop_playback() {
 show_music_notification() {
     status=$(playerctl status)
     player=$(playerctl -l | head -n 1)
+    curr_file=$(realpath "$(playerctl metadata --format '{{ xesam:url }}' |
+        sed 's|^file://||' | sed 's/%20/ /g')")
+    curr_dir=$(dirname "$curr_file")
     case $player in
     *"spotube"*) player="Spotube" ;;
     *"mpv"*) player="MPV" ;;
@@ -58,23 +61,22 @@ show_music_notification() {
     *) echo "player not reconized" ;;
     esac
     if [[ "$status" == "Playing" ]]; then
-        music_icon="$music_dir/media-playback-start-symbolic.svg"
-        if [[ "$player" == "MPV" ]]; then
-            echo "Testing: this is an mpv player"
-            if [[ -f "/tmp/mpv-cover-art.jpg" ]]; then
-                music_icon="/tmp/mpv-cover-art.jpg"
-            fi
-            # if [[ "$1" != "i" ]]; then
-            # notify-send -e -u low -i "$music_icon" "MPV PLAYER without i(info requested) flag"
-            # exit 1
-            # fi
-        fi
         song_title=$(playerctl metadata title)
         song_artist=$(playerctl metadata artist)
         song_pos=$(playerctl metadata \
-            --format "$player\n"'{{duration(position)}} | {{duration(mpris:length)}}')
+            --format "$player"' [{{duration(position)}} / {{duration(mpris:length)}}]')
+        music_icon="$music_dir/media-playback-start-symbolic.svg"
+        if [[ "$player" == "MPV" ]]; then
+            if [[ -f "/tmp/mpv-cover-art.jpg" ]]; then
+                music_icon="/tmp/mpv-cover-art.jpg"
+            elif [[ -f "$curr_dir/Folder.jpg" ]]; then
+                music_icon="$curr_dir/Folder.jpg"
+            elif [[ -f "$curr_dir/album.jpg" ]]; then
+                music_icon="$curr_dir/album.jpg"
+            fi
+        fi
         notify-send -e -u normal -i "$music_icon" \
-            "Now Playing:" "$song_title ($song_artist)\non $song_pos"
+            "Now Playing:" "$song_title\nby $song_artist\non $song_pos"
     elif [[ "$status" == "Paused" ]]; then
         music_icon="$music_dir/media-playback-pause-symbolic.svg"
         player_name=$(playerctl metadata --format "$player")

@@ -194,7 +194,6 @@ tooltip label {
 #custom-calculator,
 #custom-cliphist,
 #custom-wallpaper,
-#custom-system,
 #custom-waybarthemes,
 #custom-system {
   font-weight: bold;
@@ -263,7 +262,7 @@ tooltip label {
   font-weight: bold;
   padding: 0px 4px 0px 4px;
 }
-#mpris,
+/* #mpris, */
 #submap,
 #currents {
   opacity: 1;
@@ -275,7 +274,7 @@ tooltip label {
 }
 #submap,
 #mpris {
-  padding: 0px 9px 0px 9px;
+  padding: 0px 0px 0px 9px;
 }
 #currents :hover {
   color: @tooltiptext;
@@ -381,7 +380,7 @@ tooltip label {
  * -----------------------------------------------------
  */
 #tray {
-  padding: 0px 4px 0px 4px;
+  padding: 0px 8px 0px 8px;
   color: @iconcolor;
   /* background-color: @workspacesbackground2; */
   background-color: alpha (@workspacesbackground2, 0.6);
@@ -400,6 +399,9 @@ tooltip label {
 }
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
+}
+#tray button {
+  padding: 0px 8px;
 }
 
 /* -----------------------------------------------------
@@ -426,6 +428,10 @@ tooltip label {
   */
   color: @textcolor3;
   opacity: 0.8;
+}
+#custom-musicprogress {
+  font-size: 8px;
+  padding: 0px 4px;
 }
 #audios :hover {
   color: @tooltiptext;
@@ -478,6 +484,7 @@ tooltip label {
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
   padding: 0px 10px 0px 10px;
+  margin: 0px 0px 0px 4px;
 }
 #custom-exit:hover {
   color: @tooltiptext;

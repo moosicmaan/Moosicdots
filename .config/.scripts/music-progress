@@ -4,6 +4,10 @@ player="mpv,vlc,elisa,firefox,spotube"
 
 status=$(playerctl -p "$player" status 2>/dev/null)
 
+if [[ "$status" == "" ]]; then
+    exit
+fi
+
 if [[ "$status" != "Playing" ]]; then
     echo "[ -------------------- ] Paused"
     exit

@@ -9,6 +9,7 @@
 cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
 pic_folder="$HOME/Pictures/Backgrounds"
+notify_icon="/usr/share/icons/Tela-circle-dracula-dark/symbolic/apps/preferences-desktop-wallpaper-symbolic.svg"
 
 # Create cache file if none exists
 if [ ! -f "$cache_file" ]; then
@@ -86,13 +87,6 @@ awww img "$wallpaper" \
     --transition-type=$transition_type
 # --transition-pos "$(hyprctl cursorpos)"
 
-# awww img "$wallpaper"
-# --transition-bezier .43,1.19,1,.4 \
-# --transition-fps=60 \
-# --transition-type=$transition_type \
-# --transition-duration=0.7 \
-# --transition-pos "$(hyprctl cursorpos)"o
-
 # -----------------------------------------------------
 # Reload waybar with new colors
 # -----------------------------------------------------
@@ -102,11 +96,11 @@ awww img "$wallpaper" \
 # Send notification
 # -----------------------------------------------------
 
-if [ "$1" == "init" ]; then
+if [ "$1" == "--init" ]; then
     echo ":: Init"
 else
     sleep 1
-    notify-send --icon=preferences "Colors and Wallpaper" "Updated with image\n$newwall"
+    notify-send --icon=$notify_icon "Colors and Wallpaper" "Updated with image\n$newwall"
 fi
 
 echo "DONE"

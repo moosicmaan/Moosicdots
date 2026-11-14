@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    font = "OpenDyslexicAlt Nerd Font Propo" 12
+    font = "MesloLGSDZ Nerd Font Propo" 11
     width = 450
     height = (0,700)
     origin = top-right
@@ -19,7 +19,7 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    text_icon_padding = 0
+    text_icon_padding = 18
     frame_width = 2
     gap_size = 0
     sort = yes
@@ -27,7 +27,7 @@
     markup = full
     format = "<b><big>%s</big></b>\n%b"
     alignment = left
-    vertical_alignment = center
+    vertical_alignment = top
     show_age_threshold = 60
     ellipsize = middle
     ignore_newline = no

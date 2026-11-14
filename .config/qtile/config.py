@@ -1203,24 +1203,24 @@ def init_widgets_list_2():
 # -----------------------------------------------------------------
 def init_screens():
     return [
-        Screen(
-            top=bar.Bar(
-                # widgets=init_widgets_screen1(),
-                widgets=init_widgets_list(),
-                size=16,
-                opacity=1.0,
-                margin=[4, 0, 0, 0],
-            ),
-        ),
-        Screen(
-            bottom=bar.Bar(
-                # widgets=init_widgets_screen2(),
-                widgets=init_widgets_list_2(),
-                size=16,
-                opacity=1.0,
-                margin=[0, 0, 4, 0],
-            ),
-        ),
+        # Screen(
+        #     top=bar.Bar(
+        #         # widgets=init_widgets_screen1(),
+        #         widgets=init_widgets_list(),
+        #         size=16,
+        #         opacity=1.0,
+        #         margin=[4, 0, 0, 0],
+        #     ),
+        # ),
+        # Screen(
+        #     bottom=bar.Bar(
+        #         # widgets=init_widgets_screen2(),
+        #         widgets=init_widgets_list_2(),
+        #         size=16,
+        #         opacity=1.0,
+        #         margin=[0, 0, 4, 0],
+        #     ),
+        # ),
     ]
 
 
