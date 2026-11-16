@@ -35,7 +35,7 @@ if ! hyprctl binds -j | jq '
         .modmask |= (
             tostring as $m |
             ({
-                "0":  "-",
+                "0":  "",
                 "1":  "S",
                 "4":  "C",
                 "5":  "C-S",
@@ -115,7 +115,7 @@ rows_output=$(jq -r '
             kind: $kind,
             dispatcher: $dispatcher,
             arg: (if $arg == "" then "-" else $arg end),
-            label: "\($mods):\($key)   \($display)"
+            label: "\($mods) \($key)    \($display)"
           }
 
         | select(

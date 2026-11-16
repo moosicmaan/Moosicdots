@@ -27,13 +27,15 @@ log() {
 
 cleanup() {
     # log "Backup ended"
-    echo "-----------------------------------------------------------" | tee -a "$logfile"
+    echo "-----------------------------------------------------------" |
+        tee -a "$logfile"
     echo "" | tee -a "$logfile"
     rm -f "$lockfile"
 }
 trap cleanup EXIT
 
-echo "===========================================================" | tee -a "$logfile"
+echo "===========================================================" |
+    tee -a "$logfile"
 log "Backup started"
 
 # ---- Verify destination is mounted ----
@@ -43,9 +45,11 @@ if ! mountpoint -q /mnt/backup; then
 fi
 
 # ---- Run rsync ----
-if rsync -av --delete --exclude-from="$excludefile" --delete-excluded "$src" "$dest" 2>&1 |
+if rsync -av --delete --exclude-from="$excludefile" \
+    --delete-excluded "$src" "$dest" 2>&1 |
     # if rsync -av --delete --exclude-from="$excludefile" "$src" "$dest" 2>&1 |
-    grep -Ev '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian' |
+    grep -Ev \
+        '\.thunderbird|\.zen|BraveSoftware|\.git|[Cc]ache|[Oo]bsidian|\.mozilla' |
     tee -a "$logfile"; then
     log "Backup completed successfully"
 else

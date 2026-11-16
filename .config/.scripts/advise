@@ -7,6 +7,6 @@
 #    Jason Bradberry (2026)
 # -----------------------------------------------------
 # =====================================================
-BEGIN { print "\nDon't Panic!\n\tDon't forget your towel.\n\t47" }
+BEGIN { print "\nDon't Panic!\nDon't forget your towel.\n...47" }
 
 

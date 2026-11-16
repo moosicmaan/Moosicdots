@@ -22,7 +22,8 @@ sleep 0.2
 # Get current theme information from .cache/themestyle
 # -----------------------------------------------------
 if [ ! -f "$themecache" ]; then
-    echo -e "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
+    echo -e \
+        "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
     touch "$themecache"
     echo "$defaulttheme" >"$themecache"
 fi
@@ -37,10 +38,19 @@ case "$DESKTOP_SESSION" in
 sway | sway:wlroots | /usr/share/wayland-sessions/sway.desktop)
     cdesk="sway"
     ;;
-hypr | hyprland | Hyprland | hyprland-uwsm | /usr/share/wayland-sessions/hyprland.desktop | /usr/share/wayland-sessions/hyprland-uwsm.desktop)
+hypr | \
+    hyprland | \
+    Hyprland | \
+    hyprland-uwsm | \
+    /usr/share/wayland-sessions/hyprland.desktop | \
+    /usr/share/wayland-sessions/hyprland-uwsm.desktop)
     cdesk="hypr"
     ;;
-dwl | mango | mangowm | /usr/share/wayland-sessions/mango.desktop | mango:wlroots)
+dwl | \
+    mango | \
+    mangowm | \
+    /usr/share/wayland-sessions/mango.desktop | \
+    mango:wlroots)
     cdesk="dwl"
     ;;
 niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
@@ -67,4 +77,7 @@ style_file="style.css"
 echo "Starting Waybar..."
 echo "Config: $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file"
 echo "Style: $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file"
-eval "${prefix}waybar -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" >/dev/null 2>&1 &
+eval "${prefix}waybar \
+    -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file \
+    -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" \
+    >/dev/null 2>&1 &

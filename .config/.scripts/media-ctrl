@@ -19,7 +19,10 @@ play_next() {
     playerctl next
     sleep 1
     show_music_notification
-    echo -n 'n' >.config/pianobar/ctl
+    if pidof pianobar; then
+        echo "Program is running"
+        echo -n 'n' >.config/pianobar/ctl &
+    fi
 }
 
 # Play the previous track
@@ -34,7 +37,10 @@ toggle_play_pause() {
     playerctl play-pause
     sleep 1
     show_music_notification
-    echo -n 'p' >.config/pianobar/ctl
+    if pidof pianobar; then
+        echo "Program is running"
+        echo -n 'p' >.config/pianobar/ctl &
+    fi
 }
 
 # Stop playback
@@ -44,7 +50,10 @@ stop_playback() {
     playerctl stop
     sleep 1
     notify-send -e -u low -i "$music_icon" "Playback Stopped:" "$player_name"
-    echo -n 'q' >.config/pianobar/ctl
+    if pidof pianobar; then
+        echo "Program is running"
+        echo -n 'q' >.config/pianobar/ctl &
+    fi
 }
 
 # Display notification with song information

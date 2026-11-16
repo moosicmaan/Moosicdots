@@ -215,7 +215,7 @@ alias types='~/.config/.scripts/ut-filetypes'
 alias lt='~/.config/.scripts/ut-filetypes'
 # get the return codes for all parts of a pipe operation
 alias pipes='echo "${PIPESTATUS[*]}"'
-
+# open the network manager with the correct colortheme
 alias nmtui='NEWT_COLORS_FILE="$HOME/.config/nmtui/palette" nmtui'
 # -----------------------------------------------------
 # Functions
@@ -265,7 +265,8 @@ cpp() {
 }
 
 # Changing the font if in TTY session
-my_font=ter-u22b.psf.gz
+# my_font=ter-u22b.psf.gz
+my_font=LatGrkCyr-12x22.psfu.gz
 font_directory=/usr/share/kbd/consolefonts
 if [[ $DISPLAY == "" ]]; then
     setfont $font_directory/$my_font

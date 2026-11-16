@@ -1,6 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
-	modes:                "drun,run,filebrowser,window";
+  modes:                  "drun,run,filebrowser,window";
+  markup-rows:            true;
   show-icons:             true;
   icon-theme:             "Tela-circle-dracula-dark";
   run,drun {

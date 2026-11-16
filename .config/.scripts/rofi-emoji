@@ -9,7 +9,7 @@
 # =====================================================
 
 sed '1,/^# # DATA # #$/d' "$0" | \
-rofi -i -dmenu -config ~/.config/rofi/config.rasi | \
+rofi -i -dmenu -config ~/.config/rofi/config-wide.rasi | \
 awk -F'\t' '{print $1}' | \
 tr -d '\n' | \
 wl-copy
@@ -4522,7 +4522,7 @@ exit
 ♾️	Symbols	math		
 ♾	Symbols	math		forever | infinity | unbounded | universal | eternal | unbound
 ‼️	Symbols	punctuation	exclamation mark	
-‼	Symbols	punctuation	exclamation mark	! | ! | bangbang | double exclamation mark | exclamation | mark | punctuation
+‼	Symbols	punctuation	exclamation mark	!  | !!  | bangbang | double exclamation mark | exclamation | mark | punctuation
 ⁉️	Symbols	punctuation	question mark	
 ⁉	Symbols	punctuation	question mark	! | !? | ? | exclamation | interrobang | mark | punctuation | question | exclamation question mark
 ❓	Symbols	punctuation	question mark	? | mark | punctuation | question | red question mark

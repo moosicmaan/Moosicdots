@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Select a colortheme through rofi and apply it
+# Currently using pywal16
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+THEME_DIR="/usr/lib/python3.14/site-packages/pywal/colorschemes"
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+    echo "Wayland session"
+    rofi_c="$HOME/.config/rofi/config-wide.rasi"
+else
+    echo "X11 session"
+    rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+fi
+
+# Build the Rofi entries from the installed theme files.
+declare -A themes=()
+declare -a choices=()
+
+while IFS= read -r file; do
+    theme="${file##*/}"
+    theme="${theme%.json}"
+
+    # Extract the 16 colors and build Pango markup.
+    preview=$(
+        python -c '
+import json, sys
+
+with open(sys.argv[1]) as f:
+    data = json.load(f)
+
+colors = data["colors"]
+
+swatches = "".join(
+    "<span foreground=\"{}\">██</span>".format(
+        colors["color{}".format(i)]
+    )
+    for i in range(16)
+)
+
+print(swatches)
+' "$file"
+    )
+
+    # Store the markup separately from the selectable theme name.
+    themes["$theme"]="$preview"
+    choices+=("$theme")
+done < <(find "$THEME_DIR/dark" "$THEME_DIR/light" \
+    -maxdepth 1 -type f -name '*.json' | sort)
+
+# Generate tab-separated menu entries.
+menu=$(
+    for theme in "${choices[@]}"; do
+        printf '%s        \t%s\n' "$theme" "${themes[$theme]}"
+    done
+)
+
+# Search with Rofi.
+choice=$(
+    printf '%s\n' "$menu" |
+        rofi -dmenu \
+            -i \
+            -no-custom \
+            -markup-rows \
+            -display-columns 1,2 \
+            -display-column-separator '\t' \
+            -config "$rofi_c" \
+            -p "Search:" |
+        awk '{print $1}'
+)
+
+# User exited
+[[ -z "$choice" ]] && exit 0
+
+# Apply the selected theme.
+wal --theme "$choice"
+
+# Send a confirmation notification.
+notify-send -i "color-profile-symbolic" \
+    "Colortheme set to:" "$choice"

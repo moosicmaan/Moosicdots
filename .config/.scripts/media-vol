@@ -35,9 +35,9 @@ get_icon() {
     current=$(get_volume)
     if [[ "$current" == "Muted" ]]; then
         echo "$icon_dir/audio-volume-muted-symbolic.svg"
-    elif [[ "$current" -le 33 ]]; then
+    elif [[ "$current" -le 25 ]]; then
         echo "$icon_dir/audio-volume-low-symbolic.svg"
-    elif [[ "$current" -le 66 ]]; then
+    elif [[ "$current" -le 75 ]]; then
         echo "$icon_dir/audio-volume-medium-symbolic.svg"
     elif [[ "$current" -le 100 ]]; then
         echo "$icon_dir/audio-volume-high-symbolic.svg"
@@ -51,11 +51,11 @@ get_mic_icon() {
     current=$(get_mic_volume)
     if [[ "$current" == "Muted" ]]; then
         echo "$icon_dir/audio-input-microphone-muted-symbolic.svg"
-    elif [[ "$current" -le "33" ]]; then
+    elif [[ "$current" -le 25 ]]; then
         echo "$icon_dir/audio-input-microphone-low-symbolic.svg"
-    elif [[ "$current" -le "66" ]]; then
+    elif [[ "$current" -le 75 ]]; then
         echo "$icon_dir/audio-input-microphone-medium-symbolic.svg"
-    elif [[ "$current" -le "100" ]]; then
+    elif [[ "$current" -le 100 ]]; then
         echo "$icon_dir/audio-input-microphone-high-symbolic.svg"
     else
         echo "$icon_dir/arch-error-symbolic.svg"

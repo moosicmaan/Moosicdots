@@ -10,11 +10,16 @@
 TERMINAL="kitty"
 
 case "$BLOCK_BUTTON" in
-1) notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)" ;;
+1) notify-send "🖥 CPU hogs" \
+    "$(ps axch -o cmd:15,%cpu --sort=-%cpu |
+        head)\\n(100% per core)" ;;
 2) setsid -f "$TERMINAL" -e btop ;;
-3) notify-send "🖥 CPU load module " "\- Shows the average CPU load.
- Click to show intensive processes.
-- Middle click to open btop." ;;
+3)
+    notify-send "🖥 CPU load module " \
+        "Shows the average CPU load. \
+        \rClick to show intensive processes. \
+        \rMiddle click to open btop."
+    ;;
 6) terminal -e "$EDITOR" "$0" ;;
 esac
 

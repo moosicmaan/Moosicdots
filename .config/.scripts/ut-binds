@@ -51,7 +51,7 @@ map_modmask() {
 }
 
 # check that the script is being run from Hyprland, exit if not
-[[ "$DESKTOP_SESSION" == "hyprland" || "$DESKTOP_SESSION" == "hyprland-uwsm" ]] || leave 1
+# [[ "$DESKTOP_SESSION" == "hyprland" || "$DESKTOP_SESSION" == "hyprland-uwsm" ]] || leave 1
 
 # Start with a clean slate and no old files
 if [[ -f "$binds_file" ]]; then

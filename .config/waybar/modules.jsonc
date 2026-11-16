@@ -909,10 +909,10 @@
         ]
     },
     "mpris": {
-        "format": "{player_icon}{artist} <i>\"{title}\"</i> {album}",
+        "format": "{player_icon}{artist} <i>{dynamic}</i>",
         "format-paused": "{status_icon}<i>{dynamic}</i>",
         "max-length": 150,
-        // "interval": 5,
+        "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
         "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
         "on-click": "$HOME/.config/.scripts/media-ctrl --prv",
@@ -931,6 +931,36 @@
             "kdeconnect": " ",
             "Zen Browser": "󰟞 ",
             "youtube": " "
+        },
+        "status-icons": {
+            "paused": "󰐎 ",
+            "playing": " ",
+            "stopped": " "
+        }
+    },
+    "mpris#audios": {
+        "format": "{player_icon}{artist} <i>\"{title}\"</i> {album}",
+        "format-paused": "{status_icon}<i>{dynamic}</i>",
+        "max-length": 125,
+        // "interval": 5,
+        "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
+        "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
+        "on-click": "$HOME/.config/.scripts/media-ctrl --prv",
+        "on-click-middle": "$HOME/.config/.scripts/media-ctrl --pause",
+        "on-click-right": "$HOME/.config/.scripts/media-ctrl --nxt",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "󰐹",
+            "spotube": "󰋋",
+            "spotify": "",
+            "chromium": "",
+            "firefox": "",
+            "brave": "󰯰",
+            "qutebrowser": "",
+            "vlc": "󰕼",
+            "kdeconnect": "",
+            "Zen Browser": "󰟞",
+            "youtube": ""
         },
         "status-icons": {
             "paused": "󰐎 ",
@@ -1758,7 +1788,7 @@
     "group/audios": {
         "orientation": "horizontal",
         "modules": [
-            "mpris",
+            "mpris#audios",
             "custom/musicprogress",
             // "cava",
             "pulseaudio"

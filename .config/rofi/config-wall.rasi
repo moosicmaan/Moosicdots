@@ -1,8 +1,9 @@
 /*****----- Configuration -----*****/
 configuration {
-	modes:                "drun,run,filebrowser,window";
+  modes:                  "drun,run,filebrowser,window";
+  markup-rows:            true;
   show-icons:             true;
-	drun-display-format:  "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+  drun-display-format:    "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
   layer:                  "overlay";
 }
 

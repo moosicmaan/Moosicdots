@@ -19,8 +19,10 @@ declare -a theme_names
 # Read available themes
 # -----------------------------------------------------
 while IFS= read -r theme_dir; do
-    [[ "$theme_dir" == "$themes_path/assets" || "$theme_dir" == "$themes_path" ]] && continue
-    [[ $(find -L "$theme_dir" -maxdepth 1 -type d | wc -l) -ne 1 ]] && continue
+    [[ "$theme_dir" == "$themes_path/assets" ||
+        "$theme_dir" == "$themes_path" ]] && continue
+    [[ $(find -L "$theme_dir" -maxdepth 1 -type d |
+        wc -l) -ne 1 ]] && continue
 
     # Extract relative theme path
     rel_path="${theme_dir#"$themes_path"}" # Remove base path
@@ -30,17 +32,11 @@ while IFS= read -r theme_dir; do
     fi
     formatted_theme="$first_folder;$rel_path"
 
-    # config_path="$theme_dir/config.sh"
     config_path="$theme_dir/name.txt"
 
     if [[ -f "$config_path" ]]; then
         theme_name=$(cat "$config_path")
-        # echo "debug config_path: $config_path"
-        # theme_names+=("$theme_name")
-        # echo "debug theme_name: $theme_name"
-        # source "$config_path"
         theme_names+=("$theme_name")
-        # printf '\nSourcing config for %s - %s' "$config_path" "$formatted_theme"
         printf '\n%s ' "$formatted_theme"
     else
         theme_names+=("$formatted_theme")
