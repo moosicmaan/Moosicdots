@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Select a plwal theme through rofi and apply it
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+    echo "Wayland session"
+    rofi_c="$HOME/.config/rofi/config-wide.rasi"
+else
+    echo "X11 session"
+    rofi_c="$HOME/.config/rofi/launchers/type-1/style-4.rasi"
+fi
+
+declare -a choices=()
+
+## Get the theme choices from pywal and strip the results
+# of leading spaces and dashe
+mapfile -t choices < <(wal --theme |
+    grep -v -e "Dark Themes" -e "Light Themes" \
+        -e "Random" -e "Extra" |
+    sed 's/^ - //')
+
+## Search with rofi
+choice=$(
+    printf '%s\n' "${choices[@]}" |
+        rofi -dmenu \
+            -i \
+            -no-custom \
+            -config "$rofi_c" \
+            -p "Search:"
+)
+
+## User Exited
+[[ -z "$choice" ]] && exit 0
+
+## Apply the theme
+wal --theme "$choice"
+
+## Send a confirmation notification
+notify-send -i "color-profile-symbolic" \
+    "Colortheme set to:" "$choice"

@@ -35,18 +35,18 @@ if ! hyprctl binds -j | jq '
         .modmask |= (
             tostring as $m |
             ({
-                "0":  "",
+                "0":  "-",
                 "1":  "S",
                 "4":  "C",
                 "5":  "C-S",
                 "8":  "A",
                 "12": "C-A",
-                "13": "MEH(C-A-S)",
+                "13": "MEH",
                 "64": "M",
                 "65": "M-S",
                 "68": "M-C",
                 "72": "M-A",
-                "77": "HYPER(S-C-A-S)"
+                "77": "HYPER"
             }[$m] // ("Unknown: " + $m))
         )
     )
@@ -107,7 +107,7 @@ rows_output=$(jq -r '
         | (
             if $description == ""
             then $dispatch_name
-            else "\($description)  [\($dispatch_name)]"
+            else "(\($dispatch_name))-\($description)"
             end
           ) as $display
 
@@ -115,7 +115,7 @@ rows_output=$(jq -r '
             kind: $kind,
             dispatcher: $dispatcher,
             arg: (if $arg == "" then "-" else $arg end),
-            label: "\($mods):\($key)  \($display)"
+            label: "\($mods):\($key)   \($display)"
           }
 
         | select(

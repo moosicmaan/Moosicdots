@@ -10,47 +10,47 @@
 # =====================================================
 # Variables:
 # =====================================================
-include ~/.config/sway/config.d/vars.conf
+include ~/.config/sway/C/vars.conf
 
 # =====================================================
 # Input configuration:
 # =====================================================
-include ~/.config/sway/config.d/inputs.conf
+include ~/.config/sway/C/inputs.conf
 
 # =====================================================
 # Output configuration:
 # =====================================================
-include ~/.config/sway/config.d/outputs.conf
+include ~/.config/sway/C/outputs.conf
 
 # =====================================================
 # Key bindings:
 # =====================================================
-include ~/.config/sway/config.d/binds.conf
+include ~/.config/sway/C/binds.conf
 
 # =====================================================
 # Workspaces:
 # =====================================================
-include ~/.config/sway/config.d/workspaces.conf
+include ~/.config/sway/C/workspaces.conf
 
 # =====================================================
 # Windows:
 # =====================================================
-include ~/.config/sway/config.d/winRules.conf
+include ~/.config/sway/C/winRules.conf
 
 # =====================================================
 # Appearance:
 # =====================================================
-include ~/.config/sway/config.d/theme.conf
-include ~/.config/sway/config.d/winStyle.conf
+include ~/.config/sway/C/theme.conf
+include ~/.config/sway/C/winStyle.conf
 
 # =====================================================
 # Utilities:
 # =====================================================
-include ~/.config/sway/config.d/autostart.conf
-include ~/.config/sway/config.d/bar.conf
+include ~/.config/sway/C/autostart.conf
+include ~/.config/sway/C/bar.conf
 
 # -----------------------------------------------------
 # Libraries/Included:
 # -----------------------------------------------------
-# include ~/.config/sway/config.d/*
+# include ~/.config/sway/C/*
 include /etc/sway/config.d/*

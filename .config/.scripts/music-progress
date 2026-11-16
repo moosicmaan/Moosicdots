@@ -1,8 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-player="mpv,vlc,elisa,firefox,spotube"
+declare -a players=(
+    "mpv"
+    "vlc"
+    "elisa"
+    "firefox"
+    "spotube"
+    "org.spotube"
+)
 
+for p in "${players[@]}"; do
+    if [[ $(playerctl -p "$p" status 2>/dev/null) == "Playing" ]]; then
+        player="$p"
+        break
+    fi
+done
 status=$(playerctl -p "$player" status 2>/dev/null)
+# status=$(playerctl -p "$player" status)
 
 if [[ "$status" == "" ]]; then
     exit
@@ -18,7 +32,8 @@ length=$(playerctl -p "$player" metadata mpris:length 2>/dev/null | cut -d '.' -
 length=$((length / 1000000)) # convert microseconds to seconds
 
 if [[ -z "$pos" || -z "$length" || "$length" -eq 0 ]]; then
-    echo "[ -------------------- ] --:--"
+    # echo "[ -------------------- ] --:--"
+    echo ""
     exit
 fi
 

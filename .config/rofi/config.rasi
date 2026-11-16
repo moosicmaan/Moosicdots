@@ -1,13 +1,17 @@
 /*****----- Configuration -----*****/
 configuration {
-	modes:                  "drun,run,filebrowser,window";
+	modes:                "drun,run,filebrowser,window";
   show-icons:             true;
+  icon-theme:             "Tela-circle-dracula-dark";
+  run,drun {
+    fallback-icon:        "terminal";
+  }
   display-drun:           "";
   display-run:            "";
   display-filebrowser:    "";
   display-window:         "";
-	drun-display-format:    "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	window-format:          "{w}   {c}   {t}";
+  drun-display-format:    "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+  window-format:          "{w}   {c}   {t}";
   layer:                  "overlay";
 }
 
@@ -45,16 +49,18 @@ window {
 mainbox {
     spacing:              25px;
     padding:              40px;
-    children:             [ "inputbar", "message","listview", "mode-switcher" ];
+    children:             [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
-    margin:               0px 200px;
+  margin:                 0px 200px;
   children:               [ "prompt", "entry" ];
 }
 prompt {
   border:                 2px solid;
+  margin:                 0px 2px 0px 0px;
+  padding:                0px 2px 0px 2px;
   border-color:           gray/75%;
 }
 entry {
@@ -96,7 +102,7 @@ element {
 }
 element {
   padding:                0px 0px 0px 4px;
-  children:               [ "element-text", "element-icon" ];
+  children:               [  "element-icon", "element-text" ];
 }
 element alternate.normal,
 element normal.normal {

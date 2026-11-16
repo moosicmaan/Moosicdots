@@ -909,7 +909,7 @@
         ]
     },
     "mpris": {
-        "format": "{player_icon}{artist} <i>\"{title}\"</i> from {album}",
+        "format": "{player_icon}{artist} <i>\"{title}\"</i> {album}",
         "format-paused": "{status_icon}<i>{dynamic}</i>",
         "max-length": 150,
         // "interval": 5,

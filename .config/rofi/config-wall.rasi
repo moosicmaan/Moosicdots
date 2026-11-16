@@ -1,8 +1,8 @@
 /*****----- Configuration -----*****/
 configuration {
-	modes:                  "drun,run,filebrowser,window";
+	modes:                "drun,run,filebrowser,window";
   show-icons:             true;
-	drun-display-format:    "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-display-format:  "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
   layer:                  "overlay";
 }
 
@@ -46,6 +46,8 @@ inputbar {
 }
 prompt {
   border:                 2px solid;
+  margin:                 0px 2px 0px 0px;
+  padding:                0px 2px 0px 2px;
   border-color:           gray/75%;
 }
 entry {

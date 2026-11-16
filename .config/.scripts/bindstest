@@ -1,0 +1,222 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Gather the current keybinds from hyprctl,
+# and open a rofi menu to search/execute them.
+#
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+set -o pipefail
+
+binds_file="$HOME/.config/.settings/hyprbinds.json"
+rofi_config="$HOME/.config/rofi/config-wide.rasi"
+
+# -----------------------------------------------------
+# Check dependencies
+# -----------------------------------------------------
+
+for cmd in hyprctl jq rofi; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "ERROR: Required command '$cmd' not found." >&2
+        exit 1
+    fi
+done
+
+mkdir -p "$(dirname "$binds_file")"
+
+# -----------------------------------------------------
+# Get current bindings and convert modifier masks
+# -----------------------------------------------------
+
+if ! hyprctl binds -j | jq '
+    map(
+        .modmask |= (
+            tostring as $m |
+            ({
+                "0":  "0",
+                "1":  "S",
+                "4":  "C",
+                "5":  "C-S",
+                "8":  "A",
+                "12": "C-A",
+                "13": "MEH",
+                "64": "M",
+                "65": "M-S",
+                "68": "M-C",
+                "72": "M-A",
+                "77": "HYPER"
+            }[$m] // ("Unknown: " + $m))
+        )
+    )
+' >"$binds_file"; then
+    echo "ERROR: Unable to retrieve Hyprland bindings." >&2
+    exit 1
+fi
+
+echo "Updated: $binds_file"
+
+# -----------------------------------------------------
+# Format bindings for Rofi
+#
+# Each entry contains:
+#   1. Binding type (lua or dispatch)
+#   2. Dispatcher
+#   3. Argument / Lua registry ID
+#   4. Display text
+# -----------------------------------------------------
+
+jq -r '
+    [
+        .[]
+        | select((.submap // "") == "")
+        | select((.dispatcher // "") != "submap")
+
+        | (.dispatcher // "" | tostring) as $dispatcher
+        | (.arg // "" | tostring) as $arg
+        | (.description // "" | tostring) as $description
+        | (.modmask // "Unknown" | tostring) as $mods
+
+        | (
+            .key //
+            (if (.keycode // 0) != 0
+                then "keycode:\(.keycode)"
+                else "catchall"
+             end)
+          ) as $key
+
+        | (
+            if ($dispatcher | startswith("HL.Dispatcher("))
+            then (
+                $dispatcher
+                | sub("^HL\\.Dispatcher\\("; "")
+                | sub("\\)$"; "")
+            )
+            else $dispatcher
+            end
+          ) as $dispatch_name
+
+        | (
+            if ($dispatcher | startswith("HL.Dispatcher("))
+            then "lua"
+            else "dispatch"
+            end
+          ) as $kind
+
+        | (
+            if $description == ""
+            then $dispatch_name
+            else "\($description)  [\($dispatch_name)]"
+            end
+          ) as $display
+
+        | {
+            kind: $kind,
+            dispatcher: $dispatcher,
+            arg: (if $arg == "" then "-" else $arg end),
+            label: "\($mods):\($key)  \($display)"
+          }
+
+        | select(
+            if .kind == "lua"
+            then (.arg | test("^[0-9]+$"))
+            else .dispatcher != ""
+            end
+          )
+    ]
+    | sort_by(.label | ascii_downcase)[]
+    | [.kind, .dispatcher, .arg, .label]
+    | @tsv
+' "$binds_file"
+
+if [[ -z "$rows_output" ]]; then
+    echo "No usable keybindings found."
+    exit 0
+fi
+
+# -----------------------------------------------------
+# Build arrays containing the binding information
+# -----------------------------------------------------
+
+declare -a bind_types=()
+declare -a dispatchers=()
+declare -a arguments=()
+declare -a labels=()
+
+while IFS=$'\t' read -r kind dispatcher arg label; do
+    bind_types+=("$kind")
+    dispatchers+=("$dispatcher")
+    arguments+=("$arg")
+    labels+=("$label")
+done <<<"$rows_output"
+
+# -----------------------------------------------------
+# Show Rofi menu and get selection
+# -----------------------------------------------------
+
+selected_index=$(
+    printf '%s\n' "${labels[@]}" |
+        rofi -dmenu \
+            -i \
+            -no-custom \
+            -format i \
+            -config "$rofi_config" \
+            -p "Search:"
+)
+
+# Rofi returns an empty selection when cancelled
+if [[ ! "$selected_index" =~ ^[0-9]+$ ]]; then
+    exit 0
+fi
+
+if ((selected_index >= ${#labels[@]})); then
+    echo "Invalid selection."
+    exit 1
+fi
+
+# -----------------------------------------------------
+# Retrieve selected binding
+# -----------------------------------------------------
+
+kind="${bind_types[$selected_index]}"
+dispatcher="${dispatchers[$selected_index]}"
+arg="${arguments[$selected_index]}"
+
+echo "Selected: ${labels[$selected_index]}"
+echo "Type: $kind"
+echo "Dispatcher: $dispatcher"
+echo "Argument: $arg"
+
+# -----------------------------------------------------
+# Execute selected binding
+# -----------------------------------------------------
+
+case "$kind" in
+
+lua)
+    # Execute the Lua callback registered inside
+    # the running Hyprland compositor.
+
+    echo "Executing Lua callback: $arg"
+
+    hyprctl eval "debug.getregistry()[$arg]()"
+    ;;
+
+dispatch)
+    # Execute a conventional Hyprland dispatcher.
+
+    echo "Executing dispatcher: $dispatcher"
+
+    if [[ "$arg" == "-" ]]; then
+        hyprctl dispatch "$dispatcher"
+    else
+        hyprctl dispatch "$dispatcher" "$arg"
+    fi
+    ;;
+
+*)
+    echo "ERROR: Unknown binding type: $kind" >&2
+    exit 1
+    ;;
+esac

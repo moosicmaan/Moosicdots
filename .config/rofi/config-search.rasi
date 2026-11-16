@@ -1,4 +1,10 @@
 /**
+prompt {
+  border:                 2px solid;
+  margin:                 0px 2px 0px 0px;
+  padding:                0px 2px 0px 2px;
+  border-color:           gray/75%;
+}
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
@@ -11,13 +17,17 @@
 configuration {
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
+    icon-theme:                 "Tela-circle-dracula-dark";
+    run,drun {
+        fallback-icon:          "terminal";
+    }
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w}   {c}   {t}";
-  layer:                      "overlay";
+  layer:                        "overlay";
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */

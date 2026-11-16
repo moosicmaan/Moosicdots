@@ -53,6 +53,7 @@ M.menu_drun = "pkill rofi || rofi -config " .. M.my_config .. "/rofi/config.rasi
 M.menu_win = "pkill rofi || rofi -config " .. M.my_config .. "/rofi/config.rasi -show window"
 M.menu_files = "pkill rofi || rofi -config " .. M.my_config .. "/rofi/config.rasi -show filebrowser"
 M.netwrk = "pkill rofi || networkmanager_dmenu"
+M.walpic = "pkill rofi || " .. M.my_scripts .. "/ut-walsearch"
 
 -- ENVIRONMENT ACTIONS
 M.bartog = "pkill waybar || " .. M.my_scripts .. "/wb-launch"

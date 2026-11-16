@@ -1,13 +1,14 @@
-/* =====================================================
-   -----------------------------------------------------
-   |        D W M  C O N F I G U R A T I O N           |
-   |          .config/dwm/config.def.h                 |
-   |Copy this configuration to config.h to make changes|
-   |       to UI. Temp changes to config.h only.       |
-   |See LICENSE file for copyright and license details.|
-   |          Jason Bradberry, 2024                    |
-   -----------------------------------------------------
-   =====================================================
+/*
+=====================================================
+-----------------------------------------------------
+|        D W M  C O N F I G U R A T I O N           |
+|          .config/dwm/config.def.h                 |
+|Copy this configuration to config.h to make changes|
+|       to UI. Temp changes to config.h only.       |
+|See LICENSE file for copyright and license details.|
+|          Jason Bradberry, 2024                    |
+-----------------------------------------------------
+=====================================================
 */
 
 /**** APPEARANCE ****/
@@ -46,7 +47,7 @@ static const char *colors[][3]      = {
   [SchemeSel]  = { col_4,   col_bg,   col_4 },
 };
 static const unsigned int alphas[][3]      = {
-    /*               fg      bg        border*/
+  /*               fg      bg        border*/
   [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
   [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
@@ -143,35 +144,35 @@ static const char *const autostart[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
-    "-y", "4", 
-    "-x", "4", 
+    "-y", "4",
+    "-x", "4",
     "-z", "1912",
-    "-m", dmenumon, 
+    "-m", dmenumon,
     "-fn", dmenufont,
-    "-nb", col_bg, 
-    "-nf", col_3, 
-    "-sb", col_bg, 
-    "-sf", col_4, 
+    "-nb", col_bg,
+    "-nf", col_3,
+    "-sb", col_bg,
+    "-sf", col_4,
     NULL
 };
-static const char *menu_drun[] = { 
-    "rofi", 
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
-    "-show", "drun", 
-    NULL 
-};
-static const char *menu_win[] = { 
+static const char *menu_drun[] = {
     "rofi",
     "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
-    "-show", "window", 
+    "-show", "drun",
     NULL
 };
-static const char *rofi_power[] = { 
-    "rofi", 
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi", 
-    "-show", "powermenu", 
-    "-modi", "powermenu:~/.config/.scripts/rofi-power", 
-    NULL 
+static const char *menu_win[] = {
+    "rofi",
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
+    "-show", "window",
+    NULL
+};
+static const char *rofi_power[] = {
+    "rofi",
+    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
+    "-show", "powermenu",
+    "-modi", "powermenu:~/.config/.scripts/rofi-power",
+    NULL
 };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *my_term2[] = { "konsole", NULL };
@@ -179,7 +180,7 @@ static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
-// static const char *my_editc[] = { "neovide", NULL };
+static const char *my_editc[] = { "nvim", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
 static const char *my_music[] = { "elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
@@ -275,6 +276,7 @@ static Keychord *keychords[] = {
   &((Keychord){1, {{MODKEY|ShiftMask,             XK_m}}, spawn,          {.v = my_media } }),
   &((Keychord){1, {{MODKEY,                       XK_i}}, spawn,          {.v = emojis } }),
   &((Keychord){1, {{ControlMask|AltMask,          XK_a}}, spawn,          {.v = aichat } }),
+  &((Keychord){1, {{MODKEY,                       XK_n}}, spawn,          {.v = my_editc } }),
   &((Keychord){1, {{MODKEY,                      XK_F3}}, spawn,          {.v = my_editg } }),
   &((Keychord){1, {{MODKEY,                      XK_F4}}, spawn,          {.v = my_image } }),
   &((Keychord){1, {{AltMask,                      XK_q}}, spawn,          {.v = variq } }),
