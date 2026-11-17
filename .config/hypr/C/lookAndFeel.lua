@@ -21,10 +21,10 @@ hl.config({
 	},
 	decoration = {
 		rounding = 0,
-		rounding_power = 1,
+		rounding_power = 2,
 		-- Change transparency of focused and unfocused windows
-		active_opacity = 0.97,
-		inactive_opacity = 0.83,
+		active_opacity = 0.99,
+		inactive_opacity = 0.95,
 		fullscreen_opacity = 1.0,
 		shadow = {
 			enabled = false,
@@ -33,10 +33,36 @@ hl.config({
 			color = "rgba(ee1a1a1a)",
 		},
 		blur = {
-			enabled = true,
-			size = 8,
-			passes = 2,
+			enabled = false,
+			brightness = 1.0,
+			contrast = 0.8916,
 			ignore_opacity = true,
+			input_methods = false,
+			input_methods_ignorealpha = 0.2,
+			new_optimizations = true,
+			noise = 0.0117,
+			passes = 1,
+			popups = false,
+			popups_ignorealpha = 0.2,
+			proportional = false,
+			size = 5,
+			special = false,
+			-- variant = "ripple",
+			acrylic = {
+				aberration = 0.025,
+				bulb = 48.0,
+				clarity = 0.92,
+				refraction = 24.0,
+				tint = "0x14EEF5FF",
+			},
+			ripple = {
+				duration = 0.95,
+				radius = 400.0,
+				strength = 30.0,
+				width = 32.0,
+			},
+			vibrancy = 0.1696,
+			vibrancy_darkness = 0.0,
 			xray = true,
 		},
 	},
@@ -48,10 +74,12 @@ hl.config({
 ---- CURSOR ----
 hl.config({
 	cursor = {
-		sync_gsettings_theme = true,
-		no_hardware_cursors = 2,
 		default_monitor = "HDMI-A-1",
 		enable_hyprcursor = true,
 		hide_on_key_press = true,
+		inactive_timeout = 20,
+		no_hardware_cursors = 2,
+		sync_gsettings_theme = true,
+		use_cpu_buffer = 2,
 	},
 })

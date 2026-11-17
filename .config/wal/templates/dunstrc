@@ -56,7 +56,7 @@
     mouse_right_click = close_all
     frame_color = "{color5}"
     separator_color = "{color9}"
-    background = "{background}ee"
+    background = "{background}cc"
     foreground = "{color15}"
     highlight = "{color4}"
 
@@ -65,12 +65,12 @@
 
 [urgency_low]
     frame_color = "{color5}"
-    background = "{background}ee"
+    background = "{background}cc"
     foreground = "{color15}"
 
 [urgency_normal]
     frame_color = "{color5}"
-    background = "{background}ee"
+    background = "{background}cc"
     foreground = "{color15}"
 
 [urgency_critical]

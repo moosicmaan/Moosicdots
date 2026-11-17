@@ -767,8 +767,7 @@
     "custom/session": {
         "format": "{text}",
         // "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'",
-        "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'",
-        "interval": 5
+        "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'"
     },
     "custom/musicprogress": {
         "format": "{text}",
@@ -909,8 +908,8 @@
         ]
     },
     "mpris": {
-        "format": "{player_icon}{artist} <i>{dynamic}</i>",
-        "format-paused": "{status_icon}<i>{dynamic}</i>",
+        "format": "{player_icon}  {dynamic}",
+        "format-paused": "{status_icon}  {dynamic}",
         "max-length": 150,
         "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
@@ -919,28 +918,28 @@
         "on-click-middle": "$HOME/.config/.scripts/media-ctrl --pause",
         "on-click-right": "$HOME/.config/.scripts/media-ctrl --nxt",
         "player-icons": {
-            "default": "▶ ",
-            "mpv": "󰐹 ",
-            "spotube": "󰋋 ",
-            "spotify": " ",
-            "chromium": " ",
-            "firefox": " ",
+            "default": "▶",
+            "mpv": "󰐹",
+            "spotube": "󰋋",
+            "spotify": "",
+            "chromium": "",
+            "firefox": "",
             "brave": "󰯰",
-            "qutebrowser": " ",
-            "vlc": "󰕼 ",
-            "kdeconnect": " ",
-            "Zen Browser": "󰟞 ",
-            "youtube": " "
+            "qutebrowser": "",
+            "vlc": "󰕼",
+            "kdeconnect": "",
+            "Zen Browser": "󰟞",
+            "youtube": ""
         },
         "status-icons": {
-            "paused": "󰐎 ",
-            "playing": " ",
-            "stopped": " "
+            "paused": "󰐎",
+            "playing": "",
+            "stopped": ""
         }
     },
     "mpris#audios": {
-        "format": "{player_icon}{artist} <i>\"{title}\"</i> {album}",
-        "format-paused": "{status_icon}<i>{dynamic}</i>",
+        "format": "{player_icon} {artist} <i>\"{title}\"</i> {album}",
+        "format-paused": "{status_icon} {artist} <i>\"{title}\"</i> {album}",
         "max-length": 125,
         // "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
@@ -963,9 +962,9 @@
             "youtube": ""
         },
         "status-icons": {
-            "paused": "󰐎 ",
-            "playing": " ",
-            "stopped": " "
+            "paused": "󰐎",
+            "playing": "",
+            "stopped": ""
         }
     },
     "mpris#comp": {
@@ -1029,7 +1028,7 @@
         "format": " {user}(up {work_d} days ↑) ",
         "tooltip": "true",
         "tooltip-format": "{user}(up {work_d} days ↑)",
-        "interval": 60,
+        "interval": 7200,
         "height": 12,
         "width": 12,
         "icon": true
@@ -1090,7 +1089,7 @@
         "on-click-right": "networkmanager_dmenu"
     },
     "network#speed": {
-        "interval": 1,
+        "interval": 5,
         "format": "{ifname}",
         "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
@@ -1112,7 +1111,7 @@
         "on-click-left": "networkmanager_dmenu"
     },
     "network#info": {
-        "interval": 2,
+        "interval": 5,
         "format": "󱘖  Offline",
         "format-wifi": "{icon} {bandwidthDownBits}",
         "format-ethernet": "󰈀 {bandwidthDownBits}",
@@ -1192,7 +1191,7 @@
         "critical": 80
     },
     "memory#ram": {
-        "interval": 4,
+        "interval": 5,
         "format": " {percentage}%",
         "states": {
             "warning": 80,
@@ -1202,13 +1201,13 @@
         "tooltip-format": "{used}/{total} GiB"
     },
     "memory#swap": {
-        "interval": 16,
+        "interval": 20,
         "format": "󰾵 {swapPercentage}%",
         "tooltip": "{}",
         "tooltip-format": "{swapUsed}/{swapTotal}GiB"
     },
     "memory#pie": {
-        "interval": 1,
+        "interval": 5,
         "rotate": 270,
         "format": "{icon}",
         "format-icons": [
@@ -1225,7 +1224,7 @@
         "max-length": 10
     },
     "cpu#pie": {
-        "interval": 1,
+        "interval": 5,
         "format": "{icon}",
         "rotate": 270,
         "format-icons": [
@@ -1241,7 +1240,7 @@
         ]
     },
     "cpu": {
-        "interval": 10,
+        "interval": 30,
         "format": " {usage}%",
         "max-length": 10,
         "on-click": "$kitty -e 'btop'"
@@ -1320,7 +1319,7 @@
     },
     "custom/weather#leg": {
         "exec": "curl 'https://wttr.in/Walsenburg?format=3'",
-        "interval": 900,
+        "interval": 3600,
         "on-click": "yad --html --uri='https://wttr.in/Walsenburg' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=bottom"
     },
     "clock": {
@@ -1467,41 +1466,34 @@
     },
     "custom/separator": {
         "format": "|",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#dot": {
         "format": "",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#dot-line": {
         "format": "",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#line": {
         "format": "|",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#blank": {
         "format": " ",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#blank_2": {
         "format": "  ",
-        "interval": "once",
         "tooltip": false
     },
     "custom/separator#blank_3": {
         "format": "   ",
-        "interval": "once",
         "tooltip": false
     },
     "backlight#vertical": {
-        "interval": 2,
+        "interval": 5,
         "align": 0.35,
         "rotate": 1,
         "format": "{icon}",
@@ -1558,11 +1550,11 @@
     },
     "cpu#vertical": {
         "format": "󰍛\n{usage}%",
-        "interval": 1,
+        "interval": 5,
         "on-click-right": "gnome-system-monitor"
     },
     "memory#vertical": {
-        "interval": 10,
+        "interval": 30,
         "format": "󰾆\n{percentage}%",
         "format-alt": "󰾆\n{used:0.1f}G",
         "format-alt-click": "click",
@@ -1631,7 +1623,6 @@
         "exec": "echo ; echo 󰟡 power // blur",
         "on-click": "~/.config/.scripts/Wlogout.sh",
         "on-click-right": "~/.config/.scripts/ChangeBlur.sh",
-        "interval": 86400,
         "tooltip": true
     },
     "group/traym": {

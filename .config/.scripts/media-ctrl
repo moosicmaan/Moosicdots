@@ -85,7 +85,7 @@ show_music_notification() {
             fi
         fi
         notify-send -e -u normal -i "$music_icon" \
-            "Now Playing:" "$song_title\nby $song_artist\non $song_pos"
+            "Now Playing:" "\"$song_title\" $song_artist\n$song_pos"
     elif [[ "$status" == "Paused" ]]; then
         music_icon="$music_dir/media-playback-pause-symbolic.svg"
         player_name=$(playerctl metadata --format "$player")

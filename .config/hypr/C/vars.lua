@@ -56,7 +56,7 @@ M.netwrk = "pkill rofi || networkmanager_dmenu"
 M.walpic = "pkill rofi || " .. M.my_scripts .. "/ut-colortheme"
 
 -- ENVIRONMENT ACTIONS
-M.bartog = "pkill waybar || " .. M.my_scripts .. "/wb-launch"
+M.bartog = "pkill waybar || " .. M.my_scripts .. "/wb-launch &"
 M.wallr = M.my_scripts .. "/ut-wallpaper --random"
 M.barsel = M.my_scripts .. "/wb-switch"
 M.walls = M.my_scripts .. "/ut-wallpaper --select"

@@ -2696,7 +2696,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f8ac271a0",
+    "dispatcher": "function: 0x55650596da40",
     "arg": "407"
   },
   {
@@ -2716,7 +2716,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f8c2fdf50",
+    "dispatcher": "function: 0x556504c15650",
     "arg": "408"
   },
   {
@@ -2736,7 +2736,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f8b835010",
+    "dispatcher": "function: 0x5565058758a0",
     "arg": "409"
   },
   {
@@ -2756,7 +2756,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f8806ed50",
+    "dispatcher": "function: 0x55650848f4c0",
     "arg": "410"
   },
   {
@@ -2776,7 +2776,7 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f89b5f900",
+    "dispatcher": "function: 0x556504dded10",
     "arg": "411"
   },
   {
@@ -2796,7 +2796,7 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x556f8c65ef90",
+    "dispatcher": "function: 0x55650593a470",
     "arg": "412"
   },
   {

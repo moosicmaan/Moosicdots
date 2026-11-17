@@ -1,24 +1,24 @@
 {
-  "macros": [
-    {
-      "name": "Insert Incremented Numbers Until Space",
-      "raw": "MHlmIGowUDCA/ARB",
-      "content": "0yf<Space>j0P0<C-A>"
-    },
-    {
-      "name": "Double Space",
-      "raw": "bxtq",
-      "content": "o<Esc>j"
-    },
-    {
-      "name": "Media",
-      "raw": "eGlsb2NhbCAbZj1sYSIbRUVhIhtqMA==",
-      "content": "xilocal<Space><Esc>f=la\"<Esc>EEa\"<Esc>j0"
-    },
-    {
-      "name": "insertclasshypr",
-      "raw": "Zl5pY2xhc3MNDTobajA=",
-      "content": "f^iclass<CR><CR>:<Esc>j0"
-    }
-  ]
+    "macros": [
+        {
+            "name": "Insert Incremented Numbers Until Space",
+            "raw": "MHlmIGowUDCA/ARB",
+            "content": "0yf<Space>j0P0<C-A>"
+        },
+        {
+            "name": "Double Space",
+            "raw": "bxtq",
+            "content": "o<Esc>j"
+        },
+        {
+            "name": "Media",
+            "raw": "eGlsb2NhbCAbZj1sYSIbRUVhIhtqMA==",
+            "content": "xilocal<Space><Esc>f=la\"<Esc>EEa\"<Esc>j0"
+        },
+        {
+            "name": "insertclasshypr",
+            "raw": "Zl5pY2xhc3MNDTobajA=",
+            "content": "f^iclass<CR><CR>:<Esc>j0"
+        }
+    ]
 }
