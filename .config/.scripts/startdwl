@@ -74,7 +74,7 @@
 # -----------------------------------------------------
 # PLUGINS/APPS
 # -----------------------------------------------------
-
+export DESKTOP_SESSION=dwl
 # Load Dunst Notification Manager
 dunst &
 
@@ -89,15 +89,15 @@ wl-paste --watch cliphist store &
 awww query || awww-daemon &
 
 # Startup the system tray applets:
-nm-tray &
-pasystray &
+# nm-tray &
+# pasystray &
 garuda-system-maintenance &
-blueman-applet &
+# blueman-applet &
 flameshot &
 firewall-applet &
 
 # Startup the foot terminal daemon for faster terminal launches
-foot --server &
+# foot --server &
 
 # -----------------------------------------------------
 # toggle_kmonad

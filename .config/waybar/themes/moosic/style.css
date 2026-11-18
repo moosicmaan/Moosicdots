@@ -92,6 +92,7 @@ window#waybar.empty #window {
 #workspaces button.urgent
 #workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
  */
+#tags,
 #workspaces {
 /*
    active 	Will be shown when workspace is active 
@@ -117,6 +118,7 @@ window#waybar.empty #window {
   background-color: @workspacesbackground1;
   color: @textcolor1;
 }
+#tags button,
 #workspaces button {
   /* 
   background: @workspacesbackground1;
@@ -128,16 +130,19 @@ window#waybar.empty #window {
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
 }
+#tags button.empty,
 #workspaces button.empty {
   color: @textcolor1;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
+#tags button.occupied,
 #workspaces button.visible {
   color: @color5;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
+#tags button.focused,
 #workspaces button.active {
   color: @textcolor1;
   /* 
@@ -151,7 +156,6 @@ window#waybar.empty #window {
 #tags button.focused {
   border: 1px solid #FFFFFF;
 }
-#tags button.occupied,
 #tags button:hover,
 #workspaces button:hover {
   /* 

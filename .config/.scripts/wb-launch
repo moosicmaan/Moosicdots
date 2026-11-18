@@ -47,10 +47,9 @@ hypr | \
     cdesk="hypr"
     ;;
 dwl | \
-    mango | \
-    mangowm | \
-    /usr/share/wayland-sessions/mango.desktop | \
-    mango:wlroots)
+    dwl-uwsm | \
+    /usr/local/share/wayland-sessions/dwl.desktop | \
+    dwl:wlroots)
     cdesk="dwl"
     ;;
 niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)

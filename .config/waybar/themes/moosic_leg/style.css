@@ -57,10 +57,12 @@ window#waybar {
 /* -----------------------------------------------------
  * Workspaces
  * ----------------------------------------------------- */
+#tags,
 #workspaces {
   margin: 0px 3px 0px 3px;
 }
 
+#tags button,
 #workspaces button {
   background: @color10;
   color: #fcfcfc;
@@ -74,6 +76,7 @@ window#waybar {
   opacity: 0.8;
 }
 
+#tags button:hover,
 #workspaces button:hover {
   color: #000000;
   background: @workspacesbackground2;
@@ -81,6 +84,8 @@ window#waybar {
   opacity: 0.8;
 }
 
+#tags button.focused,
+#tags button.occupied,
 #workspaces button.active {
   color: #ffffff;
   background: @color3;

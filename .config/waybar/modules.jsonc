@@ -1,4 +1,7 @@
 {
+    // "dwl/tags": {
+    //     "num-tags": 5
+    // },
     "dwl/tags": {
         "num-tags": 9,
         "tag-labels": [
@@ -10,34 +13,25 @@
             // "VI",
             // "VII",
             // "VIII",
-            // "IX",
-            // "I",
-            // "II",
-            // "III",
-            // "IV",
-            // "V",
-            // "VI",
-            // "VII",
-            // "VIII",
             // "IX"
-            "🌕",
-            "🌖",
-            "🌗",
-            "🌘",
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕",
-            "🌕",
-            "🌖",
-            "🌗",
-            "🌘",
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+            // "🌕",
+            // "🌖",
+            // "🌗",
+            // "🌘",
+            // "🌑",
+            // "🌒",
+            // "🌓",
+            // "🌔",
+            // "🌕"
         ],
         "format": "{icon}",
         "format-icons": {
@@ -1005,9 +999,12 @@
         "spacing": 6
     },
     "wlr/taskbar": {
+        "all-outputs": false,
+        "bar-css-states": false,
         // "format": "{icon}{short_state}",
         "format": "{icon}",
         // "icon-size": 11,
+        "markup": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",

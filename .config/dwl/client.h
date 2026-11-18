@@ -15,6 +15,32 @@ client_is_x11(Client *c)
 	return 0;
 }
 
+static inline void
+client_get_size_hints(Client *c, struct wlr_box *max, struct wlr_box *min)
+{
+	struct wlr_xdg_toplevel_state *state;
+
+#ifdef XWAYLAND
+	if (client_is_x11(c)) {
+		xcb_size_hints_t *size_hints = c->surface.xwayland->size_hints;
+		if (size_hints) {
+			max->width = size_hints->max_width;
+			max->height = size_hints->max_height;
+			min->width = size_hints->min_width;
+			min->height = size_hints->min_height;
+		}
+		return;
+	}
+#endif
+
+	state = &c->surface.xdg->toplevel->current;
+	max->width = state->max_width;
+	max->height = state->max_height;
+	min->width = state->min_width;
+	min->height = state->min_height;
+}
+
+
 static inline struct wlr_surface *
 client_surface(Client *c)
 {
@@ -72,6 +98,8 @@ toplevel_from_wlr_surface(struct wlr_surface *s, Client **pc, LayerSurface **pl)
 			xdg_surface = tmp_xdg_surface;
 			break;
 		case WLR_XDG_SURFACE_ROLE_TOPLEVEL:
+			if (!xdg_surface->toplevel)
+				return -1;
 			c = xdg_surface->data;
 			type = c->type;
 			goto end;
@@ -163,6 +191,7 @@ client_get_geometry(Client *c, struct wlr_box *geom)
 	}
 #endif
 	*geom = c->surface.xdg->geometry;
+	geom->x = geom->y = 0;
 }
 
 static inline Client *
@@ -206,13 +235,12 @@ client_get_title(Client *c)
 static inline int
 client_is_float_type(Client *c)
 {
-	struct wlr_xdg_toplevel *toplevel;
-	struct wlr_xdg_toplevel_state state;
+	struct wlr_box min = {0}, max = {0};
+	client_get_size_hints(c, &max, &min);
 
 #ifdef XWAYLAND
 	if (client_is_x11(c)) {
 		struct wlr_xwayland_surface *surface = c->surface.xwayland;
-		xcb_size_hints_t *size_hints = surface->size_hints;
 		if (surface->modal)
 			return 1;
 
@@ -223,59 +251,13 @@ client_is_float_type(Client *c)
 			return 1;
 		}
 
-		return size_hints && size_hints->min_width > 0 && size_hints->min_height > 0
-			&& (size_hints->max_width == size_hints->min_width
-				|| size_hints->max_height == size_hints->min_height);
+		return min.width > 0 && min.height > 0 &&
+			(min.width == max.width || min.height == max.height);
 	}
 #endif
 
-	toplevel = c->surface.xdg->toplevel;
-	state = toplevel->current;
-	return toplevel->parent || (state.min_width != 0 && state.min_height != 0
-		&& (state.min_width == state.max_width
-			|| state.min_height == state.max_height));
-}
-
-static inline int
-client_is_rendered_on_mon(Client *c, Monitor *m)
-{
-	/* This is needed for when you don't want to check formal assignment,
-	 * but rather actual displaying of the pixels.
-	 * Usually VISIBLEON suffices and is also faster. */
-	struct wlr_surface_output *s;
-	int unused_lx, unused_ly;
-	if (!wlr_scene_node_coords(&c->scene->node, &unused_lx, &unused_ly))
-		return 0;
-	wl_list_for_each(s, &client_surface(c)->current_outputs, link)
-		if (s->output == m->wlr_output)
-			return 1;
-	return 0;
-}
-
-static inline int
-client_is_stopped(Client *c)
-{
-	int pid;
-	siginfo_t in = {0};
-#ifdef XWAYLAND
-	if (client_is_x11(c))
-		return 0;
-#endif
-
-	wl_client_get_credentials(c->surface.xdg->client->client, &pid, NULL, NULL);
-	if (waitid(P_PID, pid, &in, WNOHANG|WCONTINUED|WSTOPPED|WNOWAIT) < 0) {
-		/* This process is not our child process, while is very unlikely that
-		 * it is stopped, in order to do not skip frames, assume that it is. */
-		if (errno == ECHILD)
-			return 1;
-	} else if (in.si_pid) {
-		if (in.si_code == CLD_STOPPED || in.si_code == CLD_TRAPPED)
-			return 1;
-		if (in.si_code == CLD_CONTINUED)
-			return 0;
-	}
-
-	return 0;
+	return c->surface.xdg->toplevel->parent || (min.width > 0 && min.height > 0 &&
+			(min.width == max.width || min.height == max.height));
 }
 
 static inline int
@@ -291,11 +273,18 @@ client_is_unmanaged(Client *c)
 static inline void
 client_notify_enter(struct wlr_surface *s, struct wlr_keyboard *kb)
 {
-	if (kb)
-		wlr_seat_keyboard_notify_enter(seat, s, kb->keycodes,
-				kb->num_keycodes, &kb->modifiers);
-	else
+	uint32_t filtered[WLR_KEYBOARD_KEYS_CAP];
+	size_t size = 0;
+	if (!kb) {
 		wlr_seat_keyboard_notify_enter(seat, s, NULL, 0, NULL);
+		return;
+	}
+	for (size_t i = 0; i < kb->num_keycodes; i++) {
+		uint32_t key = kb->keycodes[i];
+		if (key >= LENGTH(consumed) || !consumed[key])
+			filtered[size++] = key;
+	}
+	wlr_seat_keyboard_notify_enter(seat, s, filtered, size, &kb->modifiers);
 }
 
 static inline void
@@ -337,6 +326,7 @@ client_set_scale(struct wlr_surface *s, float scale)
 	wlr_surface_set_preferred_buffer_scale(s, (int32_t)ceilf(scale));
 }
 
+/* Returns nonzero if the client has to commit a buffer with the new size */
 static inline uint32_t
 client_set_size(Client *c, uint32_t width, uint32_t height)
 {
@@ -344,13 +334,28 @@ client_set_size(Client *c, uint32_t width, uint32_t height)
 	if (client_is_x11(c)) {
 		wlr_xwayland_surface_configure(c->surface.xwayland,
 				c->geom.x + c->bw, c->geom.y + c->bw, width, height);
-		return 0;
+		return (int)width != client_surface(c)->current.width
+				|| (int)height != client_surface(c)->current.height;
 	}
 #endif
-	if ((int32_t)width == c->surface.xdg->toplevel->current.width
-			&& (int32_t)height == c->surface.xdg->toplevel->current.height)
+	if ((int32_t)width == c->surface.xdg->toplevel->scheduled.width
+			&& (int32_t)height == c->surface.xdg->toplevel->scheduled.height)
 		return 0;
 	return wlr_xdg_toplevel_set_size(c->surface.xdg->toplevel, (int32_t)width, (int32_t)height);
+}
+
+static inline void
+client_send_frame_done_iterator(struct wlr_surface *s, int sx, int sy, void *data)
+{
+	wlr_surface_send_frame_done(s, data);
+}
+
+static inline void
+client_send_frame_done(Client *c)
+{
+	struct timespec now;
+	clock_gettime(CLOCK_MONOTONIC, &now);
+	wlr_surface_for_each_surface(client_surface(c), client_send_frame_done_iterator, &now);
 }
 
 static inline void

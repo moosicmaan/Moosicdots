@@ -248,6 +248,7 @@
   animation-timing-function: steps(15);
 }
 
+#tags button.urgent,
 #workspaces button.urgent,
 #workspaces button.special.urgent {
   transition: all 0s ease;
@@ -299,6 +300,7 @@
 /* {{{ */
 /* Default workspace settings */
 
+#tags,
 #workspaces {
   /* background: @warning; */
   padding-left: 20px;
@@ -318,6 +320,7 @@
   );
 }
 
+#tags button,
 #workspaces button {
   color: #45475a;
   background: transparent;
@@ -341,6 +344,7 @@
 }
 
 /* Focused workspace */
+#tags button.focused,
 #workspaces button.visible {
   color: @text;
   background-image: linear-gradient(
@@ -353,6 +357,7 @@
 }
 
 /* Focused workspace & monitor */
+#tags button.focused,
 #workspaces button.active {
   color: @window;
   background-image: linear-gradient(
@@ -369,11 +374,13 @@
 }
 
 /* Style when cursor is on the button */
+#tagi button:hover,
 #workspaces button:hover {
   color: @window;
 }
 
 /* Special workplace animation */
+#tagi button.occupied,
 #workspaces button.special.active {
   transition: all 0s ease;
   border: 1.5px solid transparent;

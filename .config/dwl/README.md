@@ -1,15 +1,8 @@
 # dwl - dwm for Wayland
 
-2025-08-16:  
-dwl IS CURRENTLY UN-MAINTAINED.  
-AT THE PRESENT TIME, I (@fauxmight) DO NOT HAVE  
-THE TIME OR CAPACITY TO KEEP UP WITH [wlroots] CHANGES.  
-IF YOU ARE INTERESTED IN TAKING ON LEAD DEVELOPER RESPONSIBILITIES,  
-SEE ISSUE [#1166](https://codeberg.org/dwl/dwl/issues/1166).
----
-
-Join us on our IRC channel: [#dwl on Libera Chat]  
-Or on the community-maintained [Discord server].
+Join us on our [Discord server]  
+Or Matrix: [#dwl-official:matrix.org]  
+Or on our IRC channel: [#dwl on Libera Chat]
 
 dwl is a compact, hackable compositor for [Wayland] based on [wlroots]. It is
 intended to fill the same space in the Wayland world that [dwm] does in X11,
@@ -17,7 +10,7 @@ primarily in terms of functionality, and secondarily in terms of
 philosophy. Like [dwm], dwl is:
 
 - Easy to understand, hack on, and extend with patches
-- One C source file (or a very small number) configurable via `config.h`
+- One C source file configurable via `config.h`
 - Tied to as few external dependencies as possible
 
 ## Getting Started:
@@ -31,12 +24,14 @@ with each release on the [release] page
 
 ### Development branch [main]
 Active development progresses on the `main` branch. The `main` branch is built
-against a late (and often changing) git commit of wlroots. While the adventurous
-are welcome to use `main`, it is a rocky road. Using `main` requires that the
-user be willing to chase git commits of wlroots. Testing development pull
-requests may involve merging unmerged pull requests in [wlroots]' git repository
-and/or git commits of wayland.
-  
+against the latest release of [wlroots]. PRs should target this branch unless they
+depend on functionality that is not in the current release of `wlroots`.
+
+### Preview branch [wlroots-next]
+The `wlroots-next` branch is built against the git version of [wlroots], which
+is unstable and changes frequently. PRs requiring functionality from the git
+version of `wlroots` should target this branch.
+
 ### Building dwl
 dwl has the following dependencies:
 - libinput
@@ -171,9 +166,6 @@ indiscriminately. We will try to keep the code as small as possible.
 Features under consideration (possibly as patches) are:
 
 - Protocols made trivial by wlroots
-- Implement the text-input and input-method protocols to support IME once ibus
-  implements input-method v2 (see https://github.com/ibus/ibus/pull/2256 and
-  https://codeberg.org/dwl/dwl/pulls/235)
 
 Feature *non-goals* for the main codebase include:
 
@@ -198,6 +190,10 @@ inspiration, and to the various contributors to the project, including:
   and for helping to keep the project running
 - Stivvo for output management and fullscreen support, and patch maintenance
 
+Also, thanks to our current lead developers:
+
+- @thanatos
+- @guidocella
 
 [wlroots]: https://gitlab.freedesktop.org/wlroots
 [dwm]: https://dwm.suckless.org/
@@ -210,6 +206,7 @@ inspiration, and to the various contributors to the project, including:
 [dwl-patches]: https://codeberg.org/dwl/dwl-patches
 [list of useful resources on our wiki]: https://codeberg.org/dwl/dwl/wiki/Home#migrating-from-x
 [main]: https://codeberg.org/dwl/dwl/src/branch/main
+[wlroots-next]: https://codeberg.org/dwl/dwl/src/branch/wlroots-next
 [release]: https://codeberg.org/dwl/dwl/releases
 [runit]: http://smarden.org/runit/faq.html#userservices
 [s6]: https://skarnet.org/software/s6/
@@ -217,3 +214,4 @@ inspiration, and to the various contributors to the project, including:
 [wiki]: https://codeberg.org/dwl/dwl/wiki/Home#compatible-status-bars
 [Discord server]: https://discord.gg/jJxZnrGPWN
 [Wayland]: https://wayland.freedesktop.org/
+[#dwl-official:matrix.org]: https://matrix.to/#/#dwl-official:matrix.org

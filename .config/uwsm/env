@@ -8,9 +8,6 @@
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 
 # Session
-export XDG_SESSION_TYPE=wayland
-export WAYLAND_DISPLAY=wayland-1
-export XDG_CONFIG_HOME=$HOME/.config
 
 # GTK
 export MOZ_ENABLE_WAYLAND=1 # only start firefox in wayland mode and no other GTK apps
@@ -18,9 +15,6 @@ export MOZ_DBUS_REMOTE=1    # fixes firefox is already running, but is not respo
 export MOZ_WAYLAND_USE_VAAPI=1
 export GDK_BACKEND=wayland,x11 # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
 # export GDK_SCALE,2
-
-# clutter
-#export CLUTTER_BACKEND=wayland          # this can prevent programs from starting. therefore, this should be set per app instead of globally.
 
 # elementary
 export ECORE_EVAS_ENGINE=wayland-egl
@@ -41,27 +35,4 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt
 # export QT_STYLE_OVERRIDE,kvantum
 
 # User preferences
-# export EDITOR=nvim
-# export BROWSER=brave
-# export EMAIL=thunderbird
-
 export UWSM_SESSION=true
-# echo "$(date) - FINISHED in uwsm/env setting environment" >>"$HOME/.config/hypr/start.log"
-# # Nvidia Specific (second monitor)
-# export LIBVA_DRIVER_NAME,nvidia
-# export GBM_BACKEND,nvidia-drm
-# export __GLX_VENDOR_LIBRARY_NAME,nvidia
-
-# --------------------------others from garuda----------------------------------------------
-# # clutter
-# #export CLUTTER_BACKEND=wayland          # this can prevent programs from starting. therefore, this should be export per app instead of globally.
-#
-# # java
-# export _JAVA_AWT_WM_NONREPARENTING=1
-# export NO_AT_BRIDGE=1
-# export BEMENU_BACKEND=wayland
-#
-# # sdl
-# export SDL_VIDEODRIVER=wayland           # this can prevent programs from starting old sdl games. therefore, this should be export per app instead of globally.
-#
-# export FZF_DEFAULT_OPTS='color=bg+:-1,bg:\#1e1e2e,spinner:\#f5e0dc,hl:#f38ba8 color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc color=marker:#f5e0dc,fg+:#a6e3a1,prompt:#cba6f7,hl+:#f38ba8'

@@ -1,0 +1,14 @@
+#!/bin/bash
+# =====================================================
+# -----------------------------------------------------
+# ENVIRONMENT VARIABLES
+# -----------------------------------------------------
+# =====================================================
+# echo "$(date) - START in uwsm/env-hyprland setting environment" >>"$HOME/.config/hypr/start.log"
+
+# SESSION
+export XDG_SESSION_DESKTOP=dwl
+export XDG_CURRENT_DESKTOP=DWL
+
+# echo "$(date) - FINISHED in uwsm/env setting environment" >>"$HOME/.config/hypr/start.log"
+export UWSM_SESSION_TYPE=DWL

@@ -7,12 +7,11 @@
 static const int sloppyfocus               = 1;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
-static const float rootcolor[]             = COLOR(0x000000ff);
+static const unsigned int snap             = 32; /* snap pixel */
+static const float rootcolor[]             = COLOR(0x222222ff);
 static const float bordercolor[]           = COLOR(0x444444ff);
-// static const float focuscolor[]            = COLOR(0x005577ff);
-static const float focuscolor[]            = COLOR(0xFFFFFFff);
+static const float focuscolor[]            = COLOR(0x005577ff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
-/* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.0f, 0.0f, 0.0f, 1.0f}; /* You can also use glsl colors */
 
 /* tagging - TAGCOUNT must be no greater than 31 */
@@ -21,12 +20,17 @@ static const float fullscreen_bg[]         = {0.0f, 0.0f, 0.0f, 1.0f}; /* You ca
 /* logging */
 static int log_level = WLR_ERROR;
 
-/* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
 static const Rule rules[] = {
-	/* app_id             title       tags mask     isfloating   monitor */
-	/* examples: */
-	{ "Gimp_EXAMPLE",     NULL,       0,            1,           -1 }, /* Start on currently visible tags floating, not tiled */
-	{ "firefox_EXAMPLE",  NULL,       1 << 8,       0,           -1 }, /* Start on ONLY tag "9" */
+	/* app_id             title         tags mask     isfloating   monitor scratchkey */
+	// { "Gimp_EXAMPLE",     NULL,         0,            1,           -1,     0   }, /* Start on currently visible tags floating, not tiled */
+	// { "firefox_EXAMPLE",  NULL,         1 << 8,       0,           -1,     0   }, /* Start on ONLY tag "9" */
+	{ NULL,               "termdrop",   0,            1,           -1,     's' },
+	{ NULL,               "yazidrop",   0,            1,           -1,     'j' },
+	{ NULL,               "btopdrop",   0,            1,           -1,     'l' },
+	{ NULL,               "volume",     0,            1,           -1,     'x' },
+	{ NULL,               "moosicdrop", 0,            1,           -1,     'm' },
+	{ NULL,               "bluedrop",   0,            1,           -1,     'b' },
+    /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
 };
 
 /* layout(s) */
@@ -39,17 +43,14 @@ static const Layout layouts[] = {
 
 /* monitors */
 /* (x=-1, y=-1) is reserved as an "autoconfigure" monitor position indicator
- * WARNING: negative values other than (-1, -1) cause problems with Xwayland clients
- * https://gitlab.freedesktop.org/xorg/xserver/-/issues/899
-*/
-/* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
+ * WARNING: negative values other than (-1, -1) cause problems with Xwayland clients due to
+ * https://gitlab.freedesktop.org/xorg/xserver/-/issues/899 */
 static const MonitorRule monrules[] = {
-	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
-	/* example of a HiDPI laptop monitor:
-	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
-	*/
-	/* defaults */
-	{ NULL,       0.50f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+   /* name        mfact  nmaster scale layout       rotate/reflect                x    y
+    * example of a HiDPI laptop monitor:
+    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
+	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	/* default monitor rule: can be changed but cannot be eliminated; at least one monitor rule must exist */
 };
 
 /* keyboard */
@@ -61,7 +62,7 @@ static const struct xkb_rule_names xkb_rules = {
 	.options = NULL,
 };
 
-static const int repeat_rate = 95;
+static const int repeat_rate = 100;
 static const int repeat_delay = 300;
 
 /* Trackpad */
@@ -107,6 +108,14 @@ LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
 */
 static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
 
+/* named scratchpads - First arg only serves to match against key in rules*/
+static const char *ter_scratch[] = { "s", "kitty", "-T", "termdrop", NULL };
+static const char *yazi_scratch[] = { "j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL };
+static const char *btop_scratch[] = { "l", "kitty", "-T", "btopdrop", "-e", "btop", NULL };
+static const char *volume_scratch[] = { "x", "kitty", "-T", "volume", "-e", "wiremix", NULL };
+static const char *moosic_scratch[] = { "m", "kitty", "-T", "moosicdrop", "-e", "pianobar", NULL };
+static const char *bt_scratch[] = { "b", "kitty", "-T", "bluedrop", "-e", "bluetui", NULL };
+
 /* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
 #define MODKEY WLR_MODIFIER_LOGO
 #define AltMask WLR_MODIFIER_ALT
@@ -121,6 +130,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 	{ MODKEY|ShiftMask,          SKEY,           tag,             {.ui = 1 << TAG} }, \
 	{ MEH,                       SKEY,           tag,             {.ui = 1 << TAG} }, \
 	{ MODKEY|CtrlMask|ShiftMask, SKEY,           toggletag,       {.ui = 1 << TAG} }
+
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -148,8 +158,7 @@ static const char *rofi_power[] = {
     "wlogout",
     NULL 
 };
-static const char *termcmd[]  = { "foot", NULL };
-// static const char *menucmd[] = { "wmenu-run", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *my_term2[] = { "kitty", NULL };
 static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
@@ -157,8 +166,8 @@ static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
 static const char *my_editc[] = { "neovide", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
-static const char *my_music[] = { "org.kde.elisa", NULL };
-static const char *my_media[] = { "vlc", NULL };
+static const char *my_music[] = { "elisa", NULL };
+static const char *my_media[] = { "mpv", NULL };
 static const char *my_image[] = { "gimp", NULL };
 static const char *emojis[] = { "emote", NULL };
 static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
@@ -172,8 +181,8 @@ static const char *screenshot[] = { "/home/moosicmaan/.config/.scripts/ut-screen
 static const char *wallr[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--random", NULL };
 static const char *walls[] = { "/home/moosicmaan/.config/.scripts/ut-wallpaper", "--select", NULL };
 static const char *bars[] = { "/home/moosicmaan/.config/.scripts/wb-switch",  NULL };
-static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/wb-launch", NULL };
-static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/start-dwl",  NULL };
+// static const char *bartog[] = { "pkill", "waybar", "||", "/home/moosicmaan/.config/.scripts/wb-launch", NULL };
+// static const char *startdwl[] = { "/home/moosicmaan/.config/.scripts/start-dwl",  NULL };
 
 
 /*   MEDIA KEYS   */
@@ -190,20 +199,24 @@ static const char *mprv[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "-
 static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--show", NULL };
 static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 
-/*   FOR SCRATCHPADS - First arg only serves to match against key in rules   
-static const char *ter_scratch[] = {"s", "kitty", "-T", "termdrop", NULL};
-static const char *yazi_scratch[] = {"j", "kitty", "-T", "yazidrop", "-e", "yazi", NULL};
-static const char *btop_scratch[] = {"l", "kitty", "-T", "btopdrop", "-e", "btop", NULL};
-static const char *volume_scratch[] = {"x", "pavucontrol", NULL};
-static const char *moosic_scratch[] = {"m", "kitty", "-T", "moosicdrop", "-e", "/home/moosicmaan/.config/.scripts/rofi-beats", NULL};
-*/
-
 static const Key keys[] = {
-	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                           function          argument */
-	{ MODKEY,                    XKB_KEY_p,                    spawn,            {.v = menu_run} },
-	{ MODKEY|CtrlMask,           XKB_KEY_p,                    spawn,            {.v = menu_win} },
-	{ MODKEY|ShiftMask,          XKB_KEY_P,                    spawn,            {.v = menu_drun} },
+/*---SCRATCHPADS---*/
+    { MODKEY|AltMask,            XKB_KEY_i,                    focusortogglescratch,    {.v = ter_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_d,                    focusortogglescratch,    {.v = ter_scratch } },
+    { HYPER,                     XKB_KEY_8,                    focusortogglescratch,    {.v = ter_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_j,                    focusortogglescratch,    {.v = yazi_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_h,                    focusortogglescratch,    {.v = yazi_scratch } },
+    { HYPER,                     XKB_KEY_4,                    focusortogglescratch,    {.v = yazi_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_m,                    focusortogglescratch,    {.v = moosic_scratch } },
+    { HYPER,                     XKB_KEY_1,                    focusortogglescratch,    {.v = moosic_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_l,                    focusortogglescratch,    {.v = btop_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_s,                    focusortogglescratch,    {.v = btop_scratch } },
+    { HYPER,                     XKB_KEY_6,                    focusortogglescratch,    {.v = btop_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_x,                    focusortogglescratch,    {.v = volume_scratch } },
+    { HYPER,                     XKB_KEY_2,                    focusortogglescratch,    {.v = volume_scratch } },
+    { MODKEY|AltMask,            XKB_KEY_b,                    focusortogglescratch,    {.v = bt_scratch } },
+/*---APPLICATIONS---*/
 	{ MODKEY,                    XKB_KEY_Return,               spawn,            {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_t,                    spawn,            {.v = my_term2} },
 	{ MODKEY,                    XKB_KEY_o,                    spawn,            {.v = browscmd} },
@@ -218,6 +231,10 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_i,                    spawn,            {.v = emojis} },
 	{ MODKEY,                    XKB_KEY_a,                    spawn,            {.v = aichat} },
 	{ HYPER,                     XKB_KEY_I,                    spawn,            {.v = mfavs} },
+/*---MENUS/SELECTORS---*/
+	{ MODKEY,                    XKB_KEY_p,                    spawn,            {.v = menu_run} },
+	{ MODKEY|CtrlMask,           XKB_KEY_p,                    spawn,            {.v = menu_win} },
+	{ MODKEY|ShiftMask,          XKB_KEY_P,                    spawn,            {.v = menu_drun} },
 	{ MODKEY,                    XKB_KEY_Print,                spawn,            {.v = screenshot} },
 	{ 0,                         XKB_KEY_Print,                spawn,            {.v = screenshot} },
 	{ 0,                         XKB_KEY_XF86Calculator,       spawn,            {.v = calc} },
@@ -235,12 +252,13 @@ static const Key keys[] = {
   { CtrlMask|AltMask,          XKB_KEY_j,                    spawn,            {.v = kmonadl} },
   { CtrlMask|AltMask,          XKB_KEY_m,                    spawn,            {.v = jamrofi} },
 
-  { MODKEY|CtrlMask,           XKB_KEY_d,                    spawn,            {.v = startdwl} },
+  // { MODKEY|CtrlMask,           XKB_KEY_d,                    spawn,            {.v = startdwl} },
+/*---WM/ENVIRONMENT---*/
   { MODKEY|CtrlMask,           XKB_KEY_w,                    spawn,            {.v = wallr} },
   { MODKEY|CtrlMask,           XKB_KEY_s,                    spawn,            {.v = walls} },
   { MODKEY|CtrlMask,           XKB_KEY_t,                    spawn,            {.v = bars} },
-  { MODKEY|CtrlMask,           XKB_KEY_b,                    spawn,            {.v = bartog} },
-  { MODKEY|AltMask,            XKB_KEY_b,                    togglebar,        {0} },
+  // { MODKEY|CtrlMask,           XKB_KEY_b,                    spawn,            {.v = bartog} },
+  { HYPER,                    XKB_KEY_b,                    togglebar,          {0} },
 	{ MODKEY,                    XKB_KEY_h,                    focusstack,       {.i = +1} },
 	{ MODKEY,                    XKB_KEY_l,                    focusstack,       {.i = -1} },
 	{ MODKEY,                    XKB_KEY_i,                    incnmaster,       {.i = +1} },
@@ -255,7 +273,7 @@ static const Key keys[] = {
 	{ AltMask,                   XKB_KEY_m,                    setlayout,        {.v = &layouts[2]} },
 	{ AltMask,                   XKB_KEY_space,                setlayout,        {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_F,                    togglefullscreen, {0} },
-	{ 0,                         XKB_KEY_F1,                   togglefullscreen, {0} },
+	{ 0,                         XKB_KEY_F11,                  togglefullscreen, {0} },
 	{ MODKEY,                    XKB_KEY_f,                    togglefloating,   {0} },
 	{ MODKEY,                    XKB_KEY_0,                    view,             {.ui = ~0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright,           tag,              {.ui = ~0} },
@@ -273,7 +291,7 @@ static const Key keys[] = {
 	TAGKEYS(          XKB_KEY_8, XKB_KEY_asterisk,                               7),
 	TAGKEYS(          XKB_KEY_9, XKB_KEY_parenleft,                              8),
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,                    quit,             {0} },
-	{ MODKEY|CtrlMask,           XKB_KEY_r,                    quit,             {1} },
+	// { MODKEY|CtrlMask,           XKB_KEY_r,                    quit,             {1} },
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
@@ -289,4 +307,11 @@ static const Button buttons[] = {
 	{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
 	{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
 	{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+};
+
+static const Axis axes[] = {
+    /* example of volume control:
+    { MODKEY, AxisUp, spawn, SHCMD("volume-up") },
+    { MODKEY, AxisDown, spawn, SHCMD("volume-down") }, */
+    { 0, 0, NULL, {0} },
 };

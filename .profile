@@ -13,7 +13,6 @@ export EMAIL=thunderbird
 export WHAT="Jason is a turnip"
 export WLR_NO_HARDWARE_CURSORS=1
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
-export XDG_CONFIG_HOME=$HOME/.config
 export MOZ_DBUS_REMOTE=1 # fixes firefox is already running, but is not responding
 export MOZ_WAYLAND_USE_VAAPI=1
 export NO_AT_BRIDGE=1

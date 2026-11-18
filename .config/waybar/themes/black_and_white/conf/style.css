@@ -14,30 +14,32 @@
   border-bottom: 2px solid #FFFFFF;
 }
 
+#tags,
 #workspaces {
   margin: 0 8px;
   color: transparent;
 }
 
+#tags button,
 #workspaces button {
   margin: 0px 0px;
   padding: 2px 2px;
 }
 
+
 #workspaces button.visible {
 }
 
+#tags button.focused,
 #workspaces button.active {
   border-radius: 1px;
   color : black;
   background-color: rgba(255,255,255,0.5);
 }
 
+#tags butten.urgent,
 #workspaces button.urgent {
   border-radius: 1px;
-}
-
-#workspaces button.urgent * {
   color: rgba(255,0,0,0.8);
 }
 

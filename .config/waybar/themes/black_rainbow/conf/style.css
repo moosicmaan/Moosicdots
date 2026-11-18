@@ -16,6 +16,7 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+#tags button,
 #workspaces button {
   padding: 0px;
   margin: 0px 0 0px 0;
@@ -24,21 +25,25 @@ window#waybar.hidden {
   min-width: 36px;
 }
 
+#tags button.focused,
 #workspaces button.active {
   padding: 0 0 0 0;
   min-width: 36px;
 }
 
+#tags button:hover,
 #workspaces button:hover {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
 
+#tags button.focused,
 #workspaces button.focused {
   background-color: #bbccdd;
   color: #323232;
 }
 
+#tags button.urgent,
 #workspaces button.urgent {
   color: red;
 }
@@ -67,6 +72,7 @@ window#waybar.hidden {
 }
 
 #window,
+#tags,
 #workspaces {
   border: solid 1px white;
   border-radius: 100px;

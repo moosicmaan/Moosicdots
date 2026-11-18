@@ -15,14 +15,10 @@
         "include": [
             "~/.config/waybar/modules.jsonc"
         ],
-        // "layer": "top", // Waybar at top layer
-        // "position": "bottom", // Waybar position (top|bottom|left|right)
-        // "height": 14, // Waybar height (to be removed for auto height)
-        // "width": 1280, // Waybar width
-        // Choose the order of the modules
         "modules-left": [
             "dwl/tags",
-            "custom/session"
+            "custom/session",
+            "dwl/window"
         ],
         // "modules-center": ["sway/window"],
         "modules-right": [
@@ -71,7 +67,8 @@
         ],
         "modules-left": [
             "dwl/tags",
-            "custom/session"
+            "custom/session",
+            "dwl/window"
         ],
         "modules-center": [
             "mpris"
