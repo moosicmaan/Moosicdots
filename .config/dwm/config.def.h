@@ -121,7 +121,6 @@ static const char *const autostart[] = {
   NULL /* terminate */
 };
 
-
 /**** ENVIRONMENT DEFINITIONS ****/
 #define MODKEY Mod4Mask
 #define AltMask Mod1Mask
@@ -140,7 +139,7 @@ static const char *const autostart[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/*   APPLICATION DEFINITIONS   */
+/*   COMMAND DEFINITIONS   */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run",
@@ -156,15 +155,16 @@ static const char *dmenucmd[] = {
     NULL
 };
 static const char *menu_drun[] = {
-    "rofi",
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
-    "-show", "drun",
+    // "rofi",
+    // "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
+    // "-show", "drun",
+    "sh", "-c",
+    "pkill rofi || rofi -config /home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi -show drun",
     NULL
 };
 static const char *menu_win[] = {
-    "rofi",
-    "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
-    "-show", "window",
+    "sh", "-c",
+    "pkill rofi || rofi -config /home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi -show window",
     NULL
 };
 static const char *rofi_power[] = {
@@ -172,6 +172,16 @@ static const char *rofi_power[] = {
     "-config", "/home/moosicmaan/.config/rofi/launchers/type-1/style-4.rasi",
     "-show", "powermenu",
     "-modi", "powermenu:~/.config/.scripts/rofi-power",
+    NULL
+};
+static const char *emojis[] = {
+    "sh", "-c",
+    "pkill emote || emote",
+    NULL
+};
+static const char *calc[] = {
+    "sh", "-c",
+    "pkill galculator || galculator",
     NULL
 };
 static const char *termcmd[]  = { "kitty", NULL };
@@ -185,8 +195,6 @@ static const char *my_filesg[] = { "dolphin", NULL };
 static const char *my_music[] = { "elise", NULL };
 static const char *my_media[] = { "vlc", NULL };
 static const char *my_image[] = { "gimp", NULL };
-static const char *emojis[] = { "pkill", "emote", "||", "emote", NULL };
-static const char *calc[] = { "pkill", "galculator", "||", "galculator", NULL };
 static const char *variq[] = { "variety", "-q", NULL };
 static const char *varin[] = { "variety", "-n", NULL };
 static const char *varif[] = { "variety", "-f", NULL };

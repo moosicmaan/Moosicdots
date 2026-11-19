@@ -12,9 +12,12 @@ uwsm app -- garuda-system-maintenance &
 uwsm app -- "$HOME/.config/.scripts/ut-bluelight" &
 
 # Wallpaper daemon, then initialize wallpaper.
-uwsm app -- awww-daemon &
-sleep 1
-uwsm app -- "$HOME/.config/.scripts/ut-wallpaper" --init &
+# --taking out wallpaper which can be added
+# later during the session
+# uwsm app -- awww-daemon &
+# sleep 1
+# uwsm app -- "$HOME/.config/.scripts/ut-wallpaper" --init &
+uwsm app -- "$HOME/.config/.scripts/wb-launch" &
 
 if [[ ! "$UWSM_SESSION" ]]; then
     echo "POPULATING ENVIRONMENT for DWL"

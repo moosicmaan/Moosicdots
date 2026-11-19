@@ -1,7 +1,4 @@
 {
-    // "dwl/tags": {
-    //     "num-tags": 5
-    // },
     "dwl/tags": {
         "num-tags": 9,
         "tag-labels": [
@@ -33,13 +30,9 @@
             // "🌔",
             // "🌕"
         ],
-        "format": "{icon}",
-        "format-icons": {
-            "occupied": "",
-            "focused": "󰹑",
-            "urgent": ""
-        },
-        "disable-click": false
+        "hide-vacant": true,
+        "disable-click": false,
+        "expand": false
     },
     "sway/workspaces": {
         "on-click": "activate",

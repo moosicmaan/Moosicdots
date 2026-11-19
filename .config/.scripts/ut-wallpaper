@@ -10,6 +10,15 @@ cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
 pic_folder="$HOME/Pictures/Backgrounds"
 notify_icon="/usr/share/icons/Tela-circle-dracula-dark/symbolic/apps/preferences-desktop-wallpaper-symbolic.svg"
+wall_server="awww-daemon"
+
+# Start the background daemon if needed
+if pidof "$wall_server"; then
+    echo "$wall_server is running"
+else
+    awww-daemon &
+    notify-send --icon="$notify_icon" "Wallpaper daemon:" "started $wall_server"
+fi
 
 # Create cache file if none exists
 if [ ! -f "$cache_file" ]; then
