@@ -18,6 +18,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -- /home/moosicmaan/.config/.scripts/ut-bluelight")
 	hl.exec_cmd("uwsm app -- awww query || uwsm app -- awww-daemon")
 	hl.exec_cmd("sleep 1 && $HOME/.config/.scripts/ut-wallpaper --init")
+	hl.exec_cmd("~/.config/.scripts/ut-save-env")
 	--needed only to render some blur effects
 	-- hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 end)

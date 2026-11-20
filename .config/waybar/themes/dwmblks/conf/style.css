@@ -24,6 +24,9 @@ window#waybar {
   padding: 0 4px;
 }
 
+#custom-session {
+  padding: 0px 4px 0px 6px;
+}
     /*
     Sway workspaces
      #workspaces button

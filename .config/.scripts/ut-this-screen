@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+
+if pidof dunst; then
+    pkill dunst
+    dunst &
+elif pidof swaync; then
+    pkill swaync
+    swaync &
+fi
+
+sleep 1
+
+notify-send --icon="screen-shared-symbolic" "Focused" "this screen"

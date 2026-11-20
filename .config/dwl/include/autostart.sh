@@ -6,18 +6,18 @@
 # exec <&-
 
 # Launch applications under UWSM management.
-uwsm app -- dunst &
-uwsm app -- wl-paste --watch cliphist store &
-uwsm app -- garuda-system-maintenance &
-uwsm app -- "$HOME/.config/.scripts/ut-bluelight" &
-
+dunst &
+wl-paste --watch cliphist store &
+garuda-system-maintenance &
+"$HOME/.config/.scripts/ut-bluelight" &
+"$HOME/.config/.scripts/ut-save-env"
 # Wallpaper daemon, then initialize wallpaper.
 # --taking out wallpaper which can be added
 # later during the session
-# uwsm app -- awww-daemon &
+# awww-daemon &
 # sleep 1
-# uwsm app -- "$HOME/.config/.scripts/ut-wallpaper" --init &
-uwsm app -- "$HOME/.config/.scripts/wb-launch" &
+# "$HOME/.config/.scripts/ut-wallpaper" --init &
+"$HOME/.config/.scripts/wb-launch" &
 
 if [[ ! "$UWSM_SESSION" ]]; then
     echo "POPULATING ENVIRONMENT for DWL"

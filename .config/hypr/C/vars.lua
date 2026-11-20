@@ -65,6 +65,7 @@ M.kmndext = M.my_scripts .. "/ut-kbd-350"
 M.kmndlap = M.my_scripts .. "/ut-kbd-lap"
 M.visualh = M.my_scripts .. "/hypr-visuals"
 M.gamemode = M.my_scripts .. "/hypr-gamemode"
+M.thiscreen = M.my_scripts .. "/ut-this-screen"
 M.rload = "hyprctl reload && " .. M.my_scripts .. "/ut-wallpaper --init"
 M.rlmon1 = 'hyprctl eval \'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", disabled = false })\''
 M.rlmon0 = 'hyprctl eval \'hl.monitor({ output = "eDP-1", mode = "1920x1080@60", disabled = true })\''

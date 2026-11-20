@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+tmp_env_file="/tmp/cron-session.env"
+
+mkdir -p "$(dirname "$tmp_env_file")"
+
+{
+    echo "export HOME=$(printf '%q' "$HOME")"
+    echo "export USER=$(printf '%q' "$USER")"
+    echo "export PATH=$(printf '%q' "$PATH")"
+
+    for var in \
+        DBUS_SESSION_BUS_ADDRESS \
+        WAYLAND_DISPLAY \
+        XDG_RUNTIME_DIR \
+        HYPRLAND_INSTANCE_SIGNATURE \
+        XDG_CURRENT_DESKTOP \
+        XDG_SESSION_TYPE \
+        DESKTOP_SESSION; do
+        printf 'export %s=%q\n' "$var" "${!var}"
+    done
+} >"$tmp_env_file"
+
+chmod 600 "$tmp_env_file"

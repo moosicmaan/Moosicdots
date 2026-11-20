@@ -6,6 +6,22 @@
 # -----------------------------------------------------
 # =====================================================
 
+cdesk=$(/home/moosicmaan/.config/.scripts/ut-session)
+from_cron="$1"
+
+# -----------------------------------------------------
+# Discover the current Wayland Compositor and if this is from cronie
+# -----------------------------------------------------
+if [[ $from_cron == "true" ]]; then
+    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session cron)
+else
+    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session)
+fi
+if [[ $cdesk == "nf" ]]; then
+    printf 'DESKTOP_SESSION not recognizable: "%s"\n' "$cdesk"
+    exit 1
+fi
+
 # Prefix to run commands in wayland using uwsm.
 prefix=$("$HOME/.config/.scripts/wayland-prefix")
 themecache="$HOME/.cache/themestyle"
@@ -32,36 +48,8 @@ themestyle=$(cat "$themecache")
 echo "Using the following to open the bar(s): $themestyle"
 
 # -----------------------------------------------------
-# Discover the current Wayland Compositor
+# Display the current variables
 # -----------------------------------------------------
-case "$DESKTOP_SESSION" in
-sway | sway:wlroots | /usr/share/wayland-sessions/sway.desktop)
-    cdesk="sway"
-    ;;
-hypr | \
-    hyprland | \
-    Hyprland | \
-    hyprland-uwsm | \
-    /usr/share/wayland-sessions/hyprland.desktop | \
-    /usr/share/wayland-sessions/hyprland-uwsm.desktop)
-    cdesk="hypr"
-    ;;
-dwl | \
-    dwl-uwsm | \
-    /usr/local/share/wayland-sessions/dwl.desktop | \
-    dwl:wlroots)
-    cdesk="dwl"
-    ;;
-niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
-    cdesk="niri"
-    ;;
-*)
-    # cdesk="hypr"
-    printf 'DESKTOP_SESSION not recognizable: %s\n\n' "$DESKTOP_SESSION"
-    exit 1
-    ;;
-esac
-
 IFS=';' read -ra arrThemes <<<"$themestyle"
 echo "Theme: ${arrThemes[0]}"
 echo "Style: ${arrThemes[1]}"

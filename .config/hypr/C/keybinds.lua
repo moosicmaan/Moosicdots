@@ -226,6 +226,7 @@ hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { description
 hl.bind("CTRL + ALT + e", hl.dsp.exec_cmd(vars.rlmon1), { description = "Show Mon0" })
 hl.bind("CTRL + ALT + SHIFT + e", hl.dsp.exec_cmd(vars.rlmon0), { description = "Hide Mon0" })
 hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }), { description = "Focus on the next monitor" })
+hl.bind(MOD .. " + period", hl.dsp.exec_cmd(vars.thiscreen), { description = "Focus on the next monitor" })
 hl.bind(
 	MOD .. " + comma",
 	hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }),

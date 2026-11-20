@@ -46,7 +46,7 @@ edit = [
 ]
 pics = [
     { run = 'gimp "%s"', desc = "gimp", block = true, for = "unix" },
-    { run = 'org.kde.gwenview "%s"', desc = "gwenview", block = true, for = "unix" },
+    { run = 'gwenview "%s"', desc = "gwenview", block = true, for = "unix" },
     { run = 'code %*', orphan = true, desc = "code", for = "windows" },
     { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]

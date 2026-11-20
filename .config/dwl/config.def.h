@@ -220,6 +220,27 @@ static const char *mnow[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "-
 static const char *mstop[] = { "/home/moosicmaan/.config/.scripts/media-ctrl", "--pause", NULL };
 static const char *calc[] = { "sh", "-c", "pkill galculator || galculator", NULL };
 
+/*   HELPER SCRIPTS   */
+static const char *thisreen[] = { "/home/moosicmaan/.config/.scripts/ut-this-screen", NULL };
+
+static void
+focusmonleft_notify(const Arg *arg)
+{
+    Arg left = { .i = WLR_DIRECTION_LEFT };
+
+    focusmon(&left);
+    spawn(&(Arg){ .v = thisreen });
+}
+static void
+focusmonright_notify(const Arg *arg)
+{
+    Arg left = { .i = WLR_DIRECTION_RIGHT };
+
+    focusmon(&left);
+    spawn(&(Arg){ .v = thisreen });
+}
+
+/*   KEYBINDINGS   */
 static const Key keys[] = {
 	/* modifier              key                           function               argument */
 /*---SCRATCHPADS---*/
@@ -297,8 +318,10 @@ static const Key keys[] = {
 	{ MODKEY,            XKB_KEY_f,                    togglefloating,       {0} },
 	{ MODKEY,            XKB_KEY_0,                    view,                 {.ui = ~0} },
 	{ MODKEY|ShiftMask,  XKB_KEY_parenright,           tag,                  {.ui = ~0} },
-	{ MODKEY,            XKB_KEY_comma,                focusmon,             {.i = WLR_DIRECTION_LEFT} },
-	{ MODKEY,            XKB_KEY_period,               focusmon,             {.i = WLR_DIRECTION_RIGHT} },
+    { MODKEY,            XKB_KEY_comma,                focusmonleft_notify,  {0} },
+	// { MODKEY,            XKB_KEY_comma,                focusmon,             {.i = WLR_DIRECTION_LEFT} },
+    { MODKEY,            XKB_KEY_period,               focusmonright_notify, {0} },
+	// { MODKEY,            XKB_KEY_period,               focusmon,             {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|ShiftMask,  XKB_KEY_less,                 tagmon,               {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|ShiftMask,  XKB_KEY_greater,              tagmon,               {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|ShiftMask,  XKB_KEY_Q,                    quit,                 {0} },

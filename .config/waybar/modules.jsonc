@@ -39,21 +39,21 @@
         "active-only": false,
         "all-outputs": true,
         "show-special": true,
-        "format": "{name}{icon}",
+        "format": "{name}",
         "format-icons": {
             "default": "",
             "persistent": "",
             "urgent": "",
             "focused": "󰹑",
-            "magic": "󱡄 ",
-            "S-term": " ",
-            "S-monitor": " ",
-            "S-files": " ",
-            "S-audio": " ",
-            "S-bluet": "󰂯 ",
-            "S-vial": " ",
-            "S-notes": " ",
-            "S-moosic": "󰝚 "
+            "magic": "󱡄",
+            "S-term": "",
+            "S-monitor": "",
+            "S-files": "",
+            "S-audio": "",
+            "S-bluet": "󰂯",
+            "S-vial": "",
+            "S-notes": "",
+            "S-moosic": "󰝚"
         },
         "persistent-workspaces": {
             "1": [
@@ -753,8 +753,10 @@
     },
     "custom/session": {
         "format": "{text}",
-        // "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'",
-        "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'"
+        "exec": "echo $(ut-session) | tr '[:lower:]' '[:upper:]'"
+        // "exec": "echo $DESKTOP_SESSION | tr '[:lower:]' '[:upper:]'"
+        // "exec": "echo $XDG_SESSION_DESKTOP| tr '[:lower:]' '[:upper:]'",
+        // "interval": 1
     },
     "custom/musicprogress": {
         "format": "{text}",

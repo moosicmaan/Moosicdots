@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Return a simplified string identifing the current session
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
+
+if [[ "$1" == "cron" ]]; then
+    # Load the wayland environment so that cronie can read it
+    SESSION_ENV="/tmp/cron-session.env"
+    if [[ ! -f "$SESSION_ENV" ]]; then
+        ~/.config/.scripts/ut-save-env
+    fi
+    if [[ -f "$SESSION_ENV" ]]; then
+        # shellcheck source=/tmp/cron-session.env
+        source "$SESSION_ENV"
+    else
+        # Capture the script name
+        script_name=$(basename "$0")
+        # Error handling
+        printf 'Error occurred in script %s: Compositor not found
+        DESKTOP_SESSION not recognizable: %s
+        There is not a waybar config for this session.
+        Exiting...\n' \
+            "$script_name" "$DESKTOP_SESSION"
+    fi
+fi
+
+if [[ -n "$DESKTOP_SESSION" ]]; then
+    session="$DESKTOP_SESSION"
+elif [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
+    session="$XDG_CURRENT_DESKTOP"
+else
+    session="nf"
+fi
+
+# -----------------------------------------------------
+# Discover the current Wayland Compositor
+# -----------------------------------------------------
+case "$session" in
+sway | Sway | sway:wlroots | /usr/share/wayland-sessions/sway.desktop)
+    session="sway"
+    ;;
+hypr | hyprland | /usr/share/wayland-sessions/hyprland-uwsm.desktop | Hyprland | hyprland-uwsm | /usr/share/wayland-sessions/hyprland.desktop)
+    # echo "testing"
+    session="hypr"
+    ;;
+dwl | DWL | /usr/local/share/wayland-sessions/dwl.desktop | dwl:wlroots)
+    session="dwl"
+    ;;
+niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
+    session="niri"
+    ;;
+*)
+    # session="hypr"
+    printf 'DESKTOP_SESSION not recognizable: "%s"\n' "$DESKTOP_SESSION"
+    # exit 1
+    ;;
+esac
+
+echo "$session"
