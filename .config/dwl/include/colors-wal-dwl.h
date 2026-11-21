@@ -1,1 +1,0 @@
-/home/moosicmaan/.cache/wal/colors-wal-dwl.h

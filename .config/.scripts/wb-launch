@@ -7,10 +7,9 @@
 # =====================================================
 
 # Prefix to run commands in wayland using uwsm.
-themedir="$HOME/.config/waybar/themes"
 prefix=$("$HOME/.config/.scripts/wayland-prefix")
 themecache="$HOME/.cache/themestyle"
-# Default theme: THEMEFOLDER;VARIATION
+themedir="$HOME/.config/waybar/themes"
 defaulttheme="moosic;moosic/mixed"
 from_cron="$1"
 script_name=$(basename "$0")
@@ -37,25 +36,23 @@ fi
 # Quit all running statuesbar instances
 # -----------------------------------------------------
 pkill waybar
+pkill mangobar
 sleep 0.2
 
 # -----------------------------------------------------
 # Get current theme information from .cache/themestyle
 # -----------------------------------------------------
 if [ ! -f "$themecache" ]; then
-    echo -e \
-        "Theme cache file, $themecache, not found!\nUsing default: $defaulttheme"
+    printf 'Theme cache file, %s, not found!\nUsing default: %s' \
+        "$themecache" "$defaulttheme"
     touch "$themecache"
     echo "$defaulttheme" >"$themecache"
 fi
 
 themestyle=$(cat "$themecache")
-printf '\nUsing the following to open the bar(s): %s\n' "$themestyle"
-
-# -----------------------------------------------------
-# Display the current variables
-# -----------------------------------------------------
 IFS=';' read -ra arrThemes <<<"$themestyle"
+
+printf '\nUsing the following to open the bar(s): %s\n' "$themestyle"
 echo "Theme: ${arrThemes[0]}"
 echo "Style: ${arrThemes[1]}"
 echo "WM/WC: $cdesk"
@@ -65,11 +62,13 @@ echo "WM/WC: $cdesk"
 # -----------------------------------------------------
 config_file="config_$cdesk.jsonc"
 style_file="style.css"
+
 cfile="$themedir/${arrThemes[0]}/$config_file"
 sfile="$themedir/${arrThemes[1]}/$style_file"
-printf 'Confic file: %s\nStyle file: %s\n' "$cfile" "$sfile"
-nfct=0
 
+printf 'Config file: %s\nStyle file: %s\n' "$cfile" "$sfile"
+
+nfct=0
 if [[ ! -f "$cfile" ]]; then
     printf '!\tConfig file not found:\n\t%s\n' "$cfile"
     ((nfct++))

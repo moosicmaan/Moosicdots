@@ -21,8 +21,8 @@
         // "width": 1280, // Waybar width
         // Choose the order of the modules
         "modules-left": [
-            "hyprland/workspaces",
             "custom/session",
+            "hyprland/workspaces",
             "hyprland/submap",
             "hyprland/window"
         ],
@@ -72,8 +72,8 @@
             "~/.config/waybar/modules.jsonc"
         ],
         "modules-left": [
-            "hyprland/workspaces",
             "custom/session",
+            "hyprland/workspaces",
             "hyprland/submap",
             "hyprland/window"
         ],

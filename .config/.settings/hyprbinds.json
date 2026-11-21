@@ -1022,26 +1022,6 @@
   {
     "locked": false,
     "mouse": false,
-    "release": true,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "M-C",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "u",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Toggle USB keyboard",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "160"
-  },
-  {
-    "locked": false,
-    "mouse": false,
     "release": false,
     "repeat": false,
     "longPress": false,
@@ -1057,7 +1037,7 @@
     "description": "Select statusbar",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "163"
+    "arg": "160"
   },
   {
     "locked": false,
@@ -1077,7 +1057,7 @@
     "description": "Toggle statusbar",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "166"
+    "arg": "163"
   },
   {
     "locked": false,
@@ -1097,7 +1077,7 @@
     "description": "Select wallpaper",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "169"
+    "arg": "166"
   },
   {
     "locked": false,
@@ -1117,7 +1097,7 @@
     "description": "Random wallpaper",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "172"
+    "arg": "169"
   },
   {
     "locked": false,
@@ -1131,13 +1111,13 @@
     "modmask": "M-A",
     "submap": "",
     "submap_universal": "false",
-    "key": "n",
+    "key": "i",
     "keycode": 0,
     "catch_all": false,
     "description": "Select WiFi",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "175"
+    "arg": "172"
   },
   {
     "locked": false,
@@ -1157,7 +1137,7 @@
     "description": "Toggle gamemode",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "178"
+    "arg": "175"
   },
   {
     "locked": false,
@@ -1177,7 +1157,7 @@
     "description": "Close a window",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(close)",
-    "arg": "181"
+    "arg": "178"
   },
   {
     "locked": false,
@@ -1197,7 +1177,7 @@
     "description": "Center a window",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(center)",
-    "arg": "184"
+    "arg": "181"
   },
   {
     "locked": false,
@@ -1217,7 +1197,7 @@
     "description": "Pseudo tile a window",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(pseudo)",
-    "arg": "187"
+    "arg": "184"
   },
   {
     "locked": false,
@@ -1237,7 +1217,7 @@
     "description": "Toggle window float",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(float)",
-    "arg": "190"
+    "arg": "187"
   },
   {
     "locked": false,
@@ -1257,7 +1237,7 @@
     "description": "Toggle window fullscreen",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(fullscreen)",
-    "arg": "193"
+    "arg": "190"
   },
   {
     "locked": false,
@@ -1277,7 +1257,7 @@
     "description": "Swap window left",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(swap)",
-    "arg": "196"
+    "arg": "193"
   },
   {
     "locked": false,
@@ -1297,7 +1277,7 @@
     "description": "Swap window right",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(swap)",
-    "arg": "199"
+    "arg": "196"
   },
   {
     "locked": false,
@@ -1317,7 +1297,7 @@
     "description": "Start windows submap",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(submap)",
-    "arg": "202"
+    "arg": "199"
   },
   {
     "locked": false,
@@ -1332,6 +1312,26 @@
     "submap": "windows",
     "submap_universal": "false",
     "key": "left",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(move)",
+    "arg": "202"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "",
+    "submap": "windows",
+    "submap_universal": "false",
+    "key": "right",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1351,7 +1351,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "right",
+    "key": "up",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1371,7 +1371,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "up",
+    "key": "down",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1391,7 +1391,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "down",
+    "key": "h",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1411,7 +1411,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "h",
+    "key": "l",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1431,7 +1431,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "l",
+    "key": "k",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1451,7 +1451,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "k",
+    "key": "j",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1471,33 +1471,13 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "j",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(move)",
-    "arg": "226"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "",
-    "submap": "windows",
-    "submap_universal": "false",
     "key": "f",
     "keycode": 0,
     "catch_all": false,
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(float)",
-    "arg": "229"
+    "arg": "226"
   },
   {
     "locked": false,
@@ -1517,7 +1497,7 @@
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(fullscreen)",
-    "arg": "232"
+    "arg": "229"
   },
   {
     "locked": false,
@@ -1532,6 +1512,26 @@
     "submap": "windows",
     "submap_universal": "false",
     "key": "s",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(layout)",
+    "arg": "232"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "",
+    "submap": "windows",
+    "submap_universal": "false",
+    "key": "n",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1551,7 +1551,7 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "n",
+    "key": "p",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -1571,33 +1571,13 @@
     "modmask": "",
     "submap": "windows",
     "submap_universal": "false",
-    "key": "p",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(layout)",
-    "arg": "241"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "",
-    "submap": "windows",
-    "submap_universal": "false",
     "key": "escape",
     "keycode": 0,
     "catch_all": false,
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(submap)",
-    "arg": "244"
+    "arg": "241"
   },
   {
     "locked": false,
@@ -1615,6 +1595,26 @@
     "keycode": 0,
     "catch_all": false,
     "description": "Focus window left",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(focus)",
+    "arg": "244"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": true,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "right",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Focus window right",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
     "arg": "247"
@@ -1631,33 +1631,13 @@
     "modmask": "M",
     "submap": "",
     "submap_universal": "false",
-    "key": "right",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Focus window right",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "250"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "M",
-    "submap": "",
-    "submap_universal": "false",
     "key": "up",
     "keycode": 0,
     "catch_all": false,
     "description": "Focus window up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "253"
+    "arg": "250"
   },
   {
     "locked": false,
@@ -1677,7 +1657,7 @@
     "description": "Focus window down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "256"
+    "arg": "253"
   },
   {
     "locked": false,
@@ -1697,7 +1677,7 @@
     "description": "Focus window left",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "259"
+    "arg": "256"
   },
   {
     "locked": false,
@@ -1717,7 +1697,7 @@
     "description": "Focus window right",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "262"
+    "arg": "259"
   },
   {
     "locked": false,
@@ -1737,7 +1717,7 @@
     "description": "Focus window up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "265"
+    "arg": "262"
   },
   {
     "locked": false,
@@ -1757,7 +1737,7 @@
     "description": "Focus window down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "268"
+    "arg": "265"
   },
   {
     "locked": false,
@@ -1777,7 +1757,7 @@
     "description": "Swap window to the left",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "271"
+    "arg": "268"
   },
   {
     "locked": false,
@@ -1797,7 +1777,7 @@
     "description": "Swap window to the right",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "274"
+    "arg": "271"
   },
   {
     "locked": false,
@@ -1817,7 +1797,7 @@
     "description": "Swap window up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "277"
+    "arg": "274"
   },
   {
     "locked": false,
@@ -1837,7 +1817,7 @@
     "description": "Swap window down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "280"
+    "arg": "277"
   },
   {
     "locked": false,
@@ -1857,7 +1837,7 @@
     "description": "Swap window to the left",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "283"
+    "arg": "280"
   },
   {
     "locked": false,
@@ -1877,7 +1857,7 @@
     "description": "Swap window to the right",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "286"
+    "arg": "283"
   },
   {
     "locked": false,
@@ -1897,7 +1877,7 @@
     "description": "Swap window up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "289"
+    "arg": "286"
   },
   {
     "locked": false,
@@ -1917,7 +1897,7 @@
     "description": "Swap window down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "292"
+    "arg": "289"
   },
   {
     "locked": false,
@@ -1937,7 +1917,7 @@
     "description": "Drag the window",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(drag)",
-    "arg": "295"
+    "arg": "292"
   },
   {
     "locked": false,
@@ -1957,7 +1937,7 @@
     "description": "Resize the window",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(resize)",
-    "arg": "298"
+    "arg": "295"
   },
   {
     "locked": false,
@@ -1971,13 +1951,13 @@
     "modmask": "A",
     "submap": "",
     "submap_universal": "false",
-    "key": "R",
+    "key": "r",
     "keycode": 0,
     "catch_all": false,
     "description": "Start resize submap",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(submap)",
-    "arg": "301"
+    "arg": "298"
   },
   {
     "locked": false,
@@ -1997,7 +1977,7 @@
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(resize)",
-    "arg": "304"
+    "arg": "301"
   },
   {
     "locked": false,
@@ -2017,7 +1997,7 @@
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(resize)",
-    "arg": "307"
+    "arg": "304"
   },
   {
     "locked": false,
@@ -2032,6 +2012,26 @@
     "submap": "resize",
     "submap_universal": "false",
     "key": "up",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(resize)",
+    "arg": "307"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": false,
+    "modmask": "",
+    "submap": "resize",
+    "submap_universal": "false",
+    "key": "down",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2051,7 +2051,7 @@
     "modmask": "",
     "submap": "resize",
     "submap_universal": "false",
-    "key": "down",
+    "key": "l",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2071,7 +2071,7 @@
     "modmask": "",
     "submap": "resize",
     "submap_universal": "false",
-    "key": "l",
+    "key": "h",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2091,7 +2091,7 @@
     "modmask": "",
     "submap": "resize",
     "submap_universal": "false",
-    "key": "h",
+    "key": "j",
     "keycode": 0,
     "catch_all": false,
     "description": "",
@@ -2111,33 +2111,13 @@
     "modmask": "",
     "submap": "resize",
     "submap_universal": "false",
-    "key": "j",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(resize)",
-    "arg": "322"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": false,
-    "modmask": "",
-    "submap": "resize",
-    "submap_universal": "false",
     "key": "k",
     "keycode": 0,
     "catch_all": false,
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(resize)",
-    "arg": "325"
+    "arg": "322"
   },
   {
     "locked": false,
@@ -2157,7 +2137,7 @@
     "description": "",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(submap)",
-    "arg": "328"
+    "arg": "325"
   },
   {
     "locked": false,
@@ -2177,7 +2157,7 @@
     "description": "Go to workspace1",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "331"
+    "arg": "328"
   },
   {
     "locked": false,
@@ -2197,7 +2177,7 @@
     "description": "Move window to workspace1",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "334"
+    "arg": "331"
   },
   {
     "locked": false,
@@ -2217,7 +2197,7 @@
     "description": "Go to workspace2",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "337"
+    "arg": "334"
   },
   {
     "locked": false,
@@ -2237,7 +2217,7 @@
     "description": "Move window to workspace2",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "340"
+    "arg": "337"
   },
   {
     "locked": false,
@@ -2257,7 +2237,7 @@
     "description": "Go to workspace3",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "343"
+    "arg": "340"
   },
   {
     "locked": false,
@@ -2277,7 +2257,7 @@
     "description": "Move window to workspace3",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "346"
+    "arg": "343"
   },
   {
     "locked": false,
@@ -2297,7 +2277,7 @@
     "description": "Go to workspace4",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "349"
+    "arg": "346"
   },
   {
     "locked": false,
@@ -2317,7 +2297,7 @@
     "description": "Move window to workspace4",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "352"
+    "arg": "349"
   },
   {
     "locked": false,
@@ -2337,7 +2317,7 @@
     "description": "Go to workspace5",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "355"
+    "arg": "352"
   },
   {
     "locked": false,
@@ -2357,7 +2337,7 @@
     "description": "Move window to workspace5",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "358"
+    "arg": "355"
   },
   {
     "locked": false,
@@ -2377,7 +2357,7 @@
     "description": "Go to workspace6",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "361"
+    "arg": "358"
   },
   {
     "locked": false,
@@ -2397,7 +2377,7 @@
     "description": "Move window to workspace6",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "364"
+    "arg": "361"
   },
   {
     "locked": false,
@@ -2417,7 +2397,7 @@
     "description": "Go to workspace7",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "367"
+    "arg": "364"
   },
   {
     "locked": false,
@@ -2437,7 +2417,7 @@
     "description": "Move window to workspace7",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "370"
+    "arg": "367"
   },
   {
     "locked": false,
@@ -2457,7 +2437,7 @@
     "description": "Go to workspace8",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "373"
+    "arg": "370"
   },
   {
     "locked": false,
@@ -2477,7 +2457,7 @@
     "description": "Move window to workspace8",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "376"
+    "arg": "373"
   },
   {
     "locked": false,
@@ -2497,7 +2477,7 @@
     "description": "Go to workspace9",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "379"
+    "arg": "376"
   },
   {
     "locked": false,
@@ -2517,7 +2497,7 @@
     "description": "Move window to workspace9",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "382"
+    "arg": "379"
   },
   {
     "locked": false,
@@ -2537,7 +2517,7 @@
     "description": "Go to workspace10",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "385"
+    "arg": "382"
   },
   {
     "locked": false,
@@ -2557,7 +2537,7 @@
     "description": "Move window to workspace10",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "388"
+    "arg": "385"
   },
   {
     "locked": false,
@@ -2577,7 +2557,7 @@
     "description": "Go to next workspace",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
-    "arg": "391"
+    "arg": "388"
   },
   {
     "locked": false,
@@ -2597,6 +2577,26 @@
     "description": "Go to previous workspace",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(focus)",
+    "arg": "391"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": true,
+    "modmask": "A",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "0",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Show Mon0",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(exec_cmd)",
     "arg": "394"
   },
   {
@@ -2608,13 +2608,13 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": true,
-    "modmask": "C-A",
+    "modmask": "C",
     "submap": "",
     "submap_universal": "false",
-    "key": "e",
+    "key": "0",
     "keycode": 0,
     "catch_all": false,
-    "description": "Show Mon0",
+    "description": "Hide Mon0",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
     "arg": "397"
@@ -2628,13 +2628,13 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": true,
-    "modmask": "MEH",
+    "modmask": "A",
     "submap": "",
     "submap_universal": "false",
-    "key": "e",
+    "key": "1",
     "keycode": 0,
     "catch_all": false,
-    "description": "Hide Mon0",
+    "description": "Show Mon1",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
     "arg": "400"
@@ -2648,15 +2648,15 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": true,
-    "modmask": "M",
+    "modmask": "C",
     "submap": "",
     "submap_universal": "false",
-    "key": "period",
+    "key": "1",
     "keycode": 0,
     "catch_all": false,
-    "description": "Focus on the next monitor",
+    "description": "Hide Mon1",
     "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(focus)",
+    "dispatcher": "HL.Dispatcher(exec_cmd)",
     "arg": "403"
   },
   {
@@ -2676,8 +2676,28 @@
     "catch_all": false,
     "description": "Focus on the next monitor",
     "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
+    "dispatcher": "HL.Dispatcher(focus)",
     "arg": "406"
+  },
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": false,
+    "longPress": false,
+    "non_consuming": false,
+    "auto_consuming": false,
+    "has_description": true,
+    "modmask": "M",
+    "submap": "",
+    "submap_universal": "false",
+    "key": "period",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Focus on the next monitor",
+    "allow_input_capture": false,
+    "dispatcher": "HL.Dispatcher(exec_cmd)",
+    "arg": "409"
   },
   {
     "locked": false,
@@ -2697,47 +2717,7 @@
     "description": "Swap the two main monitors",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(swap_monitors)",
-    "arg": "409"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "A",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "up",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Zoom out",
-    "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf7021110",
-    "arg": "410"
-  },
-  {
-    "locked": false,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "A",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "down",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Zoom in",
-    "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf70043d0",
-    "arg": "411"
+    "arg": "412"
   },
   {
     "locked": false,
@@ -2756,8 +2736,8 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf700ac90",
-    "arg": "412"
+    "dispatcher": "function: 0x560c4f153500",
+    "arg": "413"
   },
   {
     "locked": false,
@@ -2776,8 +2756,8 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf8b63660",
-    "arg": "413"
+    "dispatcher": "function: 0x560c4ecf0090",
+    "arg": "414"
   },
   {
     "locked": true,
@@ -2796,8 +2776,8 @@
     "catch_all": false,
     "description": "Zoom in",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf6ff1be0",
-    "arg": "414"
+    "dispatcher": "function: 0x560c4f1c9b70",
+    "arg": "415"
   },
   {
     "locked": true,
@@ -2816,8 +2796,8 @@
     "catch_all": false,
     "description": "Zoom out",
     "allow_input_capture": false,
-    "dispatcher": "function: 0x561bf7e78360",
-    "arg": "415"
+    "dispatcher": "function: 0x560c4ee0ede0",
+    "arg": "416"
   },
   {
     "locked": true,
@@ -2837,7 +2817,7 @@
     "description": "Brightness up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "418"
+    "arg": "419"
   },
   {
     "locked": true,
@@ -2857,47 +2837,7 @@
     "description": "Brightness down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "421"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "b",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Monitor brightness up",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "424"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "d",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Monitor brightness down",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "427"
+    "arg": "422"
   },
   {
     "locked": true,
@@ -2908,16 +2848,16 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": true,
-    "modmask": "MEH",
+    "modmask": "S",
     "submap": "",
     "submap_universal": "false",
-    "key": "b",
+    "key": "XF86MonBrightnessUp",
     "keycode": 0,
     "catch_all": false,
-    "description": "Screen brightness up",
+    "description": "Brightness up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "430"
+    "arg": "425"
   },
   {
     "locked": true,
@@ -2928,16 +2868,16 @@
     "non_consuming": false,
     "auto_consuming": false,
     "has_description": true,
-    "modmask": "MEH",
+    "modmask": "S",
     "submap": "",
     "submap_universal": "false",
-    "key": "d",
+    "key": "XF86MonBrightnessDown",
     "keycode": 0,
     "catch_all": false,
-    "description": "Screen brightncss down",
+    "description": "Brightness down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "433"
+    "arg": "428"
   },
   {
     "locked": true,
@@ -2957,27 +2897,7 @@
     "description": "Audio up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "436"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "up",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Audio up",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "439"
+    "arg": "431"
   },
   {
     "locked": true,
@@ -2997,27 +2917,7 @@
     "description": "Audio down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "442"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "down",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Audio down",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "445"
+    "arg": "434"
   },
   {
     "locked": true,
@@ -3037,13 +2937,13 @@
     "description": "Mute audio",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "448"
+    "arg": "437"
   },
   {
     "locked": true,
     "mouse": false,
     "release": false,
-    "repeat": false,
+    "repeat": true,
     "longPress": false,
     "non_consuming": false,
     "auto_consuming": false,
@@ -3051,13 +2951,13 @@
     "modmask": "HYPER",
     "submap": "",
     "submap_universal": "false",
-    "key": "t",
+    "key": "r",
     "keycode": 0,
     "catch_all": false,
-    "description": "Mute audio",
+    "description": "Mic volume down",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "451"
+    "arg": "440"
   },
   {
     "locked": true,
@@ -3074,50 +2974,10 @@
     "key": "m",
     "keycode": 0,
     "catch_all": false,
-    "description": "Mic volume down",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "454"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": true,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "comma",
-    "keycode": 0,
-    "catch_all": false,
     "description": "Mic volume up",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "457"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "XF86AudioMicMute",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Mic mute",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "460"
+    "arg": "443"
   },
   {
     "locked": true,
@@ -3131,13 +2991,13 @@
     "modmask": "HYPER",
     "submap": "",
     "submap_universal": "false",
-    "key": "period",
+    "key": "f",
     "keycode": 0,
     "catch_all": false,
     "description": "Mic toggle",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "463"
+    "arg": "446"
   },
   {
     "locked": true,
@@ -3157,27 +3017,7 @@
     "description": "Media next",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "466"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "n",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Media next",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "469"
+    "arg": "449"
   },
   {
     "locked": true,
@@ -3197,27 +3037,7 @@
     "description": "Media stop",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "472"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "x",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Media stop",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "475"
+    "arg": "452"
   },
   {
     "locked": true,
@@ -3237,27 +3057,7 @@
     "description": "Media play/pause",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "478"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "y",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Media play/pause",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "481"
+    "arg": "455"
   },
   {
     "locked": true,
@@ -3277,27 +3077,7 @@
     "description": "Media previous",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "484"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "p",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Media previous",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "487"
+    "arg": "458"
   },
   {
     "locked": true,
@@ -3317,7 +3097,7 @@
     "description": "Display currently playing",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "490"
+    "arg": "461"
   },
   {
     "locked": false,
@@ -3331,13 +3111,13 @@
     "modmask": "HYPER",
     "submap": "",
     "submap_universal": "false",
-    "key": "u",
+    "key": "l",
     "keycode": 0,
     "catch_all": false,
     "description": "Display currently playing",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "493"
+    "arg": "464"
   },
   {
     "locked": false,
@@ -3351,13 +3131,13 @@
     "modmask": "HYPER",
     "submap": "",
     "submap_universal": "false",
-    "key": "i",
+    "key": "d",
     "keycode": 0,
     "catch_all": false,
     "description": "Manage audio playlists",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "496"
+    "arg": "467"
   },
   {
     "locked": true,
@@ -3377,27 +3157,7 @@
     "description": "Toggle calculator",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "499"
-  },
-  {
-    "locked": true,
-    "mouse": false,
-    "release": false,
-    "repeat": false,
-    "longPress": false,
-    "non_consuming": false,
-    "auto_consuming": false,
-    "has_description": true,
-    "modmask": "HYPER",
-    "submap": "",
-    "submap_universal": "false",
-    "key": "c",
-    "keycode": 0,
-    "catch_all": false,
-    "description": "Toggle calculator",
-    "allow_input_capture": false,
-    "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "502"
+    "arg": "470"
   },
   {
     "locked": false,
@@ -3417,7 +3177,7 @@
     "description": "kmonad for external keyboard",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "505"
+    "arg": "473"
   },
   {
     "locked": false,
@@ -3437,7 +3197,7 @@
     "description": "kmoned for laptop keybaurd",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "508"
+    "arg": "476"
   },
   {
     "locked": false,
@@ -3457,7 +3217,7 @@
     "description": "Quit hyprland",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(exec_cmd)",
-    "arg": "511"
+    "arg": "479"
   },
   {
     "locked": false,
@@ -3477,7 +3237,7 @@
     "description": "Terminal scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "515"
+    "arg": "483"
   },
   {
     "locked": false,
@@ -3497,7 +3257,7 @@
     "description": "File browser scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "518"
+    "arg": "486"
   },
   {
     "locked": false,
@@ -3517,7 +3277,7 @@
     "description": "System monitor scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "521"
+    "arg": "489"
   },
   {
     "locked": false,
@@ -3537,7 +3297,7 @@
     "description": "Music scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "524"
+    "arg": "492"
   },
   {
     "locked": false,
@@ -3557,7 +3317,7 @@
     "description": "Audio scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "527"
+    "arg": "495"
   },
   {
     "locked": false,
@@ -3577,7 +3337,7 @@
     "description": "Bluetooth scratchped",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "530"
+    "arg": "498"
   },
   {
     "locked": false,
@@ -3597,7 +3357,7 @@
     "description": "Keyboard config scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "533"
+    "arg": "501"
   },
   {
     "locked": false,
@@ -3617,7 +3377,7 @@
     "description": "Notetaking scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "536"
+    "arg": "504"
   },
   {
     "locked": false,
@@ -3637,7 +3397,7 @@
     "description": "Toggle magic scratchped",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(toggle_special)",
-    "arg": "539"
+    "arg": "507"
   },
   {
     "locked": false,
@@ -3657,6 +3417,6 @@
     "description": "Move window to magic scratchpad",
     "allow_input_capture": false,
     "dispatcher": "HL.Dispatcher(move)",
-    "arg": "542"
+    "arg": "510"
   }
 ]

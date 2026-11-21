@@ -8,15 +8,6 @@ hl.config({
 	},
 })
 
----- PLAYGROUND ----
--- hl.bind("ALT + Tab", function()
--- 	hl.dispatch(hl.dsp.window.cycle_next())
--- 	hl.dispatch(hl.dsp.window.alter_zorder({ mode = "top" }))
--- end)
--- hl.on("window.open", function()
--- 	hl.exec_cmd("notify-send Window Opened")
--- end)
-
 ---- VARS/MODS ----
 local vars = require("C.vars")
 local MOD = vars.MOD
@@ -24,8 +15,8 @@ local HYPER = vars.HYPER
 local MEH = vars.MEH
 
 ---- APPLICATIONS ----
-hl.bind(MOD .. " + t", hl.dsp.exec_cmd(vars.my_term2), { description = "Open the alterate terminal emulator" })
 hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(vars.my_term), { description = "Open the default terminal emulator" })
+hl.bind(MOD .. " + t", hl.dsp.exec_cmd(vars.my_term2), { description = "Open the alterate terminal emulator" })
 hl.bind(
 	MOD .. " + SHIFT + Return",
 	hl.dsp.exec_cmd(vars.my_filesg),
@@ -44,7 +35,6 @@ hl.bind(
 hl.bind(MOD .. " + SHIFT + m", hl.dsp.exec_cmd(vars.my_media), { description = "Open video player" })
 hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })
 hl.bind("Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })
-hl.bind("CTRL + ALT + t", hl.dsp.exec_cmd(vars.my_mux), { description = "Start a TMUX session" })
 hl.bind("CTRL + ALT + m", hl.dsp.exec_cmd(vars.my_beats), { description = "Rofi Jams - play Music" })
 hl.bind("CTRL + ALT + a", hl.dsp.exec_cmd(vars.aiassist), { description = "Get AI help" })
 
@@ -65,10 +55,11 @@ hl.bind(MOD .. " + p", hl.dsp.exec_cmd(vars.menu_run), { description = "Dmenu-li
 hl.bind(MOD .. " + SHIFT + p", hl.dsp.exec_cmd(vars.menu_drun), { description = "Rofi app selector" })
 hl.bind(MOD .. " + CTRL + p", hl.dsp.exec_cmd(vars.menu_files), { description = "Rofi file selector" })
 hl.bind(MOD .. " + ALT + p", hl.dsp.exec_cmd(vars.menu_win), { description = "Rofi current window selector" })
-hl.bind(MOD .. " + SHIFT + O", hl.dsp.exec_cmd(vars.bbooks), { description = "Bookmark selector" })
+hl.bind(MOD .. " + SHIFT + o", hl.dsp.exec_cmd(vars.bbooks), { description = "Bookmark selector" })
 hl.bind(MOD .. " + CTRL + c", hl.dsp.exec_cmd(vars.clips), { description = "Rofi clipboard copy selector" })
 hl.bind(MOD .. " + CTRL + v", hl.dsp.exec_cmd(vars.clips), { description = "Rofi clipboard paste selector" })
 hl.bind(MOD .. " + CTRL + q", hl.dsp.exec_cmd(vars.logot), { description = "System menu" })
+hl.bind(MOD .. " + ALT + i", hl.dsp.exec_cmd(vars.netwrk), { description = "Select WiFi" })
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(vars.logot), { description = "System menu" })
 hl.bind("CTRL + ALT + o", hl.dsp.exec_cmd(vars.bsearch), { description = "Online search" })
 hl.bind("CTRL + ALT + k", hl.dsp.exec_cmd(vars.keybs), { description = "Keybind search and execute" })
@@ -77,7 +68,7 @@ hl.bind("CTRL + ALT + c", hl.dsp.exec_cmd(vars.walpic), { description = "Colorth
 
 ---- FUNCTION KEYS/HOTLIST ----
 hl.bind(MEH .. " + F1", hl.dsp.exec_cmd(vars.my_brows2), { description = "Open alt internet browser" })
-hl.bind(MEH .. " + F2", hl.dsp.exec_cmd(vars.my_email2), { description = "Open alt email" })
+hl.bind(MEH .. " + F2", hl.dsp.exec_cmd(vars.my_email), { description = "Open email" })
 hl.bind(MEH .. " + F3", hl.dsp.exec_cmd(vars.my_filesc), { description = "Open cli file browesr" })
 hl.bind(MEH .. " + F4", hl.dsp.exec_cmd(vars.my_editg), { description = "Open graphical editor" })
 hl.bind(MEH .. " + F5", hl.dsp.exec_cmd(vars.my_image), { description = "Open image editor" })
@@ -93,14 +84,13 @@ hl.bind(" + F11", hl.dsp.window.fullscreen({ action = "toggle" }), { description
 
 ---- ENVIRONMENT/THEME ACTIONS ----
 hl.bind(MOD .. " + CTRL + r", hl.dsp.exec_cmd(vars.rload), { description = "Reload config" })
-hl.bind(MOD .. " + CTRL + u", hl.dsp.exec_cmd(vars.keytog), { release = true, description = "Toggle USB keyboard" })
+hl.bind(MOD .. " + SHIFT + r", hl.dsp.exec_cmd(vars.rload), { description = "Reload config" })
+-- hl.bind(MOD .. " + CTRL + u", hl.dsp.exec_cmd(vars.keytog), { release = true, description = "Toggle USB keyboard" })
 hl.bind(MOD .. " + CTRL + t", hl.dsp.exec_cmd(vars.barsel), { description = "Select statusbar" })
 hl.bind(MOD .. " + CTRL + b", hl.dsp.exec_cmd(vars.bartog), { description = "Toggle statusbar" })
 hl.bind(MOD .. " + CTRL + s", hl.dsp.exec_cmd(vars.walls), { description = "Select wallpaper" })
 hl.bind(MOD .. " + CTRL + w", hl.dsp.exec_cmd(vars.wallr), { description = "Random wallpaper" })
-hl.bind(MOD .. " + ALT + n", hl.dsp.exec_cmd(vars.netwrk), { description = "Select WiFi" })
-hl.bind("CTRL + ALT + g", hl.dsp.exec_cmd(vars.gamemode), { description = "Toggle gamemode" })
--- hl.bind("CTRL + ALT + H", hl.dsp.exec_cmd(vars.visualh), { description = "Garuda visuals" }) --TODO
+hl.bind(MOD .. " + CTRL + g", hl.dsp.exec_cmd(vars.gamemode), { description = "Toggle gamemode" })
 
 ---- WINDOWS ----
 hl.bind(MOD .. " + q", hl.dsp.window.close(), { description = "Close a window" })
@@ -192,7 +182,7 @@ hl.bind(
 hl.bind(MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Drag the window" })
 hl.bind(MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "Resize the window" })
 
-hl.bind("ALT + R", hl.dsp.submap("resize"), { description = "Start resize submap" })
+hl.bind("ALT + r", hl.dsp.submap("resize"), { description = "Start resize submap" })
 hl.define_submap("resize", function()
 	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
@@ -223,8 +213,10 @@ hl.bind(MOD .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { descripti
 hl.bind(MOD .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { description = "Go to previous workspace" })
 
 ---- MONITORS ----
-hl.bind("CTRL + ALT + e", hl.dsp.exec_cmd(vars.rlmon1), { description = "Show Mon0" })
-hl.bind("CTRL + ALT + SHIFT + e", hl.dsp.exec_cmd(vars.rlmon0), { description = "Hide Mon0" })
+hl.bind("ALT + 0", hl.dsp.exec_cmd(vars.mon0on), { description = "Show Mon0" })
+hl.bind("CTRL + 0", hl.dsp.exec_cmd(vars.mon0off), { description = "Hide Mon0" })
+hl.bind("ALT + 1", hl.dsp.exec_cmd(vars.mon1on), { description = "Show Mon1" })
+hl.bind("CTRL + 1", hl.dsp.exec_cmd(vars.mon1off), { description = "Hide Mon1" })
 hl.bind(MOD .. " + period", hl.dsp.focus({ monitor = "+1" }), { description = "Focus on the next monitor" })
 hl.bind(MOD .. " + period", hl.dsp.exec_cmd(vars.thiscreen), { description = "Focus on the next monitor" })
 hl.bind(
@@ -245,13 +237,6 @@ local function zoomfunction(value)
 	end
 end
 
-hl.bind("ALT + up", function()
-	zoomfunction(-0.1)
-end, { repeating = true, description = "Zoom out" })
-hl.bind("ALT + down", function()
-	zoomfunction(0.1)
-end, { repeating = true, description = "Zoom in" })
-
 hl.bind(MOD .. " + SHIFT + z", function()
 	zoomfunction(-0.1)
 end, { repeating = true, description = "Zoom out" })
@@ -268,28 +253,26 @@ hl.bind("XF86ZoomOut", function()
 	zoomfunction(-0.1)
 end, { locked = true, repeating = true, description = "Zoom out" })
 
--- monitor brightness
+-- screen brightness
 hl.bind(
 	"XF86MonBrightnessUp",
-	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
+	hl.dsp.exec_cmd(vars.brightu),
 	{ locked = true, repeating = true, description = "Brightness up" }
 )
 hl.bind(
 	"XF86MonBrightnessDown",
-	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
+	hl.dsp.exec_cmd(vars.brightd),
 	{ locked = true, repeating = true, description = "Brightness down" }
 )
-hl.bind(HYPER .. " + b", hl.dsp.exec_cmd(vars.brightmu), { locked = true, description = "Monitor brightness up" })
-hl.bind(HYPER .. " + d", hl.dsp.exec_cmd(vars.brightmd), { locked = true, description = "Monitor brightness down" })
 hl.bind(
-	MEH .. " + b",
-	hl.dsp.exec_cmd(vars.brightu),
-	{ locked = true, repeating = true, description = "Screen brightness up" }
+	"SHIFT + XF86MonBrightnessUp",
+	hl.dsp.exec_cmd(vars.brightmu),
+	{ locked = true, repeating = true, description = "Brightness up" }
 )
 hl.bind(
-	MEH .. " + d",
-	hl.dsp.exec_cmd(vars.brightd),
-	{ locked = true, repeating = true, description = "Screen brightncss down" }
+	"SHIFT + XF86MonBrightnessDown",
+	hl.dsp.exec_cmd(vars.brightmd),
+	{ locked = true, repeating = true, description = "Brightness down" }
 )
 
 -- volume control
@@ -298,44 +281,31 @@ hl.bind(
 	hl.dsp.exec_cmd(vars.volu),
 	{ locked = true, repeating = true, description = "Audio up" }
 )
-hl.bind(HYPER .. " + up", hl.dsp.exec_cmd(vars.volu), { locked = true, repeating = true, description = "Audio up" })
 hl.bind(
 	"XF86AudioLowerVolume",
 	hl.dsp.exec_cmd(vars.vold),
 	{ locked = true, repeating = true, description = "Audio down" }
 )
-hl.bind(HYPER .. " + down", hl.dsp.exec_cmd(vars.vold), { locked = true, repeating = true, description = "Audio down" })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(vars.volt), { locked = true, description = "Mute audio" })
-hl.bind(HYPER .. " + t", hl.dsp.exec_cmd(vars.volt), { locked = true, description = "Mute audio" })
 hl.bind(
-	HYPER .. " + m",
+	HYPER .. " + r",
 	hl.dsp.exec_cmd(vars.micd),
 	{ locked = true, repeating = true, description = "Mic volume down" }
 )
-hl.bind(
-	HYPER .. " + comma",
-	hl.dsp.exec_cmd(vars.micu),
-	{ locked = true, repeating = true, description = "Mic volume up" }
-)
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(vars.mict), { locked = true, description = "Mic mute" })
-hl.bind(HYPER .. " + period", hl.dsp.exec_cmd(vars.mict), { locked = true, description = "Mic toggle" })
+hl.bind(HYPER .. " + m", hl.dsp.exec_cmd(vars.micu), { locked = true, repeating = true, description = "Mic volume up" })
+hl.bind(HYPER .. " + f", hl.dsp.exec_cmd(vars.mict), { locked = true, description = "Mic toggle" })
 
 -- Player control
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd(vars.mnxt), { locked = true, description = "Media next" })
-hl.bind(HYPER .. " + n", hl.dsp.exec_cmd(vars.mnxt), { locked = true, description = "Media next" })
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd(vars.mstop), { locked = true, description = "Media stop" })
-hl.bind(HYPER .. " + x", hl.dsp.exec_cmd(vars.mstop), { locked = true, description = "Media stop" })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(vars.mpp), { locked = true, description = "Media play/pause" })
-hl.bind(HYPER .. " + y", hl.dsp.exec_cmd(vars.mpp), { locked = true, description = "Media play/pause" })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(vars.mprv), { locked = true, description = "Media previous" })
-hl.bind(HYPER .. " + p", hl.dsp.exec_cmd(vars.mprv), { locked = true, description = "Media previous" })
 hl.bind("XF86AudioMedia", hl.dsp.exec_cmd(vars.mnow), { locked = true, description = "Display currently playing" })
-hl.bind(HYPER .. " + u", hl.dsp.exec_cmd(vars.mnow), { description = "Display currently playing" })
-hl.bind(HYPER .. " + i", hl.dsp.exec_cmd(vars.my_favs), { description = "Manage audio playlists" })
+hl.bind(HYPER .. " + l", hl.dsp.exec_cmd(vars.mnow), { description = "Display currently playing" })
+hl.bind(HYPER .. " + d", hl.dsp.exec_cmd(vars.my_favs), { description = "Manage audio playlists" })
 
 -- Other
 hl.bind("XF86Calculator", hl.dsp.exec_cmd(vars.my_calc), { locked = true, description = "Toggle calculator" })
-hl.bind(HYPER .. " + c", hl.dsp.exec_cmd(vars.my_calc), { locked = true, description = "Toggle calculator" })
 
 ---- SYSTEM ----
 hl.bind(MEH .. "  + k", hl.dsp.exec_cmd(vars.kmndext), { description = "kmonad for external keyboard" })

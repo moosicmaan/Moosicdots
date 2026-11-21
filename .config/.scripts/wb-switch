@@ -48,8 +48,10 @@ done < <(find -L "$themes_path" -maxdepth 2 -type d)
 # -----------------------------------------------------
 # Show selection menu with rofi
 # -----------------------------------------------------
-choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
-    -config ~/.config/rofi/config-narrow.rasi -width 30 -p "Themes" -format i)
+choice=$(printf "%s\n" "${theme_names[@]}" |
+    rofi -dmenu -i -replace \
+        -config ~/.config/rofi/config-narrow.rasi \
+        -width 30 -p "Themes" -format i)
 
 # -----------------------------------------------------
 # Apply selected theme

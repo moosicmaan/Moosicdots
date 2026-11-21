@@ -2,19 +2,6 @@
 -- "Smart gaps" / "No gaps when only"
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
-hl.window_rule({
-	name = "no-gaps-wtv1",
-	match = { float = false, workspace = "w[tv1]" },
-	border_size = 0,
-	rounding = 0,
-})
-hl.window_rule({
-	name = "no-gaps-f1",
-	match = { float = false, workspace = "f[1]" },
-	border_size = 0,
-	rounding = 0,
-})
-hl.workspace_rule({ workspace = "10", monitor = "eDP-1", default = false })
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1", default = false, layout = "scrolling" })
 hl.workspace_rule({ workspace = "3", monitor = "eDP-1", default = false, layout = "scrolling" })
@@ -27,11 +14,19 @@ hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1", default = false })
 
 ---- WINDOWS RULES ----
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- hl.window_rule({
--- 	name = "foot override",
--- 	match = { initial_title = "foot" },
--- 	opacity = "0.95 override 0.85 override 1.0 override",
--- })
+hl.window_rule({
+	name = "no-gaps-wtv1",
+	match = { float = false, workspace = "w[tv1]" },
+	border_size = 0,
+	rounding = 0,
+})
+hl.window_rule({
+	name = "no-gaps-f1",
+	match = { float = false, workspace = "f[1]" },
+	border_size = 0,
+	rounding = 0,
+})
+
 hl.window_rule({
 	name = "MPV rules",
 	match = {
@@ -88,13 +83,14 @@ hl.window_rule({
 	match = {
 		class = "cava",
 	},
-	opacity = "0.8",
+	-- opacity = "0.9",
+	opacity = "1.0",
 	float = true,
 	size = { 800, 800 },
 	fullscreen = false,
-	xray = true,
+	xray = false,
 	suppress_event = "activatefocus",
-	border_size = 0,
+	border_size = 1,
 })
 local streaming_titles = ".*Watch.*|.*Picture%-in%-Picture.*|.*Tubi.*|.*Prime Video.*|"
 	.. ".*amazon%.com.*|.*Crackle.*|.*Pluto.*|.*Freevie.*|.*Netflix.*|"
