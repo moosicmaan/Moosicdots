@@ -1,0 +1,32 @@
+WM:
+  hypr:
+    alias:
+      - hyprland
+      - Hyprland
+      - /usr/bin/hyprland-run
+      - /usr/share/wayland-sessions/hyprland-uwsm.desktop
+      - hyprland-uwsm
+      - /usr/share/wayland-sessions/hyprland.desktop
+    code-to-list: aaa
+    wayland: true
+    cron-walls: true
+  sway:
+    wayland: true
+    cron-walls: false
+  niri:
+    wayland: true
+    cron-walls: false
+  dwl:
+    alias:
+      - dwl
+      - DWL
+      - /usr/local/share/wayland-sessions/dwl.desktop
+      - dwl:wlroots
+    wayland: true
+    cron-walls: false
+  dwm:
+    wayland: false
+    cron-walls: false
+  awesome:
+    wayland: false
+    cron-walls: false

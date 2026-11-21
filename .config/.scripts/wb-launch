@@ -6,27 +6,32 @@
 # -----------------------------------------------------
 # =====================================================
 
-cdesk=$(/home/moosicmaan/.config/.scripts/ut-session)
-from_cron="$1"
-
-# -----------------------------------------------------
-# Discover the current Wayland Compositor and if this is from cronie
-# -----------------------------------------------------
-if [[ $from_cron == "true" ]]; then
-    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session cron)
-else
-    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session)
-fi
-if [[ $cdesk == "nf" ]]; then
-    printf 'DESKTOP_SESSION not recognizable: "%s"\n' "$cdesk"
-    exit 1
-fi
-
 # Prefix to run commands in wayland using uwsm.
+themedir="$HOME/.config/waybar/themes"
 prefix=$("$HOME/.config/.scripts/wayland-prefix")
 themecache="$HOME/.cache/themestyle"
 # Default theme: THEMEFOLDER;VARIATION
 defaulttheme="moosic;moosic/mixed"
+from_cron="$1"
+script_name=$(basename "$0")
+
+# -----------------------------------------------------
+# Discover the current Wayland Compositor and if this is from cronie
+# -----------------------------------------------------
+if [[ -n $from_cron ]]; then
+    printf '\nWB-LAUNCH_______________________________cron\n'
+    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session cron)
+else
+    cdesk=$(/home/moosicmaan/.config/.scripts/ut-session)
+fi
+
+if [[ $cdesk == "nf" ]]; then
+    printf 'From %s:\nThe desktop session was not recognizable: %s\nExiting...\n' "$script_name" "$cdesk"
+    exit 1
+elif [[ "$cdesk" == "" ]]; then
+    printf 'From %s:\nThe desktop session was not found: %s\nExiting...\n' "$script_name" "$cdesk"
+    exit 1
+fi
 
 # -----------------------------------------------------
 # Quit all running statuesbar instances
@@ -45,7 +50,7 @@ if [ ! -f "$themecache" ]; then
 fi
 
 themestyle=$(cat "$themecache")
-echo "Using the following to open the bar(s): $themestyle"
+printf '\nUsing the following to open the bar(s): %s\n' "$themestyle"
 
 # -----------------------------------------------------
 # Display the current variables
@@ -60,11 +65,23 @@ echo "WM/WC: $cdesk"
 # -----------------------------------------------------
 config_file="config_$cdesk.jsonc"
 style_file="style.css"
+cfile="$themedir/${arrThemes[0]}/$config_file"
+sfile="$themedir/${arrThemes[1]}/$style_file"
+printf 'Confic file: %s\nStyle file: %s\n' "$cfile" "$sfile"
+nfct=0
 
-echo "Starting Waybar..."
-echo "Config: $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file"
-echo "Style: $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file"
-eval "${prefix}waybar \
-    -c $HOME/.config/waybar/themes/${arrThemes[0]}/$config_file \
-    -s $HOME/.config/waybar/themes/${arrThemes[1]}/$style_file" \
-    >/dev/null 2>&1 &
+if [[ ! -f "$cfile" ]]; then
+    printf '!\tConfig file not found:\n\t%s\n' "$cfile"
+    ((nfct++))
+fi
+if [[ ! -f "$sfile" ]]; then
+    printf '!\tStyle file not found:\n\t%s\n' "$sfile"
+    ((nfct++))
+fi
+
+if ((nfct > 0)); then
+    echo "Exiting..."
+else
+    printf 'Starting Waybar...\n'
+    eval "${prefix}waybar -c $cfile -s $sfile >/dev/null 2>&1 &"
+fi

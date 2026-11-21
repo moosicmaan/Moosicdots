@@ -6,44 +6,47 @@
 # -----------------------------------------------------
 # =====================================================
 
+# -----------------------------------------------------
+# Export system variables that cronie may need if
+# this call is from crontab - used to find the current
+# session
+# -----------------------------------------------------
 if [[ "$1" == "cron" ]]; then
     # Load the wayland environment so that cronie can read it
     SESSION_ENV="/tmp/cron-session.env"
-    if [[ ! -f "$SESSION_ENV" ]]; then
-        ~/.config/.scripts/ut-save-env
-    fi
+    # if [[ ! -f "$SESSION_ENV" ]]; then
+    #     echo ""
+    #     exit 1
+    #     # ~/.config/.scripts/ut-save-env
+    # fi
     if [[ -f "$SESSION_ENV" ]]; then
         # shellcheck source=/tmp/cron-session.env
         source "$SESSION_ENV"
     else
-        # Capture the script name
-        script_name=$(basename "$0")
-        # Error handling
-        printf 'Error occurred in script %s: Compositor not found
-        DESKTOP_SESSION not recognizable: %s
-        There is not a waybar config for this session.
-        Exiting...\n' \
-            "$script_name" "$DESKTOP_SESSION"
+        echo ""
+        exit 1
     fi
 fi
 
-if [[ -n "$DESKTOP_SESSION" ]]; then
-    session="$DESKTOP_SESSION"
-elif [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
+# -----------------------------------------------------
+# Load session information from system variables
+# -----------------------------------------------------
+if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
     session="$XDG_CURRENT_DESKTOP"
-else
-    session="nf"
+elif [[ -n "$DESKTOP_SESSION" ]]; then
+    session="$DESKTOP_SESSION"
 fi
 
 # -----------------------------------------------------
 # Discover the current Wayland Compositor
 # -----------------------------------------------------
 case "$session" in
-sway | Sway | sway:wlroots | /usr/share/wayland-sessions/sway.desktop)
+sway | Sway | sway:wlroots | sway\;wlroots | /usr/share/wayland-sessions/sway.desktop)
     session="sway"
     ;;
 hypr | hyprland | /usr/share/wayland-sessions/hyprland-uwsm.desktop | Hyprland | hyprland-uwsm | /usr/share/wayland-sessions/hyprland.desktop)
     # echo "testing"
+    # hypr)
     session="hypr"
     ;;
 dwl | DWL | /usr/local/share/wayland-sessions/dwl.desktop | dwl:wlroots)
@@ -52,11 +55,19 @@ dwl | DWL | /usr/local/share/wayland-sessions/dwl.desktop | dwl:wlroots)
 niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
     session="niri"
     ;;
+mango)
+    session="mango"
+    ;;
+"")
+    session=""
+    ;;
 *)
-    # session="hypr"
-    printf 'DESKTOP_SESSION not recognizable: "%s"\n' "$DESKTOP_SESSION"
+    session="nf"
     # exit 1
     ;;
 esac
 
+# -----------------------------------------------------
+# Retorn simplified session name
+# -----------------------------------------------------
 echo "$session"

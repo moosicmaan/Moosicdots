@@ -1,3 +1,12 @@
+# Cleanup from prior sessions
+#
+if [[ -f /tmp/cron-debug.log ]]; then
+    rm /tmp/cron-debug.log
+fi
+if [[ -f /tmp/cron-session.env ]]; then
+    rm /tmp/cron-session.env
+fi
+#
 export PATH="$HOME/.config/.scripts:$PATH"
 export JBSTARTSCRIPT=".profile"
 

@@ -34,6 +34,35 @@
         "disable-click": false,
         "expand": false
     },
+    "mango/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "active": "",
+            "default": "",
+            "urgent": "",
+            "empty": ""
+        },
+        "tag-filter": {
+            "DP-1": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "DP-2": [
+                5,
+                6,
+                7,
+                8,
+                9
+            ]
+        },
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "overview-label": ""
+    },
     "sway/workspaces": {
         "on-click": "activate",
         "active-only": false,

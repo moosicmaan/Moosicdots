@@ -96,7 +96,7 @@ hl.window_rule({
 	dim_around = true,
 	float = true,
 	center = true,
-	size = { 900, 700 },
+	size = { 900, 500 },
 })
 hl.window_rule({
 	match = {
@@ -106,7 +106,7 @@ hl.window_rule({
 	dim_around = true,
 	float = true,
 	center = true,
-	size = { 900, 900 },
+	size = { 900, 500 },
 })
 hl.window_rule({
 	match = {
@@ -116,7 +116,7 @@ hl.window_rule({
 	dim_around = true,
 	float = true,
 	center = true,
-	size = { 800, 700 },
+	size = { 900, 300 },
 })
 
 ---- SCRATCH BINDS ----

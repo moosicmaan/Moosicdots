@@ -27,7 +27,7 @@
     markup = full
     format = "<b><big>%s</big></b>\n%b"
     alignment = left
-    vertical_alignment = top
+    vertical_alignment = center
     show_age_threshold = 60
     ellipsize = middle
     ignore_newline = no

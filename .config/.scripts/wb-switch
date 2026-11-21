@@ -55,7 +55,7 @@ choice=$(printf "%s\n" "${theme_names[@]}" | rofi -dmenu -i -replace \
 # Apply selected theme
 # -----------------------------------------------------
 if [[ -n "$choice" ]]; then
-    echo "Loading waybar theme..."
+    printf '\n\nLoading waybar theme...'
     echo "${theme_list[choice]}" >"$HOME/.cache/themestyle"
     "$HOME/.config/.scripts/wb-launch"
 fi
