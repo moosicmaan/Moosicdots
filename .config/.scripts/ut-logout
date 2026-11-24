@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 # =====================================================
 # -----------------------------------------------------
-# Script for logging out of a wayland compositor
-#     Jason Bradberry (2026)
+# Helper script for use with wlogout and other wayland
+# system power menu applications to allow for logging
+# out of multiple/select sessions
+#    Jason Bradberry (2026)
 # -----------------------------------------------------
 # =====================================================
 
-case "${XDG_CURRENT_DESKTOP:-}" in
-Hyprland) hyprctl dispatch exit ;;
-sway) swaymsg exit ;;
-*)
-    echo "No logout command configured for this desktop" >&2
-    exit 1
-    ;;
-esac
+mapfile -t sessions < <(
+    loginctl list-sessions --json=short |
+        jq -r '.[] | [.session, .uid, .user, .seat, .tty] | @tsv'
+)
+for session in "${sessions[@]}"; do
+    IFS=$'\t' read -r id uid user seat tty <<<"$session"
+    printf '%-5s %5s %-15s %-10s %-10s\n' "$id" "$uid" "$user" "$seat" "$tty"
+done

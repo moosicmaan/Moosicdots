@@ -27,7 +27,7 @@ bars = 0
 bar_width = 1
 bar_spacing = 1
 # bar_height is only used for output in "noritake" format
-; bar_height = 32
+ bar_height = 32
 
 # For SDL width and space between bars is in pixels, defaults are:
 ; bar_width = 20
@@ -231,7 +231,7 @@ synchronized_sync = 1
 ; fragment_shader = eye_of_phi.frag
 ; fragment_shader = northern_lights.frag
 ; fragment_shader = spectrogram.frag
-; fragment_shader = winamp_line_style_spectrum.frag
+ fragment_shader = winamp_line_style_spectrum.frag
 
 # Orion shaders (use with: method = sdl_glsl)
 # Static Orion
@@ -241,7 +241,7 @@ synchronized_sync = 1
 # Orion saturn subring
 ; fragment_shader = orion_saturn_subring.frag
 # Orion saturn core
-fragment_shader = orion_saturn_core.frag
+; fragment_shader = orion_saturn_core.frag
 
 # For glsl output mode, keep rendering even if no audio. 1 = on, 0 = off. Default: 0
 # Enable for animated shaders so time-based effects keep updating.
@@ -249,7 +249,7 @@ fragment_shader = orion_saturn_core.frag
 
 # SDL_GLSL only: gain applied to bar amplitudes before sending to shaders, in percent. Default: 100
 # 0 = mute, 100 = unchanged, >100 = amplify (shader input is clamped to the [0..1] range).
- sdl_glsl_gain = .30
+ sdl_glsl_gain = .60
 
 # disable console blank (screen saver) in tty. 1 = on, 0 = off. Default: 0
 # (Not supported on FreeBSD)

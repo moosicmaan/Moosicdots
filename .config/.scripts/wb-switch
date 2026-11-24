@@ -8,7 +8,6 @@
 
 # use the following when there are a number of non-waybar themes to concider
 # themes_path="$HOME/.config/.settings/barthemes/"
-
 themes_path="$HOME/.config/waybar/themes/"
 
 # Initialize theme lists
@@ -25,11 +24,12 @@ while IFS= read -r theme_dir; do
         wc -l) -ne 1 ]] && continue
 
     # Extract relative theme path
-    rel_path="${theme_dir#"$themes_path"}" # Remove base path
-    first_folder="${rel_path%/*}"          # Get first directory name
-    if [ "$first_folder" == "" ]; then     # For configs in the base theme folder
+    rel_path="${theme_dir#"$themes_path"}"
+    first_folder="${rel_path%/*}"
+    if [ "$first_folder" == "" ]; then
         first_folder="$rel_path"
     fi
+
     formatted_theme="$first_folder;$rel_path"
 
     config_path="$theme_dir/name.txt"
@@ -37,7 +37,6 @@ while IFS= read -r theme_dir; do
     if [[ -f "$config_path" ]]; then
         theme_name=$(cat "$config_path")
         theme_names+=("$theme_name")
-        printf '\n%s ' "$formatted_theme"
     else
         theme_names+=("$formatted_theme")
     fi
@@ -57,7 +56,7 @@ choice=$(printf "%s\n" "${theme_names[@]}" |
 # Apply selected theme
 # -----------------------------------------------------
 if [[ -n "$choice" ]]; then
-    printf '\n\nLoading waybar theme...'
+    printf 'Choice: %s\n' "${theme_list[choice]}"
     echo "${theme_list[choice]}" >"$HOME/.cache/themestyle"
     "$HOME/.config/.scripts/wb-launch"
 fi

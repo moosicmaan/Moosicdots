@@ -1,0 +1,81 @@
+{
+    "WM": [
+        {
+            "name": "sway",
+            "alias": [
+                "sway",
+                "Sway",
+                "/usr/bin/sway",
+                "/usr/share/wayland-sessions/sway.desktop",
+                "sway\\;wlroots",
+                "sway;wlroots"
+            ],
+            "wayland": true,
+            "cron-walls": false
+        },
+        {
+            "name": "dwl",
+            "alias": [
+                "dwl",
+                "DWL",
+                "/usr/local/share/wayland-sessions/dwl.desktop",
+                "dwl:wlroots"
+            ],
+            "wayland": true,
+            "cron-walls": false
+        },
+        {
+            "name": "dwm",
+            "alias": [
+                "dwm",
+                "/usr/share/xsessions/dwm.desktop",
+                "DWM"
+            ],
+            "wayland": false,
+            "cron-walls": false
+        },
+        {
+            "name": "awesome",
+            "alias": [
+                "dwl",
+                "/usr/share/xsessions/awesome.desktop",
+                "DWL"
+            ],
+            "wayland": false,
+            "cron-walls": false
+        },
+        {
+            "name": "hypr",
+            "alias": [
+                "hypr",
+                "Hypr",
+                "hyprland",
+                "Hyprland",
+                "/usr/bin/hyprland-run",
+                "/usr/share/wayland-sessions/hyprland-uwsm.desktop",
+                "hyprland-uwsm",
+                "/usr/share/wayland-sessions/hyprland.desktop"
+            ],
+            "wayland": true,
+            "cron-walls": true
+        },
+        {
+            "name": "niri",
+            "alias": [
+                "niri",
+                "Niri",
+                "/usr/local/share/wayland-sessions/niri.desktop",
+                "niri:wlroots"
+            ],
+            "wayland": true,
+            "cron-walls": false
+        }
+    ],
+    "Keybinds": [
+        {
+            "name": "my_term",
+            "modmask": "M",
+            "key": "Return"
+        }
+    ]
+}

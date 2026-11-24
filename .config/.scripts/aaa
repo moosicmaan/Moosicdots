@@ -4,11 +4,43 @@
 #    Jason Bradberry (2026)
 # -----------------------------------------------------
 # =====================================================
+sfile="$HOME/.config/.settings/moosic-settings.json"
 
-first=1
-for names in $(yq '.WM.hypr.alias[]' wayland-sessions.yaml); do
-    ((first)) || printf ' | '
-    printf '%s' "$names"
-    first=0
-done
-printf '\n'
+# session="TestincgWM"
+session=
+if [[ -n "$session" ]]; then
+    for i in $(jq -r '.WM | keys[]' "$sfile"); do
+        key=$((i))
+
+        wm=$(jq -r --argjson key "$key" '.WM[$key].name' "$sfile")
+
+        for names in $(jq -r --argjson key "$key" '.WM[$key].alias[]' "$sfile"); do
+            if [[ "$names" == "$session" ]]; then
+                # echo "Match found: $names=$session"
+                session="$wm"
+                # echo "Simplifying session name to: $session"
+                wm_found=true
+                break 2
+            fi
+        done
+        echo "Testing: End search for $wm"
+    done
+else
+    session="empty!env"
+fi
+
+if [[ "$wm_found" ]]; then
+    echo "$session"
+else
+    printf 'nf%s\n' "$session"
+    exit 1
+fi
+# echo "_______________________________________________________________________"
+#
+# jq -r '
+#     .WM | to_entries[] |
+#     "For wm \(.value.name)(\(.key)):\n\t\(.value.alias | join(" ~ "))"
+# ' "$sfile"
+
+# hypr="$(jq -r '.WM[] | select(.name == "hypr") | (.alias | join(" | "))' /home/moosicmaan/.config/.settings/moosic-settings.json)"
+# hypr="Hyprland"

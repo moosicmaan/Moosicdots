@@ -6,21 +6,19 @@
 # -----------------------------------------------------
 # =====================================================
 
+from_cron="$1"
+sfile="$HOME/.config/.settings/moosic-settings.json"
+script_name=$(basename "$0")
+SESSION_ENV="$HOME/.cache/cron-session.env"
+
 # -----------------------------------------------------
 # Export system variables that cronie may need if
 # this call is from crontab - used to find the current
 # session
 # -----------------------------------------------------
-if [[ "$1" == "cron" ]]; then
-    # Load the wayland environment so that cronie can read it
-    SESSION_ENV="/tmp/cron-session.env"
-    # if [[ ! -f "$SESSION_ENV" ]]; then
-    #     echo ""
-    #     exit 1
-    #     # ~/.config/.scripts/ut-save-env
-    # fi
+if [[ -n $from_cron ]]; then
     if [[ -f "$SESSION_ENV" ]]; then
-        # shellcheck source=/tmp/cron-session.env
+        # shellcheck source=/home/moosicmaan/.cache/cron-session.env
         source "$SESSION_ENV"
     else
         echo ""
@@ -37,37 +35,36 @@ elif [[ -n "$DESKTOP_SESSION" ]]; then
     session="$DESKTOP_SESSION"
 fi
 
-# -----------------------------------------------------
-# Discover the current Wayland Compositor
-# -----------------------------------------------------
-case "$session" in
-sway | Sway | sway:wlroots | sway\;wlroots | /usr/share/wayland-sessions/sway.desktop)
-    session="sway"
-    ;;
-hypr | hyprland | /usr/share/wayland-sessions/hyprland-uwsm.desktop | Hyprland | hyprland-uwsm | /usr/share/wayland-sessions/hyprland.desktop)
-    # echo "testing"
-    # hypr)
-    session="hypr"
-    ;;
-dwl | DWL | /usr/local/share/wayland-sessions/dwl.desktop | dwl:wlroots)
-    session="dwl"
-    ;;
-niri | niri:wlroots | /usr/share/wayland-sessions/niri.desktop)
-    session="niri"
-    ;;
-mango)
-    session="mango"
-    ;;
-"")
-    session=""
-    ;;
-*)
-    session="nf"
-    # exit 1
-    ;;
-esac
+# Testing:
+# session=""
+# session="BadTest"
+
+if [[ -n "$session" ]]; then
+    for i in $(jq -r '.WM | keys[]' "$sfile"); do
+        key=$((i))
+
+        wm=$(jq -r --argjson key "$key" '.WM[$key].name' "$sfile")
+
+        for names in $(jq -r --argjson key "$key" \
+            '.WM[$key].alias[]' "$sfile"); do
+            if [[ "$names" == "$session" ]]; then
+                session="$wm"
+                wm_found=true
+                break 2
+            fi
+        done
+    done
+else
+    session="empty!env"
+fi
 
 # -----------------------------------------------------
-# Retorn simplified session name
+# Return simplified session name if found
 # -----------------------------------------------------
-echo "$session"
+if [[ "$wm_found" ]]; then
+    echo "$session"
+else
+    printf '! Error: Session not found: \"%s\"\nExiting %s...\n' \
+        "$session" "$script_name"
+    exit 1
+fi

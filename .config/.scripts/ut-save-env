@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
-
-tmp_env_file="/tmp/cron-session.env"
+# =====================================================
+# -----------------------------------------------------
+# Utility to load system env variables that cron and
+# other utilities may need into a file
+#    Jason Bradberry (2026)
+# -----------------------------------------------------
+# =====================================================
+tmp_env_file="$HOME/.cache/cron-session.env"
 
 mkdir -p "$(dirname "$tmp_env_file")"
 
@@ -14,8 +20,8 @@ mkdir -p "$(dirname "$tmp_env_file")"
         WAYLAND_DISPLAY \
         XDG_RUNTIME_DIR \
         HYPRLAND_INSTANCE_SIGNATURE \
-        XDG_CURRENT_DESKTOP \
         XDG_SESSION_TYPE \
+        XDG_CURRENT_DESKTOP \
         DESKTOP_SESSION; do
         printf 'export %s=%q\n' "$var" "${!var}"
     done
