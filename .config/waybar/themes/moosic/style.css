@@ -9,7 +9,6 @@
 /* -----------------------------------------------------
  * General 
  * -----------------------------------------------------
-  
   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-family: Roboto Condensed;
   font-family: MonaspiceRn Nerd Font Propo;
@@ -26,8 +25,7 @@ background-color: @backgroundlight;
 background-color: #ffffff;
  */
 * {
-  
-  font-family: JetBrainsMono NFP ExtraBold;
+
   border: none;
   /*border-radius: 15px;*/
   border-radius: 5px;
@@ -48,22 +46,7 @@ background-color: #ffffff;
   padding: 0px 0px 0px 9px;
 }
 window#waybar {
-  /*
-  border-bottom: 2px solid @bordercolorb;
-  color: #FFFFFF; 
-  background: transparent;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  background: linear-gradient(
-    0.45turn,
-    @color1,
-    transparent 50%,
-    @color6,
-    @color10 90%
-  );
-  background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
-  */
-  background-color: alpha (@barbackground, 0.7);
+  background: @barbackground;
   border-radius: 0px;
 }
 window#waybar.spotube {
@@ -74,6 +57,8 @@ window#waybar.spotube {
     #0000ff,
     #00ff00 99%
   );
+}
+window#waybar {
 }
 window#waybar.empty #window {
   background-color: transparent;
@@ -104,14 +89,13 @@ window#waybar.empty #window {
    visible 	Will be shown when workspace is visible on any monitor 
 */
   /* 
-  background: @workspacesbackground1;
   background-color: @workspacesbackground2;
   text-shadow: 2px 2px 5px rgba(100, 100, 100, 0);
   */
   font-weight: bold;
   font-style: normal;
-  padding: 0px 6px 0px 6px;
-  opacity: 0.7;
+  padding: 0px 1px 0px 1px;
+  opacity: 0.9;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
@@ -120,15 +104,11 @@ window#waybar.empty #window {
 }
 #tags button,
 #workspaces button {
-  /* 
-  background: @workspacesbackground1;
-  background-color: @workspacesbackground2;
-  padding: 0px 0px 0px 0px;
-  */
   color: @textcolor1;
   background-color: @workspacesbackground2;
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
+  margin: 0px 2px;
 }
 #tags button.empty,
 #workspaces button.empty {
@@ -198,8 +178,7 @@ tooltip label {
 #custom-calculator,
 #custom-cliphist,
 #custom-wallpaper,
-#custom-waybarthemes,
-#custom-system {
+#custom-waybarthemes {
   font-weight: bold;
   opacity: 0.8;
   color: @iconcolor;
@@ -216,14 +195,17 @@ tooltip label {
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
   padding: 0px 5px 0px 5px;
+  background-color: @workspacesbackground1;
+  opacity: 0.9;
 }
 #appo :hover {
-  color: @tooltiptext;
+  color: @iconcolor;
   background-color: @tooltipbackground;
 }
 /* APP MENU */
 #custom-appmenu {
-  color: @textcolor1;
+  color: @iconcolor;
+  /* color: @textcolor1; */
   opacity: 0.8;
   margin: 0px 3px 0px 3px;
 }
@@ -271,7 +253,6 @@ tooltip label {
 #currents {
   opacity: 1;
   background-color: @backgrounddark;
-  color: @textcolor1;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
@@ -289,40 +270,27 @@ tooltip label {
  * Hardware Group
  * -----------------------------------------------------
  */
+#custom-system {
+  margin: 0px 6px;
+}
 #hardware {
-  color: @iconcolor;
-  /* font-size: 11px; */
-  padding: 0px 0px 0px 0px;
+  padding: 0px 4px 0px 0px;
 }
-#network {
-  color: @textcolor2;
-  opacity: 0.8;
-}
-#network.ethernet {
-  color: @textcolor2;
-}
-#network.wifi {
-  color: @textcolor2;
-}
-/* BLUETOOTH */
-#bluetooth,
-#bluetooth.on,
 #bluetooth.connected {
-  /*background-color: @backgroundlight;*/
-  color: @textcolor2;
   opacity: 0.8;
+  color: green;
+  background: @backgroundlight;
 }
 #bluetooth.off {
 }
 /* BATTERY */
 #battery {
   padding: 0px 4px 0px 3px;
-  color: @textcolor2;
   opacity: 0.8;
 }
 #battery.charging,
 #battery.plugged {
-  color: @textcolor2;
+  color: yellow;
 }
 @keyframes blink {
   to {
@@ -339,18 +307,17 @@ tooltip label {
   animation-direction: alternate;
 }
 #user {
-  margin: 0px 100px 0px 0px;
+  font-size: 3px;
+  margin: 0px 70px 0px 0px;
   padding: 0px 30px 0px 3px;
   font-weight: bold;
   opacity: 0.8;
-  color: @iconcolor;
 }
 /* IDLE INHIBATOR */
 #idle_inhibitor {
   padding: 0px 8px 0px 8px;
   font-weight: bold;
   opacity: 0.8;
-  color: @iconcolor;
 }
 #idle_inhibitor.activated {
   font-weight: bold;
@@ -379,6 +346,23 @@ tooltip label {
   background-color: @tooltipbackground;
 }
 
+#bluetooth,
+#bluetooth.on,
+#hardware,
+#custom-brightness,
+#custom-system
+#bluetooth
+#custom-separator,
+#network,
+#custom-updates,
+#memory,
+#cpu,
+#backlight,
+#idle_inhibitor,
+#battery,
+#user {
+  color: @textcolor3;
+}
 /* -----------------------------------------------------
  * TRAY
  * -----------------------------------------------------
@@ -386,8 +370,7 @@ tooltip label {
 #tray {
   padding: 0px 8px 0px 8px;
   color: @iconcolor;
-  /* background-color: @workspacesbackground2; */
-  background-color: alpha (@workspacesbackground2, 0.6);
+  background-color: @workspacesbackground1;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
@@ -408,14 +391,6 @@ tooltip label {
   padding: 0px 8px;
 }
 
-/* -----------------------------------------------------
- * USER
- * -----------------------------------------------------
- */
-#user {
-  color: @textcolor2;
-  font-size: 3px;
-}
 #scratchpad {
   padding: 0px 1px;
 }
@@ -483,7 +458,10 @@ tooltip label {
  * -----------------------------------------------------
  */
 #custom-exit {
-  color: @textcolor1;
+  /* color: @textcolor1; */
+  color: @iconcolor;
+  background-color: @workspacesbackground1;
+  opacity: 0.9;
   border: 1px solid @bordercolor;
   border-bottom: 2px solid @bordercolorb;
   border-right: 2px solid @bordercolorb;
@@ -510,4 +488,7 @@ tooltip label {
 #custom-left:hover {
   color: @textcolor3;
   background-color: transparent;
+}
+#custom-appmenu:hover {
+  background-color: @workspacesbackground1;
 }

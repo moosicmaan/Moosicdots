@@ -17,8 +17,7 @@
         ],
         "modules-left": [
             "custom/appmenu",
-            "custom/session",
-            "wlr/taskbar"
+            "custom/session"
         ],
         "modules-center": [
             "dwl/tags"
@@ -47,8 +46,7 @@
         ],
         "modules-left": [
             "custom/appmenu",
-            "custom/session",
-            "wlr/taskbar"
+            "custom/session"
         ],
         "modules-center": [
             "dwl/tags"

@@ -36,10 +36,10 @@
     show_indicators = yes
     enable_recursive_icon_lookup = true
     icon_theme = "Tela-circle-dracula-dark, breeze, Adwaita"
+	  icon_path = /usr/share/icons/Tela-circle-dracula-dark/scalable
     icon_position = left
     min_icon_size = 48
     max_icon_size = 96
-	icon_path = /usr/share/icons/Tela-circle-dracula-dark/scalable
     sticky_history = yes
     history_length = 20
     dmenu = /usr/local/bin/dmenu -p dunst:
@@ -76,5 +76,5 @@
 [urgency_critical]
     frame_color = "{color1}"
     background = "#900000FF"
-    foreground = "{color15}"
+    foreground = "#FFFFFFFF"
 

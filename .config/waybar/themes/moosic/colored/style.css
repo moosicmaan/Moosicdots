@@ -1,22 +1,22 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
  * ----------------------------------------------------- 
-@define-color barbackground linear-gradient(0.45turn, @color1, transparent 50%, @color6, @color10 90%);
+@define-color barbackground linear-gradient( 0.45turn, @color6, @color3 60%, @color0, @color9 90% );
 */
 @import "../../../../../.cache/wal/colors-waybar.css";
 
-@define-color barbackground @color1;
-@define-color backgroundlight @color5;
-@define-color backgrounddark @color11;
+@define-color barbackground alpha(@color5, 0.7);
+@define-color backgroundlight @color15;
+@define-color backgrounddark @color4;
 @define-color workspacesbackground1 @color15;
-@define-color workspacesbackground2 @color10;
-@define-color bordercolor @color08;
+@define-color workspacesbackground2 @color9;
+@define-color bordercolor @color07;
 @define-color bordercolorb @color03;
-@define-color tooltipbackground @color10;
-@define-color tooltiptext @color0;
+@define-color tooltipbackground @color14;
+@define-color tooltiptext @color2;
 @define-color textcolor1 #FFFFFF;
 @define-color textcolor2 #FFFFFF;
-@define-color textcolor3 #FFFFFF;
-@define-color iconcolor #FFFFFF;
+@define-color textcolor3 @color2;
+@define-color iconcolor @color0;
 
 @import "../style.css";

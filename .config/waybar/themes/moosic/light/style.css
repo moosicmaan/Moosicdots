@@ -3,18 +3,18 @@
  * ----------------------------------------------------- */
 @import "../../../../../.cache/wal/colors-waybar.css";
 
-@define-color barbackground @color11;
-@define-color backgroundlight @color1;
-@define-color backgrounddark @color11;
-@define-color workspacesbackground1 @color11;
-@define-color workspacesbackground2 @color11;
-@define-color bordercolor #FFFFFF;
-@define-color bordercolorb #FFFFFF;
-@define-color tooltipbackground @color15;
+@define-color barbackground alpha(@color14, 0.90);
+@define-color backgroundlight @color14;
+@define-color backgrounddark @color14;
+@define-color workspacesbackground1 @color14;
+@define-color workspacesbackground2 @color14;
+@define-color bordercolor @color7;
+@define-color bordercolorb @color7;
+@define-color tooltipbackground @color14;
 @define-color tooltiptext @color0;
 @define-color textcolor1 #000000;
 @define-color textcolor2 #000000;
-@define-color textcolor3 #FFFFFF;
+@define-color textcolor3 #000000;
 @define-color iconcolor #000000;
 
 @import "../style.css";

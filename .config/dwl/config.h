@@ -66,6 +66,7 @@ static const struct xkb_rule_names xkb_rules = {
 	*/
 	.options = NULL,
 };
+
 static const int repeat_rate = 100;
 static const int repeat_delay = 300;
 
@@ -122,30 +123,29 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define HYPER ALT|CTRL|SHIFT|MOD
 
 #define TAGKEYS(KEY,SKEY,TAG) \
-	{ MOD,                    KEY,            view,            {.ui = 1 << TAG} }, \
-	{ MOD|CTRL,               KEY,            toggleview,      {.ui = 1 << TAG} }, \
-	{ MOD|SHIFT,              SKEY,           tag,             {.ui = 1 << TAG} }, \
-	{ MEH,                    SKEY,           tag,             {.ui = 1 << TAG} }, \
-	{ MOD|CTRL|SHIFT, SKEY,                   toggletag,       {.ui = 1 << TAG} }
-
+  { MOD,                    KEY,            view,            {.ui = 1 << TAG} }, \
+  { MOD|CTRL,               KEY,            toggleview,      {.ui = 1 << TAG} }, \
+  { MOD|SHIFT,              SKEY,           tag,             {.ui = 1 << TAG} }, \
+  { MEH,                    SKEY,           tag,             {.ui = 1 << TAG} }, \
+  { MOD|CTRL|SHIFT, SKEY,                   toggletag,       {.ui = 1 << TAG} }
 
 /**** WINDOW RULES ****/
 static const Rule rules[] = {
-	/* app_id     title           tags float mon skey   x     y    w     h
+  /* app_id     title           tags float mon skey   x     y    w     h
        Start on currently visible tags floating, not tiled
        Start on ONLY tag "9"
-	{ "Gimp_EXAMPLE", NULL,        0,   1,   -1,  0      -1,   -1, 1000, 0.75  },
-	{ "firefox_EXAMPLE", NULL,  1 << 8, 0,   -1,  0      -1,   -1,   -1, -1    }, */
-	{ NULL,      "termdrop",       0,   1,   -1, 'd',   150,    0, 1620, 900   },
-	{ NULL,      "yazidrop",       0,   1,   -1, 'h',   150,   90, 1620, 900   },
-	{ NULL,      "btopdrop",       0,   1,   -1, 's',   150,  180, 1620, 900   },
-	{ NULL,      "volume",         0,   1,   -1, 'x',   500,   90,  920, 900   },
-	{ NULL,      "moosicdrop",     0,   1,   -1, 'm',   500,   90,  920, 900   },
-	{ NULL,      "bluedrop",       0,   1,   -1, 'b',   500,   90,  920, 900   },
-    { "mpv",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
-    { "vlc",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
-    { NULL,      "galculator",     0,   1,   -1,  0,    750,   90,  420, 450,  },
-    /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
+  { "Gimp_EXAMPLE", NULL,        0,   1,   -1,  0      -1,   -1, 1000, 0.75  },
+  { "firefox_EXAMPLE", NULL,  1 << 8, 0,   -1,  0      -1,   -1,   -1, -1    }, */
+  { NULL,      "termdrop",       0,   1,   -1, 'd',   150,    0, 1620, 900   },
+  { NULL,      "yazidrop",       0,   1,   -1, 'h',   150,   90, 1620, 900   },
+  { NULL,      "btopdrop",       0,   1,   -1, 's',   150,  180, 1620, 900   },
+  { NULL,      "volume",         0,   1,   -1, 'x',   500,   90,  920, 900   },
+  { NULL,      "moosicdrop",     0,   1,   -1, 'm',   500,   90,  920, 900   },
+  { NULL,      "bluedrop",       0,   1,   -1, 'b',   500,   90,  920, 900   },
+  { "mpv",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
+  { "vlc",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
+  { NULL,      "galculator",     0,   1,   -1,  0,    750,   90,  420, 450,  },
+  /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
 };
 
 /* named scratchpads - First arg only serves to match against key in rules*/
@@ -157,6 +157,7 @@ static const char *moosic_scratch[] = { "m", "kitty", "-T", "moosicdrop", "-e", 
 static const char *bt_scratch[] = { "b", "kitty", "-T", "bluedrop", "-e", "bluetui", NULL };
 
 /****   COMMAND DEFINITIONS   ****/
+
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
@@ -247,109 +248,109 @@ focusmonright_notify(const Arg *arg)
 
 /****   KEYBINDINGS   ****/
 static const Key keys[] = {
-	/* modifier    key                           function               argument */
+/* modifier    key                           function               argument */
 /*---SCRATCHPADS---*/
-    { HYPER,     XKB_KEY_4,                    focusortogglematchingscratch, {.v = yazi_scratch } },
-    { HYPER,     XKB_KEY_8,                    togglescratch,        {.v = ter_scratch } },
-    { HYPER,     XKB_KEY_2,                    focusortogglescratch, {.v = volume_scratch } },
-    { HYPER,     XKB_KEY_1,                    focusortogglescratch, {.v = moosic_scratch } },
-    { HYPER,     XKB_KEY_6,                    focusortogglescratch, {.v = btop_scratch } },
-    { MOD|ALT,   XKB_KEY_d,                    focusortogglescratch, {.v = ter_scratch } },
-    { MOD|ALT,   XKB_KEY_x,                    focusortogglescratch, {.v = volume_scratch } },
-    { MOD|ALT,   XKB_KEY_m,                    focusortogglescratch, {.v = moosic_scratch } },
-    { MOD|ALT,   XKB_KEY_s,                    focusortogglescratch, {.v = btop_scratch } },
-    { MOD|ALT,   XKB_KEY_h,                    focusortogglescratch, {.v = yazi_scratch } },
-    { MOD|ALT,   XKB_KEY_b,                    focusortogglescratch, {.v = bt_scratch } },
+  { HYPER,     XKB_KEY_4,                    focusortogglematchingscratch, {.v = yazi_scratch } },
+  { HYPER,     XKB_KEY_8,                    togglescratch,        {.v = ter_scratch } },
+  { HYPER,     XKB_KEY_2,                    focusortogglescratch, {.v = volume_scratch } },
+  { HYPER,     XKB_KEY_1,                    focusortogglescratch, {.v = moosic_scratch } },
+  { HYPER,     XKB_KEY_6,                    focusortogglescratch, {.v = btop_scratch } },
+  { MOD|ALT,   XKB_KEY_d,                    focusortogglescratch, {.v = ter_scratch } },
+  { MOD|ALT,   XKB_KEY_x,                    focusortogglescratch, {.v = volume_scratch } },
+  { MOD|ALT,   XKB_KEY_m,                    focusortogglescratch, {.v = moosic_scratch } },
+  { MOD|ALT,   XKB_KEY_s,                    focusortogglescratch, {.v = btop_scratch } },
+  { MOD|ALT,   XKB_KEY_h,                    focusortogglescratch, {.v = yazi_scratch } },
+  { MOD|ALT,   XKB_KEY_b,                    focusortogglescratch, {.v = bt_scratch } },
 /*---APPLICATIONS---*/
-	{ MOD,       XKB_KEY_Return,               spawn,                {.v = termcmd} },
-	{ MOD|CTRL,  XKB_KEY_Return,               spawn,                {.v = my_email} },
-	{ MOD|SHIFT, XKB_KEY_Return,               spawn,                {.v = my_filesg} },
-	{ MOD,       XKB_KEY_t,                    spawn,                {.v = my_term2} },
-	{ MOD,       XKB_KEY_o,                    spawn,                {.v = browscmd} },
-	{ MOD,       XKB_KEY_b,                    spawn,                {.v = my_browsv} },
-	{ MOD,       XKB_KEY_i,                    spawn,                {.v = emojis} },
-	{ CTRL|ALT,  XKB_KEY_a,                    spawn,                {.v = aichat} },
-	{ MOD,       XKB_KEY_Print,                spawn,                {.v = screenshot} },
-	{ MOD,       XKB_KEY_F3,                   spawn,                {.v = my_editg} },
-	{ MOD,       XKB_KEY_F4,                   spawn,                {.v = my_image} },
-	{ MOD,       XKB_KEY_F5,                   spawn,                {.v = my_editc} },
+  { MOD,       XKB_KEY_Return,               spawn,                {.v = termcmd} },
+  { MOD|CTRL,  XKB_KEY_Return,               spawn,                {.v = my_email} },
+  { MOD|SHIFT, XKB_KEY_Return,               spawn,                {.v = my_filesg} },
+  { MOD,       XKB_KEY_t,                    spawn,                {.v = my_term2} },
+  { MOD,       XKB_KEY_o,                    spawn,                {.v = browscmd} },
+  { MOD,       XKB_KEY_b,                    spawn,                {.v = my_browsv} },
+  { MOD,       XKB_KEY_i,                    spawn,                {.v = emojis} },
+  { CTRL|ALT,  XKB_KEY_a,                    spawn,                {.v = aichat} },
+  { MOD,       XKB_KEY_Print,                spawn,                {.v = screenshot} },
+  { MOD,       XKB_KEY_F3,                   spawn,                {.v = my_editg} },
+  { MOD,       XKB_KEY_F4,                   spawn,                {.v = my_image} },
+  { MOD,       XKB_KEY_F5,                   spawn,                {.v = my_editc} },
 /*---MEDIA / MEDIA KEYS---*/
-	{ MOD,       XKB_KEY_m,                    spawn,                {.v = my_music} },
-	{ MOD|SHIFT, XKB_KEY_M,                    spawn,                {.v = my_media} },
-	{ 0,         XKB_KEY_Print,                spawn,                {.v = screenshot} },
-	{ 0,         XKB_KEY_XF86Calculator,       spawn,                {.v = calc} },
-	{ 0,         XKB_KEY_XF86AudioPlay,        spawn,                {.v = mpp} },
-	{ 0,         XKB_KEY_XF86AudioRaiseVolume, spawn,                {.v = volu} },
-	{ 0,         XKB_KEY_XF86AudioLowerVolume, spawn,                {.v = vold} },
-	{ 0,         XKB_KEY_XF86AudioMute,        spawn,                {.v = volt} },
-	{ 0,         XKB_KEY_XF86AudioNext,        spawn,                {.v = mnxt} },
-	{ 0,         XKB_KEY_XF86AudioPrev,        spawn,                {.v = mprv} },
-	{ 0,         XKB_KEY_XF86AudioStop,        spawn,                {.v = mstop} },
-	{ HYPER,     XKB_KEY_i,                    spawn,                {.v = mfavs} },
-	{ HYPER,     XKB_KEY_u,                    spawn,                {.v = mnow} },
-    { CTRL|ALT,  XKB_KEY_m,                    spawn,                {.v = jamrofi} },
+  { MOD,       XKB_KEY_m,                    spawn,                {.v = my_music} },
+  { MOD|SHIFT, XKB_KEY_M,                    spawn,                {.v = my_media} },
+  { 0,         XKB_KEY_Print,                spawn,                {.v = screenshot} },
+  { 0,         XKB_KEY_XF86Calculator,       spawn,                {.v = calc} },
+  { 0,         XKB_KEY_XF86AudioPlay,        spawn,                {.v = mpp} },
+  { 0,         XKB_KEY_XF86AudioRaiseVolume, spawn,                {.v = volu} },
+  { 0,         XKB_KEY_XF86AudioLowerVolume, spawn,                {.v = vold} },
+  { 0,         XKB_KEY_XF86AudioMute,        spawn,                {.v = volt} },
+  { 0,         XKB_KEY_XF86AudioNext,        spawn,                {.v = mnxt} },
+  { 0,         XKB_KEY_XF86AudioPrev,        spawn,                {.v = mprv} },
+  { 0,         XKB_KEY_XF86AudioStop,        spawn,                {.v = mstop} },
+  { HYPER,     XKB_KEY_i,                    spawn,                {.v = mfavs} },
+  { HYPER,     XKB_KEY_u,                    spawn,                {.v = mnow} },
+  { CTRL|ALT,  XKB_KEY_m,                    spawn,                {.v = jamrofi} },
 /*---MENUS/SELECTORS---*/
-	{ MOD,       XKB_KEY_p,                    spawn,                {.v = menu_run} },
-	{ MOD|CTRL,  XKB_KEY_p,                    spawn,                {.v = menu_win} },
-	{ MOD|SHIFT, XKB_KEY_P,                    spawn,                {.v = menu_drun} },
-    { CTRL|ALT,  XKB_KEY_Delete,               spawn,                {.v = rofi_power } },
-    { CTRL|ALT,  XKB_KEY_b,                    spawn,                {.v = barch} },
-    { MOD|CTRL,  XKB_KEY_b,                    spawn,                {.v = bartog} },
-    { MOD|CTRL,  XKB_KEY_w,                    spawn,                {.v = wallr} },
-    { MOD|CTRL,  XKB_KEY_s,                    spawn,                {.v = walls} },
-    { MOD|CTRL,  XKB_KEY_t,                    spawn,                {.v = bars} },
-    { HYPER,     XKB_KEY_b,                    togglebar,            {0} },
+  { MOD,       XKB_KEY_p,                    spawn,                {.v = menu_run} },
+  { MOD|CTRL,  XKB_KEY_p,                    spawn,                {.v = menu_win} },
+  { MOD|SHIFT, XKB_KEY_P,                    spawn,                {.v = menu_drun} },
+  { CTRL|ALT,  XKB_KEY_Delete,               spawn,                {.v = rofi_power } },
+  { CTRL|ALT,  XKB_KEY_b,                    spawn,                {.v = barch} },
+  { MOD|CTRL,  XKB_KEY_b,                    spawn,                {.v = bartog} },
+  { MOD|CTRL,  XKB_KEY_w,                    spawn,                {.v = wallr} },
+  { MOD|CTRL,  XKB_KEY_s,                    spawn,                {.v = walls} },
+  { MOD|CTRL,  XKB_KEY_t,                    spawn,                {.v = bars} },
+  { HYPER,     XKB_KEY_b,                    togglebar,            {0} },
 /*--DWL/ENVIRONMENT---*/
-    { CTRL|ALT,  XKB_KEY_k,                    spawn,                {.v = kmonade} },
-    { CTRL|ALT,  XKB_KEY_j,                    spawn,                {.v = kmonadl} },
-	{ MOD,       XKB_KEY_q,                    killclient,           {0} },
-	{ MOD,       XKB_KEY_h,                    focusstack,           {.i = +1} },
-	{ MOD,       XKB_KEY_l,                    focusstack,           {.i = -1} },
-	{ MOD,       XKB_KEY_i,                    incnmaster,           {.i = +1} },
-	{ MOD,       XKB_KEY_d,                    incnmaster,           {.i = -1} },
-	{ MOD|SHIFT, XKB_KEY_H,                    setmfact,             {.f = -0.05f} },
-	{ MOD|SHIFT, XKB_KEY_L,                    setmfact,             {.f = +0.05f} },
-	{ MOD,       XKB_KEY_z,                    zoom,                 {0} },
-	{ MOD,       XKB_KEY_Tab,                  view,                 {0} },
-	{ ALT,       XKB_KEY_t,                    setlayout,            {.v = &layouts[0]} },
-	{ ALT,       XKB_KEY_f,                    setlayout,            {.v = &layouts[1]} },
-	{ ALT,       XKB_KEY_m,                    setlayout,            {.v = &layouts[2]} },
-	{ ALT,       XKB_KEY_space,                setlayout,            {0} },
-	{ MOD|SHIFT, XKB_KEY_F,                    togglefullscreen,     {0} },
-	{ 0,         XKB_KEY_F11,                  togglefullscreen,     {0} },
-	{ MOD,       XKB_KEY_f,                    togglefloating,       {0} },
-	{ MOD,       XKB_KEY_0,                    view,                 {.ui = ~0} },
-	{ MOD|SHIFT, XKB_KEY_parenright,           tag,                  {.ui = ~0} },
-    { MOD,       XKB_KEY_comma,                focusmonleft_notify,  {0} },
-    { MOD,       XKB_KEY_period,               focusmonright_notify, {0} },
-	{ MOD|SHIFT, XKB_KEY_less,                 tagmon,               {.i = WLR_DIRECTION_LEFT} },
-	{ MOD|SHIFT, XKB_KEY_greater,              tagmon,               {.i = WLR_DIRECTION_RIGHT} },
-	{ MOD|SHIFT, XKB_KEY_Q,                    quit,                 {0} },
+  { CTRL|ALT,  XKB_KEY_k,                    spawn,                {.v = kmonade} },
+  { CTRL|ALT,  XKB_KEY_j,                    spawn,                {.v = kmonadl} },
+  { MOD,       XKB_KEY_q,                    killclient,           {0} },
+  { MOD,       XKB_KEY_h,                    focusstack,           {.i = +1} },
+  { MOD,       XKB_KEY_l,                    focusstack,           {.i = -1} },
+  { MOD,       XKB_KEY_i,                    incnmaster,           {.i = +1} },
+  { MOD,       XKB_KEY_d,                    incnmaster,           {.i = -1} },
+  { MOD|SHIFT, XKB_KEY_H,                    setmfact,             {.f = -0.05f} },
+  { MOD|SHIFT, XKB_KEY_L,                    setmfact,             {.f = +0.05f} },
+  { MOD,       XKB_KEY_z,                    zoom,                 {0} },
+  { MOD,       XKB_KEY_Tab,                  view,                 {0} },
+  { ALT,       XKB_KEY_t,                    setlayout,            {.v = &layouts[0]} },
+  { ALT,       XKB_KEY_f,                    setlayout,            {.v = &layouts[1]} },
+  { ALT,       XKB_KEY_m,                    setlayout,            {.v = &layouts[2]} },
+  { ALT,       XKB_KEY_space,                setlayout,            {0} },
+  { MOD|SHIFT, XKB_KEY_F,                    togglefullscreen,     {0} },
+  { 0,         XKB_KEY_F11,                  togglefullscreen,     {0} },
+  { MOD,       XKB_KEY_f,                    togglefloating,       {0} },
+  { MOD,       XKB_KEY_0,                    view,                 {.ui = ~0} },
+  { MOD|SHIFT, XKB_KEY_parenright,           tag,                  {.ui = ~0} },
+  { MOD,       XKB_KEY_comma,                focusmonleft_notify,  {0} },
+  { MOD,       XKB_KEY_period,               focusmonright_notify, {0} },
+  { MOD|SHIFT, XKB_KEY_less,                 tagmon,               {.i = WLR_DIRECTION_LEFT} },
+  { MOD|SHIFT, XKB_KEY_greater,              tagmon,               {.i = WLR_DIRECTION_RIGHT} },
+  { MOD|SHIFT, XKB_KEY_Q,                    quit,                 {0} },
 
-	TAGKEYS(     XKB_KEY_1, XKB_KEY_exclam,                          0),
-	TAGKEYS(     XKB_KEY_2, XKB_KEY_at,                              1),
-	TAGKEYS(     XKB_KEY_3, XKB_KEY_numbersign,                      2),
-	TAGKEYS(     XKB_KEY_4, XKB_KEY_dollar,                          3),
-	TAGKEYS(     XKB_KEY_5, XKB_KEY_percent,                         4),
-	TAGKEYS(     XKB_KEY_6, XKB_KEY_asciicircum,                     5),
-	TAGKEYS(     XKB_KEY_7, XKB_KEY_ampersand,                       6),
-	TAGKEYS(     XKB_KEY_8, XKB_KEY_asterisk,                        7),
-	TAGKEYS(     XKB_KEY_9, XKB_KEY_parenleft,                       8),
+  TAGKEYS(     XKB_KEY_1, XKB_KEY_exclam,                          0),
+  TAGKEYS(     XKB_KEY_2, XKB_KEY_at,                              1),
+  TAGKEYS(     XKB_KEY_3, XKB_KEY_numbersign,                      2),
+  TAGKEYS(     XKB_KEY_4, XKB_KEY_dollar,                          3),
+  TAGKEYS(     XKB_KEY_5, XKB_KEY_percent,                         4),
+  TAGKEYS(     XKB_KEY_6, XKB_KEY_asciicircum,                     5),
+  TAGKEYS(     XKB_KEY_7, XKB_KEY_ampersand,                       6),
+  TAGKEYS(     XKB_KEY_8, XKB_KEY_asterisk,                        7),
+  TAGKEYS(     XKB_KEY_9, XKB_KEY_parenleft,                       8),
 
-	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
-	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
-	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
-	 * do not remove them.
-	 */
+  /* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
+  { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
+  /* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
+   * do not remove them.
+   */
 #define CHVT(n) { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_XF86Switch_VT_##n, chvt, {.ui = (n)} }
-	CHVT(1), CHVT(2), CHVT(3), CHVT(4), CHVT(5), CHVT(6),
-	CHVT(7), CHVT(8), CHVT(9), CHVT(10), CHVT(11), CHVT(12),
+  CHVT(1), CHVT(2), CHVT(3), CHVT(4), CHVT(5), CHVT(6),
+  CHVT(7), CHVT(8), CHVT(9), CHVT(10), CHVT(11), CHVT(12),
 };
 
 static const Button buttons[] = {
-	{ MOD, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-	{ MOD, BTN_MIDDLE, togglefloating, {0} },
-	{ MOD, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+  { MOD, BTN_LEFT,   moveresize,     {.ui = CurMove} },
+  { MOD, BTN_MIDDLE, togglefloating, {0} },
+  { MOD, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
 };
 
 static const Axis axes[] = {

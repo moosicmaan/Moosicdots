@@ -1,1 +1,1 @@
-TLNW Pale White
+TLNW White

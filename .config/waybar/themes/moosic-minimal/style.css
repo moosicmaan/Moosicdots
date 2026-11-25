@@ -15,25 +15,21 @@
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9);
   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
     sans-serif;
-  margin: 0px 1px 0px 1px;
-  padding: 0px 2px 0px 2px;
   */
   font-family: Iosevka Nerd font Propo;
   border-radius: 0px;
-  font-size: 14px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  color: @textcolor1;
-  padding: 0px 2px;
+  font-size: 11px;
 }
 
 window#waybar {
-  /* 
-  background-image: url("/home/moosicmaan/Pictures/Backgrounds/47839.jpg");
-  */
-  background-color: alpha (@barbackground, 0.5);
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); */
+  /* color: @textcolor1; */
+  /* padding: 0px 2px 0px 2px; */
+  color: magenta;
+  background: @barbackground;
 }
 
-window#waybar.elisa {
+window#waybar.spotube {
   background: linear-gradient(
     0.45turn,
     #ff00ff,
@@ -49,96 +45,69 @@ window#waybar.elisa {
  * ----------------------------------------------------- 
 */
 #window {
-  background-color: alpha (@barbackground, 0.3);
+  background-color: @barbackground;
 }
 window#waybar.empty #window {
   background-color: transparent;
 }
 
 /* -----------------------------------------------------
- * WORKSPACES 
+ * WORKSPACES/TAGS
  * ----------------------------------------------------- 
-#workspaces
-#workspaces button
-#workspaces button.active
-#workspaces button.empty
-#workspaces button.persistent
-#workspaces button.special
-#workspaces button.visible
-#workspaces button.urgent
-#workspaces button.hosting-monitor (gets applied if workspace-monitor == waybar-monitor)
-#tags button
-#tags button.occupied
-#tags button.focused
-#tags button.urgent
 */
 #tags,
 #workspaces {
-  /* 
-  padding: 0px 0px 0px 0px;
-  */
   font-weight: bold;
   font-style: normal;
-  opacity: 0.7;
-  color: @textcolor1;
 }
-#tags button,
+#workspaces button.special,
 #workspaces button {
-  /* 
-  background-color: @workspacesbackground2;
-  */
-  padding: 0px 80px 0px 0px;
-  margin: 0px 3px 0px 0px;
-  color: @textcolor1;
+  padding: 0px 80px 0px 4px;
+  color: @textcolorl;
+  background: alpha(@backgroundlight, 0.3);
   transition: all 0.3s ease-in-out;
-  background-color: alpha (@barbackgrounddark, 0.8);
-  opacity: 0.8;
-  border-top: 2px solid @bordercolorb;
-  border-right: 1px solid @bordercolorb;
+  border-top: 1px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
   border-left: 3px solid @bordercolorb;
 }
-#tags button.empty,
-#workspaces button.empty {
-  background-color: alpha (@barbackground, 0.9);
+#tags button.special,
+#tags button {
+  padding: 0px 80px 0px 4px;
+  color: @textcolorl;
+  background: alpha(@backgrounddark, 0.1);
   transition: all 0.3s ease-in-out;
-  color: @textcolor1;
-  transition: all 0.3s ease-in-out;
-  opacity: 0.5;
-  border-top: 2px solid #888888;
-  border-right: 1px solid #aaaaaa;
-  border-left: 3px solid #aaaaaa;
+  border-top: 1px solid @bordercolorb;
+  border-right: 2px solid @bordercolorb;
+  border-left: 3px solid @barbackground;
 }
-#tags button.occupied,
-#workspaces button.persistent,
+#tags button.occupied {
+  background: alpha(@backgroundlight, 0.3);
+}
+#workspaces button.empty {
+  background: alpha(@backgrounddark, 0.1);
+}
 #workspaces button.visible {
-  color: @textcolor2;
-  transition: all 0.3s ease-in-out;
-  /* background-color: @tooltipbackground; */
-  /* background-color: @color5; */
-  opacity: 0.9;
+  color: yellow;
 }
 #tags button.focused,
 #workspaces button.active {
+  /* color: black; */
+  color: @textcolord;
+  background: alpha(@backgroundlight, 0.9);
+  /* border-top: 1px solid @bordercolor; */
+  /* border-right: 1px solid @bordercolor; */
+  /* border-left: 1px solid @bordercolor; */
+  border-left: 3px solid @bordercolor;
+}
+#workspaces button.urgent {
+  background: red;
+  color: white;
   transition: all 0.3s ease-in-out;
-  color: @textcolor2;
-  transition: all 0.3s ease-in-out;
-  opacity: 0.9;
-  /* border-top: 2px solid @bordercolor; */
-  /* border-right: 1px solid @bordercolorb; */
-  /* border-left: 3px solid @bordercolorb; */
-     border-top: 5px solid #FFFFFF;
-     border-right: 4px solid #FFFFFF;
-     border-left: 3px solid #FFFFFF;
 }
 #tags button:hover,
 #workspaces button:hover {
-  transition: all 0.3s ease-in-out;
-  color: @textcolor2;
+  color: @tooltiptext;
   background-color: @tooltipbackground;
-  /* 
-  text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.9);
-  */
-  opacity: 1;
 }
 
 /* -----------------------------------------------------
@@ -158,17 +127,15 @@ tooltip label {
  * ----------------------------------------------------- */
 /* APP MENU */
 #custom-appmenu {
-  color: @textcolor1;
-  opacity: 0.8;
-  padding: 0px 0px 0px 3px;
+  color: @iconcolor;
+  padding: 0px 10px 0px 8px;
 }
 /* TASKBAR */
 #wlr-taskbar {
-  padding: 0px 0px 0px 0px;
   margin: 0px 4px;
 }
 #taskbar button {
-  padding: 1px 1px 1px 1px;
+  padding: 0px 1px 0px 1px;
 }
 #taskbar:hover {
   background-color: transparent;
@@ -184,14 +151,15 @@ tooltip label {
  * CURRENTS GROUP
  * ----------------------------------------------------- */
 #clock {
-  font-size: 16px;
+color: @iconcolor; 
+  margin: 0px 19px 0px 0px;
 }
 
 /* -----------------------------------------------------
  * TRAY
  * ----------------------------------------------------- */
 #tray {
-  padding: 0px 9px 0px 2px;
+  margin: 0px 19px 0px 0px;
 }
 #tray > :hover {
   background-color: @tooltipbackground;
@@ -206,9 +174,14 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * CUSTOM EXIT
+ * CUSTOM EXIT/Mpris
  * ----------------------------------------------------- */
+#mpris,
 #custom-exit {
-  color: @textcolor1;
-  padding: 0px 3px 0px 3px;
+  color: @iconcolor;
+  padding: 0px 0px 0px 8px;
+}
+
+#custom-session {
+  color: @iconcolor;
 }

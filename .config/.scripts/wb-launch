@@ -63,7 +63,7 @@ style_file="style.css"
 cfile="$themedir/${arrThemes[0]}/$config_file"
 sfile="$themedir/${arrThemes[1]}/$style_file"
 
-printf '* Config file: %s\n-Style file: %s\n' "$cfile" "$sfile"
+printf '* Config file: %s\n* Style file: %s\n' "$cfile" "$sfile"
 
 nfct=0
 if [[ ! -f "$cfile" ]]; then

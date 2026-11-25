@@ -254,7 +254,7 @@
             "HDMI-A-1": [
                 // 4,
                 // 5,
-                // 6,
+                6,
                 7,
                 8,
                 9
@@ -547,15 +547,15 @@
             "7": "󰝱",
             "8": "󰽩",
             "9": "󰝚",
-            "magic": "󱡄 ",
-            "S-term": " ",
-            "S-monitor": " ",
-            "S-files": " ",
-            "S-audio": " ",
-            "S-bluet": "󰂯 ",
-            "S-vial": " ",
-            "S-notes": " ",
-            "S-moosic": "󰝚 "
+            "magic": "󱡄",
+            "S-term": "",
+            "S-monitor": "",
+            "S-files": "",
+            "S-audio": "",
+            "S-bluet": "󰂯",
+            "S-vial": "",
+            "S-notes": "",
+            "S-moosic": "󰝚"
         }
     },
     "hyprland/workspaces#numberblocks": {
@@ -646,19 +646,19 @@
         "icon-size": 11
     },
     "hyprland/window": {
-        "rewrite": {
-            "(.*) - Mozilla Firefox": "🌎 $1",
-            "(.*) - Brave": "$1",
-            "(.*) - Brave Search": "$1",
-            "(.*) - Kitty": "$1",
-            "(.*) - Foot": "$1",
-            "(.*) - Footclient": "$1",
-            "(.*) - Wezterm": "$1",
-            "(.*) - Zen": "$1",
-            "(.*) - vim": " $1",
-            "(.*) - nvim": " $1",
-            "(.*) - Zen Browser": "$1"
-        },
+        // "rewrite": {
+        //     "(.*) - Mozilla Firefox": "🌎 $1",
+        //     "(.*) - Brave": "$1",
+        //     "(.*) - Brave Search": "$1",
+        //     "(.*) - Kitty": "$1",
+        //     "(.*) - Foot": "$1",
+        //     "(.*) - Footclient": "$1",
+        //     "(.*) - Wezterm": "$1",
+        //     "(.*) - Zen": "$1",
+        //     "(.*) - vim": " $1",
+        //     "(.*) - nvim": " $1",
+        //     "(.*) - Zen Browser": "$1"
+        // },
         "separate-outputs": true,
         "max-length": 46,
         "icon": true,
@@ -669,20 +669,20 @@
         "format": "{}",
         "icon": true,
         "icon-size": 11,
-        "max-length": 50,
-        "rewrite": {
-            "(.*) - Mozilla Firefox": "🌎 $1",
-            "(.*) - Brave": "$1",
-            "(.*) - Brave Search": "$1",
-            "(.*) - Kitty": "$1",
-            "(.*) - Foot": "$1",
-            "(.*) - Footclient": "$1",
-            "(.*) - Wezterm": "$1",
-            "(.*) - Zen": "$1",
-            "(.*) - vim": " $1",
-            "(.*) - nvim": " $1",
-            "(.*) - Zen Browser": "$1"
-        }
+        "max-length": 50
+        // "rewrite": {
+        //     "(.*) - Mozilla Firefox": "🌎 $1",
+        //     "(.*) - Brave": "$1",
+        //     "(.*) - Brave Search": "$1",
+        //     "(.*) - Kitty": "$1",
+        //     "(.*) - Foot": "$1",
+        //     "(.*) - Footclient": "$1",
+        //     "(.*) - Wezterm": "$1",
+        //     "(.*) - Zen": "$1",
+        //     "(.*) - vim": " $1",
+        //     "(.*) - nvim": " $1",
+        //     "(.*) - Zen Browser": "$1"
+        // }
     },
     "custom/cliphist": {
         "format": "",
@@ -928,7 +928,7 @@
     "mpris": {
         "format": "{player_icon}  {dynamic}",
         "format-paused": "{status_icon}  {dynamic}",
-        "max-length": 150,
+        "max-length": 180,
         "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
         "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
@@ -956,9 +956,9 @@
         }
     },
     "mpris#audios": {
-        "format": "{player_icon} {artist} <i>\"{title}\"</i> {album}",
-        "format-paused": "{status_icon} {artist} <i>\"{title}\"</i> {album}",
-        "max-length": 125,
+        "format": "{player_icon}  <i>\"{title}\"</i> {artist} {album}",
+        "format-paused": "{status_icon}  <i>\"{title}\"</i> {artist} {album}",
+        "max-length": 100,
         // "interval": 5,
         "on-scroll-up": "$HOME/.config/.scripts/media-vol --inc",
         "on-scroll-down": "$HOME/.config/.scripts/media-vol --dec",
@@ -1012,9 +1012,9 @@
             "vlc": "󰕼"
         },
         "status-icons": {
-            "paused": "󰐎 ",
-            "playing": " ",
-            "stopped": " "
+            "paused": "󰐎",
+            "playing": "",
+            "stopped": ""
         }
     },
     "tray": {
