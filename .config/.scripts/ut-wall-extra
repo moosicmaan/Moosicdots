@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+# =====================================================
+# -----------------------------------------------------
+# Return a simplified string identifing the current session
+#    Jason Bradberry (2025)
+# -----------------------------------------------------
+# =====================================================
+
+cdesk="$1"
+script_name=$(basename "$0")
+notify_icon="info-symbolic"
+notify_daemon="dunst"
+wall_daemon=("awww-daemon" "-q" "--no-cache")
+# sfile="$HOME/.config/.settings/moosic-settings.json"
+# SESSION_ENV="/tmp/cron-session.env"
+
+# -----------------------------------------------------
+# Apply special processing pertaining to wallpapern, if needed
+# -----------------------------------------------------
+case "$cdesk" in
+hypr)
+    echo "---special hypr processing---"
+    echo "---        none           ---"
+    ;;
+dwl)
+    echo "---special dwl processing---"
+    # DWL starts without a wallpaper server, so start one if needed
+    if ! pidof awww-daemon; then
+        "${wall_daemon[@]}" &
+        for i in {1..10}; do
+            if pidof awww-daemon; then
+                echo "${wall_daemon[*]} has been started"
+                notify-send --icon="$notify_icon" "Wallpaper daemon:" "Started ${wall_daemon[*]}"
+                break
+            else
+                printf '%s..' "$i"
+                sleep 1
+                # notify-send --icon="$notify_icon" "Wallpaper daemon:" "could not be started}"
+                # exit 1
+            fi
+        done
+    fi
+    echo "---        done          ---"
+    ;;
+sway)
+    echo "---special sway processing---"
+    # Sway starts without a wallpaper server, so start one if needed
+    if ! pidof awww-daemon; then
+        "${wall_daemon[@]}" &
+        for i in {1..10}; do
+            if pidof awww-daemon; then
+                echo "${wall_daemon[*]} has been started"
+                notify-send --icon="$notify_icon" "Wallpaper daemon:" "Started ${wall_daemon[*]}"
+                break
+            else
+                printf '%s..' "$i"
+                sleep 1
+                # notify-send --icon="$notify_icon" "Wallpaper daemon:" "could not be started}"
+                # exit 1
+            fi
+        done
+    fi
+    echo "---        done          ---"
+    ;;
+niri)
+    echo "---special niri processing---"
+    # DWL starts without a wallpaper server, so start one if needed:
+    # if ! pidof "$wall_daemon"; then
+    #     $wall_daemon &
+    #     sleep 1
+    #     echo "$wall_daemon has been started"
+    #     notify-send --icon="$notify_icon" "wallpaper daemon:" "Started $wall_daemon"
+    # fi
+    # Start the notify-send daemon if needed
+    if ! pidof "$notify_daemon"; then
+        "$notify_daemon &"
+        sleep 1
+        echo "dunst has been started"
+        notify-send --icon="$notify_icon" "notify-send daemon:" "Started $notify_daemon"
+    fi
+    echo "---        done           ---"
+    ;;
+*)
+    printf '**  !special %s processing!  **\n' "$cdesk"
+    echo "From $script_name:"
+    printf 'The desktop session was not recognizable: %s\n' "$cdesk"
+    printf 'Debug in ut-session or run ut-save-env.\nExiting...\n'
+    echo "**       Compositor NF        **"
+    exit 1
+    # Still try - probably just testing a new WC/WM
+    # printf 'Error occurred in script %s: Compositor not found
+    #     DESKTOP_SESSION not recognizable: \"%s\"
+    #     There is not a waybar config for this session.
+    #     Exiting...\n' \
+    #     "$script_name" "$cdesk"
+    ;;
+esac
+# case $cdesk in
+# hypr)
+#     # APPROVED for cron
+#     echo "$cdesk APPOVED for cronie processing"
+#     ;;
+# sway | niri | dwl)
+#     # DISAPPROVED for cron
+#     echo "$cdesk NOT appoved for cronie processing"
+#     echo "Check $script_name if this is unexpected. Exiting..."
+#     exit 1
+#     ;;
+# *)
+#     echo "$cdesk not recognized"
+#     echo "Approve/discpprove in $script_name, Exiting..."
+#     exit 1
+#     ;;
+# esac

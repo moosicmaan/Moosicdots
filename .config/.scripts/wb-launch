@@ -6,9 +6,10 @@
 # -----------------------------------------------------
 # =====================================================
 
-from_cron="$1"
+cdesk="$1"
 # Prefix to run commands in wayland using uwsm.
 prefix=$("$HOME/.config/.scripts/wayland-prefix")
+get_session="$HOME/.config/.scripts/ut-session"
 themecache="$HOME/.cache/themestyle"
 themedir="$HOME/.config/waybar/themes"
 defaulttheme="moosic;moosic/mixed"
@@ -17,16 +18,11 @@ script_name=$(basename "$0")
 # -----------------------------------------------------
 # Discover the current Wayland Compositor and if this is from cronie
 # -----------------------------------------------------
-if [[ -n $from_cron ]]; then
-    printf 'WB-LAUNCH__________________________________cron\n'
-else
-    printf 'WB-LAUNCH______________________________________\n'
-fi
-
-if ! cdesk=$(/home/moosicmaan/.config/.scripts/ut-session "$from_cron"); then
-    printf 'The desktop session, \"%s\" was not found in %s\nExiting...\n' \
-        "$cdesk" "$script_name"
-    exit 1
+printf 'WB-LAUNCH______________________________________\n'
+if [[ ! -n "$cdesk" ]]; then
+    if ! cdesk=$("$get_session"); then
+        printf 'Error getting session name. Extitng %s\n\n' "$script_name"
+    fi
 fi
 
 # -----------------------------------------------------

@@ -72,7 +72,7 @@ return {
             -- colorscheme = "tokyonight-night",
             -- colorscheme = "tokyonight-storm",
             -- colorscheme = "tokyonight-moon",
-            -- colorscheme = "github_dark_high_contrast",
+            colorscheme = "github_dark_high_contrast",
             -- colorscheme = "github_dark_tritanopia",
             -- colorscheme = "moonfly",
             -- colorscheme = "cyberdream",
@@ -93,7 +93,7 @@ return {
             -- colorscheme = "catppuccin-mocha",
             -- colorscheme = "wildcharm",
             -- colorscheme = "koehler",
-            colorscheme = "industry",
+            -- colorscheme = "industry",
             -- colorscheme = "koehler",
             --
             -- styles = {

@@ -16,8 +16,8 @@
             "~/.config/waybar/modules.jsonc"
         ],
         "modules-left": [
-            "dwl/tags",
             "custom/session",
+            "dwl/tags",
             "dwl/window"
         ],
         // "modules-center": ["sway/window"],
@@ -66,8 +66,8 @@
             "~/.config/waybar/modules.jsonc"
         ],
         "modules-left": [
-            "dwl/tags",
             "custom/session",
+            "dwl/tags",
             "dwl/window"
         ],
         "modules-center": [

@@ -10,14 +10,15 @@ dunst &
 wl-paste --watch cliphist store &
 garuda-system-maintenance &
 "$HOME/.config/.scripts/ut-bluelight" &
-"$HOME/.config/.scripts/ut-save-env"
+"$HOME/.config/.scripts/ut-save-env" &
 # Wallpaper daemon, then initialize wallpaper.
 # --taking out wallpaper which can be added
 # later during the session
 # awww-daemon &
 # sleep 1
 # "$HOME/.config/.scripts/ut-wallpaper" --init &
-"$HOME/.config/.scripts/wb-launch" &
+# "$HOME/.config/.scripts/wb-launch" &
+bluetoothctl connect 00:12:6F:DB:0A:DD &
 
 if [[ ! "$UWSM_SESSION" ]]; then
     echo "POPULATING ENVIRONMENT for DWL"

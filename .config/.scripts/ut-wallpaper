@@ -14,6 +14,8 @@ color_file="$HOME/.cache/wal/colors.sh"
 pic_folder="$HOME/Pictures/Backgrounds"
 notify_icon="/usr/share/icons/Tela-circle-dracula-dark/symbolic/apps/"
 notify_icon+="preferences-desktop-wallpaper-symbolic.svg"
+get_session="$HOME/.config/.scripts/ut-session"
+wall_extra="$HOME/.config/.scripts/ut-wall-extra"
 script_name=$(basename "$0")
 SESSION_ENV="$HOME/.cache/cron-session.env"
 
@@ -31,51 +33,49 @@ fi
 # -----------------------------------------------------
 # Discover the current Wayland Compositor and if this is from cronie
 # -----------------------------------------------------
-if cdesk=$(/home/moosicmaan/.config/.scripts/ut-session cron); then
-    if [[ -n $from_cron && "$mthd" != "--file" ]]; then
-        printf 'UT-WALLPAPER_______________________________cron\n'
-        date
-        if [[ "$cdesk" == "$from_cron" ]]; then
-            case $cdesk in
-            hypr)
-                # APPROVED for cron
-                echo "$cdesk APPOVED for cronie processing"
-                if [[ -f "$SESSION_ENV" ]]; then
-                    # shellcheck source=/home/moosicmaan/.cache/cron-session.env
-                    source "$SESSION_ENV"
-                fi
-                ;;
-            sway | niri | dwl)
-                # DISAPPROVED for cron
-                echo "$cdesk NOT appoved for cronie processing"
-                echo "Check $script_name if this is unexpected. Exiting..."
-                exit 1
-                ;;
-            *)
-                echo "$cdesk not recognized"
-                echo "Approve/discpprove in $script_name, Exiting..."
-                exit 1
-                ;;
-            esac
-        else
-            printf '%s: This run is for %s.\nIf this is in error:
-            Is this session in settings?
-            Running ut-save-env may fix some things.\nExiting %s...\n\n' \
-                "$cdesk" "$from_cron" "$script_name"
-            exit 1
-        fi
+#
+if [[ "$mthd" == "--file" ]]; then
+    pic_file="$from_cron"
+    from_cron=""
+fi
+
+if [[ -n $from_cron ]]; then
+    printf 'UT-WALLPAPER_______________________________cron\n'
+    if [[ -f "$SESSION_ENV" ]]; then
+        # shellcheck source=/home/moosicmaan/.cache/cron-session.env
+        source "$SESSION_ENV"
     else
-        printf 'UT-WALLPAPER___________________________________\n'
-        date
+        printf 'ENV file needed by cron not found.\nRun ut-save-env.\n'
+        printf 'Running ut-save-env may help. Exiting...\n\n'
+        exit 1
     fi
 else
     printf 'UT-WALLPAPER___________________________________\n'
-    date
-    printf '%s\nIf this is in error:
-            Is this session in settings?
-            Running ut-save-env may fix some things.\nExiting %s...\n\n' \
-        "$cdesk" "$script_name"
+fi
+
+date
+
+if cdesk=$("$get_session"); then
+    if [[ -n $from_cron && "$cdesk" != "$from_cron" ]]; then
+        printf 'The current session found = \"%s\": This run is for %s.\n' \
+            "$cdesk" "$from_cron"
+        printf 'If this is in error:\n\tIs this session in settings?\n'
+        printf '\tRunning ut-save-env may fix some things.\nExiting %s...\n\n' \
+            "$script_name"
+        exit 1
+    fi
+else
+    printf 'The session \"%s\" was not found.\n' "$cdesk"
+    "$cdesk" "$script_name"
+    printf 'If this is in error:\n\tIs this session in settings?\n'
+    printf '\tRunning ut-save-env may fix some things.\nExiting %s...\n\n' \
+        "$script_name"
     exit 1
+fi
+
+if ! $wall_extra "$cdesk"; then
+    printf '!Error finding special processing for \"%n\" - Continuing...\n' \
+        "$cdesk"
 fi
 
 # -----------------------------------------------------
@@ -88,6 +88,9 @@ case $mthd in
 "--init")
     cwall=$(cat "$cache_file") >/dev/null 2>&1
     wal -q -i "$cwall"
+    ;;
+"--random")
+    wal -q -i "$pic_folder/" >/dev/null 2>&1
     ;;
 "--select")
     selected=$(
@@ -105,12 +108,11 @@ case $mthd in
     )
     if [ ! "$selected" ]; then
         echo "No wallpaper selected"
-        exit
+        exit 0
     fi
     wal -q -i "$pic_folder/$selected" >/dev/null 2>&1
     ;;
 "--file")
-    pic_file="$from_cron"
     if [[ -f "$pic_file" ]]; then
         wal -q -i "$pic_file" >/dev/null 2>&1
     else
@@ -120,6 +122,10 @@ case $mthd in
     fi
     ;;
 *)
+    printf '!Not sure what to do with \"%s\". Setting random wallpaper...\n' \
+        "$mthd"
+    printf 'Usage is \"%s [--random|--init|--select|--file <file>]\"\n' \
+        "$script_name"
     wal -q -i "$pic_folder/" >/dev/null 2>&1
     ;;
 esac
@@ -137,17 +143,18 @@ echo "$wallpaper" >"$cache_file"
 echo "* { current-image: url(\"$wallpaper\", height); }" >"$rasi_file"
 
 # Reload status bar with new colors
-"$HOME"/.config/.scripts/wb-launch "$from_cron" &
+"$HOME"/.config/.scripts/wb-launch "$cdesk"
 
 # -----------------------------------------------------
 # Apply wallpaper
 # -----------------------------------------------------
 transition_type="random"
 # transition_type="none"
-printf ':: Applying wallpaper (be patient) with %s transition...\n' \
+printf ':: Applying wallpaper with %s transition...' \
     "$transition_type"
 awww img "$wallpaper" \
     --transition-type=$transition_type
+awww clear-cache
 
 # -----------------------------------------------------
 # Send notification
@@ -161,8 +168,7 @@ else
         cron="via crontab"
     fi
     notify-send --icon=$notify_icon "Colors and Wallpaper" \
-        "Updated for $cdesk $cron\nfrom image $newwall"
+        "Updated for $cdesk $cron\nfrom image \"$newwall\""
 fi
 
-date
-printf 'DONE - %s\n\n' "$script_name"
+printf 'DONE - %s\n%s\n\n' "$script_name" "$(date)"

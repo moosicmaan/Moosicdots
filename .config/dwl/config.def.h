@@ -26,7 +26,7 @@ static const float urgentcolor[]           = COLOR(0xff0000ff);
 static const float my_focuscolor[]         = COLOR(0xffffffff);
 static const int sloppyfocus               = 1;
 static const int bypass_surface_visibility = 0;
-static const unsigned int borderpx         = 2;
+static const unsigned int borderpx         = 1;
 static const unsigned int snap             = 32;
 static const float fullscreen_bg[]         = {0.7f, 0.8f, 0.9f, 1.0f};
 static const int respect_monitor_reserved_area = 0;
@@ -52,8 +52,10 @@ static const Layout layouts[] = {
 static const MonitorRule monrules[] = {
    /* name        mfact  nmaster scale layout       rotate/reflect                x    y
     * example of a HiDPI laptop monitor:
-    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, 
+	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
+    { "eDP-1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+    { "HDMI-A-1", 0.75f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 1920,  -1 },
 	/* default monitor rule: can be changed but cannot be eliminated; at least one monitor rule must exist */
 };
 
@@ -139,12 +141,13 @@ static const Rule rules[] = {
   { NULL,      "termdrop",       0,   1,   -1, 'd',   150,    0, 1620, 900   },
   { NULL,      "yazidrop",       0,   1,   -1, 'h',   150,   90, 1620, 900   },
   { NULL,      "btopdrop",       0,   1,   -1, 's',   150,  180, 1620, 900   },
-  { NULL,      "volume",         0,   1,   -1, 'x',   500,   90,  920, 900   },
-  { NULL,      "moosicdrop",     0,   1,   -1, 'm',   500,   90,  920, 900   },
-  { NULL,      "bluedrop",       0,   1,   -1, 'b',   500,   90,  920, 900   },
+  { NULL,      "volume",         0,   1,   -1, 'x',   500,   90,  920, 400   },
+  { NULL,      "moosicdrop",     0,   1,   -1, 'm',   500,   90,  920, 500   },
+  { NULL,      "bluedrop",       0,   1,   -1, 'b',   500,   90,  920, 500   },
   { "mpv",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
   { "vlc",      NULL,            0,   1,   -1,  0,    500,   90,  920, 518   },
-  { NULL,      "galculator",     0,   1,   -1,  0,    750,   90,  420, 450,  },
+  { NULL,      "galculator",     0,   1,   -1,  0,    750,   90,  420, 450   },
+  { "spotube",  NULL,         1 << 0, 0,    1,  0,     -1,   -1,   -1,  -1   }, 
   /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
 };
 
@@ -207,7 +210,7 @@ static const char *wallr[] = { SCRIPTS_DIR "/ut-wallpaper", "--random", NULL };
 static const char *walls[] = { SCRIPTS_DIR "/ut-wallpaper", "--select", NULL };
 static const char *bars[] = { SCRIPTS_DIR "/wb-switch",  NULL };
 static const char *bartog[] = {
-    "sh", "-c", "pkill waybar || " SCRIPTS_DIR "/.scripts/wb-launch", NULL };
+    "sh", "-c", "pkill waybar || " SCRIPTS_DIR "/wb-launch", NULL };
 
 /* MEDIA / MEDIA KEYS */
 // #include <xkbcommon/xkbcommon-keysyms.h>
