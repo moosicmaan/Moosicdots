@@ -19,6 +19,7 @@ garuda-system-maintenance &
 # "$HOME/.config/.scripts/ut-wallpaper" --init &
 # "$HOME/.config/.scripts/wb-launch" &
 bluetoothctl connect 00:12:6F:DB:0A:DD &
+pactl set-card-profile bluez_card.00_12_6F_DB_0A_DD a2dp-sink-sbc_xq
 
 if [[ ! "$UWSM_SESSION" ]]; then
     echo "POPULATING ENVIRONMENT for DWL"

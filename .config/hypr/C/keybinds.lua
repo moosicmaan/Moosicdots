@@ -15,23 +15,19 @@ local HYPER = vars.HYPER
 local MEH = vars.MEH
 
 ---- APPLICATIONS ----
-hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(vars.my_term), { description = "Open the default terminal emulator" })
-hl.bind(MOD .. " + t", hl.dsp.exec_cmd(vars.my_term2), { description = "Open the alterate terminal emulator" })
 hl.bind(
 	MOD .. " + SHIFT + Return",
 	hl.dsp.exec_cmd(vars.my_filesg),
 	{ description = "Open the graphical file explorer" }
 )
+hl.bind(MOD .. " + n", hl.dsp.exec_cmd(vars.edit_config), { description = "Edit .config" })
+hl.bind(MOD .. " + Return", hl.dsp.exec_cmd(vars.my_term), { description = "Open the default terminal emulator" })
+hl.bind(MOD .. " + t", hl.dsp.exec_cmd(vars.my_term2), { description = "Open the alterate terminal emulator" })
 hl.bind(MOD .. " + CTRL + Return", hl.dsp.exec_cmd(vars.my_email), { description = "Open the email program" })
 hl.bind(MOD .. " + b", hl.dsp.exec_cmd(vars.my_brows), { description = "Open internet browser" })
 hl.bind(MOD .. " + o", hl.dsp.exec_cmd(vars.my_browsv), { description = "Open vim-like internet browser" })
 hl.bind(MOD .. " + i", hl.dsp.exec_cmd(vars.emojis), { description = "Toggle emojis browser" })
 hl.bind(MOD .. " + m", hl.dsp.exec_cmd(vars.my_music), { description = "Open music player" })
-hl.bind(
-	MOD .. " + n",
-	hl.dsp.exec_cmd("cd " .. vars.my_dots .. " && " .. vars.my_editc),
-	{ description = "Edit .config" }
-)
 hl.bind(MOD .. " + SHIFT + m", hl.dsp.exec_cmd(vars.my_media), { description = "Open video player" })
 hl.bind(MOD .. " + Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })
 hl.bind("Print", hl.dsp.exec_cmd(vars.prntscrn), { description = "Take a screenshot" })

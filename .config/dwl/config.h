@@ -50,12 +50,12 @@ static const Layout layouts[] = {
 /* (x=-1, y=-1) is reserved as an "autoconfigure" monitor position indicator
  * https://gitlab.freedesktop.org/xorg/xserver/-/issues/899 */
 static const MonitorRule monrules[] = {
-   /* name        mfact  nmaster scale layout       rotate/reflect                x    y
+   /* name        mfact  nmaster scale layout       rotate/reflect               x    y
     * example of a HiDPI laptop monitor:
-    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, 
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
-    { "eDP-1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
-    { "HDMI-A-1", 0.75f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 1920,  -1 },
+    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1,  -1 }, 
+	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1,  -1 }, */
+    { "eDP-1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1,  -1 },
+    { "HDMI-A-1", 0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1,  -1 },
 	/* default monitor rule: can be changed but cannot be eliminated; at least one monitor rule must exist */
 };
 
@@ -163,7 +163,7 @@ static const char *bt_scratch[] = { "b", "kitty", "-T", "bluedrop", "-e", "bluet
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
+#define DOTS_DIR "/mnt/data/moosicmaan/CONFIG"
 #define CONFIG_DIR "/home/moosicmaan/.config"
 #define SCRIPTS_DIR "/home/moosicmaan/.config/.scripts"
 
@@ -190,13 +190,15 @@ static const char *rofi_power[] = { "wlogout", NULL };
 
 /* APPLICATIONS */
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *my_term2[] = { "kitty", NULL };
+static const char *my_term2[] = { "alcritty", NULL };
 static const char *browscmd[]  = { "zen-browser", NULL };
 static const char *my_browsv[] = { "qutebrowser", NULL };
 static const char *my_email[] = { "thunderbird", NULL };
 static const char *my_editg[] = { "kate", NULL };
-static const char *my_editc[] = { "neovide", NULL };
+static const char *my_editc[] = { "sh", "-c", "kitty -e nvim", NULL };
 static const char *my_filesg[] = { "dolphin", NULL };
+static const char *my_filesc[] = { "sh", "-c", "kitty -e yazi", NULL };
+static const char *my_office[] = { "onlyoffice-desktopeditors", NULL };
 static const char *my_image[] = { "gimp", NULL };
 static const char *emojis[] = { "sh", "-c", "pkill emote || emote", NULL };
 static const char *aichat[] = { "brave", "--app=https://chat.openai.com", NULL };
@@ -204,6 +206,11 @@ static const char *kmonadl[] = { SCRIPTS_DIR "/ut-kbd-lap", NULL };
 static const char *kmonade[] = { SCRIPTS_DIR "/ut-kbd-350", NULL };
 static const char *barch[] = { SCRIPTS_DIR "/rofi-blackmenu", NULL };
 static const char *screenshot[] = { SCRIPTS_DIR "/ut-screenshot", NULL };
+static const char *edit_config[] = { 
+    "sh", "-c",
+    "cd " DOTS_DIR " && kitty -e nvim",
+    NULL 
+};
 
 /* BACKGROUND/WAYBAR */
 static const char *wallr[] = { SCRIPTS_DIR "/ut-wallpaper", "--random", NULL };
@@ -269,14 +276,17 @@ static const Key keys[] = {
   { MOD|CTRL,  XKB_KEY_Return,               spawn,                {.v = my_email} },
   { MOD|SHIFT, XKB_KEY_Return,               spawn,                {.v = my_filesg} },
   { MOD,       XKB_KEY_t,                    spawn,                {.v = my_term2} },
+  { MOD,       XKB_KEY_n,                    spawn,                {.v = edit_config} },
   { MOD,       XKB_KEY_o,                    spawn,                {.v = browscmd} },
   { MOD,       XKB_KEY_b,                    spawn,                {.v = my_browsv} },
   { MOD,       XKB_KEY_i,                    spawn,                {.v = emojis} },
   { CTRL|ALT,  XKB_KEY_a,                    spawn,                {.v = aichat} },
   { MOD,       XKB_KEY_Print,                spawn,                {.v = screenshot} },
-  { MOD,       XKB_KEY_F3,                   spawn,                {.v = my_editg} },
+  { MOD,       XKB_KEY_F3,                   spawn,                {.v = my_filesc} },
+  { MOD,       XKB_KEY_F4,                   spawn,                {.v = my_editg} },
   { MOD,       XKB_KEY_F4,                   spawn,                {.v = my_image} },
   { MOD,       XKB_KEY_F5,                   spawn,                {.v = my_editc} },
+  { MOD,       XKB_KEY_F6,                   spawn,                {.v = my_office} },
 /*---MEDIA / MEDIA KEYS---*/
   { MOD,       XKB_KEY_m,                    spawn,                {.v = my_music} },
   { MOD|SHIFT, XKB_KEY_M,                    spawn,                {.v = my_media} },
@@ -289,8 +299,8 @@ static const Key keys[] = {
   { 0,         XKB_KEY_XF86AudioNext,        spawn,                {.v = mnxt} },
   { 0,         XKB_KEY_XF86AudioPrev,        spawn,                {.v = mprv} },
   { 0,         XKB_KEY_XF86AudioStop,        spawn,                {.v = mstop} },
-  { HYPER,     XKB_KEY_i,                    spawn,                {.v = mfavs} },
-  { HYPER,     XKB_KEY_u,                    spawn,                {.v = mnow} },
+  { HYPER,     XKB_KEY_d,                    spawn,                {.v = mfavs} },
+  { HYPER,     XKB_KEY_l,                    spawn,                {.v = mnow} },
   { CTRL|ALT,  XKB_KEY_m,                    spawn,                {.v = jamrofi} },
 /*---MENUS/SELECTORS---*/
   { MOD,       XKB_KEY_p,                    spawn,                {.v = menu_run} },
@@ -343,7 +353,7 @@ static const Key keys[] = {
   /* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
   { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
   /* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
-   * do not remove them.
+   * do not removethem.
    */
 #define CHVT(n) { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_XF86Switch_VT_##n, chvt, {.ui = (n)} }
   CHVT(1), CHVT(2), CHVT(3), CHVT(4), CHVT(5), CHVT(6),

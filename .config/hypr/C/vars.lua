@@ -22,6 +22,7 @@ M.my_email = M.prefix .. "thunderbird"
 M.my_email2 = M.prefix .. "thunderbird"
 M.my_editg = M.prefix .. "kate"
 M.my_editc = M.prefix .. M.my_term .. " -e nvim"
+M.edit_config = "cd " .. M.my_dots .. " && " .. M.my_editc
 M.my_filesg = M.prefix .. "dolphin"
 M.my_filesc = M.my_term .. " -e yazi"
 M.my_music = M.prefix .. "spotube"
